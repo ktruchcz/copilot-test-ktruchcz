@@ -910,5 +910,5 @@ graph LR
 > **Repository**: `copilot-test-ktruchcz`  
 > **Source analysed**: `HelloWorld.java` (5 LoC), `README.md`, `.gitignore`  
 > **Sections**: 12 / 12 complete  
-> **Diagrams**: 14 embedded Mermaid diagrams  
+> **Diagrams**: 18 embedded Mermaid diagrams  
 
