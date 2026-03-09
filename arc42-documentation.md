@@ -618,8 +618,8 @@ graph TD
 | Number of Classes | 1 | ✅ Minimal |
 | Number of Methods | 1 (`main`) | ✅ Minimal |
 | External Dependencies | 0 | ✅ Zero dependency risk |
-| Test Coverage | 0% (no tests exist) | ⚠️ No automated tests |
-| Javadoc Coverage | 0% (no Javadoc present) | ⚠️ No inline documentation |
+| Test Coverage | 0% (no tests exist) | ⚠️ No automated tests (intentional for this demonstration application) |
+| Javadoc Coverage | 0% (no Javadoc present) | ⚠️ No inline documentation (acceptable trade-off given single-method scope) |
 
 ---
 
