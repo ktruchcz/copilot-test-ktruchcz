@@ -354,7 +354,7 @@ sequenceDiagram
     User->>OS: java HelloWorld
     OS->>JVM: fork process, load HelloWorld.class into classpath
     JVM->>JVM: verify bytecode integrity
-    JVM->>JVM: initialise java.lang.System (System.out = new PrintStream(stdout))
+    JVM->>JVM: initialize java.lang.System (System.out = new PrintStream(stdout))
     JVM->>HW: invoke main(new String[]{})
     activate HW
     HW->>SysOut: System.out.println("Hello World")
