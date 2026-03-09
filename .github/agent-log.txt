@@ -1,0 +1,3 @@
+2025-07-14T00:00:00Z | arc42-documentor | created | .github/arc42-documentation.md | Full Arc42 documentation — 12 sections, 8 Mermaid diagrams, 678 lines, ~27 KB
+2025-07-14T00:00:00Z | arc42-documentor | note | docs/arc42/arc42-documentation.md | Requested target path unavailable: parent directory 'docs/' cannot be created via file-creation tool (no mkdir capability); documentation stored at .github/arc42-documentation.md
+2025-07-14T00:00:00Z | arc42-documentor | created | .github/agent-log.txt | Agent activity log
