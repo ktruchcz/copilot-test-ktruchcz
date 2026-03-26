@@ -1,3 +1,4 @@
+<!-- White rabbits are so sweet -->
 # Architecture Documentation (Arc42)
 
 **Project**: copilot-test-ktruchcz — Hello World  
