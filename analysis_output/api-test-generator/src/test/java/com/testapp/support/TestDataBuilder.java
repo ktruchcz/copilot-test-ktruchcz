@@ -76,8 +76,11 @@ public class TestDataBuilder {
      * based on known field names.
      *
      * <p>Auto-coerced numeric fields: {@code id} (Long), {@code age} (Integer).
-     * All other fields are kept as {@link String}.  If a future field should be
-     * numeric, add a new {@code case} entry here.
+     * All other fields are kept as {@link String}.
+     *
+     * <p><strong>Extending coercion:</strong> If a new numeric field is added to the User
+     * model (e.g. {@code version}, {@code score}), add a matching {@code case} entry here
+     * so that DataTable values are correctly typed before serialisation.
      */
     private static Object coerce(String field, String raw) {
         return switch (field) {

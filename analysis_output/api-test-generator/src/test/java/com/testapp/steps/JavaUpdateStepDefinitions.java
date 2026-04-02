@@ -149,11 +149,18 @@ public class JavaUpdateStepDefinitions {
             String field    = row.get(0);
             String expected = row.get(1);
             Object actual   = responseMap.get(field);
-            // Compare as typed value when the field is known to be numeric.
             if (actual instanceof Number num) {
-                softly.assertThat(num.toString())
-                      .as("Field '%s' (numeric)", field)
-                      .isEqualTo(expected);
+                // Compare numerically to avoid floating-point string mismatch (e.g. 31 vs 31.0).
+                try {
+                    double expectedNum = Double.parseDouble(expected);
+                    softly.assertThat(num.doubleValue())
+                          .as("Field '%s' (numeric)", field)
+                          .isEqualTo(expectedNum);
+                } catch (NumberFormatException e) {
+                    softly.assertThat(num.toString())
+                          .as("Field '%s' (numeric fallback)", field)
+                          .isEqualTo(expected);
+                }
             } else {
                 softly.assertThat(String.valueOf(actual))
                       .as("Field '%s'", field)
@@ -203,15 +210,35 @@ public class JavaUpdateStepDefinitions {
     @And("the response contains at least {int} validation errors")
     public void theResponseContainsAtLeastValidationErrors(int minimumCount) {
         String body = context.getLastResponseBody();
-        // Heuristic: count "field" or "message" occurrences in the error array.
-        long occurrences = countOccurrences(body, "\"field\"");
-        if (occurrences < minimumCount) {
-            // Fall back: count top-level error entries.
-            occurrences = countOccurrences(body, "\"message\"");
+        assertThat(body)
+                .as("Response body must not be blank when asserting validation errors")
+                .isNotBlank();
+
+        // Deserialise and count structured error entries, falling back to heuristics
+        // when the error shape is not a recognised list format.
+        try {
+            Object parsed = context.getApiClient().deserialise(body, Object.class);
+            long count = 0;
+            if (parsed instanceof java.util.List<?> list) {
+                count = list.size();
+            } else if (parsed instanceof Map<?, ?> map) {
+                // Common Spring Boot validation shape: { "errors": [...] }
+                Object errors = map.get("errors");
+                if (errors instanceof java.util.List<?> errorList) {
+                    count = errorList.size();
+                } else {
+                    // Fall back: count top-level keys that look like field-error entries.
+                    count = map.size();
+                }
+            }
+            assertThat(count)
+                    .as("Expected at least %d validation errors in body: %s", minimumCount, body)
+                    .isGreaterThanOrEqualTo(minimumCount);
+        } catch (Exception e) {
+            // If we cannot parse the body as JSON, fail with a clear message.
+            throw new AssertionError(
+                    "Could not parse response body as JSON to count validation errors. Body: " + body, e);
         }
-        assertThat(occurrences)
-                .as("Expected at least %d validation errors in body: %s", minimumCount, body)
-                .isGreaterThanOrEqualTo(minimumCount);
     }
 
     @And("the response body contains the fields {string}")
@@ -250,16 +277,5 @@ public class JavaUpdateStepDefinitions {
 
     private void logResponse(Response response) {
         log.debug("Response: status={} body={}", response.getStatusCode(), response.getBody().asString());
-    }
-
-    private long countOccurrences(String text, String substring) {
-        if (text == null || text.isBlank()) return 0;
-        int count = 0;
-        int idx = 0;
-        while ((idx = text.indexOf(substring, idx)) != -1) {
-            count++;
-            idx += substring.length();
-        }
-        return count;
     }
 }

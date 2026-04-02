@@ -1,4 +1,4 @@
-Feature: Java User UPDATE Operations
+Feature: User Profile Update API
   As an API consumer
   I want to update User resources via the REST API
   So that user profile data stays accurate and up to date
