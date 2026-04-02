@@ -53,7 +53,7 @@ public class ApiClient {
         if (url == null || url.isBlank()) {
             url = System.getenv("API_BASE_URL");
         }
-        return (url != null && !url.isBlank()) ? url.stripTrailing() : DEFAULT_BASE_URL;
+        return (url != null && !url.isBlank()) ? url.replaceAll("/+$", "") : DEFAULT_BASE_URL;
     }
 
     private void configureRestAssured() {

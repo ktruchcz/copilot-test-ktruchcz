@@ -74,6 +74,10 @@ public class TestDataBuilder {
     /**
      * Coerces a raw string value from a DataTable into the correct Java type
      * based on known field names.
+     *
+     * <p>Auto-coerced numeric fields: {@code id} (Long), {@code age} (Integer).
+     * All other fields are kept as {@link String}.  If a future field should be
+     * numeric, add a new {@code case} entry here.
      */
     private static Object coerce(String field, String raw) {
         return switch (field) {

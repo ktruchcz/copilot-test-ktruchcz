@@ -34,9 +34,12 @@ public class JavaUpdateStepDefinitions {
 
     private static final Logger log = LoggerFactory.getLogger(JavaUpdateStepDefinitions.class);
 
-    // Placeholder tokens — swap these for real JWT values / auth helper calls.
-    private static final String VALID_TOKEN   = "test-valid-token-abc123";
-    private static final String EXPIRED_TOKEN = "test-expired-token-xyz789";
+    // Placeholder tokens; override via env vars TEST_VALID_TOKEN / TEST_EXPIRED_TOKEN.
+    // Tests will fail fast at the auth step if the real API rejects these values.
+    private static final String VALID_TOKEN =
+            System.getenv().getOrDefault("TEST_VALID_TOKEN", "test-valid-token-abc123");
+    private static final String EXPIRED_TOKEN =
+            System.getenv().getOrDefault("TEST_EXPIRED_TOKEN", "test-expired-token-xyz789");
 
     private final TestContext context;
 
@@ -145,9 +148,17 @@ public class JavaUpdateStepDefinitions {
             if (row.size() < 2) continue;
             String field    = row.get(0);
             String expected = row.get(1);
-            softly.assertThat(String.valueOf(responseMap.get(field)))
-                  .as("Field '%s'", field)
-                  .isEqualTo(expected);
+            Object actual   = responseMap.get(field);
+            // Compare as typed value when the field is known to be numeric.
+            if (actual instanceof Number num) {
+                softly.assertThat(num.toString())
+                      .as("Field '%s' (numeric)", field)
+                      .isEqualTo(expected);
+            } else {
+                softly.assertThat(String.valueOf(actual))
+                      .as("Field '%s'", field)
+                      .isEqualTo(expected);
+            }
         }
         softly.assertAll();
     }
