@@ -1,1 +1,18 @@
+# Compiled class files
 *.class
+
+# Maven build output
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+.eclipse/
+.settings/
+.classpath
+.project
+
+# OS files
+.DS_Store
+Thumbs.db
