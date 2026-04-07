@@ -33,7 +33,7 @@ mvn test
 mvn package
 
 # Run the application
-java --enable-preview -jar target/testapp2-1.0.0.jar
+java -jar target/testapp2-1.0.0.jar
 ```
 
 ## Project Structure
