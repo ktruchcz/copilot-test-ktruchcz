@@ -33,5 +33,5 @@ A **Hello World** application modernized to **Java 21** with a full Maven build 
 mvn clean verify
 
 # Run the application
-java --enable-preview -jar target/hello-world-1.0.0.jar
+java -jar target/hello-world-1.0.0.jar
 ```
