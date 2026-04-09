@@ -31,7 +31,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify compliance with all 5 principles before advancing. ERROR if any gate fails
+without explicit justification documented in the Complexity Tracking table.
+
+| # | Principle               | Gate check                                                            | Status |
+|---|-------------------------|-----------------------------------------------------------------------|--------|
+| I | Functional Equivalence  | Every Java behaviour (validation, output format, season/time logic) is mapped to a Python implementation task | ☐ |
+| II | Idiomatic Python 3.12  | `@dataclass(frozen=True)`, `match`/`case`, type hints, PEP 8 snake_case, and f-strings are chosen throughout | ☐ |
+| III | Test Parity           | Every JUnit 5 test method maps 1-to-1 to a pytest function in `tests/test_hello_world.py` | ☐ |
+| IV | Modern Packaging        | `pyproject.toml` task present with `[build-system]`, `[project]`, `[project.scripts]`, and `[project.optional-dependencies]` | ☐ |
+| V | Output Isolation        | ALL implementation paths are under `src/` and `tests/`; `pyproject.toml` at repo root; no `.java` files or `pom.xml` modified | ☐ |
 
 ## Project Structure
 

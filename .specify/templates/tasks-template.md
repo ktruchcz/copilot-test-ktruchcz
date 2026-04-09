@@ -20,10 +20,26 @@ description: "Task list template for feature implementation"
 
 ## Path Conventions
 
-- **Single project**: `src/`, `tests/` at repository root
+- **Single project (default for this migration)**: `src/`, `tests/` at repository root;
+  `pyproject.toml` at repository root
 - **Web app**: `backend/src/`, `frontend/src/`
 - **Mobile**: `api/src/`, `ios/src/` or `android/src/`
-- Paths shown below assume single project - adjust based on plan.md structure
+
+> **Constitution Principle V – Output Isolation**: ALL Python artefacts MUST be
+> written to `src/` and `tests/` only.  Never write to `src/main/`, `src/test/`,
+> or any path ending in `.java`.  The Packaging task MUST produce `pyproject.toml`
+> at the repo root (not inside a sub-directory).
+
+### Mandatory Task Categories (Migration Projects)
+
+In addition to standard user-story tasks, migration task lists MUST include:
+
+- **Packaging tasks** (`[PKG]`): Create/validate `pyproject.toml` with correct
+  `[build-system]`, `[project]`, `[project.scripts]`, and
+  `[project.optional-dependencies]` tables.  Verify with `pip install -e .[test]`.
+- **Test Parity tasks** (`[TP]`): One pytest function per source JUnit 5 test method.
+  Parametrized JUnit tests use `@pytest.mark.parametrize`.  Run `pytest tests/` as
+  the acceptance gate.
 
 <!-- 
   ============================================================================

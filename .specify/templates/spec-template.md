@@ -126,3 +126,10 @@
 - [Assumption about scope boundaries, e.g., "Mobile support is out of scope for v1"]
 - [Assumption about data/environment, e.g., "Existing authentication system will be reused"]
 - [Dependency on existing system/service, e.g., "Requires access to the existing user profile API"]
+
+> **Output Isolation (Constitution Principle V — NON-NEGOTIABLE)**: All generated
+> Python artefacts MUST be written to `src/` and `tests/` at the repository root,
+> with `pyproject.toml` at the repository root.  No `.java` source file or `pom.xml`
+> may be modified.  Any scope item that would require writing outside these paths or
+> touching Java sources is automatically OUT OF SCOPE unless the constitution is
+> amended first.
