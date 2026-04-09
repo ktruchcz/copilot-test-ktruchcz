@@ -1,302 +1,45 @@
 ---
-name: r6-generate-config
-description: Generate and adapt target-stack configuration files for build and runtime.
----
-# Skill R6: Generate Configuration File
-description: Generate and adapt target-stack configuration files for build and runtime.
-**When to use:** Creating build/framework configuration files for target project
-
-**Purpose:** Set up proper configuration for the target technology stack.
-
-## Input
-
-- Target framework type (Angular, React, Vue, Express, etc.)
-- Project requirements (build output, dependencies, special features)
-- Source project settings (for reference)
-
-## 🚨 CRITICAL: File Location
-
-**ALL configuration files MUST be created in:** `output/{target-app-name}/`
-
-**NEVER create config files in:**
-- ❌ Source project directories
-- ❌ Workspace root
-- ❌ Alongside source files
-
-**Examples:**
-- `output/angular-app/angular.json` ✅
-- `output/react-app/package.json` ✅
-- `output/express-api/tsconfig.json` ✅
-- `angular.json` (in workspace root) ❌
-
+name: spring-boot-generation
+description: "Generate Spring Boot Java backend code (entities, repositories, controllers, services, and tests). Use whenever generating @Entity, @Repository, @RestController, @Service classes, or any Spring test (@WebMvcTest, @DataJpaTest, @ExtendWith). Invoke for any migration where the TARGET is Spring Boot—regardless of the source technology (ADF, Python, legacy Java, .NET, etc.). Also use when the user asks to create JPA entities from a schema, write JPQL queries, or set up constructor injection patterns."
 ---
 
-## Steps
+# Spring Boot Generation Skill
 
-### 1. Identify Configuration Format Needed
+This skill guides the generation of idiomatic Spring Boot code for the target application. All rules focus on the **target technology** — Spring Boot / Spring Data JPA / Spring MVC. Apply these regardless of the source technology you're migrating from.
 
-Determine what config files are needed:
+## Core Conventions (apply everywhere)
 
-| Framework | Config Files |
-|-----------|-------------|
-| **Angular** | `angular.json`, `tsconfig.json`, `package.json` |
-| **React** | `package.json`, `tsconfig.json`, `webpack.config.js` (if not CRA) |
-| **Vue** | `vue.config.js`, `package.json`, `tsconfig.json` |
-| **Node/Express** | `package.json`, `tsconfig.json`, `nodemon.json` |
-| **Python/Flask** | `requirements.txt`, `setup.py`, `config.py` |
-| **Next.js** | `next.config.js`, `package.json`, `tsconfig.json` |
+- Use **constructor injection** with `@Autowired`. Never use field injection.
+- Use **`jakarta.*`** for JPA and validation annotations (not legacy `javax.*`):
+  - `import jakarta.persistence.*`
+  - `import jakarta.validation.constraints.*`
+- Use **Lombok** annotations in this order: `@Builder`, `@AllArgsConstructor`, `@NoArgsConstructor`, `@Data`
+- Use **DTOs** as return types for all service and controller methods. Never expose entities directly.
+- Use **`Long`** instead of `BigInteger` everywhere.
+- Use **`java.time.LocalDate`** for dates and **`java.time.LocalDateTime`** for timestamps. Never use `java.sql.Date` or `java.sql.Timestamp` in domain types.
 
-### 2. Use Framework's Standard Template
+## SQL Type Mapping
 
-Start with framework defaults:
-- Use CLI-generated templates as base
-- Don't create from scratch
-- Extend, don't replace
+| SQL / Oracle Type  | Java Type           |
+|--------------------|---------------------|
+| VARCHAR / VARCHAR2 | `String`            |
+| DATE               | `java.time.LocalDate` |
+| TIMESTAMP          | `java.time.LocalDateTime` |
+| NUMBER(≤10, 0)     | `Integer`           |
+| NUMBER(19, 0)      | `Long`              |
+| NUMBER(p, s≥1)     | `BigDecimal`        |
+| CLOB / TEXT        | `String`            |
+| NUMERIC(p,s)       | use precision/scale rules above |
 
-### 3. Add Project-Specific Settings
+## Reference Files
 
-#### Entry Points
-```json
-{
-  "main": "src/main.ts",
-  "index": "dist/index.js"
-}
-```
+| Task | Reference |
+|------|-----------|
+| Generate a JPA `@Entity` class | [references/entity-generation.md](references/entity-generation.md) |
+| Generate a Spring Data `@Repository` interface with JPQL | [references/repository-generation.md](references/repository-generation.md) |
+| Generate a `@RestController` + `@Service` pair | [references/controller-service-generation.md](references/controller-service-generation.md) |
+| Generate unit tests with Mockito | [references/test-generation.md](references/test-generation.md#unit-tests) |
+| Generate `@WebMvcTest` controller tests | [references/test-generation.md](references/test-generation.md#mvc-tests) |
+| Generate `@DataJpaTest` integration tests | [references/test-generation.md](references/test-generation.md#integration-tests) |
 
-#### Output Directories
-```json
-{
-  "outDir": "dist",
-  "outputPath": "dist/app-name"
-}
-```
-
-#### Source Directories
-```json
-{
-  "sourceRoot": "src",
-  "root": ""
-}
-```
-
-#### Asset Paths
-```json
-{
-  "assets": [
-    "src/assets",
-    "src/favicon.ico"
-  ]
-}
-```
-
-### 4. Configure Dependencies
-
-**Production Dependencies:**
-```json
-{
-  "dependencies": {
-    "@angular/core": "^17.0.0",
-    "rxjs": "^7.8.0",
-    "tslib": "^2.6.0"
-  }
-}
-```
-
-**Development Dependencies:**
-```json
-{
-  "devDependencies": {
-    "@angular/cli": "^17.0.0",
-    "typescript": "~5.2.0"
-  }
-}
-```
-
-### 5. Add Build Scripts/Commands
-
-```json
-{
-  "scripts": {
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint"
-  }
-}
-```
-
-### 6. Set Compiler/Transpiler Options
-
-**TypeScript Config:**
-```json
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "lib": ["ES2022", "dom"],
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
-}
-```
-
-**Babel Config (if needed):**
-```json
-{
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-typescript"
-  ]
-}
-```
-
-### 7. Configure Path Aliases (Optional)
-
-```json
-{
-  "compilerOptions": {
-    "baseUrl": "src",
-    "paths": {
-      "@app/*": ["app/*"],
-      "@models/*": ["app/models/*"],
-      "@services/*": ["app/services/*"]
-    }
-  }
-}
-```
-
-### 8. Validate Syntax
-
-- Use JSON schema validation if available
-- Check for:
-  - Valid JSON (no trailing commas, proper quotes)
-  - Required fields present
-  - Correct data types
-  - Valid version strings
-
-## Output
-
-Complete, valid configuration file(s) ready to use.
-
-## Examples
-
-### Angular - package.json
-```json
-{
-  "name": "migrated-app",
-  "version": "1.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch",
-    "test": "ng test"
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "^17.0.0",
-    "@angular/common": "^17.0.0",
-    "@angular/compiler": "^17.0.0",
-    "@angular/core": "^17.0.0",
-    "@angular/forms": "^17.0.0",
-    "@angular/platform-browser": "^17.0.0",
-    "@angular/platform-browser-dynamic": "^17.0.0",
-    "@angular/router": "^17.0.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.14.0"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.0",
-    "@angular/cli": "^17.0.0",
-    "@angular/compiler-cli": "^17.0.0",
-    "typescript": "~5.2.0"
-  }
-}
-```
-
-### React - package.json
-```json
-{
-  "name": "migrated-app",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "typescript": "^5.2.0"
-  }
-}
-```
-
-### Express - package.json
-```json
-{
-  "name": "migrated-api",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc",
-    "watch": "tsc -w"
-  },
-  "dependencies": {
-    "express": "^4.18.0",
-    "cors": "^2.8.5"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.0",
-    "@types/node": "^20.0.0",
-    "nodemon": "^3.0.0",
-    "ts-node": "^10.9.0",
-    "typescript": "^5.2.0"
-  }
-}
-```
-
-## Common Configuration Patterns
-
-### Environment-Specific Config
-```json
-{
-  "configurations": {
-    "production": {
-      "optimization": true,
-      "outputHashing": "all",
-      "sourceMap": false
-    },
-    "development": {
-      "optimization": false,
-      "sourceMap": true
-    }
-  }
-}
-```
-
-### Linting Config (.eslintrc.json)
-```json
-{
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "root": true
-}
-```
+Read the relevant reference file before generating code for that layer.
