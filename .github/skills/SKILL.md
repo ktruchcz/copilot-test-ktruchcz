@@ -1,357 +1,410 @@
 ---
-name: e3-fix-undefined-property
-description: Correct undefined property and method access using the target framework API.
+name: e4-resolve-build-config
+description: Repair build and compiler configuration issues that block successful compilation.
 ---
 
-# Skill E3: Fix Undefined Property/Method
+# Skill E4: Resolve Build Configuration Error
 
-**When to use:** Runtime or compile error indicates missing property or method on an object
+**When to use:** Build process fails due to configuration issues
 
-**Purpose:** Fix member access errors by using correct API for target framework.
+**Purpose:** Fix build system configuration to enable successful compilation.
 
 ## Input
 
-- Error message
-- Object/class type being accessed
-- Property/method name that's missing
-- Code context
+- Build error output
+- Build tool being used (webpack, tsc, Angular CLI, etc.)
+- Configuration files involved
 
 ## Steps
 
-### 1. Parse Error Message
+### 1. Identify Error Category
 
-Extract:
-- Object type
-- Missing member name
-- Operation attempted
-- Location in code
+Parse build output to determine issue type:
 
-**Common error patterns:**
-- `Property 'X' does not exist on type 'Y'`
-- `'X' is not a function`
-- `Cannot read property 'X' of undefined`
-- `undefined is not an object (evaluating 'obj.X')`
+**A. Missing file/directory**
+- `Cannot find file 'X'`
+- `Entry module not found: 'X'`
 
-### 2. Identify Object Type
+**B. Invalid syntax in config**
+- `Unexpected token`
+- `JSON parse error`
+- `Invalid configuration`
 
-Determine what object is being accessed:
-- Class instance
-- Framework API object
-- Standard library object
-- Custom type
+**C. Incompatible options**
+- `Option 'X' cannot be used with 'Y'`
+- `Conflicting configuration`
 
-### 3. Check Target Framework Documentation
+**D. Missing plugin/loader**
+- `Cannot find loader 'X'`
+- `Plugin 'X' not found`
 
-Research if member exists in target framework:
-- Search official documentation
-- Check API reference
-- Look for migration guides
-- Check version compatibility
+**E. Wrong path/pattern**
+- `No matching files for pattern 'X'`
+- `Failed to resolve 'X'`
 
-### 4. Apply Fix Based on Issue Type
+**F. Version incompatibility**
+- `Requires version X but got Y`
+- `Incompatible peer dependency`
 
-#### Issue A: Method Renamed
+### 2. Read Configuration File
 
-Framework changed method names between source and target.
+Identify which config file has the issue:
+- `angular.json` (Angular)
+- `webpack.config.js` (Webpack)
+- `tsconfig.json` (TypeScript)
+- `package.json` (npm)
+- `vite.config.js` (Vite)
+- `rollup.config.js` (Rollup)
 
-**Common renamings:**
+Read the file to understand current settings.
 
-| Source (Java) | Target (TypeScript/JS) |
-|---------------|------------------------|
-| `.length()` | `.length` (property) |
-| `.size()` | `.length` or `.size` |
-| `.isEmpty()` | `.length === 0` or `!value` |
-| `.add(item)` | `.push(item)` |
-| `.remove(index)` | `.splice(index, 1)` |
-| `.contains(item)` | `.includes(item)` |
-| `.charAt(i)` | `[i]` or `.charAt(i)` |
-| `.substring(a,b)` | `.slice(a,b)` |
+### 3. Apply Fix Based on Error Type
+
+#### Fix A: Missing File
+
+**Update file path in config:**
+```json
+{
+  "main": "src/main.ts"  // Verify this file exists
+}
+```
+
+**Create missing file if needed:**
+- Check if file should exist
+- Create minimal valid file
+- Or update config to point to correct file
+
+**Example tsconfig.json:**
+```json
+{
+  "files": [
+    "src/main.ts",  // Ensure this exists
+    "src/polyfills.ts"
+  ]
+}
+```
+
+#### Fix B: Invalid Syntax
+
+**Common JSON errors:**
+- Trailing commas
+- Unquoted keys
+- Single quotes instead of double
+- Missing brackets/braces
 
 **Fix:**
-```typescript
-// Before:
-const len = list.size();
-
-// After:
-const len = list.length;
-```
-
-#### Issue B: Property vs Method
-
-Source used method, target uses property (or vice versa).
-
-**Fix:**
-```typescript
-// Before (method):
-const count = items.count();
-
-// After (property):
-const count = items.length;
-```
-
-#### Issue C: API Changed
-
-Method signature or behavior changed.
-
-**Example: Observable patterns**
-```typescript
-// Before (RxJS 5):
-observable.map(x => x * 2);
-
-// After (RxJS 6+):
-observable.pipe(map(x => x * 2));
-```
-
-**Fix:**
-```typescript
-import { map } from 'rxjs/operators';
-
-observable.pipe(
-  map(x => x * 2)
-);
-```
-
-#### Issue D: Method Removed/Deprecated
-
-Feature no longer exists in target framework.
-
-**Find equivalent:**
-- Check migration guides
-- Search for alternative functions
-- Implement custom helper if needed
-
-**Example:**
-```typescript
-// Before (jQuery):
-$('#id').show();
-
-// After (vanilla JS):
-document.getElementById('id').style.display = 'block';
-
-// Or (modern):
-document.getElementById('id')?.classList.remove('hidden');
-```
-
-#### Issue E: Null/Undefined Object
-
-Object itself is null/undefined.
-
-**Fix with null safety:**
-```typescript
-// Before:
-const value = obj.property;  // Error if obj is null
-
-// After (optional chaining):
-const value = obj?.property;
-
-// Or (null check):
-const value = obj ? obj.property : undefined;
-```
-
-#### Issue F: Missing Type Definition
-
-TypeScript doesn't know about the property.
-
-**Fix:**
-```typescript
-// Option 1: Install type definitions
-npm install --save-dev @types/library-name
-
-// Option 2: Declare type
-interface MyType {
-  existingProp: string;
-  missingProp?: any;  // Add missing property
+```json
+// Before (invalid):
+{
+  "name": "app",
+  "version": "1.0.0",  // ← Remove trailing comma before }
 }
 
-// Option 3: Type assertion
-(obj as any).missingProp;  // Last resort
+// After (valid):
+{
+  "name": "app",
+  "version": "1.0.0"
+}
 ```
 
-### 5. Common Framework-Specific Fixes
+**Use JSON validator:**
+- VS Code has built-in validation
+- Or use online JSON validator
 
-#### Angular Specifics
+#### Fix C: Incompatible Options
 
-**Lifecycle methods:**
-```typescript
-// Implement interface
-export class MyComponent implements OnInit {
-  ngOnInit() {  // Now recognized
-    // ...
+**Check documentation for valid combinations:**
+
+**Example TypeScript:**
+```json
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2022"  // Must be compatible with module
   }
 }
 ```
 
-**Dependency Injection:**
-```typescript
-// Inject service
-constructor(private myService: MyService) {}
-// Now this.myService is available
+**Common valid combinations:**
+- `module: "ES2022"` + `target: "ES2022"`
+- `module: "CommonJS"` + `target: "ES2020"`
+- `module: "ESNext"` + `target: "ESNext"`
+
+#### Fix D: Missing Plugin/Loader
+
+**Install missing package:**
+
+```bash
+# For webpack loaders:
+npm install --save-dev ts-loader
+npm install --save-dev css-loader style-loader
+
+# For plugins:
+npm install --save-dev html-webpack-plugin
+npm install --save-dev copy-webpack-plugin
 ```
 
-#### React Specifics
-
-**State/Props:**
-```typescript
-// Before (class component):
-this.state.value
-
-// After (functional component):
-const [value, setValue] = useState();
+**Add to config:**
+```javascript
+// webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader'  // Now installed
+      }
+    ]
+  }
+};
 ```
 
-#### DOM APIs
+#### Fix E: Wrong Path/Pattern
 
-```typescript
-// Before (old API):
-element.getAttribute('class');
-
-// After (modern):
-element.className;
-// or
-element.classList;
+**Fix glob patterns:**
+```json
+{
+  "include": [
+    "src/**/*"  // Recursive pattern
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
 ```
 
-### 6. Collection Operation Mappings
+**Common patterns:**
+- `**/*` - All files recursively
+- `*.ts` - All .ts files in current dir
+- `src/**/*.ts` - All .ts files under src
+- `**/*.spec.ts` - All test files
 
-**Array operations:**
-```typescript
-// Java → JavaScript/TypeScript
-list.get(0)          → list[0]
-list.add(item)       → list.push(item)
-list.remove(index)   → list.splice(index, 1)
-list.contains(item)  → list.includes(item)
-list.size()          → list.length
-list.isEmpty()       → list.length === 0
-list.clear()         → list.length = 0 or list = []
-
-// Java Stream → JS Array methods
-list.stream()
-  .map(...)          → list.map(...)
-  .filter(...)       → list.filter(...)
-  .forEach(...)      → list.forEach(...)
-  .findFirst()       → list.find(...)
-  .collect()         → // No need, already array
+**Fix file paths:**
+```json
+{
+  "compilerOptions": {
+    "outDir": "./dist",  // Use correct relative path
+    "rootDir": "./src"
+  }
+}
 ```
 
-**Map operations:**
-```typescript
-// Java → JavaScript/TypeScript
-map.get(key)         → map.get(key) or obj[key]
-map.put(key, val)    → map.set(key, val) or obj[key] = val
-map.containsKey(key) → map.has(key) or key in obj
-map.remove(key)      → map.delete(key) or delete obj[key]
-map.size()           → map.size or Object.keys(obj).length
-map.keySet()         → Array.from(map.keys()) or Object.keys(obj)
-map.values()         → Array.from(map.values()) or Object.values(obj)
+#### Fix F: Version Incompatibility
+
+**Update package versions:**
+
+```json
+// package.json
+{
+  "devDependencies": {
+    "@angular/compiler-cli": "^17.0.0",  // Update to compatible version
+    "typescript": "~5.2.0"  // TypeScript version must be compatible
+  }
+}
 ```
 
-### 7. Rebuild and Verify
+**Check compatibility:**
+- Read framework documentation for version requirements
+- Check package peer dependencies
+- Use version ranges wisely
 
-After applying fix:
-1. Save file
-2. Compile/build
-3. Verify error is resolved
-4. Test that functionality works
+**Reinstall:**
+```bash
+npm install
+```
+
+### 4. Common Build Configuration Fixes
+
+#### Angular CLI (angular.json)
+
+```json
+{
+  "projects": {
+    "app-name": {
+      "architect": {
+        "build": {
+          "options": {
+            "outputPath": "dist/app-name",  // Verify path
+            "index": "src/index.html",      // File must exist
+            "main": "src/main.ts",          // Entry point must exist
+            "tsConfig": "tsconfig.app.json" // Config must exist
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+#### TypeScript (tsconfig.json)
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022", "dom"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,  // Skip lib checking if needed
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+#### Webpack (webpack.config.js)
+
+```javascript
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.ts',  // Verify path
+  output: {
+    path: path.resolve(__dirname, 'dist'),  // Absolute path
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.js']  // File extensions to resolve
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      }
+    ]
+  }
+};
+```
+
+### 5. Clear Build Cache
+
+Sometimes cached data causes issues:
+
+```bash
+# Clear Angular cache
+rm -rf .angular/
+
+# Clear TypeScript cache
+rm -rf dist/
+
+# Clear node_modules and reinstall
+rm -rf node_modules
+npm install
+
+# Clear npm cache (if really stuck)
+npm cache clean --force
+```
+
+### 6. Rebuild and Verify
+
+After fixing configuration:
+1. Save all config files
+2. Clear cache if needed
+3. Run build command
+4. Verify build succeeds
+5. Check output directory has expected files
+
+### 7. Common Build Commands
+
+```bash
+# Angular
+ng build
+ng build --configuration production
+
+# TypeScript
+tsc
+tsc --build
+
+# Webpack
+npx webpack
+npx webpack --mode production
+
+# npm scripts (defined in package.json)
+npm run build
+```
 
 ## Output
 
-Fixed code with correct property/method access for target framework.
+Working build configuration with successful compilation.
 
 ## Examples
 
-### Example 1: Collection Method
+### Example 1: Missing Main File
 
 **Error:**
 ```
-Property 'size' does not exist on type 'any[]'.
+Cannot find file 'src/main.ts'
 ```
 
-**Code:**
-```typescript
-const count = users.size();
-```
-
-**Fix:**
-```typescript
-const count = users.length;
-```
-
-### Example 2: String Method
-
-**Error:**
-```
-Property 'contains' does not exist on type 'string'.
-```
-
-**Code:**
-```typescript
-if (name.contains("John")) { }
-```
-
-**Fix:**
-```typescript
-if (name.includes("John")) { }
-```
-
-### Example 3: Null Safety
-
-**Error:**
-```
-Cannot read property 'name' of undefined
-```
-
-**Code:**
-```typescript
-const userName = user.name;
-```
-
-**Fix:**
-```typescript
-const userName = user?.name;
-// or
-const userName = user ? user.name : null;
-```
-
-### Example 4: Observable Pattern
-
-**Error:**
-```
-Property 'map' does not exist on type 'Observable<User>'.
-```
-
-**Code:**
-```typescript
-return this.http.get<User>('/api/user').map(data => data);
-```
-
-**Fix:**
-```typescript
-import { map } from 'rxjs/operators';
-
-return this.http.get<User>('/api/user').pipe(
-  map(data => data)
-);
-```
-
-### Example 5: Lifecycle Hook
-
-**Error:**
-```
-Property 'ngOnInit' does not exist on type 'MyComponent'.
-```
-
-**Code:**
-```typescript
-export class MyComponent {
-  ngOnInit() { }
+**Fix in angular.json:**
+```json
+{
+  "architect": {
+    "build": {
+      "options": {
+        "main": "src/main.ts"  // Verify file exists at this path
+      }
+    }
+  }
 }
 ```
 
-**Fix:**
+**Create file if missing:**
 ```typescript
-import { OnInit } from '@angular/core';
+// src/main.ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
-export class MyComponent implements OnInit {
-  ngOnInit() { }
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
+
+### Example 2: TypeScript Config Incompatibility
+
+**Error:**
+```
+Option 'module' must be 'CommonJS' when 'target' is 'ES3' or 'ES5'
+```
+
+**Fix:**
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",  // Update target
+    "module": "ES2020"   // Now compatible
+  }
 }
+```
+
+### Example 3: Missing Loader
+
+**Error:**
+```
+Module parse failed: Unexpected token
+You may need an appropriate loader to handle this file type
+```
+
+**Fix:**
+```bash
+npm install --save-dev ts-loader
+```
+
+```javascript
+// webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader'
+      }
+    ]
+  }
+};
 ```
