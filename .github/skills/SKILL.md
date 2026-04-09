@@ -1,49 +1,97 @@
 ---
-name: postgresql-migration
-description: "Migrate SQL and PL/SQL code to PostgreSQL. Use whenever the TARGET database is PostgreSQL—regardless of the source (Oracle, MySQL, SQL Server, etc.). Invoke for DDL migration (tables, sequences, triggers, views, indexes), DML conversion, PL/pgSQL function and procedure generation, or when the user mentions migrating stored procedures, database schemas, or SQL scripts to PostgreSQL. Also includes a review checklist for validating migrated PostgreSQL scripts."
+name: r1-parse-source-file
+description: Parse a source file into classes, methods, dependencies, and transformation inputs.
 ---
+# Skill R1: Parse Source File Structure
+description: Parse a source file into classes, methods, dependencies, and transformation inputs.
+**When to use:** Beginning analysis of any source file
 
-# PostgreSQL Migration Skill
+**Purpose:** Extract structured information from a source code file to understand its components and dependencies.
 
-This skill guides migration of any relational database code to **PostgreSQL**. All core rules focus on correct PostgreSQL output. References to Oracle syntax appear only as "before" examples — the rules themselves apply to any source producing PostgreSQL-compatible output.
+## Steps
 
-## Core Rules (apply to all migrations)
+1. **Read the entire file content**
+   - Load complete file to understand full context
 
-- Exclude schema name qualifiers from all object definitions. `CREATE TABLE "MYSCHEMA"."DEPARTMENTS"` → `CREATE TABLE DEPARTMENTS`.
-- Do not add a duplicate `PRIMARY KEY` constraint if one already exists on the table.
-- Ensure no trailing comma after the last column in a `CREATE TABLE` statement.
-- Move inline comments inside `CREATE TABLE` parentheses to outside the definition.
-- Treat all identifiers as case-insensitive unless they were explicitly quoted in the source.
-- Preserve all comments from the original SQL in the migrated file.
-- Test each migrated file for successful execution and correct object creation.
+2. **Identify file type**
+   - Determine: class, component, service, utility, configuration, test, or other
+   - Note the file extension and framework indicators
 
-## Quick Reference: Data Type Mapping
+3. **Extract imports/dependencies**
+   - List all import statements at the top
+   - Identify internal vs external dependencies
+   - Note any dynamic imports or lazy loading
 
-| Source Type | PostgreSQL Type |
-|------------|----------------|
-| NUMBER(p, 0) / INTEGER | `INTEGER` or `BIGINT` |
-| NUMBER(p, s) | `NUMERIC(p, s)` |
-| VARCHAR2(n) / NVARCHAR2(n) | `VARCHAR(n)` |
-| DATE | `DATE` or `TIMESTAMP` (context-dependent) |
-| TIMESTAMP | `TIMESTAMP` |
-| TIMESTAMP WITH TIME ZONE | `TIMESTAMPTZ` |
-| CLOB / LONG | `TEXT` |
-| BLOB / LONG RAW / BFILE | `BYTEA` |
-| RAW | `BYTEA` or `UUID` |
-| ROWID / UROWID | `TEXT` |
-| FLOAT / BINARY_DOUBLE | `DOUBLE PRECISION` |
-| BINARY_FLOAT | `REAL` |
-| CHAR(n) | `CHAR(n)` |
-| XMLTYPE | `XML` |
-| INTERVAL YEAR TO MONTH | `INTERVAL` |
-| INTERVAL DAY TO SECOND | `INTERVAL` |
+4. **List all exports**
+   - Identify exported classes, functions, constants, types
+   - Note if default export or named exports
+   - Document visibility (public, exported, internal)
 
-## Reference Files
+5. **For each export, catalog:**
+   - Name and type (class, function, interface, etc.)
+   - Properties/fields with types
+   - Methods/functions with:
+     - Parameter names and types
+     - Return types
+     - Purpose/behavior
+   - Dependencies used within this export
 
-| Task | Reference |
-|------|-----------|
-| Full migration rules (DDL, DML, PL/pgSQL, sequences, triggers, etc.) | [references/sql-migration-rules.md](references/sql-migration-rules.md) |
-| Review checklist (post-migration validation) | [references/review-checklist.md](references/review-checklist.md) |
-| DevOps error handling (resolving execution errors) | [references/devops-error-handling.md](references/devops-error-handling.md) |
+6. **Identify special patterns:**
+   - Decorators (e.g., @Component, @Injectable)
+   - Annotations (e.g., @Override, @Autowired)
+   - Lifecycle methods (e.g., ngOnInit, componentDidMount, onCreate)
+   - Event handlers
+   - State management patterns
 
-When generating or reviewing PostgreSQL output, **always** read `references/sql-migration-rules.md` first. For review tasks, also read `references/review-checklist.md`.
+7. **Return structured summary**
+   - Create a markdown outline or data structure with findings
+
+## Output Format
+
+```
+File: [filename]
+Type: [class|component|service|utility|config|test]
+
+Imports:
+- [framework imports]
+- [internal imports]
+- [external library imports]
+
+Exports:
+  [ExportName1]:
+    - Type: [class|function|const|type]
+    - Properties: [list with types]
+    - Methods: [list with signatures]
+    - Dependencies: [what it uses]
+    - Special: [decorators, lifecycle hooks]
+  
+  [ExportName2]:
+    ...
+
+Notes:
+- [Any special considerations or patterns]
+```
+
+## Example
+
+```
+File: UserService.java
+Type: service
+
+Imports:
+- java.util.List
+- com.app.models.User
+- org.springframework.stereotype.Service
+
+Exports:
+  UserService:
+    - Type: class
+    - Properties: 
+      - userRepository: UserRepository
+    - Methods:
+      - getUserById(int id): User
+      - getAllUsers(): List<User>
+      - saveUser(User user): void
+    - Dependencies: UserRepository, User model
+    - Special: @Service annotation, @Autowired on constructor
+```
