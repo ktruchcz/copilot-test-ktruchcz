@@ -9,7 +9,7 @@ handoffs:
 
 # Main Objective
 
-The main objective is to migrate the entire application from source technology to another.
+The main objective is to migrate the entire application from source technology to target technology.
 
 ## Parameter Extraction
 
