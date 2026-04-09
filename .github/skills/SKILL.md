@@ -1,405 +1,377 @@
 ---
-name: e5-fix-dependency-conflict
-description: Resolve package version and peer dependency conflicts in the dependency tree.
+name: e6-handle-missing-feature
+description: Replace unavailable target-platform features with equivalent or fallback implementations.
 ---
+# Skill E6: Handle Missing Framework Feature
+description: Replace unavailable target-platform features with equivalent or fallback implementations.
+**When to use:** Source code uses a feature that doesn't exist in target framework
 
-# Skill E5: Fix Dependency Version Conflict
-
-**When to use:** Package manager reports version conflicts or incompatible dependencies
-
-**Purpose:** Resolve dependency tree conflicts to enable successful installation.
+**Purpose:** Find equivalent functionality or implement alternative solution.
 
 ## Input
 
-- Dependency conflict error output
-- Package manager type (npm, yarn, pip, maven, etc.)
-- List of conflicting packages and versions
+- Feature description (what source code does)
+- Source framework feature being used
+- Target framework
+- Usage context
 
 ## Steps
 
-### 1. Parse Conflict Error
+### 1. Document the Missing Feature
 
-Extract from error message:
-- Package names involved
-- Required versions by each dependent
-- Current installed version (if any)
-- Which packages are requesting incompatible versions
+Clearly identify:
+- What feature is used in source
+- What it does functionally
+- Why it's needed
+- How it's currently used
+- Example usage from source code
 
-**Common error patterns:**
+### 2. Research Target Framework
 
-**npm:**
+**Check official documentation:**
+- API reference
+- Migration guides (especially "Source → Target" guides)
+- Cookbook/recipes section
+- Community forums
+
+**Search for:**
+- Direct equivalent
+- Similar functionality
+- Recommended patterns
+- Third-party libraries that provide it
+
+**Check version notes:**
+- Was feature added in later version?
+- Was it deprecated/removed?
+- Is there a replacement?
+
+### 3. Determine Solution Strategy
+
+Choose appropriate approach:
+
+**A. Direct Equivalent Exists**
+- Use target framework's built-in feature
+- Update code to use new API
+
+**B. No Direct Equivalent - Can Polyfill**
+- Feature can be implemented as utility function
+- Create helper/polyfill
+
+**C. No Equivalent - Architectural Change**
+- Feature doesn't translate 1:1
+- Need different approach in target
+- Redesign that part of application
+
+**D. No Equivalent - External Library**
+- Community library provides functionality
+- Install and integrate third-party package
+
+**E. Feature Not Essential**
+- Can be simplified or removed
+- Refactor to not need it
+
+### 4. Apply Solution
+
+#### Solution A: Use Direct Equivalent
+
+**Example: Layout Manager**
+
+**Source (Java Swing):**
+```java
+panel.setLayout(new BorderLayout());
+panel.add(component, BorderLayout.NORTH);
 ```
-ERESOLVE unable to resolve dependency tree
-Found: package-a@1.0.0
-Could not resolve dependency:
-peer package-b@"^2.0.0" from package-c@3.0.0
+
+**Target (Angular + Flexbox):**
+```html
+<div class="container">
+  <div class="north">{{ component }}</div>
+</div>
 ```
 
-**yarn:**
-```
-error Found incompatible versions:
-  package-a@1.0.0 (required by x, required ^1.0.0)
-  package-a@2.0.0 (required by y, required ^2.0.0)
-```
-
-**pip:**
-```
-ERROR: package-a 1.0.0 has requirement package-b>=2.0.0, 
-but you'll have package-b 1.5.0 which is incompatible.
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+}
 ```
 
-### 2. Research Compatible Versions
+**Map concepts:**
+- BorderLayout → CSS Flexbox/Grid
+- Layout constraints → CSS positioning
+- Add with position → Template + CSS classes
 
-For each package in conflict:
+#### Solution B: Create Polyfill/Helper
 
-**Check package documentation:**
-- Official website
-- GitHub repository
-- npm/PyPI package page
-- CHANGELOG or release notes
+**Example: Observable Lifecycle**
 
-**Check peer dependencies:**
-```bash
-npm info package-name peerDependencies
-```
+**Source has feature X, target doesn't:**
 
-**Check available versions:**
-```bash
-npm view package-name versions
-```
-
-### 3. Decide Resolution Strategy
-
-Choose appropriate strategy:
-
-**A. Update to Latest Compatible**
-- Use newest version that satisfies all dependencies
-- Safest option if major versions align
-
-**B. Lock Specific Version**
-- Force exact version that works
-- Use when you know specific version is stable
-
-**C. Update Dependent Package**
-- Update the package causing constraint
-- If newer version has compatible requirements
-
-**D. Use Resolution Override**
-- Force package manager to use specific version
-- Last resort when other methods fail
-
-### 4. Apply Fix by Package Manager
-
-#### npm / Node.js
-
-**Method 1: Update package.json versions**
-
-```json
-{
-  "dependencies": {
-    "package-a": "^2.0.0",  // Update to compatible version
-    "package-b": "^3.0.0"
+**Create utility:**
+```typescript
+// utils/feature-polyfill.ts
+export class FeatureHelper {
+  static doFeature(input: string): string {
+    // Implement the missing functionality
+    return input.toUpperCase(); // Example
   }
 }
 ```
 
-**Method 2: Use overrides (npm 8.3+)**
+**Use in migrated code:**
+```typescript
+import { FeatureHelper } from '../utils/feature-polyfill';
 
-```json
-{
-  "overrides": {
-    "package-a": "2.5.0"  // Force specific version
-  }
+const result = FeatureHelper.doFeature(value);
+```
+
+#### Solution C: Architectural Alternative
+
+**Example: Swing Event Listeners**
+
+**Source (Java Swing):**
+```java
+button.addActionListener(e -> {
+  System.out.println("Clicked");
+});
+```
+
+**Target (Angular):**
+```typescript
+// Component template:
+<button (click)="onButtonClick()">Click</button>
+
+// Component class:
+onButtonClick() {
+  console.log("Clicked");
 }
 ```
 
-**Method 3: Use legacy peer deps flag**
+**Different pattern but same behavior.**
+
+#### Solution D: Use Third-Party Library
+
+**Example: Advanced Data Grid**
+
+**Source:** Complex data table with built-in features
+
+**Target:** Framework has basic table
+
+**Solution:** Install grid library
 
 ```bash
-npm install --legacy-peer-deps
+npm install ag-grid-angular
 ```
 
-**Method 4: Install with force**
+```typescript
+import { AgGridModule } from 'ag-grid-angular';
 
-```bash
-npm install --force  # Not recommended, may break things
+@Component({
+  template: '<ag-grid-angular [rowData]="data"></ag-grid-angular>'
+})
 ```
 
-#### yarn
+#### Solution E: Simplify/Remove
 
-**Use resolutions:**
+**Example: Complex Animation**
 
-```json
-{
-  "resolutions": {
-    "package-a": "2.5.0"  // Force version across all deps
-  }
-}
+**Source:** Has sophisticated animation API
+
+**Target:** Basic CSS transitions
+
+**Evaluate:**
+- Is complex animation essential?
+- Can we use simple CSS transitions instead?
+- Will users notice the simplification?
+
+**If non-essential:**
+```typescript
+// Use simple CSS transition instead of complex animation
+// Add class to trigger CSS transition
+element.classList.add('fade-in');
 ```
 
-**Or update and reinstall:**
+### 5. Common Missing Features and Solutions
 
-```bash
-yarn upgrade package-a@^2.0.0
-```
+#### Desktop → Web Migrations
 
-#### pip / Python
+| Desktop Feature | Web Equivalent |
+|----------------|----------------|
+| File System Access | File API (with user permission) |
+| Multi-window Apps | Browser tabs / Modal dialogs |
+| System Tray | Browser notifications |
+| Native Menus | HTML/CSS menus |
+| Drag & Drop Files | HTML5 Drag & Drop API |
+| Clipboard Access | Clipboard API |
+| Print Dialog | window.print() + CSS print styles |
 
-**Method 1: Update requirements.txt**
+#### Framework-Specific Solutions
 
-```
-package-a==2.5.0  # Exact version
-package-b>=2.0.0,<3.0.0  # Version range
-```
+**Java → TypeScript:**
+- `Thread.sleep()` → `await new Promise(r => setTimeout(r, ms))`
+- `synchronized` → Not needed (single-threaded JS) or use async locks
+- `File I/O` → Web: File API, Node: fs module
+- `Reflection` → TypeScript has limited reflection, use decorators
 
-**Method 2: Install specific version**
+**Swing → Web Framework:**
+- `JFrame` → Page/Component root
+- `JPanel` → `<div>` container
+- `JButton` → `<button>` element
+- `JTextField` → `<input type="text">`
+- `JLabel` → `<span>` or `<label>`
+- `Layout Managers` → CSS Flexbox/Grid
 
-```bash
-pip install package-a==2.5.0
-```
+### 6. Implement and Test
 
-**Method 3: Use constraint file**
+After applying solution:
 
-Create `constraints.txt`:
-```
-package-a==2.5.0
-```
+1. **Implement** the alternative approach
+2. **Test** that behavior matches original
+3. **Verify** edge cases work
+4. **Check performance** if applicable
+5. **Document** the deviation if significant
 
-Install with:
-```bash
-pip install -c constraints.txt -r requirements.txt
-```
+### 7. Document in Migration Report
 
-#### Maven / Java
+Add note to `migration-report.md`:
 
-**Add dependency management:**
+```markdown
+## Feature Substitutions
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.example</groupId>
-      <artifactId>package-a</artifactId>
-      <version>2.5.0</version>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-```
+### BorderLayout → CSS Flexbox
+- **Original:** Java Swing's BorderLayout manager
+- **Replacement:** CSS Flexbox with directional classes
+- **Behavior:** Equivalent visual layout
+- **Limitation:** None
 
-**Or exclude transitive dependency:**
-
-```xml
-<dependency>
-  <groupId>com.example</groupId>
-  <artifactId>package-b</artifactId>
-  <version>1.0.0</version>
-  <exclusions>
-    <exclusion>
-      <groupId>com.example</groupId>
-      <artifactId>package-a</artifactId>
-    </exclusion>
-  </exclusions>
-</dependency>
-```
-
-### 5. Clear Dependency Cache
-
-Remove cached dependencies:
-
-**npm:**
-```bash
-rm -rf node_modules
-rm package-lock.json
-npm cache clean --force
-npm install
-```
-
-**yarn:**
-```bash
-rm -rf node_modules
-rm yarn.lock
-yarn cache clean
-yarn install
-```
-
-**pip:**
-```bash
-pip cache purge
-pip install -r requirements.txt --force-reinstall
-```
-
-### 6. Reinstall Dependencies
-
-After updating configuration:
-
-```bash
-# npm
-npm install
-
-# yarn
-yarn install
-
-# pip
-pip install -r requirements.txt
-
-# maven
-mvn clean install
-```
-
-### 7. Verify Application Works
-
-After resolving conflict:
-
-1. **Run build** to ensure compilation succeeds
-2. **Run tests** if available
-3. **Start application** to verify runtime
-4. **Test key features** that use conflicting packages
-5. **Check for console warnings** about deprecated APIs
-
-### 8. Document Resolution
-
-Add comment in package file:
-
-```json
-{
-  "dependencies": {
-    "package-a": "2.5.0"  // Fixed at 2.5.0 to resolve conflict with package-b
-  }
-}
-```
-
-## Common Conflict Scenarios
-
-### Scenario 1: Peer Dependency Conflict
-
-**Error:**
-```
-package-a@3.0.0 requires peer package-b@^2.0.0
-but package-b@1.5.0 is installed
-```
-
-**Fix:**
-```bash
-npm install package-b@^2.0.0
-```
-
-### Scenario 2: Multiple Versions of Same Package
-
-**Error:**
-```
-Found: lodash@4.17.0 (from project)
-Found: lodash@3.10.0 (from old-package)
-```
-
-**Fix using overrides:**
-```json
-{
-  "overrides": {
-    "lodash": "4.17.21"  // Use latest version everywhere
-  }
-}
-```
-
-### Scenario 3: Incompatible Major Versions
-
-**Error:**
-```
-package-x needs react@^16.0.0
-package-y needs react@^18.0.0
-```
-
-**Fix:** Update package-x to version that supports React 18, or downgrade package-y.
-
-```bash
-npm install package-x@latest  # Check if newer version supports React 18
+### File System Access → File API
+- **Original:** Direct file system read/write
+- **Replacement:** Browser File API with user permission
+- **Behavior:** User must select files via dialog
+- **Limitation:** Can't access arbitrary files without user consent
 ```
 
 ## Output
 
-- Resolved dependency tree
-- All packages installed successfully
-- Application builds and runs
-- No version conflict errors
+- Working implementation using target framework capabilities
+- Documented substitution in migration report
+- Preserved original functionality (or acceptable alternative)
 
 ## Examples
 
-### Example 1: Angular Material Version Conflict
+### Example 1: Swing Timer → RxJS/setTimeout
 
-**Error:**
-```
-Package "@angular/material" has a peer dependency on "@angular/cdk@^17.0.0"
-but "@angular/cdk@16.0.0" is installed
+**Source:**
+```java
+Timer timer = new Timer(1000, e -> {
+  updateUI();
+});
+timer.start();
 ```
 
-**Fix:**
+**Target:**
+```typescript
+import { interval } from 'rxjs';
+
+const subscription = interval(1000).subscribe(() => {
+  this.updateUI();
+});
+
+// Later: subscription.unsubscribe();
+```
+
+**Or simpler:**
+```typescript
+setInterval(() => {
+  this.updateUI();
+}, 1000);
+```
+
+### Example 2: Dependency Injection Container
+
+**Source (Spring):**
+```java
+@Autowired
+private UserService userService;
+```
+
+**Target (Angular):**
+```typescript
+constructor(private userService: UserService) {}
+```
+
+**Same concept, different syntax.**
+
+### Example 3: Thread-based Concurrency
+
+**Source (Java):**
+```java
+new Thread(() -> {
+  // Background work
+  String result = doWork();
+  SwingUtilities.invokeLater(() -> {
+    updateUI(result);
+  });
+}).start();
+```
+
+**Target (TypeScript/Angular):**
+```typescript
+// Use async/await with promises
+async performWork() {
+  const result = await this.doWork();  // Async work
+  this.updateUI(result);  // Update UI
+}
+
+// Or with RxJS:
+this.http.get('/api/work').subscribe(result => {
+  this.updateUI(result);
+});
+```
+
+### Example 4: Missing Component - Install Library
+
+**Source:** Has rich text editor built-in
+
+**Target:** Framework has `<textarea>` only
+
+**Solution:**
 ```bash
-npm install @angular/cdk@^17.0.0
+npm install @angular/cdk
+npm install quill
+npm install ngx-quill
 ```
 
-Or update both:
-```bash
-npm install @angular/material@^17.0.0 @angular/cdk@^17.0.0
+```typescript
+import { QuillModule } from 'ngx-quill';
+
+@NgModule({
+  imports: [QuillModule.forRoot()]
+})
+
+// In component:
+<quill-editor [(ngModel)]="content"></quill-editor>
 ```
 
-### Example 2: TypeScript Version Conflict
+### Example 5: Simplification
 
-**Error:**
-```
-Found: typescript@4.9.0
-Required: typescript@~5.2.0 by @angular/compiler-cli@17.0.0
-```
+**Source:** Complex custom renderer
 
-**Fix package.json:**
-```json
-{
-  "devDependencies": {
-    "typescript": "~5.2.0"  // Update to required version
+**Target:** Use standard components
+
+**Decision:** Original renderer had 20 custom features, but app only uses 3.
+
+**Solution:** Implement only the 3 features that are actually used, ignore the rest.
+
+```typescript
+// Only implement what's needed
+renderItem(item: Item) {
+  // Original had 20 rendering modes
+  // We only need 'text', 'image', 'link'
+  switch (item.type) {
+    case 'text': return this.renderText(item);
+    case 'image': return this.renderImage(item);
+    case 'link': return this.renderLink(item);
   }
 }
-```
-
-**Reinstall:**
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### Example 3: Transitive Dependency Conflict
-
-**Error:**
-```
-package-a depends on package-c@1.x
-package-b depends on package-c@2.x
-```
-
-**Fix using overrides:**
-```json
-{
-  "dependencies": {
-    "package-a": "^1.0.0",
-    "package-b": "^2.0.0"
-  },
-  "overrides": {
-    "package-c": "2.5.0"  // Force v2 everywhere, ensure package-a can handle it
-  }
-}
-```
-
-### Example 4: Python Dependency Conflict
-
-**Error:**
-```
-ERROR: django 3.0.0 has requirement sqlparse>=0.2.2, 
-but you'll have sqlparse 0.1.0 which is incompatible.
-```
-
-**Fix requirements.txt:**
-```
-django==3.0.0
-sqlparse>=0.2.2  # Update to satisfy django's requirement
-```
-
-**Reinstall:**
-```bash
-pip install -r requirements.txt --upgrade
 ```
