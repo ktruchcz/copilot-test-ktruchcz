@@ -1,211 +1,169 @@
 ---
-name: r3-transform-class
-description: Transform an entire class or component file into the target framework structure.
+name: r4-convert-function-logic
+description: Convert method and function logic into target-language control flow and APIs.
 ---
 
-# Skill R3: Transform Class/Component Structure
+# Skill R4: Convert Function/Method Logic
 
-**When to use:** Converting a class, component, or module file from source to target technology
+**When to use:** Transforming individual function or method bodies between languages
 
-**Purpose:** Systematically transform a complete file while preserving functionality and structure.
-
-## Input
-
-- Parsed source file structure (from Skill R1)
-- Source and target technology specifications
+**Purpose:** Convert implementation logic while preserving exact behavior and intent.
 
 ## Steps
 
-### 1. Create Target File
+### 1. Identify Control Structures
 
-**🚨 CRITICAL: File Location**
-- **NEVER modify the source file**
-- **CREATE NEW FILE in `output/{target-app-name}/` directory**
-- Source file location: `workspace/src/UserService.java` (READ ONLY)
-- New file location: `output/angular-app/src/app/services/user.service.ts` (CREATE NEW)
+Locate all:
+- Conditionals (if, else, switch)
+- Loops (for, while, do-while, foreach)
+- Try-catch blocks
+- Return statements
 
-**File creation:**
-- Determine target file extension (.ts, .tsx, .js, .py, etc.)
-- Create file in appropriate directory within `output/{target-app-name}/`
-- Follow target framework's directory conventions
-- Use similar name (adjust casing conventions if needed)
+### 2. Identify Operations
 
-**Example:**
-```
-Source:  src/com/app/services/UserService.java  (read from here)
-Target:  output/angular-app/src/app/services/user.service.ts  (create here)
-```
+Categorize operations:
+- Arithmetic (`+`, `-`, `*`, `/`, `%`)
+- String manipulation
+- Collection operations
+- Object/class operations
+- Async operations
 
-### 2. Generate Imports
+### 3. Transform Line by Line
 
-- **Map framework imports:**
-  - Source: `import javax.swing.JFrame;`
-  - Target: `import { Component } from '@angular/core';`
+Apply these conversions:
 
-- **Convert internal imports:**
-  - Update paths to match new structure
-  - Use Skill R5 if structure changed significantly
+#### Variable Declarations
 
-- **Add necessary target imports:**
-  - Framework-specific imports
-  - Type imports if using TypeScript
-  - Library imports for replaced functionality
+| Source | Target |
+|--------|--------|
+| `final String x = "hi";` | `const x = "hi";` |
+| `String x = "hi";` | `let x = "hi";` |
+| `int x = 5;` | `let x = 5;` |
+| `var x = 5;` (Java 10+) | `const x = 5;` |
 
-### 3. Transform Class/Component Declaration
+#### String Operations
 
-- **Convert syntax:**
-  - Java: `public class UserService { }`
-  - TypeScript: `export class UserService { }`
+| Source (Java) | Target (JS/TS) |
+|---------------|----------------|
+| `str.substring(0, 5)` | `str.slice(0, 5)` |
+| `str.indexOf("x")` | `str.indexOf("x")` |
+| `str.contains("x")` | `str.includes("x")` |
+| `str.charAt(i)` | `str[i]` or `str.charAt(i)` |
+| `str.length()` | `str.length` |
+| `str.isEmpty()` | `!str` or `str.length === 0` |
+| `String.format("%s", x)` | `` `${x}` `` (template literal) |
 
-- **Map decorators/annotations:**
-  - `@Service` → `@Injectable()`
-  - `@Component` → `@Component({ })`
-  - `@RestController` → Express router setup
+#### Collection Operations
 
-- **Apply naming conventions:**
-  - Keep class name consistent or adjust for conventions
-  - PascalCase for classes, camelCase for instances
+| Source (Java) | Target (JS/TS) |
+|---------------|----------------|
+| `list.size()` | `list.length` |
+| `list.get(i)` | `list[i]` |
+| `list.add(item)` | `list.push(item)` |
+| `list.remove(i)` | `list.splice(i, 1)` |
+| `list.stream().map(x -> x*2)` | `list.map(x => x*2)` |
+| `list.stream().filter(x -> x>0)` | `list.filter(x => x>0)` |
+| `list.stream().forEach(x -> ...)` | `list.forEach(x => ...)` |
 
-### 4. Transform Properties/Fields
+#### Null Checking
 
-For each field:
+| Source | Target |
+|--------|--------|
+| `if (x != null)` | `if (x)` or `if (x !== null)` |
+| `if (x == null)` | `if (!x)` or `if (x === null)` |
+| `x != null ? x : "default"` | `x || "default"` or `x ?? "default"` |
 
-- **Convert with type mapping** (use Skill R2):
-  ```java
-  private String name;
-  ```
-  →
-  ```typescript
-  private name: string;
-  ```
+#### Type Conversions
 
-- **Map access modifiers:**
-  - `private` → `private`
-  - `public` → `public`
-  - `protected` → `protected`
-  - Default (Java) → `public` (TypeScript)
+| Source | Target |
+|--------|--------|
+| `Integer.parseInt(str)` | `parseInt(str)` |
+| `Double.parseDouble(str)` | `parseFloat(str)` |
+| `String.valueOf(x)` | `String(x)` or `x.toString()` |
+| `(String) obj` | `obj as string` |
 
-- **Convert initialization:**
-  - `String name = "default";` → `name: string = "default";`
+#### Loops
 
-- **Handle fields with decorators:**
-  - `@Autowired` → constructor injection
-  - `@Input()` → `@Input()`
-  - `@ViewChild()` → `@ViewChild()`
+| Source | Target |
+|--------|--------|
+| `for (int i=0; i<n; i++)` | `for (let i=0; i<n; i++)` |
+| `for (Item item : list)` | `for (const item of list)` |
+| `while (condition)` | `while (condition)` |
 
-### 5. Transform Constructor
+#### Exception Handling
 
-- **Map to target initialization:**
+| Source | Target |
+|--------|--------|
+| `try { } catch (Exception e) { }` | `try { } catch (e) { }` |
+| `throw new Exception("msg")` | `throw new Error("msg")` |
+| `finally { }` | `finally { }` |
 
-Java:
-```java
-public UserService(UserRepository repo) {
-    this.userRepository = repo;
-}
-```
+#### Async Operations
 
-TypeScript:
-```typescript
-constructor(private userRepository: UserRepository) {
-    // Short-hand property declaration
-}
-```
+| Source (Java) | Target (JS/TS) |
+|---------------|----------------|
+| `CompletableFuture.supplyAsync(...)` | `async () => { }` or `new Promise(...)` |
+| `.thenApply(x -> ...)` | `.then(x => ...)` |
+| `.join()` or `.get()` | `await promise` |
 
-- **Convert parameter injection:**
-  - Spring DI → Angular DI
-  - Manual injection → DI framework
+### 4. Preserve Comments and Intent
 
-- **Preserve initialization logic:**
-  - Move constructor body to constructor or initialization method
+- Keep all comments
+- Translate comment text if needed (e.g., Java-specific to TS-specific)
+- Maintain TODO/FIXME markers
 
-### 6. Transform Methods
+### 5. Maintain Same Control Flow
 
-For each method:
+- Keep exact same logic flow
+- Don't optimize or change algorithm
+- Preserve edge case handling
 
-- **Convert signature:**
-  ```java
-  public User getUserById(int id) { }
-  ```
-  →
-  ```typescript
-  getUserById(id: number): User { }
-  ```
+### 6. Apply Target Language Idioms
 
-- **Map lifecycle methods:**
-  - `onCreate()` → `ngOnInit()`
-  - `componentDidMount()` → `ngOnInit()`
-  - `onDestroy()` → `ngOnDestroy()`
-
-- **Convert method body** (use Skill R4)
-
-- **Preserve method modifiers:**
-  - `static` → `static`
-  - `async` → `async`
-  - `abstract` → `abstract`
-
-### 7. Add Target-Specific Boilerplate
-
-- **Add exports:**
-  ```typescript
-  export class UserService { }
-  ```
-
-- **Add decorators:**
-  ```typescript
-  @Injectable({
-    providedIn: 'root'
-  })
-  ```
-
-- **Add interface implementations:**
-  - `implements OnInit`
-  - `extends BaseClass`
-
-- **Add metadata:**
-  - Component selector, template, styles
-  - Module declarations
+Use target language best practices:
+- Prefer `const` over `let` when possible
+- Use arrow functions for callbacks
+- Use template literals for string interpolation
+- Use optional chaining: `obj?.prop?.method()`
+- Use destructuring: `const {x, y} = obj;`
 
 ## Output
 
-Complete, syntactically correct file in target language/framework.
+Converted function body with identical behavior.
 
-## Example Transform
+## Example
 
-### Source (Java Spring):
+### Source (Java):
 ```java
-package com.app.service;
-
-import com.app.model.User;
-import org.springframework.stereotype.Service;
-
-@Service
-public class UserService {
-    private final UserRepository userRepo;
-    
-    public UserService(UserRepository userRepo) {
-        this.userRepo = userRepo;
+public List<String> getActiveUsernames(List<User> users) {
+    List<String> result = new ArrayList<>();
+    for (User user : users) {
+        if (user != null && user.isActive()) {
+            result.add(user.getName().toUpperCase());
+        }
     }
-    
-    public User findById(int id) {
-        return userRepo.findById(id).orElse(null);
-    }
+    return result;
 }
 ```
 
-### Target (TypeScript/Angular):
+### Target (TypeScript):
 ```typescript
-import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
-import { UserRepository } from '../repositories/user.repository';
+getActiveUsernames(users: User[]): string[] {
+    const result: string[] = [];
+    for (const user of users) {
+        if (user && user.isActive()) {
+            result.push(user.getName().toUpperCase());
+        }
+    }
+    return result;
+}
+```
 
-@Injectable({
-  providedIn: 'root'
-})
-export class UserService {
-  constructor(private userRepo: UserRepository) {}
-  
-  findById(id: number): User | null {
-    return this.userRepo.findById(id) || null;
-  }
+### Or More Idiomatic:
+```typescript
+getActiveUsernames(users: User[]): string[] {
+    return users
+        .filter(user => user?.isActive())
+        .map(user => user.getName().toUpperCase());
 }
 ```
