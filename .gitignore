@@ -2,3 +2,9 @@
 
 # Maven build output
 target/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
