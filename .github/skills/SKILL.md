@@ -1,107 +1,211 @@
 ---
-name: r2-map-data-types
-description: Map source-language data types to target-language equivalents with correct semantics.
+name: r3-transform-class
+description: Transform an entire class or component file into the target framework structure.
 ---
-# Skill R2: Map Data Type Between Languages
-description: Map source-language data types to target-language equivalents with correct semantics.
-**When to use:** Converting type declarations or annotations between source and target languages
 
-**Purpose:** Accurately translate data types while preserving semantics and nullability.
+# Skill R3: Transform Class/Component Structure
+
+**When to use:** Converting a class, component, or module file from source to target technology
+
+**Purpose:** Systematically transform a complete file while preserving functionality and structure.
+
+## Input
+
+- Parsed source file structure (from Skill R1)
+- Source and target technology specifications
 
 ## Steps
 
-1. **Identify source type category:**
-   - Primitive (int, string, bool, float, etc.)
-   - Collection (List, Array, Set, Map, etc.)
-   - Custom/User-defined (classes, interfaces)
-   - Generic/Parameterized types
-   - Special types (Optional, Promise, Observable, etc.)
+### 1. Create Target File
 
-2. **Apply mapping rules based on category:**
+**🚨 CRITICAL: File Location**
+- **NEVER modify the source file**
+- **CREATE NEW FILE in `output/{target-app-name}/` directory**
+- Source file location: `workspace/src/UserService.java` (READ ONLY)
+- New file location: `output/angular-app/src/app/services/user.service.ts` (CREATE NEW)
 
-### Primitive Mappings
+**File creation:**
+- Determine target file extension (.ts, .tsx, .js, .py, etc.)
+- Create file in appropriate directory within `output/{target-app-name}/`
+- Follow target framework's directory conventions
+- Use similar name (adjust casing conventions if needed)
 
-| Source (Java) | Target (TypeScript) |
-|---------------|---------------------|
-| int, Integer | number |
-| long, Long | number |
-| float, Float | number |
-| double, Double | number |
-| boolean, Boolean | boolean |
-| String | string |
-| char, Character | string |
-| byte, Byte | number |
-| void | void |
+**Example:**
+```
+Source:  src/com/app/services/UserService.java  (read from here)
+Target:  output/angular-app/src/app/services/user.service.ts  (create here)
+```
 
-| Source (Python) | Target (JavaScript/TS) |
-|-----------------|------------------------|
-| int | number |
-| float | number |
-| str | string |
-| bool | boolean |
-| None | null or undefined |
+### 2. Generate Imports
 
-### Collection Mappings
+- **Map framework imports:**
+  - Source: `import javax.swing.JFrame;`
+  - Target: `import { Component } from '@angular/core';`
 
-| Source | Target |
-|--------|--------|
-| List&lt;T&gt;, ArrayList&lt;T&gt; | Array&lt;T&gt; or T[] |
-| Set&lt;T&gt; | Set&lt;T&gt; |
-| Map&lt;K,V&gt;, HashMap&lt;K,V&gt; | Map&lt;K,V&gt; or Record&lt;K,V&gt; |
-| T[] (Java array) | Array&lt;T&gt; or T[] |
-| list[T] (Python) | Array&lt;T&gt; or T[] |
-| dict[K,V] (Python) | Record&lt;K,V&gt; or Map&lt;K,V&gt; |
+- **Convert internal imports:**
+  - Update paths to match new structure
+  - Use Skill R5 if structure changed significantly
 
-### Nullable/Optional Types
+- **Add necessary target imports:**
+  - Framework-specific imports
+  - Type imports if using TypeScript
+  - Library imports for replaced functionality
 
-| Source | Target |
-|--------|--------|
-| T? (Kotlin) | T \| null or T \| undefined |
-| Optional&lt;T&gt; (Java) | T \| null or T \| undefined |
-| T? (C#) | T \| null or T \| undefined |
-| Optional[T] (Python) | T \| None → T \| null |
+### 3. Transform Class/Component Declaration
 
-### Generic Types
+- **Convert syntax:**
+  - Java: `public class UserService { }`
+  - TypeScript: `export class UserService { }`
 
-- Preserve type parameters: `Container<T>` → `Container<T>`
-- Translate bounds: `<T extends Base>` → `<T extends Base>`
-- Multiple bounds: `<T extends A & B>` → `<T extends A>` (may need intersection type)
+- **Map decorators/annotations:**
+  - `@Service` → `@Injectable()`
+  - `@Component` → `@Component({ })`
+  - `@RestController` → Express router setup
 
-### Special Types
+- **Apply naming conventions:**
+  - Keep class name consistent or adjust for conventions
+  - PascalCase for classes, camelCase for instances
 
-| Source | Target |
-|--------|--------|
-| Future&lt;T&gt;, CompletableFuture&lt;T&gt; | Promise&lt;T&gt; |
-| Observable&lt;T&gt; | Observable&lt;T&gt; (RxJS) |
-| Stream&lt;T&gt; | Array&lt;T&gt; or Observable&lt;T&gt; |
-| Optional&lt;T&gt; | T \| null |
+### 4. Transform Properties/Fields
 
-3. **Handle special cases:**
-   - Date/Time types → Date or library types (moment, date-fns)
-   - BigDecimal/BigInteger → number or string (for precision)
-   - File/Path → string or File API
-   - Custom enums → enum or const union types
+For each field:
 
-4. **Return target type with proper syntax**
+- **Convert with type mapping** (use Skill R2):
+  ```java
+  private String name;
+  ```
+  →
+  ```typescript
+  private name: string;
+  ```
+
+- **Map access modifiers:**
+  - `private` → `private`
+  - `public` → `public`
+  - `protected` → `protected`
+  - Default (Java) → `public` (TypeScript)
+
+- **Convert initialization:**
+  - `String name = "default";` → `name: string = "default";`
+
+- **Handle fields with decorators:**
+  - `@Autowired` → constructor injection
+  - `@Input()` → `@Input()`
+  - `@ViewChild()` → `@ViewChild()`
+
+### 5. Transform Constructor
+
+- **Map to target initialization:**
+
+Java:
+```java
+public UserService(UserRepository repo) {
+    this.userRepository = repo;
+}
+```
+
+TypeScript:
+```typescript
+constructor(private userRepository: UserRepository) {
+    // Short-hand property declaration
+}
+```
+
+- **Convert parameter injection:**
+  - Spring DI → Angular DI
+  - Manual injection → DI framework
+
+- **Preserve initialization logic:**
+  - Move constructor body to constructor or initialization method
+
+### 6. Transform Methods
+
+For each method:
+
+- **Convert signature:**
+  ```java
+  public User getUserById(int id) { }
+  ```
+  →
+  ```typescript
+  getUserById(id: number): User { }
+  ```
+
+- **Map lifecycle methods:**
+  - `onCreate()` → `ngOnInit()`
+  - `componentDidMount()` → `ngOnInit()`
+  - `onDestroy()` → `ngOnDestroy()`
+
+- **Convert method body** (use Skill R4)
+
+- **Preserve method modifiers:**
+  - `static` → `static`
+  - `async` → `async`
+  - `abstract` → `abstract`
+
+### 7. Add Target-Specific Boilerplate
+
+- **Add exports:**
+  ```typescript
+  export class UserService { }
+  ```
+
+- **Add decorators:**
+  ```typescript
+  @Injectable({
+    providedIn: 'root'
+  })
+  ```
+
+- **Add interface implementations:**
+  - `implements OnInit`
+  - `extends BaseClass`
+
+- **Add metadata:**
+  - Component selector, template, styles
+  - Module declarations
 
 ## Output
 
-Return the correctly formatted type in target language syntax.
+Complete, syntactically correct file in target language/framework.
 
-## Examples
+## Example Transform
 
-**Example 1:**
-- Source: `List<User>`
-- Target: `Array<User>` or `User[]`
+### Source (Java Spring):
+```java
+package com.app.service;
 
-**Example 2:**
-- Source: `Map<String, Integer>`
-- Target: `Map<string, number>` or `Record<string, number>`
+import com.app.model.User;
+import org.springframework.stereotype.Service;
 
-**Example 3:**
-- Source: `Optional<CompletableFuture<List<String>>>`
-- Target: `Promise<Array<string>> | null`
+@Service
+public class UserService {
+    private final UserRepository userRepo;
+    
+    public UserService(UserRepository userRepo) {
+        this.userRepo = userRepo;
+    }
+    
+    public User findById(int id) {
+        return userRepo.findById(id).orElse(null);
+    }
+}
+```
 
-**Example 4:**
-- Source: `HashMap<Long, List<Employee>>`
-- Target: `Map<number, Employee[]>` or `Record<number, Employee[]>`
+### Target (TypeScript/Angular):
+```typescript
+import { Injectable } from '@angular/core';
+import { User } from '../models/user.model';
+import { UserRepository } from '../repositories/user.repository';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  constructor(private userRepo: UserRepository) {}
+  
+  findById(id: number): User | null {
+    return this.userRepo.findById(id) || null;
+  }
+}
+```
