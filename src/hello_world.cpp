@@ -47,17 +47,11 @@ std::string Greeting::formatted() const {
     // The box is 32 characters wide (matching the Java original's
     // ╔══════════════════════════════╗  which spans 32 '═' chars).
     const int boxWidth = 32;
-    std::string top    = "╔" + std::string(boxWidth, static_cast<char>(0)) + "╗";
-    std::string bottom = "╚" + std::string(boxWidth, static_cast<char>(0)) + "╝";
+    const std::string top    = "╔══════════════════════════════╗";
+    const std::string bottom = "╚══════════════════════════════╝";
 
-    // Build proper UTF-8 box lines using the actual Unicode characters.
-    top    = "╔══════════════════════════════╗";
-    bottom = "╚══════════════════════════════╝";
-
-    // Pad / truncate centre line to exactly boxWidth characters.
-    if (static_cast<int>(centre.size()) < boxWidth) {
-        centre.resize(boxWidth, ' ');
-    }
+    // Pad or truncate centre line to exactly boxWidth characters.
+    centre.resize(boxWidth, ' ');
 
     return top    + "\n"
          + "║" + centre + "║\n"
