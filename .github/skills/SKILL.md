@@ -1,279 +1,180 @@
 ---
-name: o1-create-handoff-document
-description: Produce a structured handoff document for downstream migration agents.
+name: o2-read-migration-context
+description: Read, validate, and extract required migration context from upstream outputs.
 ---
 
 ```markdown
-# Skill O1: Create Agent Handoff Document
+# Skill O2: Read and Validate Migration Context
 
-**When to use:** Any agent that needs to write a structured output file for the next agent in the pipeline to consume.
+**When to use:** Any agent that needs to read a prior agent's handoff document before starting its own work.
 
-**Purpose:** Ensure consistent, machine-readable handoff files that downstream agents can reliably parse and validate.
+**Purpose:** Ensure an agent correctly reads, validates, and extracts the information it needs from an upstream agent's output file before proceeding.
 
 ---
 
-## The Handoff Contract
+## When This Skill is Needed
 
-Each handoff document must satisfy three guarantees:
-1. **Existence** — the file is written to `output/` before the producing agent finishes
-2. **Structure** — the file has all required sections so the consuming agent can parse it
-3. **Status field** — the final line of the file declares whether it is COMPLETE or PARTIAL
+| Agent | Must Read |
+|-------|-----------|
+| Migration Agent | `output/analysis-report.md` |
+| Validation Agent | `output/migration-report.md` |
+| Orchestrator (any step) | `output/orchestration-state.md` |
 
 ---
 
 ## Steps
 
-### 1. Choose the Correct Output Path
+### 1. Check File Existence
 
-All handoff files go in `output/`:
+Before reading anything, verify the handoff file exists:
 
-| Producing Agent | Output File |
-|-----------------|-------------|
-| Analysis Agent | `output/analysis-report.md` |
-| Migration Agent | `output/migration-report.md` |
-| Validation Agent | `output/validation-report.md` |
-| Orchestrator | `output/orchestration-state.md`, `output/migration-summary.md` |
-
-**Never write handoff files:**
-- ❌ In workspace root
-- ❌ In source directories
-- ❌ Alongside source code
-
-### 2. Write Required Sections First
-
-Before filling in content, create the file with all section headers:
-
-```markdown
-# [Report Name]
-
-## Section 1: [Mandatory Section]
-(pending)
-
-## Section 2: [Mandatory Section]
-(pending)
-
-...
-
-## Status
-PENDING
+```
+Does output/[expected-file].md exist?
 ```
 
-This guarantees the file exists and has the required skeleton even if the agent is interrupted.
+**If NO:**
+- Do NOT proceed with your main task
+- Report: "[Your Agent Name] cannot proceed — `output/[filename]` not found. The [producing agent name] must run first."
+- Stop.
 
-### 3. Fill In Each Section Progressively
+**If YES:** Continue to Step 2.
 
-Replace `(pending)` with actual content as you complete each phase of work.
+### 2. Read the Full File
 
-**Principle:** A partially-complete handoff document is better than no document. Consuming agents can read partial data and decide how to proceed.
+Read the complete contents of the handoff file. Do not skim — the file may contain critical information in any section.
 
-### 4. Required Metadata Header
+### 3. Check the Status Footer
 
-Every handoff document must start with:
+Find the `## Status` section at the end of the file.
 
-```markdown
-# [Report Name]
+| Status Value | Meaning | What to Do |
+|-------------|---------|-----------|
+| `COMPLETE` | All sections present, fully populated | ✅ Proceed normally |
+| `PARTIAL — reason: ...` | Some sections incomplete | ⚠️ Read warning, proceed with caution — note gaps |
+| `FAILED — reason: ...` | Producing agent encountered a critical error | ❌ Stop. Report failure to orchestrator. |
+| Missing / not present | File may be corrupt or truncated | ⚠️ Treat as PARTIAL, note the issue |
 
-**Producing Agent:** [agent name]
-**Date:** [current date/time]
-**Source Technology:** [if applicable]
-**Target Technology:** [if applicable]
+### 4. Extract Required Sections
+
+Extract the specific fields your agent needs:
+
+#### For Migration Agent reading `output/analysis-report.md`:
+
+| Field | Section | How to Use |
+|-------|---------|-----------|
+| Target project name | Section 8 | Name the output directory |
+| Setup commands | Section 9 | Initialize target project |
+| Migration order | Section 6 | Order in which to migrate files |
+| File catalog | Section 4 | Complexity and type per file |
+| Type mappings | Section 5 | Apply during code transformation |
+| Risk assessment | Section 7 | Be prepared for specific challenges |
+| Architecture pattern | Section 3 | Choose correct target structure |
+
+#### For Validation Agent reading `output/migration-report.md`:
+
+| Field | Section | How to Use |
+|-------|---------|-----------|
+| Target project location | Target Project Location | Where to run build commands |
+| Build command | Build Command | First build to run |
+| Dev server command | Dev Server Command | Start command for runtime check |
+| Migrated files list | Migrated Files | Know what was migrated |
+| Best-effort files | Migrated Files (status column) | Focus error search here |
+| Notes for Validation Agent | Notes section | Known problem areas |
+| Dependencies installed | Dependencies Installed | Verify expected packages |
+
+#### For Orchestrator reading state files:
+
+| Field | File | How to Use |
+|-------|------|-----------|
+| Current step status | `output/orchestration-state.md` | Know which agent to invoke next |
+| Analysis completion | `output/analysis-report.md` → Status | Gate before invoking Migration Agent |
+| Migration completion | `output/migration-report.md` → Status | Gate before invoking Validation Agent |
+| Validation completion | `output/validation-report.md` → Status | Gate before writing final summary |
+
+### 5. Validate Completeness of Required Fields
+
+For each field you extracted, check:
+- Is it populated (not `(pending)` or empty)?
+- Does it contain expected content (not just a header)?
+
+**If a required field is missing or empty:**
+
+- Note it explicitly: "⚠️ Context warning: Section [X] is empty in [filename]. Proceeding with best-effort."
+- If critical (e.g., migration order missing): note this limits your ability to do ordered work
+- Do NOT stop — make reasonable assumptions where possible
+
+### 6. Summarize What You Read
+
+Before starting your main task, output a brief summary of key context extracted:
+
+```
+📖 [Agent Name]: Context loaded from [filename]
+  - [Key fact 1]
+  - [Key fact 2]
+  - [Key fact 3]
+  - Status: [COMPLETE/PARTIAL/FAILED]
 ```
 
-### 5. Required Status Footer
-
-Every handoff document must end with exactly one of these:
-
-```markdown
-## Status
-COMPLETE
+Example for Migration Agent:
 ```
-
-```markdown
-## Status
-PARTIAL — reason: [brief explanation of what is missing]
-```
-
-```markdown
-## Status
-FAILED — reason: [what went wrong, what consuming agent should do]
-```
-
-### 6. Finalize and Confirm
-
-After writing the file:
-1. Re-read the first 10 lines to verify it can be found
-2. Confirm the `## Status` section is at the end
-3. Report to orchestrator: "✅ [File] written to output/[filename]"
-
----
-
-## Handoff Document Templates
-
-### Analysis Report Template
-
-```markdown
-# Migration Analysis Report
-
-**Producing Agent:** Analysis Agent
-**Date:** {date}
-**Source Technology:** {SOURCE_TECH}
-**Target Technology:** {TARGET_TECH}
-**Total Source Files:** {N}
-
-## 1. Workspace Structure
-...
-
-## 2. Dependencies
-...
-
-## 3. Architecture
-...
-
-## 4. File Catalog
-...
-
-## 5. Type Mappings
-...
-
-## 6. Migration Order
-...
-
-## 7. Risk Assessment
-...
-
-## 8. Recommended Target Project Name
-...
-
-## 9. Setup Commands
-...
-
-## Status
-COMPLETE
-```
-
-### Migration Report Template
-
-```markdown
-# Migration Report
-
-**Producing Agent:** Migration Agent
-**Date:** {date}
-**Source Technology:** {SOURCE_TECH}
-**Target Technology:** {TARGET_TECH}
-
-## Target Project Location
-`output/{target-app-name}/`
-
-## Build Command
-...
-
-## Dev Server Command
-...
-
-## Migrated Files
-...
-
-## Dependencies Installed
-...
-
-## Unmigrated Files
-...
-
-## Notes for Validation Agent
-...
-
-## Status
-COMPLETE
-```
-
-### Validation Report Template
-
-```markdown
-# Validation Report
-
-**Producing Agent:** Validation Agent
-**Date:** {date}
-**Target Technology:** {TARGET_TECH}
-**Target App Location:** `output/{target-app-name}/`
-
-## Build Status
-**Result:** ✅ PASS / ❌ FAIL / ⚠️ PARTIAL
-
-## Runtime Status
-**Result:** ✅ STARTS / ❌ FAILS TO START / ⏭️ SKIPPED
-
-## Fixes Applied
-...
-
-## Known Issues
-...
-
-## Files Needing Manual Review
-...
-
-## Final Assessment
-**Overall Status:** ✅ SUCCESS / ⚠️ PARTIAL / ❌ FAILED
-
-## Status
-COMPLETE
+📖 Migration Agent: Context loaded from output/analysis-report.md
+  - 34 source files identified (Java Swing application)
+  - Target project name: react-app
+  - Migration order: 34 files, models first
+  - 3 high-risk files noted
+  - Status: COMPLETE
 ```
 
 ---
 
-## Error Scenarios
+## Handling Edge Cases
 
-**If you run out of time before completing a section:**
-1. Write what you have in the section
-2. Mark incomplete sections with: `⚠️ INCOMPLETE — time limit reached`
-3. Set status to: `PARTIAL — reason: time limit, sections {X, Y} incomplete`
+### Partial Analysis Report (incomplete type mappings)
 
-**If a critical error occurs:**
-1. Still write the handoff document
-2. Document the error clearly
-3. Set status to: `FAILED — reason: [what happened]`
-4. The Orchestrator will read this and decide whether to retry
+If type mappings section is empty:
+- Continue migration using generic/conservative type mappings
+- Use skill R2 (`multi-agent/skills/R2-map-data-types.md`) as fallback for each type
+- Note in your migration report that type mappings were derived independently
 
-**Never leave a handoff file missing.** A failed document is better than no document.
+### Partial Migration Report (some files missing from list)
+
+If the migrated files list is incomplete:
+- Scan `output/{target-app-name}/` directory directly to discover what was actually migrated
+- Use discovered files as ground truth
+- Note the discrepancy in your validation report
+
+### Missing Section Headers
+
+If a section is missing entirely (not just empty):
+- Flag it: "⚠️ Section [N] missing from analysis-report.md"
+- Search the rest of the file for the relevant content under alternative headings
+- If truly absent, proceed without it and document the assumption made
+
+### Large Files
+
+If the handoff file is very long:
+- Read working from top to bottom
+- Do NOT skip sections
+- Use grep/search to locate specific sections if needed
 
 ---
 
-## Examples
+## Quick Reference: What Each Agent Needs
 
-### Example: Analysis Agent finishes successfully
-
-```markdown
-# Migration Analysis Report
-
-**Producing Agent:** Analysis Agent
-**Date:** 2026-02-26
-**Source Technology:** Java Swing
-**Target Technology:** React 18
-**Total Source Files:** 34
-
-## 1. Workspace Structure
-src/
-├── Main.java
-├── ui/
-│   ├── MainFrame.java
-│   └── UserPanel.java
-└── services/
-    └── UserService.java
-
-**Entry Points:**
-- `src/Main.java` — application entry point
-
-[... rest of sections ...]
-
-## Status
-COMPLETE
 ```
+Analysis Agent needs from: nothing (reads workspace directly)
+  └─ writes: output/analysis-report.md
 
-### Example: Migration Agent with some best-effort files
+Migration Agent needs from: output/analysis-report.md
+  └─ Must verify: Sections 6(order), 5(types), 8(name), 9(setup), 3(arch)
+  └─ writes: output/migration-report.md
 
-```markdown
-## Status
-PARTIAL — reason: 3 files (UserPanel.java, ComplexDialog.java, ReportGenerator.java)
-were migrated as best-effort with TODO comments due to complex GUI logic.
-All other 31 files migrated completely.
+Validation Agent needs from: output/migration-report.md
+  └─ Must verify: target location, build command, notes section
+  └─ writes: output/validation-report.md
+
+Orchestrator needs from: output/*-report.md (all three)
+  └─ Must verify: Status field of each
+  └─ writes: output/migration-summary.md, output/orchestration-state.md
 ```
 ```
