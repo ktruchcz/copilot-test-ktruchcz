@@ -2,3 +2,6 @@
 
 # Maven build output
 target/
+
+# C++ build output
+build/
