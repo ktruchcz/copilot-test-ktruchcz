@@ -1,97 +1,107 @@
 ---
-name: r1-parse-source-file
-description: Parse a source file into classes, methods, dependencies, and transformation inputs.
+name: r2-map-data-types
+description: Map source-language data types to target-language equivalents with correct semantics.
 ---
-# Skill R1: Parse Source File Structure
-description: Parse a source file into classes, methods, dependencies, and transformation inputs.
-**When to use:** Beginning analysis of any source file
+# Skill R2: Map Data Type Between Languages
+description: Map source-language data types to target-language equivalents with correct semantics.
+**When to use:** Converting type declarations or annotations between source and target languages
 
-**Purpose:** Extract structured information from a source code file to understand its components and dependencies.
+**Purpose:** Accurately translate data types while preserving semantics and nullability.
 
 ## Steps
 
-1. **Read the entire file content**
-   - Load complete file to understand full context
+1. **Identify source type category:**
+   - Primitive (int, string, bool, float, etc.)
+   - Collection (List, Array, Set, Map, etc.)
+   - Custom/User-defined (classes, interfaces)
+   - Generic/Parameterized types
+   - Special types (Optional, Promise, Observable, etc.)
 
-2. **Identify file type**
-   - Determine: class, component, service, utility, configuration, test, or other
-   - Note the file extension and framework indicators
+2. **Apply mapping rules based on category:**
 
-3. **Extract imports/dependencies**
-   - List all import statements at the top
-   - Identify internal vs external dependencies
-   - Note any dynamic imports or lazy loading
+### Primitive Mappings
 
-4. **List all exports**
-   - Identify exported classes, functions, constants, types
-   - Note if default export or named exports
-   - Document visibility (public, exported, internal)
+| Source (Java) | Target (TypeScript) |
+|---------------|---------------------|
+| int, Integer | number |
+| long, Long | number |
+| float, Float | number |
+| double, Double | number |
+| boolean, Boolean | boolean |
+| String | string |
+| char, Character | string |
+| byte, Byte | number |
+| void | void |
 
-5. **For each export, catalog:**
-   - Name and type (class, function, interface, etc.)
-   - Properties/fields with types
-   - Methods/functions with:
-     - Parameter names and types
-     - Return types
-     - Purpose/behavior
-   - Dependencies used within this export
+| Source (Python) | Target (JavaScript/TS) |
+|-----------------|------------------------|
+| int | number |
+| float | number |
+| str | string |
+| bool | boolean |
+| None | null or undefined |
 
-6. **Identify special patterns:**
-   - Decorators (e.g., @Component, @Injectable)
-   - Annotations (e.g., @Override, @Autowired)
-   - Lifecycle methods (e.g., ngOnInit, componentDidMount, onCreate)
-   - Event handlers
-   - State management patterns
+### Collection Mappings
 
-7. **Return structured summary**
-   - Create a markdown outline or data structure with findings
+| Source | Target |
+|--------|--------|
+| List&lt;T&gt;, ArrayList&lt;T&gt; | Array&lt;T&gt; or T[] |
+| Set&lt;T&gt; | Set&lt;T&gt; |
+| Map&lt;K,V&gt;, HashMap&lt;K,V&gt; | Map&lt;K,V&gt; or Record&lt;K,V&gt; |
+| T[] (Java array) | Array&lt;T&gt; or T[] |
+| list[T] (Python) | Array&lt;T&gt; or T[] |
+| dict[K,V] (Python) | Record&lt;K,V&gt; or Map&lt;K,V&gt; |
 
-## Output Format
+### Nullable/Optional Types
 
-```
-File: [filename]
-Type: [class|component|service|utility|config|test]
+| Source | Target |
+|--------|--------|
+| T? (Kotlin) | T \| null or T \| undefined |
+| Optional&lt;T&gt; (Java) | T \| null or T \| undefined |
+| T? (C#) | T \| null or T \| undefined |
+| Optional[T] (Python) | T \| None → T \| null |
 
-Imports:
-- [framework imports]
-- [internal imports]
-- [external library imports]
+### Generic Types
 
-Exports:
-  [ExportName1]:
-    - Type: [class|function|const|type]
-    - Properties: [list with types]
-    - Methods: [list with signatures]
-    - Dependencies: [what it uses]
-    - Special: [decorators, lifecycle hooks]
-  
-  [ExportName2]:
-    ...
+- Preserve type parameters: `Container<T>` → `Container<T>`
+- Translate bounds: `<T extends Base>` → `<T extends Base>`
+- Multiple bounds: `<T extends A & B>` → `<T extends A>` (may need intersection type)
 
-Notes:
-- [Any special considerations or patterns]
-```
+### Special Types
 
-## Example
+| Source | Target |
+|--------|--------|
+| Future&lt;T&gt;, CompletableFuture&lt;T&gt; | Promise&lt;T&gt; |
+| Observable&lt;T&gt; | Observable&lt;T&gt; (RxJS) |
+| Stream&lt;T&gt; | Array&lt;T&gt; or Observable&lt;T&gt; |
+| Optional&lt;T&gt; | T \| null |
 
-```
-File: UserService.java
-Type: service
+3. **Handle special cases:**
+   - Date/Time types → Date or library types (moment, date-fns)
+   - BigDecimal/BigInteger → number or string (for precision)
+   - File/Path → string or File API
+   - Custom enums → enum or const union types
 
-Imports:
-- java.util.List
-- com.app.models.User
-- org.springframework.stereotype.Service
+4. **Return target type with proper syntax**
 
-Exports:
-  UserService:
-    - Type: class
-    - Properties: 
-      - userRepository: UserRepository
-    - Methods:
-      - getUserById(int id): User
-      - getAllUsers(): List<User>
-      - saveUser(User user): void
-    - Dependencies: UserRepository, User model
-    - Special: @Service annotation, @Autowired on constructor
-```
+## Output
+
+Return the correctly formatted type in target language syntax.
+
+## Examples
+
+**Example 1:**
+- Source: `List<User>`
+- Target: `Array<User>` or `User[]`
+
+**Example 2:**
+- Source: `Map<String, Integer>`
+- Target: `Map<string, number>` or `Record<string, number>`
+
+**Example 3:**
+- Source: `Optional<CompletableFuture<List<String>>>`
+- Target: `Promise<Array<string>> | null`
+
+**Example 4:**
+- Source: `HashMap<Long, List<Employee>>`
+- Target: `Map<number, Employee[]>` or `Record<number, Employee[]>`
