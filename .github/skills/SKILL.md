@@ -1,377 +1,329 @@
 ---
-name: e6-handle-missing-feature
-description: Replace unavailable target-platform features with equivalent or fallback implementations.
+name: e7-systematic-batch-fix
+description: Triage and fix repeated migration errors in batches by root cause.
 ---
-# Skill E6: Handle Missing Framework Feature
-description: Replace unavailable target-platform features with equivalent or fallback implementations.
-**When to use:** Source code uses a feature that doesn't exist in target framework
+# Skill E7: Systematic Error Batch Fix
+description: Triage and fix repeated migration errors in batches by root cause.
+**When to use:** After build, multiple errors appear that need organized resolution
 
-**Purpose:** Find equivalent functionality or implement alternative solution.
+**Purpose:** Efficiently handle many errors by grouping and prioritizing fixes.
 
 ## Input
 
-- Feature description (what source code does)
-- Source framework feature being used
-- Target framework
-- Usage context
+- Complete build output with all errors
+- Error log or error list
+- File paths and line numbers
 
 ## Steps
 
-### 1. Document the Missing Feature
+### 1. Collect All Errors
 
-Clearly identify:
-- What feature is used in source
-- What it does functionally
-- Why it's needed
-- How it's currently used
-- Example usage from source code
+**Capture complete error list:**
+- Run build and save full output
+- Count total number of errors
+- Don't stop at first error - need full picture
 
-### 2. Research Target Framework
+**Organize errors:**
+```
+Total Errors: 47
 
-**Check official documentation:**
-- API reference
-- Migration guides (especially "Source → Target" guides)
-- Cookbook/recipes section
-- Community forums
-
-**Search for:**
-- Direct equivalent
-- Similar functionality
-- Recommended patterns
-- Third-party libraries that provide it
-
-**Check version notes:**
-- Was feature added in later version?
-- Was it deprecated/removed?
-- Is there a replacement?
-
-### 3. Determine Solution Strategy
-
-Choose appropriate approach:
-
-**A. Direct Equivalent Exists**
-- Use target framework's built-in feature
-- Update code to use new API
-
-**B. No Direct Equivalent - Can Polyfill**
-- Feature can be implemented as utility function
-- Create helper/polyfill
-
-**C. No Equivalent - Architectural Change**
-- Feature doesn't translate 1:1
-- Need different approach in target
-- Redesign that part of application
-
-**D. No Equivalent - External Library**
-- Community library provides functionality
-- Install and integrate third-party package
-
-**E. Feature Not Essential**
-- Can be simplified or removed
-- Refactor to not need it
-
-### 4. Apply Solution
-
-#### Solution A: Use Direct Equivalent
-
-**Example: Layout Manager**
-
-**Source (Java Swing):**
-```java
-panel.setLayout(new BorderLayout());
-panel.add(component, BorderLayout.NORTH);
+By File:
+- src/services/user.service.ts: 8 errors
+- src/models/user.model.ts: 3 errors
+- src/components/dashboard.component.ts: 12 errors
+...
 ```
 
-**Target (Angular + Flexbox):**
-```html
-<div class="container">
-  <div class="north">{{ component }}</div>
-</div>
+### 2. Group Errors by Type/Pattern
+
+**Categorize by error type:**
+
+**Import/Module Errors:**
+- `Cannot find module 'X'`
+- `Module not found`
+- Count: X errors
+
+**Type Errors:**
+- `Type 'X' is not assignable to type 'Y'`
+- `Property 'X' does not exist on type 'Y'`
+- Count: Y errors
+
+**Syntax Errors:**
+- `Unexpected token`
+- `';' expected`
+- Count: Z errors
+
+**Configuration Errors:**
+- Build config issues
+- Missing files
+- Count: W errors
+
+**Example grouping:**
+```markdown
+## Error Groups
+
+### Group 1: Missing Imports (15 errors)
+- Cannot find module '@angular/core' (3 occurrences)
+- Cannot find module './user.model' (8 occurrences)
+- Cannot find module 'rxjs/operators' (4 occurrences)
+
+### Group 2: Type Mismatches (12 errors)
+- Type 'null' not assignable to 'User' (5 occurrences)
+- Property 'id' does not exist on type '{}' (7 occurrences)
+
+### Group 3: Undefined Methods (8 errors)
+- Property 'size' does not exist on type 'any[]' (8 occurrences)
+
+### Group 4: Missing Properties (6 errors)
+- Property 'email' missing in type (6 occurrences)
+
+### Group 5: Configuration (6 errors)
+- Cannot find file 'main.ts' (1 occurrence)
+- Missing tsconfig option (5 occurrences)
 ```
 
-```css
-.container {
-  display: flex;
-  flex-direction: column;
-}
+### 3. Prioritize Error Groups
+
+**Priority 1: Blocking Errors (fix first)**
+- Configuration errors that prevent build from starting
+- Missing files/modules that cause cascade failures
+- Syntax errors in commonly imported files
+
+**Priority 2: High-Frequency Errors (big impact)**
+- Same error repeated many times
+- Fixing once solves many instances
+- Errors in base classes/services
+
+**Priority 3: Low-Complexity Errors (quick wins)**
+- Simple fixes (e.g., adding missing properties)
+- Type annotations
+- Import path corrections
+
+**Priority 4: Complex Errors (fix last)**
+- Require architectural changes
+- Need research
+- Low frequency but complex
+
+**Prioritized plan:**
+```markdown
+## Fix Order
+
+**Round 1: Configuration (Priority 1)**
+1. Fix tsconfig.json
+2. Add missing main.ts
+Estimated fixes: 6 errors → 41 remaining
+
+**Round 2: Missing Imports Framework (Priority 1+2)**
+1. Install @angular/core
+2. Install rxjs
+Estimated fixes: 7 errors → 34 remaining
+
+**Round 3: Internal Import Paths (Priority 2)**
+1. Fix relative paths to models
+2. Fix service import paths
+Estimated fixes: 8 errors → 26 remaining
+
+**Round 4: Collection Methods (Priority 2+3)**
+1. Replace .size() with .length globally
+Estimated fixes: 8 errors → 18 remaining
+
+**Round 5: Type Annotations (Priority 3)**
+1. Add  | null to nullable types
+2. Add missing interface properties
+Estimated fixes: 11 errors → 7 remaining
+
+**Round 6: Complex Issues (Priority 4)**
+1. Manually review remaining 7 errors
 ```
 
-**Map concepts:**
-- BorderLayout → CSS Flexbox/Grid
-- Layout constraints → CSS positioning
-- Add with position → Template + CSS classes
+### 4. Fix Each Group Systematically
 
-#### Solution B: Create Polyfill/Helper
+For each group in priority order:
 
-**Example: Observable Lifecycle**
+**Step 4a: Select appropriate skill**
+- Missing import → **Skill E1**
+- Type mismatch → **Skill E2**
+- Undefined property → **Skill E3**
+- Build config → **Skill E4**
+- Dependency conflict → **Skill E5**
+- Missing feature → **Skill E6**
 
-**Source has feature X, target doesn't:**
+**Step 4b: Apply fix to all instances**
+- Fix one instance completely
+- Apply same fix pattern to all similar errors
+- Use find-and-replace for identical issues
 
-**Create utility:**
-```typescript
-// utils/feature-polyfill.ts
-export class FeatureHelper {
-  static doFeature(input: string): string {
-    // Implement the missing functionality
-    return input.toUpperCase(); // Example
-  }
-}
-```
-
-**Use in migrated code:**
-```typescript
-import { FeatureHelper } from '../utils/feature-polyfill';
-
-const result = FeatureHelper.doFeature(value);
-```
-
-#### Solution C: Architectural Alternative
-
-**Example: Swing Event Listeners**
-
-**Source (Java Swing):**
-```java
-button.addActionListener(e -> {
-  System.out.println("Clicked");
-});
-```
-
-**Target (Angular):**
-```typescript
-// Component template:
-<button (click)="onButtonClick()">Click</button>
-
-// Component class:
-onButtonClick() {
-  console.log("Clicked");
-}
-```
-
-**Different pattern but same behavior.**
-
-#### Solution D: Use Third-Party Library
-
-**Example: Advanced Data Grid**
-
-**Source:** Complex data table with built-in features
-
-**Target:** Framework has basic table
-
-**Solution:** Install grid library
-
+**Step 4c: Rebuild after each group**
 ```bash
-npm install ag-grid-angular
+npm run build
 ```
 
+**Step 4d: Verify errors are resolved**
+- Check error count decreased
+- Note any new errors that appeared
+- Confirm expected fixes worked
+
+**Step 4e: Update error tracking**
+```markdown
+✅ Round 1 Complete: 6 errors fixed
+   Remaining: 41 errors
+
+✅ Round 2 Complete: 7 errors fixed
+   Remaining: 34 errors
+```
+
+### 5. Handle Cascade Effects
+
+**Watch for:**
+- Fixing one error reveals new errors in dependent files
+- Error count may go up before going down
+- New error types may appear
+
+**If error count increases:**
+- Don't panic - this is normal
+- New errors are often related to same root cause
+- Group new errors and prioritize
+
+**Example cascade:**
+```
+Before: 20 import errors (imports commented out)
+Fix: Uncomment imports
+After: 20 import errors gone, but 15 new type errors appear
+Reason: Types are now checked but weren't before
+```
+
+### 6. Deal with Stubborn Errors
+
+**If stuck after 3 attempts:**
+
+**Document the error:**
 ```typescript
-import { AgGridModule } from 'ag-grid-angular';
-
-@Component({
-  template: '<ag-grid-angular [rowData]="data"></ag-grid-angular>'
-})
+// TODO: Fix this error - type mismatch
+// Error: Type 'X' is not assignable to 'Y'
+// Attempted fixes: tried casting, tried changing type
+// Need to research proper solution
+const value: any = problematicValue;  // Temporary workaround
 ```
 
-#### Solution E: Simplify/Remove
+**Add to tracking:**
+```markdown
+## Known Issues (Deferred)
 
-**Example: Complex Animation**
-
-**Source:** Has sophisticated animation API
-
-**Target:** Basic CSS transitions
-
-**Evaluate:**
-- Is complex animation essential?
-- Can we use simple CSS transitions instead?
-- Will users notice the simplification?
-
-**If non-essential:**
-```typescript
-// Use simple CSS transition instead of complex animation
-// Add class to trigger CSS transition
-element.classList.add('fade-in');
+1. **File:** user.service.ts:45
+   **Error:** Complex type inference issue
+   **Status:** Deferred - application builds and runs
+   **Workaround:** Using 'any' type temporarily
+   **Plan:** Research proper typing after core migration complete
 ```
 
-### 5. Common Missing Features and Solutions
+**Move on:**
+- Don't let one error block entire migration
+- Fix others first
+- Come back to difficult ones later
+- Sometimes fixing other errors makes stubborn ones clear
 
-#### Desktop → Web Migrations
+### 7. Final Cleanup
 
-| Desktop Feature | Web Equivalent |
-|----------------|----------------|
-| File System Access | File API (with user permission) |
-| Multi-window Apps | Browser tabs / Modal dialogs |
-| System Tray | Browser notifications |
-| Native Menus | HTML/CSS menus |
-| Drag & Drop Files | HTML5 Drag & Drop API |
-| Clipboard Access | Clipboard API |
-| Print Dialog | window.print() + CSS print styles |
+When error count is low (< 5):
 
-#### Framework-Specific Solutions
+**Review each remaining error individually:**
+- Read error message carefully
+- Understand root cause
+- Apply targeted fix
+- Test fix works
 
-**Java → TypeScript:**
-- `Thread.sleep()` → `await new Promise(r => setTimeout(r, ms))`
-- `synchronized` → Not needed (single-threaded JS) or use async locks
-- `File I/O` → Web: File API, Node: fs module
-- `Reflection` → TypeScript has limited reflection, use decorators
+**Run final build:**
+```bash
+npm run build --verbose
+```
 
-**Swing → Web Framework:**
-- `JFrame` → Page/Component root
-- `JPanel` → `<div>` container
-- `JButton` → `<button>` element
-- `JTextField` → `<input type="text">`
-- `JLabel` → `<span>` or `<label>`
-- `Layout Managers` → CSS Flexbox/Grid
+**Verify:**
+- ✅ 0 errors
+- ✅ Build succeeds
+- ✅ Output files generated
+- ✅ No warnings (or document acceptable warnings)
 
-### 6. Implement and Test
+### 8. Report Progress
 
-After applying solution:
-
-1. **Implement** the alternative approach
-2. **Test** that behavior matches original
-3. **Verify** edge cases work
-4. **Check performance** if applicable
-5. **Document** the deviation if significant
-
-### 7. Document in Migration Report
-
-Add note to `migration-report.md`:
+Throughout process, provide updates:
 
 ```markdown
-## Feature Substitutions
+🔨 **Error Fixing Progress**
 
-### BorderLayout → CSS Flexbox
-- **Original:** Java Swing's BorderLayout manager
-- **Replacement:** CSS Flexbox with directional classes
-- **Behavior:** Equivalent visual layout
-- **Limitation:** None
+Initial errors: 47
 
-### File System Access → File API
-- **Original:** Direct file system read/write
-- **Replacement:** Browser File API with user permission
-- **Behavior:** User must select files via dialog
-- **Limitation:** Can't access arbitrary files without user consent
+Round 1 (Config):        47 → 41 (6 fixed)
+Round 2 (Framework):     41 → 34 (7 fixed)
+Round 3 (Imports):       34 → 26 (8 fixed)
+Round 4 (Collections):   26 → 18 (8 fixed)
+Round 5 (Types):         18 → 7 (11 fixed)
+Round 6 (Manual):        7 → 0 (7 fixed)
+
+✅ **All errors resolved!**
+   Total fixed: 47 errors
+   Build: SUCCESS
 ```
 
 ## Output
 
-- Working implementation using target framework capabilities
-- Documented substitution in migration report
-- Preserved original functionality (or acceptable alternative)
+- All resolvable errors fixed
+- Application builds successfully
+- Documented any deferred issues
+- Progress tracked and reported
 
-## Examples
+## Example Workflow
 
-### Example 1: Swing Timer → RxJS/setTimeout
+### Initial State
+```
+npm run build
 
-**Source:**
-```java
-Timer timer = new Timer(1000, e -> {
-  updateUI();
-});
-timer.start();
+ERROR in src/services/user.service.ts:1:31
+Cannot find module '@angular/core'
+
+ERROR in src/services/user.service.ts:2:24
+Cannot find module 'rxjs/operators'
+
+ERROR in src/services/user.service.ts:15:5
+Property 'size' does not exist on type 'any[]'
+
+[... 44 more errors ...]
+
+Total: 47 errors
 ```
 
-**Target:**
-```typescript
-import { interval } from 'rxjs';
-
-const subscription = interval(1000).subscribe(() => {
-  this.updateUI();
-});
-
-// Later: subscription.unsubscribe();
+### Group & Prioritize
+```markdown
+1. Missing @angular/core (3 files) - Priority 1
+2. Missing rxjs (4 files) - Priority 1
+3. Collection .size() → .length (8 instances) - Priority 2
+4. Type mismatches (32 instances) - Priority 3
 ```
 
-**Or simpler:**
-```typescript
-setInterval(() => {
-  this.updateUI();
-}, 1000);
-```
-
-### Example 2: Dependency Injection Container
-
-**Source (Spring):**
-```java
-@Autowired
-private UserService userService;
-```
-
-**Target (Angular):**
-```typescript
-constructor(private userService: UserService) {}
-```
-
-**Same concept, different syntax.**
-
-### Example 3: Thread-based Concurrency
-
-**Source (Java):**
-```java
-new Thread(() -> {
-  // Background work
-  String result = doWork();
-  SwingUtilities.invokeLater(() -> {
-    updateUI(result);
-  });
-}).start();
-```
-
-**Target (TypeScript/Angular):**
-```typescript
-// Use async/await with promises
-async performWork() {
-  const result = await this.doWork();  // Async work
-  this.updateUI(result);  // Update UI
-}
-
-// Or with RxJS:
-this.http.get('/api/work').subscribe(result => {
-  this.updateUI(result);
-});
-```
-
-### Example 4: Missing Component - Install Library
-
-**Source:** Has rich text editor built-in
-
-**Target:** Framework has `<textarea>` only
-
-**Solution:**
+### Fix Round 1
 ```bash
-npm install @angular/cdk
-npm install quill
-npm install ngx-quill
+npm install @angular/core @angular/common
+npm install rxjs
+
+npm run build
+# Now: 40 errors (7 fixed)
 ```
 
+### Fix Round 2
 ```typescript
-import { QuillModule } from 'ngx-quill';
-
-@NgModule({
-  imports: [QuillModule.forRoot()]
-})
-
-// In component:
-<quill-editor [(ngModel)]="content"></quill-editor>
+// Find all: .size()
+// Replace: .length
+# Now: 32 errors (8 fixed)
 ```
 
-### Example 5: Simplification
-
-**Source:** Complex custom renderer
-
-**Target:** Use standard components
-
-**Decision:** Original renderer had 20 custom features, but app only uses 3.
-
-**Solution:** Implement only the 3 features that are actually used, ignore the rest.
-
+### Fix Round 3
 ```typescript
-// Only implement what's needed
-renderItem(item: Item) {
-  // Original had 20 rendering modes
-  // We only need 'text', 'image', 'link'
-  switch (item.type) {
-    case 'text': return this.renderText(item);
-    case 'image': return this.renderImage(item);
-    case 'link': return this.renderLink(item);
-  }
-}
+// Fix type annotations one by one
+# Now: 0 errors (32 fixed)
+```
+
+### Success
+```
+✅ Build successful!
+   Fixed: 47 errors
+   Time: 45 minutes
 ```
