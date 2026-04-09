@@ -1,410 +1,405 @@
 ---
-name: e4-resolve-build-config
-description: Repair build and compiler configuration issues that block successful compilation.
+name: e5-fix-dependency-conflict
+description: Resolve package version and peer dependency conflicts in the dependency tree.
 ---
 
-# Skill E4: Resolve Build Configuration Error
+# Skill E5: Fix Dependency Version Conflict
 
-**When to use:** Build process fails due to configuration issues
+**When to use:** Package manager reports version conflicts or incompatible dependencies
 
-**Purpose:** Fix build system configuration to enable successful compilation.
+**Purpose:** Resolve dependency tree conflicts to enable successful installation.
 
 ## Input
 
-- Build error output
-- Build tool being used (webpack, tsc, Angular CLI, etc.)
-- Configuration files involved
+- Dependency conflict error output
+- Package manager type (npm, yarn, pip, maven, etc.)
+- List of conflicting packages and versions
 
 ## Steps
 
-### 1. Identify Error Category
+### 1. Parse Conflict Error
 
-Parse build output to determine issue type:
+Extract from error message:
+- Package names involved
+- Required versions by each dependent
+- Current installed version (if any)
+- Which packages are requesting incompatible versions
 
-**A. Missing file/directory**
-- `Cannot find file 'X'`
-- `Entry module not found: 'X'`
+**Common error patterns:**
 
-**B. Invalid syntax in config**
-- `Unexpected token`
-- `JSON parse error`
-- `Invalid configuration`
+**npm:**
+```
+ERESOLVE unable to resolve dependency tree
+Found: package-a@1.0.0
+Could not resolve dependency:
+peer package-b@"^2.0.0" from package-c@3.0.0
+```
 
-**C. Incompatible options**
-- `Option 'X' cannot be used with 'Y'`
-- `Conflicting configuration`
+**yarn:**
+```
+error Found incompatible versions:
+  package-a@1.0.0 (required by x, required ^1.0.0)
+  package-a@2.0.0 (required by y, required ^2.0.0)
+```
 
-**D. Missing plugin/loader**
-- `Cannot find loader 'X'`
-- `Plugin 'X' not found`
+**pip:**
+```
+ERROR: package-a 1.0.0 has requirement package-b>=2.0.0, 
+but you'll have package-b 1.5.0 which is incompatible.
+```
 
-**E. Wrong path/pattern**
-- `No matching files for pattern 'X'`
-- `Failed to resolve 'X'`
+### 2. Research Compatible Versions
 
-**F. Version incompatibility**
-- `Requires version X but got Y`
-- `Incompatible peer dependency`
+For each package in conflict:
 
-### 2. Read Configuration File
+**Check package documentation:**
+- Official website
+- GitHub repository
+- npm/PyPI package page
+- CHANGELOG or release notes
 
-Identify which config file has the issue:
-- `angular.json` (Angular)
-- `webpack.config.js` (Webpack)
-- `tsconfig.json` (TypeScript)
-- `package.json` (npm)
-- `vite.config.js` (Vite)
-- `rollup.config.js` (Rollup)
+**Check peer dependencies:**
+```bash
+npm info package-name peerDependencies
+```
 
-Read the file to understand current settings.
+**Check available versions:**
+```bash
+npm view package-name versions
+```
 
-### 3. Apply Fix Based on Error Type
+### 3. Decide Resolution Strategy
 
-#### Fix A: Missing File
+Choose appropriate strategy:
 
-**Update file path in config:**
+**A. Update to Latest Compatible**
+- Use newest version that satisfies all dependencies
+- Safest option if major versions align
+
+**B. Lock Specific Version**
+- Force exact version that works
+- Use when you know specific version is stable
+
+**C. Update Dependent Package**
+- Update the package causing constraint
+- If newer version has compatible requirements
+
+**D. Use Resolution Override**
+- Force package manager to use specific version
+- Last resort when other methods fail
+
+### 4. Apply Fix by Package Manager
+
+#### npm / Node.js
+
+**Method 1: Update package.json versions**
+
 ```json
 {
-  "main": "src/main.ts"  // Verify this file exists
+  "dependencies": {
+    "package-a": "^2.0.0",  // Update to compatible version
+    "package-b": "^3.0.0"
+  }
 }
 ```
 
-**Create missing file if needed:**
-- Check if file should exist
-- Create minimal valid file
-- Or update config to point to correct file
+**Method 2: Use overrides (npm 8.3+)**
 
-**Example tsconfig.json:**
 ```json
 {
-  "files": [
-    "src/main.ts",  // Ensure this exists
-    "src/polyfills.ts"
-  ]
+  "overrides": {
+    "package-a": "2.5.0"  // Force specific version
+  }
 }
 ```
 
-#### Fix B: Invalid Syntax
+**Method 3: Use legacy peer deps flag**
 
-**Common JSON errors:**
-- Trailing commas
-- Unquoted keys
-- Single quotes instead of double
-- Missing brackets/braces
+```bash
+npm install --legacy-peer-deps
+```
+
+**Method 4: Install with force**
+
+```bash
+npm install --force  # Not recommended, may break things
+```
+
+#### yarn
+
+**Use resolutions:**
+
+```json
+{
+  "resolutions": {
+    "package-a": "2.5.0"  // Force version across all deps
+  }
+}
+```
+
+**Or update and reinstall:**
+
+```bash
+yarn upgrade package-a@^2.0.0
+```
+
+#### pip / Python
+
+**Method 1: Update requirements.txt**
+
+```
+package-a==2.5.0  # Exact version
+package-b>=2.0.0,<3.0.0  # Version range
+```
+
+**Method 2: Install specific version**
+
+```bash
+pip install package-a==2.5.0
+```
+
+**Method 3: Use constraint file**
+
+Create `constraints.txt`:
+```
+package-a==2.5.0
+```
+
+Install with:
+```bash
+pip install -c constraints.txt -r requirements.txt
+```
+
+#### Maven / Java
+
+**Add dependency management:**
+
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>package-a</artifactId>
+      <version>2.5.0</version>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
+
+**Or exclude transitive dependency:**
+
+```xml
+<dependency>
+  <groupId>com.example</groupId>
+  <artifactId>package-b</artifactId>
+  <version>1.0.0</version>
+  <exclusions>
+    <exclusion>
+      <groupId>com.example</groupId>
+      <artifactId>package-a</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency>
+```
+
+### 5. Clear Dependency Cache
+
+Remove cached dependencies:
+
+**npm:**
+```bash
+rm -rf node_modules
+rm package-lock.json
+npm cache clean --force
+npm install
+```
+
+**yarn:**
+```bash
+rm -rf node_modules
+rm yarn.lock
+yarn cache clean
+yarn install
+```
+
+**pip:**
+```bash
+pip cache purge
+pip install -r requirements.txt --force-reinstall
+```
+
+### 6. Reinstall Dependencies
+
+After updating configuration:
+
+```bash
+# npm
+npm install
+
+# yarn
+yarn install
+
+# pip
+pip install -r requirements.txt
+
+# maven
+mvn clean install
+```
+
+### 7. Verify Application Works
+
+After resolving conflict:
+
+1. **Run build** to ensure compilation succeeds
+2. **Run tests** if available
+3. **Start application** to verify runtime
+4. **Test key features** that use conflicting packages
+5. **Check for console warnings** about deprecated APIs
+
+### 8. Document Resolution
+
+Add comment in package file:
+
+```json
+{
+  "dependencies": {
+    "package-a": "2.5.0"  // Fixed at 2.5.0 to resolve conflict with package-b
+  }
+}
+```
+
+## Common Conflict Scenarios
+
+### Scenario 1: Peer Dependency Conflict
+
+**Error:**
+```
+package-a@3.0.0 requires peer package-b@^2.0.0
+but package-b@1.5.0 is installed
+```
 
 **Fix:**
-```json
-// Before (invalid):
-{
-  "name": "app",
-  "version": "1.0.0",  // ← Remove trailing comma before }
-}
-
-// After (valid):
-{
-  "name": "app",
-  "version": "1.0.0"
-}
+```bash
+npm install package-b@^2.0.0
 ```
 
-**Use JSON validator:**
-- VS Code has built-in validation
-- Or use online JSON validator
+### Scenario 2: Multiple Versions of Same Package
 
-#### Fix C: Incompatible Options
+**Error:**
+```
+Found: lodash@4.17.0 (from project)
+Found: lodash@3.10.0 (from old-package)
+```
 
-**Check documentation for valid combinations:**
-
-**Example TypeScript:**
+**Fix using overrides:**
 ```json
 {
-  "compilerOptions": {
-    "module": "ES2022",
-    "target": "ES2022"  // Must be compatible with module
+  "overrides": {
+    "lodash": "4.17.21"  // Use latest version everywhere
   }
 }
 ```
 
-**Common valid combinations:**
-- `module: "ES2022"` + `target: "ES2022"`
-- `module: "CommonJS"` + `target: "ES2020"`
-- `module: "ESNext"` + `target: "ESNext"`
+### Scenario 3: Incompatible Major Versions
 
-#### Fix D: Missing Plugin/Loader
+**Error:**
+```
+package-x needs react@^16.0.0
+package-y needs react@^18.0.0
+```
 
-**Install missing package:**
+**Fix:** Update package-x to version that supports React 18, or downgrade package-y.
 
 ```bash
-# For webpack loaders:
-npm install --save-dev ts-loader
-npm install --save-dev css-loader style-loader
-
-# For plugins:
-npm install --save-dev html-webpack-plugin
-npm install --save-dev copy-webpack-plugin
-```
-
-**Add to config:**
-```javascript
-// webpack.config.js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'ts-loader'  // Now installed
-      }
-    ]
-  }
-};
-```
-
-#### Fix E: Wrong Path/Pattern
-
-**Fix glob patterns:**
-```json
-{
-  "include": [
-    "src/**/*"  // Recursive pattern
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
-}
-```
-
-**Common patterns:**
-- `**/*` - All files recursively
-- `*.ts` - All .ts files in current dir
-- `src/**/*.ts` - All .ts files under src
-- `**/*.spec.ts` - All test files
-
-**Fix file paths:**
-```json
-{
-  "compilerOptions": {
-    "outDir": "./dist",  // Use correct relative path
-    "rootDir": "./src"
-  }
-}
-```
-
-#### Fix F: Version Incompatibility
-
-**Update package versions:**
-
-```json
-// package.json
-{
-  "devDependencies": {
-    "@angular/compiler-cli": "^17.0.0",  // Update to compatible version
-    "typescript": "~5.2.0"  // TypeScript version must be compatible
-  }
-}
-```
-
-**Check compatibility:**
-- Read framework documentation for version requirements
-- Check package peer dependencies
-- Use version ranges wisely
-
-**Reinstall:**
-```bash
-npm install
-```
-
-### 4. Common Build Configuration Fixes
-
-#### Angular CLI (angular.json)
-
-```json
-{
-  "projects": {
-    "app-name": {
-      "architect": {
-        "build": {
-          "options": {
-            "outputPath": "dist/app-name",  // Verify path
-            "index": "src/index.html",      // File must exist
-            "main": "src/main.ts",          // Entry point must exist
-            "tsConfig": "tsconfig.app.json" // Config must exist
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-#### TypeScript (tsconfig.json)
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "lib": ["ES2022", "dom"],
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,  // Skip lib checking if needed
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
-}
-```
-
-#### Webpack (webpack.config.js)
-
-```javascript
-const path = require('path');
-
-module.exports = {
-  entry: './src/index.ts',  // Verify path
-  output: {
-    path: path.resolve(__dirname, 'dist'),  // Absolute path
-    filename: 'bundle.js'
-  },
-  resolve: {
-    extensions: ['.ts', '.js']  // File extensions to resolve
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      }
-    ]
-  }
-};
-```
-
-### 5. Clear Build Cache
-
-Sometimes cached data causes issues:
-
-```bash
-# Clear Angular cache
-rm -rf .angular/
-
-# Clear TypeScript cache
-rm -rf dist/
-
-# Clear node_modules and reinstall
-rm -rf node_modules
-npm install
-
-# Clear npm cache (if really stuck)
-npm cache clean --force
-```
-
-### 6. Rebuild and Verify
-
-After fixing configuration:
-1. Save all config files
-2. Clear cache if needed
-3. Run build command
-4. Verify build succeeds
-5. Check output directory has expected files
-
-### 7. Common Build Commands
-
-```bash
-# Angular
-ng build
-ng build --configuration production
-
-# TypeScript
-tsc
-tsc --build
-
-# Webpack
-npx webpack
-npx webpack --mode production
-
-# npm scripts (defined in package.json)
-npm run build
+npm install package-x@latest  # Check if newer version supports React 18
 ```
 
 ## Output
 
-Working build configuration with successful compilation.
+- Resolved dependency tree
+- All packages installed successfully
+- Application builds and runs
+- No version conflict errors
 
 ## Examples
 
-### Example 1: Missing Main File
+### Example 1: Angular Material Version Conflict
 
 **Error:**
 ```
-Cannot find file 'src/main.ts'
-```
-
-**Fix in angular.json:**
-```json
-{
-  "architect": {
-    "build": {
-      "options": {
-        "main": "src/main.ts"  // Verify file exists at this path
-      }
-    }
-  }
-}
-```
-
-**Create file if missing:**
-```typescript
-// src/main.ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-```
-
-### Example 2: TypeScript Config Incompatibility
-
-**Error:**
-```
-Option 'module' must be 'CommonJS' when 'target' is 'ES3' or 'ES5'
-```
-
-**Fix:**
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",  // Update target
-    "module": "ES2020"   // Now compatible
-  }
-}
-```
-
-### Example 3: Missing Loader
-
-**Error:**
-```
-Module parse failed: Unexpected token
-You may need an appropriate loader to handle this file type
+Package "@angular/material" has a peer dependency on "@angular/cdk@^17.0.0"
+but "@angular/cdk@16.0.0" is installed
 ```
 
 **Fix:**
 ```bash
-npm install --save-dev ts-loader
+npm install @angular/cdk@^17.0.0
 ```
 
-```javascript
-// webpack.config.js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'ts-loader'
-      }
-    ]
+Or update both:
+```bash
+npm install @angular/material@^17.0.0 @angular/cdk@^17.0.0
+```
+
+### Example 2: TypeScript Version Conflict
+
+**Error:**
+```
+Found: typescript@4.9.0
+Required: typescript@~5.2.0 by @angular/compiler-cli@17.0.0
+```
+
+**Fix package.json:**
+```json
+{
+  "devDependencies": {
+    "typescript": "~5.2.0"  // Update to required version
   }
-};
+}
+```
+
+**Reinstall:**
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Example 3: Transitive Dependency Conflict
+
+**Error:**
+```
+package-a depends on package-c@1.x
+package-b depends on package-c@2.x
+```
+
+**Fix using overrides:**
+```json
+{
+  "dependencies": {
+    "package-a": "^1.0.0",
+    "package-b": "^2.0.0"
+  },
+  "overrides": {
+    "package-c": "2.5.0"  // Force v2 everywhere, ensure package-a can handle it
+  }
+}
+```
+
+### Example 4: Python Dependency Conflict
+
+**Error:**
+```
+ERROR: django 3.0.0 has requirement sqlparse>=0.2.2, 
+but you'll have sqlparse 0.1.0 which is incompatible.
+```
+
+**Fix requirements.txt:**
+```
+django==3.0.0
+sqlparse>=0.2.2  # Update to satisfy django's requirement
+```
+
+**Reinstall:**
+```bash
+pip install -r requirements.txt --upgrade
 ```
