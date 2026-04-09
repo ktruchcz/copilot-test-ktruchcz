@@ -1,236 +1,343 @@
 ---
-name: e1-resolve-missing-import
-description: Resolve missing packages, modules, and broken import references in migrated code.
+name: e2-fix-type-mismatch
+description: Fix incompatible types, signatures, and assignments while preserving behavior.
 ---
 
-# Skill E1: Resolve Missing Import/Module
+# Skill E2: Fix Type Mismatch Error
 
-**When to use:** Compilation or runtime error indicates a module/import cannot be found
+**When to use:** Compilation error indicates incompatible types
 
-**Purpose:** Fix missing dependencies and import references.
+**Purpose:** Resolve type compatibility issues while preserving functionality.
 
 ## Input
 
 - Error message (exact text)
-- File path where error occurred
-- Line number (if available)
+- File path
+- Line number
+- Code context
 
 ## Steps
 
-### 1. Parse Error to Identify Missing Module
+### 1. Parse Error Message
 
-Extract from error message:
-- Module/package name
-- Whether it's a file path or package name
-- Import statement that failed
+Extract information:
+- Expected type
+- Actual type provided
+- Location (file and line)
+- Operation causing mismatch
 
 **Common error patterns:**
-- `Cannot find module 'X'`
-- `Module not found: Error: Can't resolve 'X'`
-- `No module named 'X'`
-- `ModuleNotFoundError: No module named 'X'`
-- `TS2307: Cannot find module 'X' or its corresponding type declarations`
+- `Type 'X' is not assignable to type 'Y'`
+- `Argument of type 'X' is not assignable to parameter of type 'Y'`
+- `Type 'X' is missing property 'Y'`
+- `Type 'X' cannot be used as type 'Y'`
 
-### 2. Determine Module Type
+### 2. Read Code Context
 
-**A. Framework/Library (External)**
-- Package names: `@angular/core`, `lodash`, `react`, `express`
-- No relative path (doesn't start with `.` or `/`)
+Read surrounding code (10 lines before and after error line) to understand:
+- Variable declarations
+- Function signatures
+- Object structures
+- Type annotations
 
-**B. Custom Module (Internal)**
-- Has relative path: `./user.service`, `../models/user`
-- Or absolute path: `@app/services/user`
+### 3. Identify Mismatch Cause
 
-**C. Renamed Module**
-- Old name used but module was renamed during migration
-- Check migration mapping/strategy
+Categorize the issue:
 
-### 3. Handle External Dependencies
-
-**Step 3a: Check if installed**
-- Look in `node_modules/` or virtual environment
-- Check `package.json` or `requirements.txt`
-
-**Step 3b: Install if missing**
-
-**For Node.js/npm:**
-```bash
-npm install <package-name>
-# or
-npm install <package-name> --save-dev  # for dev dependencies
-```
-
-**For Python/pip:**
-```bash
-pip install <package-name>
-# or
-pip install <package-name> -r requirements.txt
-```
-
-**For Java/Maven:**
-Add to `pom.xml`:
-```xml
-<dependency>
-    <groupId>group.id</groupId>
-    <artifactId>package-name</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
-**Step 3c: Verify installation**
-- Check that package appears in dependencies
-- Try build again
-
-**Step 3d: Install type definitions (TypeScript)**
-If error is about type declarations:
-```bash
-npm install --save-dev @types/<package-name>
-```
-
-### 4. Handle Internal Modules
-
-**Step 4a: Search for file**
-- Look in output directory structure
-- Check common locations (models, services, components, utils)
-- Search by file name
-
-**Step 4b: Update import path**
-- If file exists but path is wrong, use **Skill R5** to fix
-- Calculate correct relative path
-- Update import statement
-
-**Step 4c: Check if renamed**
-- Look in migration strategy document
-- Check if file was renamed during migration
-- Update import to use new name
-
-**Step 4d: Check if not migrated yet**
-- If file doesn't exist in output directory
-- Check source directory - does it exist there?
-- Options:
-  1. Migrate the file now (use **Skill R3**)
-  2. Create a stub/placeholder
-  3. Add to pending migration list
-
-**Step 4e: Check if merged/split**
-- File might have been combined with another
-- Or split into multiple files
-- Update import to reference correct file
-
-### 5. Special Cases
-
-**Case A: Barrel imports**
-Source: `import { A, B } from './index';`
-- Check if index file exports those
-- May need to import directly from individual files
-
-**Case B: Default vs named imports**
-Source: `import User from './user';`
-Target might need: `import { User } from './user';`
-- Check export statement in target file
-- Adjust import accordingly
-
-**Case C: Side-effect imports**
-Source: `import './polyfills';`
-- Ensure file exists
-- Check if still needed in target
-
-**Case D: Dynamic imports**
-Source: `const module = await import('./dynamic');`
-- Ensure path is correct
-- Check webpack/bundler config supports dynamic imports
-
-### 6. Rebuild and Verify
-
-After making changes:
-1. Save all modified files
-2. Run build command
-3. Check if error is resolved
-4. If error persists, review what was changed
-
-### 7. Document if Can't Resolve
-
-If stuck after 3 attempts:
-- Document the issue in `migration-report.md`
-- Add TODO comment in code
-- Note as "pending" and continue with migration
-- Can revisit later
-
-## Output
-
-- Fixed import statement and/or installed dependency
-- Error resolved
-- Or documented as pending if unresolvable
-
-## Examples
-
-### Example 1: Missing External Package
-
-**Error:**
-```
-Cannot find module '@angular/material'
-```
-
-**Solution:**
-```bash
-npm install @angular/material @angular/cdk
-```
-
-### Example 2: Wrong Internal Path
-
-**Error:**
-```
-Cannot find module '../models/User'
-File: src/services/user.service.ts
-```
-
-**Current structure:**
-```
-src/
-  services/
-    user.service.ts
-  app/
-    models/
-      user.model.ts
-```
-
-**Fix import in user.service.ts:**
+**A. Incorrect return type**
 ```typescript
-// Before:
-import { User } from '../models/User';
-
-// After:
-import { User } from '../app/models/user.model';
+function getUser(): User {
+  return null;  // Error: null not assignable to User
+}
 ```
 
-### Example 3: File Not Yet Migrated
-
-**Error:**
-```
-Cannot find module './helper'
-```
-
-**File doesn't exist yet in output.**
-
-**Solution:**
-1. Note: "helper.ts not yet migrated"
-2. Add to migration queue
-3. Temporarily add stub:
+**B. Wrong parameter type**
 ```typescript
-// helper.ts - STUB - TODO: Migrate properly
-export const helper = () => {
-  throw new Error('Not implemented');
+function process(id: number) { }
+process("123");  // Error: string not assignable to number
+```
+
+**C. Missing property**
+```typescript
+interface User {
+  name: string;
+  age: number;
+}
+const user: User = { name: "John" };  // Error: missing 'age'
+```
+
+**D. Null/undefined issue**
+```typescript
+const user: User = getUser();  // Error: User | null not assignable to User
+```
+
+**E. Array vs single value**
+```typescript
+function process(item: string) { }
+const items: string[] = ["a", "b"];
+process(items);  // Error: string[] not assignable to string
+```
+
+**F. Wrong generic type**
+```typescript
+const list: Array<number> = ["1", "2"];  // Error: string[] not assignable to number[]
+```
+
+### 4. Apply Appropriate Fix
+
+#### Fix A: Update Return Type
+
+**Option 1 - Make nullable:**
+```typescript
+function getUser(): User | null {
+  return null;  // Now valid
+}
+```
+
+**Option 2 - Return proper value:**
+```typescript
+function getUser(): User {
+  return new User();  // Return actual User
+}
+```
+
+#### Fix B: Convert Parameter Type
+
+**Option 1 - Convert at call site:**
+```typescript
+process(parseInt("123"));  // Convert string to number
+```
+
+**Option 2 - Update function signature:**
+```typescript
+function process(id: string | number) {  // Accept both
+  const numId = typeof id === 'string' ? parseInt(id) : id;
+}
+```
+
+#### Fix C: Add Missing Property
+
+**Option 1 - Add property:**
+```typescript
+const user: User = { 
+  name: "John",
+  age: 0  // Add missing property
 };
 ```
 
-### Example 4: Missing Type Definitions
+**Option 2 - Make property optional:**
+```typescript
+interface User {
+  name: string;
+  age?: number;  // Make optional
+}
+```
+
+**Option 3 - Use partial:**
+```typescript
+const user: Partial<User> = { name: "John" };
+```
+
+#### Fix D: Handle Null/Undefined
+
+**Option 1 - Add null check:**
+```typescript
+const user = getUser();
+if (user) {
+  // Use user safely
+}
+```
+
+**Option 2 - Use non-null assertion (if certain):**
+```typescript
+const user = getUser()!;  // Assert it's not null
+```
+
+**Option 3 - Provide default:**
+```typescript
+const user = getUser() || getDefaultUser();
+```
+
+**Option 4 - Optional chaining:**
+```typescript
+const name = user?.name;  // Returns undefined if user is null
+```
+
+#### Fix E: Array vs Single
+
+**Option 1 - Access first element:**
+```typescript
+process(items[0]);  // Pass first item
+```
+
+**Option 2 - Loop through array:**
+```typescript
+items.forEach(item => process(item));
+```
+
+**Option 3 - Update function to accept array:**
+```typescript
+function process(items: string | string[]) {
+  const itemArray = Array.isArray(items) ? items : [items];
+  // Process array
+}
+```
+
+#### Fix F: Generic Type
+
+**Option 1 - Convert values:**
+```typescript
+const list: Array<number> = ["1", "2"].map(x => parseInt(x));
+```
+
+**Option 2 - Change target type:**
+```typescript
+const list: Array<string> = ["1", "2"];  // Use correct type
+```
+
+### 5. Special Type Conversions
+
+**String to Number:**
+```typescript
+const num = parseInt(str);
+const num = parseFloat(str);
+const num = Number(str);
+const num = +str;
+```
+
+**Number to String:**
+```typescript
+const str = num.toString();
+const str = String(num);
+const str = `${num}`;
+```
+
+**Type Assertion (when you know better):**
+```typescript
+const value = someValue as TargetType;
+// or
+const value = <TargetType>someValue;
+```
+
+**Type Guards:**
+```typescript
+if (typeof value === 'string') {
+  // TypeScript knows value is string here
+}
+
+if (value instanceof User) {
+  // TypeScript knows value is User here
+}
+```
+
+### 6. Rebuild and Verify
+
+After fix:
+1. Save file
+2. Run build/compile
+3. Verify error is gone
+4. Check that functionality still works
+
+### 7. If Still Fails
+
+If type error persists:
+- Re-read error message carefully
+- Check if fix was applied to correct location
+- Verify types are imported correctly
+- Check if type definitions are installed
+- Try alternative fix approach
+
+## Output
+
+Type-corrected code that compiles successfully.
+
+## Examples
+
+### Example 1: Null Assignment
 
 **Error:**
 ```
-Could not find a declaration file for module 'lodash'
+Type 'null' is not assignable to type 'User'.
+  const user: User = null;
 ```
 
-**Solution:**
-```bash
-npm install --save-dev @types/lodash
+**Fix:**
+```typescript
+const user: User | null = null;
+// or
+const user: User | undefined = undefined;
+```
+
+### Example 2: Missing Property
+
+**Error:**
+```
+Property 'email' is missing in type '{ name: string; }' but required in type 'User'.
+```
+
+**Fix:**
+```typescript
+// Option 1: Add property
+const user: User = {
+  name: "John",
+  email: "john@example.com"
+};
+
+// Option 2: Make optional in interface
+interface User {
+  name: string;
+  email?: string;  // Now optional
+}
+```
+
+### Example 3: Array Mismatch
+
+**Error:**
+```
+Type 'string[]' is not assignable to type 'string'.
+  const name: string = users.map(u => u.name);
+```
+
+**Fix:**
+```typescript
+const names: string[] = users.map(u => u.name);
+// or if you want first one:
+const name: string = users[0]?.name || '';
+```
+
+### Example 4: Function Return Type
+
+**Error:**
+```
+Type 'Promise<User>' is not assignable to type 'User'.
+```
+
+**Fix:**
+```typescript
+// Make function async and await result
+async function processUser() {
+  const user: User = await fetchUser();  // await the Promise
+}
+
+// Or update return type
+function getUser(): Promise<User> {
+  return fetchUser();  // Return Promise<User>
+}
+```
+
+### Example 5: Union Type Narrowing
+
+**Error:**
+```
+Type 'string | number' is not assignable to type 'number'.
+```
+
+**Fix:**
+```typescript
+function process(value: string | number) {
+  const numValue: number = typeof value === 'string' 
+    ? parseInt(value) 
+    : value;
+  // Now numValue is definitely number
+}
 ```
