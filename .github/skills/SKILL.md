@@ -1,53 +1,236 @@
 ---
-name: angular-generation
-description: "Generate Angular TypeScript components, HTML templates, validators, and navigation. Use when the TARGET is Angular—regardless of source technology (ADF/JSF, Java Swing, React, .NET, etc.). Invoke whenever generating .component.ts files, Angular reactive forms, @Input/@Output patterns, table/list components, navigation menus, or Angular validators. Also use when the user mentions migrating a UI to Angular, setting up component routing, applying a DGUV design system, or converting Swing tables/dialogs."
+name: e1-resolve-missing-import
+description: Resolve missing packages, modules, and broken import references in migrated code.
 ---
 
-# Angular Generation Skill
+# Skill E1: Resolve Missing Import/Module
 
-This skill guides the generation of idiomatic Angular / TypeScript UI code. All core rules apply regardless of what source technology is being migrated. Source-specific input-parsing notes are in separate reference sections.
+**When to use:** Compilation or runtime error indicates a module/import cannot be found
 
-## Core Angular Conventions (apply everywhere)
+**Purpose:** Fix missing dependencies and import references.
 
-- Use **TypeScript strict mode** patterns: initialize all properties, use definite assignment (`!`) or initializer expressions — no uninitialized properties left hanging.
-- Use `@Input()` with DTO model types as inputs — not individual fields.
-  ```typescript
-  @Input() customerDto: CustomerDto;
-  ```
-- Use `@Output()` and `EventEmitter` for outbound events.
-- Pass data to other components via **Route Parameters** (not component properties across router boundary).
-- Initialize global attributes in the **constructor** or with field initializers to ensure definite assignment.
-- Use **Angular Reactive Forms** (`ReactiveFormsModule`) for form handling.
-- Fetch data via injected services. Never hardcode dummy data in production component code.
-- Use `.scss` file extension for component stylesheets:
-  ```typescript
-  styleUrls: ['./<component>.component.scss']
-  ```
-- Import models from the `model` package:
-  ```typescript
-  import { MyModel } from 'src/app/model/models';
-  ```
-- Subscribe to input parameters in `ngOnInit`.
+## Input
 
-## TypeScript Strictness Patterns
+- Error message (exact text)
+- File path where error occurred
+- Line number (if available)
 
-Handle these common TypeScript strict-mode errors with the **default value approach**:
+## Steps
 
-- `TS2322: Type 'string | undefined' is not assignable to type 'string'` → use `?? ''`
-- `TS2322: Type 'number | undefined' is not assignable to type 'number'` → use `?? 0`
-- `TS2564: Property has no initializer` → use field initializer or `= {} as MyType`
-- Use the optional chaining operator (`?.`) when accessing nested properties that may be `undefined`.
-- Prefer `if (value)` / `if (!value)` over `value != null` / `value == null` comparisons.
+### 1. Parse Error to Identify Missing Module
 
-## Reference Files
+Extract from error message:
+- Module/package name
+- Whether it's a file path or package name
+- Import statement that failed
 
-| Task | Reference |
-|------|-----------|
-| Generate a full Angular component (TypeScript + HTML) | [references/component-generation.md](references/component-generation.md) |
-| Generate a static HTML mockup from ADF/JSF | [references/html-mockup-generation.md](references/html-mockup-generation.md) |
-| Apply DGUV design system components to HTML | [references/dguv-styling.md](references/dguv-styling.md) |
-| Generate a DGUV navigation sidebar | [references/navigation-menu.md](references/navigation-menu.md) |
-| Migrate a Java Swing table/dialog to Angular | [references/swing-table-dialog.md](references/swing-table-dialog.md) |
-| Migrate a Java Swing validator to Angular | [references/swing-validation.md](references/swing-validation.md) |
+**Common error patterns:**
+- `Cannot find module 'X'`
+- `Module not found: Error: Can't resolve 'X'`
+- `No module named 'X'`
+- `ModuleNotFoundError: No module named 'X'`
+- `TS2307: Cannot find module 'X' or its corresponding type declarations`
 
-Read the relevant reference file before generating code for that scenario.
+### 2. Determine Module Type
+
+**A. Framework/Library (External)**
+- Package names: `@angular/core`, `lodash`, `react`, `express`
+- No relative path (doesn't start with `.` or `/`)
+
+**B. Custom Module (Internal)**
+- Has relative path: `./user.service`, `../models/user`
+- Or absolute path: `@app/services/user`
+
+**C. Renamed Module**
+- Old name used but module was renamed during migration
+- Check migration mapping/strategy
+
+### 3. Handle External Dependencies
+
+**Step 3a: Check if installed**
+- Look in `node_modules/` or virtual environment
+- Check `package.json` or `requirements.txt`
+
+**Step 3b: Install if missing**
+
+**For Node.js/npm:**
+```bash
+npm install <package-name>
+# or
+npm install <package-name> --save-dev  # for dev dependencies
+```
+
+**For Python/pip:**
+```bash
+pip install <package-name>
+# or
+pip install <package-name> -r requirements.txt
+```
+
+**For Java/Maven:**
+Add to `pom.xml`:
+```xml
+<dependency>
+    <groupId>group.id</groupId>
+    <artifactId>package-name</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+**Step 3c: Verify installation**
+- Check that package appears in dependencies
+- Try build again
+
+**Step 3d: Install type definitions (TypeScript)**
+If error is about type declarations:
+```bash
+npm install --save-dev @types/<package-name>
+```
+
+### 4. Handle Internal Modules
+
+**Step 4a: Search for file**
+- Look in output directory structure
+- Check common locations (models, services, components, utils)
+- Search by file name
+
+**Step 4b: Update import path**
+- If file exists but path is wrong, use **Skill R5** to fix
+- Calculate correct relative path
+- Update import statement
+
+**Step 4c: Check if renamed**
+- Look in migration strategy document
+- Check if file was renamed during migration
+- Update import to use new name
+
+**Step 4d: Check if not migrated yet**
+- If file doesn't exist in output directory
+- Check source directory - does it exist there?
+- Options:
+  1. Migrate the file now (use **Skill R3**)
+  2. Create a stub/placeholder
+  3. Add to pending migration list
+
+**Step 4e: Check if merged/split**
+- File might have been combined with another
+- Or split into multiple files
+- Update import to reference correct file
+
+### 5. Special Cases
+
+**Case A: Barrel imports**
+Source: `import { A, B } from './index';`
+- Check if index file exports those
+- May need to import directly from individual files
+
+**Case B: Default vs named imports**
+Source: `import User from './user';`
+Target might need: `import { User } from './user';`
+- Check export statement in target file
+- Adjust import accordingly
+
+**Case C: Side-effect imports**
+Source: `import './polyfills';`
+- Ensure file exists
+- Check if still needed in target
+
+**Case D: Dynamic imports**
+Source: `const module = await import('./dynamic');`
+- Ensure path is correct
+- Check webpack/bundler config supports dynamic imports
+
+### 6. Rebuild and Verify
+
+After making changes:
+1. Save all modified files
+2. Run build command
+3. Check if error is resolved
+4. If error persists, review what was changed
+
+### 7. Document if Can't Resolve
+
+If stuck after 3 attempts:
+- Document the issue in `migration-report.md`
+- Add TODO comment in code
+- Note as "pending" and continue with migration
+- Can revisit later
+
+## Output
+
+- Fixed import statement and/or installed dependency
+- Error resolved
+- Or documented as pending if unresolvable
+
+## Examples
+
+### Example 1: Missing External Package
+
+**Error:**
+```
+Cannot find module '@angular/material'
+```
+
+**Solution:**
+```bash
+npm install @angular/material @angular/cdk
+```
+
+### Example 2: Wrong Internal Path
+
+**Error:**
+```
+Cannot find module '../models/User'
+File: src/services/user.service.ts
+```
+
+**Current structure:**
+```
+src/
+  services/
+    user.service.ts
+  app/
+    models/
+      user.model.ts
+```
+
+**Fix import in user.service.ts:**
+```typescript
+// Before:
+import { User } from '../models/User';
+
+// After:
+import { User } from '../app/models/user.model';
+```
+
+### Example 3: File Not Yet Migrated
+
+**Error:**
+```
+Cannot find module './helper'
+```
+
+**File doesn't exist yet in output.**
+
+**Solution:**
+1. Note: "helper.ts not yet migrated"
+2. Add to migration queue
+3. Temporarily add stub:
+```typescript
+// helper.ts - STUB - TODO: Migrate properly
+export const helper = () => {
+  throw new Error('Not implemented');
+};
+```
+
+### Example 4: Missing Type Definitions
+
+**Error:**
+```
+Could not find a declaration file for module 'lodash'
+```
+
+**Solution:**
+```bash
+npm install --save-dev @types/lodash
+```
