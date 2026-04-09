@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import sys
-from datetime import date
+from datetime import datetime
 from enum import Enum, auto
 
 
@@ -64,9 +64,10 @@ def season_of(month: int) -> str:
 
 
 def main() -> None:
-    today = date.today()
+    now = datetime.now()
+    today = now.date()
 
-    time_of_day = TimeOfDay.of(today.day % 24)
+    time_of_day = TimeOfDay.of(now.hour)
     salutation_map = {
         TimeOfDay.MORNING: "Good morning",
         TimeOfDay.AFTERNOON: "Good afternoon",
