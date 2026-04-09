@@ -1,169 +1,196 @@
 ---
-name: r4-convert-function-logic
-description: Convert method and function logic into target-language control flow and APIs.
+name: r5-fix-import-paths
+description: Rewrite import paths to match the generated target project layout.
 ---
+# Skill R5: Fix Import Paths After Restructure
+description: Rewrite import paths to match the generated target project layout.
+**When to use:** After moving files to new directory structure, imports need updating
 
-# Skill R4: Convert Function/Method Logic
+**Purpose:** Update all import statements to reflect new file locations.
 
-**When to use:** Transforming individual function or method bodies between languages
+## Input
 
-**Purpose:** Convert implementation logic while preserving exact behavior and intent.
+- File path (current location)
+- Old structure (where files used to be)
+- New structure (where files are now)
+- Migration mapping (old path → new path)
 
 ## Steps
 
-### 1. Identify Control Structures
+### 1. Read All Import Statements
 
-Locate all:
-- Conditionals (if, else, switch)
-- Loops (for, while, do-while, foreach)
-- Try-catch blocks
-- Return statements
+Scan the file for:
+- ES6 imports: `import { X } from './path';`
+- CommonJS: `const X = require('./path');`
+- TypeScript: `import type { X } from './path';`
+- CSS/Asset imports: `import './styles.css';`
 
-### 2. Identify Operations
+### 2. Categorize Each Import
 
-Categorize operations:
-- Arithmetic (`+`, `-`, `*`, `/`, `%`)
-- String manipulation
-- Collection operations
-- Object/class operations
-- Async operations
+For each import, determine:
 
-### 3. Transform Line by Line
+**A. Framework/External Library Import**
+- Examples: `'@angular/core'`, `'react'`, `'lodash'`
+- Action: Verify package exists in target, usually no path change needed
 
-Apply these conversions:
+**B. Relative Import (Internal)**
+- Examples: `'./user.service'`, `'../models/user'`
+- Action: Needs path recalculation
 
-#### Variable Declarations
+**C. Absolute Import (Internal)**
+- Examples: `'@app/services/user'`, `'src/models/user'`
+- Action: Verify path alias configuration, may need update
 
-| Source | Target |
-|--------|--------|
-| `final String x = "hi";` | `const x = "hi";` |
-| `String x = "hi";` | `let x = "hi";` |
-| `int x = 5;` | `let x = 5;` |
-| `var x = 5;` (Java 10+) | `const x = 5;` |
+### 3. For Each Relative Import
 
-#### String Operations
+**Step 3a: Identify what is being imported**
+- Parse import statement
+- Extract module/file name
+- Determine type (model, service, component, util)
 
-| Source (Java) | Target (JS/TS) |
-|---------------|----------------|
-| `str.substring(0, 5)` | `str.slice(0, 5)` |
-| `str.indexOf("x")` | `str.indexOf("x")` |
-| `str.contains("x")` | `str.includes("x")` |
-| `str.charAt(i)` | `str[i]` or `str.charAt(i)` |
-| `str.length()` | `str.length` |
-| `str.isEmpty()` | `!str` or `str.length === 0` |
-| `String.format("%s", x)` | `` `${x}` `` (template literal) |
+**Step 3b: Look up new location**
+- Check migration mapping/strategy document
+- Search output directory structure for the file
+- Common patterns:
+  - Models: `src/models/` or `src/app/models/`
+  - Services: `src/services/` or `src/app/services/`
+  - Components: `src/components/` or `src/app/components/`
+  - Utils: `src/utils/` or `src/app/utils/`
 
-#### Collection Operations
+**Step 3c: Calculate new relative path**
 
-| Source (Java) | Target (JS/TS) |
-|---------------|----------------|
-| `list.size()` | `list.length` |
-| `list.get(i)` | `list[i]` |
-| `list.add(item)` | `list.push(item)` |
-| `list.remove(i)` | `list.splice(i, 1)` |
-| `list.stream().map(x -> x*2)` | `list.map(x => x*2)` |
-| `list.stream().filter(x -> x>0)` | `list.filter(x => x>0)` |
-| `list.stream().forEach(x -> ...)` | `list.forEach(x => ...)` |
+From current file: `output/app/services/auth.service.ts`
+To imported file: `output/app/models/user.model.ts`
 
-#### Null Checking
+Steps:
+1. Get current file directory: `output/app/services/`
+2. Get target file directory: `output/app/models/`
+3. Calculate relative path: `../models/user.model`
 
-| Source | Target |
-|--------|--------|
-| `if (x != null)` | `if (x)` or `if (x !== null)` |
-| `if (x == null)` | `if (!x)` or `if (x === null)` |
-| `x != null ? x : "default"` | `x || "default"` or `x ?? "default"` |
+**Formula:**
+- Count directory levels up: `../` for each level
+- Add path down to target: `models/user.model`
 
-#### Type Conversions
+**Examples:**
+- Same directory: `./user.model`
+- Parent directory: `../user.model`
+- Sibling directory: `../models/user.model`
+- Two levels up: `../../shared/utils/helper`
 
-| Source | Target |
-|--------|--------|
-| `Integer.parseInt(str)` | `parseInt(str)` |
-| `Double.parseDouble(str)` | `parseFloat(str)` |
-| `String.valueOf(x)` | `String(x)` or `x.toString()` |
-| `(String) obj` | `obj as string` |
+**Step 3d: Update import statement**
 
-#### Loops
+Before:
+```typescript
+import { User } from '../model/User';
+```
 
-| Source | Target |
-|--------|--------|
-| `for (int i=0; i<n; i++)` | `for (let i=0; i<n; i++)` |
-| `for (Item item : list)` | `for (const item of list)` |
-| `while (condition)` | `while (condition)` |
+After:
+```typescript
+import { User } from '../models/user.model';
+```
 
-#### Exception Handling
+### 4. Handle Path Aliases
 
-| Source | Target |
-|--------|--------|
-| `try { } catch (Exception e) { }` | `try { } catch (e) { }` |
-| `throw new Exception("msg")` | `throw new Error("msg")` |
-| `finally { }` | `finally { }` |
+If target uses path aliases (tsconfig paths):
 
-#### Async Operations
+```json
+{
+  "paths": {
+    "@app/*": ["src/app/*"],
+    "@models/*": ["src/app/models/*"]
+  }
+}
+```
 
-| Source (Java) | Target (JS/TS) |
-|---------------|----------------|
-| `CompletableFuture.supplyAsync(...)` | `async () => { }` or `new Promise(...)` |
-| `.thenApply(x -> ...)` | `.then(x => ...)` |
-| `.join()` or `.get()` | `await promise` |
+Can use:
+```typescript
+import { User } from '@models/user.model';
+```
 
-### 4. Preserve Comments and Intent
+Instead of:
+```typescript
+import { User } from '../../models/user.model';
+```
 
-- Keep all comments
-- Translate comment text if needed (e.g., Java-specific to TS-specific)
-- Maintain TODO/FIXME markers
+### 5. Verify Imported Symbols Still Match
 
-### 5. Maintain Same Control Flow
+Check that:
+- Exported name hasn't changed
+- File still exports what's being imported
+- Named exports vs default exports are correct
 
-- Keep exact same logic flow
-- Don't optimize or change algorithm
-- Preserve edge case handling
+### 6. Handle Special Cases
 
-### 6. Apply Target Language Idioms
+**Case A: File not yet migrated**
+- Add a TODO comment
+- Create a stub/placeholder file
+- Document in tracking file
 
-Use target language best practices:
-- Prefer `const` over `let` when possible
-- Use arrow functions for callbacks
-- Use template literals for string interpolation
-- Use optional chaining: `obj?.prop?.method()`
-- Use destructuring: `const {x, y} = obj;`
+**Case B: File was merged into another**
+- Update import to new combined file
+- Import correct symbol
+
+**Case C: File was split into multiple**
+- Add multiple import statements
+- Import from correct file
+
+**Case D: Import removed (no longer needed)**
+- Delete the import statement
+
+### 7. Update Extension if Needed
+
+Source might not use extensions, target might require them:
+- `'./user'` → `'./user.js'` (if required)
+- Check target's module resolution settings
 
 ## Output
 
-Converted function body with identical behavior.
+File with all import paths correctly updated.
 
 ## Example
 
-### Source (Java):
-```java
-public List<String> getActiveUsernames(List<User> users) {
-    List<String> result = new ArrayList<>();
-    for (User user : users) {
-        if (user != null && user.isActive()) {
-            result.add(user.getName().toUpperCase());
-        }
-    }
-    return result;
-}
+### Before Migration:
+```typescript
+// File: src/services/UserService.ts
+import { User } from '../models/User';
+import { ApiClient } from '../api/ApiClient';
+import { formatDate } from '../utils/formatters';
 ```
 
-### Target (TypeScript):
-```typescript
-getActiveUsernames(users: User[]): string[] {
-    const result: string[] = [];
-    for (const user of users) {
-        if (user && user.isActive()) {
-            result.push(user.getName().toUpperCase());
-        }
-    }
-    return result;
-}
+### After Restructure to:
+```
+output/app/
+  services/
+    user.service.ts
+  models/
+    user.model.ts
+  core/
+    api-client.service.ts
+  shared/
+    utils/
+      formatters.ts
 ```
 
-### Or More Idiomatic:
+### Fixed Imports:
 ```typescript
-getActiveUsernames(users: User[]): string[] {
-    return users
-        .filter(user => user?.isActive())
-        .map(user => user.getName().toUpperCase());
-}
+// File: output/app/services/user.service.ts
+import { User } from '../models/user.model';
+import { ApiClient } from '../core/api-client.service';
+import { formatDate } from '../shared/utils/formatters';
+```
+
+## Quick Reference: Relative Path Calculation
+
+```
+Current: a/b/c/file1.ts
+Target:  a/b/d/file2.ts
+Path:    ../d/file2
+
+Current: a/b/c/file1.ts
+Target:  a/d/file2.ts
+Path:    ../../d/file2
+
+Current: a/b/c/file1.ts
+Target:  a/b/c/d/file2.ts
+Path:    ./d/file2
 ```
