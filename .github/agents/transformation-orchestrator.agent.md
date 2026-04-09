@@ -1,6 +1,6 @@
 ---
 
-description: Orchestrate the execution of all Spec Kit prompts in the correct sequence to ensure a smooth and efficient migration process from Swing to Angular.
+description: Orchestrate the execution of all Spec Kit prompts in the correct sequence to ensure a smooth and efficient migration process from source technology to target technology.
 handoffs: 
   - label: Fulfill Specification Prompts 
     agent: speckit.preparation
