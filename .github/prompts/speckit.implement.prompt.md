@@ -153,14 +153,11 @@ Translate the Java `public static void main(String[] args)`:
 import sys
 import datetime
 
-
 def main() -> None:
     """Entry point – translated from Java 21 HelloWorld.main(String[] args)."""
     today = datetime.date.today()
 
     tod = time_of_day(today.day % 24)
-    salutation = match tod:  # use if/elif for clarity if match expr not supported
-    # Use isinstance checks as the idiomatic alternative:
     if isinstance(tod, Morning):
         salutation = "Good morning"
     elif isinstance(tod, Afternoon):
@@ -182,9 +179,9 @@ if __name__ == "__main__":
     main()
 ```
 
-> **Note**: Adjust the `main()` salutation derivation to use a clean
-> `match`/`case` or `if`/`elif` block — whichever is clearer after reviewing
-> the exact Python 3.12 syntax.  The logic must match the Java behaviour exactly.
+> **Note**: `today.day % 24` mirrors the Java source's `today.getDayOfMonth() % 24`
+> exactly (Principle I – Functional Equivalence).  The `if`/`isinstance` block is the
+> idiomatic Python 3.12 equivalent of the Java sealed-interface `switch` expression.
 
 ### T009, T012, T014 – pytest test suite
 
