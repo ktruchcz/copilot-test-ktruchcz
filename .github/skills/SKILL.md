@@ -1,329 +1,279 @@
 ---
-name: e7-systematic-batch-fix
-description: Triage and fix repeated migration errors in batches by root cause.
+name: o1-create-handoff-document
+description: Produce a structured handoff document for downstream migration agents.
 ---
-# Skill E7: Systematic Error Batch Fix
-description: Triage and fix repeated migration errors in batches by root cause.
-**When to use:** After build, multiple errors appear that need organized resolution
 
-**Purpose:** Efficiently handle many errors by grouping and prioritizing fixes.
+```markdown
+# Skill O1: Create Agent Handoff Document
 
-## Input
+**When to use:** Any agent that needs to write a structured output file for the next agent in the pipeline to consume.
 
-- Complete build output with all errors
-- Error log or error list
-- File paths and line numbers
+**Purpose:** Ensure consistent, machine-readable handoff files that downstream agents can reliably parse and validate.
+
+---
+
+## The Handoff Contract
+
+Each handoff document must satisfy three guarantees:
+1. **Existence** — the file is written to `output/` before the producing agent finishes
+2. **Structure** — the file has all required sections so the consuming agent can parse it
+3. **Status field** — the final line of the file declares whether it is COMPLETE or PARTIAL
+
+---
 
 ## Steps
 
-### 1. Collect All Errors
+### 1. Choose the Correct Output Path
 
-**Capture complete error list:**
-- Run build and save full output
-- Count total number of errors
-- Don't stop at first error - need full picture
+All handoff files go in `output/`:
 
-**Organize errors:**
-```
-Total Errors: 47
+| Producing Agent | Output File |
+|-----------------|-------------|
+| Analysis Agent | `output/analysis-report.md` |
+| Migration Agent | `output/migration-report.md` |
+| Validation Agent | `output/validation-report.md` |
+| Orchestrator | `output/orchestration-state.md`, `output/migration-summary.md` |
 
-By File:
-- src/services/user.service.ts: 8 errors
-- src/models/user.model.ts: 3 errors
-- src/components/dashboard.component.ts: 12 errors
+**Never write handoff files:**
+- ❌ In workspace root
+- ❌ In source directories
+- ❌ Alongside source code
+
+### 2. Write Required Sections First
+
+Before filling in content, create the file with all section headers:
+
+```markdown
+# [Report Name]
+
+## Section 1: [Mandatory Section]
+(pending)
+
+## Section 2: [Mandatory Section]
+(pending)
+
 ...
+
+## Status
+PENDING
 ```
 
-### 2. Group Errors by Type/Pattern
+This guarantees the file exists and has the required skeleton even if the agent is interrupted.
 
-**Categorize by error type:**
+### 3. Fill In Each Section Progressively
 
-**Import/Module Errors:**
-- `Cannot find module 'X'`
-- `Module not found`
-- Count: X errors
+Replace `(pending)` with actual content as you complete each phase of work.
 
-**Type Errors:**
-- `Type 'X' is not assignable to type 'Y'`
-- `Property 'X' does not exist on type 'Y'`
-- Count: Y errors
+**Principle:** A partially-complete handoff document is better than no document. Consuming agents can read partial data and decide how to proceed.
 
-**Syntax Errors:**
-- `Unexpected token`
-- `';' expected`
-- Count: Z errors
+### 4. Required Metadata Header
 
-**Configuration Errors:**
-- Build config issues
-- Missing files
-- Count: W errors
-
-**Example grouping:**
-```markdown
-## Error Groups
-
-### Group 1: Missing Imports (15 errors)
-- Cannot find module '@angular/core' (3 occurrences)
-- Cannot find module './user.model' (8 occurrences)
-- Cannot find module 'rxjs/operators' (4 occurrences)
-
-### Group 2: Type Mismatches (12 errors)
-- Type 'null' not assignable to 'User' (5 occurrences)
-- Property 'id' does not exist on type '{}' (7 occurrences)
-
-### Group 3: Undefined Methods (8 errors)
-- Property 'size' does not exist on type 'any[]' (8 occurrences)
-
-### Group 4: Missing Properties (6 errors)
-- Property 'email' missing in type (6 occurrences)
-
-### Group 5: Configuration (6 errors)
-- Cannot find file 'main.ts' (1 occurrence)
-- Missing tsconfig option (5 occurrences)
-```
-
-### 3. Prioritize Error Groups
-
-**Priority 1: Blocking Errors (fix first)**
-- Configuration errors that prevent build from starting
-- Missing files/modules that cause cascade failures
-- Syntax errors in commonly imported files
-
-**Priority 2: High-Frequency Errors (big impact)**
-- Same error repeated many times
-- Fixing once solves many instances
-- Errors in base classes/services
-
-**Priority 3: Low-Complexity Errors (quick wins)**
-- Simple fixes (e.g., adding missing properties)
-- Type annotations
-- Import path corrections
-
-**Priority 4: Complex Errors (fix last)**
-- Require architectural changes
-- Need research
-- Low frequency but complex
-
-**Prioritized plan:**
-```markdown
-## Fix Order
-
-**Round 1: Configuration (Priority 1)**
-1. Fix tsconfig.json
-2. Add missing main.ts
-Estimated fixes: 6 errors → 41 remaining
-
-**Round 2: Missing Imports Framework (Priority 1+2)**
-1. Install @angular/core
-2. Install rxjs
-Estimated fixes: 7 errors → 34 remaining
-
-**Round 3: Internal Import Paths (Priority 2)**
-1. Fix relative paths to models
-2. Fix service import paths
-Estimated fixes: 8 errors → 26 remaining
-
-**Round 4: Collection Methods (Priority 2+3)**
-1. Replace .size() with .length globally
-Estimated fixes: 8 errors → 18 remaining
-
-**Round 5: Type Annotations (Priority 3)**
-1. Add  | null to nullable types
-2. Add missing interface properties
-Estimated fixes: 11 errors → 7 remaining
-
-**Round 6: Complex Issues (Priority 4)**
-1. Manually review remaining 7 errors
-```
-
-### 4. Fix Each Group Systematically
-
-For each group in priority order:
-
-**Step 4a: Select appropriate skill**
-- Missing import → **Skill E1**
-- Type mismatch → **Skill E2**
-- Undefined property → **Skill E3**
-- Build config → **Skill E4**
-- Dependency conflict → **Skill E5**
-- Missing feature → **Skill E6**
-
-**Step 4b: Apply fix to all instances**
-- Fix one instance completely
-- Apply same fix pattern to all similar errors
-- Use find-and-replace for identical issues
-
-**Step 4c: Rebuild after each group**
-```bash
-npm run build
-```
-
-**Step 4d: Verify errors are resolved**
-- Check error count decreased
-- Note any new errors that appeared
-- Confirm expected fixes worked
-
-**Step 4e: Update error tracking**
-```markdown
-✅ Round 1 Complete: 6 errors fixed
-   Remaining: 41 errors
-
-✅ Round 2 Complete: 7 errors fixed
-   Remaining: 34 errors
-```
-
-### 5. Handle Cascade Effects
-
-**Watch for:**
-- Fixing one error reveals new errors in dependent files
-- Error count may go up before going down
-- New error types may appear
-
-**If error count increases:**
-- Don't panic - this is normal
-- New errors are often related to same root cause
-- Group new errors and prioritize
-
-**Example cascade:**
-```
-Before: 20 import errors (imports commented out)
-Fix: Uncomment imports
-After: 20 import errors gone, but 15 new type errors appear
-Reason: Types are now checked but weren't before
-```
-
-### 6. Deal with Stubborn Errors
-
-**If stuck after 3 attempts:**
-
-**Document the error:**
-```typescript
-// TODO: Fix this error - type mismatch
-// Error: Type 'X' is not assignable to 'Y'
-// Attempted fixes: tried casting, tried changing type
-// Need to research proper solution
-const value: any = problematicValue;  // Temporary workaround
-```
-
-**Add to tracking:**
-```markdown
-## Known Issues (Deferred)
-
-1. **File:** user.service.ts:45
-   **Error:** Complex type inference issue
-   **Status:** Deferred - application builds and runs
-   **Workaround:** Using 'any' type temporarily
-   **Plan:** Research proper typing after core migration complete
-```
-
-**Move on:**
-- Don't let one error block entire migration
-- Fix others first
-- Come back to difficult ones later
-- Sometimes fixing other errors makes stubborn ones clear
-
-### 7. Final Cleanup
-
-When error count is low (< 5):
-
-**Review each remaining error individually:**
-- Read error message carefully
-- Understand root cause
-- Apply targeted fix
-- Test fix works
-
-**Run final build:**
-```bash
-npm run build --verbose
-```
-
-**Verify:**
-- ✅ 0 errors
-- ✅ Build succeeds
-- ✅ Output files generated
-- ✅ No warnings (or document acceptable warnings)
-
-### 8. Report Progress
-
-Throughout process, provide updates:
+Every handoff document must start with:
 
 ```markdown
-🔨 **Error Fixing Progress**
+# [Report Name]
 
-Initial errors: 47
-
-Round 1 (Config):        47 → 41 (6 fixed)
-Round 2 (Framework):     41 → 34 (7 fixed)
-Round 3 (Imports):       34 → 26 (8 fixed)
-Round 4 (Collections):   26 → 18 (8 fixed)
-Round 5 (Types):         18 → 7 (11 fixed)
-Round 6 (Manual):        7 → 0 (7 fixed)
-
-✅ **All errors resolved!**
-   Total fixed: 47 errors
-   Build: SUCCESS
+**Producing Agent:** [agent name]
+**Date:** [current date/time]
+**Source Technology:** [if applicable]
+**Target Technology:** [if applicable]
 ```
 
-## Output
+### 5. Required Status Footer
 
-- All resolvable errors fixed
-- Application builds successfully
-- Documented any deferred issues
-- Progress tracked and reported
+Every handoff document must end with exactly one of these:
 
-## Example Workflow
-
-### Initial State
-```
-npm run build
-
-ERROR in src/services/user.service.ts:1:31
-Cannot find module '@angular/core'
-
-ERROR in src/services/user.service.ts:2:24
-Cannot find module 'rxjs/operators'
-
-ERROR in src/services/user.service.ts:15:5
-Property 'size' does not exist on type 'any[]'
-
-[... 44 more errors ...]
-
-Total: 47 errors
-```
-
-### Group & Prioritize
 ```markdown
-1. Missing @angular/core (3 files) - Priority 1
-2. Missing rxjs (4 files) - Priority 1
-3. Collection .size() → .length (8 instances) - Priority 2
-4. Type mismatches (32 instances) - Priority 3
+## Status
+COMPLETE
 ```
 
-### Fix Round 1
-```bash
-npm install @angular/core @angular/common
-npm install rxjs
-
-npm run build
-# Now: 40 errors (7 fixed)
+```markdown
+## Status
+PARTIAL — reason: [brief explanation of what is missing]
 ```
 
-### Fix Round 2
-```typescript
-// Find all: .size()
-// Replace: .length
-# Now: 32 errors (8 fixed)
+```markdown
+## Status
+FAILED — reason: [what went wrong, what consuming agent should do]
 ```
 
-### Fix Round 3
-```typescript
-// Fix type annotations one by one
-# Now: 0 errors (32 fixed)
+### 6. Finalize and Confirm
+
+After writing the file:
+1. Re-read the first 10 lines to verify it can be found
+2. Confirm the `## Status` section is at the end
+3. Report to orchestrator: "✅ [File] written to output/[filename]"
+
+---
+
+## Handoff Document Templates
+
+### Analysis Report Template
+
+```markdown
+# Migration Analysis Report
+
+**Producing Agent:** Analysis Agent
+**Date:** {date}
+**Source Technology:** {SOURCE_TECH}
+**Target Technology:** {TARGET_TECH}
+**Total Source Files:** {N}
+
+## 1. Workspace Structure
+...
+
+## 2. Dependencies
+...
+
+## 3. Architecture
+...
+
+## 4. File Catalog
+...
+
+## 5. Type Mappings
+...
+
+## 6. Migration Order
+...
+
+## 7. Risk Assessment
+...
+
+## 8. Recommended Target Project Name
+...
+
+## 9. Setup Commands
+...
+
+## Status
+COMPLETE
 ```
 
-### Success
+### Migration Report Template
+
+```markdown
+# Migration Report
+
+**Producing Agent:** Migration Agent
+**Date:** {date}
+**Source Technology:** {SOURCE_TECH}
+**Target Technology:** {TARGET_TECH}
+
+## Target Project Location
+`output/{target-app-name}/`
+
+## Build Command
+...
+
+## Dev Server Command
+...
+
+## Migrated Files
+...
+
+## Dependencies Installed
+...
+
+## Unmigrated Files
+...
+
+## Notes for Validation Agent
+...
+
+## Status
+COMPLETE
 ```
-✅ Build successful!
-   Fixed: 47 errors
-   Time: 45 minutes
+
+### Validation Report Template
+
+```markdown
+# Validation Report
+
+**Producing Agent:** Validation Agent
+**Date:** {date}
+**Target Technology:** {TARGET_TECH}
+**Target App Location:** `output/{target-app-name}/`
+
+## Build Status
+**Result:** ✅ PASS / ❌ FAIL / ⚠️ PARTIAL
+
+## Runtime Status
+**Result:** ✅ STARTS / ❌ FAILS TO START / ⏭️ SKIPPED
+
+## Fixes Applied
+...
+
+## Known Issues
+...
+
+## Files Needing Manual Review
+...
+
+## Final Assessment
+**Overall Status:** ✅ SUCCESS / ⚠️ PARTIAL / ❌ FAILED
+
+## Status
+COMPLETE
+```
+
+---
+
+## Error Scenarios
+
+**If you run out of time before completing a section:**
+1. Write what you have in the section
+2. Mark incomplete sections with: `⚠️ INCOMPLETE — time limit reached`
+3. Set status to: `PARTIAL — reason: time limit, sections {X, Y} incomplete`
+
+**If a critical error occurs:**
+1. Still write the handoff document
+2. Document the error clearly
+3. Set status to: `FAILED — reason: [what happened]`
+4. The Orchestrator will read this and decide whether to retry
+
+**Never leave a handoff file missing.** A failed document is better than no document.
+
+---
+
+## Examples
+
+### Example: Analysis Agent finishes successfully
+
+```markdown
+# Migration Analysis Report
+
+**Producing Agent:** Analysis Agent
+**Date:** 2026-02-26
+**Source Technology:** Java Swing
+**Target Technology:** React 18
+**Total Source Files:** 34
+
+## 1. Workspace Structure
+src/
+├── Main.java
+├── ui/
+│   ├── MainFrame.java
+│   └── UserPanel.java
+└── services/
+    └── UserService.java
+
+**Entry Points:**
+- `src/Main.java` — application entry point
+
+[... rest of sections ...]
+
+## Status
+COMPLETE
+```
+
+### Example: Migration Agent with some best-effort files
+
+```markdown
+## Status
+PARTIAL — reason: 3 files (UserPanel.java, ComplexDialog.java, ReportGenerator.java)
+were migrated as best-effort with TODO comments due to complex GUI logic.
+All other 31 files migrated completely.
+```
 ```
