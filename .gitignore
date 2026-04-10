@@ -2,3 +2,7 @@
 
 # Maven build output
 target/
+
+# .NET build artifacts
+output/HelloWorldCSharp/**/bin/
+output/HelloWorldCSharp/**/obj/
