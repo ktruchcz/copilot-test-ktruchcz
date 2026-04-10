@@ -1,3 +1,5 @@
+package com.example;
+
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -16,10 +18,10 @@ import java.time.Month;
 public class HelloWorld {
 
     /** Immutable value object holding a greeting message – uses a Java 16 record. */
-    record Greeting(String recipient, String message) {
+    public record Greeting(String recipient, String message) {
 
         /** Compact canonical constructor – validates inputs. */
-        Greeting {
+        public Greeting {
             if (recipient == null || recipient.isBlank()) {
                 throw new IllegalArgumentException("recipient must not be blank");
             }
@@ -29,7 +31,7 @@ public class HelloWorld {
         }
 
         /** Returns a fully-formatted greeting string using a Java 15 text block. */
-        String formatted() {
+        public String formatted() {
             return """
                     ╔══════════════════════════════╗
                     ║  %s, %s!  ║
@@ -39,7 +41,7 @@ public class HelloWorld {
     }
 
     /** Simple sealed hierarchy used to show Java 21 pattern matching in a switch. */
-    sealed interface TimeOfDay permits TimeOfDay.Morning, TimeOfDay.Afternoon, TimeOfDay.Evening {
+    public sealed interface TimeOfDay permits TimeOfDay.Morning, TimeOfDay.Afternoon, TimeOfDay.Evening {
         record Morning() implements TimeOfDay {}
         record Afternoon() implements TimeOfDay {}
         record Evening() implements TimeOfDay {}
@@ -85,11 +87,11 @@ public class HelloWorld {
     }
 
     /** Returns the meteorological season for the given {@link Month}. */
-    static String seasonOf(Month month) {
+    public static String seasonOf(Month month) {
         return switch (month) {
-            case DECEMBER, JANUARY, FEBRUARY -> "Winter";
-            case MARCH, APRIL, MAY           -> "Spring";
-            case JUNE, JULY, AUGUST          -> "Summer";
+            case DECEMBER, JANUARY, FEBRUARY  -> "Winter";
+            case MARCH, APRIL, MAY            -> "Spring";
+            case JUNE, JULY, AUGUST           -> "Summer";
             case SEPTEMBER, OCTOBER, NOVEMBER -> "Autumn";
         };
     }
