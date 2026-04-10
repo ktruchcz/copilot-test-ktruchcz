@@ -2,3 +2,6 @@
 
 # Maven build output
 target/
+
+# COBOL compiled binary
+output/hello-world-cobol/helloworld
