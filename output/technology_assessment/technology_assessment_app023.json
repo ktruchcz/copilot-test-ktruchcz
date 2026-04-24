@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app023",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "RHEL 8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 is in full support until 2029.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Node.js 18",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Node.js 18",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-04-30",
+      "reason": "Node.js 18 LTS reached end of life in April 2025; Node.js 20/22 are current LTS.",
+      "confidence": 8
+    },
+    {
+      "component_name": "MongoDB",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "MongoDB",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "MongoDB without specific version cannot be fully assessed.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Apache Tomcat. 7.4",
+      "component_family": "Application Server",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "Apache Tomcat. 7.4",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "No lifecycle information available for 'Apache Tomcat. 7.4'.",
+      "confidence": 3
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-04-24T12:49:40.020209Z"
+}

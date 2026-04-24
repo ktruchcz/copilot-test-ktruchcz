@@ -1,0 +1,30 @@
+{
+  "description": "Unified schema from validated output",
+  "fields": [
+    "app_id",
+    "name",
+    "description",
+    "Solution type",
+    "criticality",
+    "Application status",
+    "Decomission date",
+    "Deployment type",
+    "data classification",
+    "business unit",
+    "number of users",
+    "Operating system",
+    "programming language",
+    "Application Server type",
+    "Application Architecture",
+    "Application is containerized",
+    "Number of environments",
+    "Physical servers instances",
+    "CI_CD present",
+    "external interfaces",
+    "db_engine",
+    "DB storage in GB",
+    "DB License required",
+    "logging_solution",
+    "monitoring_tool"
+  ]
+}

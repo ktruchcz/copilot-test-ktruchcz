@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app025",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is in mainstream support until 2024, extended support until January 2029.",
+      "confidence": 8
+    },
+    {
+      "component_name": "ASP.NET Core",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "ASP.NET Core",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "ASP.NET Core without specific version cannot be fully assessed.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 15",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "PostgreSQL 15",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-11-11",
+      "reason": "PostgreSQL 15 is current and supported until November 2027.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Application Server",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "Microsoft IIS 10.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "No lifecycle information available for 'Microsoft IIS 10.0'.",
+      "confidence": 3
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-04-24T12:49:40.020209Z"
+}

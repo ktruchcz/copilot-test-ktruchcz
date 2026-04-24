@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "app_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "Solution type": {
+      "type": "string"
+    },
+    "criticality": {
+      "type": "string"
+    },
+    "Application status": {
+      "type": "string"
+    },
+    "Decomission date": {
+      "type": "string"
+    },
+    "Deployment type": {
+      "type": "string"
+    },
+    "data classification": {
+      "type": "string"
+    },
+    "business unit": {
+      "type": "string"
+    },
+    "number of users": {
+      "type": [
+        "integer",
+        "string",
+        "null"
+      ]
+    },
+    "Operating system": {
+      "type": "string"
+    },
+    "programming language": {
+      "type": "string"
+    },
+    "Application Server type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Application Architecture": {
+      "type": "string"
+    },
+    "Application is containerized": {
+      "type": "string"
+    },
+    "Number of environments": {
+      "type": [
+        "integer",
+        "string",
+        "null"
+      ]
+    },
+    "Physical servers instances": {
+      "type": [
+        "array",
+        "string",
+        "null"
+      ]
+    },
+    "CI_CD present": {
+      "type": "string"
+    },
+    "external interfaces": {
+      "type": [
+        "integer",
+        "string",
+        "null"
+      ]
+    },
+    "db_engine": {
+      "type": "string"
+    },
+    "DB storage in GB": {
+      "type": [
+        "integer",
+        "string",
+        "null"
+      ]
+    },
+    "DB License required": {
+      "type": "string"
+    },
+    "logging_solution": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "monitoring_tool": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app002",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "RHEL 7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached End of Maintenance Support 2 on June 30, 2024.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-01",
+      "reason": "Java 11 LTS Oracle Premier Support ended September 2023; still available via Adoptium/Temurin but Java 21 is the current LTS.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Amazon RDS MySQL",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": true,
+      "version": "Amazon RDS MySQL",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "N/A",
+      "reason": "Amazon RDS MySQL is a managed service; version is managed by AWS; assuming a current version is used.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Websphere 7.0",
+      "component_family": "Application Server",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "Websphere 7.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "No lifecycle information available for 'Websphere 7.0'.",
+      "confidence": 3
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-04-24T12:49:40.020209Z"
+}

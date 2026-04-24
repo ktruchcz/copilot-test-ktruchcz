@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app016",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "RHEL 7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached End of Maintenance Support 2 on June 30, 2024.",
+      "confidence": 8
+    },
+    {
+      "component_name": "React Native",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "React Native",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "React Native without specific version cannot be fully assessed.",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2019",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 mainstream support until 2025, extended support until January 2030.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Payara 4.0",
+      "component_family": "Application Server",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "Payara 4.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "No lifecycle information available for 'Payara 4.0'.",
+      "confidence": 3
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-04-24T12:49:40.020209Z"
+}

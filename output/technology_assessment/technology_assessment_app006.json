@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Debian 6",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Debian 6",
+      "component_status": "EOL",
+      "eol_date": "2014-05-31",
+      "reason": "Debian 6 (Squeeze) reached end of life in 2014.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-01",
+      "reason": "Java 11 LTS Oracle Premier Support ended September 2023; still available via Adoptium/Temurin but Java 21 is the current LTS.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "PostgreSQL 13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 support ends November 2025; PostgreSQL 16/17 are current.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Glassfish 5.0",
+      "component_family": "Application Server",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "Glassfish 5.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "N/A",
+      "reason": "No lifecycle information available for 'Glassfish 5.0'.",
+      "confidence": 3
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-04-24T12:49:40.020209Z"
+}
