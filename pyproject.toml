@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-world"
+version = "1.0.0"
+description = "A simple Hello World application – Python port of the Java original"
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[project.scripts]
+hello-world = "hello_world:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
