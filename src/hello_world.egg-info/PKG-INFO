@@ -1,7 +1,0 @@
-Metadata-Version: 2.4
-Name: hello-world
-Version: 1.0.0
-Summary: A simple Hello World application – Python port of the Java original
-Requires-Python: >=3.11
-Provides-Extra: test
-Requires-Dist: pytest>=8.0; extra == "test"
