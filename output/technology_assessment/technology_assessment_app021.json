@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app021",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2031-10-14",
+      "reason": "Windows Server 2022 is in Mainstream Support until October 2026 and Extended Support until October 14, 2031.",
+      "confidence": 10
+    },
+    {
+      "component_name": "Oracle Database",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "11g",
+      "component_status": "EOL",
+      "eol_date": "2015-12-31",
+      "reason": "Oracle Database 11g reached End of Premier Support in January 2015 and Extended Support in December 2015.",
+      "confidence": 10
+    },
+    {
+      "component_name": "C++",
+      "component_family": "C++",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17 (ISO 2017)",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "C++17 is a valid ISO standard; major compilers (GCC, Clang, MSVC) fully support it.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "IIS 10.0 ships with Windows Server 2016/2019/2022, currently supported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app013",
+  "components_analyzed": [
+    {
+      "component_name": "Debian",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2018-05-31",
+      "reason": "Debian 7 (Wheezy) reached End of Life on May 31, 2018. No security updates available.",
+      "confidence": 10
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "SQL Server 2022 is fully supported with Mainstream Support until 2028 and Extended Support until 2033.",
+      "confidence": 10
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-09-30",
+      "reason": "Java 17 is a current LTS release with support until September 2029 (Adoptium/Eclipse Temurin).",
+      "confidence": 10
+    },
+    {
+      "component_name": "IBM WebSphere",
+      "component_family": "WebSphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": "2018-04-30",
+      "reason": "IBM WebSphere Application Server 8.0 reached End of Service on April 30, 2018.",
+      "confidence": 10
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app017",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached End of Maintenance Support on June 30, 2024. No security updates without ELS.",
+      "confidence": 10
+    },
+    {
+      "component_name": "Oracle Database",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "12c",
+      "component_status": "EOL",
+      "eol_date": "2022-07-31",
+      "reason": "Oracle Database 12c R2 (12.2) reached End of Premier Support in November 2020 and Extended Support ended July 2022.",
+      "confidence": 9
+    },
+    {
+      "component_name": "PowerShell",
+      "component_family": "PowerShell",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "7.x",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "PowerShell 7.x is actively maintained with LTS releases supported by Microsoft.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Payara",
+      "component_family": "Payara",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "5.0",
+      "component_status": "EOL",
+      "eol_date": "2023-12-31",
+      "reason": "Payara 5.x Community reached End of Life in December 2023. Payara 6 is the current LTS.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}

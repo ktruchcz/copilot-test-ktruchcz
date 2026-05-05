@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app024",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is in Mainstream Support until January 2024 and Extended Support until January 9, 2029.",
+      "confidence": 10
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "EOL",
+      "eol_date": "2024-07-09",
+      "reason": "SQL Server 2014 reached End of Extended Support on July 9, 2024.",
+      "confidence": 10
+    },
+    {
+      "component_name": "VB.NET",
+      "component_family": "VB.NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "unspecified",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "VB.NET is a legacy language. Microsoft has announced no new features for VB.NET in .NET Core 5+; it is in maintenance mode.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "IIS 10.0 ships with Windows Server 2016/2019/2022, currently supported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}

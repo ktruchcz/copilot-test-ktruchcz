@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app004",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Windows Server 2012/2012 R2 reached End of Support on October 10, 2023.",
+      "confidence": 10
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 is in Mainstream Support until 2025 and Extended Support until January 2030.",
+      "confidence": 10
+    },
+    {
+      "component_name": ".NET Core",
+      "component_family": ".NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "unspecified",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": ".NET Core version is not specified. Many .NET Core versions (1.x, 2.x, 3.x) are EOL. Without version details, assessed as OUTDATED.",
+      "confidence": 6
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "IIS 8.0 ships with Windows Server 2012, which reached EOL on October 10, 2023.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}

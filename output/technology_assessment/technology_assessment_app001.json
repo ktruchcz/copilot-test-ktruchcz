@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app001",
+  "components_analyzed": [
+    {
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "OUTDATED",
+      "eol_date": "2023-04-30",
+      "reason": "IBM AIX 7.2 is in its declining support phase. While IBM offers technology refresh updates, AIX 7.2 is aging and not recommended for new deployments.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Oracle Database",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "19c",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-04-30",
+      "reason": "Oracle Database 19c is the current Long Term Support (LTS) release, supported until April 2027 with Extended Support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "COBOL",
+      "component_family": "COBOL",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "COBOL-2014 is a valid ISO standard but is a legacy language with limited modern tooling ecosystem.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}

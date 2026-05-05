@@ -1,0 +1,145 @@
+{
+  "application_identifier": "app028",
+  "scenarios_detailed": [
+    {
+      "id": "os_update_security_patch",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Operating system Windows Server 2019 is current and supported.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_to_standard_linux_os",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "Application runs on Windows OS. Scenario is excluded for Windows-based systems.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_to_arm_cpu",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "Third-party application; ARM compatibility depends on vendor support, which is not confirmed.",
+      "confidence": 7,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "application_server_replacement",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "SaaS/3rd-party application; application server is vendor-managed.",
+      "confidence": 8,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Application is already hosted on cloud (AWS). Lift & Shift is not needed.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "app_containerization",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Application is already containerized.",
+      "confidence": 10,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "app_refactor_decoupling",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "Third-party software; internal architecture cannot be refactored by the customer.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "upgrade_legacy_databases",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Database Oracle Database 19c is on a current supported version.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_db_engine_open_source",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "Third-party application; database selection may be vendor-mandated.",
+      "confidence": 8,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "update_outdated_components",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "Third-party software; component versions (language runtime, framework) are vendor-managed and not upgradeable by the customer.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    }
+  ]
+}

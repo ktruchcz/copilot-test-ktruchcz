@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app015",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is in Mainstream Support until January 2024 and Extended Support until January 9, 2029.",
+      "confidence": 10
+    },
+    {
+      "component_name": "MongoDB",
+      "component_family": "MongoDB",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "current",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "MongoDB version is not specified; assuming a current release based on context. MongoDB 7.x is the current major version.",
+      "confidence": 6
+    },
+    {
+      "component_name": "PHP",
+      "component_family": "PHP",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "8.1",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-12-31",
+      "reason": "PHP 8.1 active support ended November 2023; security support ends December 2025. Upgrade to PHP 8.3 recommended.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "IIS 10.0 ships with Windows Server 2016/2019/2022, currently supported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}

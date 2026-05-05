@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app027",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached End of Maintenance Support on June 30, 2024. No security updates without ELS.",
+      "confidence": 10
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "SQL Server 2022 is fully supported with Mainstream Support until 2028 and Extended Support until 2033.",
+      "confidence": 10
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2024-03-31",
+      "reason": "Java 11 LTS Oracle free support ended March 2024. Still supported via paid Oracle support and community distributions, but aging.",
+      "confidence": 8
+    },
+    {
+      "component_name": "IBM WebSphere",
+      "component_family": "WebSphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.5",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-09-30",
+      "reason": "IBM WebSphere 8.5.5 is in extended support until September 2025; approaching end of life.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-05T00:00:00Z"
+}
