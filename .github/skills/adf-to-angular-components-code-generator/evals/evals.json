@@ -1,0 +1,17 @@
+{
+  "skill_name": "adf-to-angular-components-code-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Generate customer-search.component.ts and customer-search.component.html from the attached ADF page. The Angular component should load search results via CustomerService, use reactive forms, and pass CustomerDto to the details route.",
+      "expected_output": "A complete API-backed Angular component and template with service calls, reactive forms, DTO-based routing, and no placeholder data.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Convert the provided ADF JSF fragment into a static Bootstrap 5 mockup only. Preserve the tab layout, convert af:table to a responsive table, and do not include any Angular bindings.",
+      "expected_output": "A pure HTML fragment with Bootstrap structure that preserves the ADF hierarchy and contains no bindings or controller logic.",
+      "files": []
+    }
+  ]
+}
