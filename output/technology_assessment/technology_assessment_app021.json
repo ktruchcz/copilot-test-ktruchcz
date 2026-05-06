@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app021",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2022",
+      "component_family": "Windows Server 2022",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2031-10-14",
+      "reason": "Windows Server 2022 is supported until October 2031.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Oracle 11g",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "",
+      "component_status": "EOL",
+      "eol_date": "2020-12-31",
+      "reason": "Oracle 11g reached EOL in December 2020.",
+      "confidence": 9
+    },
+    {
+      "component_name": "C++ 17",
+      "component_family": "C++",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "N/A",
+      "reason": "C++ 17 is widely supported; C++ 20/23 are current standards.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft IIS 10.0",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "",
+      "reason": "No lifecycle data for Microsoft IIS 10.0.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-06T00:00:00Z"
+}

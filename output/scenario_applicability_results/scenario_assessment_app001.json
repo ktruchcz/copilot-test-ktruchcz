@@ -1,0 +1,139 @@
+{
+  "application_identifier": "app001",
+  "app_name": "ERPApp-001",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
+      "status": "APPLICABLE",
+      "reasoning": "OS (AIX 7.2) is OUTDATED; update to a current, supported version.",
+      "priority": "High",
+      "effort": "Low",
+      "modernization_effects": [
+        "security"
+      ],
+      "technical_focus": "Operating System"
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
+      "status": "APPLICABLE",
+      "reasoning": "OS (AIX 7.2) is proprietary/commercial; consider migrating to standard Linux.",
+      "priority": "Medium",
+      "effort": "Medium",
+      "modernization_effects": [
+        "agility",
+        "security",
+        "cost"
+      ],
+      "technical_focus": "Operating System"
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
+      "status": "LACK_OF_DATA",
+      "reasoning": "CPU architecture not documented in application data.",
+      "priority": "Medium",
+      "effort": "Medium",
+      "modernization_effects": [
+        "cost",
+        "sustainability"
+      ],
+      "technical_focus": "Operating System"
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "No application server component identified.",
+      "priority": "Medium",
+      "effort": "Medium",
+      "modernization_effects": [
+        "agility",
+        "cost"
+      ],
+      "technical_focus": "Application"
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+      "status": "APPLICABLE",
+      "reasoning": "Application is on-premise; cloud migration could reduce infrastructure costs.",
+      "priority": "High",
+      "effort": "Low",
+      "modernization_effects": [
+        "security",
+        "agility"
+      ],
+      "technical_focus": "Application"
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "status": "APPLICABLE",
+      "reasoning": "Application is not containerized; containerization could improve portability and deployment efficiency.",
+      "priority": "High",
+      "effort": "High",
+      "modernization_effects": [
+        "agility",
+        "cost",
+        "sustainability"
+      ],
+      "technical_focus": "Application"
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
+      "status": "APPLICABLE",
+      "reasoning": "Architecture is 1-Tier; refactoring to microservices could improve maintainability.",
+      "priority": "High",
+      "effort": "High",
+      "modernization_effects": [
+        "agility",
+        "cost",
+        "sustainability"
+      ],
+      "technical_focus": "Application"
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "status": "FULFILLED",
+      "reasoning": "Database (Oracle 19c) is on a current, supported version.",
+      "priority": "High",
+      "effort": "Medium",
+      "modernization_effects": [
+        "security",
+        "agility"
+      ],
+      "technical_focus": "Database"
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "scenario_name": "Switch DB Engine to open-source database solution",
+      "status": "APPLICABLE",
+      "reasoning": "Oracle database requires expensive licensing; migration to PostgreSQL could reduce costs.",
+      "priority": "High",
+      "effort": "Medium",
+      "modernization_effects": [
+        "cost"
+      ],
+      "technical_focus": "Database"
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "scenario_name": "Update outdated components",
+      "status": "APPLICABLE",
+      "reasoning": "Components need updating. Outdated: AIX 7.2, COBOL-2014.",
+      "priority": "High",
+      "effort": "High",
+      "modernization_effects": [
+        "security",
+        "agility",
+        "cost"
+      ],
+      "technical_focus": "Application"
+    }
+  ],
+  "analysis_timestamp": "2026-05-06T00:00:00Z"
+}

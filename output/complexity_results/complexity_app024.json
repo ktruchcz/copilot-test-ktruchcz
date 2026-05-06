@@ -1,0 +1,27 @@
+{
+  "application_identifier": "app024",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "reasoning": "Complexity score 6/10 (MEDIUM). 1 EOL component(s), 1 outdated component(s), High business criticality.",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 2,
+    "number_of_interfaces": 3,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 1,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  },
+  "factor_scores": {
+    "technology_age_eol": 8,
+    "integration_complexity": 5,
+    "infrastructure_scale": 4,
+    "business_criticality": 7,
+    "code_architecture": 9,
+    "data_complexity": 4
+  }
+}

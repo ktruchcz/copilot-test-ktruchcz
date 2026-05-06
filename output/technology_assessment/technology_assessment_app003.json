@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app003",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "RHEL 7",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached EOL in June 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "PostgreSQL 13",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 EOL is November 2025; PostgreSQL 16 is current.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Python 3.9",
+      "component_family": "Python 3.9",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-10-05",
+      "reason": "Python 3.9 EOL is October 2025; Python 3.12 is current.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Apache Tomcat 6.1",
+      "component_family": "Apache Tomcat 6",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "",
+      "component_status": "EOL",
+      "eol_date": "2016-12-31",
+      "reason": "Apache Tomcat 6 reached EOL in December 2016.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-06T00:00:00Z"
+}

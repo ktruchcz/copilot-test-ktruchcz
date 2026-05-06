@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app026",
+  "components_analyzed": [
+    {
+      "component_name": "AIX 7.2",
+      "component_family": "AIX 7.2",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "",
+      "component_status": "OUTDATED",
+      "eol_date": "2023",
+      "reason": "AIX 7.2 is in extended support; AIX 7.3 is current.",
+      "confidence": 9
+    },
+    {
+      "component_name": "DB2",
+      "component_family": "Db2",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "",
+      "component_status": "OUTDATED",
+      "eol_date": "N/A",
+      "reason": "IBM Db2 is actively supported but considered a legacy database platform.",
+      "confidence": 9
+    },
+    {
+      "component_name": "FORTRAN 2018",
+      "component_family": "Fortran",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "",
+      "component_status": "OUTDATED",
+      "eol_date": "N/A",
+      "reason": "FORTRAN 2018 is the latest standard but FORTRAN itself is legacy.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-06T00:00:00Z"
+}
