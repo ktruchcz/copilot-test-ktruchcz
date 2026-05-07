@@ -1,0 +1,45 @@
+{
+  "app_id": "app016",
+  "app_name": "MobileApp-016",
+  "app_description": "Mobile application for drivers and customers to track shipments and manage delivery operations",
+  "solution_type": "Custom made",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "Operations",
+  "business_capabilities": [
+    "Mobile Operations",
+    "Customer Portal",
+    "Order Tracking"
+  ],
+  "user_count": 1580,
+  "operating_system": "RHEL 7",
+  "programming_language": "React Native",
+  "application_server": "Payara 4.0",
+  "application_architecture": "3-Tier",
+  "is_containerized": "Yes",
+  "environment_count": 3,
+  "server_instances": [
+    "sv22",
+    "sv23"
+  ],
+  "cpu_cores": 8,
+  "memory_gb": 32,
+  "production_environments": [
+    "prod01",
+    "prod03"
+  ],
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 30,
+  "external_interface_count": 10,
+  "database_engine": "SQL Server 2019",
+  "database_storage_gb": 2000,
+  "database_license_required": "Yes",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Datadog",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0019"
+  }
+}

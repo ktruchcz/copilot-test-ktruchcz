@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app010",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is in mainstream support",
+      "confidence": 9
+    },
+    {
+      "component_name": "MySQL",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-04-30",
+      "reason": "MySQL 8.0 is actively supported",
+      "confidence": 9
+    },
+    {
+      "component_name": "Ruby",
+      "component_family": "Ruby",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2.7",
+      "component_status": "EOL",
+      "eol_date": "2023-03-31",
+      "reason": "Ruby 2.7 reached EOL in March 2023",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "Microsoft",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Unable to determine lifecycle status for Microsoft IIS 10.0. Assuming outdated.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-07T12:47:15.633553Z"
+}

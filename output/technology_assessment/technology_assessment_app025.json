@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app025",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is in mainstream support",
+      "confidence": 9
+    },
+    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-11-11",
+      "reason": "PostgreSQL 15 is supported until November 2027",
+      "confidence": 9
+    },
+    {
+      "component_name": "ASP",
+      "component_family": "ASP",
+      "component_type": "language",
+      "managed_service": false,
+      "version": null,
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Unable to determine lifecycle status for ASP.NET Core. Assuming outdated.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "Microsoft",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Unable to determine lifecycle status for Microsoft IIS 10.0. Assuming outdated.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-07T12:47:15.636743Z"
+}

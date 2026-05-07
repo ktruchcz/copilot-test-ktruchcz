@@ -1,0 +1,179 @@
+{
+  "type": "object",
+  "properties": {
+    "app_id": {
+      "type": "string",
+      "description": "Unique application identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Application name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Application description"
+    },
+    "Solution type": {
+      "type": "string",
+      "description": "Type of solution (Custom made, COTS, SaaS, etc.)"
+    },
+    "criticality": {
+      "type": "string",
+      "description": "Business criticality level"
+    },
+    "Application status": {
+      "type": "string",
+      "description": "Current application status"
+    },
+    "Decomission date": {
+      "type": [
+        "string",
+        "integer",
+        "null"
+      ],
+      "description": "Planned decommission date"
+    },
+    "Deployment type": {
+      "type": "string",
+      "description": "Deployment type (On-Premise, Cloud, Hybrid)"
+    },
+    "data classification": {
+      "type": "string",
+      "description": "Data classification level"
+    },
+    "business unit": {
+      "type": "string",
+      "description": "Business unit owning the application"
+    },
+    "business capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "number of users": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "Operating system": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "programming language": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Application Server type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Application Architecture": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Application is containerized": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Number of environments": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "Physical servers instances": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "cpu_cores": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "memory_gb": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "production_environments": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "CI_CD present": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "number of Api endpoints": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "external interfaces": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "Physical Database Server instance": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "db_engine": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "DB storage in GB": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "DB License required": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "logging_solution": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "monitoring_tool": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "app_id",
+    "name"
+  ]
+}

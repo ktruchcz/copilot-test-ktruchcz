@@ -1,0 +1,16 @@
+{
+  "relationships": {
+    "application_to_server": {
+      "type": "one-to-many",
+      "description": "Applications can run on multiple server instances"
+    },
+    "application_to_database": {
+      "type": "one-to-one",
+      "description": "Applications typically have one primary database"
+    },
+    "application_to_business_unit": {
+      "type": "many-to-one",
+      "description": "Multiple applications belong to one business unit"
+    }
+  }
+}

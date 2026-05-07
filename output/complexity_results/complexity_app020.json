@@ -1,0 +1,18 @@
+{
+  "complexity_score": 6,
+  "confidence": 9,
+  "reasoning": "Technology age: 8/10 (1 EOL, 3 outdated components) | Integration: 8/10 (7 external interfaces) | Infrastructure: 4/10 (1 servers, 3 environments) | Criticality: 2/10 (low) | Architecture: 4/10 (containerized: no, CI/CD: yes) | Data: 4/10 (600 GB storage)",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 7,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 3,
+    "number_of_eol_technologies": 1,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  },
+  "application_identifier": "app020"
+}

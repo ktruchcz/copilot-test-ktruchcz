@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app026",
+  "components_analyzed": [
+    {
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2025-12-31",
+      "reason": "AIX 7.2 is supported until December 2025",
+      "confidence": 9
+    },
+    {
+      "component_name": "DB",
+      "component_family": "DB",
+      "component_type": "database",
+      "managed_service": false,
+      "version": null,
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Unable to determine lifecycle status for DB2. Assuming outdated.",
+      "confidence": 5
+    },
+    {
+      "component_name": "FORTRAN",
+      "component_family": "FORTRAN",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2018",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Unable to determine lifecycle status for FORTRAN 2018. Assuming outdated.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-07T12:47:15.636909Z"
+}

@@ -2,3 +2,6 @@
 
 # Maven build output
 target/
+
+# Local agent/tool logs
+hook_tools_used.log

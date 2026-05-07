@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app023",
+  "assessments": [
+    {
+      "exclusion_type": "RETIRED",
+      "applies": false,
+      "confidence": 9,
+      "reasoning": "Application status is 'Production'. Application is not marked as retired."
+    },
+    {
+      "exclusion_type": "SAP",
+      "applies": false,
+      "confidence": 9,
+      "reasoning": "No SAP indicators found in solution type, name, or description."
+    }
+  ],
+  "out_of_scope": false
+}

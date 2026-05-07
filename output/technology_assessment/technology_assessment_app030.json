@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app030",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 is fully supported until May 2029",
+      "confidence": 9
+    },
+    {
+      "component_name": "MySQL",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "5.7",
+      "component_status": "EOL",
+      "eol_date": "2023-10-31",
+      "reason": "MySQL 5.7 reached EOL in October 2023",
+      "confidence": 9
+    },
+    {
+      "component_name": "Go",
+      "component_family": "Go",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "1.19",
+      "component_status": "EOL",
+      "eol_date": "2023-09-06",
+      "reason": "Go 1.19 reached EOL in September 2023",
+      "confidence": 9
+    },
+    {
+      "component_name": "Glassfish",
+      "component_family": "Glassfish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "3.0",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Unable to determine lifecycle status for Glassfish 3.0. Assuming outdated.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-07T12:47:15.637330Z"
+}

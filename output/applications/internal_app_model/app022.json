@@ -1,0 +1,42 @@
+{
+  "app_id": "app022",
+  "app_name": "ComplianceApp-022",
+  "app_description": "Comprehensive compliance management platform for regulatory adherence and risk management",
+  "solution_type": "Custom made",
+  "business_criticality": "Critical",
+  "application_status": "Production",
+  "deployment_type": "AWS, On-premise",
+  "data_classification": "Confidential",
+  "business_unit": "Compliance",
+  "business_capabilities": [
+    "Compliance Management",
+    "Risk Assessment",
+    "Regulatory Reporting"
+  ],
+  "user_count": 310,
+  "operating_system": "RHEL 7",
+  "programming_language": "Scala 2.13",
+  "application_server": "Payara 6.0",
+  "application_architecture": "3-Tier",
+  "is_containerized": "Yes",
+  "environment_count": 3,
+  "server_instances": [
+    "sv32",
+    "sv33"
+  ],
+  "cpu_cores": 6,
+  "memory_gb": 24,
+  "production_environments": "prod04",
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 16,
+  "external_interface_count": 12,
+  "database_engine": "PostgreSQL 14",
+  "database_storage_gb": 500,
+  "database_license_required": "No",
+  "logging_solution": "ELK",
+  "monitoring_tool": "Grafana",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0025"
+  }
+}
