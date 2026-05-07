@@ -2,3 +2,5 @@
 
 # Maven build output
 target/
+
+hook_tools_used.log
