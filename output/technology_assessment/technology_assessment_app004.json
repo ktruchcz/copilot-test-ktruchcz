@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app004",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Windows Server 2012 is out of support after October 2023.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "SQL Server 2019 is supported but one major version behind SQL Server 2022.",
+      "confidence": 8
+    },
+    {
+      "component_name": ".NET Core",
+      "component_family": ".NET Core",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "",
+      "reason": "The .NET Core entry does not specify a major version, so support status cannot be assessed.",
+      "confidence": 6
+    },
+    {
+      "component_name": ".NET Core",
+      "component_family": ".NET Core",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "",
+      "reason": "The source lists .NET Core without a framework major version.",
+      "confidence": 6
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": "",
+      "reason": "IIS 8.x aligns with Windows Server 2012-era platforms that are out of support.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-07T13:03:23Z"
+}

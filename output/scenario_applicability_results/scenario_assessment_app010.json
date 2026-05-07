@@ -1,0 +1,145 @@
+{
+  "application_identifier": "app010",
+  "scenarios_detailed": [
+    {
+      "id": "os_update_security_patch",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Operating system Windows Server 2019 is already on a supported version.",
+      "confidence": 9,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "switch_to_standard_linux_os",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "The application already runs on Windows; this Linux standardization scenario is not a natural fit.",
+      "confidence": 8,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "switch_to_arm_cpu",
+      "status": "LACK_OF_DATA",
+      "match_type": "ai",
+      "reason": "CPU architecture is not present in the Excel input, so the primary ARM migration trigger cannot be confirmed.",
+      "confidence": 4,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "application_server_replacement",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Application server Microsoft IIS 10.0 is already current.",
+      "confidence": 8,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "The application is already hosted on AWS, which fulfills the lift-and-shift cloud target.",
+      "confidence": 9,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "app_containerization",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "The application is third-party software and container packaging is unlikely to be under customer control.",
+      "confidence": 9,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "app_refactor_decoupling",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "The application is third-party software, so internal refactoring is not under customer control.",
+      "confidence": 9,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "upgrade_legacy_databases",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "Database upgrade looks relevant, but the application is third-party software and may require vendor-managed migration.",
+      "confidence": 8,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "switch_db_engine_open_source",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Database engine MySQL 8.0 is already open-source aligned.",
+      "confidence": 9,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    },
+    {
+      "id": "update_outdated_components",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "The application is third-party software, so runtime component upgrades are likely vendor-managed.",
+      "confidence": 9,
+      "source": {
+        "document_id": "discover/input/apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "app010",
+        "content_excerpt": "OS=Windows Server 2019; DB=MySQL 8.0; AppServer=Microsoft IIS 10.0; Language=Ruby 2.7; Deployment=AWS; Containerized=No",
+        "relevance": "Derived from Excel portfolio row and downstream assessments."
+      }
+    }
+  ]
+}

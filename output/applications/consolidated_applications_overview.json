@@ -1,0 +1,13 @@
+{
+  "analysis_id": "a67b26a1427931042febaee21649100d",
+  "applications_overview": {
+    "total_applications": 30,
+    "valid_applications": 30,
+    "invalid_applications": 0,
+    "application_id_field": "app_id",
+    "application_name_field": "name",
+    "application_description_field": "description",
+    "invalid_applications_list": []
+  },
+  "timestamp": "2026-05-07T13:03:23.425003+00:00"
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app008",
+  "components_analyzed": [
+    {
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "",
+      "reason": "AIX 6 is a legacy platform that is long out of mainstream support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "SQL Server 2019 is supported but one major version behind SQL Server 2022.",
+      "confidence": 8
+    },
+    {
+      "component_name": "COBOL",
+      "component_family": "COBOL",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "",
+      "reason": "COBOL-2014 identifies a language standard, not a vendor-supported runtime version.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Oracle WebLogic",
+      "component_family": "WebLogic",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": "",
+      "reason": "WebLogic 8.0 is a legacy application server generation.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-07T13:03:23Z"
+}
