@@ -1,0 +1,145 @@
+{
+  "application_identifier": "app016",
+  "scenarios_detailed": [
+    {
+      "id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "RHEL 7 reached end of maintenance support in June 2024.",
+      "confidence": 9,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "Operating system",
+        "content_excerpt": "RHEL 7",
+        "relevance": "RHEL 7 reached end of maintenance support in June 2024."
+      }
+    },
+    {
+      "id": "switch_to_standard_linux_os",
+      "status": "PARTIALLY_FULFILLED",
+      "match_type": "ai",
+      "reason": "Application runs on Linux already, but the current RHEL 7 release is EOL.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "Operating system",
+        "content_excerpt": "RHEL 7",
+        "relevance": "Application runs on Linux already, but the current RHEL 7 release is EOL."
+      }
+    },
+    {
+      "id": "switch_to_arm_cpu",
+      "status": "LACK_OF_DATA",
+      "match_type": "ai",
+      "reason": "CPU architecture is not present in the workbook, so ARM suitability cannot be validated.",
+      "confidence": 4,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "Deployment type, Operating system",
+        "content_excerpt": "Deployment=AWS; OS=RHEL 7",
+        "relevance": "CPU architecture is not present in the workbook, so ARM suitability cannot be validated."
+      }
+    },
+    {
+      "id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "Payara 4 is out of support.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "Application Server type",
+        "content_excerpt": "Payara 4.0",
+        "relevance": "Payara 4 is out of support."
+      }
+    },
+    {
+      "id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Application is already hosted on AWS, which satisfies the public cloud hosting indicator.",
+      "confidence": 9,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "Deployment type",
+        "content_excerpt": "AWS",
+        "relevance": "Application is already hosted on AWS, which satisfies the public cloud hosting indicator."
+      }
+    },
+    {
+      "id": "app_containerization",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "The workbook explicitly marks the application as containerized.",
+      "confidence": 10,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "Application is containerized, Operating system, programming language",
+        "content_excerpt": "containerized=Yes; os=RHEL 7; language=React Native",
+        "relevance": "The workbook explicitly marks the application as containerized."
+      }
+    },
+    {
+      "id": "app_refactor_decoupling",
+      "status": "PARTIALLY_FULFILLED",
+      "match_type": "ai",
+      "reason": "The application already shows some modular characteristics, but there is no evidence it is fully decoupled or microservice-based.",
+      "confidence": 7,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "Application Architecture, number of Api endpoints",
+        "content_excerpt": "architecture=3-Tier; api_endpoints=30",
+        "relevance": "The application already shows some modular characteristics, but there is no evidence it is fully decoupled or microservice-based."
+      }
+    },
+    {
+      "id": "upgrade_legacy_databases",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "SQL Server 2019 remains supported but is one major generation behind current.",
+      "confidence": 7,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "db_engine",
+        "content_excerpt": "SQL Server 2019",
+        "relevance": "SQL Server 2019 remains supported but is one major generation behind current."
+      }
+    },
+    {
+      "id": "switch_db_engine_open_source",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "The application uses a commercial/proprietary database engine, which is a primary trigger for open-source migration.",
+      "confidence": 9,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "db_engine, Solution type",
+        "content_excerpt": "SQL Server 2019",
+        "relevance": "The application uses a commercial/proprietary database engine, which is a primary trigger for open-source migration."
+      }
+    },
+    {
+      "id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "At least one language, framework, or application server component is outdated or EOL.",
+      "confidence": 9,
+      "source": {
+        "document_id": "app016",
+        "document_title": "consolidated_schema_application_app016.json",
+        "section": "programming language, Application Server type, framework",
+        "content_excerpt": "language=React Native; app_server=Payara 4.0",
+        "relevance": "At least one language, framework, or application server component is outdated or EOL."
+      }
+    }
+  ]
+}

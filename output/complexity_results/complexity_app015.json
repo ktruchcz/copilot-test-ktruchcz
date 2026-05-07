@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app015",
+  "complexity_score": 6,
+  "confidence": 6,
+  "reasoning": "At least one EOL component was found in the application stack.; The application has 4 interfaces, indicating moderate integration.; A 2-tier architecture suggests some legacy coupling. CI/CD lowers delivery risk.",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 4,
+    "number_of_interfaces": 4,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 1,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app001",
+  "components_analyzed": [
+    {
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "AIX 7.2 is an aging release; in the absence of clear current support evidence it is treated conservatively as outdated.",
+      "confidence": 6
+    },
+    {
+      "component_name": "Oracle Database",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "19c",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-04-30",
+      "reason": "Oracle 19c remains a supported long-term release.",
+      "confidence": 8
+    },
+    {
+      "component_name": "COBOL",
+      "component_family": "COBOL",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "",
+      "reason": "COBOL support depends on the vendor compiler/runtime, which is not provided.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-07T12:42:21Z"
+}

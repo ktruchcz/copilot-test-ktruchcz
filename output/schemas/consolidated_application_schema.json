@@ -1,0 +1,137 @@
+{
+  "schema_name": "consolidated_application_schema",
+  "fields": [
+    {
+      "name": "app_id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "Solution type",
+      "type": "string"
+    },
+    {
+      "name": "criticality",
+      "type": "string"
+    },
+    {
+      "name": "Application status",
+      "type": "string"
+    },
+    {
+      "name": "Decomission date",
+      "type": "string"
+    },
+    {
+      "name": "Deployment type",
+      "type": "string"
+    },
+    {
+      "name": "data classification",
+      "type": "string"
+    },
+    {
+      "name": "business unit",
+      "type": "string"
+    },
+    {
+      "name": "business capabilities",
+      "type": "string"
+    },
+    {
+      "name": "number of users",
+      "type": "string"
+    },
+    {
+      "name": "Operating system",
+      "type": "string"
+    },
+    {
+      "name": "programming language",
+      "type": "string"
+    },
+    {
+      "name": "framework",
+      "type": "string"
+    },
+    {
+      "name": "Application Server type",
+      "type": "string"
+    },
+    {
+      "name": "Application Architecture",
+      "type": "string"
+    },
+    {
+      "name": "Application is containerized",
+      "type": "string"
+    },
+    {
+      "name": "Number of environments",
+      "type": "string"
+    },
+    {
+      "name": "Physical servers instances",
+      "type": "string"
+    },
+    {
+      "name": "cpu_cores",
+      "type": "string"
+    },
+    {
+      "name": "memory in GB",
+      "type": "string"
+    },
+    {
+      "name": "production environments",
+      "type": "string"
+    },
+    {
+      "name": "CI_CD present",
+      "type": "string"
+    },
+    {
+      "name": "number of Api endpoints",
+      "type": "string"
+    },
+    {
+      "name": "external interfaces",
+      "type": "string"
+    },
+    {
+      "name": "Physical Database Server instance",
+      "type": "string"
+    },
+    {
+      "name": "db_engine",
+      "type": "string"
+    },
+    {
+      "name": "DB storage in GB",
+      "type": "string"
+    },
+    {
+      "name": "DB License required",
+      "type": "string"
+    },
+    {
+      "name": "logging_solution",
+      "type": "string"
+    },
+    {
+      "name": "monitoring_tool",
+      "type": "string"
+    },
+    {
+      "name": "source_file",
+      "type": "string"
+    }
+  ]
+}

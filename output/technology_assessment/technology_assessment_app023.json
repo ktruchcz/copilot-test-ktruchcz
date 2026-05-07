@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app023",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 remains vendor-supported through May 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "MongoDB",
+      "component_family": "MongoDB",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "",
+      "reason": "MongoDB version is not provided, so lifecycle status cannot be assessed reliably.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Tomcat",
+      "component_family": "Tomcat",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "7.4",
+      "component_status": "EOL",
+      "eol_date": "",
+      "reason": "Tomcat 7 is out of support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Node.js",
+      "component_family": "Node.js",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "18",
+      "component_status": "EOL",
+      "eol_date": "2025-04-30",
+      "reason": "Node.js 18 is end of life in 2026.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-07T12:42:21Z"
+}

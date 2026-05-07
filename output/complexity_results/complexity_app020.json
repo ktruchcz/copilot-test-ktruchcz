@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app020",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "3 EOL components were found in the application stack.; The application exposes 7 interfaces, indicating heavy integration.; A 2-tier architecture suggests some legacy coupling. CI/CD lowers delivery risk. Third-party software reduces architectural control.",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 7,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 3,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  }
+}

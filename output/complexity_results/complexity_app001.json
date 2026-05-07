@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app001",
+  "complexity_score": 6,
+  "confidence": 6,
+  "reasoning": "One outdated component was found.; The application has 5 interfaces, indicating moderate integration.; A 1-tier architecture indicates a tightly coupled legacy pattern.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 2,
+    "number_of_interfaces": 5,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 0,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  }
+}
