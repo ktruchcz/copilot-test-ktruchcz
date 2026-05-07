@@ -62,11 +62,12 @@ public class HelloWorld {
 
         // Java 17-compatible type pattern matching with instanceof
         var timeOfDay = TimeOfDay.of(today.getDayOfMonth() % 24);
-        var salutation = timeOfDay instanceof TimeOfDay.Morning
-                ? "Good morning"
-                : timeOfDay instanceof TimeOfDay.Afternoon
-                    ? "Good afternoon"
-                    : "Good evening";
+        var salutation = "Good evening";
+        if (timeOfDay instanceof TimeOfDay.Morning) {
+            salutation = "Good morning";
+        } else if (timeOfDay instanceof TimeOfDay.Afternoon) {
+            salutation = "Good afternoon";
+        }
 
         var greeting = new Greeting("World", salutation);
 
