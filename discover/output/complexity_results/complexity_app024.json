@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app024",
+  "complexity_score": 7,
+  "confidence": 7,
+  "reasoning": "Score 7/10 (HIGH): 2 EOL component(s), 0 outdated, 3 external interfaces, 1 server(s), criticality=High, architecture=2-Tier.",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 2,
+    "number_of_interfaces": 3,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 0,
+    "number_of_eol_technologies": 2,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  }
+}

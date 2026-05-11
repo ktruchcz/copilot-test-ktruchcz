@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app018",
+  "complexity_score": 7,
+  "confidence": 7,
+  "reasoning": "Score 7/10 (HIGH): 2 EOL component(s), 1 outdated, 6 external interfaces, 2 server(s), criticality=Medium, architecture=3-Tier.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 6,
+    "number_of_interfaces": 6,
+    "business_criticality": "Medium",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 2,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  }
+}

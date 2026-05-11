@@ -1,0 +1,6 @@
+{
+  "app_id": "app001",
+  "app_name": "ERPApp-001",
+  "app_description": "Core ERP system handling financial transactions, general ledger, and regulatory reporting",
+  "retiring_at": "2027"
+}

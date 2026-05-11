@@ -1,0 +1,45 @@
+{
+  "app_id": "app028",
+  "app_name": "NotificationApp-028",
+  "app_description": "Centralized notification system for sending emails, SMS, and push notifications across all applications",
+  "solution_type": "3rd party software",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "IT",
+  "business_capabilities": [
+    "Notification Management",
+    "Email Services",
+    "SMS Gateway"
+  ],
+  "user_count": 850,
+  "operating_system": "Windows Server 2019",
+  "programming_language": "Java 17",
+  "application_server": "Microsoft IIS 10.0",
+  "application_architecture": "unknown",
+  "is_containerized": "Yes",
+  "environment_count": 3,
+  "server_instances": [
+    "sv41",
+    "sv42"
+  ],
+  "cpu_cores": 12,
+  "memory_gb": 96,
+  "production_environments": [
+    "prod01",
+    "prod03"
+  ],
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 18,
+  "external_interface_count": 25,
+  "database_engine": "Oracle 19c",
+  "database_storage_gb": 3000,
+  "database_license_required": "Yes",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Datadog",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0032"
+  }
+}
