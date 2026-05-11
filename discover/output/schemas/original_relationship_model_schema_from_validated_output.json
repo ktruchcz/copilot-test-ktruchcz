@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Application Relationship Model Schema",
+  "description": "Schema for application dependency and relationship data",
+  "relationships": {
+    "database_dependency": {
+      "source": "application",
+      "target": "database",
+      "cardinality": "M:1"
+    },
+    "server_dependency": {
+      "source": "application",
+      "target": "server",
+      "cardinality": "M:N"
+    },
+    "interface_dependency": {
+      "source": "application",
+      "target": "external_system",
+      "cardinality": "M:N"
+    }
+  }
+}

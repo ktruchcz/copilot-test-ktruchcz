@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consolidated Application Schema",
+  "type": "object",
+  "properties": {
+    "application_identifier": {
+      "type": "string"
+    },
+    "application_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "solution_type": {
+      "type": "string",
+      "enum": [
+        "Custom made",
+        "3rd party software",
+        "Open Source",
+        "SaaS"
+      ]
+    },
+    "business_criticality": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "application_status": {
+      "type": "string"
+    },
+    "deployment_type": {
+      "type": "string"
+    },
+    "technology_stack": {
+      "type": "object"
+    },
+    "infrastructure": {
+      "type": "object"
+    },
+    "integration": {
+      "type": "object"
+    },
+    "out_of_scope": {
+      "type": "boolean"
+    }
+  }
+}

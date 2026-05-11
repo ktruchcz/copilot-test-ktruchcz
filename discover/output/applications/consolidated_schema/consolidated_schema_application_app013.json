@@ -1,0 +1,52 @@
+{
+  "application_identifier": "app013",
+  "application_name": "SecurityApp-013",
+  "description": "Enterprise security platform for monitoring threats, managing access controls, and ensuring compliance",
+  "solution_type": "Custom made",
+  "business_criticality": "Critical",
+  "application_status": "Production",
+  "deployment_type": "On-Premise",
+  "data_classification": "Confidential",
+  "business_unit": "Security",
+  "business_capabilities": [
+    "Security Monitoring",
+    "Threat Detection",
+    "Compliance Management"
+  ],
+  "user_count": 520,
+  "technology_stack": {
+    "operating_system": "Debian 7",
+    "programming_language": "Java 17",
+    "application_server": "Websphere 8.0",
+    "database_engine": "SQL Server 2022"
+  },
+  "infrastructure": {
+    "server_instances": [
+      "sv17",
+      "sv18"
+    ],
+    "is_containerized": "No",
+    "environment_count": 3,
+    "application_architecture": "3-Tier",
+    "ci_cd_present": "Yes",
+    "cpu_cores": 4,
+    "memory_gb": 16
+  },
+  "integration": {
+    "external_interface_count": 15,
+    "api_endpoint_count": 8
+  },
+  "database": {
+    "database_storage_gb": 600,
+    "database_license_required": "Yes"
+  },
+  "observability": {
+    "logging_solution": "Splunk",
+    "monitoring_tool": "Datadog"
+  },
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0015"
+  },
+  "out_of_scope": false
+}

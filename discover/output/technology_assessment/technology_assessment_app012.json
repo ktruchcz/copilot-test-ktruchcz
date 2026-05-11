@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app012",
+  "assessment_date": "2025-01-15",
+  "components": [
+    {
+      "component_name": "Windows Server 2022",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2031-10-14",
+      "reason": "Mainstream support until October 2031",
+      "confidence": 9
+    },
+    {
+      "component_name": "Rust 1.70",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Rust 1.70",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Current Rust stable is 1.80+",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 14",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "PostgreSQL 14",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-11-30",
+      "reason": "Supported until November 2026",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Application Server",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Microsoft IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Part of Windows Server 2019/2022",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false
+}

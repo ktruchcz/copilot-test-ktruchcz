@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "assessment_date": "2025-01-15",
+  "components": [
+    {
+      "component_name": "Debian 6",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Debian 6",
+      "component_status": "EOL",
+      "eol_date": "2016-02-29",
+      "reason": "End of life February 2016",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "OUTDATED",
+      "eol_date": "2023-09-30",
+      "reason": "Oracle Premier support ended September 2023",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "PostgreSQL 13",
+      "component_status": "OUTDATED",
+      "eol_date": "2023-11-30",
+      "reason": "Support ended November 2023",
+      "confidence": 9
+    },
+    {
+      "component_name": "Glassfish 5.0",
+      "component_family": "Application Server",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Glassfish 5.0",
+      "component_status": "EOL",
+      "eol_date": "2022-12-31",
+      "reason": "Oracle handed to Eclipse Foundation, limited active support",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false
+}

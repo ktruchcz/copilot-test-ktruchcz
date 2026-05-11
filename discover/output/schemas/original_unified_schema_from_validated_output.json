@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unified Application Schema",
+  "description": "Normalized schema used in internal_app_model",
+  "version": "1.0",
+  "properties": {
+    "app_id": {
+      "type": "string"
+    },
+    "app_name": {
+      "type": "string"
+    },
+    "solution_type": {
+      "type": "string"
+    },
+    "business_criticality": {
+      "type": "string"
+    },
+    "application_status": {
+      "type": "string"
+    },
+    "deployment_type": {
+      "type": "string"
+    },
+    "operating_system": {
+      "type": "string"
+    },
+    "programming_language": {
+      "type": "string"
+    },
+    "application_server": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "database_engine": {
+      "type": "string"
+    },
+    "is_containerized": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No"
+      ]
+    },
+    "server_instances": {
+      "type": [
+        "array",
+        "string"
+      ]
+    },
+    "external_interface_count": {
+      "type": "integer"
+    }
+  }
+}

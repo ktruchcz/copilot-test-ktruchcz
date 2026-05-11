@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app020",
+  "assessment_date": "2025-01-15",
+  "components": [
+    {
+      "component_name": "Windows Server 2012",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Extended support ended October 10, 2023",
+      "confidence": 9
+    },
+    {
+      "component_name": "Angular 15",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Angular 15",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Angular 18/19 are current, Angular 15 no longer maintained",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2016",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2016",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-07-14",
+      "reason": "Mainstream support ended July 2021, extended until 2026",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS 8.5",
+      "component_family": "Application Server",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Microsoft IIS 8.5",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Tied to Windows Server 2012 R2, EOL October 2023",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false
+}

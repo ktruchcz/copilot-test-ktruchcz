@@ -1,0 +1,49 @@
+{
+  "application_identifier": "app029",
+  "application_name": "ConfigApp-029",
+  "description": "Legacy configuration management tool for system settings and deployment automation",
+  "solution_type": "Custom made",
+  "business_criticality": "Low",
+  "application_status": "Retired",
+  "deployment_type": "On-Premise",
+  "data_classification": "Internal",
+  "business_unit": "IT",
+  "business_capabilities": [
+    "Configuration Management",
+    "System Administration",
+    "Deployment"
+  ],
+  "user_count": 65,
+  "technology_stack": {
+    "operating_system": "RHEL 7",
+    "programming_language": "Perl",
+    "application_server": "Weblogic 9.0",
+    "database_engine": "PostgreSQL 14"
+  },
+  "infrastructure": {
+    "server_instances": "sv43",
+    "is_containerized": "No",
+    "environment_count": 2,
+    "application_architecture": "3-Tier",
+    "ci_cd_present": "No",
+    "cpu_cores": 2,
+    "memory_gb": 8
+  },
+  "integration": {
+    "external_interface_count": 3,
+    "api_endpoint_count": 1
+  },
+  "database": {
+    "database_storage_gb": 100,
+    "database_license_required": "No"
+  },
+  "observability": {
+    "logging_solution": "Syslog",
+    "monitoring_tool": null
+  },
+  "additional_attributes": {
+    "decomission_date": "already retired",
+    "physical_database_server_instance": "db0033"
+  },
+  "out_of_scope": true
+}

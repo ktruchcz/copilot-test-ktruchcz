@@ -1,0 +1,276 @@
+{
+  "assessment_date": "2025-01-15",
+  "total_applications": 30,
+  "applications": [
+    {
+      "application_identifier": "app001",
+      "application_name": "ERPApp-001",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app002",
+      "application_name": "CRMApp-002",
+      "application_status": "Production",
+      "solution_type": "3rd party software",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app003",
+      "application_name": "AnalyticsApp-003",
+      "application_status": "Production",
+      "solution_type": "Open Source",
+      "business_criticality": "Low",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app004",
+      "application_name": "HRApp-004",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "AWS, On-premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app005",
+      "application_name": "EComApp-005",
+      "application_status": "Retired",
+      "solution_type": "3rd party software",
+      "business_criticality": "Critical",
+      "deployment_type": "AWS",
+      "out_of_scope": true
+    },
+    {
+      "application_identifier": "app006",
+      "application_name": "SupportApp-006",
+      "application_status": "Production",
+      "solution_type": "3rd party software",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app007",
+      "application_name": "FinanceApp-007",
+      "application_status": "Retired",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "AWS",
+      "out_of_scope": true
+    },
+    {
+      "application_identifier": "app008",
+      "application_name": "InventoryApp-008",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app009",
+      "application_name": "MarketingApp-009",
+      "application_status": "Retired",
+      "solution_type": "Custom made",
+      "business_criticality": "Low",
+      "deployment_type": "AWS",
+      "out_of_scope": true
+    },
+    {
+      "application_identifier": "app010",
+      "application_name": "PayrollApp-010",
+      "application_status": "Production",
+      "solution_type": "3rd party software",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app011",
+      "application_name": "RouteOptApp-011",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app012",
+      "application_name": "IoTSensorApp-012",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app013",
+      "application_name": "SecurityApp-013",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Critical",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app014",
+      "application_name": "DocumentApp-014",
+      "application_status": "Production",
+      "solution_type": "Open Source",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app015",
+      "application_name": "ReportingApp-015",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Low",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app016",
+      "application_name": "MobileApp-016",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app017",
+      "application_name": "BackupApp-017",
+      "application_status": "Production",
+      "solution_type": "3rd party software",
+      "business_criticality": "High",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app018",
+      "application_name": "VendorApp-018",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Medium",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app019",
+      "application_name": "QualityApp-019",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "AWS, On-premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app020",
+      "application_name": "TrainingApp-020",
+      "application_status": "Production",
+      "solution_type": "3rd party software",
+      "business_criticality": "Low",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app021",
+      "application_name": "FleetApp-021",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app022",
+      "application_name": "ComplianceApp-022",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Critical",
+      "deployment_type": "AWS, On-premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app023",
+      "application_name": "ChatbotApp-023",
+      "application_status": "Production",
+      "solution_type": "Open Source",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app024",
+      "application_name": "AuditApp-024",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app025",
+      "application_name": "PortalApp-025",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app026",
+      "application_name": "LegacyFinApp-026",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "Critical",
+      "deployment_type": "On-Premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app027",
+      "application_name": "DataWarehouseApp-027",
+      "application_status": "Production",
+      "solution_type": "Custom made",
+      "business_criticality": "High",
+      "deployment_type": "AWS, On-premise",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app028",
+      "application_name": "NotificationApp-028",
+      "application_status": "Production",
+      "solution_type": "3rd party software",
+      "business_criticality": "Medium",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    },
+    {
+      "application_identifier": "app029",
+      "application_name": "ConfigApp-029",
+      "application_status": "Retired",
+      "solution_type": "Custom made",
+      "business_criticality": "Low",
+      "deployment_type": "On-Premise",
+      "out_of_scope": true
+    },
+    {
+      "application_identifier": "app030",
+      "application_name": "APIGatewayApp-030",
+      "application_status": "Production",
+      "solution_type": "Open Source",
+      "business_criticality": "High",
+      "deployment_type": "AWS",
+      "out_of_scope": false
+    }
+  ]
+}

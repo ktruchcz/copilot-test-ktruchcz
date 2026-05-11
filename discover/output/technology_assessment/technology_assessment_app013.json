@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app013",
+  "assessment_date": "2025-01-15",
+  "components": [
+    {
+      "component_name": "Debian 7",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Debian 7",
+      "component_status": "EOL",
+      "eol_date": "2018-05-31",
+      "reason": "End of life May 2018",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 17",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-09-30",
+      "reason": "LTS until September 2029",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2022",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "Supported until 2033",
+      "confidence": 9
+    },
+    {
+      "component_name": "Websphere 8.0",
+      "component_family": "Application Server",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Websphere 8.0",
+      "component_status": "EOL",
+      "eol_date": "2022-10-26",
+      "reason": "IBM WAS 8.0 end of support October 26, 2022",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false
+}

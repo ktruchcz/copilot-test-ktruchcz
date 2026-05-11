@@ -1,0 +1,52 @@
+{
+  "application_identifier": "app018",
+  "application_name": "VendorApp-018",
+  "description": "Vendor management platform for handling supplier relationships, contracts, and procurement processes",
+  "solution_type": "Custom made",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "On-Premise",
+  "data_classification": "Internal",
+  "business_unit": "Procurement",
+  "business_capabilities": [
+    "Vendor Management",
+    "Contract Management",
+    "Procurement Analytics"
+  ],
+  "user_count": 260,
+  "technology_stack": {
+    "operating_system": "RHEL 7",
+    "programming_language": "Java 8",
+    "application_server": "Glassfish 4.5",
+    "database_engine": "PostgreSQL 13"
+  },
+  "infrastructure": {
+    "server_instances": [
+      "sv26",
+      "sv27"
+    ],
+    "is_containerized": "No",
+    "environment_count": 6,
+    "application_architecture": "3-Tier",
+    "ci_cd_present": "No",
+    "cpu_cores": 2,
+    "memory_gb": 8
+  },
+  "integration": {
+    "external_interface_count": 6,
+    "api_endpoint_count": 5
+  },
+  "database": {
+    "database_storage_gb": 250,
+    "database_license_required": "No"
+  },
+  "observability": {
+    "logging_solution": "Log4j",
+    "monitoring_tool": null
+  },
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0021"
+  },
+  "out_of_scope": false
+}

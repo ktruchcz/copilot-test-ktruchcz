@@ -1,0 +1,49 @@
+{
+  "application_identifier": "app003",
+  "application_name": "AnalyticsApp-003",
+  "description": "Analytics platform for generating operational reports and business insights from logistics data",
+  "solution_type": "Open Source",
+  "business_criticality": "Low",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Public",
+  "business_unit": "IT",
+  "business_capabilities": [
+    "Data Analytics",
+    "Reporting",
+    "Business Intelligence"
+  ],
+  "user_count": 480,
+  "technology_stack": {
+    "operating_system": "RHEL 7",
+    "programming_language": "Python 3.9",
+    "application_server": "Apache Tomcat 6.1",
+    "database_engine": "PostgreSQL 13"
+  },
+  "infrastructure": {
+    "server_instances": "sv03",
+    "is_containerized": "Yes",
+    "environment_count": 1,
+    "application_architecture": "3-Tier",
+    "ci_cd_present": "Yes",
+    "cpu_cores": 2,
+    "memory_gb": 8
+  },
+  "integration": {
+    "external_interface_count": 3,
+    "api_endpoint_count": 8
+  },
+  "database": {
+    "database_storage_gb": 200,
+    "database_license_required": "No"
+  },
+  "observability": {
+    "logging_solution": "ELK",
+    "monitoring_tool": "Prometheus"
+  },
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0003"
+  },
+  "out_of_scope": false
+}

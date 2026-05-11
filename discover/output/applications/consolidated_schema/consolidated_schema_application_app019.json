@@ -1,0 +1,49 @@
+{
+  "application_identifier": "app019",
+  "application_name": "QualityApp-019",
+  "description": "Quality management system for tracking service quality metrics and managing audit processes",
+  "solution_type": "Custom made",
+  "business_criticality": "High",
+  "application_status": "Production",
+  "deployment_type": "AWS, On-premise",
+  "data_classification": "Confidential",
+  "business_unit": "Quality",
+  "business_capabilities": [
+    "Quality Management",
+    "Audit Management",
+    "Compliance Tracking"
+  ],
+  "user_count": 180,
+  "technology_stack": {
+    "operating_system": "RHEL 8",
+    "programming_language": "Python 3.8",
+    "application_server": "Apache Tomcat  8.0",
+    "database_engine": "MySQL 8.0"
+  },
+  "infrastructure": {
+    "server_instances": "sv28",
+    "is_containerized": "No",
+    "environment_count": 1,
+    "application_architecture": "3-Tier",
+    "ci_cd_present": "Yes",
+    "cpu_cores": 2,
+    "memory_gb": 8
+  },
+  "integration": {
+    "external_interface_count": 5,
+    "api_endpoint_count": 9
+  },
+  "database": {
+    "database_storage_gb": 180,
+    "database_license_required": "No"
+  },
+  "observability": {
+    "logging_solution": "ELK",
+    "monitoring_tool": "CloudWatch"
+  },
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0016"
+  },
+  "out_of_scope": false
+}

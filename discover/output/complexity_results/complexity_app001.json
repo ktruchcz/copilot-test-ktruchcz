@@ -1,0 +1,19 @@
+{
+  "application_identifier": "app001",
+  "complexity_score": 5,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "reasoning": "Complexity MEDIUM (5/10). Technology age: 6/10 (0 EOL, 2 outdated components). Integration: 4/10 (5 external interfaces). Infrastructure: 4/10 (2 servers). Business criticality High: 7/10. Architecture 1-tier: 8/10. Data complexity: 3/10.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 2,
+    "number_of_interfaces": 5,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 2,
+    "number_of_eol_technologies": 0,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  }
+}

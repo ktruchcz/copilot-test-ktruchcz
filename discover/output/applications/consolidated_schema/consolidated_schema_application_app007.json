@@ -1,0 +1,52 @@
+{
+  "application_identifier": "app007",
+  "application_name": "FinanceApp-007",
+  "description": "Specialized financial application for logistics cost accounting and invoice processing",
+  "solution_type": "Custom made",
+  "business_criticality": "High",
+  "application_status": "Retired",
+  "deployment_type": "AWS",
+  "data_classification": "Confidential",
+  "business_unit": "Finance",
+  "business_capabilities": [
+    "Financial Planning",
+    "Invoice Processing",
+    "Financial Reporting"
+  ],
+  "user_count": 200,
+  "technology_stack": {
+    "operating_system": "Ubuntu 14",
+    "programming_language": "Python 3.7",
+    "application_server": "Payara 5.0",
+    "database_engine": "Oracle 19c"
+  },
+  "infrastructure": {
+    "server_instances": [
+      "sv09",
+      "sv03"
+    ],
+    "is_containerized": "No",
+    "environment_count": 2,
+    "application_architecture": "3-Tier",
+    "ci_cd_present": "No",
+    "cpu_cores": 4,
+    "memory_gb": 16
+  },
+  "integration": {
+    "external_interface_count": 3,
+    "api_endpoint_count": 4
+  },
+  "database": {
+    "database_storage_gb": 500,
+    "database_license_required": "Yes"
+  },
+  "observability": {
+    "logging_solution": "Splunk",
+    "monitoring_tool": "Datadog"
+  },
+  "additional_attributes": {
+    "decomission_date": "already retired",
+    "physical_database_server_instance": "db0007"
+  },
+  "out_of_scope": true
+}

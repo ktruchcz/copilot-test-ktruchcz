@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app026",
+  "assessment_date": "2025-01-15",
+  "components": [
+    {
+      "component_name": "AIX 7.2",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "AIX 7.2",
+      "component_status": "OUTDATED",
+      "eol_date": "2028-04-30",
+      "reason": "IBM support until 2028 but proprietary legacy OS, aging",
+      "confidence": 9
+    },
+    {
+      "component_name": "FORTRAN 2018",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "FORTRAN 2018",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Niche legacy language",
+      "confidence": 8
+    },
+    {
+      "component_name": "DB2",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "DB2",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No version specified",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true
+}

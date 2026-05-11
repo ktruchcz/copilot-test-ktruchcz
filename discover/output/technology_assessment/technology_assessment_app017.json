@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app017",
+  "assessment_date": "2025-01-15",
+  "components": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "RHEL 7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "Red Hat ELS ended June 30, 2024",
+      "confidence": 9
+    },
+    {
+      "component_name": "PowerShell",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "PowerShell",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Actively maintained",
+      "confidence": 8
+    },
+    {
+      "component_name": "Oracle 12c",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "Oracle 12c",
+      "component_status": "EOL",
+      "eol_date": "2022-07-31",
+      "reason": "Standard support ended July 2022",
+      "confidence": 9
+    },
+    {
+      "component_name": "Payara 5.0",
+      "component_family": "Application Server",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Payara 5.0",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-06-30",
+      "reason": "Payara 5 CE supported until June 2026",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false
+}

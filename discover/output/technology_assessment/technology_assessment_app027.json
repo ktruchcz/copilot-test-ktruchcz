@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app027",
+  "assessment_date": "2025-01-15",
+  "components": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "Operating System",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "RHEL 7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "Red Hat ELS ended June 30, 2024",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Programming Language",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "OUTDATED",
+      "eol_date": "2023-09-30",
+      "reason": "Oracle Premier support ended September 2023",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2022",
+      "component_family": "Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "Supported until 2033",
+      "confidence": 9
+    },
+    {
+      "component_name": "Websphere 8.5",
+      "component_family": "Application Server",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Websphere 8.5",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-04-30",
+      "reason": "IBM WAS 8.5.5 extended support until April 30, 2025",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false
+}
