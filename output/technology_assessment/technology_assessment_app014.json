@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app014",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2019",
+      "component_status": "OUTDATED",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is still supported but aging.",
+      "confidence": 8
+    },
+    {
+      "component_name": "MySQL",
+      "component_family": "mysql",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "MySQL 8.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "MySQL 8.0 remains supported.",
+      "confidence": 8
+    },
+    {
+      "component_name": ".NET 6",
+      "component_family": "dotnet",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "C# .NET 6",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": ".NET 6 support ended in 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": ".NET 6",
+      "component_family": "dotnet",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "C# .NET 6",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Framework inferred from language field. .NET 6 support ended in 2024.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "iis",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Microsoft IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "IIS 10 is supported with modern Windows Server versions.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-11T07:52:04Z"
+}

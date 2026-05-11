@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app020",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Windows Server 2012 is out of support.",
+      "confidence": 10
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "sqlserver",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2016",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "SQL Server 2016 is near end of extended support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Angular",
+      "component_family": "angular",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Angular 15",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Angular 15 is behind current supported versions.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Angular",
+      "component_family": "angular",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "Angular 15",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Framework inferred from language field. Angular 15 is behind current supported versions.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "iis",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Microsoft IIS 8.5",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "IIS 8/8.5 tied to retired Windows Server generation.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-11T07:52:04Z"
+}

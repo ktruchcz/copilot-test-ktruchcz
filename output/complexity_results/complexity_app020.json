@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app020",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "Technology age score 9/10 (EOL=2, outdated=3, unknown=0); integration score 8/10 (interfaces=7, api_endpoints=14); infrastructure score 5/10 (servers=1, environments=3); business criticality score 2/10 (Low, users=750); architecture score 5/10 (architecture=2-Tier, CI/CD=Yes, containerized=No); data score 5/10 (db_count=1, db_storage_gb=600).",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 7,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 3,
+    "number_of_eol_technologies": 2,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  }
+}

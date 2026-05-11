@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Debian",
+      "component_family": "linux",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Debian 6",
+      "component_status": "EOL",
+      "eol_date": "2016-02-29",
+      "reason": "Debian 6 is end-of-life.",
+      "confidence": 10
+    },
+    {
+      "component_name": "PostgreSQL",
+      "component_family": "postgresql",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "PostgreSQL 13",
+      "component_status": "EOL",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 support ended in 2025.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Java 11 is aging compared with current LTS releases.",
+      "confidence": 8
+    },
+    {
+      "component_name": "GlassFish",
+      "component_family": "glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Glassfish 5.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "GlassFish versions in use are legacy and unsupported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-11T07:52:04Z"
+}
