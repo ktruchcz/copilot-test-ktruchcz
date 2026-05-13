@@ -1,0 +1,17 @@
+{
+  "skill_name": "adf-to-spring-controller-service-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "From the provided ADF ViewImpl, generate a CountryController and CountryService. The search region exposes countryCode and changedAfter, and changedAfter should be a LocalDate request parameter. The repository already exposes findCountriesByCodeAndDate.",
+      "expected_output": "A controller and service using constructor injection, DTO return types, @RequestParam mapping, and @DateTimeFormat for the LocalDate argument.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Convert the ADF actions for inventory changes into a Spring REST endpoint layer. One endpoint should fetch inventory changes by date and timestamp, and another should return low stock items using an existing repository method.",
+      "expected_output": "Controller and service classes with DTO-returning methods, proper mapping annotations, and no redundant repository CRUD reimplementation.",
+      "files": []
+    }
+  ]
+}
