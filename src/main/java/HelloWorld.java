@@ -62,11 +62,14 @@ public class HelloWorld {
 
         // Determine salutation based on TimeOfDay type
         var timeOfDay = TimeOfDay.of(today.getDayOfMonth() % 24);
-        var salutation = timeOfDay instanceof TimeOfDay.Morning
-                ? "Good morning"
-                : timeOfDay instanceof TimeOfDay.Afternoon
-                ? "Good afternoon"
-                : "Good evening";
+        String salutation;
+        if (timeOfDay instanceof TimeOfDay.Morning) {
+            salutation = "Good morning";
+        } else if (timeOfDay instanceof TimeOfDay.Afternoon) {
+            salutation = "Good afternoon";
+        } else {
+            salutation = "Good evening";
+        }
 
         var greeting = new Greeting("World", salutation);
 
