@@ -62,14 +62,7 @@ public class HelloWorld {
 
         // Determine salutation based on TimeOfDay type
         var timeOfDay = TimeOfDay.of(today.getDayOfMonth() % 24);
-        String salutation;
-        if (timeOfDay instanceof TimeOfDay.Morning) {
-            salutation = "Good morning";
-        } else if (timeOfDay instanceof TimeOfDay.Afternoon) {
-            salutation = "Good afternoon";
-        } else {
-            salutation = "Good evening";
-        }
+        var salutation = salutationFor(timeOfDay);
 
         var greeting = new Greeting("World", salutation);
 
@@ -96,5 +89,15 @@ public class HelloWorld {
             case JUNE, JULY, AUGUST          -> "Summer";
             case SEPTEMBER, OCTOBER, NOVEMBER -> "Autumn";
         };
+    }
+
+    static String salutationFor(TimeOfDay timeOfDay) {
+        if (timeOfDay instanceof TimeOfDay.Morning) {
+            return "Good morning";
+        }
+        if (timeOfDay instanceof TimeOfDay.Afternoon) {
+            return "Good afternoon";
+        }
+        return "Good evening";
     }
 }

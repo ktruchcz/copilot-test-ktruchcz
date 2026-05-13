@@ -61,6 +61,13 @@ class HelloWorldTest {
         assertInstanceOf(HelloWorld.TimeOfDay.Evening.class, HelloWorld.TimeOfDay.of(23));
     }
 
+    @Test
+    void salutationForReturnsExpectedValues() {
+        assertEquals("Good morning", HelloWorld.salutationFor(new HelloWorld.TimeOfDay.Morning()));
+        assertEquals("Good afternoon", HelloWorld.salutationFor(new HelloWorld.TimeOfDay.Afternoon()));
+        assertEquals("Good evening", HelloWorld.salutationFor(new HelloWorld.TimeOfDay.Evening()));
+    }
+
     // -----------------------------------------------------------------------
     // seasonOf
     // -----------------------------------------------------------------------
