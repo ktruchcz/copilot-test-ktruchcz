@@ -1,0 +1,17 @@
+{
+  "skill_name": "adf-to-spring-unit-test-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Generate unit tests for CountryService.getAllCountries where the repository returns CountryDTO objects directly. Include one success case and one empty-list case.",
+      "expected_output": "A MockitoExtension-based test class with DTO fixtures, repository stubbing, descriptive method names, and assertions for both populated and empty results.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create unit tests for InventoryService.findLowStockItems and findChanges. The repository methods are reused across multiple tests, so use lenient setup only where it actually reduces duplication.",
+      "expected_output": "A JUnit 5 Mockito test class that uses targeted lenient stubbing and validates concrete DTO values returned by the service.",
+      "files": []
+    }
+  ]
+}
