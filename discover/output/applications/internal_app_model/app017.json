@@ -1,0 +1,42 @@
+{
+  "app_id": "app017",
+  "app_name": "BackupApp-017",
+  "app_description": "Automated backup and disaster recovery system for critical business applications and data",
+  "solution_type": "3rd party software",
+  "business_criticality": "High",
+  "application_status": "Production",
+  "deployment_type": "On-Premise",
+  "data_classification": "Confidential",
+  "business_unit": "IT",
+  "business_capabilities": [
+    "Data Backup",
+    "Disaster Recovery",
+    "System Management"
+  ],
+  "user_count": 45,
+  "operating_system": "RHEL 7",
+  "programming_language": "PowerShell",
+  "application_server": "Payara 5.0",
+  "application_architecture": "unknown",
+  "is_containerized": "No",
+  "environment_count": 5,
+  "server_instances": [
+    "sv24",
+    "sv25"
+  ],
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": "prod02",
+  "ci_cd_present": "No",
+  "api_endpoint_count": 2,
+  "external_interface_count": 8,
+  "database_engine": "Oracle 12c",
+  "database_storage_gb": 350,
+  "database_license_required": "Yes",
+  "logging_solution": "Windows Event Log",
+  "monitoring_tool": "SCOM",
+  "additional_attributes": {
+    "decomission_date": 2028,
+    "physical_database_server_instance": "db0020"
+  }
+}
