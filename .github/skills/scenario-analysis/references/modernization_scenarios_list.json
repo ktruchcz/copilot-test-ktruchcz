@@ -1,0 +1,491 @@
+[
+  {
+    "scenario_id": "os_update_security_patch",
+    "scenario_name": "Operating System Update",
+    "criteria": {
+      "primary_triggers": [
+        "Operating System Version is Outdated",
+        "Operating System Version is Unsupported",
+        "Security vulnerabilities are present for the Operating system Version",
+        "Operating System is nearing End-of-Life (EOL)",
+        "Operating System no longer receiving security patches",
+        "Known exploit exists for current OS version",
+        "OS version incompatible with current hardware",
+        "OS version incompatible with required software or frameworks"
+      ],
+      "secondary_conditions": [
+        "Compliance requirements not met",
+        "Patch level behind current",
+        "Performance degradation observed on current OS",
+        "New OS version offers significant feature improvements",
+        "Vendor recommends upgrade for compatibility",
+        "Application stack requires newer OS version",
+        "OS version lacks support for containerization or ARM migration"
+      ],
+      "exclusion_criteria": [
+        "Operating System is marked as retired / decommisioned",
+        "Operating System updated within last 3 months",
+        "Is a SaaS Application",
+        "Operating System is part of a legacy system with no upgrade path",
+        "Upgrade would break critical dependencies",
+        "OS is running in a sandboxed or isolated environment",
+        "OS is used for archival or non-production workloads",
+        "Update is already scheduled or in progress"
+      ],
+      "fulfilled_indicators": [
+        "Operating system is on a current, supported version with no end-of-life or outdated status",
+        "Operating system is already fully patched and within its vendor support lifecycle"
+    ]
+    },
+    "modernization_suggestion": "Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements.",
+    "reasoning": "Outdated operating systems are more vulnerable to security threats and may no longer receive critical updates. Updating ensures ongoing support, patching, and compliance with industry standards.",
+    "priority": "High",
+    "modernization_effects": [
+      "security"
+    ],
+    "technical_focus": "Operating System",
+    "cloud_adaption_level": "Medium",
+    "effort": "Low"
+  },
+  {
+    "scenario_id": "switch_to_standard_linux_os",
+    "scenario_name": "Switch to standard Linux Operating System",
+    "criteria": {
+      "primary_triggers": [
+        "Operating System Type is Custom",
+        "Operating System is a commercial or proprietary non-Linux system (e.g. AIX, HP-UX, Solaris, IRIX)",
+        "Operating System lacks container support",
+        "Operating System is incompatible with ARM architecture",
+        "Operating System is not supported by cloud providers",
+        "Operating System has no long-term support (LTS)"
+      ],
+      "secondary_conditions": [
+        "Operating System has high maintenance overhead",
+        "Operating System Limited vendor support",
+        "Application is a custom developed Application",
+        "Security patching is manual or delayed",
+        "No automation tools available for current OS",
+        "OS version is not aligned with enterprise standards"
+      ],
+      "exclusion_criteria": [
+        "Application runs on Windows-based OS",
+        "Application is a SaaS Application",
+        "Vendor certifies application only on current non-standard OS",
+        "Application is tightly coupled to proprietary OS features",
+        "Application is certified only for current OS",
+        "Application is part of a vendor-managed appliance"
+      ],
+      "fulfilled_indicators": [
+        "Application already runs on a standard, widely supported Linux distribution (e.g. RHEL, Ubuntu, SLES, Debian, Amazon Linux)",
+        "Operating System is already a community or enterprise-supported standard Linux"
+      ]
+    },
+    "modernization_suggestion": "Standardize on widely supported operating systems that align with the customer's existing landscape standards to reduce the technology zoo, improve manageability, lower costs, and enhance security through simplified administration.",
+    "reasoning": "Using a standardized Operating System simplifies patching, improves compatibility, reduces licensing costs, and increases operational agility.",
+    "priority": "Medium",
+    "modernization_effects": [
+      "agility",
+      "security",
+      "cost"
+    ],
+    "technical_focus": "Operating System",
+    "cloud_adaption_level": "Medium",
+    "effort": "Medium"
+  },
+  {
+    "scenario_id": "switch_to_arm_cpu",
+    "scenario_name": "Switch to ARM-based CPU",
+    "criteria": {
+      "primary_triggers": [
+        "CPU Architecture is explicitly documented as x86",
+        "CPU Architecture is explicitly documented as x64"
+      ],
+      "secondary_conditions": [
+        "Operating System is Linux-based",
+        "Application Server is stateless (e.g. Tomcat, Spring Boot, Node.js)",
+        "Framework is ARM-compatible (.NET Core, Python 3.x, Go, Rust)",
+        "Deployment is containerized or Kubernetes-based",
+        "Target cloud environment provides ARM instance types (e.g. AWS Graviton, Azure Ampere Altra)",
+        "Application is stateless and loosely coupled",
+        "Application is well documented and actively maintained",
+        "Sustainability goals are defined",
+        "Is a custom developed Application",
+        "Cloud-native architecture is present",
+        "Security tools are ARM-compatible"
+      ],
+      "exclusion_criteria": [
+        "x86-specific dependencies",
+        "Application is a SaaS Application",
+        "Application is a 3rd party Application",
+        "Legacy software incompatibility",
+        "Application has 3rd party software dependencies that are incompatible with ARM architecture",
+        "Legacy Windows or proprietary Unix OS",
+        "Stateful or tightly coupled application servers",
+        "Proprietary or closed-source runtimes",
+        "Bare-metal or hardware-dependent deployments",
+        "Highly customized or undocumented applications",
+        "Hardcoded dependencies on x86 binaries"
+      ],
+      "fulfilled_indicators": [
+        "CPU Architecture is already documented as ARM or ARM64",
+        "Application is already running on ARM-based infrastructure (e.g. AWS Graviton, Azure Ampere Altra)"
+      ]
+    },
+    "modernization_suggestion": "Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings.",
+    "reasoning": "ARM-based CPUs offer improved performance-per-watt, cost efficiency and support sustainability goals due to lower energy consumption.",
+    "priority": "Medium",
+    "modernization_effects": [
+      "cost",
+      "sustainability"
+    ],
+    "technical_focus": "Operating System",
+    "cloud_adaption_level": "High",
+    "effort": "Medium"
+  },
+  {
+    "scenario_id": "application_server_replacement",
+    "scenario_name": "Applications Server replacement",
+    "criteria": {
+      "primary_triggers": [
+        "Application Server Age is Legacy",
+        "Application Server Status is End of Life",
+        "Application Server Status is Unsupported",
+        "Application Server lacks container support",
+        "Application Server incompatible with ARM architecture",
+        "Application Server has limited cloud compatibility",
+        "Application Server has no vendor support",
+        "Application Server version is deprecated"
+      ],
+      "secondary_conditions": [
+        "Performance issues present",
+        "High maintenance costs",
+        "Security vulnerabilities",
+        "Application is a custom developed Application",
+        "Application requires modern runtime or framework",
+        "Application server lacks monitoring and logging integration",
+        "Application server is not compliant with security standards",
+        "Application server is not compatible with CI/CD pipelines"
+      ],
+      "exclusion_criteria": [
+        "Recent application server upgrade",
+        "Business-critical with no alternatives",
+        "Application is a SaaS Application",
+        "Application server is embedded in hardware appliance",
+        "Application server is part of certified vendor stack",
+        "Application server is used in isolated legacy environment",
+        "Application server is managed by external vendor contract"
+      ],
+      "fulfilled_indicators": [
+        "Application server is already containerized and optimized",
+        "Application server version is a currently supported, non-deprecated release"
+      ]
+    },
+    "modernization_suggestion": "Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs.",
+    "reasoning": "Legacy application servers often lack efficiency and support. Replacing them with modern alternatives improves reliability, reduces costs, and enhances scalability.",
+    "priority": "Medium",
+    "modernization_effects": [
+      "agility",
+      "cost"
+    ],
+    "technical_focus": "Application",
+    "cloud_adaption_level": "Medium",
+    "effort": "Medium"
+  },
+  {
+    "scenario_id": "app_deployment_to_cloud",
+    "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+    "criteria": {
+      "primary_triggers": [
+        "Environment Type is On-Premise",
+        "Environment on Private Data Center",
+        "Application is virtualized",
+        "Application is containerized but not cloud-hosted"
+      ],
+      "secondary_conditions": [
+        "Servers are listed with a private Hosting zone",
+        "Application has predictable workloads",
+        "Application is stateless",
+        "Application is custom developed",
+        "Application is already monitored with cloud-compatible tools"
+      ],
+      "exclusion_criteria": [
+        "Application is an SAP application",
+        "Application is a SaaS Application",
+        "Specific hardware or regulatory reasons prevent Lift&Shift migration",
+        "Application requires physical appliances",
+        "Application has hardcoded IP dependencies",
+        "Application is tightly coupled with legacy systems",
+        "Application is part of a regulated environment with data residency constraints"
+      ],
+      "fulfilled_indicators": [
+        "Application is already hosted on a Public Cloud provider",
+        "Application is already part of a cloud-native architecture"
+      ]
+    },
+    "modernization_suggestion": "Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits.",
+    "reasoning": "Migrating applications to cloud infrastructure with minimal architectural changes leverages cloud-native scalability, enhanced security features, and compliance frameworks while reducing infrastructure management overhead and operational costs.",
+    "priority": "High",
+    "modernization_effects": [
+      "security",
+      "agility"
+    ],
+    "technical_focus": "Application",
+    "cloud_adaption_level": "Medium",
+    "effort": "Low"
+  },
+  {
+    "scenario_id": "app_containerization",
+    "scenario_name": "Application Containerization",
+    "criteria": {
+      "primary_triggers": [
+        "Deployment Method is Traditional",
+        "Deployment Method is VM-based",
+        "Containerization is Not implemented",
+        "Operating System is Linux-based",
+        "Operating System is Windows Server-based and uses .NET 6 or higher"
+      ],
+      "secondary_conditions": [
+        "Application Server is Stateless (e.g. Tomcat, Payara)",
+        "Framework is Modern (.NET Core, Spring Boot, Node.js)",
+        "Microservices architecture present",
+        "Application is a custom developed application",
+        "Environment is Cloud-native or Cloud-ready",
+        "Application is Stateless",
+        "Application is Modular and Loosely Coupled",
+        "Application is Well-documented and Maintained"
+      ],
+      "exclusion_criteria": [
+        "Stateful application without container readiness",
+        "Legacy monolith incompatible with containers",
+        "Application is SaaS Application",
+        "Application is Windows application (pre-.NET 6)",
+        "Application is 3rd party software with no vendor-provided container image or containerization support — runtime packaging cannot be modified by the customer",
+        "Application is a desktop application",
+        "Application uses legacy Unix OS",
+        "Application has proprietary or unknown runtime",
+        "Application is tightly coupled to hardware or local storage",
+        "Application lacks documentation or test coverage"
+      ],
+      "fulfilled_indicators": [
+        "Application is already containerized"
+      ]
+    },
+    "modernization_suggestion": "Containerize applications to improve scalability, portability, agility and resource efficiency.",
+    "reasoning": "Containerization enables faster deployments, consistent environments, and efficient use of resources, supporting cloud-native practices and sustainability.",
+    "priority": "High",
+    "modernization_effects": [
+      "agility",
+      "cost",
+      "sustainability"
+    ],
+    "technical_focus": "Application",
+    "cloud_adaption_level": "High",
+    "effort": "High"
+  },
+  {
+    "scenario_id": "app_refactor_decoupling",
+    "scenario_name": "Application Refactoring and De-coupling",
+    "criteria": {
+      "primary_triggers": [
+        "Architecture is Tightly Coupled",
+        "Architecture is Monolithic",
+        "Coupling Level is High",
+        "Application lacks modular design",
+        "Application has no API interfaces",
+        "Application has hardcoded dependencies",
+        "Application has low test coverage",
+        "Application has frequent change requests"
+      ],
+      "secondary_conditions": [
+        "Application has Scalability issues",
+        "Application faces Development bottlenecks",
+        "Application has Deployment complexity",
+        "Application is a custom developed application",
+        "Application has long release cycles",
+        "Application has poor maintainability",
+        "Application has low developer productivity",
+        "Application has limited reuse of components",
+        "Application has high onboarding time for new developers"
+      ],
+      "exclusion_criteria": [
+        "Application is a simple applications with no scaling needs",
+        "Application is SAP or SaaS Application",
+        "Application is 3rd party software — internal architecture and source code are not under customer control and cannot be refactored",
+        "Application is used for archival or reporting only",
+        "Application has no active development",
+        "Application is tightly integrated with legacy hardware",
+        "Application is already planned for decommissioning"
+      ],
+      "fulfilled_indicators": [
+        "Application is already microservice-based",
+        "Application already uses a modular, loosely coupled architecture"
+      ]
+    },
+    "modernization_suggestion": "Refactor applications to decouple components for better agility and maintainability.",
+    "reasoning": "Decoupled architectures enable modularity, faster development cycles, and better scalability. It also supports sustainability via reduced compute needs.",
+    "priority": "High",
+    "modernization_effects": [
+      "agility",
+      "cost",
+      "sustainability"
+    ],
+    "technical_focus": "Application",
+    "cloud_adaption_level": "High",
+    "effort": "High"
+  },
+  {
+    "scenario_id": "upgrade_legacy_databases",
+    "scenario_name": "Upgrade Legacy Databases",
+    "criteria": {
+      "primary_triggers": [
+        "Database Age is Legacy",
+        "Database Support is End of Life / Outdated",
+        "Database Support is Limited Support",
+        "Database is incompatible with cloud-native services",
+        "Database version is no longer patched",
+        "Database has known CVEs",
+        "Database does not support encryption at rest or in transit"
+      ],
+      "secondary_conditions": [
+        "Application uses a database",
+        "Application is a custom developed application",
+        "Security vulnerabilities for the database are present",
+        "Database has Performance issues",
+        "Database is not scalable",
+        "Database lacks high availability features",
+        "Vendor recommends upgrade",
+        "Database is not compliant with current regulations",
+        "Database is incompatible with modern application frameworks"
+      ],
+      "exclusion_criteria": [
+        "Business-critical application with no migration path",
+        "Data migration complexity too high",
+        "Application is a SaaS Application",
+        "Database upgrade requires vendor-managed migration process",
+        "Database is read-only and used for archival",
+        "Database is embedded and tightly coupled with hardware",
+        "Database is already scheduled for upgrade",
+        "Database is part of a certified vendor stack",
+        "Database is used in isolated test environments only"
+      ],
+      "fulfilled_indicators": [
+        "All database components are on a current, supported version with no end-of-life or outdated status",
+        "Database is already on a modern, supported version as confirmed by the technology assessment"
+      ]
+    },
+    "modernization_suggestion": "Upgrade legacy databases to modern, supported versions or cloud-native alternatives.",
+    "reasoning": "Legacy databases pose security risks and lack modern features. Upgrading ensures continued support, improved performance, and enhanced security.",
+    "priority": "High",
+    "modernization_effects": [
+      "security",
+      "agility"
+    ],
+    "technical_focus": "Database",
+    "cloud_adaption_level": "Medium",
+    "effort": "Medium"
+  },
+  {
+    "scenario_id": "switch_db_engine_open_source",
+    "scenario_name": "Switch DB Engine to open-source database solution",
+    "criteria": {
+      "primary_triggers": [
+        "Database is an Oracle Database",
+        "Database Engine is proprietary or requires a paid commercial license (e.g. Oracle, SQL Server, DB2)",
+        "License Cost is for database is High",
+        "Database lacks cloud-native features",
+        "Database is hosted on legacy infrastructure"
+      ],
+      "secondary_conditions": [
+        "Cost reduction goals",
+        "Open-source adoption strategy",
+        "PostgreSQL compatibility",
+        "Application is a custom developed application",
+        "Database is part of a sustainability initiative",
+        "Database is used in microservices architecture",
+        "Database is used in applications with predictable load patterns",
+        "Database is not using proprietary PL/SQL packages"
+      ],
+      "exclusion_criteria": [
+        "Proprietary features required",
+        "Complex migration path",
+        "DB details are unknown",
+        "Application is SaaS Application",
+        "Application is 3rd party application",
+        "Database is embedded within application binary",
+        "Database is part of a vendor-managed appliance",
+        "Database requires specific hardware acceleration",
+        "Database uses unsupported extensions or packages",
+        "Database is part of a certified compliance stack requiring original vendor",
+        "Database is used in real-time transaction processing with latency constraints",
+        "Database is part of a legacy ERP or SAP system"
+      ],
+      "fulfilled_indicators": [
+        "Database engine is already PostgreSQL or another open-source compatible alternative",
+        "Database engine is already MySQL or another open-source compatible alternative",
+        "Database engine is already MariaDB or another open-source compatible alternative",
+        "Database engine is already an open-source alternative with no commercial licensing costs"
+      ]
+    },
+    "modernization_suggestion": "Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs.",
+    "reasoning": "Open-source database solutions like PostgreSQL or MySQL reduce licensing costs while offering enterprise-grade features and cloud-native support.",
+    "priority": "High",
+    "modernization_effects": [
+      "cost"
+    ],
+    "technical_focus": "Database",
+    "cloud_adaption_level": "High",
+    "effort": "Medium"
+  },
+  {
+    "scenario_id": "update_outdated_components",
+    "scenario_name": "Update outdated components",
+    "criteria": {
+      "primary_triggers": [
+        "Used Programming language is legacy or outdated (e.g. Java 6 or older, .NET Framework 3.5 or older, PHP 5.x or older, Python 2.x)",
+        "Used programming language is no longer supported by vendor or community",
+        "Used Framework version is legacy or outdated (e.g. AngularJS 1.x, React \u003C16, Vue \u003C2, Spring \u003C4, .NET Framework \u003C4.5), STRUTS, JSF 1.x, ASP.NET WebForms",
+        "Used Framework version is lower than the currently supported major version (e.g. Angular \u003C 10, Spring \u003C 5).",
+        "Used Application Server is legacy or outdated (e.g. Weblogic 10.x, Websphere 7.x, JBoss EAP 5.x, Tomcat 6.x, IIS 6.x)",
+        "Used Application Server version is lower than the currently supported major version (e.g. Weblogic \u003C 14, Websphere \u003C 9, JBoss EAP \u003C 7, Tomcat \u003C 9)",
+        "Application is based on legacy technology stack (e.g. LAMP stack with PHP 5.x, MEAN stack with AngularJS 1.x, Apache Geronimo, ColdFusion, Classic ASP)",
+        "Application has End-of-Life (EOL) indicators from vendor or community",
+        "Used conponents have known security issues or vulnerabilities that are not patched"
+      ],
+      "secondary_conditions": [
+        "Application is a custom developed application",
+        "Application Architecture is Monolithic and tightly coupled",
+        "Application uses CORBA or SOAP interfaces instead of REST or GraphQL",
+        "Application has poor maintainability",
+        "Application has no releases in the last 12 months",
+        "Application has high technical debt",
+        "Application has low test coverage or no automated tests",
+        "Application has performance issues or scalability limitations",
+        "Application has poor documentation or knowledge transfer",
+        "Application has high operational costs due to legacy infrastructure",
+        "Application has limited integration capabilities with modern systems",
+        "Application has low developer productivity due to outdated tools or processes"
+      ],
+      "exclusion_criteria": [
+        "Application is a simple applications with no scaling needs",
+        "Application is SAP Application",
+        "Application is SaaS Application",
+        "Application is 3rd party software — component versions (language runtime, framework, libraries) are vendor-managed and not upgradeable by the customer",
+        "Application is tightly integrated with legacy hardware"
+      ],
+      "fulfilled_indicators": [
+        "All application components (language, framework, application server, libraries) are on current, supported versions with no end-of-life or outdated status per technology assessment"
+      ]
+    },
+    "modernization_suggestion": "Rewrite or Refactor or Replace application for better security, agility and maintainability.",
+    "reasoning": "Outdated components can be a security risk, leading to vulnerabilities and maintenance challenges.",
+    "priority": "High",
+    "modernization_effects": [
+      "security",
+      "agility",
+      "cost"
+    ],
+    "technical_focus": "Application",
+    "cloud_adaption_level": "Medium",
+    "effort": "High"
+  }
+]
