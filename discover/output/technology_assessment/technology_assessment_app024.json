@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app024",
+  "application_name": "AuditApp-024",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2019 is supported until January 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "VB.NET",
+      "status": "OUTDATED",
+      "reasoning": "VB.NET is in maintenance mode; no new language features are planned."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server 2014",
+      "status": "EOL",
+      "reasoning": "SQL Server 2014 reached end of Extended Support in July 2024."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

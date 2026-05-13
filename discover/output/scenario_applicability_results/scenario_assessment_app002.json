@@ -1,0 +1,56 @@
+{
+  "application_identifier": "app002",
+  "application_name": "CRMApp-002",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "reasoning": "OS RHEL 7 is EOL; security patch update is needed."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "FULFILLED",
+      "reasoning": "Already running on standard Linux (RHEL 7)."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "BLOCKED",
+      "reasoning": "3rd party software; ARM support depends on vendor roadmap."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Uses application server Websphere 7.0; replacement/upgrade may be beneficial."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "3rd party software; cloud-hosted or SaaS version likely available."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "BLOCKED",
+      "reasoning": "3rd party software; containerization depends on vendor support."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "BLOCKED",
+      "reasoning": "3rd party software; source code refactoring is not feasible."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Database Amazon RDS MySQL is current; no immediate upgrade needed."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Already using open source or managed database (Amazon RDS MySQL)."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "PARTIALLY_FULFILLED",
+      "reasoning": "3rd party software with outdated components; updates depend on vendor release schedule."
+    }
+  ]
+}

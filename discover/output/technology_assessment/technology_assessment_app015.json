@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app015",
+  "application_name": "ReportingApp-015",
+  "overall_technology_status": "NO_KNOWLEDGE",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2019 is supported until January 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "PHP 8.1",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PHP 8.1 is supported until November 2025."
+    },
+    {
+      "component_type": "database",
+      "name": "MongoDB",
+      "status": "CURRENT_VERSION",
+      "reasoning": "MongoDB latest versions are actively maintained."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

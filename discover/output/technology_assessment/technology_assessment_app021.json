@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app021",
+  "application_name": "FleetApp-021",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2022",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2022 is supported until October 2031."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "C++ 17",
+      "status": "CURRENT_VERSION",
+      "reasoning": "C++17 is widely supported and still a current standard."
+    },
+    {
+      "component_type": "database",
+      "name": "Oracle 11g",
+      "status": "EOL",
+      "reasoning": "Oracle 11g reached end of Extended Support in December 2020."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

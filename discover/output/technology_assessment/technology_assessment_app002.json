@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app002",
+  "application_name": "CRMApp-002",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Maintenance in June 2024."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java 11",
+      "status": "OUTDATED",
+      "reasoning": "Java 11 LTS is superseded by Java 17 and 21; approaching end of active support."
+    },
+    {
+      "component_type": "database",
+      "name": "Amazon RDS MySQL",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Amazon RDS MySQL is a managed service with continuous updates."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Websphere 7.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Websphere 7.0."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app024",
+  "application_name": "AuditApp-024",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 0.6,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.9,
+    "data_complexity": 0.5
+  },
+  "reasoning": "AuditApp-024 scores 6/10 (MEDIUM). Key drivers: OS=Windows Server 2019, Lang=VB.NET, DB=SQL Server 2014, Criticality=High, Interfaces=3."
+}

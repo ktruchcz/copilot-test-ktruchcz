@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app026",
+  "application_name": "LegacyFinApp-026",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 1.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 0.6,
+    "business_criticality": 1.5,
+    "code_and_architecture": 1.35,
+    "data_complexity": 0.7
+  },
+  "reasoning": "LegacyFinApp-026 scores 6/10 (MEDIUM). Key drivers: OS=AIX 7.2, Lang=FORTRAN 2018, DB=DB2, Criticality=Critical, Interfaces=1."
+}

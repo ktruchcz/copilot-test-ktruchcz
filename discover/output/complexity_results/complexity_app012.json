@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app012",
+  "application_name": "IoTSensorApp-012",
+  "complexity_score": 4,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 0.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 0.9,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.45,
+    "data_complexity": 0.5
+  },
+  "reasoning": "IoTSensorApp-012 scores 4/10 (MEDIUM). Key drivers: OS=Windows Server 2022, Lang=Rust 1.70, DB=PostgreSQL 14, Criticality=High, Interfaces=8."
+}

@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app030",
+  "application_name": "APIGatewayApp-030",
+  "complexity_score": 7,
+  "complexity_classification": "HIGH",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 2.0,
+    "infrastructure_scale": 1.2,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.15,
+    "data_complexity": 0.3
+  },
+  "reasoning": "APIGatewayApp-030 scores 7/10 (HIGH). Key drivers: OS=RHEL 8, Lang=Go 1.19, DB=MySQL 5.7, Criticality=High, Interfaces=30."
+}

@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app021",
+  "application_name": "FleetApp-021",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 1.05,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.9,
+    "data_complexity": 0.5
+  },
+  "reasoning": "FleetApp-021 scores 6/10 (MEDIUM). Key drivers: OS=Windows Server 2022, Lang=C++ 17, DB=Oracle 11g, Criticality=High, Interfaces=4."
+}

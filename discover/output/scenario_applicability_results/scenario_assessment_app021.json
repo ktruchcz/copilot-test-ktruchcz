@@ -1,0 +1,56 @@
+{
+  "application_identifier": "app021",
+  "application_name": "FleetApp-021",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "OS Windows Server 2022 is current; no immediate patch needed."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "APPLICABLE",
+      "reasoning": "Running on Windows Server 2022; migrating to standard Linux would reduce licensing costs."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "reasoning": "ARM CPU migration is possible with recompilation/containerization effort."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Uses application server Microsoft IIS 10.0; replacement/upgrade may be beneficial."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "Application can be migrated to cloud (lift & shift)."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "APPLICABLE",
+      "reasoning": "Application can be containerized to improve portability and scalability."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "Refactoring would improve maintainability and reduce technical debt."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "APPLICABLE",
+      "reasoning": "Database Oracle 11g is EOL; upgrade is critical for security."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "APPLICABLE",
+      "reasoning": "Uses proprietary database Oracle 11g; switching to PostgreSQL/MySQL would reduce licensing costs."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "reasoning": "Multiple outdated components detected (OS: CURRENT_VERSION, Lang: CURRENT_VERSION, DB: EOL)."
+    }
+  ]
+}

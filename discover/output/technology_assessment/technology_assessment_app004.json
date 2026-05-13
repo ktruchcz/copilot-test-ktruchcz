@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app004",
+  "application_name": "HRApp-004",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2012",
+      "status": "EOL",
+      "reasoning": "Windows Server 2012 reached End of Support in October 2023."
+    },
+    {
+      "component_type": "programming_language",
+      "name": ".NET Core",
+      "status": "OUTDATED",
+      "reasoning": ".NET Core 3.x reached end of support; superseded by .NET 5+."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "SQL Server 2019 is supported until 2030."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 8.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 8.0."
+    }
+  ]
+}

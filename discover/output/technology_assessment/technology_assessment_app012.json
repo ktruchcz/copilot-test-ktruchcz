@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app012",
+  "application_name": "IoTSensorApp-012",
+  "overall_technology_status": "NO_KNOWLEDGE",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2022",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2022 is supported until October 2031."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Rust 1.70",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Rust follows a rolling release; 1.70 is within supported range."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL 14",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PostgreSQL 14 is supported until November 2026."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

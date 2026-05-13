@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app006",
+  "application_name": "SupportApp-006",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Debian 6",
+      "status": "EOL",
+      "reasoning": "Debian 6 Squeeze reached end of life in May 2014."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java 11",
+      "status": "OUTDATED",
+      "reasoning": "Java 11 LTS is superseded by Java 17 and 21; approaching end of active support."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL 13",
+      "status": "OUTDATED",
+      "reasoning": "PostgreSQL 13 reaches end of support in November 2025."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Glassfish 5.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Glassfish 5.0."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app015",
+  "application_name": "ReportingApp-015",
+  "complexity_score": 3,
+  "complexity_classification": "LOW",
+  "score_breakdown": {
+    "technology_age_eol": 0.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 0.9,
+    "business_criticality": 0.3,
+    "code_and_architecture": 0.75,
+    "data_complexity": 0.5
+  },
+  "reasoning": "ReportingApp-015 scores 3/10 (LOW). Key drivers: OS=Windows Server 2019, Lang=PHP 8.1, DB=MongoDB, Criticality=Low, Interfaces=4."
+}

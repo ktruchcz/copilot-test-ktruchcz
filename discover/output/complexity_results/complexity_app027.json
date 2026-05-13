@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app027",
+  "application_name": "DataWarehouseApp-027",
+  "complexity_score": 8,
+  "complexity_classification": "HIGH",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 2.0,
+    "infrastructure_scale": 1.05,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.45,
+    "data_complexity": 1.0
+  },
+  "reasoning": "DataWarehouseApp-027 scores 8/10 (HIGH). Key drivers: OS=RHEL 7, Lang=Java 11, DB=SQL Server 2022, Criticality=High, Interfaces=20."
+}

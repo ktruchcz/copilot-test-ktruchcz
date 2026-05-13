@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app010",
+  "application_name": "PayrollApp-010",
+  "complexity_score": 5,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 0.45,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.75,
+    "data_complexity": 0.5
+  },
+  "reasoning": "PayrollApp-010 scores 5/10 (MEDIUM). Key drivers: OS=Windows Server 2019, Lang=Ruby 2.7, DB=MySQL 8.0, Criticality=Medium, Interfaces=4."
+}

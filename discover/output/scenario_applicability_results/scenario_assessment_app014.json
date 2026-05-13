@@ -1,0 +1,56 @@
+{
+  "application_identifier": "app014",
+  "application_name": "DocumentApp-014",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "OS Windows Server 2019 is current; no immediate patch needed."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "APPLICABLE",
+      "reasoning": "Running on Windows Server 2019; migrating to standard Linux would reduce licensing costs."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "reasoning": "ARM CPU migration is possible with recompilation/containerization effort."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Uses application server Microsoft IIS 10.0; replacement/upgrade may be beneficial."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "Application can be migrated to cloud (lift & shift)."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "APPLICABLE",
+      "reasoning": "Application can be containerized to improve portability and scalability."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "Refactoring would improve maintainability and reduce technical debt."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Database MySQL 8.0 is current; no immediate upgrade needed."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Already using open source or managed database (MySQL 8.0)."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "reasoning": "Multiple outdated components detected (OS: CURRENT_VERSION, Lang: OUTDATED, DB: CURRENT_VERSION)."
+    }
+  ]
+}

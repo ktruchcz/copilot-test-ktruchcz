@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app017",
+  "application_name": "BackupApp-017",
+  "complexity_score": 7,
+  "complexity_classification": "HIGH",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 1.35,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.9,
+    "data_complexity": 0.5
+  },
+  "reasoning": "BackupApp-017 scores 7/10 (HIGH). Key drivers: OS=RHEL 7, Lang=PowerShell, DB=Oracle 12c, Criticality=High, Interfaces=8."
+}

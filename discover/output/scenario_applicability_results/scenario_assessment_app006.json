@@ -1,0 +1,56 @@
+{
+  "application_identifier": "app006",
+  "application_name": "SupportApp-006",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "reasoning": "OS Debian 6 is EOL; security patch update is needed."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "FULFILLED",
+      "reasoning": "Already running on standard Linux (Debian 6)."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "BLOCKED",
+      "reasoning": "3rd party software; ARM support depends on vendor roadmap."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Uses application server Glassfish 5.0; replacement/upgrade may be beneficial."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "3rd party software; cloud-hosted or SaaS version likely available."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "BLOCKED",
+      "reasoning": "3rd party software; containerization depends on vendor support."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "BLOCKED",
+      "reasoning": "3rd party software; source code refactoring is not feasible."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "APPLICABLE",
+      "reasoning": "Database PostgreSQL 13 is outdated; upgrade recommended."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Already using open source or managed database (PostgreSQL 13)."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "PARTIALLY_FULFILLED",
+      "reasoning": "3rd party software with outdated components; updates depend on vendor release schedule."
+    }
+  ]
+}

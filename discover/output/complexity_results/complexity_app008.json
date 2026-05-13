@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app008",
+  "application_name": "InventoryApp-008",
+  "complexity_score": 7,
+  "complexity_classification": "HIGH",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 1.05,
+    "business_criticality": 1.05,
+    "code_and_architecture": 1.35,
+    "data_complexity": 0.5
+  },
+  "reasoning": "InventoryApp-008 scores 7/10 (HIGH). Key drivers: OS=AIX 6, Lang=COBOL-2014, DB=SQL Server 2019, Criticality=High, Interfaces=2."
+}

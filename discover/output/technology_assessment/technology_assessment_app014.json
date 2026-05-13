@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app014",
+  "application_name": "DocumentApp-014",
+  "overall_technology_status": "OUTDATED",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2019 is supported until January 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "C# .NET 6",
+      "status": "OUTDATED",
+      "reasoning": ".NET 6 reached end of support in May 2024."
+    },
+    {
+      "component_type": "database",
+      "name": "MySQL 8.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "MySQL 8.0 is the current GA release."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

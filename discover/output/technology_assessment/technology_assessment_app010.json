@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app010",
+  "application_name": "PayrollApp-010",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2019 is supported until January 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Ruby 2.7",
+      "status": "EOL",
+      "reasoning": "Ruby 2.7 reached end of life in March 2023."
+    },
+    {
+      "component_type": "database",
+      "name": "MySQL 8.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "MySQL 8.0 is the current GA release."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

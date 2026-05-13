@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app017",
+  "application_name": "BackupApp-017",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Maintenance in June 2024."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "PowerShell",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PowerShell 7.x is actively maintained."
+    },
+    {
+      "component_type": "database",
+      "name": "Oracle 12c",
+      "status": "EOL",
+      "reasoning": "Oracle 12c reached end of Extended Support in July 2022."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Payara 5.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Payara 5.0."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app028",
+  "application_name": "NotificationApp-028",
+  "overall_technology_status": "NO_KNOWLEDGE",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2019 is supported until January 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java 17",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Java 17 is the current LTS and actively supported."
+    },
+    {
+      "component_type": "database",
+      "name": "Oracle 19c",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Oracle 19c is on extended support through 2027."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

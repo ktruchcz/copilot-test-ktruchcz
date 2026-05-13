@@ -1,0 +1,56 @@
+{
+  "application_identifier": "app012",
+  "application_name": "IoTSensorApp-012",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "OS Windows Server 2022 is current; no immediate patch needed."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "APPLICABLE",
+      "reasoning": "Running on Windows Server 2022; migrating to standard Linux would reduce licensing costs."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "reasoning": "Application is containerized; ARM CPU adoption is feasible with image rebuilds."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Uses application server Microsoft IIS 10.0; replacement/upgrade may be beneficial."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "Application can be migrated to cloud (lift & shift)."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "FULFILLED",
+      "reasoning": "Application is already containerized."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "Refactoring would improve maintainability and reduce technical debt."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Database PostgreSQL 14 is current; no immediate upgrade needed."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Already using open source or managed database (PostgreSQL 14)."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "All components are current; no immediate updates needed."
+    }
+  ]
+}

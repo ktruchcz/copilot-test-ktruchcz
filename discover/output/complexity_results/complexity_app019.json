@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app019",
+  "application_name": "QualityApp-019",
+  "complexity_score": 5,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 1.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 0.45,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.45,
+    "data_complexity": 0.5
+  },
+  "reasoning": "QualityApp-019 scores 5/10 (MEDIUM). Key drivers: OS=RHEL 8, Lang=Python 3.8, DB=MySQL 8.0, Criticality=High, Interfaces=5."
+}

@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app016",
+  "application_name": "MobileApp-016",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 1.4,
+    "infrastructure_scale": 1.05,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.15,
+    "data_complexity": 0.7
+  },
+  "reasoning": "MobileApp-016 scores 6/10 (MEDIUM). Key drivers: OS=RHEL 7, Lang=React Native, DB=SQL Server 2019, Criticality=Medium, Interfaces=10."
+}

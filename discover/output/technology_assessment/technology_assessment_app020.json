@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app020",
+  "application_name": "TrainingApp-020",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2012",
+      "status": "EOL",
+      "reasoning": "Windows Server 2012 reached End of Support in October 2023."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Angular 15",
+      "status": "OUTDATED",
+      "reasoning": "Angular 15 is superseded by multiple newer major versions."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server 2016",
+      "status": "OUTDATED",
+      "reasoning": "SQL Server 2016 mainstream support ended; extended support until July 2026."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 8.5",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 8.5."
+    }
+  ]
+}

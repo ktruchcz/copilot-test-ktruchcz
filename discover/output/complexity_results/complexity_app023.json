@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app023",
+  "application_name": "ChatbotApp-023",
+  "complexity_score": 3,
+  "complexity_classification": "LOW",
+  "score_breakdown": {
+    "technology_age_eol": 0.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 0.6,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.15,
+    "data_complexity": 0.5
+  },
+  "reasoning": "ChatbotApp-023 scores 3/10 (LOW). Key drivers: OS=RHEL 8, Lang=Node.js 18, DB=MongoDB, Criticality=Medium, Interfaces=8."
+}

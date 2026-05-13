@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app011",
+  "application_name": "RouteOptApp-011",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "CentOS 7",
+      "status": "EOL",
+      "reasoning": "CentOS 7 reached end of life in June 2024."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Python 3.11",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Python 3.11 is actively supported until October 2027."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL 14",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PostgreSQL 14 is supported until November 2026."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Glassfish 4.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Glassfish 4.0."
+    }
+  ]
+}

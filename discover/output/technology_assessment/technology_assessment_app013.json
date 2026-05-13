@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app013",
+  "application_name": "SecurityApp-013",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Debian 7",
+      "status": "EOL",
+      "reasoning": "Debian 7 Wheezy reached end of life in May 2018."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java 17",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Java 17 is the current LTS and actively supported."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server 2022",
+      "status": "CURRENT_VERSION",
+      "reasoning": "SQL Server 2022 is the latest version and actively supported."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Websphere 8.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Websphere 8.0."
+    }
+  ]
+}

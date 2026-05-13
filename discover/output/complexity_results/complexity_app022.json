@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app022",
+  "application_name": "ComplianceApp-022",
+  "complexity_score": 7,
+  "complexity_classification": "HIGH",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 1.4,
+    "infrastructure_scale": 1.05,
+    "business_criticality": 1.5,
+    "code_and_architecture": 0.15,
+    "data_complexity": 0.5
+  },
+  "reasoning": "ComplianceApp-022 scores 7/10 (HIGH). Key drivers: OS=RHEL 7, Lang=Scala 2.13, DB=PostgreSQL 14, Criticality=Critical, Interfaces=12."
+}

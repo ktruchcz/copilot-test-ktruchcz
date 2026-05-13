@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app022",
+  "application_name": "ComplianceApp-022",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Maintenance in June 2024."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Scala 2.13",
+      "status": "OUTDATED",
+      "reasoning": "Scala 2.13 is stable but superseded by Scala 3."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL 14",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PostgreSQL 14 is supported until November 2026."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Payara 6.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Payara 6.0."
+    }
+  ]
+}

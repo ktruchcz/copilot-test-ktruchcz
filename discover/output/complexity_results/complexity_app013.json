@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app013",
+  "application_name": "SecurityApp-013",
+  "complexity_score": 7,
+  "complexity_classification": "HIGH",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 1.4,
+    "infrastructure_scale": 1.05,
+    "business_criticality": 1.5,
+    "code_and_architecture": 0.45,
+    "data_complexity": 0.5
+  },
+  "reasoning": "SecurityApp-013 scores 7/10 (HIGH). Key drivers: OS=Debian 7, Lang=Java 17, DB=SQL Server 2022, Criticality=Critical, Interfaces=15."
+}

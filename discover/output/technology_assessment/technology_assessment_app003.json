@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app003",
+  "application_name": "AnalyticsApp-003",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Maintenance in June 2024."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Python 3.9",
+      "status": "OUTDATED",
+      "reasoning": "Python 3.9 reaches end of support in October 2025."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL 13",
+      "status": "OUTDATED",
+      "reasoning": "PostgreSQL 13 reaches end of support in November 2025."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Apache Tomcat 6.1",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Apache Tomcat 6.1."
+    }
+  ]
+}

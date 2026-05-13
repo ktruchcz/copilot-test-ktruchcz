@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app002",
+  "application_name": "CRMApp-002",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 0.9,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.75,
+    "data_complexity": 0.5
+  },
+  "reasoning": "CRMApp-002 scores 6/10 (MEDIUM). Key drivers: OS=RHEL 7, Lang=Java 11, DB=Amazon RDS MySQL, Criticality=Medium, Interfaces=8."
+}

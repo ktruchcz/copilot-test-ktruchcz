@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app003",
+  "application_name": "AnalyticsApp-003",
+  "complexity_score": 4,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 0.45,
+    "business_criticality": 0.3,
+    "code_and_architecture": 0.15,
+    "data_complexity": 0.5
+  },
+  "reasoning": "AnalyticsApp-003 scores 4/10 (MEDIUM). Key drivers: OS=RHEL 7, Lang=Python 3.9, DB=PostgreSQL 13, Criticality=Low, Interfaces=3."
+}

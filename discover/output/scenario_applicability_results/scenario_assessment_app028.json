@@ -1,0 +1,56 @@
+{
+  "application_identifier": "app028",
+  "application_name": "NotificationApp-028",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "OS Windows Server 2019 is current; no immediate patch needed."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "PARTIALLY_FULFILLED",
+      "reasoning": "Running on Windows Server 2019; switch to Linux may require vendor support confirmation for 3rd party software."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "PARTIALLY_FULFILLED",
+      "reasoning": "Containerized 3rd party app; ARM support depends on vendor."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Uses application server Microsoft IIS 10.0; replacement/upgrade may be beneficial."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "3rd party software; cloud-hosted or SaaS version likely available."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "FULFILLED",
+      "reasoning": "Application is already containerized."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "BLOCKED",
+      "reasoning": "3rd party software; source code refactoring is not feasible."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Database Oracle 19c is current; no immediate upgrade needed."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "PARTIALLY_FULFILLED",
+      "reasoning": "3rd party software using proprietary database Oracle 19c; switch feasibility depends on vendor."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "All components are current; no immediate updates needed."
+    }
+  ]
+}

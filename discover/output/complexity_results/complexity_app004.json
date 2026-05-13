@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app004",
+  "application_name": "HRApp-004",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 0.9,
+    "business_criticality": 1.05,
+    "code_and_architecture": 0.45,
+    "data_complexity": 0.5
+  },
+  "reasoning": "HRApp-004 scores 6/10 (MEDIUM). Key drivers: OS=Windows Server 2012, Lang=.NET Core, DB=SQL Server 2019, Criticality=High, Interfaces=6."
+}

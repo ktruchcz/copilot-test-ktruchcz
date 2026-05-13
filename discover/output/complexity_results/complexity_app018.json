@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app018",
+  "application_name": "VendorApp-018",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 1.5,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.6,
+    "data_complexity": 0.5
+  },
+  "reasoning": "VendorApp-018 scores 6/10 (MEDIUM). Key drivers: OS=RHEL 7, Lang=Java 8, DB=PostgreSQL 13, Criticality=Medium, Interfaces=6."
+}

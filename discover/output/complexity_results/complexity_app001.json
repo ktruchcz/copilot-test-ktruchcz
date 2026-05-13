@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app001",
+  "application_name": "ERPApp-001",
+  "complexity_score": 6,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 1.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 0.9,
+    "business_criticality": 1.05,
+    "code_and_architecture": 1.35,
+    "data_complexity": 0.7
+  },
+  "reasoning": "ERPApp-001 scores 6/10 (MEDIUM). Key drivers: OS=AIX 7.2, Lang=COBOL-2014, DB=Oracle 19c, Criticality=High, Interfaces=5."
+}

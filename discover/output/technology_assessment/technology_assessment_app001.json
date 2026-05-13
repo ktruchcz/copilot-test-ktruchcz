@@ -1,0 +1,25 @@
+{
+  "application_identifier": "app001",
+  "application_name": "ERPApp-001",
+  "overall_technology_status": "OUTDATED",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "AIX 7.2",
+      "status": "OUTDATED",
+      "reasoning": "IBM AIX 7.2 is aging; extended support but limited future roadmap."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "COBOL-2014",
+      "status": "OUTDATED",
+      "reasoning": "COBOL-2014 is a decades-old standard; not EOL but significantly outdated."
+    },
+    {
+      "component_type": "database",
+      "name": "Oracle 19c",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Oracle 19c is on extended support through 2027."
+    }
+  ]
+}

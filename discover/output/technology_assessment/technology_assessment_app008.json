@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app008",
+  "application_name": "InventoryApp-008",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "AIX 6",
+      "status": "EOL",
+      "reasoning": "AIX 6 reached end of service in April 2015."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "COBOL-2014",
+      "status": "OUTDATED",
+      "reasoning": "COBOL-2014 is a decades-old standard; not EOL but significantly outdated."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "SQL Server 2019 is supported until 2030."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Oracle Weblogic 8.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Oracle Weblogic 8.0."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app006",
+  "application_name": "SupportApp-006",
+  "complexity_score": 5,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.4,
+    "infrastructure_scale": 0.6,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.75,
+    "data_complexity": 0.5
+  },
+  "reasoning": "SupportApp-006 scores 5/10 (MEDIUM). Key drivers: OS=Debian 6, Lang=Java 11, DB=PostgreSQL 13, Criticality=Medium, Interfaces=4."
+}

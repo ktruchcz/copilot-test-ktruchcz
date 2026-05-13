@@ -1,0 +1,39 @@
+{
+  "app_id": "app024",
+  "app_name": "AuditApp-024",
+  "app_description": "Legacy audit management system for tracking financial audits and compliance activities",
+  "solution_type": "Custom made",
+  "business_criticality": "High",
+  "application_status": "Production",
+  "deployment_type": "On-Premise",
+  "data_classification": "Confidential",
+  "business_unit": "Finance",
+  "business_capabilities": [
+    "Audit Management",
+    "Risk Assessment",
+    "Financial Reporting"
+  ],
+  "user_count": 95,
+  "operating_system": "Windows Server 2019",
+  "programming_language": "VB.NET",
+  "application_server": "Microsoft IIS 10.0",
+  "application_architecture": "2-Tier",
+  "is_containerized": "No",
+  "environment_count": 2,
+  "server_instances": "sv35",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": "prod02",
+  "ci_cd_present": "No",
+  "api_endpoint_count": 2,
+  "external_interface_count": 3,
+  "database_engine": "SQL Server 2014",
+  "database_storage_gb": 300,
+  "database_license_required": "Yes",
+  "logging_solution": "Windows Event Log",
+  "monitoring_tool": null,
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0027"
+  }
+}

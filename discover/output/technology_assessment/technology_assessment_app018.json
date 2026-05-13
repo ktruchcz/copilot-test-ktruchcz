@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app018",
+  "application_name": "VendorApp-018",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Maintenance in June 2024."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java 8",
+      "status": "OUTDATED",
+      "reasoning": "Java 8 is still receiving patches from some vendors but is an older LTS generation."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL 13",
+      "status": "OUTDATED",
+      "reasoning": "PostgreSQL 13 reaches end of support in November 2025."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Glassfish 4.5",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Glassfish 4.5."
+    }
+  ]
+}

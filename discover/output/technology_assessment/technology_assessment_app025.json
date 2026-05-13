@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app025",
+  "application_name": "PortalApp-025",
+  "overall_technology_status": "NO_KNOWLEDGE",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2019 is supported until January 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "ASP.NET Core",
+      "status": "CURRENT_VERSION",
+      "reasoning": "ASP.NET Core (latest) is actively supported."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL 15",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PostgreSQL 15 is actively supported."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Microsoft IIS 10.0."
+    }
+  ]
+}

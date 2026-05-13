@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app011",
+  "application_name": "RouteOptApp-011",
+  "complexity_score": 5,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 2.5,
+    "integration_complexity": 0.8,
+    "infrastructure_scale": 0.45,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.15,
+    "data_complexity": 0.5
+  },
+  "reasoning": "RouteOptApp-011 scores 5/10 (MEDIUM). Key drivers: OS=CentOS 7, Lang=Python 3.11, DB=PostgreSQL 14, Criticality=Medium, Interfaces=5."
+}

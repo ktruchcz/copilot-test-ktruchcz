@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app030",
+  "application_name": "APIGatewayApp-030",
+  "overall_technology_status": "EOL",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL 8",
+      "status": "CURRENT_VERSION",
+      "reasoning": "RHEL 8 is supported until May 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Go 1.19",
+      "status": "OUTDATED",
+      "reasoning": "Go 1.19 is superseded; only last two releases receive security updates."
+    },
+    {
+      "component_type": "database",
+      "name": "MySQL 5.7",
+      "status": "EOL",
+      "reasoning": "MySQL 5.7 reached end of life in October 2023."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Glassfish 3.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Glassfish 3.0."
+    }
+  ]
+}

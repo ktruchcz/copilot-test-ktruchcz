@@ -1,0 +1,56 @@
+{
+  "application_identifier": "app013",
+  "application_name": "SecurityApp-013",
+  "scenario_assessments": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "reasoning": "OS Debian 7 is EOL; security patch update is needed."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "FULFILLED",
+      "reasoning": "Already running on standard Linux (Debian 7)."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "reasoning": "ARM CPU migration is possible with recompilation/containerization effort."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Uses application server Websphere 8.0; replacement/upgrade may be beneficial."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "PARTIALLY_FULFILLED",
+      "reasoning": "Critical application with high complexity (7/10); cloud migration requires careful planning."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "APPLICABLE",
+      "reasoning": "Application can be containerized to improve portability and scalability."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "High complexity (7/10); refactoring would reduce technical debt."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Database SQL Server 2022 is current; no immediate upgrade needed."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "APPLICABLE",
+      "reasoning": "Uses proprietary database SQL Server 2022; switching to PostgreSQL/MySQL would reduce licensing costs."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "reasoning": "Multiple outdated components detected (OS: EOL, Lang: CURRENT_VERSION, DB: CURRENT_VERSION)."
+    }
+  ]
+}

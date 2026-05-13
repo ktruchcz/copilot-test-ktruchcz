@@ -1,0 +1,15 @@
+{
+  "application_identifier": "app028",
+  "application_name": "NotificationApp-028",
+  "complexity_score": 5,
+  "complexity_classification": "MEDIUM",
+  "score_breakdown": {
+    "technology_age_eol": 0.5,
+    "integration_complexity": 2.0,
+    "infrastructure_scale": 1.05,
+    "business_criticality": 0.6,
+    "code_and_architecture": 0.45,
+    "data_complexity": 0.7
+  },
+  "reasoning": "NotificationApp-028 scores 5/10 (MEDIUM). Key drivers: OS=Windows Server 2019, Lang=Java 17, DB=Oracle 19c, Criticality=Medium, Interfaces=25."
+}

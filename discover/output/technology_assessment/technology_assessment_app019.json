@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app019",
+  "application_name": "QualityApp-019",
+  "overall_technology_status": "OUTDATED",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL 8",
+      "status": "CURRENT_VERSION",
+      "reasoning": "RHEL 8 is supported until May 2029."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Python 3.8",
+      "status": "OUTDATED",
+      "reasoning": "Python 3.8 reached end of support in October 2024."
+    },
+    {
+      "component_type": "database",
+      "name": "MySQL 8.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "MySQL 8.0 is the current GA release."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Apache Tomcat  8.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Apache Tomcat  8.0."
+    }
+  ]
+}

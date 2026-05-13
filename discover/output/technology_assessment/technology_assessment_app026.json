@@ -1,0 +1,25 @@
+{
+  "application_identifier": "app026",
+  "application_name": "LegacyFinApp-026",
+  "overall_technology_status": "OUTDATED",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "AIX 7.2",
+      "status": "OUTDATED",
+      "reasoning": "IBM AIX 7.2 is aging; extended support but limited future roadmap."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "FORTRAN 2018",
+      "status": "OUTDATED",
+      "reasoning": "FORTRAN 2018 is the latest standard but the ecosystem is legacy."
+    },
+    {
+      "component_type": "database",
+      "name": "DB2",
+      "status": "OUTDATED",
+      "reasoning": "IBM Db2 is still supported but considered a legacy platform."
+    }
+  ]
+}
