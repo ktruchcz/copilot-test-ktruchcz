@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app010",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "Windows Server 2019",
+      "version": "Windows Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2019 is supported until 2029."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "MySQL 8.0",
+      "version": "MySQL 8.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "MySQL 8.0 is currently supported."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Ruby 2.7",
+      "version": "Ruby 2.7",
+      "status": "EOL",
+      "reasoning": "Ruby 2.7 reached End of Life in March 2023."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Microsoft IIS 10.0",
+      "version": "Microsoft IIS 10.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "IIS 10.0 (Windows Server 2016/2019/2022) is currently supported."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 1,
+  "outdated_component_count": 0,
+  "current_component_count": 3,
+  "no_knowledge_component_count": 0
+}

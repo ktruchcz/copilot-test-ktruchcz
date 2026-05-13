@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app013",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "Debian 7",
+      "version": "Debian 7",
+      "status": "EOL",
+      "reasoning": "Debian 7 (Wheezy) reached End of Life in April 2018."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "SQL Server 2022",
+      "version": "SQL Server 2022",
+      "status": "CURRENT_VERSION",
+      "reasoning": "SQL Server 2022 is currently in mainstream support."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Java 17",
+      "version": "Java 17",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Java 17 is an LTS release with Oracle extended support until September 2030."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Websphere 8.0",
+      "version": "Websphere 8.0",
+      "status": "EOL",
+      "reasoning": "IBM WebSphere Application Server 8.0 reached End of Life in December 2022."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 0,
+  "current_component_count": 2,
+  "no_knowledge_component_count": 0
+}

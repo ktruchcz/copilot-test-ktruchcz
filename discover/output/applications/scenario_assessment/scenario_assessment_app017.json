@@ -1,0 +1,84 @@
+{
+  "application_identifier": "app017",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "reasoning": "OS RHEL 7 is EOL and requires security patching or upgrade."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "APPLICABLE",
+      "reasoning": "RHEL 7 is EOL. Upgrading to a current Linux distribution is recommended."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "reasoning": "On-premise deployment can be evaluated for ARM-based hardware to reduce energy costs."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Application server Payara 5.0 is outdated and should be upgraded."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "Application is deployed on-premise. Cloud migration would improve scalability and reduce infrastructure costs."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "APPLICABLE",
+      "reasoning": "Application is not containerized. Containerization would improve deployment consistency and portability."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "Application architecture is unknown with no CI/CD. Assessment suggests potential for refactoring."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "APPLICABLE",
+      "reasoning": "Database Oracle 12c is EOL and must be upgraded."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "APPLICABLE",
+      "reasoning": "Oracle 12c is a commercial database. Switching to an open-source alternative would reduce licensing costs."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "reasoning": "Outdated/EOL components detected: RHEL 7, Oracle 12c, Payara 5.0. Updates required."
+    },
+    {
+      "scenario_id": "switch_to_managed_db",
+      "status": "APPLICABLE",
+      "reasoning": "On-premise database could be migrated to a managed cloud database service."
+    },
+    {
+      "scenario_id": "managed_arm_db",
+      "status": "APPLICABLE",
+      "reasoning": "Migrating database to ARM-based managed cloud service would reduce costs."
+    },
+    {
+      "scenario_id": "serverless_db_migration",
+      "status": "APPLICABLE",
+      "reasoning": "Database can be migrated to a serverless database solution to reduce operational overhead."
+    },
+    {
+      "scenario_id": "switch_db_engine_postgresql",
+      "status": "APPLICABLE",
+      "reasoning": "Oracle 12c is a commercial database. Migrating to PostgreSQL would eliminate licensing costs."
+    }
+  ],
+  "applicable_count": 14,
+  "summary": {
+    "APPLICABLE": 14,
+    "FULFILLED": 0,
+    "NOT_APPLICABLE": 0,
+    "BLOCKED": 0,
+    "PARTIALLY_FULFILLED": 0,
+    "LACK_OF_DATA": 0
+  }
+}

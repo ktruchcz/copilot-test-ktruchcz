@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app008",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "AIX 6",
+      "version": "AIX 6",
+      "status": "EOL",
+      "reasoning": "IBM AIX 6.1 reached End of Life in April 2017."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "SQL Server 2019",
+      "version": "SQL Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "SQL Server 2019 mainstream support until 2025, extended until 2030."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "COBOL-2014",
+      "version": "COBOL-2014",
+      "status": "OUTDATED",
+      "reasoning": "COBOL-2014 is an aging language still used in mainframes but considered outdated."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Oracle Weblogic 8.0",
+      "version": "Oracle Weblogic 8.0",
+      "status": "EOL",
+      "reasoning": "Oracle WebLogic Server 8.1 reached End of Life in December 2008."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 1,
+  "current_component_count": 1,
+  "no_knowledge_component_count": 0
+}

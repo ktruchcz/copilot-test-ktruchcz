@@ -1,0 +1,84 @@
+{
+  "application_identifier": "app004",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "reasoning": "OS Windows Server 2012 is EOL and requires security patching or upgrade."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Application runs on Windows OS. This scenario targets non-standard Unix to standard Linux migration."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "reasoning": "Cloud deployment can leverage ARM-based instances (e.g., AWS Graviton) for cost savings."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "reasoning": "Application server Microsoft IIS 8.0 is EOL and must be replaced."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "PARTIALLY_FULFILLED",
+      "reasoning": "Application has hybrid deployment (AWS, On-premise). Full cloud migration could be considered."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "FULFILLED",
+      "reasoning": "Application is already containerized."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "Application with 2-Tier architecture could benefit from decoupling and modernization."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "FULFILLED",
+      "reasoning": "Database SQL Server 2019 is current."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "APPLICABLE",
+      "reasoning": "SQL Server 2019 is a commercial database. Switching to an open-source alternative would reduce licensing costs."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "reasoning": "Outdated/EOL components detected: Windows Server 2012, Microsoft IIS 8.0. Updates required."
+    },
+    {
+      "scenario_id": "switch_to_managed_db",
+      "status": "APPLICABLE",
+      "reasoning": "Database could be migrated to a fully managed cloud database service for reduced operational overhead."
+    },
+    {
+      "scenario_id": "managed_arm_db",
+      "status": "APPLICABLE",
+      "reasoning": "Database can be evaluated for ARM-based managed service deployment."
+    },
+    {
+      "scenario_id": "serverless_db_migration",
+      "status": "APPLICABLE",
+      "reasoning": "Database can be migrated to a serverless database solution to reduce operational overhead."
+    },
+    {
+      "scenario_id": "switch_db_engine_postgresql",
+      "status": "APPLICABLE",
+      "reasoning": "SQL Server 2019 is a commercial database. Migrating to PostgreSQL would eliminate licensing costs."
+    }
+  ],
+  "applicable_count": 10,
+  "summary": {
+    "APPLICABLE": 10,
+    "FULFILLED": 2,
+    "NOT_APPLICABLE": 1,
+    "BLOCKED": 0,
+    "PARTIALLY_FULFILLED": 1,
+    "LACK_OF_DATA": 0
+  }
+}

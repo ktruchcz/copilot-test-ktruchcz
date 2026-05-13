@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app012",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "Windows Server 2022",
+      "version": "Windows Server 2022",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2022 is supported until 2031."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "PostgreSQL 14",
+      "version": "PostgreSQL 14",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PostgreSQL 14 is supported until November 2026."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Rust 1.70",
+      "version": "Rust 1.70",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Rust 1.70 is recent and considered current."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Microsoft IIS 10.0",
+      "version": "Microsoft IIS 10.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "IIS 10.0 (Windows Server 2016/2019/2022) is currently supported."
+    }
+  ],
+  "overall_status": "CURRENT_VERSION",
+  "eol_component_count": 0,
+  "outdated_component_count": 0,
+  "current_component_count": 4,
+  "no_knowledge_component_count": 0
+}

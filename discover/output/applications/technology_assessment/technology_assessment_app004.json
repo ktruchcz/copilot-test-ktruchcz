@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app004",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "Windows Server 2012",
+      "version": "Windows Server 2012",
+      "status": "EOL",
+      "reasoning": "Windows Server 2012 reached End of Life in October 2023."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "SQL Server 2019",
+      "version": "SQL Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "SQL Server 2019 mainstream support until 2025, extended until 2030."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": ".NET Core",
+      "version": ".NET Core",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Modern .NET Core is currently supported."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Microsoft IIS 8.0",
+      "version": "Microsoft IIS 8.0",
+      "status": "EOL",
+      "reasoning": "IIS 8.0 (Windows Server 2012) reached End of Life in October 2023."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 0,
+  "current_component_count": 2,
+  "no_knowledge_component_count": 0
+}

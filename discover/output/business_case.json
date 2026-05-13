@@ -1,0 +1,2820 @@
+{
+  "portfolio_summary": {
+    "total_in_scope_apps": 26,
+    "total_estimated_cost": 8804867.79,
+    "total_estimated_annual_savings": 5201700.0,
+    "estimated_roi_years": 1.69
+  },
+  "notes": [
+    "Cost multiplier formula: 0.5 * 1.15^complexity_score",
+    "Savings multiplier for application-focus scenarios: LOW=1.0, MEDIUM=0.9, HIGH=0.8",
+    "switch_db_engine_open_source mapped to switch_db_engine_postgresql finance data",
+    "update_outdated_components: no finance configuration available"
+  ],
+  "applications": [
+    {
+      "application_identifier": "app001",
+      "app_name": "ERPApp-001",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 2700.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 365810.56,
+      "total_estimated_annual_savings": 183600.0
+    },
+    {
+      "application_identifier": "app002",
+      "app_name": "CRMApp-002",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 1.07
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 115653.04,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 464115.64,
+      "total_estimated_annual_savings": 272700.0
+    },
+    {
+      "application_identifier": "app003",
+      "app_name": "AnalyticsApp-003",
+      "complexity_score": 5,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1005.68,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.01
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 301.7,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.75
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.03
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 10056.79,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 0.93
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 10056.79,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.01
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.5
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.01
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.34
+        }
+      ],
+      "total_estimated_cost": 41534.52,
+      "total_estimated_annual_savings": 52700.0
+    },
+    {
+      "application_identifier": "app004",
+      "app_name": "HRApp-004",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 1.07
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 382811.55,
+      "total_estimated_annual_savings": 207300.0
+    },
+    {
+      "application_identifier": "app006",
+      "app_name": "SupportApp-006",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 1.07
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 115653.04,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        }
+      ],
+      "total_estimated_cost": 452550.33,
+      "total_estimated_annual_savings": 277700.0
+    },
+    {
+      "application_identifier": "app008",
+      "app_name": "InventoryApp-008",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 1.07
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 2700.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 377375.86,
+      "total_estimated_annual_savings": 194400.0
+    },
+    {
+      "application_identifier": "app010",
+      "app_name": "PayrollApp-010",
+      "complexity_score": 5,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.03
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 100567.86,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.12
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 251419.65,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 1.86
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.5
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.01
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.34
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 25141.96,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.68
+        }
+      ],
+      "total_estimated_cost": 397243.03,
+      "total_estimated_annual_savings": 271000.0
+    },
+    {
+      "application_identifier": "app011",
+      "app_name": "RouteOptApp-011",
+      "complexity_score": 5,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1005.68,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.01
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 301.7,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.75
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.03
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 10056.79,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 0.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.5
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.01
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.34
+        }
+      ],
+      "total_estimated_cost": 31477.73,
+      "total_estimated_annual_savings": 42700.0
+    },
+    {
+      "application_identifier": "app012",
+      "app_name": "IoTSensorApp-012",
+      "complexity_score": 4,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 4.37
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 218625.78,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 1.62
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.29
+        }
+      ],
+      "total_estimated_cost": 236115.86,
+      "total_estimated_annual_savings": 166000.0
+    },
+    {
+      "application_identifier": "app013",
+      "app_name": "SecurityApp-013",
+      "complexity_score": 7,
+      "complexity_level": "HIGH",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1330.01,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.66
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 399.0,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 1.0
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 9600.0,
+          "roi_years": 1.39
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 2400.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 133000.99,
+          "estimated_annual_savings": 80000.0,
+          "roi_years": 1.66
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 332502.49,
+          "estimated_annual_savings": 120000.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 33250.25,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 2.22
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.67
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 33250.25,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 2.22
+        }
+      ],
+      "total_estimated_cost": 580283.34,
+      "total_estimated_annual_savings": 273900.0
+    },
+    {
+      "application_identifier": "app014",
+      "app_name": "DocumentApp-014",
+      "complexity_score": 5,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.03
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 100567.86,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.12
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 251419.65,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 1.86
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.5
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.01
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.34
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 25141.96,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.68
+        }
+      ],
+      "total_estimated_cost": 397243.03,
+      "total_estimated_annual_savings": 271000.0
+    },
+    {
+      "application_identifier": "app015",
+      "app_name": "ReportingApp-015",
+      "complexity_score": 4,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 4.37
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 87450.31,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 0.97
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 218625.78,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 1.62
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.29
+        }
+      ],
+      "total_estimated_cost": 323566.17,
+      "total_estimated_annual_savings": 256000.0
+    },
+    {
+      "application_identifier": "app016",
+      "app_name": "MobileApp-016",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 1.07
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 94025.91,
+      "total_estimated_annual_savings": 72700.0
+    },
+    {
+      "application_identifier": "app017",
+      "app_name": "BackupApp-017",
+      "complexity_score": 7,
+      "complexity_level": "HIGH",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1330.01,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.66
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 399.0,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 1.0
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 9600.0,
+          "roi_years": 1.39
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 2400.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 133000.99,
+          "estimated_annual_savings": 80000.0,
+          "roi_years": 1.66
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 332502.49,
+          "estimated_annual_savings": 120000.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 33250.25,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 2.22
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.67
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 33250.25,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 2.22
+        }
+      ],
+      "total_estimated_cost": 593583.44,
+      "total_estimated_annual_savings": 283900.0
+    },
+    {
+      "application_identifier": "app018",
+      "app_name": "VendorApp-018",
+      "complexity_score": 7,
+      "complexity_level": "HIGH",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1330.01,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.66
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 399.0,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 1.0
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 9600.0,
+          "roi_years": 1.39
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 2400.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 133000.99,
+          "estimated_annual_savings": 80000.0,
+          "roi_years": 1.66
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 332502.49,
+          "estimated_annual_savings": 120000.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.67
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.44
+        }
+      ],
+      "total_estimated_cost": 527082.94,
+      "total_estimated_annual_savings": 253900.0
+    },
+    {
+      "application_identifier": "app019",
+      "app_name": "QualityApp-019",
+      "complexity_score": 5,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.03
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 100567.86,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.12
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 251419.65,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 1.86
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.5
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.01
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.34
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 25141.96,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.68
+        }
+      ],
+      "total_estimated_cost": 397243.03,
+      "total_estimated_annual_savings": 271000.0
+    },
+    {
+      "application_identifier": "app020",
+      "app_name": "TrainingApp-020",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 1.07
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 115653.04,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 510029.89,
+      "total_estimated_annual_savings": 307300.0
+    },
+    {
+      "application_identifier": "app021",
+      "app_name": "FleetApp-021",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 2700.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 115653.04,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 503090.71,
+      "total_estimated_annual_savings": 298700.0
+    },
+    {
+      "application_identifier": "app022",
+      "app_name": "ComplianceApp-022",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        }
+      ],
+      "total_estimated_cost": 24634.09,
+      "total_estimated_annual_savings": 31900.0
+    },
+    {
+      "application_identifier": "app023",
+      "app_name": "ChatbotApp-023",
+      "complexity_score": 4,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 4.37
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.29
+        }
+      ],
+      "total_estimated_cost": 17490.08,
+      "total_estimated_annual_savings": 31000.0
+    },
+    {
+      "application_identifier": "app024",
+      "app_name": "AuditApp-024",
+      "complexity_score": 7,
+      "complexity_level": "HIGH",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 6.65
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 2400.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 133000.99,
+          "estimated_annual_savings": 80000.0,
+          "roi_years": 1.66
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 332502.49,
+          "estimated_annual_savings": 120000.0,
+          "roi_years": 2.77
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 33250.25,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 2.22
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.67
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 33250.25,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 2.22
+        }
+      ],
+      "total_estimated_cost": 578554.33,
+      "total_estimated_annual_savings": 273400.0
+    },
+    {
+      "application_identifier": "app025",
+      "app_name": "PortalApp-025",
+      "complexity_score": 4,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 4.37
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 218625.78,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 1.62
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 0.8745,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 4372.52,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.29
+        }
+      ],
+      "total_estimated_cost": 236115.86,
+      "total_estimated_annual_savings": 166000.0
+    },
+    {
+      "application_identifier": "app026",
+      "app_name": "LegacyFinApp-026",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 3000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 2700.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 365810.56,
+      "total_estimated_annual_savings": 183600.0
+    },
+    {
+      "application_identifier": "app027",
+      "app_name": "DataWarehouseApp-027",
+      "complexity_score": 6,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "base_cost_once": 1000,
+          "base_savings_annual": 500,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 1156.53,
+          "estimated_annual_savings": 500.0,
+          "roi_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "base_cost_once": 300,
+          "base_savings_annual": 400,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 346.96,
+          "estimated_annual_savings": 400.0,
+          "roi_years": 0.87
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 11565.3,
+          "estimated_annual_savings": 10800.0,
+          "roi_years": 1.07
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "base_cost_once": 100000,
+          "base_savings_annual": 100000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 115653.04,
+          "estimated_annual_savings": 90000.0,
+          "roi_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 289132.6,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.58
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.16
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5782.65,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.39
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.1565,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 28913.26,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.93
+        }
+      ],
+      "total_estimated_cost": 498811.55,
+      "total_estimated_annual_savings": 297700.0
+    },
+    {
+      "application_identifier": "app028",
+      "app_name": "NotificationApp-028",
+      "complexity_score": 5,
+      "complexity_level": "MEDIUM",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 5.03
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "base_cost_once": 250000,
+          "base_savings_annual": 150000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 0.9,
+          "estimated_cost": 251419.65,
+          "estimated_annual_savings": 135000.0,
+          "roi_years": 1.86
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 25141.96,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.68
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.5
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.01
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 5028.39,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.34
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.0057,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 25141.96,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 1.68
+        }
+      ],
+      "total_estimated_cost": 321817.13,
+      "total_estimated_annual_savings": 196000.0
+    },
+    {
+      "application_identifier": "app030",
+      "app_name": "APIGatewayApp-030",
+      "complexity_score": 7,
+      "complexity_level": "HIGH",
+      "scenarios": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 1000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 1000.0,
+          "roi_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 12000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 0.8,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 9600.0,
+          "roi_years": 1.39
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "base_cost_once": 10000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 13300.1,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "update_outdated_components",
+          "status": "APPLICABLE",
+          "note": "No finance configuration available for this scenario.",
+          "estimated_cost": null,
+          "estimated_annual_savings": null,
+          "roi_years": null
+        },
+        {
+          "scenario_id": "switch_to_managed_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 10000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 10000.0,
+          "roi_years": 0.67
+        },
+        {
+          "scenario_id": "managed_arm_db",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 5000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 5000.0,
+          "roi_years": 1.33
+        },
+        {
+          "scenario_id": "serverless_db_migration",
+          "status": "APPLICABLE",
+          "base_cost_once": 5000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 6650.05,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 0.44
+        },
+        {
+          "scenario_id": "switch_db_engine_postgresql",
+          "status": "APPLICABLE",
+          "base_cost_once": 25000,
+          "base_savings_annual": 15000,
+          "cost_multiplier": 1.33,
+          "savings_multiplier": 1.0,
+          "estimated_cost": 33250.25,
+          "estimated_annual_savings": 15000.0,
+          "roi_years": 2.22
+        }
+      ],
+      "total_estimated_cost": 86450.65,
+      "total_estimated_annual_savings": 65600.0
+    }
+  ]
+}

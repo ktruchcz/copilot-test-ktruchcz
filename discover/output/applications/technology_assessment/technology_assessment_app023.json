@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app023",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "RHEL 8",
+      "version": "RHEL 8",
+      "status": "CURRENT_VERSION",
+      "reasoning": "RHEL 8 is supported until May 2029."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "MongoDB",
+      "version": "MongoDB",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for MongoDB."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Node.js 18",
+      "version": "Node.js 18",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Node.js 18 LTS is supported until April 2025."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Apache Tomcat. 7.4",
+      "version": "Apache Tomcat. 7.4",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Apache Tomcat. 7.4."
+    }
+  ],
+  "overall_status": "CURRENT_VERSION",
+  "eol_component_count": 0,
+  "outdated_component_count": 0,
+  "current_component_count": 2,
+  "no_knowledge_component_count": 2
+}

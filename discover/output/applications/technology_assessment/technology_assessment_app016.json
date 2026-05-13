@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app016",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "RHEL 7",
+      "version": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Life in June 2024."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "SQL Server 2019",
+      "version": "SQL Server 2019",
+      "status": "CURRENT_VERSION",
+      "reasoning": "SQL Server 2019 mainstream support until 2025, extended until 2030."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "React Native",
+      "version": "React Native",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "React Native version is not specified."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Payara 4.0",
+      "version": "Payara 4.0",
+      "status": "EOL",
+      "reasoning": "Payara 4 reached End of Life."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 0,
+  "current_component_count": 1,
+  "no_knowledge_component_count": 1
+}

@@ -1,0 +1,45 @@
+{
+  "app_id": "app005",
+  "app_name": "EComApp-005",
+  "app_description": "E-commerce platform for online logistics services booking and customer self-service portal",
+  "solution_type": "3rd party software",
+  "business_criticality": "Critical",
+  "application_status": "Retired",
+  "deployment_type": "AWS",
+  "data_classification": "Confidential",
+  "business_unit": "Operations",
+  "business_capabilities": [
+    "Order Management",
+    "Customer Portal",
+    "Payment Processing"
+  ],
+  "user_count": 1340,
+  "operating_system": "Windows Server 2012",
+  "programming_language": "Node.js 14",
+  "application_server": "Microsoft IIS 8.5",
+  "application_architecture": "unknown",
+  "is_containerized": "Yes",
+  "environment_count": 3,
+  "server_instances": [
+    "sv08",
+    "sv04"
+  ],
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": [
+    "prod01",
+    "prod03"
+  ],
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 25,
+  "external_interface_count": 12,
+  "database_engine": "Amazon RDS MySQL",
+  "database_storage_gb": 300,
+  "database_license_required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Prometheus",
+  "additional_attributes": {
+    "decomission_date": "already retired",
+    "physical_database_server_instance": "db0005"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "app_id": "app010",
+  "app_name": "PayrollApp-010",
+  "app_description": "Payroll processing system handling salary calculations, tax deductions, and compensation reporting",
+  "solution_type": "3rd party software",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "HR",
+  "business_capabilities": [
+    "Payroll Processing",
+    "Employee Management",
+    "Financial Reporting"
+  ],
+  "user_count": 315,
+  "operating_system": "Windows Server 2019",
+  "programming_language": "Ruby 2.7",
+  "application_server": "Microsoft IIS 10.0",
+  "application_architecture": "unknown",
+  "is_containerized": "No",
+  "environment_count": 1,
+  "server_instances": "sv13",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": "prod04",
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 3,
+  "external_interface_count": 4,
+  "database_engine": "MySQL 8.0",
+  "database_storage_gb": 250,
+  "database_license_required": "No",
+  "logging_solution": "ELK",
+  "monitoring_tool": "CloudWatch",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0016"
+  }
+}

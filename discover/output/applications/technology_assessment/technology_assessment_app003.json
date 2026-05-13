@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app003",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "RHEL 7",
+      "version": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Life in June 2024."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "PostgreSQL 13",
+      "version": "PostgreSQL 13",
+      "status": "OUTDATED",
+      "reasoning": "PostgreSQL 13 reaches End of Life in November 2025, approaching end of support."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Python 3.9",
+      "version": "Python 3.9",
+      "status": "OUTDATED",
+      "reasoning": "Python 3.9 reaches End of Life in October 2025, approaching end of support."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Apache Tomcat 6.1",
+      "version": "Apache Tomcat 6.1",
+      "status": "EOL",
+      "reasoning": "Apache Tomcat 6 reached End of Life in December 2016."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 2,
+  "current_component_count": 0,
+  "no_knowledge_component_count": 0
+}

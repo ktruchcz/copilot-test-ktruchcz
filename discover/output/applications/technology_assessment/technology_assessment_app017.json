@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app017",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "RHEL 7",
+      "version": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Life in June 2024."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "Oracle 12c",
+      "version": "Oracle 12c",
+      "status": "EOL",
+      "reasoning": "Oracle 12c reached End of Life in December 2022."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "PowerShell",
+      "version": "PowerShell",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PowerShell Core is actively maintained by Microsoft."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Payara 5.0",
+      "version": "Payara 5.0",
+      "status": "OUTDATED",
+      "reasoning": "Payara 5 is approaching End of Life; Payara 6 is current."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 1,
+  "current_component_count": 1,
+  "no_knowledge_component_count": 0
+}

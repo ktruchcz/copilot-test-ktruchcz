@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app026",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "AIX 7.2",
+      "version": "AIX 7.2",
+      "status": "OUTDATED",
+      "reasoning": "IBM AIX 7.2 is proprietary Unix, still supported but considered outdated for modern workloads."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "DB2",
+      "version": "DB2",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for DB2."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "FORTRAN 2018",
+      "version": "FORTRAN 2018",
+      "status": "OUTDATED",
+      "reasoning": "FORTRAN 2018 is a niche language standard, outdated for most modern architectures."
+    }
+  ],
+  "overall_status": "OUTDATED",
+  "eol_component_count": 0,
+  "outdated_component_count": 2,
+  "current_component_count": 0,
+  "no_knowledge_component_count": 1
+}

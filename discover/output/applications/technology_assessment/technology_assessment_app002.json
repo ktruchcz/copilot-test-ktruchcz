@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app002",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "RHEL 7",
+      "version": "RHEL 7",
+      "status": "EOL",
+      "reasoning": "Red Hat Enterprise Linux 7 reached End of Life in June 2024."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "Amazon RDS MySQL",
+      "version": "Amazon RDS MySQL",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Amazon RDS MySQL is a managed service with current support."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Java 11",
+      "version": "Java 11",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Java 11 is an LTS release with Oracle extended support until September 2026."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Websphere 7.0",
+      "version": "Websphere 7.0",
+      "status": "EOL",
+      "reasoning": "IBM WebSphere Application Server 7.0 reached End of Life in April 2015."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 0,
+  "current_component_count": 2,
+  "no_knowledge_component_count": 0
+}

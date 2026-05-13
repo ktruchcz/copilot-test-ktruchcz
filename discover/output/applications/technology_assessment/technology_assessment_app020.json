@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app020",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "Windows Server 2012",
+      "version": "Windows Server 2012",
+      "status": "EOL",
+      "reasoning": "Windows Server 2012 reached End of Life in October 2023."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "SQL Server 2016",
+      "version": "SQL Server 2016",
+      "status": "OUTDATED",
+      "reasoning": "SQL Server 2016 mainstream EOL July 2021, in extended support until July 2026."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Angular 15",
+      "version": "Angular 15",
+      "status": "OUTDATED",
+      "reasoning": "Angular 17/18 is current; Angular 15 is outdated."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Microsoft IIS 8.5",
+      "version": "Microsoft IIS 8.5",
+      "status": "EOL",
+      "reasoning": "IIS 8.5 (Windows Server 2012 R2) reached End of Life in October 2023."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 2,
+  "current_component_count": 0,
+  "no_knowledge_component_count": 0
+}

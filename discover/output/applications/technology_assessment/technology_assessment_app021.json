@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app021",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "Windows Server 2022",
+      "version": "Windows Server 2022",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Windows Server 2022 is supported until 2031."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "Oracle 11g",
+      "version": "Oracle 11g",
+      "status": "EOL",
+      "reasoning": "Oracle 11g reached End of Life in December 2020."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "C++ 17",
+      "version": "C++ 17",
+      "status": "CURRENT_VERSION",
+      "reasoning": "C++17 is a current ISO standard with wide compiler support."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Microsoft IIS 10.0",
+      "version": "Microsoft IIS 10.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "IIS 10.0 (Windows Server 2016/2019/2022) is currently supported."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 1,
+  "outdated_component_count": 0,
+  "current_component_count": 3,
+  "no_knowledge_component_count": 0
+}

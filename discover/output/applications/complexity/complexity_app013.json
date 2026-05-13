@@ -1,0 +1,22 @@
+{
+  "application_identifier": "app013",
+  "complexity_score": 7,
+  "complexity_level": "HIGH",
+  "contributing_factors": {
+    "tech_age_score": 8,
+    "integration_score": 8,
+    "infrastructure_score": 5,
+    "criticality_score": 9,
+    "architecture_score": 4,
+    "data_score": 5
+  },
+  "weights": {
+    "tech_age": 0.25,
+    "integration": 0.2,
+    "infrastructure": 0.15,
+    "criticality": 0.15,
+    "architecture": 0.15,
+    "data": 0.1
+  },
+  "raw_score": 6.8
+}

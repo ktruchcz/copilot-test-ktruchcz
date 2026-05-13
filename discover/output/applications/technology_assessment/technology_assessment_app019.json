@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app019",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "RHEL 8",
+      "version": "RHEL 8",
+      "status": "CURRENT_VERSION",
+      "reasoning": "RHEL 8 is supported until May 2029."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "MySQL 8.0",
+      "version": "MySQL 8.0",
+      "status": "CURRENT_VERSION",
+      "reasoning": "MySQL 8.0 is currently supported."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Python 3.8",
+      "version": "Python 3.8",
+      "status": "EOL",
+      "reasoning": "Python 3.8 reached End of Life in October 2024."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Apache Tomcat  8.0",
+      "version": "Apache Tomcat  8.0",
+      "status": "NO_KNOWLEDGE",
+      "reasoning": "No lifecycle data available for Apache Tomcat  8.0."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 1,
+  "outdated_component_count": 0,
+  "current_component_count": 2,
+  "no_knowledge_component_count": 1
+}

@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app030",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "RHEL 8",
+      "version": "RHEL 8",
+      "status": "CURRENT_VERSION",
+      "reasoning": "RHEL 8 is supported until May 2029."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "MySQL 5.7",
+      "version": "MySQL 5.7",
+      "status": "EOL",
+      "reasoning": "MySQL 5.7 reached End of Life in October 2023."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Go 1.19",
+      "version": "Go 1.19",
+      "status": "OUTDATED",
+      "reasoning": "Go 1.19 is no longer actively supported; Go 1.22+ is current."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Glassfish 3.0",
+      "version": "Glassfish 3.0",
+      "status": "EOL",
+      "reasoning": "GlassFish 3 reached End of Life."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 2,
+  "outdated_component_count": 1,
+  "current_component_count": 1,
+  "no_knowledge_component_count": 0
+}

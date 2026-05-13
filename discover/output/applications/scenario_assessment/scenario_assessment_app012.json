@@ -1,0 +1,84 @@
+{
+  "application_identifier": "app012",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "FULFILLED",
+      "reasoning": "OS Windows Server 2022 is current and receiving security updates."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "Application runs on Windows OS. This scenario targets non-standard Unix to standard Linux migration."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "reasoning": "Cloud deployment can leverage ARM-based instances (e.g., AWS Graviton) for cost savings."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "FULFILLED",
+      "reasoning": "Application server Microsoft IIS 10.0 is current."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "reasoning": "Application is already deployed on cloud (AWS)."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "FULFILLED",
+      "reasoning": "Application is already containerized."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "Application with 2-Tier architecture could benefit from decoupling and modernization."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "FULFILLED",
+      "reasoning": "Database PostgreSQL 14 is current."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "FULFILLED",
+      "reasoning": "Application already uses an open-source database (PostgreSQL 14)."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "FULFILLED",
+      "reasoning": "All technology components are current."
+    },
+    {
+      "scenario_id": "switch_to_managed_db",
+      "status": "APPLICABLE",
+      "reasoning": "Database could be migrated to a fully managed cloud database service for reduced operational overhead."
+    },
+    {
+      "scenario_id": "managed_arm_db",
+      "status": "APPLICABLE",
+      "reasoning": "Database can be evaluated for ARM-based managed service deployment."
+    },
+    {
+      "scenario_id": "serverless_db_migration",
+      "status": "APPLICABLE",
+      "reasoning": "Database can be migrated to a serverless database solution to reduce operational overhead."
+    },
+    {
+      "scenario_id": "switch_db_engine_postgresql",
+      "status": "FULFILLED",
+      "reasoning": "Application already uses PostgreSQL (PostgreSQL 14)."
+    }
+  ],
+  "applicable_count": 5,
+  "summary": {
+    "APPLICABLE": 5,
+    "FULFILLED": 8,
+    "NOT_APPLICABLE": 1,
+    "BLOCKED": 0,
+    "PARTIALLY_FULFILLED": 0,
+    "LACK_OF_DATA": 0
+  }
+}

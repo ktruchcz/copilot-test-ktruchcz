@@ -1,0 +1,38 @@
+{
+  "application_identifier": "app011",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "CentOS 7",
+      "version": "CentOS 7",
+      "status": "EOL",
+      "reasoning": "CentOS 7 reached End of Life in June 2024."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "PostgreSQL 14",
+      "version": "PostgreSQL 14",
+      "status": "CURRENT_VERSION",
+      "reasoning": "PostgreSQL 14 is supported until November 2026."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "Python 3.11",
+      "version": "Python 3.11",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Python 3.11 is supported until October 2027."
+    },
+    {
+      "component_type": "Application Server",
+      "component_name": "Glassfish 4.0",
+      "version": "Glassfish 4.0",
+      "status": "OUTDATED",
+      "reasoning": "GlassFish 4.0 has no active support since Oracle handed off to Eclipse Foundation."
+    }
+  ],
+  "overall_status": "EOL",
+  "eol_component_count": 1,
+  "outdated_component_count": 1,
+  "current_component_count": 2,
+  "no_knowledge_component_count": 0
+}

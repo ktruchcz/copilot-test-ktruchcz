@@ -1,0 +1,31 @@
+{
+  "application_identifier": "app001",
+  "components": [
+    {
+      "component_type": "Operating System",
+      "component_name": "AIX 7.2",
+      "version": "AIX 7.2",
+      "status": "OUTDATED",
+      "reasoning": "IBM AIX 7.2 is proprietary Unix, still supported but considered outdated for modern workloads."
+    },
+    {
+      "component_type": "Database",
+      "component_name": "Oracle 19c",
+      "version": "Oracle 19c",
+      "status": "CURRENT_VERSION",
+      "reasoning": "Oracle 19c has Long Term Support until April 2027."
+    },
+    {
+      "component_type": "Programming Language",
+      "component_name": "COBOL-2014",
+      "version": "COBOL-2014",
+      "status": "OUTDATED",
+      "reasoning": "COBOL-2014 is an aging language still used in mainframes but considered outdated."
+    }
+  ],
+  "overall_status": "OUTDATED",
+  "eol_component_count": 0,
+  "outdated_component_count": 2,
+  "current_component_count": 1,
+  "no_knowledge_component_count": 0
+}

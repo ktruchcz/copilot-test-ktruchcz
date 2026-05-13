@@ -1,0 +1,84 @@
+{
+  "application_identifier": "app026",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "reasoning": "OS AIX 7.2 is OUTDATED and requires security patching or upgrade."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "APPLICABLE",
+      "reasoning": "AIX 7.2 is a proprietary Unix OS. Migrating to standard Linux would reduce licensing costs and improve supportability."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "BLOCKED",
+      "reasoning": "Legacy Unix OS (AIX 7.2) is tied to proprietary hardware architecture. ARM migration is not feasible without OS migration first."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "NOT_APPLICABLE",
+      "reasoning": "No application server is used by this application."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "reasoning": "Application is deployed on-premise. Cloud migration would improve scalability and reduce infrastructure costs."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "BLOCKED",
+      "reasoning": "Legacy Unix OS (AIX 7.2) is not compatible with container technologies. OS migration required first."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "reasoning": "Application has a 1-Tier monolithic architecture with limited CI/CD. Refactoring to microservices would improve maintainability."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "LACK_OF_DATA",
+      "reasoning": "Database version (DB2) is unspecified. Cannot determine if upgrade is needed."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "status": "APPLICABLE",
+      "reasoning": "DB2 is a commercial database. Switching to an open-source alternative would reduce licensing costs."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "reasoning": "Outdated/EOL components detected: AIX 7.2, FORTRAN 2018. Updates required."
+    },
+    {
+      "scenario_id": "switch_to_managed_db",
+      "status": "APPLICABLE",
+      "reasoning": "On-premise database could be migrated to a managed cloud database service."
+    },
+    {
+      "scenario_id": "managed_arm_db",
+      "status": "APPLICABLE",
+      "reasoning": "Migrating database to ARM-based managed cloud service would reduce costs."
+    },
+    {
+      "scenario_id": "serverless_db_migration",
+      "status": "BLOCKED",
+      "reasoning": "Legacy architecture makes serverless database migration impractical without significant application refactoring."
+    },
+    {
+      "scenario_id": "switch_db_engine_postgresql",
+      "status": "APPLICABLE",
+      "reasoning": "DB2 is a commercial database. Migrating to PostgreSQL would eliminate licensing costs."
+    }
+  ],
+  "applicable_count": 9,
+  "summary": {
+    "APPLICABLE": 9,
+    "FULFILLED": 0,
+    "NOT_APPLICABLE": 1,
+    "BLOCKED": 3,
+    "PARTIALLY_FULFILLED": 0,
+    "LACK_OF_DATA": 1
+  }
+}
