@@ -68,6 +68,11 @@ class HelloWorldTest {
         assertEquals("Good evening", HelloWorld.salutationFor(new HelloWorld.TimeOfDay.Evening()));
     }
 
+    @Test
+    void salutationForRejectsNull() {
+        assertThrows(NullPointerException.class, () -> HelloWorld.salutationFor(null));
+    }
+
     // -----------------------------------------------------------------------
     // seasonOf
     // -----------------------------------------------------------------------

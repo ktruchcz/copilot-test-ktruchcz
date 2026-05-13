@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Objects;
 
 /**
  * Hello World application modernized for Java 17.
@@ -92,6 +93,7 @@ public class HelloWorld {
     }
 
     static String salutationFor(TimeOfDay timeOfDay) {
+        Objects.requireNonNull(timeOfDay, "timeOfDay must not be null");
         if (timeOfDay instanceof TimeOfDay.Morning) {
             return "Good morning";
         }
