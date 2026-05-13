@@ -60,7 +60,7 @@ public class HelloWorld {
         // var – local-variable type inference (Java 10+)
         var today = LocalDate.now();
 
-        // Java 17 pattern matching for instanceof
+        // Determine salutation based on TimeOfDay type
         var timeOfDay = TimeOfDay.of(today.getDayOfMonth() % 24);
         var salutation = timeOfDay instanceof TimeOfDay.Morning
                 ? "Good morning"
