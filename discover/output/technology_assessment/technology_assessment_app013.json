@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app013",
+  "components_analyzed": [
+    {
+      "component_name": "Debian 7",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Debian 7",
+      "component_status": "EOL",
+      "eol_date": "2018-04-25",
+      "reason": "Debian 7 (Wheezy) reached End of Life in April 2018.",
+      "confidence": 10
+    },
+    {
+      "component_name": "SQL Server 2022",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "SQL Server 2022 is the latest version supported until 2033.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 17",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-09-30",
+      "reason": "Java 17 is an LTS release supported until September 2030.",
+      "confidence": 9
+    },
+    {
+      "component_name": "WebSphere 8.0",
+      "component_family": "WebSphere",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "WebSphere 8.0",
+      "component_status": "EOL",
+      "eol_date": "2022-12-31",
+      "reason": "IBM WebSphere Application Server 8.0 reached End of Life in December 2022.",
+      "confidence": 10
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-13T10:17:03Z"
+}

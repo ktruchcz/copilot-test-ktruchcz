@@ -9,6 +9,7 @@
   "Deployment type": "On-Premise",
   "data classification": "Internal",
   "business unit": "IT",
+  "business capabilities": "Configuration Management, System Administration, Deployment",
   "number of users": "65",
   "Operating system": "RHEL 7",
   "programming language": "Perl",
@@ -16,7 +17,7 @@
   "Application Architecture": "3-Tier",
   "Application is containerized": "No",
   "Number of environments": "2",
-  "Physical servers instances": "s, v, 4, 3",
+  "Physical servers instances": "sv43",
   "external interfaces": "3",
   "db_engine": "PostgreSQL 14",
   "CI_CD present": "No",
@@ -24,5 +25,8 @@
   "monitoring_tool": null,
   "logging_solution": "Syslog",
   "database_storage_gb": 100,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 1
 }

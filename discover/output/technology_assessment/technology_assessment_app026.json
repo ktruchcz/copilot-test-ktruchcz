@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app026",
+  "components_analyzed": [
+    {
+      "component_name": "AIX 7.2",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "AIX 7.2",
+      "component_status": "OUTDATED",
+      "eol_date": "2027-04-30",
+      "reason": "IBM AIX 7.2 is proprietary Unix still under support but considered legacy. IBM provides support until 2027 but is non-standard.",
+      "confidence": 8
+    },
+    {
+      "component_name": "IBM DB2 (unknown version)",
+      "component_family": "IBM",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "IBM DB2 (unknown version)",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "DB2 version not specified; lifecycle cannot be determined.",
+      "confidence": 4
+    },
+    {
+      "component_name": "FORTRAN 2018",
+      "component_family": "FORTRAN",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "FORTRAN 2018",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "FORTRAN 2018 is the current ISO standard but FORTRAN is a very niche legacy language.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-13T10:17:03Z"
+}

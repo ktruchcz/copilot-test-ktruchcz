@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Debian 6",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Debian 6",
+      "component_status": "EOL",
+      "eol_date": "2014-05-31",
+      "reason": "Debian 6 (Squeeze) reached End of Life in May 2014.",
+      "confidence": 10
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "PostgreSQL 13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 reaches End of Life in November 2025.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 is an LTS release supported until September 2026.",
+      "confidence": 9
+    },
+    {
+      "component_name": "GlassFish 5.x",
+      "component_family": "GlassFish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "GlassFish 5.x",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "GlassFish 5.x is in extended maintenance; Payara/WildFly recommended.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-13T10:17:03Z"
+}

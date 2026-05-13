@@ -9,6 +9,7 @@
   "Deployment type": "On-Premise",
   "data classification": "Confidential",
   "business unit": "Security",
+  "business capabilities": "Security Monitoring, Threat Detection, Compliance Management",
   "number of users": "520",
   "Operating system": "Debian 7",
   "programming language": "Java 17",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Datadog",
   "logging_solution": "Splunk",
   "database_storage_gb": 600,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 4,
+  "memory_gb": 16,
+  "api_endpoint_count": 8
 }

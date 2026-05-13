@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Internal",
   "business unit": "IT",
+  "business capabilities": "Incident Management, Service Desk, Customer Management",
   "number of users": "290",
   "Operating system": "Debian 6",
   "programming language": "Java 11",
@@ -16,7 +17,7 @@
   "Application Architecture": "unknown",
   "Application is containerized": "No",
   "Number of environments": "2",
-  "Physical servers instances": "s, v, 1, 0",
+  "Physical servers instances": "sv10",
   "external interfaces": "4",
   "db_engine": "PostgreSQL 13",
   "CI_CD present": "Yes",
@@ -24,5 +25,8 @@
   "monitoring_tool": null,
   "logging_solution": "ELK",
   "database_storage_gb": 200,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 6
 }

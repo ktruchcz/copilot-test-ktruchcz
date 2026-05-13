@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Internal",
   "business unit": "IT",
+  "business capabilities": "Notification Management, Email Services, SMS Gateway",
   "number of users": "850",
   "Operating system": "Windows Server 2019",
   "programming language": "Java 17",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Datadog",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 3000,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 12,
+  "memory_gb": 96,
+  "api_endpoint_count": 18
 }

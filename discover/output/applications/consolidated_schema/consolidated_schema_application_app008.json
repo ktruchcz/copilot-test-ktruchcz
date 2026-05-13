@@ -9,6 +9,7 @@
   "Deployment type": "On-Premise",
   "data classification": "Confidential",
   "business unit": "Operations",
+  "business capabilities": "Inventory Management, Warehouse Operations, Order Management",
   "number of users": "875",
   "Operating system": "AIX 6",
   "programming language": "COBOL-2014",
@@ -24,5 +25,8 @@
   "monitoring_tool": null,
   "logging_solution": null,
   "database_storage_gb": 400,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 0
 }

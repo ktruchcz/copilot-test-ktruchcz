@@ -9,6 +9,7 @@
   "Deployment type": "AWS, On-premise",
   "data classification": "Confidential",
   "business unit": "Compliance",
+  "business capabilities": "Compliance Management, Risk Assessment, Regulatory Reporting",
   "number of users": "310",
   "Operating system": "RHEL 7",
   "programming language": "Scala 2.13",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Grafana",
   "logging_solution": "ELK",
   "database_storage_gb": 500,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 6,
+  "memory_gb": 24,
+  "api_endpoint_count": 16
 }

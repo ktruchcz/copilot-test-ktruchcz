@@ -9,6 +9,7 @@
   "Deployment type": "On-Premise",
   "data classification": "Confidential",
   "business unit": "Finance",
+  "business capabilities": "Financial Calculations, Risk Modeling, Regulatory Reporting",
   "number of users": "150",
   "Operating system": "AIX 7.2",
   "programming language": "FORTRAN 2018",
@@ -16,7 +17,7 @@
   "Application Architecture": "1-Tier",
   "Application is containerized": "No",
   "Number of environments": "2",
-  "Physical servers instances": "s, v, 3, 8",
+  "Physical servers instances": "sv38",
   "external interfaces": "1",
   "db_engine": "DB2",
   "CI_CD present": "No",
@@ -24,5 +25,8 @@
   "monitoring_tool": null,
   "logging_solution": null,
   "database_storage_gb": 1500,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 8,
+  "memory_gb": 64,
+  "api_endpoint_count": 0
 }

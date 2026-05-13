@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Confidential",
   "business unit": "Operations",
+  "business capabilities": "Order Management, Customer Portal, Payment Processing",
   "number of users": "1340",
   "Operating system": "Windows Server 2012",
   "programming language": "Node.js 14",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Prometheus",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 300,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 25
 }

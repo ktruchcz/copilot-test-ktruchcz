@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app024",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is supported until January 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server 2014",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2014",
+      "component_status": "EOL",
+      "eol_date": "2024-07-09",
+      "reason": "SQL Server 2014 reached End of Life in July 2024.",
+      "confidence": 10
+    },
+    {
+      "component_name": "VB.NET",
+      "component_family": "VB.NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "VB.NET",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "VB.NET is a legacy .NET language; while supported, it is deprecated for new development.",
+      "confidence": 8
+    },
+    {
+      "component_name": "IIS 10.0",
+      "component_family": "IIS",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "IIS 10.0 (Windows Server 2016/2019/2022) is actively supported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-13T10:17:03Z"
+}

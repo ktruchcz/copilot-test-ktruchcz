@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Confidential",
   "business unit": "Finance",
+  "business capabilities": "Financial Planning, Invoice Processing, Financial Reporting",
   "number of users": "200",
   "Operating system": "Ubuntu 14",
   "programming language": "Python 3.7",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Datadog",
   "logging_solution": "Splunk",
   "database_storage_gb": 500,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 4,
+  "memory_gb": 16,
+  "api_endpoint_count": 4
 }

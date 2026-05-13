@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app023",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "RHEL 8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 is supported until May 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "MongoDB (unknown version)",
+      "component_family": "MongoDB",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "MongoDB (unknown version)",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "MongoDB version not specified; lifecycle cannot be determined.",
+      "confidence": 4
+    },
+    {
+      "component_name": "Node.js 18",
+      "component_family": "Node.js",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Node.js 18",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2025-04-30",
+      "reason": "Node.js 18 LTS is supported until April 2025.",
+      "confidence": 9
+    },
+    {
+      "component_name": "App Server (unknown)",
+      "component_family": "App",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "App Server (unknown)",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Unable to determine lifecycle status for app server: Apache Tomcat. 7.4",
+      "confidence": 4
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-13T10:17:03Z"
+}

@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app004",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "Technology age score 9/10: Multiple EOL components detected. Integration score 6/10: 6 external interfaces. Infrastructure score 4/10: 2 server(s), 2 environment(s). Business criticality score 7/10: High criticality application. Architecture score 4/10: 2-Tier architecture, containerized, CI/CD present. Data score 4/10: Database in good standing.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 2,
+    "number_of_interfaces": 6,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 0,
+    "number_of_eol_technologies": 2,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "Yes"
+  }
+}

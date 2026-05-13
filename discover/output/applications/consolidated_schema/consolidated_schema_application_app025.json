@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Internal",
   "business unit": "Operations",
+  "business capabilities": "Customer Portal, Self-Service, Order Management",
   "number of users": "2200",
   "Operating system": "Windows Server 2019",
   "programming language": "ASP.NET Core",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Prometheus",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 800,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 6,
+  "memory_gb": 24,
+  "api_endpoint_count": 35
 }

@@ -9,6 +9,7 @@
   "Deployment type": "On-Premise",
   "data classification": "Internal",
   "business unit": "Operations",
+  "business capabilities": "Fleet Management, Vehicle Tracking, Maintenance Management",
   "number of users": "420",
   "Operating system": "Windows Server 2022",
   "programming language": "C++ 17",
@@ -24,5 +25,8 @@
   "monitoring_tool": null,
   "logging_solution": "Syslog",
   "database_storage_gb": 400,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 3
 }

@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Internal",
   "business unit": "Marketing",
+  "business capabilities": "Customer Management, Lead Tracking, Sales Analytics",
   "number of users": "1200",
   "Operating system": "RHEL 7",
   "programming language": "Java 11",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Datadog",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 500,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 15
 }

@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Internal",
   "business unit": "R&D",
+  "business capabilities": "Route Optimization, Data Analytics, Reporting",
   "number of users": "125",
   "Operating system": "CentOS 7",
   "programming language": "Python 3.11",
@@ -16,7 +17,7 @@
   "Application Architecture": "3-Tier",
   "Application is containerized": "Yes",
   "Number of environments": "1",
-  "Physical servers instances": "s, v, 1, 4",
+  "Physical servers instances": "sv14",
   "external interfaces": "5",
   "db_engine": "PostgreSQL 14",
   "CI_CD present": "Yes",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Prometheus",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 180,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 12
 }

@@ -9,6 +9,7 @@
   "Deployment type": "On-Premise",
   "data classification": "Confidential",
   "business unit": "Finance",
+  "business capabilities": "Audit Management, Risk Assessment, Financial Reporting",
   "number of users": "95",
   "Operating system": "Windows Server 2019",
   "programming language": "VB.NET",
@@ -16,7 +17,7 @@
   "Application Architecture": "2-Tier",
   "Application is containerized": "No",
   "Number of environments": "2",
-  "Physical servers instances": "s, v, 3, 5",
+  "Physical servers instances": "sv35",
   "external interfaces": "3",
   "db_engine": "SQL Server 2014",
   "CI_CD present": "No",
@@ -24,5 +25,8 @@
   "monitoring_tool": null,
   "logging_solution": "Windows Event Log",
   "database_storage_gb": 300,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 2
 }

@@ -9,6 +9,7 @@
   "Deployment type": "On-Premise",
   "data classification": "Confidential",
   "business unit": "Finance",
+  "business capabilities": "Financial Planning, Accounting, Budgeting",
   "number of users": "350",
   "Operating system": "AIX 7.2",
   "programming language": "COBOL-2014",
@@ -24,5 +25,8 @@
   "monitoring_tool": null,
   "logging_solution": null,
   "database_storage_gb": 1000,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 4,
+  "memory_gb": 16,
+  "api_endpoint_count": 0
 }

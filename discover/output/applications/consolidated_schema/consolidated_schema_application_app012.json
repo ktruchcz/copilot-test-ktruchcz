@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Confidential",
   "business unit": "R&D",
+  "business capabilities": "Data Analytics, IoT Management, Reporting",
   "number of users": "85",
   "Operating system": "Windows Server 2022",
   "programming language": "Rust 1.70",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Grafana",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 800,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 8,
+  "memory_gb": 32,
+  "api_endpoint_count": 20
 }

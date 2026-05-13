@@ -9,6 +9,7 @@
   "Deployment type": "AWS, On-premise",
   "data classification": "Internal",
   "business unit": "BI",
+  "business capabilities": "Data Warehousing, ETL Processing, Business Intelligence",
   "number of users": "320",
   "Operating system": "RHEL 7",
   "programming language": "Java 11",
@@ -24,5 +25,8 @@
   "monitoring_tool": "CloudWatch",
   "logging_solution": "Splunk",
   "database_storage_gb": 5000,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 16,
+  "memory_gb": 128,
+  "api_endpoint_count": 5
 }

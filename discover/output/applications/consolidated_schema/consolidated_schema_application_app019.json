@@ -9,6 +9,7 @@
   "Deployment type": "AWS, On-premise",
   "data classification": "Confidential",
   "business unit": "Quality",
+  "business capabilities": "Quality Management, Audit Management, Compliance Tracking",
   "number of users": "180",
   "Operating system": "RHEL 8",
   "programming language": "Python 3.8",
@@ -16,7 +17,7 @@
   "Application Architecture": "3-Tier",
   "Application is containerized": "No",
   "Number of environments": "1",
-  "Physical servers instances": "s, v, 2, 8",
+  "Physical servers instances": "sv28",
   "external interfaces": "5",
   "db_engine": "MySQL 8.0",
   "CI_CD present": "Yes",
@@ -24,5 +25,8 @@
   "monitoring_tool": "CloudWatch",
   "logging_solution": "ELK",
   "database_storage_gb": 180,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 9
 }

@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Internal",
   "business unit": "Customer Service",
+  "business capabilities": "Customer Support, AI Assistance, Query Management",
   "number of users": "1100",
   "Operating system": "RHEL 8",
   "programming language": "Node.js 18",
@@ -16,7 +17,7 @@
   "Application Architecture": "3-Tier",
   "Application is containerized": "Yes",
   "Number of environments": "2",
-  "Physical servers instances": "s, v, 3, 4",
+  "Physical servers instances": "sv34",
   "external interfaces": "8",
   "db_engine": "MongoDB",
   "CI_CD present": "Yes",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Datadog",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 200,
-  "database_license_required": "No"
+  "database_license_required": "No",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "api_endpoint_count": 22
 }

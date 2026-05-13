@@ -9,6 +9,7 @@
   "Deployment type": "AWS",
   "data classification": "Internal",
   "business unit": "Operations",
+  "business capabilities": "Mobile Operations, Customer Portal, Order Tracking",
   "number of users": "1580",
   "Operating system": "RHEL 7",
   "programming language": "React Native",
@@ -24,5 +25,8 @@
   "monitoring_tool": "Datadog",
   "logging_solution": "CloudWatch",
   "database_storage_gb": 2000,
-  "database_license_required": "Yes"
+  "database_license_required": "Yes",
+  "cpu_cores": 8,
+  "memory_gb": 32,
+  "api_endpoint_count": 30
 }

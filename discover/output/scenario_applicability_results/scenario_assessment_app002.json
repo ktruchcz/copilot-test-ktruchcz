@@ -1,0 +1,201 @@
+{
+  "application_identifier": "app002",
+  "scenarios_detailed": [
+    {
+      "id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "OS (RHEL 7) is EOL and requires urgent update/replacement.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_to_standard_linux_os",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Application already runs on standard Linux OS (RHEL 7).",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_to_arm_cpu",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "3rd party application with potential x86-specific dependencies.",
+      "confidence": 8,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "Application server (Websphere 7.0) is EOL and requires replacement.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Application is already hosted on cloud infrastructure (AWS).",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "app_containerization",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "3rd party / SaaS application: runtime packaging cannot be modified by the customer.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "app_refactor_decoupling",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "3rd party or SaaS application. Internal architecture cannot be refactored by the customer.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "upgrade_legacy_databases",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Database (Amazon RDS MySQL) is on a current supported version.",
+      "confidence": 8,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_db_engine_open_source",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Database (Amazon RDS MySQL) is already a managed open-source/cloud-native solution.",
+      "confidence": 8,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "update_outdated_components",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "3rd party or SaaS application. Component versions are vendor-managed and not upgradeable by the customer.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_to_managed_db",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Database (Amazon RDS MySQL) is already a managed cloud service.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "managed_arm_db",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "Managed database service could be migrated to ARM-based instances for cost and sustainability benefits.",
+      "confidence": 6,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "serverless_db_migration",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "Managed cloud database is a candidate for serverless migration to further reduce operational overhead.",
+      "confidence": 6,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    },
+    {
+      "id": "switch_db_engine_postgresql",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "Database (Amazon RDS MySQL) is already open-source/managed; PostgreSQL migration not prioritized.",
+      "confidence": 7,
+      "source": {
+        "document_id": "",
+        "document_title": "",
+        "section": "",
+        "content_excerpt": "",
+        "relevance": ""
+      }
+    }
+  ]
+}

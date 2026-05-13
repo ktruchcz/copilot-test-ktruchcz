@@ -1,201 +1,149 @@
-# Application Portfolio Modernization Report
+# Portfolio Modernization Report
 
-> Comprehensive analysis of the application portfolio modernization opportunities.
+**Generated:** 2026-05-13  
+**Applications Analyzed:** 26 (out of 30 total, 4 retired/out-of-scope)
 
 ## Executive Summary
 
-This report covers a portfolio of **30 applications**, of which **26 are in-scope** for modernization analysis. 4 applications are retired and excluded from assessment.
+This portfolio modernization analysis covers **26 active applications** across multiple business units. Out of 26 applications, **3** are classified as HIGH complexity, **21** as MEDIUM, and **2** as LOW. Technology health analysis reveals **29 EOL components** and **18 outdated components** across the portfolio, indicating significant modernization urgency particularly in operating systems (RHEL 7, CentOS 7, Debian 6/7, Windows Server 2012) and legacy application servers. The top modernization opportunities are OS updates (15 apps), application server replacement (13 apps), and cloud deployment (12 apps). The estimated portfolio investment is **€2,399,441** with **€1,523,900** in annual savings, yielding a break-even of approximately **1.6 years**.
 
-| Portfolio Metric | Value |
-|------------------|-------|
-| Total Applications | 30 |
-| In-Scope Applications | 26 |
-| Retired / Out-of-Scope | 4 |
-| Total Estimated Modernization Cost | $8,804,867.79 |
-| Total Estimated Annual Savings | $5,201,700.00 |
-| Portfolio ROI Payback | 1.7 years |
-
-## Complexity Distribution
+## Portfolio Overview
 
 ```mermaid
-pie title Application Complexity Distribution
-    "MEDIUM" : 21
-    "HIGH" : 5
+pie title Complexity Distribution
+    "Low (1-3)" : 2
+    "Medium (4-6)" : 21
+    "High (7-10)" : 3
 ```
-
-| Complexity Level | Count | Description |
-|-----------------|-------|-------------|
-| 🟢 LOW (1-3) | 0 | Minimal modernization effort required |
-| 🟡 MEDIUM (4-6) | 21 | Moderate effort with clear modernization path |
-| 🔴 HIGH (7-10) | 5 | Significant effort, legacy components |
-
-## Portfolio Technology Health
 
 ```mermaid
-pie title Portfolio Technology Component Health
-    "CURRENT_VERSION" : 49
-    "OUTDATED" : 19
-    "EOL" : 28
-    "NO_KNOWLEDGE" : 6
+pie title Technology Health Across Portfolio
+    "Current" : 49
+    "Outdated" : 18
+    "End of Life" : 29
+    "Unknown" : 6
 ```
 
-Total technology components assessed: **102** across 26 applications.
-
-| Status | Count | Percentage |
-|--------|-------|-----------|
-| 🟢 CURRENT_VERSION | 49 | 48.0% |
-| 🟡 OUTDATED | 19 | 18.6% |
-| 🔴 EOL | 28 | 27.5% |
-| ⚪ NO_KNOWLEDGE | 6 | 5.9% |
-
-## Top Modernization Scenarios
+## Top Modernization Opportunities
 
 ```mermaid
-xychart-beta
-    title "Top Applicable Scenarios (Count of Apps)"
-    x-axis ["Managed ARM DB", "Switch to Managed DB", "Switch to ARM CPU", "Serverless DB Migrat", "Update Outdated Comp", "Refactor & Decouple", "Switch to PostgreSQL", "OS Security Patch"]
-    bar [26, 25, 23, 23, 21, 20, 17, 15]
+graph LR
+    subgraph "High Priority"
+        OS_U["Operating System Update (15 apps)"]
+        APP_["Application Migration to Cloud (Lift & Shift) (12 apps)"]
+    end
+    subgraph "Medium Priority"
+        APPL["Application Server Replacement (13 apps)"]
+        SWIT["Switch to ARM-based CPU (13 apps)"]
+    end
 ```
 
-| Scenario | Applicable Apps | Description |
-|----------|----------------|-------------|
-| Managed ARM DB | 26 | — |
-| Switch to Managed DB | 25 | — |
-| Switch to ARM CPU | 23 | — |
-| Serverless DB Migration | 23 | — |
-| Update Outdated Components | 21 | — |
-| Refactor & Decouple | 20 | — |
-| Switch to PostgreSQL | 17 | — |
-| OS Security Patch | 15 | — |
-| Switch to Standard Linux | 13 | — |
-| App Server Replacement | 13 | — |
-| Containerization | 13 | — |
-| Switch to OSS DB | 12 | — |
-| Cloud Deployment | 8 | — |
-| Upgrade Legacy DB | 8 | — |
+| Scenario | Applicable Apps | Priority | Total Cost | Yearly Savings | ROI |
+|----------|----------------|----------|------------|---------------|-----|
+| Operating System Update | 15 | High | €17,097 | €7,500 | 2.3y |
+| Application Server Replacement | 13 | Medium | €151,026 | €136,800 | 1.1y |
+| Switch to ARM-based CPU | 13 | Medium | €69,847 | €11,600 | 6.0y |
+| Application Migration to Cloud (Lift & Shift) | 12 | High | €69,620 | €31,800 | 2.2y |
+| Switch to Managed Database Service | 12 | Medium | €69,620 | €120,000 | 0.6y |
+| Switch DB Engine to Open-Source | 9 | High | €260,783 | €135,000 | 1.9y |
+| Switch DB Engine to PostgreSQL | 9 | High | €260,783 | €135,000 | 1.9y |
+| Upgrade Legacy Databases | 8 | High | €92,974 | €80,000 | 1.2y |
+| Application Containerization | 5 | High | €565,443 | €440,000 | 1.3y |
+| Switch to Standard Linux OS | 3 | Medium | €996 | €1,200 | 0.8y |
 
 ## Scenario Applicability Matrix
 
-| App ID | OS Security Patch | Switch to Standard | Switch to ARM CPU | App Server Replace | Cloud Deployment | Containerization | Refactor & Decoupl |
-|--------|---|---|---|---|---|---|---|
-| app001 | ✅ | ✅ | 🚫 | ⬜ | ✅ | 🚫 | ✅ |
-| app002 | ✅ | ✅ | ✅ | ✅ | 🔵 | ✅ | ✅ |
-| app003 | ✅ | ✅ | ✅ | ✅ | 🔵 | 🔵 | 🔵 |
-| app004 | ✅ | ⬜ | ✅ | ✅ | 🔷 | 🔵 | ✅ |
-| app006 | ✅ | ✅ | ✅ | ✅ | 🔵 | ✅ | ✅ |
-| app008 | ✅ | ✅ | 🚫 | ✅ | ✅ | 🚫 | ✅ |
-| app010 | 🔵 | ⬜ | ✅ | 🔵 | 🔵 | ✅ | ✅ |
-| app011 | ✅ | ✅ | ✅ | ✅ | 🔵 | 🔵 | 🔵 |
-| app012 | 🔵 | ⬜ | ✅ | 🔵 | 🔵 | 🔵 | ✅ |
-| app013 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app014 | 🔵 | ⬜ | ✅ | 🔵 | 🔵 | ✅ | ✅ |
-| app015 | 🔵 | ⬜ | ✅ | 🔵 | 🔵 | ✅ | ✅ |
-| app016 | ✅ | ✅ | ✅ | ✅ | 🔵 | 🔵 | 🔵 |
-| app017 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app018 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app019 | 🔵 | 🔵 | ✅ | 🔵 | 🔷 | ✅ | ✅ |
-| app020 | ✅ | ⬜ | ✅ | ✅ | 🔵 | ✅ | ✅ |
-| app021 | 🔵 | ⬜ | ✅ | 🔵 | ✅ | ✅ | ✅ |
-| app022 | ✅ | ✅ | ✅ | 🔵 | 🔷 | 🔵 | 🔵 |
-| app023 | 🔵 | 🔵 | ✅ | 🔵 | 🔵 | 🔵 | 🔵 |
-| app024 | 🔵 | ⬜ | ✅ | 🔵 | ✅ | ✅ | ✅ |
-| app025 | 🔵 | ⬜ | ✅ | 🔵 | 🔵 | 🔵 | ✅ |
-| app026 | ✅ | ✅ | 🚫 | ⬜ | ✅ | 🚫 | ✅ |
-| app027 | ✅ | ✅ | ✅ | ✅ | 🔷 | ✅ | ✅ |
-| app028 | 🔵 | ⬜ | ✅ | 🔵 | 🔵 | 🔵 | ✅ |
-| app030 | 🔵 | 🔵 | ✅ | ✅ | 🔵 | 🔵 | 🔵 |
+| Application | Operating Syste | Application Ser | Switch to ARM-b | Application Mig | Switch to Manag | Switch DB Engin | Switch DB Engin | Upgrade Legacy  |
+|-------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| ERPApp-001 | ✅ | ❌ | 🚫 | ✅ | ✅ | ✅ | ✅ | ✔️ |
+| CRMApp-002 | ✅ | ✅ | 🚫 | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
+| AnalyticsApp-003 | ✅ | ✅ | ✅ | ✔️ | ❌ | ✔️ | ✔️ | ✅ |
+| HRApp-004 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✔️ |
+| SupportApp-006 | ✅ | ✅ | 🚫 | ✔️ | ❌ | ✔️ | ✔️ | ✅ |
+| InventoryApp-008 | ✅ | ✅ | 🚫 | ✅ | ✅ | ✅ | ✅ | ✔️ |
+| PayrollApp-010 | ✔️ | ✔️ | 🚫 | ✔️ | ❌ | ✔️ | ❌ | ✔️ |
+| RouteOptApp-011 | ✅ | ✅ | ✅ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ |
+| IoTSensorApp-012 | ✔️ | ✔️ | ✅ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ |
+| SecurityApp-013 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✔️ |
+| DocumentApp-014 | ✔️ | ✔️ | ❓ | ✔️ | ❌ | ✔️ | ❌ | ✔️ |
+| ReportingApp-015 | ✔️ | ✔️ | ❓ | ✔️ | ❌ | ✔️ | ❌ | ✔️ |
+| MobileApp-016 | ✅ | ✅ | ✅ | ✔️ | ❌ | ✅ | ✅ | ✔️ |
+| BackupApp-017 | ✅ | ✅ | 🚫 | ✅ | ✅ | 🚫 | 🚫 | ✅ |
+| VendorApp-018 | ✅ | ✅ | ✅ | ✅ | ✅ | ✔️ | ✔️ | ✅ |
+| QualityApp-019 | ✔️ | ✔️ | ✅ | ✅ | ✅ | ✔️ | ❌ | ✔️ |
+| TrainingApp-020 | ✅ | ✅ | 🚫 | ✔️ | ❌ | 🚫 | 🚫 | ✅ |
+| FleetApp-021 | ✔️ | ✔️ | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| ComplianceApp-022 | ✅ | ✔️ | ✅ | ✅ | ✅ | ✔️ | ✔️ | ✔️ |
+| ChatbotApp-023 | ✔️ | ✔️ | ✅ | ✔️ | ❌ | ✔️ | ❌ | ✔️ |
+| AuditApp-024 | ✔️ | ✔️ | ❓ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| PortalApp-025 | ✔️ | ✔️ | ✅ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ |
+| LegacyFinApp-026 | ✅ | ❌ | 🚫 | ✅ | ✅ | ✅ | ✅ | ✔️ |
+| DataWarehouseApp-027 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✔️ |
+| NotificationApp-028 | ✔️ | ✔️ | 🚫 | ✔️ | ❌ | 🚫 | 🚫 | ✔️ |
+| APIGatewayApp-030 | ✔️ | ✅ | ✅ | ✔️ | ❌ | ✔️ | ❌ | ✅ |
 
-| App ID | Upgrade Legacy DB | Switch to OSS DB | Update Outdated Co | Switch to Managed  | Managed ARM DB | Serverless DB Migr | Switch to PostgreS |
-|--------|---|---|---|---|---|---|---|
-| app001 | 🔵 | ✅ | ✅ | ✅ | ✅ | 🚫 | ✅ |
-| app002 | 🔵 | 🔵 | ✅ | 🔵 | ✅ | ✅ | ✅ |
-| app003 | ✅ | 🔵 | ✅ | ✅ | ✅ | ✅ | 🔵 |
-| app004 | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app006 | ✅ | 🔵 | ✅ | ✅ | ✅ | ✅ | 🔵 |
-| app008 | 🔵 | ✅ | ✅ | ✅ | ✅ | 🚫 | ✅ |
-| app010 | 🔵 | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app011 | 🔵 | 🔵 | ✅ | ✅ | ✅ | ✅ | 🔵 |
-| app012 | 🔵 | 🔵 | 🔵 | ✅ | ✅ | ✅ | 🔵 |
-| app013 | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app014 | 🔵 | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app015 | ❓ | 🔵 | 🔵 | ✅ | ✅ | ✅ | ⬜ |
-| app016 | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app017 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app018 | ✅ | 🔵 | ✅ | ✅ | ✅ | ✅ | 🔵 |
-| app019 | 🔵 | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app020 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app021 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app022 | 🔵 | 🔵 | ✅ | ✅ | ✅ | ✅ | 🔵 |
-| app023 | ❓ | 🔵 | 🔵 | ✅ | ✅ | ✅ | ⬜ |
-| app024 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app025 | 🔵 | 🔵 | 🔵 | ✅ | ✅ | ✅ | 🔵 |
-| app026 | ❓ | ✅ | ✅ | ✅ | ✅ | 🚫 | ✅ |
-| app027 | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| app028 | 🔵 | ✅ | 🔵 | ✅ | ✅ | ✅ | ✅ |
-| app030 | ✅ | 🔵 | ✅ | ✅ | ✅ | ✅ | ✅ |
+_Legend: ✅ Applicable | ❌ Not Applicable | ✔️ Already Fulfilled | 🚫 Blocked | 🔶 Partially Fulfilled | ❓ Lack of Data_
 
-**Legend:** ✅ APPLICABLE | 🔵 FULFILLED | ⬜ NOT_APPLICABLE | 🚫 BLOCKED | 🔷 PARTIALLY_FULFILLED | ❓ LACK_OF_DATA
+## Financial Summary
 
-## Portfolio Financial Summary
+| Metric | Value |
+|--------|-------|
+| Total One-Time Investment | €2,399,441 |
+| Total Annual Savings | €1,523,900 |
+| Portfolio Break-Even | 1.6 years |
+| Applications with Opportunities | 23 / 26 |
+| Total Applicable Scenarios | 104 |
 
-| Application | Name | Complexity | Est. Cost | Est. Annual Savings | ROI (yrs) |
-|-------------|------|-----------|-----------|---------------------|-----------|
-| app001 | ERPApp-001 | MEDIUM | $365,811 | $183,600 | 2.0 |
-| app002 | CRMApp-002 | MEDIUM | $464,116 | $272,700 | 1.7 |
-| app003 | AnalyticsApp-003 | MEDIUM | $41,535 | $52,700 | 0.8 |
-| app004 | HRApp-004 | MEDIUM | $382,812 | $207,300 | 1.8 |
-| app006 | SupportApp-006 | MEDIUM | $452,550 | $277,700 | 1.6 |
-| app008 | InventoryApp-008 | MEDIUM | $377,376 | $194,400 | 1.9 |
-| app010 | PayrollApp-010 | MEDIUM | $397,243 | $271,000 | 1.5 |
-| app011 | RouteOptApp-011 | MEDIUM | $31,478 | $42,700 | 0.7 |
-| app012 | IoTSensorApp-012 | MEDIUM | $236,116 | $166,000 | 1.4 |
-| app013 | SecurityApp-013 | HIGH | $580,283 | $273,900 | 2.1 |
-| app014 | DocumentApp-014 | MEDIUM | $397,243 | $271,000 | 1.5 |
-| app015 | ReportingApp-015 | MEDIUM | $323,566 | $256,000 | 1.3 |
-| app016 | MobileApp-016 | MEDIUM | $94,026 | $72,700 | 1.3 |
-| app017 | BackupApp-017 | HIGH | $593,583 | $283,900 | 2.1 |
-| app018 | VendorApp-018 | HIGH | $527,083 | $253,900 | 2.1 |
-| app019 | QualityApp-019 | MEDIUM | $397,243 | $271,000 | 1.5 |
-| app020 | TrainingApp-020 | MEDIUM | $510,030 | $307,300 | 1.7 |
-| app021 | FleetApp-021 | MEDIUM | $503,091 | $298,700 | 1.7 |
-| app022 | ComplianceApp-022 | MEDIUM | $24,634 | $31,900 | 0.8 |
-| app023 | ChatbotApp-023 | MEDIUM | $17,490 | $31,000 | 0.6 |
-| app024 | AuditApp-024 | HIGH | $578,554 | $273,400 | 2.1 |
-| app025 | PortalApp-025 | MEDIUM | $236,116 | $166,000 | 1.4 |
-| app026 | LegacyFinApp-026 | MEDIUM | $365,811 | $183,600 | 2.0 |
-| app027 | DataWarehouseApp-027 | MEDIUM | $498,812 | $297,700 | 1.7 |
-| app028 | NotificationApp-028 | MEDIUM | $321,817 | $196,000 | 1.6 |
-| app030 | APIGatewayApp-030 | HIGH | $86,451 | $65,600 | 1.3 |
+```mermaid
+graph TD
+    A["💰 Total Investment: €2,399,441"] --> B["📈 Annual Savings: €1,523,900"]
+    B --> C["⏱️ Break-Even: 1.6 years"]
+```
 
-**Portfolio Total:** $8,804,867.79 implementation cost | $5,201,700.00 annual savings | 1.7 years payback
+## Risk Applications
 
-## Application Complexity Details
+Applications with highest modernization complexity or most EOL components:
 
-| App ID | Name | OS Status | DB Status | Lang Status | Score | Level |
-|--------|------|-----------|-----------|-------------|-------|-------|
-| app001 | ERPApp-001 | 🟡 | 🟢 | 🟡 | 6 | 🟡 MEDIUM |
-| app002 | CRMApp-002 | 🔴 | 🟢 | 🟢 | 6 | 🟡 MEDIUM |
-| app003 | AnalyticsApp-003 | 🔴 | 🟡 | 🟡 | 5 | 🟡 MEDIUM |
-| app004 | HRApp-004 | 🔴 | 🟢 | 🟢 | 6 | 🟡 MEDIUM |
-| app006 | SupportApp-006 | 🔴 | 🟡 | 🟢 | 6 | 🟡 MEDIUM |
-| app008 | InventoryApp-008 | 🔴 | 🟢 | 🟡 | 6 | 🟡 MEDIUM |
-| app010 | PayrollApp-010 | 🟢 | 🟢 | 🔴 | 5 | 🟡 MEDIUM |
-| app011 | RouteOptApp-011 | 🔴 | 🟢 | 🟢 | 5 | 🟡 MEDIUM |
-| app012 | IoTSensorApp-012 | 🟢 | 🟢 | 🟢 | 4 | 🟡 MEDIUM |
-| app013 | SecurityApp-013 | 🔴 | 🟢 | 🟢 | 7 | 🔴 HIGH |
-| app014 | DocumentApp-014 | 🟢 | 🟢 | 🟡 | 5 | 🟡 MEDIUM |
-| app015 | ReportingApp-015 | 🟢 | ⚪ | 🟢 | 4 | 🟡 MEDIUM |
-| app016 | MobileApp-016 | 🔴 | 🟢 | ⚪ | 6 | 🟡 MEDIUM |
-| app017 | BackupApp-017 | 🔴 | 🔴 | 🟢 | 7 | 🔴 HIGH |
-| app018 | VendorApp-018 | 🔴 | 🟡 | 🔴 | 7 | 🔴 HIGH |
-| app019 | QualityApp-019 | 🟢 | 🟢 | 🔴 | 5 | 🟡 MEDIUM |
-| app020 | TrainingApp-020 | 🔴 | 🟡 | 🟡 | 6 | 🟡 MEDIUM |
-| app021 | FleetApp-021 | 🟢 | 🔴 | 🟢 | 6 | 🟡 MEDIUM |
-| app022 | ComplianceApp-022 | 🔴 | 🟢 | 🟢 | 6 | 🟡 MEDIUM |
-| app023 | ChatbotApp-023 | 🟢 | ⚪ | 🟢 | 4 | 🟡 MEDIUM |
-| app024 | AuditApp-024 | 🟢 | 🔴 | 🟡 | 7 | 🔴 HIGH |
-| app025 | PortalApp-025 | 🟢 | 🟢 | 🟢 | 4 | 🟡 MEDIUM |
-| app026 | LegacyFinApp-026 | 🟡 | ⚪ | 🟡 | 6 | 🟡 MEDIUM |
-| app027 | DataWarehouseApp-027 | 🔴 | 🟢 | 🟢 | 6 | 🟡 MEDIUM |
-| app028 | NotificationApp-028 | 🟢 | 🟢 | 🟢 | 5 | 🟡 MEDIUM |
-| app030 | APIGatewayApp-030 | 🟢 | 🔴 | 🟡 | 7 | 🔴 HIGH |
+| Application | ID | Complexity | EOL Components | Applicable Scenarios |
+|-------------|-----|-----------|---------------|---------------------|
+| SecurityApp-013 | app013 | 7/10 (HIGH) | 2 | 9 |
+| BackupApp-017 | app017 | 7/10 (HIGH) | 2 | 5 |
+| APIGatewayApp-030 | app030 | 7/10 (HIGH) | 2 | 4 |
+| CRMApp-002 | app002 | 6/10 (MEDIUM) | 2 | 4 |
+| HRApp-004 | app004 | 6/10 (MEDIUM) | 2 | 8 |
+| InventoryApp-008 | app008 | 6/10 (MEDIUM) | 2 | 9 |
+| MobileApp-016 | app016 | 6/10 (MEDIUM) | 2 | 6 |
+| VendorApp-018 | app018 | 6/10 (MEDIUM) | 2 | 8 |
+| TrainingApp-020 | app020 | 6/10 (MEDIUM) | 2 | 3 |
+| FleetApp-021 | app021 | 6/10 (MEDIUM) | 1 | 6 |
+
+## Per-Application Reports
+
+| Application | ID | Complexity | Report |
+|-------------|-----|-----------|--------|
+| ERPApp-001 | app001 | 6/10 (MEDIUM) | [View Report](apps/app001.md) |
+| CRMApp-002 | app002 | 6/10 (MEDIUM) | [View Report](apps/app002.md) |
+| AnalyticsApp-003 | app003 | 5/10 (MEDIUM) | [View Report](apps/app003.md) |
+| HRApp-004 | app004 | 6/10 (MEDIUM) | [View Report](apps/app004.md) |
+| SupportApp-006 | app006 | 5/10 (MEDIUM) | [View Report](apps/app006.md) |
+| InventoryApp-008 | app008 | 6/10 (MEDIUM) | [View Report](apps/app008.md) |
+| PayrollApp-010 | app010 | 5/10 (MEDIUM) | [View Report](apps/app010.md) |
+| RouteOptApp-011 | app011 | 5/10 (MEDIUM) | [View Report](apps/app011.md) |
+| IoTSensorApp-012 | app012 | 4/10 (MEDIUM) | [View Report](apps/app012.md) |
+| SecurityApp-013 | app013 | 7/10 (HIGH) | [View Report](apps/app013.md) |
+| DocumentApp-014 | app014 | 5/10 (MEDIUM) | [View Report](apps/app014.md) |
+| ReportingApp-015 | app015 | 3/10 (LOW) | [View Report](apps/app015.md) |
+| MobileApp-016 | app016 | 6/10 (MEDIUM) | [View Report](apps/app016.md) |
+| BackupApp-017 | app017 | 7/10 (HIGH) | [View Report](apps/app017.md) |
+| VendorApp-018 | app018 | 6/10 (MEDIUM) | [View Report](apps/app018.md) |
+| QualityApp-019 | app019 | 5/10 (MEDIUM) | [View Report](apps/app019.md) |
+| TrainingApp-020 | app020 | 6/10 (MEDIUM) | [View Report](apps/app020.md) |
+| FleetApp-021 | app021 | 6/10 (MEDIUM) | [View Report](apps/app021.md) |
+| ComplianceApp-022 | app022 | 6/10 (MEDIUM) | [View Report](apps/app022.md) |
+| ChatbotApp-023 | app023 | 3/10 (LOW) | [View Report](apps/app023.md) |
+| AuditApp-024 | app024 | 6/10 (MEDIUM) | [View Report](apps/app024.md) |
+| PortalApp-025 | app025 | 4/10 (MEDIUM) | [View Report](apps/app025.md) |
+| LegacyFinApp-026 | app026 | 5/10 (MEDIUM) | [View Report](apps/app026.md) |
+| DataWarehouseApp-027 | app027 | 6/10 (MEDIUM) | [View Report](apps/app027.md) |
+| NotificationApp-028 | app028 | 5/10 (MEDIUM) | [View Report](apps/app028.md) |
+| APIGatewayApp-030 | app030 | 7/10 (HIGH) | [View Report](apps/app030.md) |
