@@ -52,8 +52,8 @@ Frequent risky technologies include RHEL 7, Windows Server 2019, Java 11, AIX 7.
 
 ## Financial Outlook (Modeled)
 
-- **Estimated one-time modernization cost:** 6,358,013
-- **Estimated yearly savings:** 3,113,900
+- **Estimated one-time modernization cost:** €6,358,013
+- **Estimated yearly savings:** €3,113,900
 - **Estimated payback (ROI):** ~2.0 years
 
 Notes:
