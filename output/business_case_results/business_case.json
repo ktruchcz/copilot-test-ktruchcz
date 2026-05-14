@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-14T20:08:42Z",
+  "portfolio_summary": {
+    "total_applications": 30,
+    "in_scope_applications": 26,
+    "out_of_scope_applications": 4
+  },
+  "financials": {
+    "total_one_time_cost": 1889624,
+    "total_yearly_savings": 1113800,
+    "break_even_years": 1.7
+  }
+}
