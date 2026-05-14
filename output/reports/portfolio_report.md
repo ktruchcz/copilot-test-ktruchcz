@@ -10,6 +10,8 @@ Source file: `discover/input/apps_db_complete.xlsx`
 
 ## Technology status (in-scope)
 
+These counts represent technology/component lifecycle classifications across the in-scope portfolio (not distinct application counts).
+
 - CURRENT_VERSION: **50**
 - OUTDATED: **15**
 - EOL: **36**
@@ -34,8 +36,8 @@ Most frequent applicable scenarios:
 
 ## Business case (portfolio)
 
-- Total one-time costs: **3,030,599**
-- Total yearly savings: **1,717,900**
+- Total one-time costs: **3,030,599** (currency: as defined in source finance configuration)
+- Total yearly savings: **1,717,900** (currency: as defined in source finance configuration)
 - ROI (years): **1.8**
 - Apps with opportunities: **23**
 - Applicable scenario instances used in finance: **66**
