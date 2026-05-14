@@ -65,7 +65,7 @@ def test_season_of_returns_correct_season(month: int, expected: str) -> None:
 
 
 def test_render_output_contains_expected_sections() -> None:
-    output = render_output(date(2026, 1, 15))
+    output = render_output(date(2026, 1, 15), hour=15)
     assert "World" in output
     assert "Good afternoon" in output
     assert "Today's date : 2026-01-15 (Winter)" in output

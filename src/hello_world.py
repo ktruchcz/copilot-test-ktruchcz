@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date
+from datetime import datetime
 import sys
 
 
@@ -43,8 +44,9 @@ def season_of(month: int) -> str:
     return "Autumn"
 
 
-def render_output(today: date) -> str:
-    current_time_of_day = time_of_day(today.day % 24)
+def render_output(today: date, hour: int | None = None) -> str:
+    effective_hour = datetime.now().hour if hour is None else hour
+    current_time_of_day = time_of_day(effective_hour)
     salutation = {
         "morning": "Good morning",
         "afternoon": "Good afternoon",
