@@ -26,6 +26,8 @@ jobs:
   sync-skills-pr:
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    env:
+      NPM_SKILLS_SYNC_GITHUB_TOKEN: ${{ github.token }}
     concurrency:
       group: skills-sync-${{ github.event.pull_request.number || github.event.inputs.pr_number || github.event.inputs.head_branch || github.run_id }}
       cancel-in-progress: false
@@ -35,7 +37,7 @@ jobs:
         id: resolve
         uses: actions/github-script@v7
         with:
-          github-token: ${{ github.token }}
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
@@ -148,7 +150,7 @@ jobs:
         uses: actions/github-script@v7
         continue-on-error: true
         with:
-          github-token: ${{ github.token }}
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
@@ -183,7 +185,7 @@ jobs:
         if: steps.merge.outputs.merged != 'true'
         uses: actions/github-script@v7
         with:
-          github-token: ${{ github.token }}
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
           script: |
             const prId = '${{ steps.resolve.outputs.pr_node_id }}';
 
@@ -231,7 +233,7 @@ jobs:
       - name: Final status
         uses: actions/github-script@v7
         with:
-          github-token: ${{ github.token }}
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
