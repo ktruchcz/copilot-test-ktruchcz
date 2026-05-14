@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app002",
+  "components_analyzed": [
+    {
+      "component_name": "Operating System",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "RHEL 7",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "RHEL 7 is at or beyond end-of-support for modernization planning.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Database",
+      "component_family": "Amazon",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "Amazon RDS MySQL",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Amazon RDS MySQL appears currently supported.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Programming Language",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Java 11 is legacy for long-term support planning.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Application Server",
+      "component_family": "Websphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Websphere 7.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Websphere 7.0 is beyond support lifecycle.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Framework field not provided in source sheet.",
+      "confidence": 4
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T20:30:36Z"
+}

@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app004",
+  "components_analyzed": [
+    {
+      "component_name": "Operating System",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2012",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Windows Server 2012 is at or beyond end-of-support for modernization planning.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Database",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "SQL Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "SQL Server 2019 appears currently supported.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Programming Language",
+      "component_family": ".NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": ".NET Core",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": ".NET Core is currently viable.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Application Server",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Microsoft IIS 8.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Microsoft IIS 8.0 is beyond support lifecycle.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Framework field not provided in source sheet.",
+      "confidence": 4
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T20:30:36Z"
+}

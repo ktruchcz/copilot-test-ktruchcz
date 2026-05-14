@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Operating System",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Debian 6",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Debian 6 appears in currently supported range.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Database",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "PostgreSQL 13",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "PostgreSQL 13 appears currently supported.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Programming Language",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Java 11",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Java 11 is legacy for long-term support planning.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Application Server",
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Glassfish 5.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Glassfish 5.0 appears supported.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Framework field not provided in source sheet.",
+      "confidence": 4
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T20:30:36Z"
+}

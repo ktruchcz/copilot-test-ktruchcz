@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app015",
+  "components_analyzed": [
+    {
+      "component_name": "Operating System",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Windows Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Windows Server 2019 appears in currently supported range.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Database",
+      "component_family": "MongoDB",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "MongoDB",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "MongoDB appears currently supported.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Programming Language",
+      "component_family": "PHP",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "PHP 8.1",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "PHP 8.1 is currently viable.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Application Server",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Microsoft IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Microsoft IIS 10.0 appears supported.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Framework field not provided in source sheet.",
+      "confidence": 4
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T20:30:37Z"
+}

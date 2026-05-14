@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app028",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "Complexity driven by 0 EOL and 1 outdated components, 25 interfaces, and 2 servers.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 25,
+    "business_criticality": "Medium",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 0,
+    "number_of_dependencies": 3,
+    "ci_cd_present": "Yes",
+    "containerized": "Yes"
+  }
+}
