@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app003",
+  "complexity_score": 4,
+  "confidence": 8,
+  "reasoning": "AnalyticsApp-003: MEDIUM complexity (score 4/10). Tech age score: 8/10 (2 EOL, 0 outdated components). Integration: 5/10 (3 external interfaces). Infrastructure: 2/10 (1 server(s), 1 environment(s)). Criticality: 2/10 (Business criticality: Low). Architecture: 2/10 (Architecture: 3-tier, containerized: Yes, CI/CD: Yes). Data: 5/10 (DB storage: 200GB, license required: No).",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 1,
+    "number_of_interfaces": 3,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 0,
+    "number_of_eol_technologies": 2,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "Yes"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app026",
+  "components_analyzed": [
+    {
+      "component_name": "AIX 7.2",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-04-30",
+      "reason": "IBM AIX 7.2 is actively supported by IBM with TL5+ updates, receiving security patches.",
+      "confidence": 9
+    },
+    {
+      "component_name": "DB2",
+      "component_family": "DB2",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "",
+      "reason": "IBM DB2 version not specified; cannot assess lifecycle status without version number.",
+      "confidence": 9
+    },
+    {
+      "component_name": "FORTRAN 2018",
+      "component_family": "FORTRAN",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "2018",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "Fortran 2018 is a current ISO standard with compiler support from Intel, GFortran. Specialized HPC language still supported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T09:17:55Z"
+}

@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app019",
+  "complexity_score": 4,
+  "confidence": 8,
+  "reasoning": "QualityApp-019: MEDIUM complexity (score 4/10). Tech age score: 4/10 (0 EOL, 1 outdated components). Integration: 5/10 (5 external interfaces). Infrastructure: 2/10 (1 server(s), 1 environment(s)). Criticality: 7/10 (Business criticality: High). Architecture: 3/10 (Architecture: 3-tier, containerized: No, CI/CD: Yes). Data: 3/10 (DB storage: 180GB, license required: No).",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 1,
+    "number_of_interfaces": 5,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 0,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  }
+}

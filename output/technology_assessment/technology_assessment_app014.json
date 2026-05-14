@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app014",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Server 2019",
+      "component_status": "OUTDATED",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 mainstream support ended Jan 2024; in extended support until Jan 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "MySQL 8.0",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-04-30",
+      "reason": "MySQL 8.0 is actively supported until April 2026.",
+      "confidence": 9
+    },
+    {
+      "component_name": "C# .NET 6",
+      "component_family": "C#",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": ".NET 6",
+      "component_status": "EOL",
+      "eol_date": "2024-05-12",
+      "reason": ".NET 6 reached End of Life on May 12, 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "Microsoft IIS 10.0 is part of Windows Server 2016/2019/2022 and actively supported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-14T09:17:55Z"
+}

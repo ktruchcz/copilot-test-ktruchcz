@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app030",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 is fully supported until May 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "MySQL 5.7",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "5.7",
+      "component_status": "EOL",
+      "eol_date": "2023-10-31",
+      "reason": "MySQL 5.7 reached End of Life on October 31, 2023.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Go 1.19",
+      "component_family": "Go",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "1.19",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Go 1.19 is outdated; Go 1.22+ is current; 1.19 no longer receives security updates.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Glassfish 3.0",
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "3.0",
+      "component_status": "EOL",
+      "eol_date": "2017-12-31",
+      "reason": "GlassFish 3.0 is EOL. Oracle stopped development of the Open Source edition; Eclipse GlassFish 3.0 was part of Java EE 6 (2010) and is long unsupported.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-14T09:17:55Z"
+}

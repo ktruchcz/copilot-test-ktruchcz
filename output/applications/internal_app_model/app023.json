@@ -1,0 +1,39 @@
+{
+  "app_id": "app023",
+  "app_name": "ChatbotApp-023",
+  "app_description": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+  "solution_type": "Open Source",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "Customer Service",
+  "business_capabilities": [
+    "Customer Support",
+    "AI Assistance",
+    "Query Management"
+  ],
+  "user_count": 1100,
+  "operating_system": "RHEL 8",
+  "programming_language": "Node.js 18",
+  "application_server": "Apache Tomcat. 7.4",
+  "application_architecture": "3-Tier",
+  "is_containerized": "Yes",
+  "environment_count": 2,
+  "server_instances": "sv34",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": "prod03",
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 22,
+  "external_interface_count": 8,
+  "database_engine": "MongoDB",
+  "database_storage_gb": 200,
+  "database_license_required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Datadog",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0026"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app024",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "AuditApp-024: MEDIUM complexity (score 6/10). Tech age score: 7/10 (1 EOL, 2 outdated components). Integration: 5/10 (3 external interfaces). Infrastructure: 4/10 (1 server(s), 2 environment(s)). Criticality: 7/10 (Business criticality: High). Architecture: 8/10 (Architecture: 2-tier, containerized: No, CI/CD: No). Data: 7/10 (DB storage: 300GB, license required: Yes).",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 2,
+    "number_of_interfaces": 3,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 2,
+    "number_of_eol_technologies": 1,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  }
+}
