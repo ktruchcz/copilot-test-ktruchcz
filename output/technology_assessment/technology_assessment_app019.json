@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app019",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "RHEL 8 is within active support window.",
+      "confidence": 8
+    },
+    {
+      "component_name": "MySQL 8.0",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "MySQL 8.0 is broadly current and supported.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Python 3.8",
+      "component_family": "Python",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "3.8",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No lifecycle knowledge available for Python 3.8.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Framework",
+      "component_family": "Framework",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Framework data missing in source.",
+      "confidence": 4
+    },
+    {
+      "component_name": "Apache Tomcat  8.0",
+      "component_family": "Apache",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No lifecycle knowledge available for Apache Tomcat  8.0.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T19:05:55Z"
+}

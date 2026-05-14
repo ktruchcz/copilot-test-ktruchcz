@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConsolidatedApplicationSchema",
+  "type": "object",
+  "required": [
+    "app_id",
+    "name"
+  ],
+  "properties": {
+    "app_id": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Solution type": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "criticality": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Application status": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Decomission date": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Deployment type": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "data classification": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "business unit": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "number of users": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Operating system": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "programming language": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Application Server type": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Application Architecture": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Application is containerized": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Number of environments": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "Physical servers instances": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "external interfaces": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "db_engine": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "CI_CD present": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    },
+    "dependencies": {
+      "type": [
+        "string",
+        "number",
+        "array",
+        "null"
+      ]
+    }
+  }
+}

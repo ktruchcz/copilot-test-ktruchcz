@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app030",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "RHEL 8 is within active support window.",
+      "confidence": 8
+    },
+    {
+      "component_name": "MySQL 5.7",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "5.7",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "MySQL 5.7 is no longer in standard vendor support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Go 1.19",
+      "component_family": "Go",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "1.19",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No lifecycle knowledge available for Go 1.19.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Framework",
+      "component_family": "Framework",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Framework data missing in source.",
+      "confidence": 4
+    },
+    {
+      "component_name": "Glassfish 3.0",
+      "component_family": "Glassfish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "3.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No lifecycle knowledge available for Glassfish 3.0.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T19:05:55Z"
+}

@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app023",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "RHEL 8 is within active support window.",
+      "confidence": 8
+    },
+    {
+      "component_name": "MongoDB",
+      "component_family": "MongoDB",
+      "component_type": "database",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No lifecycle knowledge available for MongoDB.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Node.js 18",
+      "component_family": "Node.js",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "18",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Node.js 18 is older than current mainstream LTS.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Framework",
+      "component_family": "Framework",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Framework data missing in source.",
+      "confidence": 4
+    },
+    {
+      "component_name": "Apache Tomcat. 7.4",
+      "component_family": "Apache",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "7.4",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No lifecycle knowledge available for Apache Tomcat. 7.4.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-14T19:05:55Z"
+}

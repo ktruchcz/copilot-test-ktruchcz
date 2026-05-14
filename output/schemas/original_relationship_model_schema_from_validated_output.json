@@ -1,0 +1,9 @@
+{
+  "relationships": [
+    {
+      "from": "application",
+      "to": "dependencies",
+      "type": "depends_on"
+    }
+  ]
+}
