@@ -42,7 +42,7 @@ Most frequent applicable scenarios:
 - Apps with opportunities: **23**
 - Applicable scenario instances used in finance: **66**
 
-Note: finance inputs in `.github/skills/business-case/references/modernization_scenarios_finance.json` define numeric amounts only and do not include a currency field.
+Note: finance inputs in `.github/skills/business-case/references/modernization_scenarios_finance.json` define numeric amounts only and do not include a currency field, so costs/savings are reported as normalized monetary units. Also, 31 applicable scenario instances are not represented in finance totals (`update_outdated_components`: 19, `switch_db_engine_open_source`: 12).
 
 Scenarios applicable but missing finance configuration:
 
