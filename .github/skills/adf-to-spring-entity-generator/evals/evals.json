@@ -1,0 +1,17 @@
+{
+  "skill_name": "adf-to-spring-entity-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Convert the provided ADF EO XML for InventoryEO and matching SQL DDL into a Spring Boot entity. The table has a composite key on PRODUCT_ID and WAREHOUSE_ID, uses NUMBER and DATE columns, and references ProductEO and WarehouseEO through associations.",
+      "expected_output": "A JPA entity plus separate IdClass with Jakarta imports, correct numeric/date mappings, and relationship annotations aligned to the descriptor.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Generate a Spring entity from an ADF descriptor for CountryEO where the SQL trigger uses sequence S_COUNTRIES_ID and the table defines COUNTRY_CODE as VARCHAR2(2) NOT NULL. Keep the package name com.example.demo.model.",
+      "expected_output": "A single entity class with Lombok, sequence-based id generation, correct @Column metadata, and validation annotations for required fields.",
+      "files": []
+    }
+  ]
+}
