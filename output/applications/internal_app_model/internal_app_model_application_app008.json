@@ -1,0 +1,6 @@
+{
+  "app_id": "app008",
+  "app_name": "InventoryApp-008",
+  "app_description": "Legacy inventory management system controlling warehouse stock levels and material movements",
+  "retiring_at": "2027"
+}

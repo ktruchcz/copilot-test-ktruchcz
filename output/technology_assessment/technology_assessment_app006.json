@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Debian",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2016-02-29",
+      "reason": "Debian 6 (Squeeze) reached End of Life in February 2016.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 LTS is in extended support until 2026, but Java 21 is the current LTS. Java 11 is 2 major LTS versions behind.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 reached End of Life in November 2025.",
+      "confidence": 9
+    },
+    {
+      "component_name": "GlassFish",
+      "component_family": "GlassFish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "5.0",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "GlassFish 5 is community-maintained by Eclipse. Payara 5/6 is the recommended alternative.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-14T10:00:00Z"
+}

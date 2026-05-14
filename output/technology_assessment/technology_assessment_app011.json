@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app011",
+  "components_analyzed": [
+    {
+      "component_name": "CentOS",
+      "component_family": "CentOS",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "CentOS 7 reached End of Life on June 30, 2024. No further updates.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Python",
+      "component_family": "Python",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "3.11",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-10-01",
+      "reason": "Python 3.11 is actively supported until October 2027.",
+      "confidence": 9
+    },
+    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "14",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-11-01",
+      "reason": "PostgreSQL 14 is supported until November 2026.",
+      "confidence": 9
+    },
+    {
+      "component_name": "GlassFish",
+      "component_family": "GlassFish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "4.0",
+      "component_status": "EOL",
+      "eol_date": "2018-12-31",
+      "reason": "GlassFish 4.0 is EOL. Commercial Oracle support was dropped; no security patches.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-14T10:00:00Z"
+}

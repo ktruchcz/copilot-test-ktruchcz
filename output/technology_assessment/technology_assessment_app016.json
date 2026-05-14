@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app016",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached End of Maintenance Support on June 30, 2024. No longer receiving security patches under standard support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "React Native",
+      "component_family": "React Native",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "current",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "React Native (without version) is assumed to be on a recent release, actively maintained.",
+      "confidence": 6
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 mainstream support ends January 2025, extended support until January 2030.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Payara",
+      "component_family": "Payara",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "4.0",
+      "component_status": "EOL",
+      "eol_date": "2023-06-30",
+      "reason": "Payara 4 reached End of Life. Payara 5/6 are the supported successors.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-14T10:00:00Z"
+}

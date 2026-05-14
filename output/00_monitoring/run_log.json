@@ -1,0 +1,53 @@
+{
+  "run_id": "portfolio-modernization-2026-05-14",
+  "timestamp": "2026-05-14T10:00:00Z",
+  "status": "completed",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Excel Ingestion",
+      "status": "success",
+      "apps_processed": 30
+    },
+    {
+      "step": 2,
+      "name": "Out-of-Scope Assessment",
+      "status": "success",
+      "apps_in_scope": 26,
+      "apps_out_of_scope": 4
+    },
+    {
+      "step": 3,
+      "name": "Technology Assessment",
+      "status": "success",
+      "apps_assessed": 25
+    },
+    {
+      "step": 4,
+      "name": "Complexity Assessment",
+      "status": "success",
+      "apps_scored": 25
+    },
+    {
+      "step": 5,
+      "name": "Scenario Analysis",
+      "status": "success",
+      "apps_analyzed": 25,
+      "total_applicable": 70
+    },
+    {
+      "step": 6,
+      "name": "Business Case",
+      "status": "success",
+      "apps_with_opportunities": 23,
+      "portfolio_roi_years": 1.8
+    },
+    {
+      "step": 7,
+      "name": "Portfolio Reporting",
+      "status": "success",
+      "markdown_reports": 26,
+      "html_reports": 26
+    }
+  ]
+}
