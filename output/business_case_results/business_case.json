@@ -1,0 +1,19 @@
+{
+  "portfolio_summary": {
+    "total_applications": 30,
+    "in_scope_applications": 26,
+    "out_of_scope_applications": 4,
+    "apps_with_opportunities": 25,
+    "total_applicable_scenario_pairs": 103
+  },
+  "financials": {
+    "total_one_time_cost": 6596425,
+    "total_yearly_savings": 3245400,
+    "roi_years": 2.0
+  },
+  "missing_finance_config_for": [
+    "switch_db_engine_open_source",
+    "update_outdated_components"
+  ],
+  "source": "discover/input/apps_db_complete.xlsx"
+}
