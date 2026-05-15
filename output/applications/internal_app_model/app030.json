@@ -39,7 +39,7 @@
   "logging_solution": "CloudWatch",
   "monitoring_tool": "Prometheus",
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0034"
+    "physical_database_server_instance": "db0034",
+    "decommission_date": "not planned"
   }
 }

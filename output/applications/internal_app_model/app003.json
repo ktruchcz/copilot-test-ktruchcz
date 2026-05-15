@@ -33,7 +33,7 @@
   "logging_solution": "ELK",
   "monitoring_tool": "Prometheus",
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0003"
+    "physical_database_server_instance": "db0003",
+    "decommission_date": "not planned"
   }
 }

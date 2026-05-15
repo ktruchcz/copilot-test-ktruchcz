@@ -33,7 +33,7 @@
   "logging_solution": "Windows Event Log",
   "monitoring_tool": null,
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0027"
+    "physical_database_server_instance": "db0027",
+    "decommission_date": "not planned"
   }
 }

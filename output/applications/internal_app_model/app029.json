@@ -33,7 +33,7 @@
   "logging_solution": "Syslog",
   "monitoring_tool": null,
   "additional_attributes": {
-    "decomission_date": "already retired",
-    "physical_database_server_instance": "db0033"
+    "physical_database_server_instance": "db0033",
+    "decommission_date": "already retired"
   }
 }

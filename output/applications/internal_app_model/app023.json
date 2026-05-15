@@ -16,7 +16,7 @@
   "user_count": 1100,
   "operating_system": "RHEL 8",
   "programming_language": "Node.js 18",
-  "application_server": "Apache Tomcat. 7.4",
+  "application_server": "Apache Tomcat 7.4",
   "application_architecture": "3-Tier",
   "is_containerized": "Yes",
   "environment_count": 2,
@@ -33,7 +33,7 @@
   "logging_solution": "CloudWatch",
   "monitoring_tool": "Datadog",
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0026"
+    "physical_database_server_instance": "db0026",
+    "decommission_date": "not planned"
   }
 }

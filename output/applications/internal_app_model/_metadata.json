@@ -9,7 +9,6 @@
     "Solution type": "solution_type",
     "criticality": "business_criticality",
     "Application status": "application_status",
-    "Decomission date": "additional:decomission_date",
     "Deployment type": "deployment_type",
     "data classification": "data_classification",
     "business unit": "business_unit",
@@ -33,7 +32,8 @@
     "DB storage in GB": "database_storage_gb",
     "DB License required": "database_license_required",
     "logging_solution": "logging_solution",
-    "monitoring_tool": "monitoring_tool"
+    "monitoring_tool": "monitoring_tool",
+    "Decommission date": "additional:decommission_date"
   },
   "application_ids": [
     "app001",

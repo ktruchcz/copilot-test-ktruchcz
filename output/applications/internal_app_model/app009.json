@@ -16,7 +16,7 @@
   "user_count": 430,
   "operating_system": "RHEL 7",
   "programming_language": "Go 1.16",
-  "application_server": "Apache Tomcat  5.3",
+  "application_server": "Apache Tomcat 5.3",
   "application_architecture": "3-Tier",
   "is_containerized": "Yes",
   "environment_count": 2,
@@ -33,7 +33,7 @@
   "logging_solution": "CloudWatch",
   "monitoring_tool": "Prometheus",
   "additional_attributes": {
-    "decomission_date": "already retired",
-    "physical_database_server_instance": "db0009"
+    "physical_database_server_instance": "db0009",
+    "decommission_date": "already retired"
   }
 }

@@ -36,7 +36,7 @@
   "logging_solution": "ELK",
   "monitoring_tool": "Grafana",
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0025"
+    "physical_database_server_instance": "db0025",
+    "decommission_date": "not planned"
   }
 }

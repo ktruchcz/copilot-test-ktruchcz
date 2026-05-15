@@ -36,7 +36,7 @@
   "logging_solution": "Windows Event Log",
   "monitoring_tool": "SCOM",
   "additional_attributes": {
-    "decomission_date": 2028,
-    "physical_database_server_instance": "db0020"
+    "physical_database_server_instance": "db0020",
+    "decommission_date": 2028
   }
 }

@@ -16,7 +16,7 @@
   "user_count": 180,
   "operating_system": "RHEL 8",
   "programming_language": "Python 3.8",
-  "application_server": "Apache Tomcat  8.0",
+  "application_server": "Apache Tomcat 8.0",
   "application_architecture": "3-Tier",
   "is_containerized": "No",
   "environment_count": 1,
@@ -33,7 +33,7 @@
   "logging_solution": "ELK",
   "monitoring_tool": "CloudWatch",
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0016"
+    "physical_database_server_instance": "db0016",
+    "decommission_date": "not planned"
   }
 }

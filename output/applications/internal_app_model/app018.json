@@ -36,7 +36,7 @@
   "logging_solution": "Log4j",
   "monitoring_tool": null,
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0021"
+    "physical_database_server_instance": "db0021",
+    "decommission_date": "not planned"
   }
 }

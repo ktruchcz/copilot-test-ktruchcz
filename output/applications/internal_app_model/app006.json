@@ -33,7 +33,7 @@
   "logging_solution": "ELK",
   "monitoring_tool": null,
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0006"
+    "physical_database_server_instance": "db0006",
+    "decommission_date": "not planned"
   }
 }

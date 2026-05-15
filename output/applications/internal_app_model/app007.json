@@ -36,7 +36,7 @@
   "logging_solution": "Splunk",
   "monitoring_tool": "Datadog",
   "additional_attributes": {
-    "decomission_date": "already retired",
-    "physical_database_server_instance": "db0007"
+    "physical_database_server_instance": "db0007",
+    "decommission_date": "already retired"
   }
 }

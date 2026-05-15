@@ -36,7 +36,7 @@
   "logging_solution": "CloudWatch",
   "monitoring_tool": "Grafana",
   "additional_attributes": {
-    "decomission_date": "not planned",
-    "physical_database_server_instance": "db0011"
+    "physical_database_server_instance": "db0011",
+    "decommission_date": "not planned"
   }
 }
