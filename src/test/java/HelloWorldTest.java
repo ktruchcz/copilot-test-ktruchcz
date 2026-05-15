@@ -61,6 +61,12 @@ class HelloWorldTest {
         assertInstanceOf(HelloWorld.TimeOfDay.Evening.class, HelloWorld.TimeOfDay.of(23));
     }
 
+    @Test
+    void timeOfDayRejectsHourOutsideRange() {
+        assertThrows(IllegalArgumentException.class, () -> HelloWorld.TimeOfDay.of(-1));
+        assertThrows(IllegalArgumentException.class, () -> HelloWorld.TimeOfDay.of(24));
+    }
+
     // -----------------------------------------------------------------------
     // seasonOf
     // -----------------------------------------------------------------------

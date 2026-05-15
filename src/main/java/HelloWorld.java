@@ -45,6 +45,9 @@ public class HelloWorld {
 
         /** Factory – maps an hour (0-23) to the appropriate {@link TimeOfDay}. */
         static TimeOfDay of(int hour) {
+            if (hour < 0 || hour > 23) {
+                throw new IllegalArgumentException("hour must be between 0 and 23");
+            }
             if (hour < 12) {
                 return new Morning();
             }
