@@ -46,11 +46,13 @@ public class HelloWorld {
 
         /** Factory – maps an hour (0-23) to the appropriate {@link TimeOfDay}. */
         static TimeOfDay of(int hour) {
-            return switch (hour) {
-                case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 -> new Morning();
-                case 12, 13, 14, 15, 16                    -> new Afternoon();
-                default                                     -> new Evening();
-            };
+            if (hour < 12) {
+                return new Morning();
+            }
+            if (hour < 17) {
+                return new Afternoon();
+            }
+            return new Evening();
         }
     }
 
@@ -60,11 +62,14 @@ public class HelloWorld {
 
         // Determine a salutation from the time of day
         var timeOfDay = TimeOfDay.of(today.getDayOfMonth() % 24);
-        var salutation = timeOfDay instanceof TimeOfDay.Morning
-                ? "Good morning"
-                : timeOfDay instanceof TimeOfDay.Afternoon
-                ? "Good afternoon"
-                : "Good evening";
+        String salutation;
+        if (timeOfDay instanceof TimeOfDay.Morning) {
+            salutation = "Good morning";
+        } else if (timeOfDay instanceof TimeOfDay.Afternoon) {
+            salutation = "Good afternoon";
+        } else {
+            salutation = "Good evening";
+        }
 
         var greeting = new Greeting("World", salutation);
 
