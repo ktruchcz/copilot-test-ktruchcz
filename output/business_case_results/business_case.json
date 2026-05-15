@@ -1,0 +1,284 @@
+{
+  "assessment_date": "2026-05-15",
+  "portfolio_summary": {
+    "total_applications_assessed": 30,
+    "applications_with_opportunities": 30,
+    "total_applicable_scenarios": 0,
+    "total_one_time_costs": 2188200,
+    "total_yearly_savings": 638225,
+    "roi_years": 3.4
+  },
+  "scenarios_summary": [],
+  "application_details": [
+    {
+      "app_id": "app001",
+      "app_name": "ERPApp-001",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 42000,
+      "total_yearly_savings": 12250,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app002",
+      "app_name": "CRMApp-002",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 144000,
+      "total_yearly_savings": 42000,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app003",
+      "app_name": "AnalyticsApp-003",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 57600,
+      "total_yearly_savings": 16800,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app004",
+      "app_name": "HRApp-004",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 80400,
+      "total_yearly_savings": 23450,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app005",
+      "app_name": "EComApp-005",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 160800,
+      "total_yearly_savings": 46900,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app006",
+      "app_name": "SupportApp-006",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 34800,
+      "total_yearly_savings": 10150,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app007",
+      "app_name": "FinanceApp-007",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 24000,
+      "total_yearly_savings": 7000,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app008",
+      "app_name": "InventoryApp-008",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 105000,
+      "total_yearly_savings": 30625,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app009",
+      "app_name": "MarketingApp-009",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 51600,
+      "total_yearly_savings": 15050,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app010",
+      "app_name": "PayrollApp-010",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 37800,
+      "total_yearly_savings": 11025,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app011",
+      "app_name": "RouteOptApp-011",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 15000,
+      "total_yearly_savings": 4375,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app012",
+      "app_name": "IoTSensorApp-012",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 10200,
+      "total_yearly_savings": 2975,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app013",
+      "app_name": "SecurityApp-013",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 62400,
+      "total_yearly_savings": 18200,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app014",
+      "app_name": "DocumentApp-014",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 106800,
+      "total_yearly_savings": 31150,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app015",
+      "app_name": "ReportingApp-015",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 40800,
+      "total_yearly_savings": 11900,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app016",
+      "app_name": "MobileApp-016",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 189600,
+      "total_yearly_savings": 55300,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app017",
+      "app_name": "BackupApp-017",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 5400,
+      "total_yearly_savings": 1575,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app018",
+      "app_name": "VendorApp-018",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 31200,
+      "total_yearly_savings": 9100,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app019",
+      "app_name": "QualityApp-019",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 21600,
+      "total_yearly_savings": 6300,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app020",
+      "app_name": "TrainingApp-020",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 90000,
+      "total_yearly_savings": 26250,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app021",
+      "app_name": "FleetApp-021",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 50400,
+      "total_yearly_savings": 14700,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app022",
+      "app_name": "ComplianceApp-022",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 37200,
+      "total_yearly_savings": 10850,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app023",
+      "app_name": "ChatbotApp-023",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 132000,
+      "total_yearly_savings": 38500,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app024",
+      "app_name": "AuditApp-024",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 11400,
+      "total_yearly_savings": 3325,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app025",
+      "app_name": "PortalApp-025",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 264000,
+      "total_yearly_savings": 77000,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app026",
+      "app_name": "LegacyFinApp-026",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 18000,
+      "total_yearly_savings": 5250,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app027",
+      "app_name": "DataWarehouseApp-027",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 38400,
+      "total_yearly_savings": 11200,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app028",
+      "app_name": "NotificationApp-028",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 102000,
+      "total_yearly_savings": 29750,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app029",
+      "app_name": "ConfigApp-029",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 7800,
+      "total_yearly_savings": 2275,
+      "roi_years": 3.4
+    },
+    {
+      "app_id": "app030",
+      "app_name": "APIGatewayApp-030",
+      "complexity_score": null,
+      "scenarios": [],
+      "total_cost": 216000,
+      "total_yearly_savings": 63000,
+      "roi_years": 3.4
+    }
+  ]
+}

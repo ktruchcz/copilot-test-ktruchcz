@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Modernization Report - Client - GenDiscover</title>
+    <style>
+        :root {
+            --page-bg: #0b1420;
+            --shell-bg: #111d2b;
+            --panel-bg: #162233;
+            --card-bg: #202c3d;
+            --card-bg-soft: #313f54;
+            --text-main: #f4f7fb;
+            --text-soft: #b7c6d9;
+            --border: rgba(47, 196, 215, 0.18);
+            --teal: #19cfd1;
+            --blue: #1384d6;
+            --orange: #ff8a45;
+            --red: #ff5f73;
+            --maroon: #7b4453;
+            --track: #1a2332;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--text-main); background: radial-gradient(circle at top, #132334 0%, var(--page-bg) 55%); }
+        a { color: inherit; text-decoration: none; }
+        .page { width: min(1760px, calc(100% - 32px)); margin: 14px auto; }
+        .report-shell { background: var(--shell-bg); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32); }
+        .header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .customer-meta [data-testid="customer-name"] { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .customer-meta div:last-child { color: var(--text-soft); }
+        .logo { height: 42px; width: auto; }
+        .logo svg { height: 100%; width: auto; }
+        .logo path { fill: #fff; }
+        .content { padding: 18px 18px 24px; }
+        .hero { padding: 10px 14px 16px; }
+        .hero h1 { margin: 0; font-size: 2.2rem; font-weight: 800; }
+        .hero p { margin: 10px 0 0; color: var(--text-soft); font-size: 1.05rem; line-height: 1.5; max-width: 1100px; }
+        .section-panel { background: var(--panel-bg); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 18px; overflow: hidden; }
+        .section-panel summary { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; cursor: pointer; list-style: none; padding: 22px 28px 14px; }
+        .section-panel summary::-webkit-details-marker { display: none; }
+        .section-panel summary h2 { margin: 0; font-size: 1.15rem; font-weight: 800; }
+        .section-panel summary p { margin: 8px 0 0; color: var(--text-soft); font-size: 0.95rem; }
+        .section-panel .chevron { font-size: 1.4rem; line-height: 1; color: #fff; transform: rotate(0deg); transition: transform 140ms ease; }
+        .section-panel[open] .chevron { transform: rotate(180deg); }
+        .section-panel-body { padding: 0 18px 18px; }
+        .summary-grid { display: grid; grid-template-columns: 1.1fr 1.6fr 1fr 1fr 1.4fr; gap: 18px; }
+        .metric-card, .opportunity-card, .roadmap-card { background: var(--card-bg); border-radius: 14px; padding: 28px; min-height: 100%; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02); }
+        .metric-card h3, .opportunity-card h3, .roadmap-card h3 { margin: 0 0 18px; font-size: 1rem; font-weight: 800; }
+        .ring-card { display: flex; justify-content: center; padding: 16px 0 22px; }
+        .ring { width: 262px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; position: relative; }
+        .ring::before { content: ""; position: absolute; inset: 22px; border-radius: 50%; background: var(--card-bg); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04); }
+        .ring span, .ring small { position: relative; z-index: 1; display: block; text-align: center; }
+        .ring span { font-size: 4rem; font-weight: 800; line-height: 1; }
+        .ring small { margin-top: 10px; font-size: 0.95rem; color: var(--text-soft); }
+        .ring-blue { background: conic-gradient(var(--blue) 0deg 300deg, rgba(255,255,255,0.15) 300deg 360deg); }
+        .mini-stats { display: grid; gap: 16px; }
+        .two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .mini-stats strong { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.1; margin-bottom: 8px; }
+        .mini-stats span { color: var(--text-soft); font-size: 0.95rem; line-height: 1.35; }
+        .dual-ring-block { display: grid; gap: 30px; padding-top: 6px; }
+        .ring-row { display: grid; grid-template-columns: 180px 1fr; gap: 18px; align-items: center; }
+        .mini-ring { width: 170px; height: 170px; border-radius: 50%; position: relative; }
+        .mini-ring::before { content: ""; position: absolute; inset: 18px; border-radius: 50%; background: var(--card-bg); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04); }
+        .ring-teal { background: conic-gradient(var(--teal) 0deg 282deg, rgba(255,255,255,0.18) 282deg 360deg); }
+        .ring-orange { background: conic-gradient(var(--orange) 0deg 245deg, rgba(255,255,255,0.18) 245deg 360deg); }
+        .ring-copy strong { display: block; font-size: 3.6rem; font-weight: 800; line-height: 1; margin-bottom: 10px; }
+        .ring-copy span { color: var(--text-soft); font-size: 1rem; line-height: 1.45; }
+        .value-stack { display: grid; gap: 20px; }
+        .stat-chip { border-radius: 12px; padding: 18px 18px 14px; text-align: center; }
+        .stat-chip strong { display: block; font-size: 2.45rem; font-weight: 800; line-height: 1.05; }
+        .stat-chip span { display: block; margin-top: 10px; color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.35; }
+        .stat-chip-large strong { font-size: 3rem; }
+        .stat-chip-teal { background: #197f83; }
+        .stat-chip-maroon { background: #6f3947; }
+        .stat-chip-blue { background: #1178c9; }
+        .signal-list { display: grid; gap: 26px; padding-top: 8px; }
+        .signal-row strong { display: block; font-size: 3rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+        .signal-row span { display: block; color: var(--text-soft); font-size: 0.98rem; line-height: 1.4; margin-bottom: 12px; }
+        .signal-bar { height: 12px; background: var(--track); border-radius: 999px; overflow: hidden; max-width: 240px; }
+        .signal-bar span { display: block; height: 100%; width: 62%; margin: 0; }
+        .signal-red span { background: var(--red); }
+        .signal-orange span { background: var(--orange); }
+        .signal-teal span { background: var(--teal); }
+        .signal-blue span { background: var(--blue); }
+        .scroll-list { display: grid; gap: 12px; max-height: 360px; overflow: auto; padding-right: 4px; }
+        .compact-list { max-height: 290px; }
+        .pill-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 10px; background: var(--card-bg-soft); }
+        .pill-title { font-size: 0.98rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .pill-badge { border-radius: 7px; padding: 7px 10px; font-size: 0.82rem; font-weight: 800; white-space: nowrap; }
+        .pill-badge-danger { background: var(--red); color: #fff; }
+        .pill-badge-accent { background: #1698a9; color: #fff; }
+        .empty-state { color: var(--text-soft); padding: 12px 0; }
+        .opportunity-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+        .opportunity-card p, .roadmap-card p { color: var(--text-soft); font-size: 0.95rem; line-height: 1.45; margin: 0 0 24px; }
+        .opportunity-number { font-size: 3.7rem; font-weight: 800; line-height: 1; margin-bottom: 8px; text-align: center; }
+        .opportunity-label { color: var(--text-soft); text-align: center; font-size: 0.95rem; margin-bottom: 16px; }
+        .scenario-count { color: var(--text-soft); font-size: 0.92rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin: 18px 0 14px; }
+        .roadmap-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .roadmap-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+        .footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 28px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer p { margin: 0.15rem 0; }
+        .meta-primary { color: var(--teal); font-weight: 700; font-size: 0.86rem; }
+        .meta-secondary, .meta-muted { color: var(--text-soft); font-size: 0.8rem; }
+        @media (max-width: 1500px) {
+            .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .metric-card:last-child { grid-column: 1 / -1; }
+            .opportunity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .roadmap-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 980px) {
+            .page { width: min(100%, calc(100% - 20px)); }
+            .header, .footer { flex-direction: column; align-items: flex-start; }
+            .summary-grid, .opportunity-grid { grid-template-columns: 1fr; }
+            .ring-row { grid-template-columns: 1fr; }
+            .roadmap-stats { grid-template-columns: 1fr; }
+            .pill-row { grid-template-columns: minmax(0, 1fr) auto; }
+            .pill-row .pill-badge:last-child { grid-column: 2; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="report-shell">
+            <div class="header">
+                <div class="customer-meta">
+                    <div data-testid="customer-name">Client</div>
+                    <div>Application modernization with Agentic AI powered by Capgemini GenSuite</div>
+                </div>
+                <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.01 117.11">
+  <path d="M330.21,46.53c-1.44-4.78-4.35-8.97-8.21-12.52-4.17-3.82-9.13-6.71-14.33-8.89-.42-.18-.84-.35-1.26-.51h0c-6.4,7.67-28.57,13.4-28.57,29.47,0,6.29,3.97,12.16,9.81,14.52,3.63,1.23,7.53,1,11.01-.59,3.36-1.53,5.93-4.23,7.99-7.24,2.18-3.17,3.84-6.66,5.91-9.9,1.92-3.01,4.38-6.02,8.03-6.86,3.31-.77,7.22.09,9.64,2.51h-.02ZM330.36,49.79c-1.47-2.94-4.56-4.2-7.73-4.05-3.06.14-5.29,2.09-6.99,4.49-1.93,2.71-3.28,5.8-4.85,8.72-1.52,2.81-3.15,5.57-5.33,7.92-2.42,2.61-5.46,4.58-8.88,5.61,1.58,1.14,3.77,1.39,5.66,1.47,2.13.08,4.29-.11,6.39-.49,3.84-.69,7.98-2.03,10.81-4.83-4.42.06-7.99-2.92-8.31-7.4,2.85,3.45,7.15,4.77,11.46,3.55,3.78-1.07,6.81-4.06,8.03-7.78.78-2.36.85-4.93-.26-7.2h0ZM268.07,47.47c0-3.55-.21-5.92-2.53-5.92-1.06,0-1.57.21-2.5.52.82,11.99-1.89,22.55-5.19,22.55-4.34,0-2.17-25.7-11.36-25.7-8.47,0-9.69,20.52-10.65,20.52-.66,0-.76-5.39-.72-9.49.36-1.97.55-3.74.55-5.08,0-1.91-.77-5.22-5.11-3.56.15,14.67-2.79,23.54-6.09,23.54-4.85,0-4.91-13.3-4.91-16.97s.26-8.36-5.06-6.66c-.8,12.8-4.15,22.46-6.26,22.46-3.16,0-2.52-22.11-9.34-22.11-6.12,0-8.02,20.94-9.3,20.94-2.29,0,.71-23.57-8.14-23.57-4.64,0-6.49,7.87-8.3,16.68-.35,1.71-.72,1.76-.78-.17-.05-1.58-.06-3.33-.04-4.94,2.23-8.85-.49-12.13-4.59-9.76,1.32,16.34-6.18,24.33-11.93,24.33-2.08,0-3.71-.88-4.94-2.28,6.9-4.23,9.97-9.09,9.97-13.83,0-5.14-2.95-8.11-7.86-8.11-6.85,0-10.67,7.05-10.67,13.04,0,3.22.6,5.96,1.59,8.22-2.35,1.12-4.57,2.09-6.63,3.03-.18-6.17-.88-12.64-1.41-18.61-3.64-1-4.71.75-4.99,3.99-.65,7.4-3.39,11.99-5.81,11.99-1.83,0-2.94-2.22-3.07-4.58-.68-11.86,8.95-15.16,13.99-13.44,1.05-2.61-.1-4.5-4.64-4.5-5.51,0-9.63,3.35-12.65,7.64-2.02,2.87-4.34,4.9-7.44,7.35.08-.71.12-1.41.12-2.11,0-8.37-4.53-12.04-8.86-12.04-3.58,0-5.83,2.15-7.14,5.44-.32-3.3-.98-4.73-2.9-4.73-.83,0-1.96.23-3.19.83.56,1.85.78,5.93.78,8.62,0,10.06-2.88,14.57-5.66,14.57-3.17,0-3.67-11.93-3.94-16.57-.41-.14-.86-.29-1.55-.29-2.87,0-3.24,3.85-3.95,7.39-.78,3.92-3.05,8.86-6.39,8.86-2.02,0-3.28-1.95-3.44-5.46-.33-7.11,5.59-15.54,14.85-12.92,1.21-2.83-.69-4.99-4.53-4.99-6.77,0-12.36,5.07-14.8,11.06-2.48,5.49-6.82,13.56-15.64,13.56-6.23,0-10.99-5.43-10.99-16.83,0-9.83,6.19-19.16,12.8-19.16,4.62,0,5.7,4.55,5.29,8.81,2.39,1.93,6.32.14,6.32-4.67,0-3.31-2.69-8.92-11.36-8.92-10.74,0-20.23,10.71-20.23,24.78s6.92,21.68,16.71,21.68c6.18,0,12.01-3.52,16.03-10.03,1.01,5.69,4.89,8.09,7.8,8.09,4.71,0,7.78-3.05,9.46-7.17,1.05,4.13,3.26,7.19,6.93,7.19,2.59,0,4.6-1.31,6.12-3.41-.6,14.36-1.36,23.51,7.12,21.71-1.31-4.08-1.73-11.51-1.73-18.19,0-18.26,3.01-24.27,6.79-24.27,2.73,0,3.62,3.49,3.62,7.21,0,1.99-.19,4.28-.7,6.35-4.64,2.92-8.35,5.23-8.35,8.17,0,2.32,1.72,2.54,3.21,2.54,3.56,0,7.85-3.49,10.22-10.09,2.07-1.25,4.15-2.69,6.14-4.65-.07.67-.11,1.35-.11,2.03,0,6.55,2.87,10.5,7.44,10.5,3.58,0,6.27-2.54,8.17-6.35.12,2.19.19,4.21.23,6.08-7.27,3.36-15.32,6.78-15.32,16.26,0,4.91,3.54,8.61,8.16,8.61,10.13,0,12.44-10.69,12.53-23.11,3.3-1.43,5.75-2.53,8.59-3.93,2.42,3.03,5.72,4.55,8.74,4.55,5.72,0,10.01-3.03,13.46-9.17.61,4.68,1.82,9.17,4.31,9.17,4.53,0,5.45-23.69,8.82-23.69,2.58,0,.46,25.64,7.28,25.64,5.83,0,6.93-22.56,9.77-22.56,2.01,0,2.17,20.62,8.52,20.62,3.13,0,6.52-3.75,8.22-11.62.8,5.24,3.44,11.62,8.6,11.62,3.01,0,5.6-3.05,7.6-7.1.55,4.17,1.73,7.1,4.01,7.1,5.94,0,5.74-23.65,10.44-23.65,3.67,0,2.53,23.65,11.26,23.65,4.16,0,6.12-3.54,7.29-7.98,1.61,6.53,4.2,7.98,6.34,7.98,1.35,0,2.37-.47,3.71-2.07-6.75-2.93-6.18-13.58-6.18-20.46h-.03Z"/>
+</svg></div>
+            </div>
+            <div class="content">
+                <section class="hero" data-testid="portfolio-report-title">
+                    <h1>Portfolio Modernization Report</h1>
+                    <p>**Generated:** 2026-05-15T09:47:21.946339+00:00</p>
+                </section>
+                <details open class="section-panel" data-testid="section-summary">
+    <summary>
+        <div>
+            <h2>Summary</h2>
+            <p>Summary of portfolio modernization assessment</p>
+        </div>
+        <span class="chevron">⌃</span>
+    </summary>
+    <div class="section-panel-body summary-grid">
+        <article class="metric-card metric-card-scope" data-testid="summary-scope-card">
+            <h3>Scope</h3>
+            <div class="ring-card">
+                <div class="ring ring-blue"><span>30</span><small>Total Apps</small></div>
+            </div>
+            <div class="mini-stats two-up">
+                <div><strong>30</strong><span>Apps in Scope</span></div>
+                <div><strong>0</strong><span>Apps out of Scope</span></div>
+            </div>
+        </article>
+        <article class="metric-card" data-testid="summary-quality-card">
+            <h3>Potential &amp; Data Quality</h3>
+            <div class="dual-ring-block">
+                <div class="ring-row">
+                    <div class="mini-ring ring-teal"></div>
+                    <div class="ring-copy"><strong>100%</strong><span>Apps with Modernization Potential</span></div>
+                </div>
+                <div class="ring-row">
+                    <div class="mini-ring ring-orange"></div>
+                    <div class="ring-copy"><strong>100%</strong><span>Average Data Completeness Across All Scenarios</span></div>
+                </div>
+            </div>
+        </article>
+        <article class="metric-card metric-card-roi" data-testid="summary-roi-card">
+            <h3>Return on Investment</h3>
+            <div class="value-stack">
+                <div class="stat-chip stat-chip-teal"><strong>638.2kEUR</strong><span>Annual Savings</span></div>
+                <div class="stat-chip stat-chip-maroon"><strong>2.19MEUR</strong><span>Migration Costs</span></div>
+                <div class="stat-chip stat-chip-blue stat-chip-large"><strong>3.4</strong><span>years<br>Until positive ROI</span></div>
+            </div>
+        </article>
+        <article class="metric-card" data-testid="summary-eol-card">
+            <h3>End of Life</h3>
+            <div class="signal-list">
+                <div class="signal-row"><strong>0</strong><span>Apps with EOL Components</span><div class="signal-bar signal-red"><span></span></div></div>
+                <div class="signal-row"><strong>0</strong><span>Apps with Outdated Components</span><div class="signal-bar signal-orange"><span></span></div></div>
+                <div class="signal-row"><strong>0</strong><span>Apps with Missing Version Details</span><div class="signal-bar signal-teal"><span></span></div></div>
+            </div>
+        </article>
+        <article class="metric-card" data-testid="summary-priority-card">
+            <h3>Priority Apps for Modernization</h3>
+            <div class="scroll-list"><div class="empty-state">No priority applications identified.</div></div>
+        </article>
+    </div>
+</details>
+
+<details open class="section-panel" data-testid="section-opportunities">
+    <summary>
+        <div>
+            <h2>Modernization Opportunities</h2>
+            <p>Key opportunities for portfolio modernization</p>
+        </div>
+        <span class="chevron">⌃</span>
+    </summary>
+    <div class="section-panel-body opportunity-grid">
+        <article class="opportunity-card" data-testid="opportunity-card-cost-reduction">
+    <h3>Cost Reduction</h3>
+    <p>Lower operational costs, reduced licensing fees</p>
+    <div class="opportunity-number">0</div>
+    <div class="opportunity-label">Applicable Apps</div>
+    <div class="signal-bar signal-orange"><span></span></div>
+    <div class="scenario-count">0 scenarios</div>
+    <div class="scroll-list"><div class="empty-state">No applicable scenarios available.</div></div>
+</article>
+<article class="opportunity-card" data-testid="opportunity-card-agility">
+    <h3>Agility</h3>
+    <p>Faster deployment, improved scalability, enhanced flexibility</p>
+    <div class="opportunity-number">0</div>
+    <div class="opportunity-label">Applicable Apps</div>
+    <div class="signal-bar signal-blue"><span></span></div>
+    <div class="scenario-count">0 scenarios</div>
+    <div class="scroll-list"><div class="empty-state">No applicable scenarios available.</div></div>
+</article>
+<article class="opportunity-card" data-testid="opportunity-card-security">
+    <h3>Security</h3>
+    <p>Better compliance, reduced vulnerabilities, enhanced protection</p>
+    <div class="opportunity-number">0</div>
+    <div class="opportunity-label">Applicable Apps</div>
+    <div class="signal-bar signal-red"><span></span></div>
+    <div class="scenario-count">0 scenarios</div>
+    <div class="scroll-list"><div class="empty-state">No applicable scenarios available.</div></div>
+</article>
+<article class="opportunity-card" data-testid="opportunity-card-sustainability">
+    <h3>Sustainability</h3>
+    <p>Reduced energy consumption, greener infrastructure</p>
+    <div class="opportunity-number">0</div>
+    <div class="opportunity-label">Applicable Apps</div>
+    <div class="signal-bar signal-teal"><span></span></div>
+    <div class="scenario-count">0 scenarios</div>
+    <div class="scroll-list"><div class="empty-state">No applicable scenarios available.</div></div>
+</article>
+    </div>
+</details>
+
+<details open class="section-panel" data-testid="section-roadmap">
+    <summary>
+        <div>
+            <h2>Roadmap Proposal</h2>
+            <p>Phased approach to portfolio modernization</p>
+        </div>
+        <span class="chevron">⌃</span>
+    </summary>
+    <div class="section-panel-body roadmap-grid">
+        <article class="roadmap-card" data-testid="roadmap-card-phase-1-quick-wins">
+    <h3>Phase 1: Quick Wins</h3>
+    <p>High Priority • Low/Medium Effort</p>
+    <div class="roadmap-stats">
+        <div class="stat-chip stat-chip-teal"><strong>EUR0</strong><span>Annual Savings</span></div>
+        <div class="stat-chip stat-chip-maroon"><strong>EUR0</strong><span>Migration Costs</span></div>
+        <div class="stat-chip stat-chip-blue stat-chip-large"><strong>n/a</strong><span>Until positive ROI<br>Until positive ROI</span></div>
+    </div>
+    <div class="scenario-count">0 scenarios</div>
+    <div class="scroll-list compact-list"><div class="empty-state">No scenarios assigned.</div></div>
+</article>
+<article class="roadmap-card" data-testid="roadmap-card-phase-2-tactical-improvements">
+    <h3>Phase 2: Tactical Improvements</h3>
+    <p>Medium/Low Priority • Low/Medium/High Effort</p>
+    <div class="roadmap-stats">
+        <div class="stat-chip stat-chip-teal"><strong>EUR0</strong><span>Annual Savings</span></div>
+        <div class="stat-chip stat-chip-maroon"><strong>EUR0</strong><span>Migration Costs</span></div>
+        <div class="stat-chip stat-chip-blue stat-chip-large"><strong>n/a</strong><span>Until positive ROI<br>Until positive ROI</span></div>
+    </div>
+    <div class="scenario-count">0 scenarios</div>
+    <div class="scroll-list compact-list"><div class="empty-state">No scenarios assigned.</div></div>
+</article>
+<article class="roadmap-card" data-testid="roadmap-card-phase-3-strategic-initiatives">
+    <h3>Phase 3: Strategic Initiatives</h3>
+    <p>High Priority • High Effort</p>
+    <div class="roadmap-stats">
+        <div class="stat-chip stat-chip-teal"><strong>EUR0</strong><span>Annual Savings</span></div>
+        <div class="stat-chip stat-chip-maroon"><strong>EUR0</strong><span>Migration Costs</span></div>
+        <div class="stat-chip stat-chip-blue stat-chip-large"><strong>n/a</strong><span>Until positive ROI<br>Until positive ROI</span></div>
+    </div>
+    <div class="scenario-count">0 scenarios</div>
+    <div class="scroll-list compact-list"><div class="empty-state">No scenarios assigned.</div></div>
+</article>
+    </div>
+</details>
+            </div>
+            <div class="footer">
+                <div>
+                    <p class="meta-primary">Generated by GenDiscover</p>
+                    <p class="meta-secondary">2026-05-15T09:47:21.986718+00:00</p>
+                    <p class="meta-muted">Analysis ID: 67f7745f9376c1d13ea580aaa1bdfc3a</p>
+                </div>
+                <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.01 117.11">
+  <path d="M330.21,46.53c-1.44-4.78-4.35-8.97-8.21-12.52-4.17-3.82-9.13-6.71-14.33-8.89-.42-.18-.84-.35-1.26-.51h0c-6.4,7.67-28.57,13.4-28.57,29.47,0,6.29,3.97,12.16,9.81,14.52,3.63,1.23,7.53,1,11.01-.59,3.36-1.53,5.93-4.23,7.99-7.24,2.18-3.17,3.84-6.66,5.91-9.9,1.92-3.01,4.38-6.02,8.03-6.86,3.31-.77,7.22.09,9.64,2.51h-.02ZM330.36,49.79c-1.47-2.94-4.56-4.2-7.73-4.05-3.06.14-5.29,2.09-6.99,4.49-1.93,2.71-3.28,5.8-4.85,8.72-1.52,2.81-3.15,5.57-5.33,7.92-2.42,2.61-5.46,4.58-8.88,5.61,1.58,1.14,3.77,1.39,5.66,1.47,2.13.08,4.29-.11,6.39-.49,3.84-.69,7.98-2.03,10.81-4.83-4.42.06-7.99-2.92-8.31-7.4,2.85,3.45,7.15,4.77,11.46,3.55,3.78-1.07,6.81-4.06,8.03-7.78.78-2.36.85-4.93-.26-7.2h0ZM268.07,47.47c0-3.55-.21-5.92-2.53-5.92-1.06,0-1.57.21-2.5.52.82,11.99-1.89,22.55-5.19,22.55-4.34,0-2.17-25.7-11.36-25.7-8.47,0-9.69,20.52-10.65,20.52-.66,0-.76-5.39-.72-9.49.36-1.97.55-3.74.55-5.08,0-1.91-.77-5.22-5.11-3.56.15,14.67-2.79,23.54-6.09,23.54-4.85,0-4.91-13.3-4.91-16.97s.26-8.36-5.06-6.66c-.8,12.8-4.15,22.46-6.26,22.46-3.16,0-2.52-22.11-9.34-22.11-6.12,0-8.02,20.94-9.3,20.94-2.29,0,.71-23.57-8.14-23.57-4.64,0-6.49,7.87-8.3,16.68-.35,1.71-.72,1.76-.78-.17-.05-1.58-.06-3.33-.04-4.94,2.23-8.85-.49-12.13-4.59-9.76,1.32,16.34-6.18,24.33-11.93,24.33-2.08,0-3.71-.88-4.94-2.28,6.9-4.23,9.97-9.09,9.97-13.83,0-5.14-2.95-8.11-7.86-8.11-6.85,0-10.67,7.05-10.67,13.04,0,3.22.6,5.96,1.59,8.22-2.35,1.12-4.57,2.09-6.63,3.03-.18-6.17-.88-12.64-1.41-18.61-3.64-1-4.71.75-4.99,3.99-.65,7.4-3.39,11.99-5.81,11.99-1.83,0-2.94-2.22-3.07-4.58-.68-11.86,8.95-15.16,13.99-13.44,1.05-2.61-.1-4.5-4.64-4.5-5.51,0-9.63,3.35-12.65,7.64-2.02,2.87-4.34,4.9-7.44,7.35.08-.71.12-1.41.12-2.11,0-8.37-4.53-12.04-8.86-12.04-3.58,0-5.83,2.15-7.14,5.44-.32-3.3-.98-4.73-2.9-4.73-.83,0-1.96.23-3.19.83.56,1.85.78,5.93.78,8.62,0,10.06-2.88,14.57-5.66,14.57-3.17,0-3.67-11.93-3.94-16.57-.41-.14-.86-.29-1.55-.29-2.87,0-3.24,3.85-3.95,7.39-.78,3.92-3.05,8.86-6.39,8.86-2.02,0-3.28-1.95-3.44-5.46-.33-7.11,5.59-15.54,14.85-12.92,1.21-2.83-.69-4.99-4.53-4.99-6.77,0-12.36,5.07-14.8,11.06-2.48,5.49-6.82,13.56-15.64,13.56-6.23,0-10.99-5.43-10.99-16.83,0-9.83,6.19-19.16,12.8-19.16,4.62,0,5.7,4.55,5.29,8.81,2.39,1.93,6.32.14,6.32-4.67,0-3.31-2.69-8.92-11.36-8.92-10.74,0-20.23,10.71-20.23,24.78s6.92,21.68,16.71,21.68c6.18,0,12.01-3.52,16.03-10.03,1.01,5.69,4.89,8.09,7.8,8.09,4.71,0,7.78-3.05,9.46-7.17,1.05,4.13,3.26,7.19,6.93,7.19,2.59,0,4.6-1.31,6.12-3.41-.6,14.36-1.36,23.51,7.12,21.71-1.31-4.08-1.73-11.51-1.73-18.19,0-18.26,3.01-24.27,6.79-24.27,2.73,0,3.62,3.49,3.62,7.21,0,1.99-.19,4.28-.7,6.35-4.64,2.92-8.35,5.23-8.35,8.17,0,2.32,1.72,2.54,3.21,2.54,3.56,0,7.85-3.49,10.22-10.09,2.07-1.25,4.15-2.69,6.14-4.65-.07.67-.11,1.35-.11,2.03,0,6.55,2.87,10.5,7.44,10.5,3.58,0,6.27-2.54,8.17-6.35.12,2.19.19,4.21.23,6.08-7.27,3.36-15.32,6.78-15.32,16.26,0,4.91,3.54,8.61,8.16,8.61,10.13,0,12.44-10.69,12.53-23.11,3.3-1.43,5.75-2.53,8.59-3.93,2.42,3.03,5.72,4.55,8.74,4.55,5.72,0,10.01-3.03,13.46-9.17.61,4.68,1.82,9.17,4.31,9.17,4.53,0,5.45-23.69,8.82-23.69,2.58,0,.46,25.64,7.28,25.64,5.83,0,6.93-22.56,9.77-22.56,2.01,0,2.17,20.62,8.52,20.62,3.13,0,6.52-3.75,8.22-11.62.8,5.24,3.44,11.62,8.6,11.62,3.01,0,5.6-3.05,7.6-7.1.55,4.17,1.73,7.1,4.01,7.1,5.94,0,5.74-23.65,10.44-23.65,3.67,0,2.53,23.65,11.26,23.65,4.16,0,6.12-3.54,7.29-7.98,1.61,6.53,4.2,7.98,6.34,7.98,1.35,0,2.37-.47,3.71-2.07-6.75-2.93-6.18-13.58-6.18-20.46h-.03Z"/>
+</svg></div>
+            </div>
+        </div>
+    </div>
+    <script type="application/json" id="report-data">{&quot;kind&quot;: &quot;portfolio&quot;, &quot;title&quot;: &quot;Portfolio Modernization Report&quot;, &quot;lead&quot;: &quot;**Generated:** 2026-05-15T09:47:21.946339+00:00&quot;, &quot;customer_name&quot;: &quot;Client&quot;, &quot;subtitle&quot;: &quot;Application modernization with Agentic AI powered by Capgemini GenSuite&quot;, &quot;generated_at&quot;: &quot;2026-05-15T09:47:21.986718+00:00&quot;, &quot;sections&quot;: [{&quot;title&quot;: &quot;Executive Summary&quot;, &quot;slug&quot;: &quot;executive-summary&quot;, &quot;html&quot;: &quot;&lt;p&gt;The portfolio analysis was generated from the Excel source in &lt;code&gt;discover/input/&lt;/code&gt;. A total of 30 applications were discovered, with 11 high-criticality, 10 medium-criticality, and 5 low-criticality systems. Containerization coverage is currently 12/30 applications.&lt;/p&gt;&quot;}, {&quot;title&quot;: &quot;Portfolio Overview&quot;, &quot;slug&quot;: &quot;portfolio-overview&quot;, &quot;html&quot;: &quot;&lt;pre&gt;&lt;code&gt;pie title Business Criticality Distribution\n    &amp;quot;High&amp;quot; : 11\n    &amp;quot;Medium&amp;quot; : 10\n    &amp;quot;Low&amp;quot; : 5&lt;/code&gt;&lt;/pre&gt;\n&lt;pre&gt;&lt;code&gt;pie title Containerization\n    &amp;quot;Containerized&amp;quot; : 12\n    &amp;quot;Not Containerized&amp;quot; : 18&lt;/code&gt;&lt;/pre&gt;&quot;}, {&quot;title&quot;: &quot;Financial Summary&quot;, &quot;slug&quot;: &quot;financial-summary&quot;, &quot;html&quot;: &quot;&lt;p&gt;Metric | Value&lt;/p&gt;\n&lt;p&gt;Total One-Time Investment (estimate) | 2188200&lt;/p&gt;\n&lt;p&gt;Total Annual Savings (estimate) | 638225&lt;/p&gt;\n&lt;p&gt;Portfolio Break-Even | 3.4 years&lt;/p&gt;&quot;}, {&quot;title&quot;: &quot;Per-Application Reports&quot;, &quot;slug&quot;: &quot;per-application-reports&quot;, &quot;html&quot;: &quot;&lt;p&gt;Application | Report&lt;/p&gt;\n&lt;p&gt;ERPApp-001 | &lt;a href=\&quot;apps/app001.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;CRMApp-002 | &lt;a href=\&quot;apps/app002.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;AnalyticsApp-003 | &lt;a href=\&quot;apps/app003.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;HRApp-004 | &lt;a href=\&quot;apps/app004.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;EComApp-005 | &lt;a href=\&quot;apps/app005.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;SupportApp-006 | &lt;a href=\&quot;apps/app006.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;FinanceApp-007 | &lt;a href=\&quot;apps/app007.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;InventoryApp-008 | &lt;a href=\&quot;apps/app008.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;MarketingApp-009 | &lt;a href=\&quot;apps/app009.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;PayrollApp-010 | &lt;a href=\&quot;apps/app010.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;RouteOptApp-011 | &lt;a href=\&quot;apps/app011.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;IoTSensorApp-012 | &lt;a href=\&quot;apps/app012.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;SecurityApp-013 | &lt;a href=\&quot;apps/app013.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;DocumentApp-014 | &lt;a href=\&quot;apps/app014.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;ReportingApp-015 | &lt;a href=\&quot;apps/app015.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;MobileApp-016 | &lt;a href=\&quot;apps/app016.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;BackupApp-017 | &lt;a href=\&quot;apps/app017.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;VendorApp-018 | &lt;a href=\&quot;apps/app018.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;QualityApp-019 | &lt;a href=\&quot;apps/app019.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;TrainingApp-020 | &lt;a href=\&quot;apps/app020.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;FleetApp-021 | &lt;a href=\&quot;apps/app021.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;ComplianceApp-022 | &lt;a href=\&quot;apps/app022.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;ChatbotApp-023 | &lt;a href=\&quot;apps/app023.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;AuditApp-024 | &lt;a href=\&quot;apps/app024.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;PortalApp-025 | &lt;a href=\&quot;apps/app025.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;LegacyFinApp-026 | &lt;a href=\&quot;apps/app026.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;DataWarehouseApp-027 | &lt;a href=\&quot;apps/app027.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;NotificationApp-028 | &lt;a href=\&quot;apps/app028.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;ConfigApp-029 | &lt;a href=\&quot;apps/app029.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;APIGatewayApp-030 | &lt;a href=\&quot;apps/app030.md\&quot; target=\&quot;_blank\&quot;&gt;View Report&lt;/a&gt;&lt;/p&gt;&quot;}], &quot;app_links&quot;: [{&quot;app_id&quot;: &quot;app001&quot;, &quot;title&quot;: &quot;ERPApp-001&quot;}, {&quot;app_id&quot;: &quot;app002&quot;, &quot;title&quot;: &quot;CRMApp-002&quot;}, {&quot;app_id&quot;: &quot;app003&quot;, &quot;title&quot;: &quot;AnalyticsApp-003&quot;}, {&quot;app_id&quot;: &quot;app004&quot;, &quot;title&quot;: &quot;HRApp-004&quot;}, {&quot;app_id&quot;: &quot;app005&quot;, &quot;title&quot;: &quot;EComApp-005&quot;}, {&quot;app_id&quot;: &quot;app006&quot;, &quot;title&quot;: &quot;SupportApp-006&quot;}, {&quot;app_id&quot;: &quot;app007&quot;, &quot;title&quot;: &quot;FinanceApp-007&quot;}, {&quot;app_id&quot;: &quot;app008&quot;, &quot;title&quot;: &quot;InventoryApp-008&quot;}, {&quot;app_id&quot;: &quot;app009&quot;, &quot;title&quot;: &quot;MarketingApp-009&quot;}, {&quot;app_id&quot;: &quot;app010&quot;, &quot;title&quot;: &quot;PayrollApp-010&quot;}, {&quot;app_id&quot;: &quot;app011&quot;, &quot;title&quot;: &quot;RouteOptApp-011&quot;}, {&quot;app_id&quot;: &quot;app012&quot;, &quot;title&quot;: &quot;IoTSensorApp-012&quot;}, {&quot;app_id&quot;: &quot;app013&quot;, &quot;title&quot;: &quot;SecurityApp-013&quot;}, {&quot;app_id&quot;: &quot;app014&quot;, &quot;title&quot;: &quot;DocumentApp-014&quot;}, {&quot;app_id&quot;: &quot;app015&quot;, &quot;title&quot;: &quot;ReportingApp-015&quot;}, {&quot;app_id&quot;: &quot;app016&quot;, &quot;title&quot;: &quot;MobileApp-016&quot;}, {&quot;app_id&quot;: &quot;app017&quot;, &quot;title&quot;: &quot;BackupApp-017&quot;}, {&quot;app_id&quot;: &quot;app018&quot;, &quot;title&quot;: &quot;VendorApp-018&quot;}, {&quot;app_id&quot;: &quot;app019&quot;, &quot;title&quot;: &quot;QualityApp-019&quot;}, {&quot;app_id&quot;: &quot;app020&quot;, &quot;title&quot;: &quot;TrainingApp-020&quot;}, {&quot;app_id&quot;: &quot;app021&quot;, &quot;title&quot;: &quot;FleetApp-021&quot;}, {&quot;app_id&quot;: &quot;app022&quot;, &quot;title&quot;: &quot;ComplianceApp-022&quot;}, {&quot;app_id&quot;: &quot;app023&quot;, &quot;title&quot;: &quot;ChatbotApp-023&quot;}, {&quot;app_id&quot;: &quot;app024&quot;, &quot;title&quot;: &quot;AuditApp-024&quot;}, {&quot;app_id&quot;: &quot;app025&quot;, &quot;title&quot;: &quot;PortalApp-025&quot;}, {&quot;app_id&quot;: &quot;app026&quot;, &quot;title&quot;: &quot;LegacyFinApp-026&quot;}, {&quot;app_id&quot;: &quot;app027&quot;, &quot;title&quot;: &quot;DataWarehouseApp-027&quot;}, {&quot;app_id&quot;: &quot;app028&quot;, &quot;title&quot;: &quot;NotificationApp-028&quot;}, {&quot;app_id&quot;: &quot;app029&quot;, &quot;title&quot;: &quot;ConfigApp-029&quot;}, {&quot;app_id&quot;: &quot;app030&quot;, &quot;title&quot;: &quot;APIGatewayApp-030&quot;}], &quot;dashboard&quot;: {&quot;summary&quot;: {&quot;total_portfolio&quot;: 30, &quot;in_scope&quot;: 30, &quot;out_of_scope&quot;: 0, &quot;modernization_potential&quot;: 1.0, &quot;data_completeness&quot;: 1.0, &quot;annual_savings&quot;: 638225.0, &quot;migration_costs&quot;: 2188200.0, &quot;roi_years&quot;: 3.4, &quot;apps_with_eol&quot;: 0, &quot;apps_with_outdated&quot;: 0, &quot;apps_with_missing_versions&quot;: 0, &quot;priority_apps&quot;: []}, &quot;opportunities&quot;: [{&quot;title&quot;: &quot;Cost Reduction&quot;, &quot;description&quot;: &quot;Lower operational costs, reduced licensing fees&quot;, &quot;accent&quot;: &quot;orange&quot;, &quot;app_count&quot;: 0, &quot;scenario_count&quot;: 0, &quot;items&quot;: []}, {&quot;title&quot;: &quot;Agility&quot;, &quot;description&quot;: &quot;Faster deployment, improved scalability, enhanced flexibility&quot;, &quot;accent&quot;: &quot;blue&quot;, &quot;app_count&quot;: 0, &quot;scenario_count&quot;: 0, &quot;items&quot;: []}, {&quot;title&quot;: &quot;Security&quot;, &quot;description&quot;: &quot;Better compliance, reduced vulnerabilities, enhanced protection&quot;, &quot;accent&quot;: &quot;red&quot;, &quot;app_count&quot;: 0, &quot;scenario_count&quot;: 0, &quot;items&quot;: []}, {&quot;title&quot;: &quot;Sustainability&quot;, &quot;description&quot;: &quot;Reduced energy consumption, greener infrastructure&quot;, &quot;accent&quot;: &quot;teal&quot;, &quot;app_count&quot;: 0, &quot;scenario_count&quot;: 0, &quot;items&quot;: []}], &quot;roadmap&quot;: [{&quot;title&quot;: &quot;Phase 1: Quick Wins&quot;, &quot;subtitle&quot;: &quot;High Priority • Low/Medium Effort&quot;, &quot;accent&quot;: &quot;teal&quot;, &quot;total_cost&quot;: 0, &quot;total_savings&quot;: 0, &quot;roi_years&quot;: null, &quot;items&quot;: []}, {&quot;title&quot;: &quot;Phase 2: Tactical Improvements&quot;, &quot;subtitle&quot;: &quot;Medium/Low Priority • Low/Medium/High Effort&quot;, &quot;accent&quot;: &quot;maroon&quot;, &quot;total_cost&quot;: 0, &quot;total_savings&quot;: 0, &quot;roi_years&quot;: null, &quot;items&quot;: []}, {&quot;title&quot;: &quot;Phase 3: Strategic Initiatives&quot;, &quot;subtitle&quot;: &quot;High Priority • High Effort&quot;, &quot;accent&quot;: &quot;blue&quot;, &quot;total_cost&quot;: 0, &quot;total_savings&quot;: 0, &quot;roi_years&quot;: null, &quot;items&quot;: []}]}, &quot;analysis_id&quot;: &quot;67f7745f9376c1d13ea580aaa1bdfc3a&quot;}</script>
+</body>
+</html>
