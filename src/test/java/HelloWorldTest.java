@@ -2,11 +2,32 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.time.Month;
+import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HelloWorldTest {
+
+    @Test
+    void mainPrintsExpectedSections() {
+        var originalOut = System.out;
+        var output = new ByteArrayOutputStream();
+
+        try {
+            System.setOut(new PrintStream(output, true, StandardCharsets.UTF_8));
+            HelloWorld.main(new String[0]);
+        } finally {
+            System.setOut(originalOut);
+        }
+
+        var printed = output.toString(StandardCharsets.UTF_8);
+        assertTrue(printed.contains("World"));
+        assertTrue(printed.contains("Java version"));
+        assertTrue(printed.contains("Today's date"));
+    }
 
     // -----------------------------------------------------------------------
     // Greeting record
