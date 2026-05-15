@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app024",
+  "assessments": [
+    {
+      "exclusion_type": "RETIRED",
+      "applies": false,
+      "confidence": 9,
+      "reasoning": "Application status is Production."
+    },
+    {
+      "exclusion_type": "SAP",
+      "applies": false,
+      "confidence": 9,
+      "reasoning": "No SAP indicators found."
+    }
+  ],
+  "out_of_scope": false
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app008",
+  "components_analyzed": [
+    {
+      "component_name": "AIX 6",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2017-04-30",
+      "reason": "IBM AIX 6.1 reached end of service in 2017.",
+      "confidence": 9
+    },
+    {
+      "component_name": "COBOL-2014",
+      "component_family": "COBOL-2014",
+      "component_type": "language",
+      "managed_service": false,
+      "version": null,
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "COBOL is a very legacy language; while still maintained, it has a very limited modern ecosystem.",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2019",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 supported until January 2030.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Oracle Weblogic 8.0",
+      "component_family": "Oracle",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "Weblogic 8.0",
+      "component_status": "EOL",
+      "eol_date": "2008-10-31",
+      "reason": "WebLogic 8.1 reached EOL in October 2008.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2025-07-15T00:00:00Z"
+}

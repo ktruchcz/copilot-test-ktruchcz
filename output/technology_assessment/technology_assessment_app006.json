@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Debian 6",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2014-05-31",
+      "reason": "Debian 6 (Squeeze) reached EOL in May 2014.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Java 11 LTS is still receiving security updates but is superseded by Java 17 and Java 21.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-01",
+      "reason": "PostgreSQL 13 EOL November 2025; approaching end of support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Glassfish 5.0",
+      "component_family": "Glassfish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "5.0",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "GlassFish 5.0 is outdated; Eclipse GlassFish 7.x is current.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-07-15T00:00:00Z"
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app018",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "Red Hat Enterprise Linux 7 reached End of Life in June 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 8",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "EOL",
+      "eol_date": "2022-03-31",
+      "reason": "Oracle Java 8 Premier support ended March 2022; generally considered EOL.",
+      "confidence": 9
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-01",
+      "reason": "PostgreSQL 13 EOL November 2025; approaching end of support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Glassfish 4.5",
+      "component_family": "Glassfish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "4.5",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "GlassFish 4.x is EOL.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-07-15T00:00:00Z"
+}

@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app022",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "1 EOL component(s) significantly raise technical debt; 12 external interfaces drive integration complexity; 2 server(s) across 3 environment(s); Business criticality is Critical.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 12,
+    "business_criticality": "Critical",
+    "number_of_outdated_technologies": 0,
+    "number_of_eol_technologies": 1,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "Yes"
+  }
+}

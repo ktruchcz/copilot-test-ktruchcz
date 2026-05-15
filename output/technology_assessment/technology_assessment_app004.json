@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app004",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2012",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Server 2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Microsoft ended support for Windows Server 2012 in October 2023.",
+      "confidence": 9
+    },
+    {
+      "component_name": ".NET Core",
+      "component_family": ".NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Core",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Unversioned .NET Core reference likely refers to an outdated variant.",
+      "confidence": 7
+    },
+    {
+      "component_name": "SQL Server 2019",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 supported until January 2030.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS 8.0",
+      "component_family": "Microsoft",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "IIS 8.0",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "IIS 8.0 on Windows Server 2012 reached EOL in October 2023.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-07-15T00:00:00Z"
+}

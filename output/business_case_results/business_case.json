@@ -1,0 +1,1216 @@
+{
+  "analysis_id": "portfolio_analysis_2025",
+  "analysis_timestamp": "2025-07-15T00:00:00Z",
+  "portfolio_summary": {
+    "total_applications_analyzed": 26,
+    "total_implementation_cost": 6842188.17,
+    "total_annual_savings": 3823200.0,
+    "payback_period_years": 1.79,
+    "five_year_net_benefit": 12273811.83
+  },
+  "application_business_cases": [
+    {
+      "application_identifier": "app001",
+      "application_name": "ERPApp-001",
+      "complexity_score": 6,
+      "total_implementation_cost": 331114.65,
+      "total_annual_savings": 160900.0,
+      "payback_period_years": 2.06,
+      "five_year_net_benefit": 473385.35,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "implementation_cost": 346.96,
+          "annual_savings": 400.0,
+          "payback_period_years": 0.87
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app002",
+      "application_name": "CRMApp-002",
+      "complexity_score": 6,
+      "total_implementation_cost": 429072.77,
+      "total_annual_savings": 240000.0,
+      "payback_period_years": 1.79,
+      "five_year_net_benefit": 770927.23,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10800.0,
+          "payback_period_years": 1.07
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 115653.04,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        }
+      ]
+    },
+    {
+      "application_identifier": "app003",
+      "application_name": "AnalyticsApp-003",
+      "complexity_score": 5,
+      "total_implementation_cost": 31176.04,
+      "total_annual_savings": 25000.0,
+      "payback_period_years": 1.25,
+      "five_year_net_benefit": 93823.96,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1005.68,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.01
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.03
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 10056.79,
+          "annual_savings": 10800.0,
+          "payback_period_years": 0.93
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.86
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 10056.79,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.01
+        }
+      ]
+    },
+    {
+      "application_identifier": "app004",
+      "application_name": "HRApp-004",
+      "complexity_score": 6,
+      "total_implementation_cost": 342332.99,
+      "total_annual_savings": 165000.0,
+      "payback_period_years": 2.07,
+      "five_year_net_benefit": 482667.01,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10800.0,
+          "payback_period_years": 1.07
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app006",
+      "application_name": "SupportApp-006",
+      "complexity_score": 6,
+      "total_implementation_cost": 440638.07,
+      "total_annual_savings": 250000.0,
+      "payback_period_years": 1.76,
+      "five_year_net_benefit": 809361.93,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10800.0,
+          "payback_period_years": 1.07
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 115653.04,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.16
+        }
+      ]
+    },
+    {
+      "application_identifier": "app008",
+      "application_name": "InventoryApp-008",
+      "complexity_score": 6,
+      "total_implementation_cost": 331114.65,
+      "total_annual_savings": 161700.0,
+      "payback_period_years": 2.05,
+      "five_year_net_benefit": 477385.35,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "implementation_cost": 346.96,
+          "annual_savings": 400.0,
+          "payback_period_years": 0.87
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10800.0,
+          "payback_period_years": 1.07
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app010",
+      "application_name": "PayrollApp-010",
+      "complexity_score": 5,
+      "total_implementation_cost": 362044.29,
+      "total_annual_savings": 228700.0,
+      "payback_period_years": 1.58,
+      "five_year_net_benefit": 781455.71,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.03
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.86
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 100567.86,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.12
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 251419.65,
+          "annual_savings": 135000.0,
+          "payback_period_years": 1.86
+        }
+      ]
+    },
+    {
+      "application_identifier": "app011",
+      "application_name": "RouteOptApp-011",
+      "complexity_score": 5,
+      "total_implementation_cost": 21119.25,
+      "total_annual_savings": 15000.0,
+      "payback_period_years": 1.41,
+      "five_year_net_benefit": 53880.75,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1005.68,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.01
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.03
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 10056.79,
+          "annual_savings": 10800.0,
+          "payback_period_years": 0.93
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.86
+        }
+      ]
+    },
+    {
+      "application_identifier": "app012",
+      "application_name": "IoTSensorApp-012",
+      "complexity_score": 5,
+      "total_implementation_cost": 261476.43,
+      "total_annual_savings": 138700.0,
+      "payback_period_years": 1.89,
+      "five_year_net_benefit": 432023.57,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.03
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.86
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 251419.65,
+          "annual_savings": 135000.0,
+          "payback_period_years": 1.86
+        }
+      ]
+    },
+    {
+      "application_identifier": "app013",
+      "application_name": "SecurityApp-013",
+      "complexity_score": 7,
+      "total_implementation_cost": 194181.45,
+      "total_annual_savings": 108500.0,
+      "payback_period_years": 1.79,
+      "five_year_net_benefit": 348318.55,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1330.01,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.66
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 1000.0,
+          "payback_period_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 13300.1,
+          "annual_savings": 9600.0,
+          "payback_period_years": 1.39
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 2400.0,
+          "payback_period_years": 2.77
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 133000.99,
+          "annual_savings": 80000.0,
+          "payback_period_years": 1.66
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 33250.25,
+          "annual_savings": 15000.0,
+          "payback_period_years": 2.22
+        }
+      ]
+    },
+    {
+      "application_identifier": "app014",
+      "application_name": "DocumentApp-014",
+      "complexity_score": 6,
+      "total_implementation_cost": 416350.94,
+      "total_annual_savings": 228700.0,
+      "payback_period_years": 1.82,
+      "five_year_net_benefit": 727149.06,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 115653.04,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        }
+      ]
+    },
+    {
+      "application_identifier": "app015",
+      "application_name": "ReportingApp-015",
+      "complexity_score": 4,
+      "total_implementation_cost": 323566.16,
+      "total_annual_savings": 238700.0,
+      "payback_period_years": 1.36,
+      "five_year_net_benefit": 869933.84,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 4372.52,
+          "annual_savings": 1000.0,
+          "payback_period_years": 4.37
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 4372.52,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.62
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 87450.31,
+          "annual_savings": 90000.0,
+          "payback_period_years": 0.97
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 218625.78,
+          "annual_savings": 135000.0,
+          "payback_period_years": 1.62
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 8745.03,
+          "annual_savings": 10000.0,
+          "payback_period_years": 0.87
+        }
+      ]
+    },
+    {
+      "application_identifier": "app016",
+      "application_name": "MobileApp-016",
+      "complexity_score": 6,
+      "total_implementation_cost": 53200.39,
+      "total_annual_savings": 30000.0,
+      "payback_period_years": 1.77,
+      "five_year_net_benefit": 96799.61,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10800.0,
+          "payback_period_years": 1.07
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app017",
+      "application_name": "BackupApp-017",
+      "complexity_score": 7,
+      "total_implementation_cost": 539984.04,
+      "total_annual_savings": 238500.0,
+      "payback_period_years": 2.26,
+      "five_year_net_benefit": 652515.96,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1330.01,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.66
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 1000.0,
+          "payback_period_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 13300.1,
+          "annual_savings": 9600.0,
+          "payback_period_years": 1.39
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 2400.0,
+          "payback_period_years": 2.77
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 133000.99,
+          "annual_savings": 80000.0,
+          "payback_period_years": 1.66
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 332502.49,
+          "annual_savings": 120000.0,
+          "payback_period_years": 2.77
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 13300.1,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.33
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 33250.25,
+          "annual_savings": 15000.0,
+          "payback_period_years": 2.22
+        }
+      ]
+    },
+    {
+      "application_identifier": "app018",
+      "application_name": "VendorApp-018",
+      "complexity_score": 7,
+      "total_implementation_cost": 174231.3,
+      "total_annual_savings": 103500.0,
+      "payback_period_years": 1.68,
+      "five_year_net_benefit": 343268.7,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1330.01,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.66
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 1000.0,
+          "payback_period_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 13300.1,
+          "annual_savings": 9600.0,
+          "payback_period_years": 1.39
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 2400.0,
+          "payback_period_years": 2.77
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 133000.99,
+          "annual_savings": 80000.0,
+          "payback_period_years": 1.66
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 13300.1,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.33
+        }
+      ]
+    },
+    {
+      "application_identifier": "app019",
+      "application_name": "QualityApp-019",
+      "complexity_score": 5,
+      "total_implementation_cost": 110624.64,
+      "total_annual_savings": 93700.0,
+      "payback_period_years": 1.18,
+      "five_year_net_benefit": 357875.36,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.03
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.86
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 100567.86,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.12
+        }
+      ]
+    },
+    {
+      "application_identifier": "app020",
+      "application_name": "TrainingApp-020",
+      "complexity_score": 6,
+      "total_implementation_cost": 469551.33,
+      "total_annual_savings": 265000.0,
+      "payback_period_years": 1.77,
+      "five_year_net_benefit": 855448.67,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10800.0,
+          "payback_period_years": 1.07
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 115653.04,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app021",
+      "application_name": "FleetApp-021",
+      "complexity_score": 6,
+      "total_implementation_cost": 456829.5,
+      "total_annual_savings": 253700.0,
+      "payback_period_years": 1.8,
+      "five_year_net_benefit": 811670.5,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 115653.04,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app022",
+      "application_name": "ComplianceApp-022",
+      "complexity_score": 6,
+      "total_implementation_cost": 12721.83,
+      "total_annual_savings": 4200.0,
+      "payback_period_years": 3.03,
+      "five_year_net_benefit": 8278.17,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        }
+      ]
+    },
+    {
+      "application_identifier": "app023",
+      "application_name": "ChatbotApp-023",
+      "complexity_score": 5,
+      "total_implementation_cost": 20113.57,
+      "total_annual_savings": 13700.0,
+      "payback_period_years": 1.47,
+      "five_year_net_benefit": 48386.43,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.03
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.86
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 10056.79,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.01
+        }
+      ]
+    },
+    {
+      "application_identifier": "app024",
+      "application_name": "AuditApp-024",
+      "complexity_score": 6,
+      "total_implementation_cost": 456829.5,
+      "total_annual_savings": 253700.0,
+      "payback_period_years": 1.8,
+      "five_year_net_benefit": 811670.5,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 115653.04,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.29
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app025",
+      "application_name": "PortalApp-025",
+      "complexity_score": 4,
+      "total_implementation_cost": 227370.82,
+      "total_annual_savings": 138700.0,
+      "payback_period_years": 1.64,
+      "five_year_net_benefit": 466129.18,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 4372.52,
+          "annual_savings": 1000.0,
+          "payback_period_years": 4.37
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 4372.52,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.62
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 218625.78,
+          "annual_savings": 135000.0,
+          "payback_period_years": 1.62
+        }
+      ]
+    },
+    {
+      "application_identifier": "app026",
+      "application_name": "LegacyFinApp-026",
+      "complexity_score": 6,
+      "total_implementation_cost": 331114.65,
+      "total_annual_savings": 160900.0,
+      "payback_period_years": 2.06,
+      "five_year_net_benefit": 473385.35,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "status": "APPLICABLE",
+          "implementation_cost": 346.96,
+          "annual_savings": 400.0,
+          "payback_period_years": 0.87
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 289132.6,
+          "annual_savings": 135000.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.16
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app027",
+      "application_name": "DataWarehouseApp-027",
+      "complexity_score": 6,
+      "total_implementation_cost": 168853.43,
+      "total_annual_savings": 120000.0,
+      "payback_period_years": 1.41,
+      "five_year_net_benefit": 431146.57,
+      "scenario_details": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "status": "APPLICABLE",
+          "implementation_cost": 1156.53,
+          "annual_savings": 500.0,
+          "payback_period_years": 2.31
+        },
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.78
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 11565.3,
+          "annual_savings": 10800.0,
+          "payback_period_years": 1.07
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5782.65,
+          "annual_savings": 2700.0,
+          "payback_period_years": 2.14
+        },
+        {
+          "scenario_id": "app_containerization",
+          "status": "APPLICABLE",
+          "implementation_cost": 115653.04,
+          "annual_savings": 90000.0,
+          "payback_period_years": 1.29
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 28913.26,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.93
+        }
+      ]
+    },
+    {
+      "application_identifier": "app028",
+      "application_name": "NotificationApp-028",
+      "complexity_score": 5,
+      "total_implementation_cost": 296675.18,
+      "total_annual_savings": 163700.0,
+      "payback_period_years": 1.81,
+      "five_year_net_benefit": 521824.82,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 1000.0,
+          "payback_period_years": 5.03
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 5028.39,
+          "annual_savings": 2700.0,
+          "payback_period_years": 1.86
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "status": "APPLICABLE",
+          "implementation_cost": 251419.65,
+          "annual_savings": 135000.0,
+          "payback_period_years": 1.86
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 10056.79,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.01
+        },
+        {
+          "scenario_id": "switch_db_engine_open_source",
+          "status": "APPLICABLE",
+          "implementation_cost": 25141.96,
+          "annual_savings": 15000.0,
+          "payback_period_years": 1.68
+        }
+      ]
+    },
+    {
+      "application_identifier": "app030",
+      "application_name": "APIGatewayApp-030",
+      "complexity_score": 7,
+      "total_implementation_cost": 39900.3,
+      "total_annual_savings": 23000.0,
+      "payback_period_years": 1.73,
+      "five_year_net_benefit": 75099.7,
+      "scenario_details": [
+        {
+          "scenario_id": "switch_to_arm_cpu",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 1000.0,
+          "payback_period_years": 6.65
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "status": "APPLICABLE",
+          "implementation_cost": 13300.1,
+          "annual_savings": 9600.0,
+          "payback_period_years": 1.39
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "status": "APPLICABLE",
+          "implementation_cost": 6650.05,
+          "annual_savings": 2400.0,
+          "payback_period_years": 2.77
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "status": "APPLICABLE",
+          "implementation_cost": 13300.1,
+          "annual_savings": 10000.0,
+          "payback_period_years": 1.33
+        }
+      ]
+    }
+  ]
+}

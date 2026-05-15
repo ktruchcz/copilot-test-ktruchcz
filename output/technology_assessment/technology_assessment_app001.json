@@ -1,0 +1,42 @@
+{
+  "application_identifier": "app001",
+  "components_analyzed": [
+    {
+      "component_name": "AIX 7.2",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "AIX 7.2 is still supported by IBM but is a proprietary aging Unix system with limited cloud compatibility.",
+      "confidence": 8
+    },
+    {
+      "component_name": "COBOL-2014",
+      "component_family": "COBOL-2014",
+      "component_type": "language",
+      "managed_service": false,
+      "version": null,
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "COBOL is a very legacy language; while still maintained, it has a very limited modern ecosystem.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Oracle 19c",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "19c",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-04-30",
+      "reason": "Oracle 19c LTS Premier Support ended April 2024; Extended Support through 2026.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2025-07-15T00:00:00Z"
+}

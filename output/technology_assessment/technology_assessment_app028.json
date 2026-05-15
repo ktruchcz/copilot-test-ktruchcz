@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app028",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is supported until January 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 17",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-09-30",
+      "reason": "Java 17 LTS is supported until September 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Oracle 19c",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "19c",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-04-30",
+      "reason": "Oracle 19c LTS Premier Support ended April 2024; Extended Support through 2026.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Microsoft IIS 10.0 is the current version.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-07-15T00:00:00Z"
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app022",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "Red Hat Enterprise Linux 7 reached End of Life in June 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Scala 2.13",
+      "component_family": "Scala",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2.13",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Scala 2.13 is actively maintained.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 14",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "14",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-11-01",
+      "reason": "PostgreSQL 14 supported until November 2026.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Payara 6.0",
+      "component_family": "Payara",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "6.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Payara 6 Community is the current version.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-07-15T00:00:00Z"
+}

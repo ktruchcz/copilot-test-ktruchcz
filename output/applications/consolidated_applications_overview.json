@@ -1,0 +1,13 @@
+{
+  "analysis_id": "portfolio_analysis_2025",
+  "applications_overview": {
+    "total_applications": 30,
+    "valid_applications": 30,
+    "invalid_applications": 0,
+    "application_id_field": "app_id",
+    "application_name_field": "app_name",
+    "application_description_field": "app_description",
+    "invalid_applications_list": []
+  },
+  "timestamp": "2025-07-15T00:00:00Z"
+}
