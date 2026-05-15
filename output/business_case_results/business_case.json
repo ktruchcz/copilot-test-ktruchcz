@@ -1,0 +1,98 @@
+{
+  "analysis_source": "discover/input/apps_db_complete.xlsx",
+  "analysis_timestamp": "2026-05-15T13:10:59Z",
+  "portfolio_summary": {
+    "total_applications": 30,
+    "total_applications_assessed": 26,
+    "in_scope_applications": 26,
+    "out_of_scope_applications": 4,
+    "applications_with_opportunities": 26,
+    "total_one_time_cost": 5582550,
+    "total_one_time_costs": 5582550,
+    "total_yearly_savings": 3029000,
+    "break_even_years": 1.8,
+    "roi_years": 1.8,
+    "apps_with_opportunities": 26,
+    "total_applicable_scenario_instances": 97
+  },
+  "out_of_scope_applications": [
+    "app005",
+    "app007",
+    "app009",
+    "app029"
+  ],
+  "top_risk_applications": [
+    "app018",
+    "app030",
+    "app013",
+    "app017",
+    "app022"
+  ],
+  "technology_health_totals": {
+    "CURRENT_VERSION": 23,
+    "OUTDATED": 34,
+    "EOL": 34,
+    "NO_KNOWLEDGE": 13
+  },
+  "complexity_distribution": {
+    "LOW": 0,
+    "MEDIUM": 20,
+    "HIGH": 6,
+    "average_score": 5.92
+  },
+  "scenarios_summary": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "OS Update Security Patch",
+      "APPLICABLE": 21,
+      "FULFILLED": 5,
+      "applicable_count": 21,
+      "total_cost": 1250000,
+      "total_yearly_savings": 650000,
+      "roi_years": 1.9
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "App Deployment to Cloud",
+      "APPLICABLE": 8,
+      "FULFILLED": 14,
+      "PARTIALLY_FULFILLED": 4,
+      "applicable_count": 8,
+      "total_cost": 1320000,
+      "total_yearly_savings": 900000,
+      "roi_years": 1.5
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "App Containerization",
+      "APPLICABLE": 11,
+      "FULFILLED": 10,
+      "BLOCKED": 5,
+      "applicable_count": 11,
+      "total_cost": 1060000,
+      "total_yearly_savings": 550000,
+      "roi_years": 1.9
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "APPLICABLE": 11,
+      "FULFILLED": 11,
+      "LACK_OF_DATA": 4,
+      "applicable_count": 11,
+      "total_cost": 980000,
+      "total_yearly_savings": 520000,
+      "roi_years": 1.9
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "scenario_name": "Update Outdated Components",
+      "APPLICABLE": 20,
+      "BLOCKED": 6,
+      "applicable_count": 20,
+      "total_cost": 972550,
+      "total_yearly_savings": 409000,
+      "roi_years": 2.4
+    }
+  ]
+}
