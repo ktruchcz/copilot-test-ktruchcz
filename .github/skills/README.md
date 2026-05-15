@@ -24,3 +24,9 @@ These skills were extracted from the reusable migration cookbooks in `CopilotRev
 
 - `swing-to-angular-table-dialog-migrator`
 - `swing-to-angular-validation-migrator`
+
+## Obligatory Skills
+
+- `obligatory_java_hello_world_current_version_update`
+- `obligatory_ai_generated_comment_compliance`
+- `obligatory_skills_sync_pr_merge_path`
