@@ -9,10 +9,10 @@
     },
     {
       "exclusion_type": "SAP",
-      "applies": true,
+      "applies": false,
       "confidence": 9,
-      "reasoning": "SAP indicators found in name/description/solution type."
+      "reasoning": "No SAP indicators found. The application name, description, and solution type describe a generic analytics platform, not an SAP product."
     }
   ],
-  "out_of_scope": true
+  "out_of_scope": false
 }
