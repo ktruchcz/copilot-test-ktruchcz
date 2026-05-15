@@ -1,0 +1,17 @@
+{
+  "skill_name": "adf-to-spring-integration-test-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Generate a @DataJpaTest for CountryEORepository.findAllCountries using SQL fixtures that insert 14 countries. The project already has BaseRepositoryTest.",
+      "expected_output": "An integration test class extending BaseRepositoryTest with @DirtiesContext and assertions that verify the row count and at least one concrete country value.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create repository integration tests for InventoryEORepository.findLowStockItems using fixture SQL that inserts products, warehouses, and low-stock inventory rows.",
+      "expected_output": "A DataJpaTest that validates the query result size and key LowStockDTO fields based on fixture data.",
+      "files": []
+    }
+  ]
+}
