@@ -9,7 +9,6 @@ import java.time.Month;
  *   <li>Records (Java 16+)</li>
  *   <li>Text blocks (Java 15+)</li>
  *   <li>Local-variable type inference via {@code var} (Java 10+)</li>
- *   <li>Switch expressions (Java 14+)</li>
  *   <li>Sealed interfaces (Java 17)</li>
  * </ul>
  */
