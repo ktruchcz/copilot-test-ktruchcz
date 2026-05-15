@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app025",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Server 2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 extended support until January 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "ASP.NET Core",
+      "component_family": "ASP.NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "Core",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "ASP.NET Core (version not specified) — latest .NET 8 is actively supported. Marked current assuming up-to-date.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "IIS 10.0 is tied to Windows Server 2019/2022, which are actively supported.",
+      "confidence": 9
+    },
+    {
+      "component_name": "PostgreSQL 15",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-11-11",
+      "reason": "PostgreSQL 15 is actively supported until November 2027.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-15T00:00:00Z"
+}

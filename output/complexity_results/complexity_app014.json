@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app014",
+  "app_name": "DocumentApp-014",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 6,
+      "weight": 0.25,
+      "reasoning": "1 EOL component(s) detected"
+    },
+    "integration_complexity": {
+      "score": 8,
+      "weight": 0.2,
+      "reasoning": "9 external interfaces, 0 dependencies — highly integrated"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "2 server instances, 2 environments"
+    },
+    "business_criticality": {
+      "score": 6,
+      "weight": 0.15,
+      "reasoning": "Business criticality: medium, 890 users"
+    },
+    "code_and_architecture": {
+      "score": 6,
+      "weight": 0.15,
+      "reasoning": "2-tier architecture; not containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app012",
+  "app_name": "IoTSensorApp-012",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 5,
+      "weight": 0.25,
+      "reasoning": "2 outdated components — some modernization needed"
+    },
+    "integration_complexity": {
+      "score": 8,
+      "weight": 0.2,
+      "reasoning": "8 external interfaces, 0 dependencies — highly integrated"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "2 server instances, 2 environments"
+    },
+    "business_criticality": {
+      "score": 8,
+      "weight": 0.15,
+      "reasoning": "Business criticality: high, 85 users"
+    },
+    "code_and_architecture": {
+      "score": 4,
+      "weight": 0.15,
+      "reasoning": "2-tier architecture; containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 4,
+      "weight": 0.1,
+      "reasoning": "800 GB data storage"
+    }
+  }
+}

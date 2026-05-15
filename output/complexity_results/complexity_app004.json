@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app004",
+  "app_name": "HRApp-004",
+  "complexity_score": 7,
+  "complexity_level": "HIGH",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 9,
+      "weight": 0.25,
+      "reasoning": "3 EOL and 0 outdated components out of 4 — severe technical debt"
+    },
+    "integration_complexity": {
+      "score": 6,
+      "weight": 0.2,
+      "reasoning": "6 external interfaces, 0 dependencies — moderately integrated"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "2 server instances, 2 environments"
+    },
+    "business_criticality": {
+      "score": 9,
+      "weight": 0.15,
+      "reasoning": "Business criticality: high, 670 users"
+    },
+    "code_and_architecture": {
+      "score": 4,
+      "weight": 0.15,
+      "reasoning": "2-tier architecture; containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 4,
+      "weight": 0.1,
+      "reasoning": "750 GB data storage"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app024",
+  "app_name": "AuditApp-024",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 6,
+      "weight": 0.25,
+      "reasoning": "2 EOL component(s) detected"
+    },
+    "integration_complexity": {
+      "score": 4,
+      "weight": 0.2,
+      "reasoning": "3 external interfaces — some integrations"
+    },
+    "infrastructure_scale": {
+      "score": 3,
+      "weight": 0.15,
+      "reasoning": "1 server instance(s), 2 environment(s)"
+    },
+    "business_criticality": {
+      "score": 8,
+      "weight": 0.15,
+      "reasoning": "Business criticality: high, 95 users"
+    },
+    "code_and_architecture": {
+      "score": 10,
+      "weight": 0.15,
+      "reasoning": "2-tier architecture; not containerized; no CI/CD; legacy language: vb.net"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

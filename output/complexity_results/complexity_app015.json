@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app015",
+  "app_name": "ReportingApp-015",
+  "complexity_score": 4,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 4,
+      "weight": 0.25,
+      "reasoning": "1 outdated component"
+    },
+    "integration_complexity": {
+      "score": 6,
+      "weight": 0.2,
+      "reasoning": "4 external interfaces, 0 dependencies — moderately integrated"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "1 server instances, 4 environments"
+    },
+    "business_criticality": {
+      "score": 2,
+      "weight": 0.15,
+      "reasoning": "Business criticality: low, 340 users"
+    },
+    "code_and_architecture": {
+      "score": 6,
+      "weight": 0.15,
+      "reasoning": "2-tier architecture; not containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

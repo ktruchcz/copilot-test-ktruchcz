@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app012",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2022",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Server 2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2031-10-14",
+      "reason": "Windows Server 2022 mainstream support until 2026; extended until 2031.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Rust 1.70",
+      "component_family": "Rust",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "1.70",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "Rust 1.70 (2023) is behind the current release; Rust updates every 6 weeks. Still functional but outdated.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "IIS 10.0 is tied to Windows Server 2019/2022, which are actively supported.",
+      "confidence": 9
+    },
+    {
+      "component_name": "PostgreSQL 14",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "14",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-11-12",
+      "reason": "PostgreSQL 14 reaches EOL November 2026; newer versions (15, 16) are available.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-15T00:00:00Z"
+}

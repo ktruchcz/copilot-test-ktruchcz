@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app019",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 is supported until May 2029.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Python 3.8",
+      "component_family": "Python",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "3.8",
+      "component_status": "EOL",
+      "eol_date": "2024-10-07",
+      "reason": "Python 3.8 reached end of life on October 7, 2024.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Apache Tomcat  8.0",
+      "component_family": "Apache",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "Tomcat 8.0",
+      "component_status": "EOL",
+      "eol_date": "2018-06-30",
+      "reason": "Apache Tomcat 8.0.x reached EOL in June 2018.",
+      "confidence": 9
+    },
+    {
+      "component_name": "MySQL 8.0",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-04-30",
+      "reason": "MySQL 8.0 LTS is actively supported until April 2026.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-15T00:00:00Z"
+}

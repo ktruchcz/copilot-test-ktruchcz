@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app010",
+  "app_name": "PayrollApp-010",
+  "complexity_score": 5,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 6,
+      "weight": 0.25,
+      "reasoning": "1 EOL component(s) detected"
+    },
+    "integration_complexity": {
+      "score": 6,
+      "weight": 0.2,
+      "reasoning": "4 external interfaces, 0 dependencies — moderately integrated"
+    },
+    "infrastructure_scale": {
+      "score": 3,
+      "weight": 0.15,
+      "reasoning": "1 server instance(s), 1 environment(s)"
+    },
+    "business_criticality": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "Business criticality: medium, 315 users"
+    },
+    "code_and_architecture": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "not containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

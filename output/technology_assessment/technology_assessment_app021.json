@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app021",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2022",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "Server 2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2031-10-14",
+      "reason": "Windows Server 2022 mainstream support until 2026; extended until 2031.",
+      "confidence": 9
+    },
+    {
+      "component_name": "C++ 17",
+      "component_family": "C++",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "",
+      "reason": "C++17 is a widely-used standard still in active use; C++20/23 are newer but C++17 remains mainstream and supported.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "IIS 10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "IIS 10.0 is tied to Windows Server 2019/2022, which are actively supported.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Oracle 11g",
+      "component_family": "Oracle",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "11g",
+      "component_status": "EOL",
+      "eol_date": "2021-12-31",
+      "reason": "Oracle 11g (11.2) Extended Support ended December 2021.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-15T00:00:00Z"
+}

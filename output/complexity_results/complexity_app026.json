@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app026",
+  "app_name": "LegacyFinApp-026",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 5,
+      "weight": 0.25,
+      "reasoning": "3 outdated components — some modernization needed"
+    },
+    "integration_complexity": {
+      "score": 4,
+      "weight": 0.2,
+      "reasoning": "1 external interfaces — some integrations"
+    },
+    "infrastructure_scale": {
+      "score": 3,
+      "weight": 0.15,
+      "reasoning": "1 server instance(s), 2 environment(s)"
+    },
+    "business_criticality": {
+      "score": 10,
+      "weight": 0.15,
+      "reasoning": "Business criticality: critical, 150 users"
+    },
+    "code_and_architecture": {
+      "score": 10,
+      "weight": 0.15,
+      "reasoning": "monolithic 1-tier architecture; not containerized; no CI/CD; legacy language: fortran 2018"
+    },
+    "data_complexity": {
+      "score": 6,
+      "weight": 0.1,
+      "reasoning": "IBM DB2 — complex legacy database; 1500 GB data storage"
+    }
+  }
+}

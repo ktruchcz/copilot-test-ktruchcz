@@ -1,0 +1,38 @@
+{
+  "app_id": "app001",
+  "name": "ERPApp-001",
+  "description": "Core ERP system handling financial transactions, general ledger, and regulatory reporting",
+  "Solution type": "Custom made",
+  "criticality": "High",
+  "Application status": "Production",
+  "Decomission date": "2027",
+  "Deployment type": "On-Premise",
+  "data classification": "Confidential",
+  "business unit": "Finance",
+  "business capabilities": [
+    "Financial Planning",
+    "Accounting",
+    "Budgeting"
+  ],
+  "number of users": "350",
+  "Operating system": "AIX 7.2",
+  "programming language": "COBOL-2014",
+  "Application Server type": null,
+  "Application Architecture": "1-Tier",
+  "Application is containerized": "No",
+  "Number of environments": "2",
+  "Physical servers instances": [
+    "sv01",
+    "sv02"
+  ],
+  "external interfaces": "5",
+  "db_engine": "Oracle 19c",
+  "DB storage in GB": "1000",
+  "DB License required": "Yes",
+  "logging_solution": null,
+  "monitoring_tool": null,
+  "ci_cd_present": "No",
+  "cpu_cores": "4",
+  "memory_gb": "16",
+  "api_endpoint_count": ""
+}

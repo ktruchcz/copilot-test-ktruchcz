@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app020",
+  "app_name": "TrainingApp-020",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 9,
+      "weight": 0.25,
+      "reasoning": "3 EOL and 1 outdated components out of 4 — severe technical debt"
+    },
+    "integration_complexity": {
+      "score": 6,
+      "weight": 0.2,
+      "reasoning": "7 external interfaces, 0 dependencies — moderately integrated"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "1 server instances, 3 environments"
+    },
+    "business_criticality": {
+      "score": 3,
+      "weight": 0.15,
+      "reasoning": "Business criticality: low, 750 users"
+    },
+    "code_and_architecture": {
+      "score": 6,
+      "weight": 0.15,
+      "reasoning": "2-tier architecture; not containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 4,
+      "weight": 0.1,
+      "reasoning": "600 GB data storage"
+    }
+  }
+}

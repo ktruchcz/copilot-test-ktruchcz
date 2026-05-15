@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app030",
+  "app_name": "APIGatewayApp-030",
+  "complexity_score": 7,
+  "complexity_level": "HIGH",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 9,
+      "weight": 0.25,
+      "reasoning": "3 EOL and 0 outdated components out of 4 — severe technical debt"
+    },
+    "integration_complexity": {
+      "score": 8,
+      "weight": 0.2,
+      "reasoning": "30 external interfaces, 0 dependencies — highly integrated"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "2 server instances, 4 environments"
+    },
+    "business_criticality": {
+      "score": 9,
+      "weight": 0.15,
+      "reasoning": "Business criticality: high, 1800 users"
+    },
+    "code_and_architecture": {
+      "score": 2,
+      "weight": 0.15,
+      "reasoning": "3-tier architecture; containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

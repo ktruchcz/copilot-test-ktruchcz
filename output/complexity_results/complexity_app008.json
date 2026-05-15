@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app008",
+  "app_name": "InventoryApp-008",
+  "complexity_score": 7,
+  "complexity_level": "HIGH",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 9,
+      "weight": 0.25,
+      "reasoning": "3 EOL and 0 outdated components out of 4 — severe technical debt"
+    },
+    "integration_complexity": {
+      "score": 4,
+      "weight": 0.2,
+      "reasoning": "2 external interfaces — some integrations"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "2 server instances, 3 environments"
+    },
+    "business_criticality": {
+      "score": 9,
+      "weight": 0.15,
+      "reasoning": "Business criticality: high, 875 users"
+    },
+    "code_and_architecture": {
+      "score": 10,
+      "weight": 0.15,
+      "reasoning": "monolithic 1-tier architecture; not containerized; no CI/CD; legacy language: cobol-2014"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

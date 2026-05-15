@@ -1,0 +1,38 @@
+{
+  "app_id": "app027",
+  "name": "DataWarehouseApp-027",
+  "description": "Enterprise data warehouse for consolidating business data from multiple sources",
+  "Solution type": "Custom made",
+  "criticality": "High",
+  "Application status": "Production",
+  "Decomission date": "not planned",
+  "Deployment type": "AWS, On-premise",
+  "data classification": "Internal",
+  "business unit": "BI",
+  "business capabilities": [
+    "Data Warehousing",
+    "ETL Processing",
+    "Business Intelligence"
+  ],
+  "number of users": "320",
+  "Operating system": "RHEL 7",
+  "programming language": "Java 11",
+  "Application Server type": "Websphere 8.5",
+  "Application Architecture": "3-Tier",
+  "Application is containerized": "No",
+  "Number of environments": "3",
+  "Physical servers instances": [
+    "sv39",
+    "sv40"
+  ],
+  "external interfaces": "20",
+  "db_engine": "SQL Server 2022",
+  "DB storage in GB": "5000",
+  "DB License required": "Yes",
+  "logging_solution": "Splunk",
+  "monitoring_tool": "CloudWatch",
+  "ci_cd_present": "Yes",
+  "cpu_cores": "16",
+  "memory_gb": "128",
+  "api_endpoint_count": "5"
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Debian 6",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2016-02-29",
+      "reason": "Debian 6 (Squeeze) reached EOL in February 2016.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 LTS: Premier/standard support ended Sep 2023 for many distros; still receiving updates via some vendors but superseded by Java 17/21.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Glassfish 5.0",
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "5.0",
+      "component_status": "OUTDATED",
+      "eol_date": "",
+      "reason": "GlassFish 5.0 is community-supported; Payara (fork) is preferred. Minimal active maintenance.",
+      "confidence": 9
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 reaches EOL in November 2025; aging version.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-15T00:00:00Z"
+}

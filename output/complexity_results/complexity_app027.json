@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app027",
+  "app_name": "DataWarehouseApp-027",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 7,
+      "weight": 0.25,
+      "reasoning": "1 EOL and 2 outdated components — significant aging"
+    },
+    "integration_complexity": {
+      "score": 8,
+      "weight": 0.2,
+      "reasoning": "20 external interfaces, 0 dependencies — highly integrated"
+    },
+    "infrastructure_scale": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "2 server instances, 3 environments"
+    },
+    "business_criticality": {
+      "score": 8,
+      "weight": 0.15,
+      "reasoning": "Business criticality: high, 320 users"
+    },
+    "code_and_architecture": {
+      "score": 4,
+      "weight": 0.15,
+      "reasoning": "3-tier architecture; not containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 5,
+      "weight": 0.1,
+      "reasoning": "5000 GB data storage; large data volume"
+    }
+  }
+}

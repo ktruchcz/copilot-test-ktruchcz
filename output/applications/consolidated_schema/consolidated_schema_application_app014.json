@@ -1,0 +1,38 @@
+{
+  "app_id": "app014",
+  "name": "DocumentApp-014",
+  "description": "Document management system for handling shipping documents, contracts, and regulatory paperwork",
+  "Solution type": "Open Source",
+  "criticality": "Medium",
+  "Application status": "Production",
+  "Decomission date": "not planned",
+  "Deployment type": "AWS",
+  "data classification": "Internal",
+  "business unit": "Operations",
+  "business capabilities": [
+    "Document Management",
+    "Workflow Automation",
+    "Content Management"
+  ],
+  "number of users": "890",
+  "Operating system": "Windows Server 2019",
+  "programming language": "C# .NET 6",
+  "Application Server type": "Microsoft IIS 10.0",
+  "Application Architecture": "2-Tier",
+  "Application is containerized": "No",
+  "Number of environments": "2",
+  "Physical servers instances": [
+    "sv19",
+    "sv20"
+  ],
+  "external interfaces": "9",
+  "db_engine": "MySQL 8.0",
+  "DB storage in GB": "120",
+  "DB License required": "No",
+  "logging_solution": "ELK",
+  "monitoring_tool": "CloudWatch",
+  "ci_cd_present": "Yes",
+  "cpu_cores": "1",
+  "memory_gb": "4",
+  "api_endpoint_count": "18"
+}

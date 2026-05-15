@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app018",
+  "app_name": "VendorApp-018",
+  "complexity_score": 6,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 7,
+      "weight": 0.25,
+      "reasoning": "2 EOL and 2 outdated components — significant aging"
+    },
+    "integration_complexity": {
+      "score": 6,
+      "weight": 0.2,
+      "reasoning": "6 external interfaces, 0 dependencies — moderately integrated"
+    },
+    "infrastructure_scale": {
+      "score": 8,
+      "weight": 0.15,
+      "reasoning": "2 server instances, 6 environments"
+    },
+    "business_criticality": {
+      "score": 5,
+      "weight": 0.15,
+      "reasoning": "Business criticality: medium, 260 users"
+    },
+    "code_and_architecture": {
+      "score": 6,
+      "weight": 0.15,
+      "reasoning": "3-tier architecture; not containerized; no CI/CD"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

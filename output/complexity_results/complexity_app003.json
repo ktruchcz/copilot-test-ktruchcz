@@ -1,0 +1,39 @@
+{
+  "application_identifier": "app003",
+  "app_name": "AnalyticsApp-003",
+  "complexity_score": 4,
+  "complexity_level": "MEDIUM",
+  "confidence": 8,
+  "factor_scores": {
+    "technology_age": {
+      "score": 7,
+      "weight": 0.25,
+      "reasoning": "2 EOL and 2 outdated components — significant aging"
+    },
+    "integration_complexity": {
+      "score": 4,
+      "weight": 0.2,
+      "reasoning": "3 external interfaces — some integrations"
+    },
+    "infrastructure_scale": {
+      "score": 3,
+      "weight": 0.15,
+      "reasoning": "1 server instance(s), 1 environment(s)"
+    },
+    "business_criticality": {
+      "score": 2,
+      "weight": 0.15,
+      "reasoning": "Business criticality: low, 480 users"
+    },
+    "code_and_architecture": {
+      "score": 2,
+      "weight": 0.15,
+      "reasoning": "3-tier architecture; containerized; CI/CD present"
+    },
+    "data_complexity": {
+      "score": 3,
+      "weight": 0.1,
+      "reasoning": "Standard data complexity"
+    }
+  }
+}

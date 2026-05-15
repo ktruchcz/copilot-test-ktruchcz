@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app027",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached End of Maintenance Support on June 30, 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java 11",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 LTS: Premier/standard support ended Sep 2023 for many distros; still receiving updates via some vendors but superseded by Java 17/21.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Websphere 8.5",
+      "component_family": "Websphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.5",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-09-30",
+      "reason": "IBM WebSphere 8.5.5 extended support until Sep 2025; end of support approaching.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server 2022",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "Server 2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "SQL Server 2022 is the current release, mainstream support until 2028.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-15T00:00:00Z"
+}
