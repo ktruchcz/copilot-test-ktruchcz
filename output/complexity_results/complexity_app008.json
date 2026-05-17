@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app008",
+  "complexity_score": 7,
+  "confidence": 7,
+  "reasoning": "High criticality application with 2 interfaces, 2 servers, and 2 EOL/1 outdated technologies.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 2,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 2,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "application_identifier": "app023",
+  "scenarios_detailed": [
+    {
+      "id": "os_update_security_patch",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "RHEL 8 is within supported lifecycle.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "switch_to_standard_linux_os",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "RHEL 8 already belongs to a standard Linux family.",
+      "confidence": 8,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "switch_to_arm_cpu",
+      "status": "LACK_OF_DATA",
+      "match_type": "ai",
+      "reason": "CPU architecture is not documented in the workbook, so ARM suitability cannot be assessed confidently.",
+      "confidence": 4,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "Apache Tomcat. 7.4 is assessed as NO_KNOWLEDGE and should be modernized or replaced.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Deployment target already points to AWS/public cloud only.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "app_containerization",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "Application is already containerized.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "app_refactor_decoupling",
+      "status": "NOT_APPLICABLE",
+      "match_type": "ai",
+      "reason": "No clear evidence of customer-controlled monolithic architecture was found.",
+      "confidence": 6,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "upgrade_legacy_databases",
+      "status": "LACK_OF_DATA",
+      "match_type": "ai",
+      "reason": "Database engine/version details are insufficient to determine upgrade need.",
+      "confidence": 5,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "switch_db_engine_open_source",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "MongoDB already uses an open-source-compatible engine family.",
+      "confidence": 8,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    },
+    {
+      "id": "update_outdated_components",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "One or more application components are outdated or end-of-life.",
+      "confidence": 9,
+      "source": {
+        "document_id": "",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "AI-powered chatbot system for handling customer inquiries and providing automated support",
+        "relevance": "Derived from normalized application metadata and assessment outputs."
+      }
+    }
+  ]
+}

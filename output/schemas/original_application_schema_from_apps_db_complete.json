@@ -1,0 +1,136 @@
+{
+  "source_file": "apps_db_complete.xlsx",
+  "sheet_name": "App Details",
+  "headers": [
+    "app_id",
+    "name",
+    "description",
+    "Solution type",
+    "criticality",
+    "Application status",
+    "Decomission date",
+    "Deployment type",
+    "data classification",
+    "business unit",
+    "business capabilities",
+    "number of users",
+    "Operating system",
+    "programming language",
+    "Application Server type",
+    "Application Architecture",
+    "Application is containerized",
+    "Number of environments",
+    "Physical servers instances",
+    "cpu_cores",
+    "memory in GB",
+    "production environments",
+    "CI_CD present",
+    "number of Api endpoints",
+    "external interfaces",
+    "Physical Database Server instance",
+    "db_engine",
+    "DB storage in GB",
+    "DB License required",
+    "logging_solution",
+    "monitoring_tool"
+  ],
+  "field_types": {
+    "app_id": [
+      "str"
+    ],
+    "name": [
+      "str"
+    ],
+    "description": [
+      "str"
+    ],
+    "Solution type": [
+      "str"
+    ],
+    "criticality": [
+      "str"
+    ],
+    "Application status": [
+      "str"
+    ],
+    "Decomission date": [
+      "int",
+      "str"
+    ],
+    "Deployment type": [
+      "str"
+    ],
+    "data classification": [
+      "str"
+    ],
+    "business unit": [
+      "str"
+    ],
+    "business capabilities": [
+      "str"
+    ],
+    "number of users": [
+      "int"
+    ],
+    "Operating system": [
+      "str"
+    ],
+    "programming language": [
+      "str"
+    ],
+    "Application Server type": [
+      "str"
+    ],
+    "Application Architecture": [
+      "str"
+    ],
+    "Application is containerized": [
+      "str"
+    ],
+    "Number of environments": [
+      "int"
+    ],
+    "Physical servers instances": [
+      "str"
+    ],
+    "cpu_cores": [
+      "int"
+    ],
+    "memory in GB": [
+      "int"
+    ],
+    "production environments": [
+      "str"
+    ],
+    "CI_CD present": [
+      "str"
+    ],
+    "number of Api endpoints": [
+      "int"
+    ],
+    "external interfaces": [
+      "int"
+    ],
+    "Physical Database Server instance": [
+      "str"
+    ],
+    "db_engine": [
+      "str"
+    ],
+    "DB storage in GB": [
+      "int"
+    ],
+    "DB License required": [
+      "str"
+    ],
+    "logging_solution": [
+      "str"
+    ],
+    "monitoring_tool": [
+      "str"
+    ]
+  },
+  "generated_at": "2026-05-17T19:27:14Z",
+  "schema_name": "original_application_schema",
+  "column_count": 31
+}

@@ -1,0 +1,6 @@
+{
+  "schema_name": "original_relationship_model_schema_from_validated_output",
+  "relationships": [],
+  "notes": "The source workbook contains one application per row and no explicit relationship tables.",
+  "generated_at": "2026-05-17T19:27:14Z"
+}
