@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app015",
+  "complexity_score": 4,
+  "confidence": 8,
+  "reasoning": "Tech age 4/10 (EOL=0, outdated=1, unknown=2); integration 5/10 (4 interfaces); infrastructure 5/10 (1 servers, 4 envs); criticality 3/10 (Low); architecture 6/10 (arch=2-Tier, containerized=No, ci/cd=Yes); data 3/10 (1 DB(s), storage\u2248400GB).",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 4,
+    "number_of_interfaces": 4,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 0,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  }
+}

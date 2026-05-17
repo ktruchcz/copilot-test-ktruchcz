@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app018",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "RHEL 7 is beyond mainstream vendor support lifecycle.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "PostgreSQL 13 is supported but aging.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Java 8",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Java 8 is past mainstream support lifecycle.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Unknown Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework information available.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Glassfish 4.5",
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "4.5",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Glassfish 4.5 is a legacy application server version with limited/no support.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-17T19:05:20Z"
+}

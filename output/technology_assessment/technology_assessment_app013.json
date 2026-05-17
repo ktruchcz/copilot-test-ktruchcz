@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app013",
+  "components_analyzed": [
+    {
+      "component_name": "Debian 7",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Debian 7 is beyond mainstream vendor support lifecycle.",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2022",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "SQL Server 2022 is broadly within current supported releases.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Java 17",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Java 17 appears within modern baseline.",
+      "confidence": 6
+    },
+    {
+      "component_name": "Unknown Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework information available.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Websphere 8.0",
+      "component_family": "Websphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Websphere 8.0 is aging and behind current supported baselines.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-17T19:05:20Z"
+}

@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app029",
+  "assessments": [
+    {
+      "exclusion_type": "RETIRED",
+      "applies": true,
+      "confidence": 9,
+      "reasoning": "Application status indicates Retired."
+    },
+    {
+      "exclusion_type": "SAP",
+      "applies": false,
+      "confidence": 8,
+      "reasoning": "No SAP indicators found in available metadata."
+    }
+  ],
+  "out_of_scope": true
+}

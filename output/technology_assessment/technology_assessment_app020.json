@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app020",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2012",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2012",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Windows Server 2012 is beyond mainstream vendor support lifecycle.",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2016",
+      "component_family": "SQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2016",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "SQL Server 2016 is supported but aging.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Angular 15",
+      "component_family": "Angular",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Lifecycle could not be precisely determined from provided data: Angular 15.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Angular",
+      "component_family": "Angular",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Angular appears current enough for baseline.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Microsoft IIS 8.5",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.5",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Microsoft IIS 8.5 is a legacy application server version with limited/no support.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-17T19:05:20Z"
+}

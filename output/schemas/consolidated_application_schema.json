@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "Application Architecture": {
+      "type": "string"
+    },
+    "Application Server type": {
+      "type": "string"
+    },
+    "Application is containerized": {
+      "type": "string"
+    },
+    "Application status": {
+      "type": "string"
+    },
+    "CI_CD present": {
+      "type": "string"
+    },
+    "Decomission date": {
+      "type": "string"
+    },
+    "Deployment type": {
+      "type": "string"
+    },
+    "Number of environments": {
+      "type": "string"
+    },
+    "Operating system": {
+      "type": "string"
+    },
+    "Physical servers instances": {
+      "type": "string"
+    },
+    "Solution type": {
+      "type": "string"
+    },
+    "app_id": {
+      "type": "string"
+    },
+    "business unit": {
+      "type": "string"
+    },
+    "criticality": {
+      "type": "string"
+    },
+    "data classification": {
+      "type": "string"
+    },
+    "db_engine": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "external interfaces": {
+      "type": "string"
+    },
+    "framework": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "number of Api endpoints": {
+      "type": "string"
+    },
+    "number of users": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "programming language": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "app_id",
+    "name"
+  ]
+}

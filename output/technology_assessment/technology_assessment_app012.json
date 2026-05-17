@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app012",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2022",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Windows Server 2022 is within active support window.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 14",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "14",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "PostgreSQL 14 is broadly within current supported releases.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Rust 1.70",
+      "component_family": "Rust",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "1.70",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Rust 1.70 appears within modern baseline.",
+      "confidence": 6
+    },
+    {
+      "component_name": "Unknown Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework information available.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Microsoft IIS 10.0 appears within supported baseline.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-17T19:05:20Z"
+}

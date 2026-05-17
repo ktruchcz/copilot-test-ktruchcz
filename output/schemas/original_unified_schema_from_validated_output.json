@@ -1,0 +1,29 @@
+{
+  "fields": [
+    "Application Architecture",
+    "Application Server type",
+    "Application is containerized",
+    "Application status",
+    "CI_CD present",
+    "Decomission date",
+    "Deployment type",
+    "Number of environments",
+    "Operating system",
+    "Physical servers instances",
+    "Solution type",
+    "app_id",
+    "business unit",
+    "criticality",
+    "data classification",
+    "db_engine",
+    "dependencies",
+    "description",
+    "external interfaces",
+    "framework",
+    "name",
+    "number of Api endpoints",
+    "number of users",
+    "owner",
+    "programming language"
+  ]
+}

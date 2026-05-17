@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app030",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 8",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "RHEL 8 is within active support window.",
+      "confidence": 8
+    },
+    {
+      "component_name": "MySQL 5.7",
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "5.7",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "MySQL 5.7 has reached end of support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Go 1.19",
+      "component_family": "Go",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "1.19",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Go 1.19 is supported/usable but no longer current.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Unknown Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework information available.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Glassfish 3.0",
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "3.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Glassfish 3.0 is a legacy application server version with limited/no support.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-17T19:05:20Z"
+}

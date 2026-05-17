@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app025",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Windows",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Windows Server 2019 is supported but aging.",
+      "confidence": 7
+    },
+    {
+      "component_name": "PostgreSQL 15",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "PostgreSQL 15 is broadly within current supported releases.",
+      "confidence": 7
+    },
+    {
+      "component_name": "ASP.NET Core",
+      "component_family": "ASP.NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Lifecycle could not be precisely determined from provided data: ASP.NET Core.",
+      "confidence": 5
+    },
+    {
+      "component_name": "ASP.NET Core",
+      "component_family": "ASP.NET",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "ASP.NET Core appears currently supported.",
+      "confidence": 6
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "Microsoft",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Microsoft IIS 10.0 appears within supported baseline.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-17T19:05:20Z"
+}

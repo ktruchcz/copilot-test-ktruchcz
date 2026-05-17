@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app011",
+  "components_analyzed": [
+    {
+      "component_name": "CentOS 7",
+      "component_family": "CentOS",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "CentOS 7 is beyond mainstream vendor support lifecycle.",
+      "confidence": 8
+    },
+    {
+      "component_name": "PostgreSQL 14",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "14",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "PostgreSQL 14 is broadly within current supported releases.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Python 3.11",
+      "component_family": "Python",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "3.11",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Python 3.11 appears within modern baseline.",
+      "confidence": 6
+    },
+    {
+      "component_name": "Unknown Framework",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework information available.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Glassfish 4.0",
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "4.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Glassfish 4.0 is a legacy application server version with limited/no support.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-17T19:05:20Z"
+}
