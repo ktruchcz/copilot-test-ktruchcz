@@ -1,0 +1,250 @@
+name: Skills Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Pull request number to merge"
+        required: false
+        type: string
+      issue_number:
+        description: "Issue number linked to the PR (optional)"
+        required: false
+        type: string
+      head_branch:
+        description: "Head branch name of the PR (optional)"
+        required: false
+        type: string
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-skills-pr:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      NPM_SKILLS_SYNC_GITHUB_TOKEN: ${{ github.token }}
+    concurrency:
+      group: skills-sync-${{ github.event.pull_request.number || github.event.inputs.pr_number || github.event.inputs.head_branch || github.run_id }}
+      cancel-in-progress: false
+
+    steps:
+      - name: Resolve and normalize PR
+        id: resolve
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const repoInfo = await github.rest.repos.get({ owner, repo });
+            const defaultBranch = repoInfo.data.default_branch;
+
+            const inputPrNumberRaw = `${{ github.event.inputs.pr_number || '' }}`.trim();
+            const inputIssueNumberRaw = `${{ github.event.inputs.issue_number || '' }}`.trim();
+            const inputHeadBranch = `${{ github.event.inputs.head_branch || '' }}`.trim();
+
+            let pr;
+
+            if (context.payload.pull_request) {
+              pr = context.payload.pull_request;
+              core.info(`Using PR from event payload: #${pr.number}`);
+            }
+
+            if (!pr && inputPrNumberRaw) {
+              const prNumber = Number(inputPrNumberRaw);
+              if (!Number.isNaN(prNumber)) {
+                const prResp = await github.rest.pulls.get({
+                  owner,
+                  repo,
+                  pull_number: prNumber
+                });
+                pr = prResp.data;
+                core.info(`Using PR from input.pr_number: #${pr.number}`);
+              }
+            }
+
+            if (!pr) {
+              const openPrs = await github.paginate(github.rest.pulls.list, {
+                owner,
+                repo,
+                state: 'open',
+                sort: 'updated',
+                direction: 'desc',
+                per_page: 100
+              });
+
+              const issueNumber = Number(inputIssueNumberRaw);
+              const byHeadBranch = inputHeadBranch
+                ? openPrs.find((candidate) => candidate.head?.ref === inputHeadBranch)
+                : null;
+              const byIssueReference = !Number.isNaN(issueNumber) && issueNumber > 0
+                ? openPrs.find((candidate) => {
+                    const title = candidate.title || '';
+                    const body = candidate.body || '';
+                    const issueRef = `#${issueNumber}`;
+                    return title.includes(issueRef) || body.includes(issueRef);
+                  })
+                : null;
+              const byActor = openPrs.find((candidate) => candidate.user?.login === context.actor);
+
+              pr = byHeadBranch || byIssueReference || byActor || openPrs[0];
+              if (pr) {
+                core.info(`Resolved PR heuristically: #${pr.number}`);
+              }
+            }
+
+            if (!pr) {
+              core.setFailed('Could not resolve an open PR to sync/merge. Provide pr_number, issue_number, or head_branch.');
+              return;
+            }
+
+            if (pr.state !== 'open') {
+              core.setFailed(`PR #${pr.number} is not open (state=${pr.state}).`);
+              return;
+            }
+
+            if (pr.head?.repo?.full_name !== `${owner}/${repo}`) {
+              core.setFailed(`PR #${pr.number} comes from a fork (${pr.head?.repo?.full_name}); refusing auto-merge for safety.`);
+              return;
+            }
+
+            if (pr.draft) {
+              core.info(`PR #${pr.number} is draft; converting to ready for review.`);
+              await github.rest.pulls.readyForReview({
+                owner,
+                repo,
+                pull_number: pr.number
+              });
+
+              const refreshed = await github.rest.pulls.get({
+                owner,
+                repo,
+                pull_number: pr.number
+              });
+              pr = refreshed.data;
+            }
+
+            if (pr.base?.ref !== defaultBranch) {
+              core.info(`Retargeting PR #${pr.number} base from ${pr.base?.ref} to ${defaultBranch}.`);
+              const updated = await github.rest.pulls.update({
+                owner,
+                repo,
+                pull_number: pr.number,
+                base: defaultBranch
+              });
+              pr = updated.data;
+            }
+
+            core.setOutput('pr_number', String(pr.number));
+            core.setOutput('pr_node_id', pr.node_id);
+            core.setOutput('default_branch', defaultBranch);
+
+      - name: Try direct merge
+        id: merge
+        uses: actions/github-script@v7
+        continue-on-error: true
+        with:
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = Number('${{ steps.resolve.outputs.pr_number }}');
+
+            const methods = ['squash', 'merge', 'rebase'];
+            let lastError;
+
+            for (const merge_method of methods) {
+              try {
+                const result = await github.rest.pulls.merge({
+                  owner,
+                  repo,
+                  pull_number,
+                  merge_method
+                });
+                core.info(`PR #${pull_number} merged with method: ${merge_method}`);
+                core.setOutput('merged', 'true');
+                core.setOutput('merge_method', merge_method);
+                core.setOutput('merge_sha', result.data.sha || '');
+                return;
+              } catch (error) {
+                lastError = error;
+                core.info(`Merge method ${merge_method} failed: ${error.message}`);
+              }
+            }
+
+            core.setOutput('merged', 'false');
+            core.setOutput('merge_error', lastError ? String(lastError.message || lastError) : 'Unknown merge error');
+
+      - name: Enable auto-merge when direct merge is blocked
+        if: steps.merge.outputs.merged != 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
+          script: |
+            const prId = '${{ steps.resolve.outputs.pr_node_id }}';
+
+            const tryEnable = async (mergeMethod) => {
+              const mutation = `
+                mutation EnableAutoMerge($pullRequestId: ID!, $mergeMethod: PullRequestMergeMethod!) {
+                  enablePullRequestAutoMerge(input: {pullRequestId: $pullRequestId, mergeMethod: $mergeMethod}) {
+                    pullRequest {
+                      number
+                      autoMergeRequest {
+                        enabledAt
+                      }
+                    }
+                  }
+                }
+              `;
+
+              return github.graphql(mutation, {
+                pullRequestId: prId,
+                mergeMethod
+              });
+            };
+
+            const methods = ['SQUASH', 'MERGE', 'REBASE'];
+            let enabled = false;
+            let lastErr;
+
+            for (const method of methods) {
+              try {
+                await tryEnable(method);
+                core.info(`Enabled auto-merge using ${method}.`);
+                enabled = true;
+                break;
+              } catch (err) {
+                lastErr = err;
+                core.info(`Auto-merge method ${method} failed: ${err.message}`);
+              }
+            }
+
+            if (!enabled) {
+              core.setFailed(`Could not enable auto-merge. Last error: ${lastErr ? lastErr.message : 'unknown error'}`);
+              return;
+            }
+
+      - name: Final status
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ env.NPM_SKILLS_SYNC_GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = Number('${{ steps.resolve.outputs.pr_number }}');
+
+            const latest = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number
+            });
+
+            const pr = latest.data;
+            const autoMergeEnabled = !!pr.auto_merge;
+            core.info(`PR #${pr.number} state=${pr.state}, merged=${pr.merged}, draft=${pr.draft}, base=${pr.base.ref}, auto_merge=${autoMergeEnabled}`);
