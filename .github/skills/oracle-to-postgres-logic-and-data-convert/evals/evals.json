@@ -1,0 +1,17 @@
+{
+  "skill_name": "oracle-to-postgres-logic-and-data-convert",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Convert an Oracle schema file that creates DEPARTMENTS and EMPLOYEES, uses VARCHAR2 and NUMBER columns, inserts sample data, and relies on SYSDATE plus a trigger-backed sequence for EMPLOYEE_ID.",
+      "expected_output": "A PostgreSQL SQL file with valid table definitions, aligned INSERT statements, converted types, and a coherent identity or sequence strategy.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Migrate the provided Oracle script that contains a DEFERRABLE CHECK constraint, DELETE statements without FROM, and ADD_MONTHS logic inside a PL/SQL function so it runs on PostgreSQL.",
+      "expected_output": "PostgreSQL-compatible DDL and logic with unsupported Oracle syntax removed or rewritten and the CHECK constraint corrected.",
+      "files": []
+    }
+  ]
+}
