@@ -24,10 +24,3 @@ These skills were extracted from the reusable migration cookbooks in `CopilotRev
 
 - `swing-to-angular-table-dialog-migrator`
 - `swing-to-angular-validation-migrator`
-
-## Obligatory
-
-- `obligatory_ai_generation_comment_compliance`
-- `obligatory_mermaid_architecture_doc_sync`
-- `obligatory_java_python_migration_practices`
-- `obligatory_java_current_version_update`
