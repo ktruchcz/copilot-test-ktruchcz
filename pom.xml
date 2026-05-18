@@ -11,10 +11,10 @@
     <packaging>jar</packaging>
 
     <name>Hello World</name>
-    <description>A simple Hello World application modernized for Java 17</description>
+    <description>A simple Hello World application modernized for Java 25</description>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>25</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>

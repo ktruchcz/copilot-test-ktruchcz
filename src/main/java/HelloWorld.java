@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.Month;
 
 /**
- * Hello World application modernized for Java 17.
+ * Hello World application modernized for Java 25.
  *
  * <p>Demonstrates modern Java features:
  * <ul>
@@ -10,7 +10,7 @@ import java.time.Month;
  *   <li>Text blocks (Java 15+)</li>
  *   <li>Local-variable type inference via {@code var} (Java 10+)</li>
  *   <li>Switch expressions (Java 14+)</li>
- *   <li>Sealed interfaces (Java 17)</li>
+ *   <li>Sealed interfaces &amp; pattern matching (Java 21+)</li>
  * </ul>
  */
 public class HelloWorld {
@@ -38,7 +38,7 @@ public class HelloWorld {
         }
     }
 
-    /** Simple sealed hierarchy used in time-of-day handling. */
+    /** Simple sealed hierarchy used to show Java 21+ pattern matching in a switch. */
     sealed interface TimeOfDay permits TimeOfDay.Morning, TimeOfDay.Afternoon, TimeOfDay.Evening {
         record Morning() implements TimeOfDay {}
         record Afternoon() implements TimeOfDay {}
@@ -46,13 +46,12 @@ public class HelloWorld {
 
         /** Factory – maps an hour (0-23) to the appropriate {@link TimeOfDay}. */
         static TimeOfDay of(int hour) {
-            if (hour < 12) {
-                return new Morning();
-            }
-            if (hour < 17) {
-                return new Afternoon();
-            }
-            return new Evening();
+            // Box to Integer so the switch can use guarded pattern matching (Java 21+)
+            return switch ((Integer) hour) {
+                case Integer h when h < 12 -> new Morning();
+                case Integer h when h < 17 -> new Afternoon();
+                default                    -> new Evening();
+            };
         }
     }
 
@@ -60,13 +59,13 @@ public class HelloWorld {
         // var – local-variable type inference (Java 10+)
         var today = LocalDate.now();
 
-        // Java 17-compatible salutation mapping
+        // Switch expression with pattern matching (Java 21+)
         var timeOfDay = TimeOfDay.of(today.getDayOfMonth() % 24);
-        var salutation = timeOfDay instanceof TimeOfDay.Morning
-                ? "Good morning"
-                : timeOfDay instanceof TimeOfDay.Afternoon
-                ? "Good afternoon"
-                : "Good evening";
+        var salutation = switch (timeOfDay) {
+            case TimeOfDay.Morning   ignored -> "Good morning";
+            case TimeOfDay.Afternoon ignored -> "Good afternoon";
+            case TimeOfDay.Evening   ignored -> "Good evening";
+        };
 
         var greeting = new Greeting("World", salutation);
 
