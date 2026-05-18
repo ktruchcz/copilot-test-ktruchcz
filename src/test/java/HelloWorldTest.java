@@ -3,6 +3,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.time.Month;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -82,5 +83,43 @@ class HelloWorldTest {
     })
     void seasonOfReturnsCorrectSeason(Month month, String expected) {
         assertEquals(expected, HelloWorld.seasonOf(month));
+    }
+
+    // -----------------------------------------------------------------------
+    // monthsBySeason – Stream Gatherers (Java 24+, finalised Java 25)
+    // -----------------------------------------------------------------------
+
+    @Test
+    void monthsBySeasonReturnsFourWindows() {
+        var windows = HelloWorld.monthsBySeason();
+        assertEquals(4, windows.size(), "should produce exactly 4 windows of 3 months each");
+    }
+
+    @Test
+    void monthsBySeasonEachWindowHasThreeMonths() {
+        for (var window : HelloWorld.monthsBySeason()) {
+            assertEquals(3, window.size(), "each window must contain exactly 3 months");
+        }
+    }
+
+    @Test
+    void monthsBySeasonFirstWindowIsJanFebMar() {
+        var first = HelloWorld.monthsBySeason().getFirst();
+        assertEquals(List.of(Month.JANUARY, Month.FEBRUARY, Month.MARCH), first);
+    }
+
+    @Test
+    void monthsBySeasonLastWindowIsOctNovDec() {
+        var windows = HelloWorld.monthsBySeason();
+        var last = windows.getLast();
+        assertEquals(List.of(Month.OCTOBER, Month.NOVEMBER, Month.DECEMBER), last);
+    }
+
+    @Test
+    void monthsBySeasonCoversAllTwelveMonths() {
+        var allMonths = HelloWorld.monthsBySeason().stream()
+                .flatMap(List::stream)
+                .toList();
+        assertEquals(12, allMonths.size(), "all 12 months must appear across the windows");
     }
 }

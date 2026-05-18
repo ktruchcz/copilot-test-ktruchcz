@@ -1,8 +1,11 @@
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Gatherers;
 
 /**
- * Hello World application modernized for Java 21.
+ * Hello World application modernized for Java 25.
  *
  * <p>Demonstrates modern Java features:
  * <ul>
@@ -11,6 +14,7 @@ import java.time.Month;
  *   <li>Local-variable type inference via {@code var} (Java 10+)</li>
  *   <li>Switch expressions (Java 14+)</li>
  *   <li>Sealed interfaces &amp; pattern matching (Java 21)</li>
+ *   <li>Stream Gatherers – {@link Gatherers#windowFixed} (Java 24+, finalised Java 25)</li>
  * </ul>
  */
 public class HelloWorld {
@@ -82,6 +86,15 @@ public class HelloWorld {
                 seasonOf(today.getMonth()));
 
         System.out.print(info);
+
+        // Stream Gatherers (Java 24+, finalised Java 25) – group months into seasonal windows
+        var windows = monthsBySeason();
+        var seasonWindows = new StringBuilder("Seasonal month windows (Stream Gatherers):\n");
+        for (var window : windows) {
+            var season = seasonOf(window.get(1)); // middle month is representative
+            seasonWindows.append("  ").append(season).append(": ").append(window).append("\n");
+        }
+        System.out.print(seasonWindows);
     }
 
     /** Returns the meteorological season for the given {@link Month}. */
@@ -92,5 +105,25 @@ public class HelloWorld {
             case JUNE, JULY, AUGUST          -> "Summer";
             case SEPTEMBER, OCTOBER, NOVEMBER -> "Autumn";
         };
+    }
+
+    /**
+     * Groups all 12 calendar months into fixed windows of 3 (one per meteorological season)
+     * using the Java 24+ {@link Gatherers#windowFixed} Stream Gatherer.
+     *
+     * <p>The resulting list contains four windows:
+     * <ol>
+     *   <li>JAN–MAR (Winter/Spring transition)</li>
+     *   <li>APR–JUN (Spring/Summer transition)</li>
+     *   <li>JUL–SEP (Summer/Autumn transition)</li>
+     *   <li>OCT–DEC (Autumn/Winter transition)</li>
+     * </ol>
+     *
+     * @return an unmodifiable list of four 3-month windows
+     */
+    static List<List<Month>> monthsBySeason() {
+        return Arrays.stream(Month.values())
+                .gather(Gatherers.windowFixed(3))
+                .toList();
     }
 }
