@@ -1,5 +1,4 @@
-*.class
-
-# Maven build output
+__pycache__/
+*.py[cod]
 target/
 hook_tools_used.log
