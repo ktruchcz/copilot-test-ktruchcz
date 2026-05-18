@@ -1,0 +1,145 @@
+{
+  "application_identifier": "app026",
+  "scenarios_detailed": [
+    {
+      "id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "AIX 7.2 is assessed as OUTDATED.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "Operating system=AIX 7.2; status=OUTDATED",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "switch_to_standard_linux_os",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "The application runs on proprietary AIX, which is a direct trigger for migration to a standard Linux distribution.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "Operating system=AIX 7.2",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "switch_to_arm_cpu",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "The current OS/platform choice is a blocker for an ARM move in the scenario definition.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "Operating system=AIX 7.2",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "application_server_replacement",
+      "status": "FULFILLED",
+      "match_type": "ai",
+      "reason": "No separate application server is in use, so no replacement scenario is needed.",
+      "confidence": 9,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "Application Server type=None",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "app_deployment_to_cloud",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "The application is still on-premise, which is the main trigger for lift-and-shift cloud migration.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "Deployment type=On-Premise",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "app_containerization",
+      "status": "BLOCKED",
+      "match_type": "ai",
+      "reason": "The application runs on legacy Unix (AIX), which is listed as a containerization blocker.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "Operating system=AIX 7.2",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "Architecture and integration signals indicate a tightly coupled estate that would benefit from refactoring.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "Architecture=1-Tier; APIs=0; external interfaces=1",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "upgrade_legacy_databases",
+      "status": "LACK_OF_DATA",
+      "match_type": "ai",
+      "reason": "DB2 is assessed as NO_KNOWLEDGE.",
+      "confidence": 5,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "db_engine=DB2; status=NO_KNOWLEDGE",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "switch_db_engine_open_source",
+      "status": "APPLICABLE",
+      "match_type": "ai",
+      "reason": "DB2 is a proprietary engine, so moving to an open-source database is a valid modernization option.",
+      "confidence": 8,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "db_engine=DB2; DB License required=Yes",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    },
+    {
+      "id": "update_outdated_components",
+      "status": "LACK_OF_DATA",
+      "match_type": "ai",
+      "reason": "Component versions are too incomplete to determine whether an update program is required.",
+      "confidence": 5,
+      "source": {
+        "document_id": "app026",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "programming language=FORTRAN 2018; Application Server type=None",
+        "relevance": "Workbook row and derived technology assessment"
+      }
+    }
+  ]
+}

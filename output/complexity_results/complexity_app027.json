@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app027",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "Technology age scored 7/10 (1 component(s) are EOL.) Integration scored 8/10 (20 external interfaces and 5 API endpoints.) Infrastructure scored 6/10 (2 server instance(s) across 3 environment(s).) Business criticality scored 7/10 (Criticality is High with 320 users.) Architecture scored 3/10 (Architecture is 3-Tier; containerized=No; CI/CD=Yes.) Data complexity scored 6/10 (Database storage is 5000 GB on SQL Server 2022. )",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 20,
+    "business_criticality": "High",
+    "number_of_outdated_technologies": 2,
+    "number_of_eol_technologies": 1,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  }
+}

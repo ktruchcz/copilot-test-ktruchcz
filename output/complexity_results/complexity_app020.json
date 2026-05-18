@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app020",
+  "complexity_score": 6,
+  "confidence": 8,
+  "reasoning": "Technology age scored 9/10 (4 components are EOL.) Integration scored 7/10 (7 external interfaces and 14 API endpoints.) Infrastructure scored 6/10 (1 server instance(s) across 3 environment(s).) Business criticality scored 2/10 (Criticality is Low with 750 users.) Architecture scored 5/10 (Architecture is 2-Tier; containerized=No; CI/CD=Yes.) Data complexity scored 5/10 (Database storage is 600 GB on SQL Server 2016. )",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 3,
+    "number_of_interfaces": 7,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 4,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "No"
+  }
+}

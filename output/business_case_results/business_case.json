@@ -1,0 +1,1067 @@
+{
+  "assessment_date": "2026-05-18",
+  "portfolio_summary": {
+    "total_applications_assessed": 26,
+    "applications_with_opportunities": 26,
+    "total_applicable_scenarios": 98,
+    "total_one_time_costs": 3973887,
+    "total_yearly_savings": 2067600,
+    "roi_years": 1.9
+  },
+  "scenarios_summary": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
+      "applicable_count": 21,
+      "total_cost": 24363,
+      "total_yearly_savings": 10500,
+      "roi_years": 2.3
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "applicable_count": 17,
+      "total_cost": 195778,
+      "total_yearly_savings": 170000,
+      "roi_years": 1.2
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
+      "applicable_count": 11,
+      "total_cost": 127896,
+      "total_yearly_savings": 115200,
+      "roi_years": 1.1
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
+      "applicable_count": 10,
+      "total_cost": 2978068,
+      "total_yearly_savings": 1320000,
+      "roi_years": 2.3
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+      "applicable_count": 8,
+      "total_cost": 48865,
+      "total_yearly_savings": 20700,
+      "roi_years": 2.4
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "applicable_count": 5,
+      "total_cost": 597876,
+      "total_yearly_savings": 430000,
+      "roi_years": 1.4
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
+      "applicable_count": 3,
+      "total_cost": 1041,
+      "total_yearly_savings": 1200,
+      "roi_years": 0.9
+    }
+  ],
+  "application_details": [
+    {
+      "app_id": "app028",
+      "app_name": "NotificationApp-028",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        }
+      ],
+      "total_cost": 1157,
+      "total_yearly_savings": 500,
+      "roi_years": 2.3,
+      "total_applicable_scenarios": 1
+    },
+    {
+      "app_id": "app016",
+      "app_name": "MobileApp-016",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 24287,
+      "total_yearly_savings": 21300,
+      "roi_years": 1.1,
+      "total_applicable_scenarios": 5
+    },
+    {
+      "app_id": "app013",
+      "app_name": "SecurityApp-013",
+      "complexity_score": 7,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 1330,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 13300,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 9600
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 6650,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 2400
+        },
+        {
+          "scenario_id": "app_containerization",
+          "base_cost": 100000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 133001,
+          "base_yearly_savings": 100000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 80000
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 332502,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 120000
+        }
+      ],
+      "total_cost": 486783,
+      "total_yearly_savings": 212500,
+      "roi_years": 2.3,
+      "total_applicable_scenarios": 7
+    },
+    {
+      "app_id": "app023",
+      "app_name": "ChatbotApp-023",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        }
+      ],
+      "total_cost": 11565,
+      "total_yearly_savings": 10800,
+      "roi_years": 1.1,
+      "total_applicable_scenarios": 2
+    },
+    {
+      "app_id": "app010",
+      "app_name": "PayrollApp-010",
+      "complexity_score": 5,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 1006,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 10057,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 11063,
+      "total_yearly_savings": 10500,
+      "roi_years": 1.1,
+      "total_applicable_scenarios": 2
+    },
+    {
+      "app_id": "app008",
+      "app_name": "InventoryApp-008",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "base_cost": 300,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 347,
+          "base_yearly_savings": 400,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 400
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 5783,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 2700
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 319550,
+      "total_yearly_savings": 159400,
+      "roi_years": 2.0,
+      "total_applicable_scenarios": 8
+    },
+    {
+      "app_id": "app003",
+      "app_name": "AnalyticsApp-003",
+      "complexity_score": 5,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 1006,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 10057,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 10057,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 21120,
+      "total_yearly_savings": 21300,
+      "roi_years": 1.0,
+      "total_applicable_scenarios": 4
+    },
+    {
+      "app_id": "app022",
+      "app_name": "ComplianceApp-022",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 12722,
+      "total_yearly_savings": 10500,
+      "roi_years": 1.2,
+      "total_applicable_scenarios": 2
+    },
+    {
+      "app_id": "app015",
+      "app_name": "ReportingApp-015",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        }
+      ],
+      "total_cost": 1157,
+      "total_yearly_savings": 500,
+      "roi_years": 2.3,
+      "total_applicable_scenarios": 2
+    },
+    {
+      "app_id": "app024",
+      "app_name": "AuditApp-024",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 5783,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 2700
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 18505,
+      "total_yearly_savings": 13200,
+      "roi_years": 1.4,
+      "total_applicable_scenarios": 4
+    },
+    {
+      "app_id": "app004",
+      "app_name": "HRApp-004",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 313420,
+      "total_yearly_savings": 156300,
+      "roi_years": 2.0,
+      "total_applicable_scenarios": 6
+    },
+    {
+      "app_id": "app001",
+      "app_name": "ERPApp-001",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "base_cost": 300,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 347,
+          "base_yearly_savings": 400,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 400
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 5783,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 2700
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        }
+      ],
+      "total_cost": 296420,
+      "total_yearly_savings": 138600,
+      "roi_years": 2.1,
+      "total_applicable_scenarios": 5
+    },
+    {
+      "app_id": "app011",
+      "app_name": "RouteOptApp-011",
+      "complexity_score": 5,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 1006,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 10057,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 10057,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 21120,
+      "total_yearly_savings": 21300,
+      "roi_years": 1.0,
+      "total_applicable_scenarios": 4
+    },
+    {
+      "app_id": "app012",
+      "app_name": "IoTSensorApp-012",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 300698,
+      "total_yearly_savings": 145000,
+      "roi_years": 2.1,
+      "total_applicable_scenarios": 3
+    },
+    {
+      "app_id": "app017",
+      "app_name": "BackupApp-017",
+      "complexity_score": 7,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 1330,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 6650,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 2400
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 13300,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 21280,
+      "total_yearly_savings": 12900,
+      "roi_years": 1.6,
+      "total_applicable_scenarios": 3
+    },
+    {
+      "app_id": "app025",
+      "app_name": "PortalApp-025",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        }
+      ],
+      "total_cost": 290290,
+      "total_yearly_savings": 135500,
+      "roi_years": 2.1,
+      "total_applicable_scenarios": 2
+    },
+    {
+      "app_id": "app030",
+      "app_name": "APIGatewayApp-030",
+      "complexity_score": 7,
+      "scenarios": [
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 13300,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 9600
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 13300,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 26600,
+      "total_yearly_savings": 19600,
+      "roi_years": 1.4,
+      "total_applicable_scenarios": 3
+    },
+    {
+      "app_id": "app014",
+      "app_name": "DocumentApp-014",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "app_containerization",
+          "base_cost": 100000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 115653,
+          "base_yearly_savings": 100000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 90000
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 417508,
+      "total_yearly_savings": 235500,
+      "roi_years": 1.8,
+      "total_applicable_scenarios": 5
+    },
+    {
+      "app_id": "app002",
+      "app_name": "CRMApp-002",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        }
+      ],
+      "total_cost": 1157,
+      "total_yearly_savings": 500,
+      "roi_years": 2.3,
+      "total_applicable_scenarios": 1
+    },
+    {
+      "app_id": "app020",
+      "app_name": "TrainingApp-020",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 12722,
+      "total_yearly_savings": 10500,
+      "roi_years": 1.2,
+      "total_applicable_scenarios": 2
+    },
+    {
+      "app_id": "app006",
+      "app_name": "SupportApp-006",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 12722,
+      "total_yearly_savings": 10500,
+      "roi_years": 1.2,
+      "total_applicable_scenarios": 2
+    },
+    {
+      "app_id": "app018",
+      "app_name": "VendorApp-018",
+      "complexity_score": 7,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 1330,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 13300,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 9600
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 6650,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 2400
+        },
+        {
+          "scenario_id": "app_containerization",
+          "base_cost": 100000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 133001,
+          "base_yearly_savings": 100000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 80000
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 332502,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.8,
+          "adjusted_yearly_savings": 120000
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.33,
+          "adjusted_cost": 13300,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 500083,
+      "total_yearly_savings": 222500,
+      "roi_years": 2.2,
+      "total_applicable_scenarios": 7
+    },
+    {
+      "app_id": "app026",
+      "app_name": "LegacyFinApp-026",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "switch_to_standard_linux_os",
+          "base_cost": 300,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 347,
+          "base_yearly_savings": 400,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 400
+        },
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 5783,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 2700
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        }
+      ],
+      "total_cost": 296420,
+      "total_yearly_savings": 138600,
+      "roi_years": 2.1,
+      "total_applicable_scenarios": 5
+    },
+    {
+      "app_id": "app019",
+      "app_name": "QualityApp-019",
+      "complexity_score": 5,
+      "scenarios": [
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 10057,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        },
+        {
+          "scenario_id": "app_containerization",
+          "base_cost": 100000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 100568,
+          "base_yearly_savings": 100000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 90000
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.01,
+          "adjusted_cost": 10057,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 120682,
+      "total_yearly_savings": 110800,
+      "roi_years": 1.1,
+      "total_applicable_scenarios": 4
+    },
+    {
+      "app_id": "app021",
+      "app_name": "FleetApp-021",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "app_deployment_to_cloud",
+          "base_cost": 5000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 5783,
+          "base_yearly_savings": 3000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 2700
+        },
+        {
+          "scenario_id": "upgrade_legacy_databases",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 10000,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 10000
+        }
+      ],
+      "total_cost": 17348,
+      "total_yearly_savings": 12700,
+      "roi_years": 1.4,
+      "total_applicable_scenarios": 3
+    },
+    {
+      "app_id": "app027",
+      "app_name": "DataWarehouseApp-027",
+      "complexity_score": 6,
+      "scenarios": [
+        {
+          "scenario_id": "os_update_security_patch",
+          "base_cost": 1000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 1157,
+          "base_yearly_savings": 500,
+          "savings_multiplier": 1.0,
+          "adjusted_yearly_savings": 500
+        },
+        {
+          "scenario_id": "application_server_replacement",
+          "base_cost": 10000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 11565,
+          "base_yearly_savings": 12000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 10800
+        },
+        {
+          "scenario_id": "app_containerization",
+          "base_cost": 100000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 115653,
+          "base_yearly_savings": 100000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 90000
+        },
+        {
+          "scenario_id": "app_refactor_decoupling",
+          "base_cost": 250000,
+          "cost_multiplier": 1.16,
+          "adjusted_cost": 289133,
+          "base_yearly_savings": 150000,
+          "savings_multiplier": 0.9,
+          "adjusted_yearly_savings": 135000
+        }
+      ],
+      "total_cost": 417508,
+      "total_yearly_savings": 236300,
+      "roi_years": 1.8,
+      "total_applicable_scenarios": 6
+    }
+  ],
+  "missing_finance_config_scenarios": [
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "affected_applications": [
+        "app016",
+        "app013",
+        "app008",
+        "app024",
+        "app004",
+        "app001",
+        "app026",
+        "app021",
+        "app027"
+      ]
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "affected_applications": [
+        "app016",
+        "app013",
+        "app023",
+        "app008",
+        "app003",
+        "app015",
+        "app004",
+        "app011",
+        "app012",
+        "app030",
+        "app014",
+        "app018",
+        "app019",
+        "app027"
+      ]
+    }
+  ]
+}

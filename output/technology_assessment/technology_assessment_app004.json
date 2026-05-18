@@ -1,0 +1,64 @@
+{
+  "application_identifier": "app004",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Windows Server 2012 is past Microsoft end of support.",
+      "confidence": 9
+    },
+    {
+      "component_name": ".NET",
+      "component_family": ".NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "unknown",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "unknown",
+      "reason": "The entry says .NET Core but no version is provided.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "IIS",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "8.x",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "IIS 8.x is tied to Windows Server 2012-era platforms.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "db",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "OUTDATED",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 remains supported but is not the current major release.",
+      "confidence": 8
+    },
+    {
+      "component_name": ".NET",
+      "component_family": ".NET",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "unknown",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "unknown",
+      "reason": "The .NET Core framework version is not provided.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}

@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app006",
+  "components_analyzed": [
+    {
+      "component_name": "Debian",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2016-02-29",
+      "reason": "Debian 6 is no longer supported.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 trails newer LTS releases.",
+      "confidence": 8
+    },
+    {
+      "component_name": "GlassFish",
+      "component_family": "GlassFish",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "5.0",
+      "component_status": "OUTDATED",
+      "eol_date": "unknown",
+      "reason": "GlassFish 5 is not a current advancing server line.",
+      "confidence": 6
+    },
+    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
+      "component_type": "db",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "EOL",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 fell out of community support in late 2025.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}

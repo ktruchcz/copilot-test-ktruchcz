@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app003",
+  "complexity_score": 5,
+  "confidence": 8,
+  "reasoning": "Technology age scored 9/10 (4 components are EOL.) Integration scored 5/10 (3 external interfaces and 8 API endpoints.) Infrastructure scored 2/10 (1 server instance(s) across 1 environment(s).) Business criticality scored 2/10 (Criticality is Low with 480 users.) Architecture scored 2/10 (Architecture is 3-Tier; containerized=Yes; CI/CD=Yes.) Data complexity scored 6/10 (Database storage is 200 GB on PostgreSQL 13. )",
+  "contributing_factors": {
+    "number_of_servers": 1,
+    "number_of_databases": 1,
+    "number_of_environments": 1,
+    "number_of_interfaces": 3,
+    "business_criticality": "Low",
+    "number_of_outdated_technologies": 0,
+    "number_of_eol_technologies": 4,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "Yes",
+    "containerized": "Yes"
+  }
+}

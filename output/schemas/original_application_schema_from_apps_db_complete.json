@@ -1,0 +1,130 @@
+{
+  "source_file": "discover/input/apps_db_complete.xlsx",
+  "sheet_name": "App Details",
+  "columns": [
+    {
+      "name": "app_id",
+      "sample_type": "string"
+    },
+    {
+      "name": "name",
+      "sample_type": "string"
+    },
+    {
+      "name": "description",
+      "sample_type": "string"
+    },
+    {
+      "name": "Solution type",
+      "sample_type": "string"
+    },
+    {
+      "name": "criticality",
+      "sample_type": "string"
+    },
+    {
+      "name": "Application status",
+      "sample_type": "string"
+    },
+    {
+      "name": "Decomission date",
+      "sample_type": "integer"
+    },
+    {
+      "name": "Deployment type",
+      "sample_type": "string"
+    },
+    {
+      "name": "data classification",
+      "sample_type": "string"
+    },
+    {
+      "name": "business unit",
+      "sample_type": "string"
+    },
+    {
+      "name": "business capabilities",
+      "sample_type": "string"
+    },
+    {
+      "name": "number of users",
+      "sample_type": "integer"
+    },
+    {
+      "name": "Operating system",
+      "sample_type": "string"
+    },
+    {
+      "name": "programming language",
+      "sample_type": "string"
+    },
+    {
+      "name": "Application Server type",
+      "sample_type": "string"
+    },
+    {
+      "name": "Application Architecture",
+      "sample_type": "string"
+    },
+    {
+      "name": "Application is containerized",
+      "sample_type": "string"
+    },
+    {
+      "name": "Number of environments",
+      "sample_type": "integer"
+    },
+    {
+      "name": "Physical servers instances",
+      "sample_type": "string"
+    },
+    {
+      "name": "cpu_cores",
+      "sample_type": "integer"
+    },
+    {
+      "name": "memory in GB",
+      "sample_type": "integer"
+    },
+    {
+      "name": "production environments",
+      "sample_type": "string"
+    },
+    {
+      "name": "CI_CD present",
+      "sample_type": "string"
+    },
+    {
+      "name": "number of Api endpoints",
+      "sample_type": "integer"
+    },
+    {
+      "name": "external interfaces",
+      "sample_type": "integer"
+    },
+    {
+      "name": "Physical Database Server instance",
+      "sample_type": "string"
+    },
+    {
+      "name": "db_engine",
+      "sample_type": "string"
+    },
+    {
+      "name": "DB storage in GB",
+      "sample_type": "integer"
+    },
+    {
+      "name": "DB License required",
+      "sample_type": "string"
+    },
+    {
+      "name": "logging_solution",
+      "sample_type": "string"
+    },
+    {
+      "name": "monitoring_tool",
+      "sample_type": "string"
+    }
+  ]
+}

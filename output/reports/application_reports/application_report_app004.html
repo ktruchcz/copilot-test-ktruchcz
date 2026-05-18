@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Report - HRApp-004 - GenDiscover</title>
+  <style>
+    :root {
+      --primary-dark: #081722;
+      --report-background: #102737;
+      --section-background: #163244;
+      --accent: #1ec8d7;
+      --accent-rgb: 30, 200, 215;
+      --report-text-font-primary: #e9f7ff;
+      --report-text-font-secondary-rgb: 184, 216, 232;
+      --text-light-blue-rgb: 154, 198, 220;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(circle at top, #153044 0%, var(--primary-dark) 55%); color: var(--report-text-font-primary); font-family: "Segoe UI", "Helvetica Neue", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    code { background: rgba(255,255,255,0.08); padding: 0.1rem 0.3rem; border-radius: 4px; }
+    pre { overflow-x: auto; background: rgba(0,0,0,0.25); padding: 1rem; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.75rem; border-bottom: 1px solid rgba(var(--accent-rgb), 0.12); text-align: left; vertical-align: top; }
+    .page { max-width: 95%; margin: 0 auto; padding: 2rem 1rem; }
+    .report-shell { background: var(--report-background); border: 1px solid rgba(var(--accent-rgb), 0.15); border-radius: 1rem; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+    .header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.5rem 2rem; color: white; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); }
+    .customer-meta { font-size: 0.95rem; font-weight: 300; letter-spacing: 0.02em; }
+    .customer-meta [data-testid="customer-name"] { font-weight: 700; font-size: 1.125rem; margin-bottom: 0.25rem; }
+    .logo { height: 45px; width: auto; }
+    .logo svg { height: 100%; width: auto; }
+    .logo path { fill: white; }
+    .content { padding: 2rem; }
+    .title-card { background: var(--section-background); border: 1px solid rgba(var(--accent-rgb), 0.15); border-radius: 0.75rem; box-shadow: 0 8px 20px rgba(0,0,0,0.18); margin-bottom: 1.5rem; padding: 1.25rem; }
+    .title-card h1 { margin: 0; padding-bottom: 1rem; border-bottom: 3px solid var(--accent); color: white; font-size: 2.5rem; text-shadow: 0 0 4px rgba(255,255,255,0.25); }
+    .lead { margin: 1rem 0 0; font-size: 1.05rem; line-height: 1.6; color: rgba(var(--report-text-font-secondary-rgb), 0.95); }
+    .section-card { background: var(--section-background); border: 1px solid rgba(var(--accent-rgb), 0.15); border-radius: 0.75rem; box-shadow: 0 8px 20px rgba(0,0,0,0.12); margin-bottom: 1.5rem; overflow: hidden; }
+    .section-card summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; cursor: pointer; padding: 1.25rem 1.5rem; }
+    .section-card summary::-webkit-details-marker { display: none; }
+    .section-card h2 { margin: 0; font-size: 1.5rem; color: white; }
+    .section-card .chevron { color: var(--accent); font-size: 1.25rem; }
+    .section-card[open] .chevron { transform: rotate(180deg); }
+    .section-body { padding: 0 1.5rem 1.5rem; color: rgba(var(--report-text-font-secondary-rgb), 0.95); line-height: 1.65; }
+    .section-body ul { margin: 0; padding-left: 1.25rem; }
+    .footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.5rem 2rem; border-top: 1px solid rgba(var(--accent-rgb), 0.2); }
+    .footer p { margin: 0.2rem 0; }
+    .footer .meta-primary { font-size: 0.875rem; font-weight: 600; color: var(--accent); }
+    .footer .meta-secondary { font-size: 0.75rem; color: rgba(var(--text-light-blue-rgb), 0.8); }
+    .footer .meta-muted { font-size: 0.75rem; color: rgba(var(--text-light-blue-rgb), 0.6); }
+    .app-link-list { display: grid; gap: 0.75rem; }
+    .app-link { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.75rem 0.9rem; border-radius: 0.5rem; background: rgba(255,255,255,0.08); transition: background-color 160ms ease; }
+    .app-link:hover { background: rgba(255,255,255,0.14); }
+    @media (max-width: 768px) {
+      .header, .footer { flex-direction: column; text-align: center; }
+      .logo { height: 35px; }
+      .content { padding: 1.25rem; }
+      .title-card h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="report-shell">
+      <div class="header">
+        <div class="customer-meta">
+          <div class="font-bold text-lg mb-1" data-testid="customer-name">Client</div>
+          <div>Application modernization with Agentic AI powered by Capgemini GenSuite</div>
+        </div>
+        <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.01 117.11">
+  <path d="M330.21,46.53c-1.44-4.78-4.35-8.97-8.21-12.52-4.17-3.82-9.13-6.71-14.33-8.89-.42-.18-.84-.35-1.26-.51h0c-6.4,7.67-28.57,13.4-28.57,29.47,0,6.29,3.97,12.16,9.81,14.52,3.63,1.23,7.53,1,11.01-.59,3.36-1.53,5.93-4.23,7.99-7.24,2.18-3.17,3.84-6.66,5.91-9.9,1.92-3.01,4.38-6.02,8.03-6.86,3.31-.77,7.22.09,9.64,2.51h-.02ZM330.36,49.79c-1.47-2.94-4.56-4.2-7.73-4.05-3.06.14-5.29,2.09-6.99,4.49-1.93,2.71-3.28,5.8-4.85,8.72-1.52,2.81-3.15,5.57-5.33,7.92-2.42,2.61-5.46,4.58-8.88,5.61,1.58,1.14,3.77,1.39,5.66,1.47,2.13.08,4.29-.11,6.39-.49,3.84-.69,7.98-2.03,10.81-4.83-4.42.06-7.99-2.92-8.31-7.4,2.85,3.45,7.15,4.77,11.46,3.55,3.78-1.07,6.81-4.06,8.03-7.78.78-2.36.85-4.93-.26-7.2h0ZM268.07,47.47c0-3.55-.21-5.92-2.53-5.92-1.06,0-1.57.21-2.5.52.82,11.99-1.89,22.55-5.19,22.55-4.34,0-2.17-25.7-11.36-25.7-8.47,0-9.69,20.52-10.65,20.52-.66,0-.76-5.39-.72-9.49.36-1.97.55-3.74.55-5.08,0-1.91-.77-5.22-5.11-3.56.15,14.67-2.79,23.54-6.09,23.54-4.85,0-4.91-13.3-4.91-16.97s.26-8.36-5.06-6.66c-.8,12.8-4.15,22.46-6.26,22.46-3.16,0-2.52-22.11-9.34-22.11-6.12,0-8.02,20.94-9.3,20.94-2.29,0,.71-23.57-8.14-23.57-4.64,0-6.49,7.87-8.3,16.68-.35,1.71-.72,1.76-.78-.17-.05-1.58-.06-3.33-.04-4.94,2.23-8.85-.49-12.13-4.59-9.76,1.32,16.34-6.18,24.33-11.93,24.33-2.08,0-3.71-.88-4.94-2.28,6.9-4.23,9.97-9.09,9.97-13.83,0-5.14-2.95-8.11-7.86-8.11-6.85,0-10.67,7.05-10.67,13.04,0,3.22.6,5.96,1.59,8.22-2.35,1.12-4.57,2.09-6.63,3.03-.18-6.17-.88-12.64-1.41-18.61-3.64-1-4.71.75-4.99,3.99-.65,7.4-3.39,11.99-5.81,11.99-1.83,0-2.94-2.22-3.07-4.58-.68-11.86,8.95-15.16,13.99-13.44,1.05-2.61-.1-4.5-4.64-4.5-5.51,0-9.63,3.35-12.65,7.64-2.02,2.87-4.34,4.9-7.44,7.35.08-.71.12-1.41.12-2.11,0-8.37-4.53-12.04-8.86-12.04-3.58,0-5.83,2.15-7.14,5.44-.32-3.3-.98-4.73-2.9-4.73-.83,0-1.96.23-3.19.83.56,1.85.78,5.93.78,8.62,0,10.06-2.88,14.57-5.66,14.57-3.17,0-3.67-11.93-3.94-16.57-.41-.14-.86-.29-1.55-.29-2.87,0-3.24,3.85-3.95,7.39-.78,3.92-3.05,8.86-6.39,8.86-2.02,0-3.28-1.95-3.44-5.46-.33-7.11,5.59-15.54,14.85-12.92,1.21-2.83-.69-4.99-4.53-4.99-6.77,0-12.36,5.07-14.8,11.06-2.48,5.49-6.82,13.56-15.64,13.56-6.23,0-10.99-5.43-10.99-16.83,0-9.83,6.19-19.16,12.8-19.16,4.62,0,5.7,4.55,5.29,8.81,2.39,1.93,6.32.14,6.32-4.67,0-3.31-2.69-8.92-11.36-8.92-10.74,0-20.23,10.71-20.23,24.78s6.92,21.68,16.71,21.68c6.18,0,12.01-3.52,16.03-10.03,1.01,5.69,4.89,8.09,7.8,8.09,4.71,0,7.78-3.05,9.46-7.17,1.05,4.13,3.26,7.19,6.93,7.19,2.59,0,4.6-1.31,6.12-3.41-.6,14.36-1.36,23.51,7.12,21.71-1.31-4.08-1.73-11.51-1.73-18.19,0-18.26,3.01-24.27,6.79-24.27,2.73,0,3.62,3.49,3.62,7.21,0,1.99-.19,4.28-.7,6.35-4.64,2.92-8.35,5.23-8.35,8.17,0,2.32,1.72,2.54,3.21,2.54,3.56,0,7.85-3.49,10.22-10.09,2.07-1.25,4.15-2.69,6.14-4.65-.07.67-.11,1.35-.11,2.03,0,6.55,2.87,10.5,7.44,10.5,3.58,0,6.27-2.54,8.17-6.35.12,2.19.19,4.21.23,6.08-7.27,3.36-15.32,6.78-15.32,16.26,0,4.91,3.54,8.61,8.16,8.61,10.13,0,12.44-10.69,12.53-23.11,3.3-1.43,5.75-2.53,8.59-3.93,2.42,3.03,5.72,4.55,8.74,4.55,5.72,0,10.01-3.03,13.46-9.17.61,4.68,1.82,9.17,4.31,9.17,4.53,0,5.45-23.69,8.82-23.69,2.58,0,.46,25.64,7.28,25.64,5.83,0,6.93-22.56,9.77-22.56,2.01,0,2.17,20.62,8.52,20.62,3.13,0,6.52-3.75,8.22-11.62.8,5.24,3.44,11.62,8.6,11.62,3.01,0,5.6-3.05,7.6-7.1.55,4.17,1.73,7.1,4.01,7.1,5.94,0,5.74-23.65,10.44-23.65,3.67,0,2.53,23.65,11.26,23.65,4.16,0,6.12-3.54,7.29-7.98,1.61,6.53,4.2,7.98,6.34,7.98,1.35,0,2.37-.47,3.71-2.07-6.75-2.93-6.18-13.58-6.18-20.46h-.03Z"/>
+</svg></div>
+      </div>
+      <div class="content">
+        <div class="title-card" data-testid="app-report-title">
+          <h1>Application Report - HRApp-004</h1>
+          <p class="lead">**ID:** app004</p>
+        </div>
+        <details open class="section-card" data-testid="section-overview">
+  <summary>
+    <div>
+      <h2>Overview</h2>
+    </div>
+    <span class="chevron">▾</span>
+  </summary>
+  <div class="section-body">
+    <p>Attribute | Value</p>
+<p>Owner | HR</p>
+<p>Environment | AWS, On-premise</p>
+<p>Business Criticality | High</p>
+<p>Users | 670</p>
+<p>Servers | 2</p>
+  </div>
+</details>
+
+<details open class="section-card" data-testid="section-technology-stack">
+  <summary>
+    <div>
+      <h2>Technology Stack</h2>
+    </div>
+    <span class="chevron">▾</span>
+  </summary>
+  <div class="section-body">
+    <p>Component | Technology | Version | Status</p>
+<p>Operating System | Windows Server | 2012 | 🔴 EOL</p>
+<p>Database | SQL Server | 2019 | 🟡 OUTDATED</p>
+<p>Language | .NET | unknown | ⚪ NO_KNOWLEDGE</p>
+<p>Framework | .NET | unknown | ⚪ NO_KNOWLEDGE</p>
+<p>App Server | Microsoft IIS | 8.x | 🔴 EOL</p>
+<pre><code>pie title Technology Health
+    &quot;Current&quot; : 0
+    &quot;Outdated&quot; : 1
+    &quot;End of Life&quot; : 2
+    &quot;Missing Version&quot; : 2</code></pre>
+  </div>
+</details>
+
+<details open class="section-card" data-testid="section-complexity-assessment">
+  <summary>
+    <div>
+      <h2>Complexity Assessment</h2>
+    </div>
+    <span class="chevron">▾</span>
+  </summary>
+  <div class="section-body">
+    <p><strong>Score:</strong> 6/10 — <strong>MEDIUM</strong> <strong>Confidence:</strong> 7</p>
+<p>Factor | Score | Notes</p>
+<p>Technology Age | 8/10 | 2 component(s) are EOL.</p>
+<p>Integration | 7/10 | 6 external interfaces and 12 API endpoints.</p>
+<p>Infrastructure | 4/10 | 2 server instance(s) across 2 environment(s).</p>
+<p>Business Criticality | 7/10 | Criticality is High with 670 users.</p>
+<p>Architecture | 4/10 | Architecture is 2-Tier; containerized=Yes; CI/CD=Yes.</p>
+<p>Data | 5/10 | Database storage is 750 GB on SQL Server 2019.</p>
+  </div>
+</details>
+
+<details open class="section-card" data-testid="section-modernization-scenarios">
+  <summary>
+    <div>
+      <h2>Modernization Scenarios</h2>
+    </div>
+    <span class="chevron">▾</span>
+  </summary>
+  <div class="section-body">
+    <h3>Applicable Scenarios</h3>
+<p>#### ✅ Operating System Update</p>
+<ul><li><strong>Priority:</strong> High</li><li><strong>Effort:</strong> Low</li><li><strong>Effects:</strong> security</li><li><strong>Cost:</strong> €1,157 (one-time)</li><li><strong>Savings:</strong> €500/year</li><li><strong>Reasoning:</strong> Windows Server 2012 is assessed as EOL.</li></ul>
+<p>#### ✅ Applications Server replacement</p>
+<ul><li><strong>Priority:</strong> Medium</li><li><strong>Effort:</strong> Medium</li><li><strong>Effects:</strong> agility, cost</li><li><strong>Cost:</strong> €11,565 (one-time)</li><li><strong>Savings:</strong> €10,800/year</li><li><strong>Reasoning:</strong> Microsoft IIS 8.0 is assessed as EOL, which directly triggers server replacement.</li></ul>
+<p>#### ✅ Application Refactoring and De-coupling</p>
+<ul><li><strong>Priority:</strong> High</li><li><strong>Effort:</strong> High</li><li><strong>Effects:</strong> agility, cost, sustainability</li><li><strong>Cost:</strong> €289,133 (one-time)</li><li><strong>Savings:</strong> €135,000/year</li><li><strong>Reasoning:</strong> Architecture and integration signals indicate a tightly coupled estate that would benefit from refactoring.</li></ul>
+<p>#### ✅ Upgrade Legacy Databases</p>
+<ul><li><strong>Priority:</strong> High</li><li><strong>Effort:</strong> Medium</li><li><strong>Effects:</strong> security, agility</li><li><strong>Cost:</strong> €11,565 (one-time)</li><li><strong>Savings:</strong> €10,000/year</li><li><strong>Reasoning:</strong> SQL Server 2019 is assessed as OUTDATED.</li></ul>
+<p>#### ✅ Switch DB Engine to open-source database solution</p>
+<ul><li><strong>Priority:</strong> High</li><li><strong>Effort:</strong> Medium</li><li><strong>Effects:</strong> cost</li><li><strong>Cost:</strong> €N/A (one-time)</li><li><strong>Savings:</strong> €N/A/year</li><li><strong>Reasoning:</strong> SQL Server 2019 is a proprietary engine, so moving to an open-source database is a valid modernization option.</li></ul>
+<p>#### ✅ Update outdated components</p>
+<ul><li><strong>Priority:</strong> High</li><li><strong>Effort:</strong> High</li><li><strong>Effects:</strong> security, agility, cost</li><li><strong>Cost:</strong> €N/A (one-time)</li><li><strong>Savings:</strong> €N/A/year</li><li><strong>Reasoning:</strong> At least one application runtime component is outdated or end of life.</li></ul>
+<h3>Not Applicable / Other</h3>
+<p>Scenario | Status | Reason</p>
+<p>Switch to standard Linux Operating System | NOT_APPLICABLE | The application already runs on Windows Server, so this Linux migration scenario is not a natural fit.</p>
+<p>Switch to ARM-based CPU | BLOCKED | The current OS/platform choice is a blocker for an ARM move in the scenario definition.</p>
+<p>Application Migration to Cloud Infrastructure (Lift &amp; Shift) | PARTIALLY_FULFILLED | The application is already partly on AWS but still has on-premise deployment, so lift-and-shift is only partially complete.</p>
+<p>Application Containerization | FULFILLED | The workbook already marks the application as containerized.</p>
+  </div>
+</details>
+
+<details open class="section-card" data-testid="section-financial-summary">
+  <summary>
+    <div>
+      <h2>Financial Summary</h2>
+    </div>
+    <span class="chevron">▾</span>
+  </summary>
+  <div class="section-body">
+    <p>Metric | Value</p>
+<p>Total One-Time Cost | €313,420</p>
+<p>Total Yearly Savings | €156,300</p>
+<p>Break-Even | 2.0 years</p>
+  </div>
+</details>
+      </div>
+      <div class="footer">
+        <div>
+          <p class="meta-primary">Generated by GenDiscover</p>
+          <p class="meta-secondary">2026-05-18T08:30:57.439963+00:00</p>
+          <p class="meta-muted">Analysis ID: 153e1a6665c08e2ac6b4e3dcf22454e6</p>
+        </div>
+        <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.01 117.11">
+  <path d="M330.21,46.53c-1.44-4.78-4.35-8.97-8.21-12.52-4.17-3.82-9.13-6.71-14.33-8.89-.42-.18-.84-.35-1.26-.51h0c-6.4,7.67-28.57,13.4-28.57,29.47,0,6.29,3.97,12.16,9.81,14.52,3.63,1.23,7.53,1,11.01-.59,3.36-1.53,5.93-4.23,7.99-7.24,2.18-3.17,3.84-6.66,5.91-9.9,1.92-3.01,4.38-6.02,8.03-6.86,3.31-.77,7.22.09,9.64,2.51h-.02ZM330.36,49.79c-1.47-2.94-4.56-4.2-7.73-4.05-3.06.14-5.29,2.09-6.99,4.49-1.93,2.71-3.28,5.8-4.85,8.72-1.52,2.81-3.15,5.57-5.33,7.92-2.42,2.61-5.46,4.58-8.88,5.61,1.58,1.14,3.77,1.39,5.66,1.47,2.13.08,4.29-.11,6.39-.49,3.84-.69,7.98-2.03,10.81-4.83-4.42.06-7.99-2.92-8.31-7.4,2.85,3.45,7.15,4.77,11.46,3.55,3.78-1.07,6.81-4.06,8.03-7.78.78-2.36.85-4.93-.26-7.2h0ZM268.07,47.47c0-3.55-.21-5.92-2.53-5.92-1.06,0-1.57.21-2.5.52.82,11.99-1.89,22.55-5.19,22.55-4.34,0-2.17-25.7-11.36-25.7-8.47,0-9.69,20.52-10.65,20.52-.66,0-.76-5.39-.72-9.49.36-1.97.55-3.74.55-5.08,0-1.91-.77-5.22-5.11-3.56.15,14.67-2.79,23.54-6.09,23.54-4.85,0-4.91-13.3-4.91-16.97s.26-8.36-5.06-6.66c-.8,12.8-4.15,22.46-6.26,22.46-3.16,0-2.52-22.11-9.34-22.11-6.12,0-8.02,20.94-9.3,20.94-2.29,0,.71-23.57-8.14-23.57-4.64,0-6.49,7.87-8.3,16.68-.35,1.71-.72,1.76-.78-.17-.05-1.58-.06-3.33-.04-4.94,2.23-8.85-.49-12.13-4.59-9.76,1.32,16.34-6.18,24.33-11.93,24.33-2.08,0-3.71-.88-4.94-2.28,6.9-4.23,9.97-9.09,9.97-13.83,0-5.14-2.95-8.11-7.86-8.11-6.85,0-10.67,7.05-10.67,13.04,0,3.22.6,5.96,1.59,8.22-2.35,1.12-4.57,2.09-6.63,3.03-.18-6.17-.88-12.64-1.41-18.61-3.64-1-4.71.75-4.99,3.99-.65,7.4-3.39,11.99-5.81,11.99-1.83,0-2.94-2.22-3.07-4.58-.68-11.86,8.95-15.16,13.99-13.44,1.05-2.61-.1-4.5-4.64-4.5-5.51,0-9.63,3.35-12.65,7.64-2.02,2.87-4.34,4.9-7.44,7.35.08-.71.12-1.41.12-2.11,0-8.37-4.53-12.04-8.86-12.04-3.58,0-5.83,2.15-7.14,5.44-.32-3.3-.98-4.73-2.9-4.73-.83,0-1.96.23-3.19.83.56,1.85.78,5.93.78,8.62,0,10.06-2.88,14.57-5.66,14.57-3.17,0-3.67-11.93-3.94-16.57-.41-.14-.86-.29-1.55-.29-2.87,0-3.24,3.85-3.95,7.39-.78,3.92-3.05,8.86-6.39,8.86-2.02,0-3.28-1.95-3.44-5.46-.33-7.11,5.59-15.54,14.85-12.92,1.21-2.83-.69-4.99-4.53-4.99-6.77,0-12.36,5.07-14.8,11.06-2.48,5.49-6.82,13.56-15.64,13.56-6.23,0-10.99-5.43-10.99-16.83,0-9.83,6.19-19.16,12.8-19.16,4.62,0,5.7,4.55,5.29,8.81,2.39,1.93,6.32.14,6.32-4.67,0-3.31-2.69-8.92-11.36-8.92-10.74,0-20.23,10.71-20.23,24.78s6.92,21.68,16.71,21.68c6.18,0,12.01-3.52,16.03-10.03,1.01,5.69,4.89,8.09,7.8,8.09,4.71,0,7.78-3.05,9.46-7.17,1.05,4.13,3.26,7.19,6.93,7.19,2.59,0,4.6-1.31,6.12-3.41-.6,14.36-1.36,23.51,7.12,21.71-1.31-4.08-1.73-11.51-1.73-18.19,0-18.26,3.01-24.27,6.79-24.27,2.73,0,3.62,3.49,3.62,7.21,0,1.99-.19,4.28-.7,6.35-4.64,2.92-8.35,5.23-8.35,8.17,0,2.32,1.72,2.54,3.21,2.54,3.56,0,7.85-3.49,10.22-10.09,2.07-1.25,4.15-2.69,6.14-4.65-.07.67-.11,1.35-.11,2.03,0,6.55,2.87,10.5,7.44,10.5,3.58,0,6.27-2.54,8.17-6.35.12,2.19.19,4.21.23,6.08-7.27,3.36-15.32,6.78-15.32,16.26,0,4.91,3.54,8.61,8.16,8.61,10.13,0,12.44-10.69,12.53-23.11,3.3-1.43,5.75-2.53,8.59-3.93,2.42,3.03,5.72,4.55,8.74,4.55,5.72,0,10.01-3.03,13.46-9.17.61,4.68,1.82,9.17,4.31,9.17,4.53,0,5.45-23.69,8.82-23.69,2.58,0,.46,25.64,7.28,25.64,5.83,0,6.93-22.56,9.77-22.56,2.01,0,2.17,20.62,8.52,20.62,3.13,0,6.52-3.75,8.22-11.62.8,5.24,3.44,11.62,8.6,11.62,3.01,0,5.6-3.05,7.6-7.1.55,4.17,1.73,7.1,4.01,7.1,5.94,0,5.74-23.65,10.44-23.65,3.67,0,2.53,23.65,11.26,23.65,4.16,0,6.12-3.54,7.29-7.98,1.61,6.53,4.2,7.98,6.34,7.98,1.35,0,2.37-.47,3.71-2.07-6.75-2.93-6.18-13.58-6.18-20.46h-.03Z"/>
+</svg></div>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" id="report-data">{&quot;kind&quot;: &quot;application&quot;, &quot;title&quot;: &quot;Application Report - HRApp-004&quot;, &quot;lead&quot;: &quot;**ID:** app004&quot;, &quot;customer_name&quot;: &quot;Client&quot;, &quot;subtitle&quot;: &quot;Application modernization with Agentic AI powered by Capgemini GenSuite&quot;, &quot;generated_at&quot;: &quot;2026-05-18T08:30:57.439963+00:00&quot;, &quot;sections&quot;: [{&quot;title&quot;: &quot;Overview&quot;, &quot;slug&quot;: &quot;overview&quot;, &quot;html&quot;: &quot;&lt;p&gt;Attribute | Value&lt;/p&gt;\n&lt;p&gt;Owner | HR&lt;/p&gt;\n&lt;p&gt;Environment | AWS, On-premise&lt;/p&gt;\n&lt;p&gt;Business Criticality | High&lt;/p&gt;\n&lt;p&gt;Users | 670&lt;/p&gt;\n&lt;p&gt;Servers | 2&lt;/p&gt;&quot;}, {&quot;title&quot;: &quot;Technology Stack&quot;, &quot;slug&quot;: &quot;technology-stack&quot;, &quot;html&quot;: &quot;&lt;p&gt;Component | Technology | Version | Status&lt;/p&gt;\n&lt;p&gt;Operating System | Windows Server | 2012 | 🔴 EOL&lt;/p&gt;\n&lt;p&gt;Database | SQL Server | 2019 | 🟡 OUTDATED&lt;/p&gt;\n&lt;p&gt;Language | .NET | unknown | ⚪ NO_KNOWLEDGE&lt;/p&gt;\n&lt;p&gt;Framework | .NET | unknown | ⚪ NO_KNOWLEDGE&lt;/p&gt;\n&lt;p&gt;App Server | Microsoft IIS | 8.x | 🔴 EOL&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;pie title Technology Health\n    &amp;quot;Current&amp;quot; : 0\n    &amp;quot;Outdated&amp;quot; : 1\n    &amp;quot;End of Life&amp;quot; : 2\n    &amp;quot;Missing Version&amp;quot; : 2&lt;/code&gt;&lt;/pre&gt;&quot;}, {&quot;title&quot;: &quot;Complexity Assessment&quot;, &quot;slug&quot;: &quot;complexity-assessment&quot;, &quot;html&quot;: &quot;&lt;p&gt;&lt;strong&gt;Score:&lt;/strong&gt; 6/10 — &lt;strong&gt;MEDIUM&lt;/strong&gt; &lt;strong&gt;Confidence:&lt;/strong&gt; 7&lt;/p&gt;\n&lt;p&gt;Factor | Score | Notes&lt;/p&gt;\n&lt;p&gt;Technology Age | 8/10 | 2 component(s) are EOL.&lt;/p&gt;\n&lt;p&gt;Integration | 7/10 | 6 external interfaces and 12 API endpoints.&lt;/p&gt;\n&lt;p&gt;Infrastructure | 4/10 | 2 server instance(s) across 2 environment(s).&lt;/p&gt;\n&lt;p&gt;Business Criticality | 7/10 | Criticality is High with 670 users.&lt;/p&gt;\n&lt;p&gt;Architecture | 4/10 | Architecture is 2-Tier; containerized=Yes; CI/CD=Yes.&lt;/p&gt;\n&lt;p&gt;Data | 5/10 | Database storage is 750 GB on SQL Server 2019.&lt;/p&gt;&quot;}, {&quot;title&quot;: &quot;Modernization Scenarios&quot;, &quot;slug&quot;: &quot;modernization-scenarios&quot;, &quot;html&quot;: &quot;&lt;h3&gt;Applicable Scenarios&lt;/h3&gt;\n&lt;p&gt;#### ✅ Operating System Update&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; High&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effort:&lt;/strong&gt; Low&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effects:&lt;/strong&gt; security&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Cost:&lt;/strong&gt; €1,157 (one-time)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Savings:&lt;/strong&gt; €500/year&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Reasoning:&lt;/strong&gt; Windows Server 2012 is assessed as EOL.&lt;/li&gt;&lt;/ul&gt;\n&lt;p&gt;#### ✅ Applications Server replacement&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; Medium&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effort:&lt;/strong&gt; Medium&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effects:&lt;/strong&gt; agility, cost&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Cost:&lt;/strong&gt; €11,565 (one-time)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Savings:&lt;/strong&gt; €10,800/year&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Reasoning:&lt;/strong&gt; Microsoft IIS 8.0 is assessed as EOL, which directly triggers server replacement.&lt;/li&gt;&lt;/ul&gt;\n&lt;p&gt;#### ✅ Application Refactoring and De-coupling&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; High&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effort:&lt;/strong&gt; High&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effects:&lt;/strong&gt; agility, cost, sustainability&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Cost:&lt;/strong&gt; €289,133 (one-time)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Savings:&lt;/strong&gt; €135,000/year&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Reasoning:&lt;/strong&gt; Architecture and integration signals indicate a tightly coupled estate that would benefit from refactoring.&lt;/li&gt;&lt;/ul&gt;\n&lt;p&gt;#### ✅ Upgrade Legacy Databases&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; High&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effort:&lt;/strong&gt; Medium&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effects:&lt;/strong&gt; security, agility&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Cost:&lt;/strong&gt; €11,565 (one-time)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Savings:&lt;/strong&gt; €10,000/year&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Reasoning:&lt;/strong&gt; SQL Server 2019 is assessed as OUTDATED.&lt;/li&gt;&lt;/ul&gt;\n&lt;p&gt;#### ✅ Switch DB Engine to open-source database solution&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; High&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effort:&lt;/strong&gt; Medium&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effects:&lt;/strong&gt; cost&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Cost:&lt;/strong&gt; €N/A (one-time)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Savings:&lt;/strong&gt; €N/A/year&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Reasoning:&lt;/strong&gt; SQL Server 2019 is a proprietary engine, so moving to an open-source database is a valid modernization option.&lt;/li&gt;&lt;/ul&gt;\n&lt;p&gt;#### ✅ Update outdated components&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Priority:&lt;/strong&gt; High&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effort:&lt;/strong&gt; High&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Effects:&lt;/strong&gt; security, agility, cost&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Cost:&lt;/strong&gt; €N/A (one-time)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Savings:&lt;/strong&gt; €N/A/year&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Reasoning:&lt;/strong&gt; At least one application runtime component is outdated or end of life.&lt;/li&gt;&lt;/ul&gt;\n&lt;h3&gt;Not Applicable / Other&lt;/h3&gt;\n&lt;p&gt;Scenario | Status | Reason&lt;/p&gt;\n&lt;p&gt;Switch to standard Linux Operating System | NOT_APPLICABLE | The application already runs on Windows Server, so this Linux migration scenario is not a natural fit.&lt;/p&gt;\n&lt;p&gt;Switch to ARM-based CPU | BLOCKED | The current OS/platform choice is a blocker for an ARM move in the scenario definition.&lt;/p&gt;\n&lt;p&gt;Application Migration to Cloud Infrastructure (Lift &amp;amp; Shift) | PARTIALLY_FULFILLED | The application is already partly on AWS but still has on-premise deployment, so lift-and-shift is only partially complete.&lt;/p&gt;\n&lt;p&gt;Application Containerization | FULFILLED | The workbook already marks the application as containerized.&lt;/p&gt;&quot;}, {&quot;title&quot;: &quot;Financial Summary&quot;, &quot;slug&quot;: &quot;financial-summary&quot;, &quot;html&quot;: &quot;&lt;p&gt;Metric | Value&lt;/p&gt;\n&lt;p&gt;Total One-Time Cost | €313,420&lt;/p&gt;\n&lt;p&gt;Total Yearly Savings | €156,300&lt;/p&gt;\n&lt;p&gt;Break-Even | 2.0 years&lt;/p&gt;&quot;}], &quot;app_id&quot;: &quot;app004&quot;, &quot;application_name&quot;: &quot;HRApp-004&quot;, &quot;analysis_id&quot;: &quot;153e1a6665c08e2ac6b4e3dcf22454e6&quot;}</script>
+</body>
+</html>

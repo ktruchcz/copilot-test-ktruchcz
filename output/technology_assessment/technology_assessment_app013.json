@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app013",
+  "components_analyzed": [
+    {
+      "component_name": "Debian",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2018-05-31",
+      "reason": "Debian 7 is no longer supported.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-09-30",
+      "reason": "Java 17 is an actively supported LTS release.",
+      "confidence": 9
+    },
+    {
+      "component_name": "WebSphere",
+      "component_family": "WebSphere",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": "2018-04-30",
+      "reason": "WebSphere 8.0 is out of support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "db",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "SQL Server 2022 is the current SQL Server release.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}

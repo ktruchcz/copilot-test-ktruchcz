@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app026",
+  "components_analyzed": [
+    {
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "OUTDATED",
+      "eol_date": "2030-04-30",
+      "reason": "AIX 7.2 is still supportable but is not the current AIX generation.",
+      "confidence": 7
+    },
+    {
+      "component_name": "FORTRAN",
+      "component_family": "FORTRAN",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2018",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "unknown",
+      "reason": "FORTRAN support depends on the compiler vendor.",
+      "confidence": 5
+    },
+    {
+      "component_name": "None",
+      "component_family": "None",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "none",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "unknown",
+      "reason": "No dedicated application server is in use.",
+      "confidence": 9
+    },
+    {
+      "component_name": "DB2",
+      "component_family": "DB2",
+      "component_type": "db",
+      "managed_service": false,
+      "version": "unknown",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "unknown",
+      "reason": "DB2 is listed without a version.",
+      "confidence": 5
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}

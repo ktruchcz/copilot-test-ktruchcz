@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app002",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached end of maintenance support in 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 trails newer LTS releases.",
+      "confidence": 8
+    },
+    {
+      "component_name": "WebSphere",
+      "component_family": "WebSphere",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "7.0",
+      "component_status": "EOL",
+      "eol_date": "2018-04-30",
+      "reason": "WebSphere 7 is long past end of support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Amazon RDS MySQL",
+      "component_family": "MySQL",
+      "component_type": "db",
+      "managed_service": true,
+      "version": "unknown",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "unknown",
+      "reason": "The managed-service engine family is known, but the major version is not provided.",
+      "confidence": 6
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}

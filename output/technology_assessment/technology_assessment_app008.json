@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app008",
+  "components_analyzed": [
+    {
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2017-04-30",
+      "reason": "AIX 6 is long past end of support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "COBOL",
+      "component_family": "COBOL",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "unknown",
+      "reason": "COBOL support depends on the compiler/vendor distribution, which is not specified.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Oracle WebLogic",
+      "component_family": "WebLogic",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": "2011-11-30",
+      "reason": "WebLogic 8 is long out of support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "db",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "OUTDATED",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 remains supported but is not the current major release.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}

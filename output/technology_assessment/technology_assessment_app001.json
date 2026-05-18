@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app001",
+  "components_analyzed": [
+    {
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "OUTDATED",
+      "eol_date": "2030-04-30",
+      "reason": "AIX 7.2 is still supportable but is not the current AIX generation.",
+      "confidence": 7
+    },
+    {
+      "component_name": "COBOL",
+      "component_family": "COBOL",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": "unknown",
+      "reason": "COBOL support depends on the compiler/vendor distribution, which is not specified.",
+      "confidence": 5
+    },
+    {
+      "component_name": "None",
+      "component_family": "None",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "none",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "unknown",
+      "reason": "No dedicated application server is in use.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Oracle",
+      "component_family": "Oracle",
+      "component_type": "db",
+      "managed_service": false,
+      "version": "19c",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-04-30",
+      "reason": "Oracle Database 19c is a current long-term support release family.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}

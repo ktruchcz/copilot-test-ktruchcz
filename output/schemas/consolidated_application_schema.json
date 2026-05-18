@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Consolidated Application Schema",
+  "type": "object",
+  "properties": {
+    "app_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "Solution type": {
+      "type": "string"
+    },
+    "criticality": {
+      "type": "string"
+    },
+    "Application status": {
+      "type": "string"
+    },
+    "Decomission date": {
+      "type": "integer"
+    },
+    "Deployment type": {
+      "type": "string"
+    },
+    "data classification": {
+      "type": "string"
+    },
+    "business unit": {
+      "type": "string"
+    },
+    "business capabilities": {
+      "type": "string"
+    },
+    "number of users": {
+      "type": "integer"
+    },
+    "Operating system": {
+      "type": "string"
+    },
+    "programming language": {
+      "type": "string"
+    },
+    "Application Server type": {
+      "type": "string"
+    },
+    "Application Architecture": {
+      "type": "string"
+    },
+    "Application is containerized": {
+      "type": "string"
+    },
+    "Number of environments": {
+      "type": "integer"
+    },
+    "Physical servers instances": {
+      "type": "string"
+    },
+    "cpu_cores": {
+      "type": "integer"
+    },
+    "memory in GB": {
+      "type": "integer"
+    },
+    "production environments": {
+      "type": "string"
+    },
+    "CI_CD present": {
+      "type": "string"
+    },
+    "number of Api endpoints": {
+      "type": "integer"
+    },
+    "external interfaces": {
+      "type": "integer"
+    },
+    "Physical Database Server instance": {
+      "type": "string"
+    },
+    "db_engine": {
+      "type": "string"
+    },
+    "DB storage in GB": {
+      "type": "integer"
+    },
+    "DB License required": {
+      "type": "string"
+    },
+    "logging_solution": {
+      "type": "string"
+    },
+    "monitoring_tool": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "app_id",
+    "name",
+    "description"
+  ]
+}

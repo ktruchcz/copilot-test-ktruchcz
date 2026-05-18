@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app027",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached end of maintenance support in 2024.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 trails newer LTS releases.",
+      "confidence": 8
+    },
+    {
+      "component_name": "WebSphere",
+      "component_family": "WebSphere",
+      "component_type": "app_server",
+      "managed_service": false,
+      "version": "8.5",
+      "component_status": "OUTDATED",
+      "eol_date": "2029-09-30",
+      "reason": "Traditional WebSphere 8.5 is still supportable but aging.",
+      "confidence": 7
+    },
+    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
+      "component_type": "db",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "SQL Server 2022 is the current SQL Server release.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-18T08:28:16.019102+00:00"
+}
