@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.Month;
 
 /**
- * Hello World application modernized for Java 21.
+ * Hello World application modernized for Java 25.
  *
  * <p>Demonstrates modern Java features:
  * <ul>
