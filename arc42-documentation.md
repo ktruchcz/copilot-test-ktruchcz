@@ -63,11 +63,11 @@ The following top-level quality goals drive the architectural decisions of this 
 
 | ID | Constraint | Rationale |
 |----|-----------|-----------|
-| TC-01 | **Language: Java** | The source file is written in Java (`HelloWorld.java`). All tooling must support Java source analysis. |
-| TC-02 | **No build tool** | There is no `pom.xml`, `build.gradle`, or `Makefile`. Compilation relies on the `javac` command directly. |
-| TC-03 | **No external dependencies** | Only classes from `java.lang` (auto-imported) are used. No third-party JARs are required. |
-| TC-04 | **JDK ≥ 1.0** | `System.out.println` and a static `main` entry point have been valid since Java 1.0. The application places no lower bound above that. |
-| TC-05 | **Single source file** | The entire application resides in one file: `HelloWorld.java`. |
+| TC-01 | **Language: Java 21** | The source file is written in Java (`HelloWorld.java`). All tooling must support Java 21 source analysis. |
+| TC-02 | **Build tool: Maven** | The project uses `pom.xml` and Maven for compilation, dependency management, and testing. |
+| TC-03 | **JDK ≥ 21** | The project uses Java 21 language features (sealed interfaces, pattern matching in switch). JDK 21 is required to compile and run. |
+| TC-04 | **Test framework: JUnit 5** | Unit tests are written with JUnit Jupiter (`org.junit.jupiter`) and run via Maven Surefire. |
+| TC-05 | **Single source file** | The entire application resides in one file: `src/main/java/HelloWorld.java`. |
 | TC-06 | **Console / CLI only** | No GUI, no web interface, no network socket — output is exclusively to `stdout`. |
 
 ### 2.2 Organizational Constraints
@@ -75,8 +75,8 @@ The following top-level quality goals drive the architectural decisions of this 
 | ID | Constraint | Rationale |
 |----|-----------|-----------|
 | OC-01 | **Public GitHub repository** | Code is version-controlled on GitHub and is publicly visible. |
-| OC-02 | **No test suite** | No unit or integration tests exist in the repository. |
-| OC-03 | **No CI pipeline defined** | No `.github/workflows` directory is present; builds are manual. |
+| OC-02 | **Test suite present** | Unit tests exist in `src/test/java/HelloWorldTest.java` covering records, sealed interfaces, and season logic. |
+| OC-03 | **CI pipeline defined** | `.github/workflows` contains workflow definitions for automated builds and tests. |
 
 ### 2.3 Conventions
 
@@ -160,18 +160,19 @@ graph TB
 
 | Decision | Choice | Rationale |
 |---------|--------|-----------|
-| **Programming Language** | Java | Widely known, platform-independent via JVM, requires zero runtime setup beyond a standard JRE. |
-| **No framework** | Plain `java.lang` only | The requirement is trivially fulfilled by a single `println` call; a framework would be disproportionate overhead. |
-| **No build tool** | Raw `javac` | Eliminates all dependency management, wrapper scripts, and configuration files for a single-file project. |
-| **No dependencies** | Zero external JARs | `System.out.println` is part of the Java standard library, available on every conforming JRE. |
+| **Programming Language** | Java 21 | Modern Java with sealed interfaces, pattern matching, records, text blocks, and `var` inference. |
+| **Build tool** | Maven | Manages compilation, dependencies (JUnit 5), and test execution via `mvn test`. |
+| **Test framework** | JUnit Jupiter 5 | Parametrized and assertion-based unit tests for all domain logic. |
+| **No web framework** | Plain `java.lang` + `java.time` | The requirement is fulfilled by a single application class; a framework would be disproportionate overhead. |
 
 ### 4.2 Top-Level Decomposition Strategy
 
-The application deliberately adopts a **single-class, single-method** architecture:
+The application adopts a **single-class, multi-feature** architecture using Java 21 constructs:
 
-- **One class** (`HelloWorld`) — collocates all logic in one compilation unit.
-- **One method** (`main`) — the JVM entry point; no helper methods are needed.
-- **One statement** (`System.out.println(...)`) — directly satisfies FR-01.
+- **`HelloWorld`** — application entry point and orchestrator.
+- **`Greeting` (record)** — immutable value object for the greeting message.
+- **`TimeOfDay` (sealed interface)** — discriminated union with `Morning`, `Afternoon`, `Evening` subtypes.
+- **`seasonOf`** — utility method mapping a `Month` to a season string.
 
 ### 4.3 Approach to Quality Goals
 
@@ -214,10 +215,12 @@ graph TB
 
 | Block | Responsibility | Source |
 |-------|---------------|--------|
-| `HelloWorld` | Application entry point; orchestrates the single output operation. | `HelloWorld.java` |
+| `HelloWorld` | Application entry point; orchestrates greeting and info output. | `src/main/java/HelloWorld.java` |
+| `Greeting` (record) | Immutable value object; validates and formats the greeting message. | `src/main/java/HelloWorld.java` |
+| `TimeOfDay` (sealed interface) | Discriminated union: `Morning`, `Afternoon`, `Evening`; factory via `of(hour)`. | `src/main/java/HelloWorld.java` |
 | `System.out` *(external)* | JDK-provided `PrintStream`; handles byte encoding and OS-level write. | `java.lang.System` (JDK) |
 
-### 5.2 Level 2 — HelloWorld Class Whitebox
+### 5.2 Level 2 — Domain Model (Java 21 Class Diagram)
 
 ```mermaid
 classDiagram
@@ -226,30 +229,53 @@ classDiagram
     class HelloWorld {
         <<entry point>>
         +main(args : String[]) void$
+        +seasonOf(month : Month) String$
     }
 
-    class System {
-        <<java.lang>>
-        +out : PrintStream$
+    class Greeting {
+        <<record>>
+        +String recipient
+        +String message
+        +formatted() String
     }
 
-    class PrintStream {
-        <<java.io>>
-        +println(x : String) void
+    class TimeOfDay {
+        <<sealed interface>>
+        +of(hour : int) TimeOfDay$
     }
 
-    HelloWorld ..> System : uses
-    HelloWorld ..> PrintStream : calls println()
-    System --> PrintStream : out
+    class Morning {
+        <<record>>
+    }
+
+    class Afternoon {
+        <<record>>
+    }
+
+    class Evening {
+        <<record>>
+    }
+
+    HelloWorld --> Greeting : creates
+    HelloWorld --> TimeOfDay : uses
+    TimeOfDay <|-- Morning : permits
+    TimeOfDay <|-- Afternoon : permits
+    TimeOfDay <|-- Evening : permits
 ```
 
 **Method inventory:**
 
-| Class | Method | Modifier | Description |
-|-------|--------|----------|-------------|
-| `HelloWorld` | `main(String[] args)` | `public static` | JVM entry point. Calls `System.out.println("Hello World")` and returns, causing the JVM to exit with code 0. |
+| Class | Method / Field | Modifier | Description |
+|-------|----------------|----------|-------------|
+| `HelloWorld` | `main(String[] args)` | `public static` | JVM entry point; builds greeting and prints output. |
+| `HelloWorld` | `seasonOf(Month)` | `package static` | Maps a `Month` to a season string via switch expression. |
+| `Greeting` | `recipient`, `message` | record components | Validated immutable fields (blank values rejected). |
+| `Greeting` | `formatted()` | package | Returns a boxed greeting string via text block. |
+| `TimeOfDay` | `of(int hour)` | `static` | Factory; returns `Morning` (< 12), `Afternoon` (< 17), or `Evening`. |
 
-### 5.3 Level 3 — Statement-Level Detail
+### 5.3 Level 3 — Runtime Execution Flow
+
+#### 5.3.1 Internal Call Flow (flowchart)
 
 ```mermaid
 flowchart TD
@@ -258,13 +284,39 @@ flowchart TD
     classDef end_ fill:#B71C1C,stroke:#7F0000,color:#fff
 
     A(["JVM calls\nmain(args)"]):::step
-    B["Evaluate literal\n'Hello World'"]:::step
-    C["System.out.println(\n  'Hello World'\n)"]:::io
-    D["PrintStream encodes\nstring to bytes + \\n"]:::step
-    E["Write bytes to\nstdout file descriptor"]:::io
-    F(["main() returns\nJVM exits — code 0"]):::end_
+    B["LocalDate.now()"]:::step
+    C["TimeOfDay.of(hour)"]:::step
+    D{"Pattern match\ntimeOfDay"}:::step
+    E["new Greeting(World, salutation)"]:::step
+    F["greeting.formatted()"]:::io
+    G["System.out.print(greeting)"]:::io
+    H["Build info text block"]:::step
+    I["System.out.print(info)"]:::io
+    J(["main() returns\nJVM exits — code 0"]):::end_
 
-    A --> B --> C --> D --> E --> F
+    A --> B --> C --> D
+    D -->|"Morning"| E
+    D -->|"Afternoon"| E
+    D -->|"Evening"| E
+    E --> F --> G --> H --> I --> J
+```
+
+#### 5.3.2 Internal Call Sequence (sequenceDiagram)
+
+```mermaid
+sequenceDiagram
+    participant JVM
+    participant HelloWorld
+    participant TimeOfDay
+    participant Greeting
+
+    JVM->>HelloWorld: main(args)
+    HelloWorld->>TimeOfDay: of(hour)
+    TimeOfDay-->>HelloWorld: Morning | Afternoon | Evening
+    HelloWorld->>Greeting: new Greeting("World", salutation)
+    HelloWorld->>Greeting: formatted()
+    Greeting-->>HelloWorld: formatted string
+    HelloWorld->>JVM: System.out.print(greeting + info)
 ```
 
 ---
