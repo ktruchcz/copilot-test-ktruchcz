@@ -1,0 +1,48 @@
+{
+  "assessment_date": "2026-05-19",
+  "portfolio_summary": {
+    "total_applications_assessed": 26,
+    "applications_with_opportunities": 25,
+    "total_applicable_scenarios": 116,
+    "total_one_time_costs": 5308379,
+    "total_yearly_savings": 2825600,
+    "roi_years": 1.9
+  },
+  "scenarios_summary": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "OS Update Security Patch",
+      "applicable_count": 15
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Application Server Replacement",
+      "applicable_count": 14
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "applicable_count": 13
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Deployment to Cloud",
+      "applicable_count": 12
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactor Decoupling",
+      "applicable_count": 11
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "applicable_count": 11
+    }
+  ],
+  "missing_finance_config": [
+    "switch_db_engine_open_source",
+    "update_outdated_components"
+  ],
+  "application_details": []
+}
