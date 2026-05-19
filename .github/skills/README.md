@@ -2,6 +2,13 @@
 
 These skills were extracted from the reusable migration cookbooks in `CopilotRevive/cookbooks`.
 
+## Obligatory Governance
+
+- `obligatory_ai_generation_comment_compliance`
+- `obligatory_java_current_version_update`
+- `obligatory_java_python_migration_practices`
+- `obligatory_mermaid_architecture_doc_sync`
+
 ## ADF to Spring
 
 - `adf-to-spring-entity-generator`
