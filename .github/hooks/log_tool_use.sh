@@ -4,15 +4,16 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 LOG_FILE="$ROOT_DIR/hook_tools_used.log"
+RAW_PAYLOAD="$(cat || true)"
 
 if command -v python3 >/dev/null 2>&1; then
-  python3 - "$LOG_FILE" <<'PY'
+  python3 - "$LOG_FILE" "$RAW_PAYLOAD" <<'PY'
 import json
 import sys
 from datetime import datetime, timezone
 
 log_file = sys.argv[1]
-raw = sys.stdin.read().strip()
+raw = (sys.argv[2] if len(sys.argv) > 2 else "").strip()
 ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
