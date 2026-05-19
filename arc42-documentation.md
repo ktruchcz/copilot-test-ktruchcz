@@ -45,14 +45,14 @@ The following top-level quality goals drive the architectural decisions of this 
 | 1 | **Simplicity** | The application must be understandable at a glance — a single class, a single method. |
 | 2 | **Portability** | The application must run on any platform with a compatible JRE, with zero platform-specific code. |
 | 3 | **Reproducibility** | Given the same JDK version, every build and run must produce identical output. |
-| 4 | **Minimal Footprint** | No external libraries, no build scripts, no configuration files. |
+| 4 | **Minimal Footprint** | No external runtime libraries and a minimal toolchain (Maven + JUnit + GitHub Actions) kept intentionally small. |
 
 ### 1.3 Stakeholders
 
 | Role | Name / Group | Expectations |
 |------|-------------|--------------|
 | Developer | Repository owner (`ktruchcz`) | A working Java environment baseline; a sandbox for Copilot experiments. |
-| CI / Tooling System | GitHub Actions / Copilot | A valid compilable Java source file to analyse and document. |
+| CI / Tooling System | GitHub Actions / Copilot | A Java 25-compatible Maven project with passing tests and synchronized documentation. |
 | Evaluator / Reviewer | Any technical reviewer | A clear, self-explanatory example of a minimal Java program. |
 
 ---
@@ -63,11 +63,11 @@ The following top-level quality goals drive the architectural decisions of this 
 
 | ID | Constraint | Rationale |
 |----|-----------|-----------|
-| TC-01 | **Language: Java** | The source file is written in Java (`HelloWorld.java`). All tooling must support Java source analysis. |
-| TC-02 | **No build tool** | There is no `pom.xml`, `build.gradle`, or `Makefile`. Compilation relies on the `javac` command directly. |
-| TC-03 | **No external dependencies** | Only classes from `java.lang` (auto-imported) are used. No third-party JARs are required. |
-| TC-04 | **JDK ≥ 1.0** | `System.out.println` and a static `main` entry point have been valid since Java 1.0. The application places no lower bound above that. |
-| TC-05 | **Single source file** | The entire application resides in one file: `HelloWorld.java`. |
+| TC-01 | **Language: Java** | Application sources are Java (`src/main/java/HelloWorld.java`) with JUnit tests in `src/test/java`. |
+| TC-02 | **Build tool: Maven** | `pom.xml` defines compilation, test execution, and Java release configuration. |
+| TC-03 | **Test framework: JUnit 5** | Unit tests run via Maven Surefire (`src/test/java/HelloWorldTest.java`). |
+| TC-04 | **JDK 25 required** | Maven compiler is configured with `source/target/release=25`; CI also provisions Java 25. |
+| TC-05 | **Dual source layout** | The canonical source layout is Maven standard directories (`src/main/java`, `src/test/java`). |
 | TC-06 | **Console / CLI only** | No GUI, no web interface, no network socket — output is exclusively to `stdout`. |
 
 ### 2.2 Organizational Constraints
@@ -75,14 +75,14 @@ The following top-level quality goals drive the architectural decisions of this 
 | ID | Constraint | Rationale |
 |----|-----------|-----------|
 | OC-01 | **Public GitHub repository** | Code is version-controlled on GitHub and is publicly visible. |
-| OC-02 | **No test suite** | No unit or integration tests exist in the repository. |
-| OC-03 | **No CI pipeline defined** | No `.github/workflows` directory is present; builds are manual. |
+| OC-02 | **Automated test suite required** | Pull requests are expected to keep JUnit tests passing. |
+| OC-03 | **CI pipeline required** | GitHub Actions workflow (`.github/workflows/build.yml`) validates test runs on Java 25. |
 
 ### 2.3 Conventions
 
 | Convention | Details |
 |-----------|---------|
-| Naming | Class name `HelloWorld` matches file name `HelloWorld.java` (required by Java specification). |
+| Naming | Class name `HelloWorld` matches file name `src/main/java/HelloWorld.java` (required by Java specification). |
 | Encoding | UTF-8 source encoding (default for modern JDKs). |
 | Entry point | Standard Java entry point signature: `public static void main(String[] args)`. |
 
@@ -123,25 +123,31 @@ graph TB
     classDef os fill:#6A1B9A,stroke:#4A148C,color:#fff
 
     subgraph dev["🔧 Development / Build"]
-        src["HelloWorld.java\n(source file)"]:::artifact
-        javac["javac\n(Java Compiler)"]:::tool
-        class_file["HelloWorld.class\n(bytecode)"]:::artifact
+        src["src/main/java/HelloWorld.java\n(source file)"]:::artifact
+        tests["src/test/java/HelloWorldTest.java\n(test source)"]:::artifact
+        maven["Maven (mvn test)"]:::tool
+        class_file["target/classes/*.class\n(bytecode)"]:::artifact
+        reports["Surefire reports"]:::artifact
     end
 
     subgraph exec["▶️ Execution"]
         jvm["JVM\n(Java Virtual Machine)"]:::runtime
-        stdout["stdout stream\n'Hello World'"]:::artifact
+        stdout["stdout stream"]:::artifact
     end
 
     subgraph platform["💻 Host Platform"]
         os["Operating System\n(Linux / macOS / Windows)"]:::os
+        ci["GitHub Actions\nJava 25"]:::tool
     end
 
-    src -->|"compiled by"| javac
-    javac -->|"produces"| class_file
+    src -->|"compiled by"| maven
+    tests -->|"executed by"| maven
+    maven -->|"produces"| class_file
+    maven -->|"publishes"| reports
     class_file -->|"loaded by"| jvm
     jvm -->|"writes to"| stdout
-    jvm -->|"runs on"| os
+    maven -->|"runs on"| os
+    ci -->|"runs"| maven
 ```
 
 ### 3.3 External Interfaces
@@ -162,7 +168,7 @@ graph TB
 |---------|--------|-----------|
 | **Programming Language** | Java | Widely known, platform-independent via JVM, requires zero runtime setup beyond a standard JRE. |
 | **No framework** | Plain `java.lang` only | The requirement is trivially fulfilled by a single `println` call; a framework would be disproportionate overhead. |
-| **No build tool** | Raw `javac` | Eliminates all dependency management, wrapper scripts, and configuration files for a single-file project. |
+| **Build tool** | Maven (`pom.xml`) | Standardized Java 25 compilation, repeatable test execution, and CI-friendly command invocation. |
 | **No dependencies** | Zero external JARs | `System.out.println` is part of the Java standard library, available on every conforming JRE. |
 
 ### 4.2 Top-Level Decomposition Strategy
@@ -214,7 +220,7 @@ graph TB
 
 | Block | Responsibility | Source |
 |-------|---------------|--------|
-| `HelloWorld` | Application entry point; orchestrates the single output operation. | `HelloWorld.java` |
+| `HelloWorld` | Application entry point; orchestrates the output operations. | `src/main/java/HelloWorld.java` |
 | `System.out` *(external)* | JDK-provided `PrintStream`; handles byte encoding and OS-level write. | `java.lang.System` (JDK) |
 
 ### 5.2 Level 2 — HelloWorld Class Whitebox
@@ -389,7 +395,7 @@ graph TB
 
 ### 7.2 Compilation Step
 
-Before deployment/execution, the source must be compiled. There is no pre-built artifact committed to the repository.
+Before deployment/execution, the source is compiled via Maven. Build artifacts are generated under `target/` and are not committed.
 
 ```mermaid
 flowchart LR
@@ -397,29 +403,31 @@ flowchart LR
     classDef tool fill:#E65100,stroke:#BF360C,color:#fff
     classDef out fill:#1565C0,stroke:#0D47A1,color:#fff
 
-    src["📄 HelloWorld.java"]:::src
-    javac["⚙️ javac\n(JDK compiler)"]:::tool
-    bytecode["📦 HelloWorld.class"]:::out
-    jvm["▶️ java HelloWorld\n(JVM)"]:::tool
+    src["📄 src/main/java/HelloWorld.java"]:::src
+    testSrc["🧪 src/test/java/HelloWorldTest.java"]:::src
+    maven["⚙️ mvn test"]:::tool
+    bytecode["📦 target/classes/*.class"]:::out
+    jvm["▶️ JVM"]:::tool
 
-    src -->|"javac HelloWorld.java"| javac
-    javac -->|"emits"| bytecode
-    bytecode -->|"java HelloWorld"| jvm
+    src -->|"compiled by Maven"| maven
+    testSrc -->|"executed by Maven"| maven
+    maven -->|"emits"| bytecode
+    bytecode -->|"loaded and run by"| jvm
 ```
 
 ### 7.3 Deployment Variants
 
 | Variant | Description | Command Sequence |
 |---------|-------------|-----------------|
-| **Local (developer)** | Compile and run on developer workstation. | `javac HelloWorld.java` → `java HelloWorld` |
-| **CI runner** | Any GitHub Actions runner with `actions/setup-java`. | Same two commands inside a workflow step. |
-| **Docker container** | Any image based on `openjdk` or `eclipse-temurin`. | `COPY HelloWorld.java /app/` → `RUN javac HelloWorld.java` → `CMD ["java","HelloWorld"]` |
+| **Local (developer)** | Build and test on developer workstation. | `mvn clean test` |
+| **CI runner** | GitHub Actions runner using `actions/setup-java` with Java 25. | `mvn -B --no-transfer-progress test` |
+| **Docker container** | Any image based on `eclipse-temurin:25`. | `COPY . /app` → `RUN mvn --no-transfer-progress test` |
 
 ### 7.4 Minimum System Requirements
 
 | Requirement | Value |
 |------------|-------|
-| Java Runtime | JRE 1.0 or later (JDK required to compile) |
+| Java Runtime | JDK 25 (project release target and CI baseline) |
 | Disk space (source) | < 1 KB |
 | Disk space (bytecode) | < 1 KB |
 | RAM | ≥ JVM base overhead (~10–30 MB) |
@@ -501,17 +509,17 @@ No additional design patterns (GoF, enterprise, etc.) are applicable at this sca
 
 ---
 
-### ADR-002 — No Build Tool (Raw javac)
+### ADR-002 — Use Maven for Build and Test Automation
 
 | Field | Value |
 |-------|-------|
 | **Status** | Accepted |
-| **Date** | Project inception |
-| **Context** | Single-file project with no dependencies. |
-| **Decision** | Compile directly with `javac`; do not introduce Maven, Gradle, or Ant. |
-| **Rationale** | A build tool would add configuration overhead (e.g., `pom.xml`, `build.gradle`) with zero benefit for a single-class, zero-dependency project. |
-| **Consequences** | Classpath management, dependency resolution, and packaging must be done manually if the project ever grows. |
-| **Alternatives considered** | Maven (standard but heavyweight for this scale), Gradle (flexible but adds wrapper scripts). |
+| **Date** | Java 25 modernization |
+| **Context** | Project now includes modern Java features and a non-trivial JUnit test suite. |
+| **Decision** | Use Maven (`pom.xml`) for compilation and test execution. |
+| **Rationale** | Maven provides consistent Java 25 compiler configuration, standard test execution, and straightforward CI integration. |
+| **Consequences** | Adds a small amount of project configuration and build metadata, but improves reproducibility and automation. |
+| **Alternatives considered** | Raw `javac` (too manual for repeatable CI/testing), Gradle (viable but unnecessary for this repository size). |
 
 ---
 
@@ -575,7 +583,7 @@ mindmap
 | ID | Quality Attribute | Scenario | Expected Response | Metric |
 |----|------------------|---------|-------------------|--------|
 | QS-01 | **Correctness** | User runs `java HelloWorld` | Exactly `Hello World\n` is written to stdout | 100% match every run |
-| QS-02 | **Portability** | Application is run on Linux, macOS, and Windows with JRE ≥ 8 | Identical output on all platforms | Pass on all 3 OS families |
+| QS-02 | **Portability** | Application is built and tested on Linux, macOS, and Windows with JDK 25 | Build and tests pass consistently across platforms | Pass on all 3 OS families |
 | QS-03 | **Performance** | User runs the application on any modern machine | Output appears in < 500 ms (dominated by JVM startup) | ≤ 500 ms wall-clock |
 | QS-04 | **Reproducibility** | Application is run 1,000 times consecutively | Every invocation produces identical stdout | 0 deviations |
 | QS-05 | **Understandability** | A Java developer reads `HelloWorld.java` for the first time | Developer understands the full behaviour immediately | ≤ 30 seconds comprehension time |
@@ -591,7 +599,7 @@ mindmap
 | Number of statements | 1 |
 | Cyclomatic complexity | 1 (no branches) |
 | External dependencies | 0 |
-| Test coverage | 0% (no tests) |
+| Test coverage | Covered by 19 JUnit tests (`HelloWorldTest`) |
 | Technical debt (estimated) | < 1 hour |
 
 ---
@@ -610,32 +618,32 @@ quadrantChart
     quadrant-3 Accept
     quadrant-4 Urgent Action
 
-    No Tests: [0.30, 0.15]
-    No Build Tool: [0.25, 0.20]
+    Duplicate Source File: [0.45, 0.20]
+    Java 25 Toolchain Requirement: [0.30, 0.35]
     JVM Startup Overhead: [0.60, 0.10]
     Hard-coded String: [0.15, 0.10]
-    No CI Pipeline: [0.35, 0.20]
+    Build Tooling Drift: [0.25, 0.25]
 ```
 
 ### 11.2 Identified Risks
 
 | ID | Risk | Likelihood | Impact | Category | Mitigation |
 |----|------|-----------|--------|---------|-----------|
-| R-01 | **No automated tests** — Regressions cannot be detected automatically if the code is modified. | Low | Low | Quality | Add a JUnit test capturing stdout if the project evolves. |
-| R-02 | **No build automation** — Compilation must be done manually; easy to forget or misconfigure. | Medium | Low | Operations | Introduce Maven or Gradle when the project grows beyond a single file. |
-| R-03 | **No CI/CD pipeline** — Code changes are not automatically verified. | Medium | Low | Process | Add a GitHub Actions workflow (`build.yml`) with `javac` and `java` steps. |
-| R-04 | **Hard-coded output string** — The string `"Hello World"` is baked into the source; cannot be changed without recompilation. | Low | Low | Maintainability | Externalise to a constant or a configuration file if parameterisation is needed. |
-| R-05 | **JVM startup latency** — Cold JVM startup adds 50–200 ms overhead. | High | Negligible | Performance | Acceptable for a demonstration program; use GraalVM native-image if sub-millisecond startup is ever required. |
+| R-01 | **Duplicate source entry point** — A second `HelloWorld.java` exists at repository root and may diverge from `src/main/java/HelloWorld.java`. | Medium | Medium | Maintainability | Keep only canonical Maven source files or enforce consistency checks. |
+| R-02 | **Toolchain pinning risk** — Java 25 requirement may fail in environments lacking the required JDK. | Medium | Medium | Operations | Document Java 25 requirement and keep CI pinned to Java 25. |
+| R-03 | **Build tooling drift** — Maven/CI/docs can fall out of sync after future upgrades. | Low | Medium | Process | Update `pom.xml`, workflow, and docs together whenever Java version changes. |
+| R-04 | **Hard-coded output string** — Output strings are still source-defined and not externally configurable. | Low | Low | Maintainability | Externalize to constants/config if parameterization becomes necessary. |
+| R-05 | **JVM startup latency** — Cold JVM startup adds overhead. | High | Negligible | Performance | Acceptable for a demonstration program; use native image only if startup time becomes critical. |
 
 ### 11.3 Technical Debt Backlog
 
 | ID | Debt Item | Effort | Priority |
 |----|----------|--------|---------|
-| TD-01 | Add unit test (JUnit 5) with stdout capture | 30 min | Low |
-| TD-02 | Introduce `pom.xml` or `build.gradle` for reproducible builds | 15 min | Low |
-| TD-03 | Create `.github/workflows/build.yml` CI pipeline | 20 min | Medium |
-| TD-04 | Add `javadoc` comment to `main()` | 5 min | Low |
-| TD-05 | Externalise `"Hello World"` to a named constant (`private static final String MESSAGE`) | 5 min | Low |
+| TD-01 | Remove duplicate root-level `HelloWorld.java` or add guardrails to prevent drift | 15 min | Medium |
+| TD-02 | Add a test that validates `main()` output contract end-to-end | 20 min | Low |
+| TD-03 | Keep Java version references synchronized across `pom.xml`, workflow, and docs during upgrades | 15 min | Medium |
+| TD-04 | Add `javadoc` comment to `main()` for clearer API intent | 5 min | Low |
+| TD-05 | Externalize user-facing strings to named constants | 5 min | Low |
 
 ### 11.4 Technical Debt Visualisation
 
@@ -683,4 +691,4 @@ gantt
 ---
 
 *Documentation generated by the Arc42 Documentation Generator.*  
-*Based on source analysis of `HelloWorld.java` and `README.md` in repository `copilot-test-ktruchcz`.*
+*Based on source analysis of `src/main/java/HelloWorld.java`, `src/test/java/HelloWorldTest.java`, `pom.xml`, and `README.md` in repository `copilot-test-ktruchcz`.*
