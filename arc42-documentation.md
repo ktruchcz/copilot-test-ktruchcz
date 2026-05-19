@@ -575,7 +575,7 @@ mindmap
 | ID | Quality Attribute | Scenario | Expected Response | Metric |
 |----|------------------|---------|-------------------|--------|
 | QS-01 | **Correctness** | User runs `java HelloWorld` | Exactly `Hello World\n` is written to stdout | 100% match every run |
-| QS-02 | **Portability** | Application is run on Linux, macOS, and Windows with JRE ≥ 8 | Identical output on all platforms | Pass on all 3 OS families |
+| QS-02 | **Portability** | Application is run on Linux, macOS, and Windows with JRE ≥ 25 | Identical output on all platforms | Pass on all 3 OS families |
 | QS-03 | **Performance** | User runs the application on any modern machine | Output appears in < 500 ms (dominated by JVM startup) | ≤ 500 ms wall-clock |
 | QS-04 | **Reproducibility** | Application is run 1,000 times consecutively | Every invocation produces identical stdout | 0 deviations |
 | QS-05 | **Understandability** | A Java developer reads `HelloWorld.java` for the first time | Developer understands the full behaviour immediately | ≤ 30 seconds comprehension time |
