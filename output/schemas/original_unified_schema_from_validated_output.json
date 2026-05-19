@@ -1,0 +1,41 @@
+{
+  "title": "original_unified_schema_from_validated_output",
+  "entities": [
+    {
+      "entity": "application",
+      "fields": [
+        "app_id",
+        "name",
+        "description",
+        "Solution type",
+        "criticality",
+        "Application status",
+        "Decomission date",
+        "Deployment type",
+        "data classification",
+        "business unit",
+        "business capabilities",
+        "number of users",
+        "Operating system",
+        "programming language",
+        "Application Server type",
+        "Application Architecture",
+        "Application is containerized",
+        "Number of environments",
+        "Physical servers instances",
+        "external interfaces",
+        "db_engine",
+        "DB storage in GB",
+        "DB License required",
+        "logging_solution",
+        "monitoring_tool",
+        "cpu_cores",
+        "memory in GB",
+        "production environments",
+        "CI_CD present",
+        "number of Api endpoints",
+        "Physical Database Server instance"
+      ]
+    }
+  ]
+}

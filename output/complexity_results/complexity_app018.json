@@ -1,0 +1,18 @@
+{
+  "application_identifier": "app018",
+  "complexity_score": 7,
+  "confidence": 9,
+  "reasoning": "Medium-critical app with complexity driven by technology age, integrations, and architecture characteristics.",
+  "contributing_factors": {
+    "number_of_servers": 2,
+    "number_of_databases": 1,
+    "number_of_environments": 6,
+    "number_of_interfaces": 6,
+    "business_criticality": "Medium",
+    "number_of_outdated_technologies": 1,
+    "number_of_eol_technologies": 3,
+    "number_of_dependencies": 0,
+    "ci_cd_present": "No",
+    "containerized": "No"
+  }
+}

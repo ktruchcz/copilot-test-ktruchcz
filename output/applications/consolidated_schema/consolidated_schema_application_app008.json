@@ -1,0 +1,40 @@
+{
+  "app_id": "app008",
+  "name": "InventoryApp-008",
+  "description": "Legacy inventory management system controlling warehouse stock levels and material movements",
+  "Solution type": "Custom made",
+  "criticality": "High",
+  "Application status": "Production",
+  "Decomission date": "2027",
+  "Deployment type": "On-Premise",
+  "data classification": "Confidential",
+  "business unit": "Operations",
+  "business capabilities": [
+    "Inventory Management",
+    "Warehouse Operations",
+    "Order Management"
+  ],
+  "number of users": "875",
+  "Operating system": "AIX 6",
+  "programming language": "COBOL-2014",
+  "Application Server type": "Oracle Weblogic 8.0",
+  "Application Architecture": "1-Tier",
+  "Application is containerized": "No",
+  "Number of environments": "3",
+  "Physical servers instances": [
+    "sv11",
+    "sv01"
+  ],
+  "external interfaces": "2",
+  "db_engine": "SQL Server 2019",
+  "DB storage in GB": "400",
+  "DB License required": "Yes",
+  "logging_solution": "unknown",
+  "monitoring_tool": "unknown",
+  "cpu_cores": "2",
+  "memory in GB": "8",
+  "production environments": "prod02",
+  "CI_CD present": "No",
+  "number of Api endpoints": "0",
+  "Physical Database Server instance": "db0008"
+}

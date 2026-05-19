@@ -1,0 +1,43 @@
+{
+  "app_id": "app025",
+  "name": "PortalApp-025",
+  "description": "Customer self-service portal for shipment tracking, billing, and service requests",
+  "Solution type": "Custom made",
+  "criticality": "Medium",
+  "Application status": "Production",
+  "Decomission date": "not planned",
+  "Deployment type": "AWS",
+  "data classification": "Internal",
+  "business unit": "Operations",
+  "business capabilities": [
+    "Customer Portal",
+    "Self-Service",
+    "Order Management"
+  ],
+  "number of users": "2200",
+  "Operating system": "Windows Server 2019",
+  "programming language": "ASP.NET Core",
+  "Application Server type": "Microsoft IIS 10.0",
+  "Application Architecture": "2-Tier",
+  "Application is containerized": "Yes",
+  "Number of environments": "3",
+  "Physical servers instances": [
+    "sv36",
+    "sv37"
+  ],
+  "external interfaces": "15",
+  "db_engine": "PostgreSQL 15",
+  "DB storage in GB": "800",
+  "DB License required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Prometheus",
+  "cpu_cores": "6",
+  "memory in GB": "24",
+  "production environments": [
+    "prod01",
+    "prod03"
+  ],
+  "CI_CD present": "Yes",
+  "number of Api endpoints": "35",
+  "Physical Database Server instance": "db0028"
+}

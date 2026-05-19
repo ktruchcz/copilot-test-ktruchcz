@@ -1,0 +1,40 @@
+{
+  "app_id": "app004",
+  "name": "HRApp-004",
+  "description": "Human resources management system handling employee records, benefits, and HR workflows",
+  "Solution type": "Custom made",
+  "criticality": "High",
+  "Application status": "Production",
+  "Decomission date": "not planned",
+  "Deployment type": "AWS, On-premise",
+  "data classification": "Internal",
+  "business unit": "HR",
+  "business capabilities": [
+    "Employee Management",
+    "Payroll Processing",
+    "Benefits Administration"
+  ],
+  "number of users": "670",
+  "Operating system": "Windows Server 2012",
+  "programming language": ".NET Core",
+  "Application Server type": "Microsoft IIS 8.0",
+  "Application Architecture": "2-Tier",
+  "Application is containerized": "Yes",
+  "Number of environments": "2",
+  "Physical servers instances": [
+    "sv06",
+    "sv02"
+  ],
+  "external interfaces": "6",
+  "db_engine": "SQL Server 2019",
+  "DB storage in GB": "750",
+  "DB License required": "Yes",
+  "logging_solution": "Splunk",
+  "monitoring_tool": "CloudWatch",
+  "cpu_cores": "4",
+  "memory in GB": "16",
+  "production environments": "prod02",
+  "CI_CD present": "Yes",
+  "number of Api endpoints": "12",
+  "Physical Database Server instance": "db0004"
+}

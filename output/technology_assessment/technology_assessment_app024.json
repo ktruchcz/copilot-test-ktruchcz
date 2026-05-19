@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app024",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "OUTDATED",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is supported but no longer the current release.",
+      "confidence": 8
+    },
+    {
+      "component_name": "SQL Server 2014",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No reliable lifecycle evidence was available for the database string.",
+      "confidence": 4
+    },
+    {
+      "component_name": "VB.NET",
+      "component_family": "VB.NET",
+      "component_type": "language",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "VB.NET version is not provided.",
+      "confidence": 4
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "IIS 10.0 is still the current IIS major release.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-19T09:45:53Z"
+}

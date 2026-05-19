@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app015",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "OUTDATED",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 is supported but no longer the current release.",
+      "confidence": 8
+    },
+    {
+      "component_name": "MongoDB",
+      "component_family": "MongoDB",
+      "component_type": "database",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "MongoDB version is not provided.",
+      "confidence": 5
+    },
+    {
+      "component_name": "PHP 8.1",
+      "component_family": "PHP",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "8.1",
+      "component_status": "EOL",
+      "eol_date": "2025-12-31",
+      "reason": "PHP 8.1 no longer receives security support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "IIS 10.0 is still the current IIS major release.",
+      "confidence": 7
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-05-19T09:45:53Z"
+}

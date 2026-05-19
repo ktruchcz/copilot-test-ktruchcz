@@ -1,0 +1,130 @@
+{
+  "source_file": "apps_db_complete.xlsx",
+  "sheet_name": "App Details",
+  "columns": [
+    {
+      "original_header": "app_id",
+      "mapped_field": "app_id"
+    },
+    {
+      "original_header": "name",
+      "mapped_field": "app_name"
+    },
+    {
+      "original_header": "description",
+      "mapped_field": "app_description"
+    },
+    {
+      "original_header": "Solution type",
+      "mapped_field": "solution_type"
+    },
+    {
+      "original_header": "criticality",
+      "mapped_field": "business_criticality"
+    },
+    {
+      "original_header": "Application status",
+      "mapped_field": "application_status"
+    },
+    {
+      "original_header": "Decomission date",
+      "mapped_field": "additional:decomission_date"
+    },
+    {
+      "original_header": "Deployment type",
+      "mapped_field": "deployment_type"
+    },
+    {
+      "original_header": "data classification",
+      "mapped_field": "data_classification"
+    },
+    {
+      "original_header": "business unit",
+      "mapped_field": "business_unit"
+    },
+    {
+      "original_header": "business capabilities",
+      "mapped_field": "business_capabilities"
+    },
+    {
+      "original_header": "number of users",
+      "mapped_field": "user_count"
+    },
+    {
+      "original_header": "Operating system",
+      "mapped_field": "operating_system"
+    },
+    {
+      "original_header": "programming language",
+      "mapped_field": "programming_language"
+    },
+    {
+      "original_header": "Application Server type",
+      "mapped_field": "application_server"
+    },
+    {
+      "original_header": "Application Architecture",
+      "mapped_field": "application_architecture"
+    },
+    {
+      "original_header": "Application is containerized",
+      "mapped_field": "is_containerized"
+    },
+    {
+      "original_header": "Number of environments",
+      "mapped_field": "environment_count"
+    },
+    {
+      "original_header": "Physical servers instances",
+      "mapped_field": "server_instances"
+    },
+    {
+      "original_header": "cpu_cores",
+      "mapped_field": "cpu_cores"
+    },
+    {
+      "original_header": "memory in GB",
+      "mapped_field": "memory_gb"
+    },
+    {
+      "original_header": "production environments",
+      "mapped_field": "production_environments"
+    },
+    {
+      "original_header": "CI_CD present",
+      "mapped_field": "ci_cd_present"
+    },
+    {
+      "original_header": "number of Api endpoints",
+      "mapped_field": "api_endpoint_count"
+    },
+    {
+      "original_header": "external interfaces",
+      "mapped_field": "external_interface_count"
+    },
+    {
+      "original_header": "Physical Database Server instance",
+      "mapped_field": "additional:physical_database_server_instance"
+    },
+    {
+      "original_header": "db_engine",
+      "mapped_field": "database_engine"
+    },
+    {
+      "original_header": "DB storage in GB",
+      "mapped_field": "database_storage_gb"
+    },
+    {
+      "original_header": "DB License required",
+      "mapped_field": "database_license_required"
+    },
+    {
+      "original_header": "logging_solution",
+      "mapped_field": "logging_solution"
+    },
+    {
+      "original_header": "monitoring_tool",
+      "mapped_field": "monitoring_tool"
+    }
+  ]
+}

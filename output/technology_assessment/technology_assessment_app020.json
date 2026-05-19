@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app020",
+  "components_analyzed": [
+    {
+      "component_name": "Windows Server 2012",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Windows Server 2012 is out of support.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server 2016",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2016",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-07-14",
+      "reason": "SQL Server 2016 is near the end of extended support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Angular 15",
+      "component_family": "Angular",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "EOL",
+      "eol_date": "2024-11-01",
+      "reason": "Angular 15 is out of support.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Microsoft IIS 8.5",
+      "component_family": "IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.5",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "IIS 8.5 is tied to obsolete Windows Server releases.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-19T09:45:53Z"
+}

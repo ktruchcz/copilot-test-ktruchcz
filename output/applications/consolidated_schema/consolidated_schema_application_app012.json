@@ -1,0 +1,40 @@
+{
+  "app_id": "app012",
+  "name": "IoTSensorApp-012",
+  "description": "IoT sensor data collection and analysis platform for tracking vehicle performance and cargo conditions",
+  "Solution type": "Custom made",
+  "criticality": "High",
+  "Application status": "Production",
+  "Decomission date": "not planned",
+  "Deployment type": "AWS",
+  "data classification": "Confidential",
+  "business unit": "R&D",
+  "business capabilities": [
+    "Data Analytics",
+    "IoT Management",
+    "Reporting"
+  ],
+  "number of users": "85",
+  "Operating system": "Windows Server 2022",
+  "programming language": "Rust 1.70",
+  "Application Server type": "Microsoft IIS 10.0",
+  "Application Architecture": "2-Tier",
+  "Application is containerized": "Yes",
+  "Number of environments": "2",
+  "Physical servers instances": [
+    "sv15",
+    "sv16"
+  ],
+  "external interfaces": "8",
+  "db_engine": "PostgreSQL 14",
+  "DB storage in GB": "800",
+  "DB License required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Grafana",
+  "cpu_cores": "8",
+  "memory in GB": "32",
+  "production environments": "prod03",
+  "CI_CD present": "Yes",
+  "number of Api endpoints": "20",
+  "Physical Database Server instance": "db0011"
+}

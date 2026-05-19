@@ -1,0 +1,145 @@
+{
+  "application_identifier": "app020",
+  "scenarios_detailed": [
+    {
+      "id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "match_type": "rule",
+      "reason": "Windows Server 2012 is classified as EOL, which triggers an operating system update scenario.",
+      "confidence": 9,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "switch_to_standard_linux_os",
+      "status": "NOT_APPLICABLE",
+      "match_type": "rule",
+      "reason": "Application runs on Windows, which is explicitly excluded from Linux-standardization recommendations.",
+      "confidence": 8,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "switch_to_arm_cpu",
+      "status": "BLOCKED",
+      "match_type": "rule",
+      "reason": "Current operating system platform is a legacy Windows/proprietary Unix environment that is not a good ARM migration candidate.",
+      "confidence": 7,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "application_server_replacement",
+      "status": "BLOCKED",
+      "match_type": "rule",
+      "reason": "Application server appears to be part of a third-party stack, so direct replacement is constrained by vendor support.",
+      "confidence": 7,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "match_type": "rule",
+      "reason": "Application is already hosted on AWS.",
+      "confidence": 9,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "app_containerization",
+      "status": "BLOCKED",
+      "match_type": "rule",
+      "reason": "Third-party packaged software may not support customer-led containerization.",
+      "confidence": 7,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "app_refactor_decoupling",
+      "status": "BLOCKED",
+      "match_type": "rule",
+      "reason": "Refactoring a third-party application is typically constrained by vendor ownership.",
+      "confidence": 8,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "upgrade_legacy_databases",
+      "status": "APPLICABLE",
+      "match_type": "rule",
+      "reason": "SQL Server 2016 is OUTDATED and fits database upgrade triggers.",
+      "confidence": 8,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "switch_db_engine_open_source",
+      "status": "BLOCKED",
+      "match_type": "rule",
+      "reason": "Database platform choice for third-party software is usually vendor-constrained.",
+      "confidence": 8,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    },
+    {
+      "id": "update_outdated_components",
+      "status": "BLOCKED",
+      "match_type": "rule",
+      "reason": "Outdated components exist, but remediation likely depends on the third-party vendor roadmap.",
+      "confidence": 8,
+      "source": {
+        "document_id": "apps_db_complete.xlsx",
+        "document_title": "apps_db_complete.xlsx",
+        "section": "App Details",
+        "content_excerpt": "TrainingApp-020 | AWS | Windows Server 2012 | SQL Server 2016",
+        "relevance": "Derived from normalized portfolio inventory fields."
+      }
+    }
+  ]
+}

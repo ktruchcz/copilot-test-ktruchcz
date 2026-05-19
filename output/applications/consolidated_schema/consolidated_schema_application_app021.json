@@ -1,0 +1,40 @@
+{
+  "app_id": "app021",
+  "name": "FleetApp-021",
+  "description": "Fleet management system for tracking vehicle locations, maintenance schedules, and driver assignments",
+  "Solution type": "Custom made",
+  "criticality": "High",
+  "Application status": "Production",
+  "Decomission date": "not planned",
+  "Deployment type": "On-Premise",
+  "data classification": "Internal",
+  "business unit": "Operations",
+  "business capabilities": [
+    "Fleet Management",
+    "Vehicle Tracking",
+    "Maintenance Management"
+  ],
+  "number of users": "420",
+  "Operating system": "Windows Server 2022",
+  "programming language": "C++ 17",
+  "Application Server type": "Microsoft IIS 10.0",
+  "Application Architecture": "2-Tier",
+  "Application is containerized": "No",
+  "Number of environments": "3",
+  "Physical servers instances": [
+    "sv30",
+    "sv31"
+  ],
+  "external interfaces": "4",
+  "db_engine": "Oracle 11g",
+  "DB storage in GB": "400",
+  "DB License required": "Yes",
+  "logging_solution": "Syslog",
+  "monitoring_tool": "unknown",
+  "cpu_cores": "2",
+  "memory in GB": "8",
+  "production environments": "prod02",
+  "CI_CD present": "No",
+  "number of Api endpoints": "3",
+  "Physical Database Server instance": "db0024"
+}

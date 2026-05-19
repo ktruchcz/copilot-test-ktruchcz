@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app013",
+  "components_analyzed": [
+    {
+      "component_name": "Debian 7",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2018-05-31",
+      "reason": "Debian 7 is end-of-life.",
+      "confidence": 9
+    },
+    {
+      "component_name": "SQL Server 2022",
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2033-01-11",
+      "reason": "SQL Server 2022 is current and supported.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Java 17",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-09-30",
+      "reason": "Java 17 is the current enterprise LTS baseline.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Websphere 8.0",
+      "component_family": "WebSphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "IBM WebSphere versions in use are legacy and out of mainstream support.",
+      "confidence": 8
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-05-19T09:45:53Z"
+}
