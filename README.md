@@ -1,11 +1,21 @@
 # copilot-test-ktruchcz
 
-Simple Hello World Java project.
+Simple Hello World project – Python 3 port of the original Java application.
 
-## Build and test
+## Run the application
 
-Requires Java 25.
+Requires Python 3 (no external dependencies).
 
 ```bash
-mvn clean test
+python hello_world.py
 ```
+
+## Run the tests
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+---
+
+> The original Java source files (`src/`, `pom.xml`) are kept for reference.
