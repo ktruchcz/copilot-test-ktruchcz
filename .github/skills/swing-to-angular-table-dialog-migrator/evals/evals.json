@@ -1,0 +1,17 @@
+{
+  "skill_name": "swing-to-angular-table-dialog-migrator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Migrate a Swing dialog whose prepareModel() starts a task that loads Bearbeitungsaufforderung rows by Bedarfsgemeinschaft using GV_BEARBEITUNGSAUFFORDERUNGEN_NACH_BG_LADEN_INTERN. The Java TableModel displays last name, birth date, and status using existing renderer helpers.",
+      "expected_output": "An Angular implementation that initializes data in ngOnInit with a backend call handler, sets objects on a TOTableModel, and maps the table columns and renderer logic correctly.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Convert a Swing table dialog where getValueAt combines nested transport object fields and custom renderer output for one column. Keep German labels and import transport objects from @allegro/api.",
+      "expected_output": "A Swing-to-Angular table migration that preserves German labels, uses the right renderer helper, and produces meaningful convertToDisplay lambdas.",
+      "files": []
+    }
+  ]
+}
