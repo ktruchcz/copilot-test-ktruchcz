@@ -24,9 +24,3 @@ These skills were extracted from the reusable migration cookbooks in `CopilotRev
 
 - `swing-to-angular-table-dialog-migrator`
 - `swing-to-angular-validation-migrator`
-
-## Obligatory Governance Skills
-
-- `obligatory_ai_generation_comment_guideline`
-- `obligatory_mermaid_architecture_documentation`
-- `obligatory_java_to_python_migration_practices`
