@@ -2,4 +2,10 @@
 
 # Maven build output
 target/
+
+# Python artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+
 hook_tools_used.log

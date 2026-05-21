@@ -1,11 +1,18 @@
 # copilot-test-ktruchcz
 
-Simple Hello World Java project.
+Simple Hello World Python project (migrated from Java).
 
-## Build and test
-
-Requires Java 25.
+## Run
 
 ```bash
-mvn clean test
+python hello_world.py
+```
+
+## Test
+
+Requires Python 3.11+ and pytest.
+
+```bash
+pip install pytest
+python -m pytest tests/ -v
 ```
