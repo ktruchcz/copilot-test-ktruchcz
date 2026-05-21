@@ -64,9 +64,9 @@ The following top-level quality goals drive the architectural decisions of this 
 | ID | Constraint | Rationale |
 |----|-----------|-----------|
 | TC-01 | **Language: Java** | The source file is written in Java (`HelloWorld.java`). All tooling must support Java source analysis. |
-| TC-02 | **No build tool** | There is no `pom.xml`, `build.gradle`, or `Makefile`. Compilation relies on the `javac` command directly. |
+| TC-02 | **Build tool: Maven** | The repository contains `pom.xml` and uses Maven for compile/test lifecycle execution. |
 | TC-03 | **No external dependencies** | Only classes from `java.lang` (auto-imported) are used. No third-party JARs are required. |
-| TC-04 | **JDK ≥ 1.0** | `System.out.println` and a static `main` entry point have been valid since Java 1.0. The application places no lower bound above that. |
+| TC-04 | **JDK 25** | The project is configured for Java 25 and expects a Java 25 runtime/toolchain for reproducible local and CI builds. |
 | TC-05 | **Single source file** | The entire application resides in one file: `HelloWorld.java`. |
 | TC-06 | **Console / CLI only** | No GUI, no web interface, no network socket — output is exclusively to `stdout`. |
 
@@ -75,8 +75,8 @@ The following top-level quality goals drive the architectural decisions of this 
 | ID | Constraint | Rationale |
 |----|-----------|-----------|
 | OC-01 | **Public GitHub repository** | Code is version-controlled on GitHub and is publicly visible. |
-| OC-02 | **No test suite** | No unit or integration tests exist in the repository. |
-| OC-03 | **No CI pipeline defined** | No `.github/workflows` directory is present; builds are manual. |
+| OC-02 | **JUnit test suite present** | The repository includes automated unit tests executed through Maven Surefire. |
+| OC-03 | **CI pipeline defined** | GitHub Actions workflow(s) execute automated build/test checks. |
 
 ### 2.3 Conventions
 
@@ -162,7 +162,7 @@ graph TB
 |---------|--------|-----------|
 | **Programming Language** | Java | Widely known, platform-independent via JVM, requires zero runtime setup beyond a standard JRE. |
 | **No framework** | Plain `java.lang` only | The requirement is trivially fulfilled by a single `println` call; a framework would be disproportionate overhead. |
-| **No build tool** | Raw `javac` | Eliminates all dependency management, wrapper scripts, and configuration files for a single-file project. |
+| **Build tool** | Maven (`pom.xml`) | Standardizes compile/test execution across local and CI environments. |
 | **No dependencies** | Zero external JARs | `System.out.println` is part of the Java standard library, available on every conforming JRE. |
 
 ### 4.2 Top-Level Decomposition Strategy
@@ -374,7 +374,7 @@ graph TB
             classFile["HelloWorld.class\n(compiled bytecode)"]:::artifact
         end
 
-        subgraph JRE["☕ Java Runtime Environment (JRE ≥ 1.0)"]
+        subgraph JRE["☕ Java Runtime Environment (Java 25)"]
             JVM["JVM Process"]:::jre
             StdLib["java.lang / java.io\n(Standard Library)"]:::jre
         end
@@ -412,14 +412,14 @@ flowchart LR
 | Variant | Description | Command Sequence |
 |---------|-------------|-----------------|
 | **Local (developer)** | Compile and run on developer workstation. | `javac HelloWorld.java` → `java HelloWorld` |
-| **CI runner** | Any GitHub Actions runner with `actions/setup-java`. | Same two commands inside a workflow step. |
+| **CI runner** | GitHub Actions runner with `actions/setup-java` for Java 25. | `mvn --no-transfer-progress test` |
 | **Docker container** | Any image based on `openjdk` or `eclipse-temurin`. | `COPY HelloWorld.java /app/` → `RUN javac HelloWorld.java` → `CMD ["java","HelloWorld"]` |
 
 ### 7.4 Minimum System Requirements
 
 | Requirement | Value |
 |------------|-------|
-| Java Runtime | JRE 1.0 or later (JDK required to compile) |
+| Java Runtime | Java 25 (JDK 25 for compile/test) |
 | Disk space (source) | < 1 KB |
 | Disk space (bytecode) | < 1 KB |
 | RAM | ≥ JVM base overhead (~10–30 MB) |
@@ -501,17 +501,17 @@ No additional design patterns (GoF, enterprise, etc.) are applicable at this sca
 
 ---
 
-### ADR-002 — No Build Tool (Raw javac)
+### ADR-002 — Maven Build Tool
 
 | Field | Value |
 |-------|-------|
 | **Status** | Accepted |
 | **Date** | Project inception |
 | **Context** | Single-file project with no dependencies. |
-| **Decision** | Compile directly with `javac`; do not introduce Maven, Gradle, or Ant. |
-| **Rationale** | A build tool would add configuration overhead (e.g., `pom.xml`, `build.gradle`) with zero benefit for a single-class, zero-dependency project. |
-| **Consequences** | Classpath management, dependency resolution, and packaging must be done manually if the project ever grows. |
-| **Alternatives considered** | Maven (standard but heavyweight for this scale), Gradle (flexible but adds wrapper scripts). |
+| **Decision** | Use Maven (`pom.xml`) as the standard build/test entry point. |
+| **Rationale** | Maven provides reproducible compilation and test execution and aligns local development with CI workflows. |
+| **Consequences** | Build configuration is centralized in `pom.xml`, and contributors use Maven commands for validation. |
+| **Alternatives considered** | Raw `javac`/`java` commands (minimal but less standardized), Gradle (flexible but unnecessary for this repository). |
 
 ---
 
@@ -622,8 +622,8 @@ quadrantChart
 | ID | Risk | Likelihood | Impact | Category | Mitigation |
 |----|------|-----------|--------|---------|-----------|
 | R-01 | **No automated tests** — Regressions cannot be detected automatically if the code is modified. | Low | Low | Quality | Add a JUnit test capturing stdout if the project evolves. |
-| R-02 | **No build automation** — Compilation must be done manually; easy to forget or misconfigure. | Medium | Low | Operations | Introduce Maven or Gradle when the project grows beyond a single file. |
-| R-03 | **No CI/CD pipeline** — Code changes are not automatically verified. | Medium | Low | Process | Add a GitHub Actions workflow (`build.yml`) with `javac` and `java` steps. |
+| R-02 | **Build configuration drift** — Misconfigured Java or Maven versions can break reproducibility. | Medium | Low | Operations | Keep Java 25 and Maven settings synchronized across local and CI environments. |
+| R-03 | **CI workflow drift** — Workflow changes may diverge from local validation commands. | Medium | Low | Process | Keep GitHub Actions build steps aligned with documented Maven commands. |
 | R-04 | **Hard-coded output string** — The string `"Hello World"` is baked into the source; cannot be changed without recompilation. | Low | Low | Maintainability | Externalise to a constant or a configuration file if parameterisation is needed. |
 | R-05 | **JVM startup latency** — Cold JVM startup adds 50–200 ms overhead. | High | Negligible | Performance | Acceptable for a demonstration program; use GraalVM native-image if sub-millisecond startup is ever required. |
 
@@ -632,8 +632,8 @@ quadrantChart
 | ID | Debt Item | Effort | Priority |
 |----|----------|--------|---------|
 | TD-01 | Add unit test (JUnit 5) with stdout capture | 30 min | Low |
-| TD-02 | Introduce `pom.xml` or `build.gradle` for reproducible builds | 15 min | Low |
-| TD-03 | Create `.github/workflows/build.yml` CI pipeline | 20 min | Medium |
+| TD-02 | Keep Java version constraints synchronized between `pom.xml`, CI workflow, and README | 15 min | Low |
+| TD-03 | Add CI checks for documentation/runtime-version consistency | 20 min | Medium |
 | TD-04 | Add `javadoc` comment to `main()` | 5 min | Low |
 | TD-05 | Externalise `"Hello World"` to a named constant (`private static final String MESSAGE`) | 5 min | Low |
 
@@ -644,8 +644,8 @@ gantt
     title Technical Debt Remediation Roadmap
     dateFormat  YYYY-MM-DD
     section Build & CI
-    Add pom.xml / build.gradle       :td02, 2025-01-06, 1d
-    Create GitHub Actions pipeline   :td03, after td02, 1d
+    Sync Java/Maven version docs     :td02, 2025-01-06, 1d
+    Add docs/runtime consistency CI  :td03, after td02, 1d
     section Code Quality
     Add Javadoc to main()            :td04, 2025-01-06, 1d
     Externalise MESSAGE constant     :td05, after td04, 1d
