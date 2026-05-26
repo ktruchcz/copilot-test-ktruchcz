@@ -31,23 +31,6 @@ Use skill O2 (`multi-agent/skills/O2-read-migration-context.md`) to validate and
 ---
 ## Skillset
 
-### ⚙️ Obligatory Skill Initialisation (run FIRST, before loading any skill)
-
-Before reviewing available skills, ensure all obligatory skills are materialised on disk:
-
-```bash
-bash .specify/scripts/bash/setup-obligatory-skills.sh
-```
-
-This script is idempotent — it is safe to run multiple times. It creates the following mandatory skill
-directories if they do not already exist:
-
-- `.github/skills/obligatory_ai-generated-comment/SKILL.md`
-- `.github/skills/obligatory_mermaid-architecture-documentation/SKILL.md`
-- `.github/skills/obligatory_java-to-python-migration-practices/SKILL.md`
-
-### Loading Skills
-
 Review the available skills. **Crucial** You must use every skill which name starts with `obligatory`
 ---
 
