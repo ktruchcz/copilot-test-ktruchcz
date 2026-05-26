@@ -23,4 +23,18 @@ class HelloWorldTest {
 
         assertEquals("Hello World" + System.lineSeparator(), output.toString(StandardCharsets.UTF_8));
     }
+
+    @Test
+    void controllerUsesFirstArgumentAsRecipient() {
+        var controller = new GreetingController(new GreetingService(new GreetingRepository()));
+
+        assertEquals("Hello Copilot", controller.greet(new String[]{"Copilot"}));
+    }
+
+    @Test
+    void serviceFallsBackToDefaultRecipientForBlankInput() {
+        var service = new GreetingService(new GreetingRepository());
+
+        assertEquals("Hello World", service.createGreeting("   "));
+    }
 }
