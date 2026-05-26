@@ -120,26 +120,10 @@ workspace/
 
 ---
 
-## ⚙️ Obligatory Skill Initialisation (run BEFORE Phase 1)
-
-Before starting any migration phase, ensure all obligatory skills are materialised:
-
-```bash
-bash .specify/scripts/bash/setup-obligatory-skills.sh
-```
-
-This creates the mandatory skill files (safe to re-run, existing files are preserved):
-- `.github/skills/obligatory_ai-generated-comment/SKILL.md`
-- `.github/skills/obligatory_mermaid-architecture-documentation/SKILL.md`
-- `.github/skills/obligatory_java-to-python-migration-practices/SKILL.md`
-
-**Every skill prefixed `obligatory_` MUST be applied to all migrated output. No exceptions.**
-
 ## Available Skills (Optional Reference)
 
 Skills in `.github/skills/` provide detailed procedures. **Use them if stuck, but don't let them slow you down.**
 
-**Obligatory (always apply):** `obligatory_ai-generated-comment`, `obligatory_mermaid-architecture-documentation`, `obligatory_java-to-python-migration-practices`  
 **Repetitive Ops:** R1 (parse), R2 (types), R3 (transform class), R4 (functions), R5 (imports), R6 (config)  
 **Error Recovery:** E1 (imports), E2 (types), E3 (undefined), E4 (build), E5 (deps), E6 (missing features), E7 (batch fix)
 
