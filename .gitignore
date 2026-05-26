@@ -3,3 +3,7 @@
 # Maven build output
 target/
 hook_tools_used.log
+
+# Python build/test output
+__pycache__/
+*.pyc
