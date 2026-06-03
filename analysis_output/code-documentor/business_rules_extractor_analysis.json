@@ -1,0 +1,117 @@
+{
+  "domain": "Greeting Management",
+  "workflows": [
+    {
+      "workflow_name": "Generate Greeting From CLI Input",
+      "steps": [
+        "Read CLI args",
+        "If args missing use default route",
+        "Else use first argument as recipient",
+        "If selected recipient is blank/null use default recipient",
+        "Format greeting using template",
+        "Print result"
+      ],
+      "actors": [
+        "CLI user",
+        "Application"
+      ],
+      "outcomes": [
+        "Personalized greeting",
+        "Default greeting"
+      ]
+    }
+  ],
+  "business_rules": [
+    {
+      "rule_id": "BR-001",
+      "rule": "Greeting template must be 'Hello %s'.",
+      "type": "Formatting",
+      "source_files": [
+        "src/main/java/GreetingRepository.java"
+      ]
+    },
+    {
+      "rule_id": "BR-002",
+      "rule": "Default recipient must be 'World'.",
+      "type": "Defaulting",
+      "source_files": [
+        "src/main/java/GreetingRepository.java"
+      ]
+    },
+    {
+      "rule_id": "BR-003",
+      "rule": "If CLI args are null or empty, system must generate greeting with default recipient.",
+      "type": "Input Handling",
+      "source_files": [
+        "src/main/java/GreetingController.java"
+      ]
+    },
+    {
+      "rule_id": "BR-004",
+      "rule": "If CLI args are present, only the first argument is used as recipient.",
+      "type": "Input Handling",
+      "source_files": [
+        "src/main/java/GreetingController.java",
+        "src/test/java/HelloWorldTest.java"
+      ]
+    },
+    {
+      "rule_id": "BR-005",
+      "rule": "If requested recipient is null or blank, service must fall back to default recipient.",
+      "type": "Validation/Defaulting",
+      "source_files": [
+        "src/main/java/GreetingService.java",
+        "src/test/java/HelloWorldTest.java"
+      ]
+    },
+    {
+      "rule_id": "BR-006",
+      "rule": "Non-blank recipient input must be trimmed before formatting greeting.",
+      "type": "Normalization",
+      "source_files": [
+        "src/main/java/GreetingService.java"
+      ]
+    },
+    {
+      "rule_id": "BR-007",
+      "rule": "Main flow must output 'Hello World' with trailing system newline when no recipient is provided.",
+      "type": "Output Contract",
+      "source_files": [
+        "src/test/java/HelloWorldTest.java"
+      ]
+    }
+  ],
+  "decision_criteria": [
+    {
+      "decision": "Use explicit recipient vs default recipient",
+      "criteria": [
+        "args present?",
+        "first arg blank/null after selection?"
+      ]
+    }
+  ],
+  "validation_rules": [
+    {
+      "field": "args",
+      "rule": "null or length 0 triggers default path"
+    },
+    {
+      "field": "requestedRecipient",
+      "rule": "blank after whitespace check triggers default recipient"
+    }
+  ],
+  "test_derived_insights": {
+    "covered_rules": [
+      "BR-004",
+      "BR-005",
+      "BR-007"
+    ],
+    "edge_cases": [
+      "blank recipient string",
+      "no arguments provided"
+    ],
+    "gaps": [
+      "No test for trimming behavior with leading/trailing spaces on non-blank input"
+    ]
+  }
+}

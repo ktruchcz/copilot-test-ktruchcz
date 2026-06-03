@@ -1,0 +1,294 @@
+{
+  "application_summary": {
+    "application_purpose": "Provide a simple command-line greeting flow that outputs a personalized or default greeting.",
+    "key_functionalities": [
+      "Build greeting text from template and recipient",
+      "Use default recipient when no usable input is provided",
+      "Print greeting to standard output"
+    ],
+    "technical_stack": {
+      "language": "Java",
+      "build_tool": "Maven",
+      "test_framework": "JUnit 5"
+    },
+    "architecture_pattern": "Layered mini-flow (controller -> service -> repository) with constructor-based dependency wiring",
+    "main_business_domains": [
+      "Greeting Generation"
+    ]
+  },
+  "package_summary": [
+    {
+      "package": "default package (src/main/java)",
+      "responsibilities": [
+        "Input selection for greeting recipient",
+        "Greeting composition",
+        "Greeting phrase defaults",
+        "Application entrypoint and output"
+      ],
+      "key_classes": [
+        "GreetingController",
+        "GreetingService",
+        "GreetingRepository",
+        "HelloWorld"
+      ],
+      "dependencies": [
+        "GreetingController -> GreetingService",
+        "GreetingService -> GreetingRepository"
+      ]
+    },
+    {
+      "package": "default package (src/test/java)",
+      "responsibilities": [
+        "Behavior verification for output and greeting rules"
+      ],
+      "key_classes": [
+        "HelloWorldTest"
+      ],
+      "dependencies": [
+        "JUnit Jupiter",
+        "main classes under test"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file_path": "HelloWorld.java",
+      "summary": "Legacy/simple entrypoint that prints a fixed greeting.",
+      "category": "Business",
+      "description": "This file always outputs a static greeting text. It represents a fixed greeting behavior without recipient personalization. It serves the basic greeting use case in its simplest form.",
+      "business_rules": [
+        "Printed greeting text is always 'Hello World'."
+      ],
+      "technical_libraries": [],
+      "business_capability": "Greeting Management",
+      "sub_capability": "Static Greeting Output",
+      "method_breakdown": [
+        {
+          "method_name": "main",
+          "summary": "Prints a constant greeting message.",
+          "parameters": [
+            "args (String[]): ignored command-line arguments"
+          ],
+          "returns": "void",
+          "dependencies": [],
+          "significance": "Implements the most basic greeting behavior."
+        }
+      ]
+    },
+    {
+      "file_path": "src/main/java/GreetingRepository.java",
+      "summary": "Supplies canonical greeting template and default recipient values.",
+      "category": "Business",
+      "description": "This file defines the standard phrase structure and fallback recipient used by the greeting flow. It centralizes default wording choices that shape user-facing output. It provides reusable domain defaults for consistent greetings.",
+      "business_rules": [
+        "Greeting template is 'Hello %s'.",
+        "Default recipient is 'World'."
+      ],
+      "technical_libraries": [],
+      "business_capability": "Greeting Management",
+      "sub_capability": "Greeting Defaults",
+      "method_breakdown": [
+        {
+          "method_name": "getGreetingTemplate",
+          "summary": "Returns the standard greeting format.",
+          "parameters": [],
+          "returns": "String: greeting format template",
+          "dependencies": [],
+          "significance": "Controls consistent phrasing across all greetings."
+        },
+        {
+          "method_name": "getDefaultRecipient",
+          "summary": "Returns the fallback recipient.",
+          "parameters": [],
+          "returns": "String: default recipient name",
+          "dependencies": [],
+          "significance": "Defines the no-input fallback value used in greeting logic."
+        }
+      ]
+    },
+    {
+      "file_path": "src/main/java/GreetingService.java",
+      "summary": "Builds final greeting text based on recipient input and defaults.",
+      "category": "Business",
+      "description": "This file applies recipient selection rules and creates the final greeting string. It ensures blank or missing recipient input is replaced with a default recipient. It normalizes non-blank input before composing output.",
+      "business_rules": [
+        "Service dependency must be non-null at construction.",
+        "If recipient input is null or blank, use default recipient.",
+        "If recipient input is present, trim whitespace before use.",
+        "Final greeting is template formatted with selected recipient."
+      ],
+      "technical_libraries": [],
+      "business_capability": "Greeting Management",
+      "sub_capability": "Greeting Composition",
+      "method_breakdown": [
+        {
+          "method_name": "GreetingService",
+          "summary": "Creates service with required repository dependency.",
+          "parameters": [
+            "greetingRepository (GreetingRepository): source of template and defaults"
+          ],
+          "returns": "GreetingService instance",
+          "dependencies": [
+            "GreetingRepository"
+          ],
+          "significance": "Enforces availability of greeting defaults and template source."
+        },
+        {
+          "method_name": "createGreeting",
+          "summary": "Generates greeting from requested recipient or fallback.",
+          "parameters": [
+            "requestedRecipient (String): optional recipient input"
+          ],
+          "returns": "String: fully formatted greeting",
+          "dependencies": [
+            "GreetingRepository.getDefaultRecipient",
+            "GreetingRepository.getGreetingTemplate"
+          ],
+          "significance": "Core business logic for personalized vs default greeting behavior."
+        }
+      ]
+    },
+    {
+      "file_path": "src/main/java/GreetingController.java",
+      "summary": "Selects recipient from CLI arguments and delegates greeting creation.",
+      "category": "Business",
+      "description": "This file decides whether to use caller input or default path. It maps command-line arguments to greeting requests and forwards them to service logic. It encapsulates simple request-routing rules for greeting generation.",
+      "business_rules": [
+        "Controller dependency must be non-null at construction.",
+        "If args are null or empty, request default-recipient greeting.",
+        "If args are present, only first argument is used as recipient."
+      ],
+      "technical_libraries": [],
+      "business_capability": "Greeting Management",
+      "sub_capability": "Input Routing",
+      "method_breakdown": [
+        {
+          "method_name": "GreetingController",
+          "summary": "Creates controller with required greeting service.",
+          "parameters": [
+            "greetingService (GreetingService): greeting business logic provider"
+          ],
+          "returns": "GreetingController instance",
+          "dependencies": [
+            "GreetingService"
+          ],
+          "significance": "Guarantees controller can execute greeting flow."
+        },
+        {
+          "method_name": "greet",
+          "summary": "Converts args into recipient choice and returns greeting.",
+          "parameters": [
+            "args (String[]): command-line recipient inputs"
+          ],
+          "returns": "String: greeting text",
+          "dependencies": [
+            "GreetingService.createGreeting"
+          ],
+          "significance": "Entry rule point for selecting default or explicit recipient."
+        }
+      ]
+    },
+    {
+      "file_path": "src/main/java/HelloWorld.java",
+      "summary": "Application entrypoint that wires components and prints greeting output.",
+      "category": "Mixed",
+      "description": "This file runs the greeting use case from startup to user-visible output. It assembles greeting components and invokes the controller path. It realizes the end-to-end greeting workflow for command-line usage.",
+      "business_rules": [
+        "Application prints exactly one greeting generated from controller logic."
+      ],
+      "technical_libraries": [],
+      "business_capability": "Greeting Management",
+      "sub_capability": "Greeting Execution",
+      "method_breakdown": [
+        {
+          "method_name": "main",
+          "summary": "Bootstraps repository/service/controller and prints greeting.",
+          "parameters": [
+            "args (String[]): optional recipient input"
+          ],
+          "returns": "void",
+          "dependencies": [
+            "GreetingRepository",
+            "GreetingService",
+            "GreetingController"
+          ],
+          "significance": "Operational entrypoint for the full greeting flow."
+        }
+      ]
+    },
+    {
+      "file_path": "src/test/java/HelloWorldTest.java",
+      "summary": "Defines expected greeting behaviors for output, argument handling, and fallback logic.",
+      "category": "Business",
+      "description": "This file captures acceptance expectations for the greeting workflow. It verifies default greeting output, first-argument recipient behavior, and blank-input fallback handling. It provides executable evidence of business rules.",
+      "business_rules": [
+        "Main flow output must be 'Hello World' followed by system newline.",
+        "Controller must use first argument as recipient.",
+        "Blank recipient input must fall back to 'World'."
+      ],
+      "technical_libraries": [
+        "JUnit Jupiter"
+      ],
+      "business_capability": "Greeting Management",
+      "sub_capability": "Behavior Validation",
+      "method_breakdown": [
+        {
+          "method_name": "mainPrintsHelloWorldWithTrailingNewline",
+          "summary": "Validates default output of main including newline.",
+          "parameters": [],
+          "returns": "void",
+          "dependencies": [
+            "HelloWorld.main",
+            "System.out"
+          ],
+          "significance": "Confirms user-visible output contract."
+        },
+        {
+          "method_name": "controllerUsesFirstArgumentAsRecipient",
+          "summary": "Validates first-argument selection rule.",
+          "parameters": [],
+          "returns": "void",
+          "dependencies": [
+            "GreetingController.greet",
+            "GreetingService",
+            "GreetingRepository"
+          ],
+          "significance": "Confirms argument-to-recipient business routing."
+        },
+        {
+          "method_name": "serviceFallsBackToDefaultRecipientForBlankInput",
+          "summary": "Validates blank-input fallback behavior.",
+          "parameters": [],
+          "returns": "void",
+          "dependencies": [
+            "GreetingService.createGreeting",
+            "GreetingRepository"
+          ],
+          "significance": "Confirms default-recipient business rule under empty input."
+        }
+      ]
+    }
+  ],
+  "configuration_analysis": {
+    "build_file": "pom.xml",
+    "dependencies": [
+      {
+        "name": "org.junit.jupiter:junit-jupiter",
+        "version": "5.11.4",
+        "scope": "test"
+      }
+    ],
+    "plugins": [
+      {
+        "name": "maven-compiler-plugin",
+        "version": "3.13.0",
+        "key_config": "release=25"
+      },
+      {
+        "name": "maven-surefire-plugin",
+        "version": "3.5.2"
+      }
+    ],
+    "business_impact": "Ensures Java 25 compilation and automated validation of greeting rules via tests."
+  }
+}
