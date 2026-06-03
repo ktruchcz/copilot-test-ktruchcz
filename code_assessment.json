@@ -1,0 +1,335 @@
+{
+  "project": "LegacyFinApp-026",
+  "assessment_date": "2025-01-01",
+  "assessed_by": "code-assessor",
+  "source_files_assessed": [
+    "src/main/java/HelloWorld.java",
+    "src/main/java/GreetingController.java",
+    "src/main/java/GreetingService.java",
+    "src/main/java/GreetingRepository.java",
+    "src/test/java/HelloWorldTest.java"
+  ],
+  "overall_score": 7.2,
+  "scores": {
+    "maintainability": 6.0,
+    "readability": 8.0,
+    "testability": 5.0,
+    "security": 9.0,
+    "performance": 10.0,
+    "solid_compliance": 5.5
+  },
+  "code_complexity": 2,
+  "logic_complexity": 2,
+  "summary": "LegacyFinApp-026 is a structurally clean, minimal Java 25 application with a well-applied three-tier layered architecture and constructor-based dependency injection. The core logic is correct and the cyclomatic complexity is commendably low (avg 1.4). However, the codebase lacks interface abstractions violating the Dependency Inversion Principle, all classes reside in the default package, hard-coded configuration values are embedded in GreetingRepository, and 5 of 14 business rules (35.7%) remain untested. These gaps collectively represent moderate technical debt that will impede testability, extensibility, and maintainability as the application grows.",
+  "metrics": {
+    "total_source_lines": 57,
+    "total_test_lines": 40,
+    "total_files": 5,
+    "average_cyclomatic_complexity": 1.4,
+    "business_rules_total": 14,
+    "business_rules_covered": 9,
+    "business_rules_uncovered": 5,
+    "test_coverage_percentage": 64.3,
+    "classes_with_interfaces": 0,
+    "classes_without_package": 5,
+    "classes_with_javadoc": 0,
+    "hardcoded_strings": 4
+  },
+  "solid_compliance": {
+    "single_responsibility": {
+      "status": "PASS",
+      "score": 9,
+      "notes": "Each class has exactly one responsibility: HelloWorld bootstraps, GreetingController handles input routing, GreetingService implements domain logic, GreetingRepository supplies configuration data."
+    },
+    "open_closed": {
+      "status": "PARTIAL",
+      "score": 4,
+      "notes": "GreetingRepository returns hard-coded strings. Adding a new greeting template or default recipient requires modifying the class rather than extending it. No strategy or configuration mechanism exists."
+    },
+    "liskov_substitution": {
+      "status": "N/A",
+      "score": 10,
+      "notes": "No inheritance hierarchies exist. LSP is not applicable and the design avoids inheritance altogether, which is positive."
+    },
+    "interface_segregation": {
+      "status": "FAIL",
+      "score": 2,
+      "notes": "No interfaces are defined for GreetingService or GreetingRepository. Consumers depend on concrete classes, making interface segregation impossible to evaluate or enforce."
+    },
+    "dependency_inversion": {
+      "status": "FAIL",
+      "score": 3,
+      "notes": "GreetingController depends directly on the concrete class GreetingService. GreetingService depends directly on the concrete class GreetingRepository. Neither abstraction (interface) exists. High-level modules depend on low-level modules, violating DIP."
+    }
+  },
+  "design_patterns": {
+    "identified": [
+      {
+        "pattern": "Constructor-Based Dependency Injection",
+        "quality": "GOOD",
+        "notes": "Properly implemented in GreetingController and GreetingService. Dependencies are final, injected at construction, and null-guarded. Enables clean composition in HelloWorld.main()."
+      },
+      {
+        "pattern": "Composition Root",
+        "quality": "GOOD",
+        "notes": "HelloWorld.main() correctly acts as the single composition root, assembling the full object graph before any business logic runs. Properly centralised."
+      },
+      {
+        "pattern": "Guard Clauses",
+        "quality": "GOOD",
+        "notes": "Objects.requireNonNull used in both constructors to fail fast on null dependencies. Provides clear error messages."
+      },
+      {
+        "pattern": "Layered Architecture",
+        "quality": "GOOD",
+        "notes": "Clean separation: Controller → Service → Repository. No layer skip detected. Each layer has a single, well-defined responsibility."
+      },
+      {
+        "pattern": "Repository Pattern",
+        "quality": "PARTIAL",
+        "notes": "GreetingRepository exists as a repository concept but lacks an interface. It supplies static configuration rather than persisted data. No abstraction contract is defined."
+      }
+    ],
+    "missing": [
+      {
+        "pattern": "Interface Abstraction",
+        "recommendation": "Define GreetingServicePort and GreetingRepositoryPort interfaces so that GreetingController and GreetingService depend on abstractions, not concrete classes. This enables mocking in tests and alternative implementations."
+      },
+      {
+        "pattern": "Configuration Externalisation",
+        "recommendation": "Extract hard-coded greeting template and default recipient from GreetingRepository into external configuration (properties file, environment variable, or injected value) to support the Open/Closed Principle."
+      }
+    ]
+  },
+  "issues": [
+    {
+      "id": "ISS-001",
+      "file": "ALL",
+      "line_number": 1,
+      "issue_type": "Code Structure",
+      "criticality": 4,
+      "message": "All classes reside in the default (unnamed) package — no package declaration present in any source file",
+      "solution": "Add a proper package declaration to all source files (e.g., 'package com.example.greeting;'). Organise classes into sub-packages by layer: com.example.greeting.controller, com.example.greeting.service, com.example.greeting.repository. This prevents class name collisions with classes from other libraries, enables proper encapsulation using package-private access modifiers, and is a fundamental Java best practice. Without a package, the classes cannot be reliably referenced by frameworks, tools, or modular builds.",
+      "estimated_time": 0.5
+    },
+    {
+      "id": "ISS-002",
+      "file": "GreetingController.java, GreetingService.java",
+      "line_number": 8,
+      "issue_type": "Code Structure",
+      "criticality": 4,
+      "message": "No interface abstractions defined for GreetingService and GreetingRepository — classes depend on concrete implementations, violating the Dependency Inversion Principle",
+      "solution": "Extract interfaces: create 'GreetingServicePort' with method 'createGreeting(String)' and 'GreetingRepositoryPort' with methods 'getGreetingTemplate()' and 'getDefaultRecipient()'. Update GreetingController to accept GreetingServicePort and GreetingService to accept GreetingRepositoryPort. Rename existing classes to 'DefaultGreetingService' and 'InMemoryGreetingRepository' as implementations. This allows test doubles (mocks/stubs) to be injected without a framework, and enables alternative implementations (database-backed, configurable) without changing callers.",
+      "estimated_time": 1.0
+    },
+    {
+      "id": "ISS-003",
+      "file": "GreetingRepository.java",
+      "line_number": 7,
+      "issue_type": "Maintainability",
+      "criticality": 3,
+      "message": "Greeting template 'Hello %s' and default recipient 'World' are hard-coded magic strings — not configurable without source modification",
+      "solution": "Extract 'Hello %s' and 'World' into named constants within GreetingRepository (e.g., 'private static final String DEFAULT_TEMPLATE = \"Hello %s\";'). Better yet, inject these values via constructor parameters so callers can supply different templates. Alternatively, load them from a properties file read at startup. This supports the Open/Closed Principle, makes values visible and searchable, enables environment-specific customisation, and eliminates the need to recompile when changing greeting copy.",
+      "estimated_time": 1.0
+    },
+    {
+      "id": "ISS-004",
+      "file": "HelloWorldTest.java",
+      "line_number": 1,
+      "issue_type": "Testing",
+      "criticality": 4,
+      "message": "5 of 14 business rules have no test coverage: BR-003, BR-004, BR-007, BR-010, BR-014",
+      "solution": "Add dedicated test methods for each uncovered rule: (1) assert GreetingController constructor throws NullPointerException with message 'greetingService must not be null' when service is null; (2) assert controller.greet(null) returns 'Hello World'; (3) assert GreetingService constructor throws NullPointerException with message 'greetingRepository must not be null' when repository is null; (4) assert service.createGreeting('  Alice  ') returns 'Hello Alice' proving trim is applied; (5) assert getGreetingTemplate() contains exactly one %s placeholder using assertTrue(template.contains(\"%s\")). These tests protect critical guard-clause and normalisation behaviours from regressions.",
+      "estimated_time": 1.5
+    },
+    {
+      "id": "ISS-005",
+      "file": "GreetingController.java",
+      "line_number": 16,
+      "issue_type": "Code Structure",
+      "criticality": 3,
+      "message": "Explicit null is passed to greetingService.createGreeting(null) as a sentinel value to signal 'no recipient' — null as a business signal is a code smell",
+      "solution": "Replace the null sentinel with Optional<String>: change GreetingController.greet() to call 'greetingService.createGreeting(Optional.empty())' for absent args and 'greetingService.createGreeting(Optional.of(args[0]))' for present args. Update GreetingService.createGreeting to accept 'Optional<String> requestedRecipient' and use 'requestedRecipient.filter(s -> !s.isBlank()).map(String::trim).orElseGet(greetingRepository::getDefaultRecipient)'. This eliminates null propagation, makes the optional nature of the recipient explicit in the API signature, and removes the need for null checks inside the service.",
+      "estimated_time": 1.0
+    },
+    {
+      "id": "ISS-006",
+      "file": "GreetingController.java",
+      "line_number": 14,
+      "issue_type": "Code Structure",
+      "criticality": 3,
+      "message": "GreetingController.greet() accepts raw String[] args from CLI — the controller is tightly coupled to the command-line argument format",
+      "solution": "Introduce a dedicated input model or decouple the parameter by having the controller accept 'String recipientName' (already-extracted value) instead of a raw String array. Move the arg-extraction logic to HelloWorld.main() or a dedicated CLI adapter class. This makes GreetingController reusable for web endpoints or API calls without modification, and conforms to the Single Responsibility Principle by separating CLI argument parsing from greeting coordination.",
+      "estimated_time": 1.0
+    },
+    {
+      "id": "ISS-007",
+      "file": "ALL",
+      "line_number": 1,
+      "issue_type": "Documentation",
+      "criticality": 2,
+      "message": "No Javadoc present on any public class or method — only non-informative placeholder comment '// generated by AI in Github cloud'",
+      "solution": "Replace the placeholder comments with proper class-level Javadoc documenting purpose, responsibility, and usage. Add method-level Javadoc to all public methods with @param, @return, and @throws tags. At minimum document: GreetingController.greet(), GreetingService.createGreeting(), GreetingRepository.getGreetingTemplate(), and GreetingRepository.getDefaultRecipient(). This enables IDE tooling, reduces onboarding time, and supports API documentation generation.",
+      "estimated_time": 1.0
+    },
+    {
+      "id": "ISS-008",
+      "file": "HelloWorldTest.java",
+      "line_number": 14,
+      "issue_type": "Testing",
+      "criticality": 2,
+      "message": "System.out is redirected inside the test method body rather than using @BeforeEach/@AfterEach lifecycle hooks — stdout state is not properly isolated between tests",
+      "solution": "Extract System.out redirection into @BeforeEach setup and @AfterEach teardown methods, or use a dedicated test library (system-stubs or system-lambda). Alternatively, refactor HelloWorld.main() to accept a PrintStream parameter so tests can inject a test output stream directly without touching the global System.out. This makes the test setup/teardown explicit, prevents stdout state leaking between test methods, and improves test isolation.",
+      "estimated_time": 0.5
+    },
+    {
+      "id": "ISS-009",
+      "file": "HelloWorldTest.java",
+      "line_number": 10,
+      "issue_type": "Testing",
+      "criticality": 2,
+      "message": "HelloWorldTest bundles integration and unit tests for multiple classes in a single test class — reduces cohesion and makes failures harder to isolate",
+      "solution": "Split HelloWorldTest into focused test classes: GreetingControllerTest (controller routing logic), GreetingServiceTest (recipient resolution and formatting), and HelloWorldIntegrationTest (end-to-end main() output). Each test class should test exactly one production class. This improves test discoverability, reduces test class size, and follows the standard Java convention of one test class per production class.",
+      "estimated_time": 0.5
+    },
+    {
+      "id": "ISS-010",
+      "file": "pom.xml",
+      "line_number": 39,
+      "issue_type": "Project Configuration",
+      "criticality": 2,
+      "message": "No maven-jar-plugin mainClass configuration — the built JAR is not executable via 'java -jar'",
+      "solution": "Add maven-jar-plugin configuration with '<archive><manifest><mainClass>com.example.greeting.HelloWorld</mainClass></manifest></archive>' (after adding package declarations). This makes 'java -jar hello-world-1.0.0.jar' work out of the box. Document the execution command in README.md. This is essential for deployment and developer experience.",
+      "estimated_time": 0.5
+    },
+    {
+      "id": "ISS-011",
+      "file": "pom.xml",
+      "line_number": 1,
+      "issue_type": "Project Configuration",
+      "criticality": 1,
+      "message": "No Maven Wrapper (mvnw) present — builds require a locally installed Maven version matching the project requirements",
+      "solution": "Generate a Maven Wrapper by running 'mvn wrapper:wrapper'. This creates mvnw, mvnw.cmd, and .mvn/wrapper/maven-wrapper.properties. Commit these files. The Maven Wrapper pins the project to a specific Maven version, ensures reproducible builds across developer machines and CI environments, and eliminates Maven version mismatch issues.",
+      "estimated_time": 0.5
+    },
+    {
+      "id": "ISS-012",
+      "file": "GreetingService.java",
+      "line_number": 15,
+      "issue_type": "Maintainability",
+      "criticality": 2,
+      "message": "Recipient resolution logic in createGreeting() combines null check, blank check, and default fallback in a single ternary — readability will decrease if the logic grows",
+      "solution": "Extract the recipient resolution logic into a private helper method 'resolveRecipient(String requestedRecipient)' that clearly documents the resolution rules. Use explicit if/else or a clean Optional chain rather than a multi-condition ternary. This separates the concern of 'who is the recipient?' from 'how do I format the greeting?', making each part independently readable, testable, and modifiable.",
+      "estimated_time": 0.5
+    }
+  ],
+  "enhancements": [
+    {
+      "id": "ENH-001",
+      "title": "Introduce Interface Abstractions to Achieve Full DIP Compliance",
+      "description": "Refactor the layered architecture to depend on interfaces (ports) rather than concrete classes. Define GreetingService as an interface and GreetingRepository as an interface, with concrete implementations named DefaultGreetingService and InMemoryGreetingRepository respectively. Update GreetingController to accept the GreetingService interface and GreetingService implementation to accept the GreetingRepository interface. This orchestrates a clean hexagonal-style architecture where the composition root wires concrete implementations to abstract ports. Benefits: enables unit testing with mocks without Mockito framework, supports alternative implementations, and aligns with the Dependency Inversion Principle.",
+      "example": "// Define interfaces\npublic interface GreetingService {\n    String createGreeting(String requestedRecipient);\n}\npublic interface GreetingRepository {\n    String getGreetingTemplate();\n    String getDefaultRecipient();\n}\n\n// Rename implementations\npublic class DefaultGreetingService implements GreetingService { ... }\npublic class InMemoryGreetingRepository implements GreetingRepository { ... }\n\n// Controller uses interface\npublic class GreetingController {\n    private final GreetingService greetingService; // interface type\n}\n\n// Test with a lambda stub — no Mockito needed\n@Test\nvoid greet_withNullArgs_usesDefaultGreeting() {\n    GreetingService stub = recipient -> \"Hello Stub\";\n    var controller = new GreetingController(stub);\n    assertEquals(\"Hello Stub\", controller.greet(null));\n}",
+      "priority": 5
+    },
+    {
+      "id": "ENH-002",
+      "title": "Expand Test Suite to Achieve 100% Business Rule Coverage",
+      "description": "Standardize the test suite by adding focused test classes for each production class and covering all 5 untested business rules (BR-003, BR-004, BR-007, BR-010, BR-014). Split the current monolithic HelloWorldTest into GreetingControllerTest, GreetingServiceTest, and HelloWorldIntegrationTest. Add parameterized tests using @ParameterizedTest and @CsvSource for boundary cases. Integrate JaCoCo maven plugin for line and branch coverage reporting in the CI pipeline.",
+      "example": "// GreetingControllerTest.java\nclass GreetingControllerTest {\n    @Test\n    void constructor_nullService_throwsNpe() { // BR-003\n        var ex = assertThrows(NullPointerException.class,\n            () -> new GreetingController(null));\n        assertEquals(\"greetingService must not be null\", ex.getMessage());\n    }\n\n    @Test\n    void greet_nullArgs_returnsDefaultGreeting() { // BR-004\n        var controller = new GreetingController(\n            new DefaultGreetingService(new InMemoryGreetingRepository()));\n        assertEquals(\"Hello World\", controller.greet(null));\n    }\n}\n\n// GreetingServiceTest.java\nclass GreetingServiceTest {\n    @Test\n    void createGreeting_paddedName_trimmed() { // BR-010\n        var service = new DefaultGreetingService(new InMemoryGreetingRepository());\n        assertEquals(\"Hello Alice\", service.createGreeting(\"  Alice  \"));\n    }\n\n    @Test\n    void constructor_nullRepository_throwsNpe() { // BR-007\n        var ex = assertThrows(NullPointerException.class,\n            () -> new DefaultGreetingService(null));\n        assertEquals(\"greetingRepository must not be null\", ex.getMessage());\n    }\n}",
+      "priority": 5
+    },
+    {
+      "id": "ENH-003",
+      "title": "Establish Proper Package Structure and Externalise Configuration",
+      "description": "Standardize the project structure by adding package declarations to all classes (com.example.greeting with sub-packages by layer) and externalising hard-coded values from GreetingRepository into named constants or constructor-injected configuration. This modularizes the codebase according to Java conventions, prevents default-package issues, and makes greeting copy configurable without recompilation.",
+      "example": "// Package structure:\n// com.example.greeting.HelloWorld\n// com.example.greeting.controller.GreetingController\n// com.example.greeting.service.GreetingService (interface)\n// com.example.greeting.service.DefaultGreetingService\n// com.example.greeting.repository.GreetingRepository (interface)\n// com.example.greeting.repository.InMemoryGreetingRepository\n\n// Configurable InMemoryGreetingRepository:\npublic class InMemoryGreetingRepository implements GreetingRepository {\n    private static final String DEFAULT_TEMPLATE = \"Hello %s\";\n    private static final String DEFAULT_RECIPIENT = \"World\";\n\n    private final String template;\n    private final String defaultRecipient;\n\n    public InMemoryGreetingRepository() {\n        this(DEFAULT_TEMPLATE, DEFAULT_RECIPIENT);\n    }\n\n    public InMemoryGreetingRepository(String template, String defaultRecipient) {\n        this.template = Objects.requireNonNull(template);\n        this.defaultRecipient = Objects.requireNonNull(defaultRecipient);\n    }\n}",
+      "priority": 4
+    },
+    {
+      "id": "ENH-004",
+      "title": "Replace Null Sentinel with Optional<String> for Recipient Parameter",
+      "description": "Refactor GreetingController and GreetingService to use Optional<String> for the recipient parameter instead of passing null as a sentinel value. This standardises the API contract, makes the optional nature of the recipient visible in method signatures, and eliminates null checks in favour of clean Optional chain operations.",
+      "example": "// GreetingController.java\npublic String greet(String[] args) {\n    Optional<String> recipient = (args != null && args.length > 0)\n        ? Optional.of(args[0])\n        : Optional.empty();\n    return greetingService.createGreeting(recipient);\n}\n\n// GreetingService.java\npublic String createGreeting(Optional<String> requestedRecipient) {\n    String recipient = requestedRecipient\n        .filter(s -> !s.isBlank())\n        .map(String::trim)\n        .orElseGet(greetingRepository::getDefaultRecipient);\n    return greetingRepository.getGreetingTemplate().formatted(recipient);\n}",
+      "priority": 3
+    },
+    {
+      "id": "ENH-005",
+      "title": "Orchestrate Build Pipeline: JaCoCo Coverage + Maven Wrapper + Executable JAR",
+      "description": "Orchestrate the build pipeline by adding JaCoCo Maven plugin to enforce coverage thresholds, adding Maven Wrapper for reproducible builds, and configuring maven-jar-plugin with a mainClass manifest entry for a directly executable JAR. Configure JaCoCo to fail the build if branch coverage drops below 80%.",
+      "example": "<!-- pom.xml: JaCoCo plugin -->\n<plugin>\n    <groupId>org.jacoco</groupId>\n    <artifactId>jacoco-maven-plugin</artifactId>\n    <version>0.8.12</version>\n    <executions>\n        <execution><goals><goal>prepare-agent</goal></goals></execution>\n        <execution>\n            <id>report</id><phase>test</phase>\n            <goals><goal>report</goal></goals>\n        </execution>\n        <execution>\n            <id>check</id><phase>verify</phase>\n            <goals><goal>check</goal></goals>\n            <configuration>\n                <rules><rule><limits><limit>\n                    <counter>BRANCH</counter>\n                    <value>COVEREDRATIO</value>\n                    <minimum>0.80</minimum>\n                </limit></limits></rule></rules>\n            </configuration>\n        </execution>\n    </executions>\n</plugin>\n\n<!-- pom.xml: executable JAR -->\n<plugin>\n    <groupId>org.apache.maven.plugins</groupId>\n    <artifactId>maven-jar-plugin</artifactId>\n    <configuration>\n        <archive><manifest>\n            <mainClass>com.example.greeting.HelloWorld</mainClass>\n        </manifest></archive>\n    </configuration>\n</plugin>",
+      "priority": 3
+    }
+  ],
+  "technical_debt": [
+    {
+      "debt_id": "TD-001",
+      "debt_type": "Design Debt",
+      "description": "No interface abstractions exist for GreetingService or GreetingRepository. All inter-layer dependencies are on concrete classes. This makes mocking impossible without a framework, alternative implementations impossible without changing callers, and violates DIP. If the codebase grows, this debt compounds as every new consumer is hard-coupled to concrete implementations.",
+      "impact": "HIGH",
+      "estimated_fix_time": 1.0
+    },
+    {
+      "debt_id": "TD-002",
+      "debt_type": "Test Debt",
+      "description": "5 of 14 business rules (35.7%) have no test coverage: BR-003, BR-004, BR-007, BR-010, BR-014. Guard-clause behaviour — the most critical regression risk — is entirely untested. The NullPointerException messages in constructors are unverified. Input normalisation (whitespace trimming) is also uncovered.",
+      "impact": "HIGH",
+      "estimated_fix_time": 2.0
+    },
+    {
+      "debt_id": "TD-003",
+      "debt_type": "Code Debt",
+      "description": "All 5 Java source files are in the default (unnamed) package. This prevents proper encapsulation, disallows package-private access control, causes issues with the Java module system (JPMS), and is universally considered unprofessional in production Java code. Java class loaders and many frameworks have known issues with default-package classes.",
+      "impact": "HIGH",
+      "estimated_fix_time": 0.5
+    },
+    {
+      "debt_id": "TD-004",
+      "debt_type": "Code Debt",
+      "description": "GreetingRepository embeds magic strings for the greeting template ('Hello %s') and default recipient ('World'). These are business-meaningful values that may need to vary by environment, locale, or feature requirement, but are baked into source code, requiring recompilation to change.",
+      "impact": "MEDIUM",
+      "estimated_fix_time": 1.0
+    },
+    {
+      "debt_id": "TD-005",
+      "debt_type": "Documentation Debt",
+      "description": "Zero Javadoc documentation exists across all 5 source files. The only comments present ('// generated by AI in Github cloud') are non-informative placeholders. All public APIs lack @param, @return, and @throws documentation. New contributors have no inline guidance.",
+      "impact": "MEDIUM",
+      "estimated_fix_time": 1.0
+    },
+    {
+      "debt_id": "TD-006",
+      "debt_type": "Infrastructure Debt",
+      "description": "The Maven build does not produce an executable JAR (no Main-Class manifest entry), has no Maven Wrapper (builds require locally installed Maven), no code coverage tooling (JaCoCo), and no static analysis plugin (Checkstyle, SpotBugs). These are standard elements expected in a CI/CD-ready Java project.",
+      "impact": "MEDIUM",
+      "estimated_fix_time": 1.5
+    },
+    {
+      "debt_id": "TD-007",
+      "debt_type": "Design Debt",
+      "description": "GreetingController.greet() accepts raw String[] from the CLI, tightly coupling the controller to the command-line argument format. This prevents reuse in non-CLI contexts (HTTP, gRPC, message queue) without modification.",
+      "impact": "LOW",
+      "estimated_fix_time": 0.5
+    }
+  ],
+  "security_assessment": {
+    "overall_rating": "LOW_RISK",
+    "attack_surface": "CLI arguments only — no network, no database, no file I/O, no authentication",
+    "findings": [
+      {
+        "finding": "CLI argument is used as greeting recipient without sanitisation",
+        "severity": "INFORMATIONAL",
+        "notes": "At this scope (stdout output only), unsanitised input poses no injection risk. If the template mechanism were extended to HTML output or database storage, sanitisation would become critical."
+      },
+      {
+        "finding": "String.formatted() uses %s placeholder — not susceptible to format-string injection in Java",
+        "severity": "INFORMATIONAL",
+        "notes": "Java's String.formatted() is not vulnerable to format-string injection as in C printf. The single %s is safe. If template source ever accepts external input, this should be re-evaluated."
+      }
+    ]
+  },
+  "performance_assessment": {
+    "overall_rating": "OPTIMAL",
+    "notes": "All operations are O(1). No loops, no collections, no I/O beyond a single stdout write. The object graph construction in main() allocates 3 objects — trivially cheap. No caching, pooling, or optimisation is warranted.",
+    "findings": []
+  }
+}

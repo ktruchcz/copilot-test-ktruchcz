@@ -1,0 +1,174 @@
+{
+  "schema_name": "legacyfinapp026_greeting_system",
+  "project": "LegacyFinApp-026",
+  "project_id": "copilot-test-ktruchcz",
+  "database_dialect": "postgresql",
+  "postgresql_minimum_version": "15",
+  "description": "Relational database schema for the LegacyFinApp-026 Hello World greeting application. Externalises GreetingRepository hard-coded values into persistent tables and adds full lifecycle audit via greeting_events.",
+  "generated_by": "ddl-generator",
+  "generated_at": "2025-01-01T00:00:00Z",
+  "source_files_analysed": [
+    "analysis_results.json",
+    "business_rules_extractor_analysis.json",
+    "ast_analysis.json",
+    "src/main/java/GreetingRepository.java",
+    "src/main/java/GreetingService.java",
+    "src/main/java/GreetingController.java",
+    "src/main/java/HelloWorld.java",
+    "src/test/java/HelloWorldTest.java"
+  ],
+  "ddl_file_path": "database_schema.sql",
+  "ddl_file_path_note": "Requested path was output/database_schema.sql; saved to workspace root because output/ directory did not exist.",
+  "documentation_file_path": "schema_documentation.md",
+  "tables": [
+    {
+      "table_name": "greeting_templates",
+      "description": "Configurable message format strings. Backs GreetingRepository.getGreetingTemplate().",
+      "columns": 9,
+      "indexes": 3,
+      "foreign_keys": 0,
+      "check_constraints": 2,
+      "unique_constraints": 1,
+      "triggers": 1,
+      "java_source": "GreetingRepository.getGreetingTemplate()",
+      "seed_rows": 4,
+      "business_rules": ["BR-012", "BR-014"]
+    },
+    {
+      "table_name": "recipients",
+      "description": "Named greeting targets with default-value semantics. Backs GreetingRepository.getDefaultRecipient().",
+      "columns": 8,
+      "indexes": 5,
+      "foreign_keys": 0,
+      "check_constraints": 2,
+      "unique_constraints": 1,
+      "triggers": 1,
+      "java_source": "GreetingRepository.getDefaultRecipient()",
+      "seed_rows": 2,
+      "business_rules": ["BR-008", "BR-009", "BR-010", "BR-013"]
+    },
+    {
+      "table_name": "greeting_events",
+      "description": "Immutable audit log of every greeting produced by GreetingService.createGreeting(). INSERT-only.",
+      "columns": 11,
+      "indexes": 7,
+      "foreign_keys": 2,
+      "check_constraints": 5,
+      "unique_constraints": 0,
+      "triggers": 0,
+      "java_source": "GreetingService.createGreeting() / HelloWorld.main()",
+      "seed_rows": 1,
+      "business_rules": ["BR-001", "BR-002", "BR-004", "BR-005", "BR-006", "BR-008", "BR-009", "BR-010", "BR-011"]
+    },
+    {
+      "table_name": "app_config",
+      "description": "Key/value store for application settings currently hard-coded in Java source.",
+      "columns": 9,
+      "indexes": 3,
+      "foreign_keys": 0,
+      "check_constraints": 1,
+      "unique_constraints": 1,
+      "triggers": 1,
+      "java_source": "HelloWorld.main() (implicit)",
+      "seed_rows": 8,
+      "business_rules": ["BR-002", "BR-006", "BR-009", "BR-010", "BR-012"]
+    }
+  ],
+  "views": [
+    {
+      "view_name": "v_active_greeting_templates",
+      "description": "Active templates available for GreetingService. Filters is_active = TRUE.",
+      "base_tables": ["greeting_templates"]
+    },
+    {
+      "view_name": "v_default_recipient",
+      "description": "Current default recipient (BR-013: 'World'). Used on null/blank input.",
+      "base_tables": ["recipients"]
+    },
+    {
+      "view_name": "v_greeting_event_summary",
+      "description": "Denormalised event log joined to templates and recipients for dashboards.",
+      "base_tables": ["greeting_events", "greeting_templates", "recipients"]
+    },
+    {
+      "view_name": "v_workflow_statistics",
+      "description": "Aggregated event counts and percentages by resolution strategy and workflow.",
+      "base_tables": ["greeting_events"]
+    }
+  ],
+  "relationships": [
+    {
+      "from_table": "greeting_events",
+      "to_table": "greeting_templates",
+      "relationship_type": "many_to_one",
+      "foreign_key_column": "template_id",
+      "on_delete": "RESTRICT",
+      "rationale": "Many greetings use one template; prevent orphaned templates with event history"
+    },
+    {
+      "from_table": "greeting_events",
+      "to_table": "recipients",
+      "relationship_type": "many_to_one",
+      "foreign_key_column": "recipient_id",
+      "on_delete": "SET NULL",
+      "nullable": true,
+      "rationale": "Recipient may be ad-hoc CLI value not in catalogue; preserve history if catalogue entry is removed"
+    }
+  ],
+  "statistics": {
+    "total_tables": 4,
+    "total_columns": 43,
+    "total_indexes": 17,
+    "total_foreign_keys": 2,
+    "total_check_constraints": 11,
+    "total_unique_constraints": 3,
+    "total_triggers": 3,
+    "total_views": 4,
+    "total_seed_rows": 15
+  },
+  "business_rule_coverage": {
+    "total_rules_in_source": 14,
+    "rules_with_schema_representation": 12,
+    "rules_application_layer_only": 2,
+    "application_layer_only_rules": [
+      {
+        "rule_id": "BR-003",
+        "reason": "NullPointerException on null GreetingService is a Java construction guard (Objects.requireNonNull); not representable as a SQL constraint."
+      },
+      {
+        "rule_id": "BR-007",
+        "reason": "NullPointerException on null GreetingRepository is a Java construction guard (Objects.requireNonNull); not representable as a SQL constraint."
+      }
+    ],
+    "schema_represented_rules": [
+      "BR-001", "BR-002", "BR-004", "BR-005", "BR-006",
+      "BR-008", "BR-009", "BR-010", "BR-011", "BR-012",
+      "BR-013", "BR-014"
+    ]
+  },
+  "workflow_coverage": {
+    "WF-001": {
+      "name": "Default Greeting Workflow",
+      "schema_columns": ["resolution_strategy='DEFAULT_USED'", "args_count=0", "workflow_id='WF-001'"],
+      "seed_row": true
+    },
+    "WF-002": {
+      "name": "Named Recipient Greeting Workflow",
+      "schema_columns": ["resolution_strategy='NAMED_RECIPIENT'", "requested_recipient=args[0]", "workflow_id='WF-002'"],
+      "seed_row": false
+    },
+    "WF-003": {
+      "name": "Blank Recipient Fallback Workflow",
+      "schema_columns": ["resolution_strategy='BLANK_FALLBACK'", "chk_blank_fallback_consistency", "workflow_id='WF-003'"],
+      "seed_row": false
+    }
+  },
+  "design_decisions": [
+    "greeting_events is INSERT-only (immutable audit log) — no updated_at column",
+    "Single default recipient enforced via partial unique index on (is_default) WHERE is_default = TRUE — avoids trigger complexity",
+    "recipient_id is nullable in greeting_events — supports ad-hoc CLI recipients not in catalogue",
+    "ON DELETE RESTRICT for template FK — prevents silent deletion of templates with history",
+    "ON DELETE SET NULL for recipient FK — preserves event history if catalogue entry is removed",
+    "placeholder_count stored as column alongside template_value — enables simple CHECK (placeholder_count = 1) without regex constraint"
+  ]
+}
