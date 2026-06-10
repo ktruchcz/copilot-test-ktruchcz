@@ -83,13 +83,6 @@ public class TransactionStepDefinitions {
             values, hasItem(expectedValue));
     }
 
-    @Then("the summary field {string} is {double}")
-    public void theSummaryFieldIsDouble(String field, double expectedValue) {
-        double actual = context.getLastResponse().jsonPath().getDouble(field);
-        assertThat("Summary field '" + field + "' mismatch",
-            actual, is(closeTo(expectedValue, 0.001)));
-    }
-
     @Then("the summary field {string} is at least {double}")
     public void theSummaryFieldIsAtLeast(String field, double minValue) {
         double actual = context.getLastResponse().jsonPath().getDouble(field);
