@@ -1,5 +1,4 @@
-*.class
-
-# Maven build output
-target/
-hook_tools_used.log
+*.DAT
+*.RPT
+*.log
+*.tmp
