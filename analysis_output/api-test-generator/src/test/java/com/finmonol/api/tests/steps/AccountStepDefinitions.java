@@ -73,7 +73,7 @@ public class AccountStepDefinitions {
         assertThat("Account field '" + field + "' mismatch", actual, is(expectedValue));
     }
 
-    @Then("the account field {string} is {word}")
+    @Then("^the account field \"([^\"]+)\" is (true|false)$")
     public void theAccountFieldIsBoolean(String field, String expectedValue) {
         Object actual = context.getLastResponse().jsonPath().get(field);
         assertThat("Account field '" + field + "' mismatch",
