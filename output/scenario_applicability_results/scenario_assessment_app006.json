@@ -1,0 +1,66 @@
+{
+  "app_id": "app006",
+  "app_name": "SupportApp-006",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
+      "status": "LACK_OF_DATA",
+      "rationale": "The operating system (Debian 6) is not covered by the provided lifecycle rules."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
+      "status": "PARTIALLY_FULFILLED",
+      "rationale": "The workload already runs on Linux (Debian 6), but not on the target standard Linux distributions highlighted in the rules."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
+      "status": "BLOCKED",
+      "rationale": "The current stack (Debian 6, Java 11, Glassfish 5.0) is legacy and would make an ARM migration high risk."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
+      "status": "APPLICABLE",
+      "rationale": "The application uses Glassfish 5.0, which is a legacy-style middleware component worth evaluating for replacement."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+      "status": "FULFILLED",
+      "rationale": "The application is already deployed in AWS."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "status": "BLOCKED",
+      "rationale": "The legacy stack (Debian 6, Java 11) makes near-term containerization difficult."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
+      "status": "NOT_APPLICABLE",
+      "rationale": "The solution type (3rd party software) suggests packaged software, which limits custom refactoring opportunities."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "status": "LACK_OF_DATA",
+      "rationale": "The database version for PostgreSQL 13 is not covered by the supplied lifecycle rules."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "scenario_name": "Switch DB Engine to open-source database solution",
+      "status": "FULFILLED",
+      "rationale": "The application already uses an open-source or open-source-based database engine (PostgreSQL 13)."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "scenario_name": "Update outdated components",
+      "status": "APPLICABLE",
+      "rationale": "The technology assessment found 0 EOL and 1 outdated component(s)."
+    }
+  ]
+}

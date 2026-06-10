@@ -1,0 +1,39 @@
+{
+  "app_id": "app006",
+  "app_name": "SupportApp-006",
+  "app_description": "IT service desk application for handling internal support tickets and IT service requests",
+  "solution_type": "3rd party software",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "IT",
+  "business_capabilities": [
+    "Incident Management",
+    "Service Desk",
+    "Customer Management"
+  ],
+  "user_count": 290,
+  "operating_system": "Debian 6",
+  "programming_language": "Java 11",
+  "application_server": "Glassfish 5.0",
+  "application_architecture": "unknown",
+  "is_containerized": "No",
+  "environment_count": 2,
+  "server_instances": "sv10",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": "prod05",
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 6,
+  "external_interface_count": 4,
+  "database_engine": "PostgreSQL 13",
+  "database_storage_gb": 200,
+  "database_license_required": "No",
+  "logging_solution": "ELK",
+  "monitoring_tool": null,
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0006"
+  }
+}

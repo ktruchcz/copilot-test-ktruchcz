@@ -1,0 +1,66 @@
+{
+  "app_id": "app013",
+  "app_name": "SecurityApp-013",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
+      "status": "LACK_OF_DATA",
+      "rationale": "The operating system (Debian 7) is not covered by the provided lifecycle rules."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
+      "status": "PARTIALLY_FULFILLED",
+      "rationale": "The workload already runs on Linux (Debian 7), but not on the target standard Linux distributions highlighted in the rules."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
+      "status": "BLOCKED",
+      "rationale": "The current stack (Debian 7, Java 17, Websphere 8.0) is legacy and would make an ARM migration high risk."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
+      "status": "APPLICABLE",
+      "rationale": "The current application server (Websphere 8.0) is assessed as EOL, which makes replacement relevant."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+      "status": "APPLICABLE",
+      "rationale": "The application is currently deployed as On-Premise, so lift-and-shift to cloud remains a valid option."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "status": "BLOCKED",
+      "rationale": "The legacy stack (Debian 7, Java 17) makes near-term containerization difficult."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
+      "status": "APPLICABLE",
+      "rationale": "The application is custom-built and integration-heavy, so decoupling and refactoring would likely improve modernization outcomes."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "status": "FULFILLED",
+      "rationale": "The database (SQL Server 2022) is already current according to the provided lifecycle rules."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "scenario_name": "Switch DB Engine to open-source database solution",
+      "status": "APPLICABLE",
+      "rationale": "The application uses a proprietary database (SQL Server 2022), so an open-source alternative could reduce cost and lock-in."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "scenario_name": "Update outdated components",
+      "status": "APPLICABLE",
+      "rationale": "The technology assessment found 1 EOL and 0 outdated component(s)."
+    }
+  ]
+}

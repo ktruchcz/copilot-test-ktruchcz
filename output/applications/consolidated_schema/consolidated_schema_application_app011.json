@@ -1,0 +1,39 @@
+{
+  "app_id": "app011",
+  "app_name": "RouteOptApp-011",
+  "app_description": "Advanced route optimization system using machine learning algorithms for delivery planning",
+  "solution_type": "Custom made",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "R&D",
+  "business_capabilities": [
+    "Route Optimization",
+    "Data Analytics",
+    "Reporting"
+  ],
+  "user_count": 125,
+  "operating_system": "CentOS 7",
+  "programming_language": "Python 3.11",
+  "application_server": "Glassfish 4.0",
+  "application_architecture": "3-Tier",
+  "is_containerized": "Yes",
+  "environment_count": 1,
+  "server_instances": "sv14",
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": "prod04",
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 12,
+  "external_interface_count": 5,
+  "database_engine": "PostgreSQL 14",
+  "database_storage_gb": 180,
+  "database_license_required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Prometheus",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0011"
+  }
+}

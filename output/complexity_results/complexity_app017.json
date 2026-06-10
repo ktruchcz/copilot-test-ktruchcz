@@ -1,0 +1,24 @@
+{
+  "app_id": "app017",
+  "app_name": "BackupApp-017",
+  "complexity_score": 8,
+  "complexity_label": "High",
+  "estimated_effort": "6-12 months",
+  "factors": {
+    "base_score": 3,
+    "business_criticality": "High",
+    "criticality_adjustment": 1,
+    "eol_components": 2,
+    "eol_adjustment": 2,
+    "server_count": 2,
+    "server_adjustment": 1,
+    "dependency_proxy": "external_interface_count",
+    "dependency_count": 8,
+    "dependency_adjustment": 1,
+    "custom_code": false,
+    "custom_code_adjustment": 0,
+    "containerized": false,
+    "containerization_adjustment": 0
+  },
+  "reasoning": "Started from base score 3, applied +1 for High criticality, +2 for 2 EOL component(s), +1 for 2 server(s), +1 using external interfaces as the dependency proxy (8), +0 for custom code indication, and +0 for containerization."
+}

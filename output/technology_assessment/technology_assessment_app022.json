@@ -1,0 +1,39 @@
+{
+  "app_id": "app022",
+  "app_name": "ComplianceApp-022",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL",
+      "version": "7",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for RHEL 7."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Scala 2.13",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Programming language or runtime version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Payara 6.0",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Application server technology is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL",
+      "version": "14",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for PostgreSQL 14."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 1,
+  "outdated_count": 0,
+  "current_count": 1
+}

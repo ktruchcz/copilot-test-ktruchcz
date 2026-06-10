@@ -1,0 +1,39 @@
+{
+  "app_id": "app026",
+  "app_name": "LegacyFinApp-026",
+  "app_description": "Legacy financial modeling system for complex calculations and risk assessments",
+  "solution_type": "Custom made",
+  "business_criticality": "Critical",
+  "application_status": "Production",
+  "deployment_type": "On-Premise",
+  "data_classification": "Confidential",
+  "business_unit": "Finance",
+  "business_capabilities": [
+    "Financial Calculations",
+    "Risk Modeling",
+    "Regulatory Reporting"
+  ],
+  "user_count": 150,
+  "operating_system": "AIX 7.2",
+  "programming_language": "FORTRAN 2018",
+  "application_server": null,
+  "application_architecture": "1-Tier",
+  "is_containerized": "No",
+  "environment_count": 2,
+  "server_instances": "sv38",
+  "cpu_cores": 8,
+  "memory_gb": 64,
+  "production_environments": "prod02",
+  "ci_cd_present": "No",
+  "api_endpoint_count": 0,
+  "external_interface_count": 1,
+  "database_engine": "DB2",
+  "database_storage_gb": 1500,
+  "database_license_required": "Yes",
+  "logging_solution": null,
+  "monitoring_tool": null,
+  "additional_attributes": {
+    "decomission_date": 2027,
+    "physical_database_server_instance": "db0030"
+  }
+}

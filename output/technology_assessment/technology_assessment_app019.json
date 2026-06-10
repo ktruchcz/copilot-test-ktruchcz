@@ -1,0 +1,39 @@
+{
+  "app_id": "app019",
+  "app_name": "QualityApp-019",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL",
+      "version": "8",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for RHEL 8."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Python",
+      "version": "3.8",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for Python 3.8."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Tomcat",
+      "version": "8.0",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for Tomcat 8."
+    },
+    {
+      "component_type": "database",
+      "name": "MySQL",
+      "version": "8",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for MySQL 8."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 2,
+  "outdated_count": 0,
+  "current_count": 2
+}

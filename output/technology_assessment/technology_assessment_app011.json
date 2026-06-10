@@ -1,0 +1,39 @@
+{
+  "app_id": "app011",
+  "app_name": "RouteOptApp-011",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "CentOS 7",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Operating system version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Python",
+      "version": "3.11",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for Python 3.11."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Glassfish 4.0",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Application server technology is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL",
+      "version": "14",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for PostgreSQL 14."
+    }
+  ],
+  "overall_technology_risk": "MEDIUM",
+  "eol_count": 0,
+  "outdated_count": 0,
+  "current_count": 2
+}

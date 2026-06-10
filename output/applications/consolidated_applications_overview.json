@@ -1,0 +1,152 @@
+[
+  {
+    "id": "app001",
+    "name": "ERPApp-001",
+    "status": "Production"
+  },
+  {
+    "id": "app002",
+    "name": "CRMApp-002",
+    "status": "Production"
+  },
+  {
+    "id": "app003",
+    "name": "AnalyticsApp-003",
+    "status": "Production"
+  },
+  {
+    "id": "app004",
+    "name": "HRApp-004",
+    "status": "Production"
+  },
+  {
+    "id": "app005",
+    "name": "EComApp-005",
+    "status": "Retired"
+  },
+  {
+    "id": "app006",
+    "name": "SupportApp-006",
+    "status": "Production"
+  },
+  {
+    "id": "app007",
+    "name": "FinanceApp-007",
+    "status": "Retired"
+  },
+  {
+    "id": "app008",
+    "name": "InventoryApp-008",
+    "status": "Production"
+  },
+  {
+    "id": "app009",
+    "name": "MarketingApp-009",
+    "status": "Retired"
+  },
+  {
+    "id": "app010",
+    "name": "PayrollApp-010",
+    "status": "Production"
+  },
+  {
+    "id": "app011",
+    "name": "RouteOptApp-011",
+    "status": "Production"
+  },
+  {
+    "id": "app012",
+    "name": "IoTSensorApp-012",
+    "status": "Production"
+  },
+  {
+    "id": "app013",
+    "name": "SecurityApp-013",
+    "status": "Production"
+  },
+  {
+    "id": "app014",
+    "name": "DocumentApp-014",
+    "status": "Production"
+  },
+  {
+    "id": "app015",
+    "name": "ReportingApp-015",
+    "status": "Production"
+  },
+  {
+    "id": "app016",
+    "name": "MobileApp-016",
+    "status": "Production"
+  },
+  {
+    "id": "app017",
+    "name": "BackupApp-017",
+    "status": "Production"
+  },
+  {
+    "id": "app018",
+    "name": "VendorApp-018",
+    "status": "Production"
+  },
+  {
+    "id": "app019",
+    "name": "QualityApp-019",
+    "status": "Production"
+  },
+  {
+    "id": "app020",
+    "name": "TrainingApp-020",
+    "status": "Production"
+  },
+  {
+    "id": "app021",
+    "name": "FleetApp-021",
+    "status": "Production"
+  },
+  {
+    "id": "app022",
+    "name": "ComplianceApp-022",
+    "status": "Production"
+  },
+  {
+    "id": "app023",
+    "name": "ChatbotApp-023",
+    "status": "Production"
+  },
+  {
+    "id": "app024",
+    "name": "AuditApp-024",
+    "status": "Production"
+  },
+  {
+    "id": "app025",
+    "name": "PortalApp-025",
+    "status": "Production"
+  },
+  {
+    "id": "app026",
+    "name": "LegacyFinApp-026",
+    "status": "Production"
+  },
+  {
+    "id": "app027",
+    "name": "DataWarehouseApp-027",
+    "status": "Production"
+  },
+  {
+    "id": "app028",
+    "name": "NotificationApp-028",
+    "status": "Production"
+  },
+  {
+    "id": "app029",
+    "name": "ConfigApp-029",
+    "status": "Retired"
+  },
+  {
+    "id": "app030",
+    "name": "APIGatewayApp-030",
+    "status": "Production"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "app_id": "app006",
+  "app_name": "SupportApp-006",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Debian 6",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Operating system version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java",
+      "version": "11",
+      "status": "OUTDATED",
+      "notes": "Lifecycle rule matched for Java 11."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Glassfish 5.0",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Application server technology is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "PostgreSQL",
+      "version": "13",
+      "status": "NO_KNOWLEDGE",
+      "notes": "PostgreSQL version is not covered by the provided lifecycle rules."
+    }
+  ],
+  "overall_technology_risk": "HIGH",
+  "eol_count": 0,
+  "outdated_count": 1,
+  "current_count": 0
+}

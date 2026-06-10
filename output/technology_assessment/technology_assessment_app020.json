@@ -1,0 +1,39 @@
+{
+  "app_id": "app020",
+  "app_name": "TrainingApp-020",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server",
+      "version": "2012",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for Windows Server 2012."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Angular",
+      "version": "15",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for Angular 15."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 8.5",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Application server technology is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server",
+      "version": "2016",
+      "status": "OUTDATED",
+      "notes": "Lifecycle rule matched for SQL Server 2016."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 2,
+  "outdated_count": 1,
+  "current_count": 0
+}

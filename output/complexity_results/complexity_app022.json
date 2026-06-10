@@ -1,0 +1,24 @@
+{
+  "app_id": "app022",
+  "app_name": "ComplianceApp-022",
+  "complexity_score": 9,
+  "complexity_label": "High",
+  "estimated_effort": "6-12 months",
+  "factors": {
+    "base_score": 3,
+    "business_criticality": "Critical",
+    "criticality_adjustment": 2,
+    "eol_components": 1,
+    "eol_adjustment": 1,
+    "server_count": 2,
+    "server_adjustment": 1,
+    "dependency_proxy": "external_interface_count",
+    "dependency_count": 12,
+    "dependency_adjustment": 2,
+    "custom_code": true,
+    "custom_code_adjustment": 1,
+    "containerized": true,
+    "containerization_adjustment": -1
+  },
+  "reasoning": "Started from base score 3, applied +2 for Critical criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +2 using external interfaces as the dependency proxy (12), +1 for custom code indication, and -1 for containerization."
+}

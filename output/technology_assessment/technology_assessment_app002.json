@@ -1,0 +1,39 @@
+{
+  "app_id": "app002",
+  "app_name": "CRMApp-002",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL",
+      "version": "7",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for RHEL 7."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java",
+      "version": "11",
+      "status": "OUTDATED",
+      "notes": "Lifecycle rule matched for Java 11."
+    },
+    {
+      "component_type": "application_server",
+      "name": "WebSphere",
+      "version": "7.0",
+      "status": "NO_KNOWLEDGE",
+      "notes": "WebSphere version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "MySQL",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "MySQL is identified, but no supported version is present."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 1,
+  "outdated_count": 1,
+  "current_count": 0
+}

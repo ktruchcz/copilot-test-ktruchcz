@@ -1,0 +1,66 @@
+{
+  "app_id": "app027",
+  "app_name": "DataWarehouseApp-027",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
+      "status": "APPLICABLE",
+      "rationale": "The operating system (RHEL 7) is assessed as EOL, so patching or upgrading is recommended."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
+      "status": "FULFILLED",
+      "rationale": "The application already runs on a standard Linux distribution (RHEL 7)."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
+      "status": "BLOCKED",
+      "rationale": "The current stack (RHEL 7, Java 11, Websphere 8.5) is legacy and would make an ARM migration high risk."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
+      "status": "APPLICABLE",
+      "rationale": "The current application server (Websphere 8.5) is assessed as EOL, which makes replacement relevant."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+      "status": "FULFILLED",
+      "rationale": "The application is already deployed in AWS, On-premise."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "status": "BLOCKED",
+      "rationale": "The legacy stack (RHEL 7, Java 11) makes near-term containerization difficult."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
+      "status": "APPLICABLE",
+      "rationale": "The application is custom-built and integration-heavy, so decoupling and refactoring would likely improve modernization outcomes."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "status": "FULFILLED",
+      "rationale": "The database (SQL Server 2022) is already current according to the provided lifecycle rules."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "scenario_name": "Switch DB Engine to open-source database solution",
+      "status": "APPLICABLE",
+      "rationale": "The application uses a proprietary database (SQL Server 2022), so an open-source alternative could reduce cost and lock-in."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "scenario_name": "Update outdated components",
+      "status": "APPLICABLE",
+      "rationale": "The technology assessment found 2 EOL and 1 outdated component(s)."
+    }
+  ]
+}

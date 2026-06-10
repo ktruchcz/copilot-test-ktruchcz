@@ -1,0 +1,24 @@
+{
+  "app_id": "app024",
+  "app_name": "AuditApp-024",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "estimated_effort": "3-6 months",
+  "factors": {
+    "base_score": 3,
+    "business_criticality": "High",
+    "criticality_adjustment": 1,
+    "eol_components": 1,
+    "eol_adjustment": 1,
+    "server_count": 1,
+    "server_adjustment": 0,
+    "dependency_proxy": "external_interface_count",
+    "dependency_count": 3,
+    "dependency_adjustment": 0,
+    "custom_code": true,
+    "custom_code_adjustment": 1,
+    "containerized": false,
+    "containerization_adjustment": 0
+  },
+  "reasoning": "Started from base score 3, applied +1 for High criticality, +1 for 1 EOL component(s), +0 for 1 server(s), +0 using external interfaces as the dependency proxy (3), +1 for custom code indication, and +0 for containerization."
+}

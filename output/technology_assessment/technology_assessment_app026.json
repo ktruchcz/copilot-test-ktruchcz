@@ -1,0 +1,32 @@
+{
+  "app_id": "app026",
+  "app_name": "LegacyFinApp-026",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "AIX 7.2",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Operating system version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "FORTRAN 2018",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Programming language or runtime version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "DB2",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Database engine is not covered by the provided lifecycle rules."
+    }
+  ],
+  "overall_technology_risk": "MEDIUM",
+  "eol_count": 0,
+  "outdated_count": 0,
+  "current_count": 0
+}

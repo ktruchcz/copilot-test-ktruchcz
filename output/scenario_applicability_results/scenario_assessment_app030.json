@@ -1,0 +1,66 @@
+{
+  "app_id": "app030",
+  "app_name": "APIGatewayApp-030",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
+      "status": "FULFILLED",
+      "rationale": "The operating system (RHEL 8) is already on a current version per the provided lifecycle rules."
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
+      "status": "FULFILLED",
+      "rationale": "The application already runs on a standard Linux distribution (RHEL 8)."
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
+      "status": "APPLICABLE",
+      "rationale": "The application is already deployed on AWS and uses a portable stack, so ARM-based hosting is a credible optimization option."
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
+      "status": "APPLICABLE",
+      "rationale": "The application uses Glassfish 3.0, which is a legacy-style middleware component worth evaluating for replacement."
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+      "status": "FULFILLED",
+      "rationale": "The application is already deployed in AWS."
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "status": "FULFILLED",
+      "rationale": "The application is already marked as containerized."
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
+      "status": "FULFILLED",
+      "rationale": "The available description already points to microservice-oriented architecture or service mesh characteristics."
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "status": "APPLICABLE",
+      "rationale": "The database (MySQL 5.7) is assessed as EOL, so an upgrade is justified."
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "scenario_name": "Switch DB Engine to open-source database solution",
+      "status": "FULFILLED",
+      "rationale": "The application already uses an open-source or open-source-based database engine (MySQL 5.7)."
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "scenario_name": "Update outdated components",
+      "status": "APPLICABLE",
+      "rationale": "The technology assessment found 1 EOL and 0 outdated component(s)."
+    }
+  ]
+}

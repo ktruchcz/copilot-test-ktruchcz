@@ -1,0 +1,39 @@
+{
+  "app_id": "app028",
+  "app_name": "NotificationApp-028",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server",
+      "version": "2019",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for Windows Server 2019."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java",
+      "version": "17",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for Java 17."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Application server technology is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "Oracle",
+      "version": "19c",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for Oracle 19c."
+    }
+  ],
+  "overall_technology_risk": "MEDIUM",
+  "eol_count": 0,
+  "outdated_count": 0,
+  "current_count": 3
+}

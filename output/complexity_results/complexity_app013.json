@@ -1,0 +1,24 @@
+{
+  "app_id": "app013",
+  "app_name": "SecurityApp-013",
+  "complexity_score": 10,
+  "complexity_label": "Very High",
+  "estimated_effort": "12+ months",
+  "factors": {
+    "base_score": 3,
+    "business_criticality": "Critical",
+    "criticality_adjustment": 2,
+    "eol_components": 1,
+    "eol_adjustment": 1,
+    "server_count": 2,
+    "server_adjustment": 1,
+    "dependency_proxy": "external_interface_count",
+    "dependency_count": 15,
+    "dependency_adjustment": 2,
+    "custom_code": true,
+    "custom_code_adjustment": 1,
+    "containerized": false,
+    "containerization_adjustment": 0
+  },
+  "reasoning": "Started from base score 3, applied +2 for Critical criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +2 using external interfaces as the dependency proxy (15), +1 for custom code indication, and +0 for containerization."
+}

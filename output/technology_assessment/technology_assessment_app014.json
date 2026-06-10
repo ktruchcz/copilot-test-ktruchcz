@@ -1,0 +1,39 @@
+{
+  "app_id": "app014",
+  "app_name": "DocumentApp-014",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Windows Server",
+      "version": "2019",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for Windows Server 2019."
+    },
+    {
+      "component_type": "programming_language",
+      "name": ".NET",
+      "version": "6",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for .NET 6."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Microsoft IIS 10.0",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Application server technology is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "MySQL",
+      "version": "8",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for MySQL 8."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 1,
+  "outdated_count": 0,
+  "current_count": 2
+}

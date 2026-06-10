@@ -1,0 +1,221 @@
+{
+  "generated_at": "2026-06-10T07:50:39.901830+00:00",
+  "application_count": 30,
+  "fields": [
+    {
+      "name": "additional_attributes",
+      "observed_types": [
+        "dict"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "api_endpoint_count",
+      "observed_types": [
+        "int"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "app_description",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "app_id",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "app_name",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "application_architecture",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "application_server",
+      "observed_types": [
+        "NoneType",
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "application_status",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "business_capabilities",
+      "observed_types": [
+        "list"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "business_criticality",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "business_unit",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "ci_cd_present",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "cpu_cores",
+      "observed_types": [
+        "int"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "data_classification",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "database_engine",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "database_license_required",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "database_storage_gb",
+      "observed_types": [
+        "int"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "deployment_type",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "environment_count",
+      "observed_types": [
+        "int"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "external_interface_count",
+      "observed_types": [
+        "int"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "is_containerized",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "logging_solution",
+      "observed_types": [
+        "NoneType",
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "memory_gb",
+      "observed_types": [
+        "int"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "monitoring_tool",
+      "observed_types": [
+        "NoneType",
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "operating_system",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "production_environments",
+      "observed_types": [
+        "list",
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "programming_language",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "server_instances",
+      "observed_types": [
+        "list",
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "solution_type",
+      "observed_types": [
+        "str"
+      ],
+      "present_in_applications": 30
+    },
+    {
+      "name": "user_count",
+      "observed_types": [
+        "int"
+      ],
+      "present_in_applications": 30
+    }
+  ]
+}

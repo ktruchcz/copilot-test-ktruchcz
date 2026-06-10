@@ -1,0 +1,39 @@
+{
+  "app_id": "app013",
+  "app_name": "SecurityApp-013",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "Debian 7",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Operating system version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java",
+      "version": "17",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for Java 17."
+    },
+    {
+      "component_type": "application_server",
+      "name": "WebSphere",
+      "version": "8.0",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for WebSphere 8.x."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server",
+      "version": "2022",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for SQL Server 2022."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 1,
+  "outdated_count": 0,
+  "current_count": 2
+}

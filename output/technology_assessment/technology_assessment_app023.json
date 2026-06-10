@@ -1,0 +1,39 @@
+{
+  "app_id": "app023",
+  "app_name": "ChatbotApp-023",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL",
+      "version": "8",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for RHEL 8."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Node",
+      "version": "18",
+      "status": "OUTDATED",
+      "notes": "Lifecycle rule matched for Node 18."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Tomcat",
+      "version": "7.4",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Tomcat version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "MongoDB",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Database engine is not covered by the provided lifecycle rules."
+    }
+  ],
+  "overall_technology_risk": "HIGH",
+  "eol_count": 0,
+  "outdated_count": 1,
+  "current_count": 1
+}

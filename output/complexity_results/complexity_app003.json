@@ -1,0 +1,24 @@
+{
+  "app_id": "app003",
+  "app_name": "AnalyticsApp-003",
+  "complexity_score": 2,
+  "complexity_label": "Low",
+  "estimated_effort": "1-2 months",
+  "factors": {
+    "base_score": 3,
+    "business_criticality": "Low",
+    "criticality_adjustment": -1,
+    "eol_components": 1,
+    "eol_adjustment": 1,
+    "server_count": 1,
+    "server_adjustment": 0,
+    "dependency_proxy": "external_interface_count",
+    "dependency_count": 3,
+    "dependency_adjustment": 0,
+    "custom_code": false,
+    "custom_code_adjustment": 0,
+    "containerized": true,
+    "containerization_adjustment": -1
+  },
+  "reasoning": "Started from base score 3, applied -1 for Low criticality, +1 for 1 EOL component(s), +0 for 1 server(s), +0 using external interfaces as the dependency proxy (3), +0 for custom code indication, and -1 for containerization."
+}

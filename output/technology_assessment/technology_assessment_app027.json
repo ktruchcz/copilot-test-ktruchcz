@@ -1,0 +1,39 @@
+{
+  "app_id": "app027",
+  "app_name": "DataWarehouseApp-027",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL",
+      "version": "7",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for RHEL 7."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "Java",
+      "version": "11",
+      "status": "OUTDATED",
+      "notes": "Lifecycle rule matched for Java 11."
+    },
+    {
+      "component_type": "application_server",
+      "name": "WebSphere",
+      "version": "8.5",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for WebSphere 8.x."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server",
+      "version": "2022",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for SQL Server 2022."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 2,
+  "outdated_count": 1,
+  "current_count": 1
+}

@@ -1,0 +1,39 @@
+{
+  "app_id": "app008",
+  "app_name": "InventoryApp-008",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "AIX 6",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Operating system version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "COBOL-2014",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Programming language or runtime version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "application_server",
+      "name": "WebLogic",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "WebLogic version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server",
+      "version": "2019",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for SQL Server 2019."
+    }
+  ],
+  "overall_technology_risk": "MEDIUM",
+  "eol_count": 0,
+  "outdated_count": 0,
+  "current_count": 1
+}

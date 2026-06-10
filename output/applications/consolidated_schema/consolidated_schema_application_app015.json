@@ -1,0 +1,39 @@
+{
+  "app_id": "app015",
+  "app_name": "ReportingApp-015",
+  "app_description": "Financial reporting tool for generating executive dashboards and regulatory compliance reports",
+  "solution_type": "Custom made",
+  "business_criticality": "Low",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Public",
+  "business_unit": "Finance",
+  "business_capabilities": [
+    "Financial Reporting",
+    "Data Visualization",
+    "Business Intelligence"
+  ],
+  "user_count": 340,
+  "operating_system": "Windows Server 2019",
+  "programming_language": "PHP 8.1",
+  "application_server": "Microsoft IIS 10.0",
+  "application_architecture": "2-Tier",
+  "is_containerized": "No",
+  "environment_count": 4,
+  "server_instances": "sv21",
+  "cpu_cores": 4,
+  "memory_gb": 16,
+  "production_environments": "prod03",
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 6,
+  "external_interface_count": 4,
+  "database_engine": "MongoDB",
+  "database_storage_gb": 400,
+  "database_license_required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Prometheus",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0017"
+  }
+}

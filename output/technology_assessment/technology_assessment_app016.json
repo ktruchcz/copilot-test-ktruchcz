@@ -1,0 +1,39 @@
+{
+  "app_id": "app016",
+  "app_name": "MobileApp-016",
+  "assessment_date": "2025-01-01",
+  "components": [
+    {
+      "component_type": "operating_system",
+      "name": "RHEL",
+      "version": "7",
+      "status": "EOL",
+      "notes": "Lifecycle rule matched for RHEL 7."
+    },
+    {
+      "component_type": "programming_language",
+      "name": "React Native",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Programming language or runtime version is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "application_server",
+      "name": "Payara 4.0",
+      "version": "unknown",
+      "status": "NO_KNOWLEDGE",
+      "notes": "Application server technology is not covered by the provided lifecycle rules."
+    },
+    {
+      "component_type": "database",
+      "name": "SQL Server",
+      "version": "2019",
+      "status": "CURRENT_VERSION",
+      "notes": "Lifecycle rule matched for SQL Server 2019."
+    }
+  ],
+  "overall_technology_risk": "CRITICAL",
+  "eol_count": 1,
+  "outdated_count": 0,
+  "current_count": 1
+}

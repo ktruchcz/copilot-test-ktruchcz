@@ -1,0 +1,39 @@
+{
+  "app_id": "app020",
+  "app_name": "TrainingApp-020",
+  "app_description": "Learning management system for employee training programs and professional development tracking",
+  "solution_type": "3rd party software",
+  "business_criticality": "Low",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Public",
+  "business_unit": "HR",
+  "business_capabilities": [
+    "Training Management",
+    "Employee Development",
+    "Learning Analytics"
+  ],
+  "user_count": 750,
+  "operating_system": "Windows Server 2012",
+  "programming_language": "Angular 15",
+  "application_server": "Microsoft IIS 8.5",
+  "application_architecture": "2-Tier",
+  "is_containerized": "No",
+  "environment_count": 3,
+  "server_instances": "sv29",
+  "cpu_cores": 4,
+  "memory_gb": 16,
+  "production_environments": "prod03",
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 14,
+  "external_interface_count": 7,
+  "database_engine": "SQL Server 2016",
+  "database_storage_gb": 600,
+  "database_license_required": "Yes",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Prometheus",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0023"
+  }
+}

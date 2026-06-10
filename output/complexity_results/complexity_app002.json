@@ -1,0 +1,24 @@
+{
+  "app_id": "app002",
+  "app_name": "CRMApp-002",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "estimated_effort": "3-6 months",
+  "factors": {
+    "base_score": 3,
+    "business_criticality": "Medium",
+    "criticality_adjustment": 0,
+    "eol_components": 1,
+    "eol_adjustment": 1,
+    "server_count": 2,
+    "server_adjustment": 1,
+    "dependency_proxy": "external_interface_count",
+    "dependency_count": 8,
+    "dependency_adjustment": 1,
+    "custom_code": false,
+    "custom_code_adjustment": 0,
+    "containerized": false,
+    "containerization_adjustment": 0
+  },
+  "reasoning": "Started from base score 3, applied +0 for Medium criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +1 using external interfaces as the dependency proxy (8), +0 for custom code indication, and +0 for containerization."
+}

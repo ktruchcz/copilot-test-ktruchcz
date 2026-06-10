@@ -1,0 +1,24 @@
+{
+  "app_id": "app019",
+  "app_name": "QualityApp-019",
+  "complexity_score": 8,
+  "complexity_label": "High",
+  "estimated_effort": "6-12 months",
+  "factors": {
+    "base_score": 3,
+    "business_criticality": "High",
+    "criticality_adjustment": 1,
+    "eol_components": 2,
+    "eol_adjustment": 2,
+    "server_count": 1,
+    "server_adjustment": 0,
+    "dependency_proxy": "external_interface_count",
+    "dependency_count": 5,
+    "dependency_adjustment": 1,
+    "custom_code": true,
+    "custom_code_adjustment": 1,
+    "containerized": false,
+    "containerization_adjustment": 0
+  },
+  "reasoning": "Started from base score 3, applied +1 for High criticality, +2 for 2 EOL component(s), +0 for 1 server(s), +1 using external interfaces as the dependency proxy (5), +1 for custom code indication, and +0 for containerization."
+}

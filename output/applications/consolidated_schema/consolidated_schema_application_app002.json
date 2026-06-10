@@ -1,0 +1,45 @@
+{
+  "app_id": "app002",
+  "app_name": "CRMApp-002",
+  "app_description": "Customer relationship management system for tracking leads, opportunities, and customer interactions",
+  "solution_type": "3rd party software",
+  "business_criticality": "Medium",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "Marketing",
+  "business_capabilities": [
+    "Customer Management",
+    "Lead Tracking",
+    "Sales Analytics"
+  ],
+  "user_count": 1200,
+  "operating_system": "RHEL 7",
+  "programming_language": "Java 11",
+  "application_server": "Websphere 7.0",
+  "application_architecture": "unknown",
+  "is_containerized": "No",
+  "environment_count": 2,
+  "server_instances": [
+    "sv05",
+    "sv07"
+  ],
+  "cpu_cores": 2,
+  "memory_gb": 8,
+  "production_environments": [
+    "prod03",
+    "prod01"
+  ],
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 15,
+  "external_interface_count": 8,
+  "database_engine": "Amazon RDS MySQL",
+  "database_storage_gb": 500,
+  "database_license_required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Datadog",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0002"
+  }
+}
