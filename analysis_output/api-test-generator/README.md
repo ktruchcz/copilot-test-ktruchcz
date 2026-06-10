@@ -1,16 +1,26 @@
-# FINMONOL API Tests
+# FinMonol API Tests
 
-Comprehensive API test suite for the modernised **Finance Monolith** (`app_refactor_decoupling` scenario).
+Comprehensive Cucumber BDD + RestAssured API test suite for the modernised **FINMONOL** finance service,
+generated from the legacy COBOL monolith (`src/cobol/FINMONOL.cbl`).
 
-Tests are written using **Cucumber BDD** (Gherkin feature files) and **RestAssured** for HTTP assertion.
+## Technology Stack
+
+| Tool | Purpose |
+|---|---|
+| [Cucumber 7](https://cucumber.io/) | BDD feature files & Gherkin scenarios |
+| [REST Assured 5](https://rest-assured.io/) | HTTP client & response assertions |
+| [JUnit 5 Platform Suite](https://junit.org/junit5/) | Test runner |
+| [PicoContainer](https://picocontainer.com/) | Dependency injection between step classes |
+| [AssertJ](https://assertj.github.io/doc/) | Fluent assertions |
+| [Awaitility 4](https://github.com/awaitility/awaitility) | Async/polling assertions |
+| Maven | Build & dependency management |
 
 ---
 
 ## Background
 
 The legacy COBOL program `FINMONOL.cbl` is a single monolithic batch application that processes
-flat-file account and transaction records. The `app_refactor_decoupling` modernisation effort
-splits it into four bounded REST services:
+flat-file account and transaction records. The modernisation effort splits it into bounded REST services:
 
 | COBOL Paragraph | Modernised Service | Base Path |
 |---|---|---|
@@ -21,35 +31,96 @@ splits it into four bounded REST services:
 
 ---
 
-## Project Structure
+## Directory Structure
 
 ```
 analysis_output/api-test-generator/
-├── pom.xml                                         # Maven build descriptor
-├── README.md                                       # This file
-└── src/
-    └── test/
-        ├── java/
-        │   └── com/finmonol/api/
-        │       ├── CucumberRunner.java             # JUnit 5 suite entry-point
-        │       ├── steps/
-        │       │   ├── AccountStepDefinitions.java
-        │       │   ├── TransactionStepDefinitions.java
-        │       │   ├── RiskManagementStepDefinitions.java
-        │       │   └── ReportingStepDefinitions.java
-        │       └── support/
-        │           ├── TestContext.java            # Shared per-scenario state
-        │           ├── ApiClient.java              # RestAssured wrapper
-        │           ├── AccountTestDataBuilder.java
-        │           └── TransactionTestDataBuilder.java
-        └── resources/
-            ├── cucumber.properties
-            └── features/
-                ├── account_management.feature
-                ├── transaction_processing.feature
-                ├── risk_management.feature
-                └── day_end_reporting.feature
+├── pom.xml
+├── README.md
+└── src/test/
+    ├── java/com/finmonol/api/
+    │   ├── CucumberRunner.java                      # JUnit 5 Suite entry-point (app_refactor_decoupling)
+    │   ├── steps/
+    │   │   ├── AccountStepDefinitions.java          # Account management steps
+    │   │   ├── TransactionStepDefinitions.java      # Transaction processing steps
+    │   │   ├── RiskManagementStepDefinitions.java   # Risk assessment steps
+    │   │   └── ReportingStepDefinitions.java        # Day-end reporting steps
+    │   └── support/
+    │       ├── TestContext.java                     # Shared per-scenario state
+    │       ├── ApiClient.java                       # RestAssured wrapper
+    │       ├── AccountTestDataBuilder.java          # Account payload builder
+    │       └── TransactionTestDataBuilder.java      # Transaction payload builder
+    ├── java/com/finmonol/api/tests/
+    │   ├── config/
+    │   │   └── CucumberRunner.java                  # JUnit Platform Suite runner (upgrade_legacy_databases)
+    │   ├── context/
+    │   │   └── TestContext.java                     # Shared scenario state
+    │   ├── client/
+    │   │   └── ApiClient.java                       # REST Assured wrapper
+    │   ├── builders/
+    │   │   ├── AccountBuilder.java                  # Account payload builder
+    │   │   └── TransactionBuilder.java              # Transaction payload builder
+    │   └── steps/
+    │       ├── CommonStepDefinitions.java           # Generic HTTP / assertion steps
+    │       ├── AccountStepDefinitions.java          # Account management steps
+    │       ├── TransactionStepDefinitions.java      # Transaction steps
+    │       └── DatabaseMigrationStepDefinitions.java # upgrade_legacy_databases steps
+    └── resources/
+        ├── cucumber.properties
+        └── features/
+            ├── account_management.feature
+            ├── transaction_processing.feature
+            ├── risk_management.feature
+            ├── day_end_reporting.feature
+            └── upgrade_legacy_databases.feature
 ```
+
+---
+
+## Feature Coverage
+
+### `account_management.feature`
+Validates CRUD operations on the Account Service, derived from `ACCOUNT-RECORD` / `ACCOUNTREC.cpy`:
+
+- Create checking and savings accounts
+- Retrieve account by ID and list all accounts (with pagination)
+- Update account details (name, credit limit, status)
+- Detect over-limit accounts (`ACCT-BALANCE > ACCT-LIMIT`)
+- Error handling: 404 for unknown accounts, 409 for duplicate IDs, 400 for missing fields
+- Deactivate an account (status `I`)
+
+### `transaction_processing.feature`
+Validates the Transaction Service, derived from `WS-PARSED-TXN` and `3200-APPLY-TXN`:
+
+- Post debit (`D`) and credit (`C`) transactions
+- Verify balance updates after each transaction
+- Reject transactions on inactive accounts (422) or over-limit (422)
+- Transaction with risk code `999` sets `manualReview = true`
+- Daily summary totals via `/api/reports/daily-summary`
+- Reject negative amounts (400)
+
+### `risk_management.feature`
+Validates the Risk Service, derived from the COBOL `3300-LEGACY-RISK-CHECK` paragraph:
+
+- Low-risk code → APPROVED
+- Code `999` → MANUAL_REVIEW + `manualReview: true`
+- Over-limit account → MANUAL_REVIEW
+- High-value transaction → ENHANCED_REVIEW
+
+### `day_end_reporting.feature`
+Validates the Reporting Service, derived from `9000-WRITE-SUMMARY`:
+
+- Total debits and credits for the current day
+- Over-limit account count
+- Manual review section lists code-999 transaction accounts
+
+### `upgrade_legacy_databases.feature`
+Validates the database migration scenario:
+
+- Migration status check, start, validate, and rollback
+- Over-limit accounts are correctly migrated and flagged
+- Transactions with risk code 999 get `MANUAL_REVIEW` flag
+- Debit and credit totals are preserved after migration
 
 ---
 
@@ -63,6 +134,20 @@ analysis_output/api-test-generator/
 
 ---
 
+## Configuration
+
+Set the base URL via a system property or environment variable:
+
+```bash
+# System property
+mvn test -Dapi.base.url=http://localhost:8080
+
+# Environment variable
+export API_BASE_URL=http://localhost:8080
+```
+
+---
+
 ## Running the Tests
 
 ### Run all scenarios
@@ -71,19 +156,24 @@ cd analysis_output/api-test-generator
 mvn test
 ```
 
-### Override the API base URL
+### Run by tag
 ```bash
-mvn test -Dapi.base.url=http://my-finance-api:8080
-```
-
-### Run by feature tag
-```bash
+# Smoke tests only
 mvn test -Dcucumber.filter.tags="@smoke"
+
+# Happy-path only
+mvn test -Dcucumber.filter.tags="@happy-path"
+
+# Exclude negative tests
+mvn test -Dcucumber.filter.tags="not @negative"
+
+# Migration scenario
+mvn test -Dcucumber.filter.tags="@upgrade_legacy_databases"
 ```
 
-### Run a single feature file
+### Against a remote environment
 ```bash
-mvn test -Dcucumber.features="src/test/resources/features/account_management.feature"
+mvn test -Dapi.base.url=https://staging.finmonol.example.com
 ```
 
 ---
@@ -95,50 +185,7 @@ After a run, reports are generated in `target/cucumber-reports/`:
 | File | Format |
 |---|---|
 | `cucumber.json` | Machine-readable JSON (CI integration) |
-| `report.html` | Human-readable HTML report |
-
----
-
-## Feature Coverage
-
-### `account_management.feature`
-Validates CRUD operations on the Account Service, derived from the COBOL
-`ACCOUNT-RECORD` / `ACCOUNTREC.cpy` data structure:
-
-- Create checking and savings accounts
-- Retrieve account by ID and list all accounts
-- Update account details (name, credit limit, status)
-- Detect over-limit accounts (`ACCT-BALANCE > ACCT-LIMIT`)
-- Error handling: 404 for unknown accounts, 409 for duplicate IDs
-- Deactivate an account (status `I`)
-
-### `transaction_processing.feature`
-Validates the Transaction Service, derived from `WS-PARSED-TXN` and
-`3200-APPLY-TXN`:
-
-- Post debit (`D`) and credit (`C`) transactions
-- Verify balance updates after each transaction
-- Reject transactions on inactive accounts (422)
-- Reject debits that would push balance over the credit limit (422)
-- Retrieve transactions by ID and by account
-
-### `risk_management.feature`
-Validates the Risk Service, derived from the COBOL `3300-LEGACY-RISK-CHECK`
-paragraph (TXN-CODE = '999' triggers MANUAL REVIEW):
-
-- Low-risk code → APPROVED
-- Code `999` → MANUAL_REVIEW + `manualReview: true`
-- Over-limit account → MANUAL_REVIEW
-- High-value transaction → ENHANCED_REVIEW
-
-### `day_end_reporting.feature`
-Validates the Reporting Service, derived from `9000-WRITE-SUMMARY`:
-
-- Total debits and credits for the current day
-- Over-limit account count
-- Day-end summary endpoint
-- Empty report for a date with no transactions
-- Manual review section lists code-999 transaction accounts
+| `cucumber.html` | Human-readable HTML report |
 
 ---
 
@@ -171,7 +218,7 @@ Validates the Reporting Service, derived from `9000-WRITE-SUMMARY`:
 }
 ```
 
-### Risk Assessment Request / Response
+### Risk Assessment
 
 ```json
 // Request
@@ -189,12 +236,23 @@ Validates the Reporting Service, derived from `9000-WRITE-SUMMARY`:
 
 ```json
 {
-  "reportDate":    "2024-01-01",
-  "totalDebits":   425.00,
-  "totalCredits":  500.00,
+  "reportDate":     "2024-01-01",
+  "totalDebits":    425.00,
+  "totalCredits":   500.00,
   "overLimitCount": 2,
-  "manualReviews": [
+  "manualReviews":  [
     { "accountId": "ACC0000001", "transactionId": "TXN-001" }
   ]
 }
 ```
+
+---
+
+## Business Logic Validated (from FINMONOL COBOL)
+
+| COBOL paragraph | Modernised behaviour tested |
+|---|---|
+| `2200-CHECK-ACCOUNT-LIMIT` | `overLimit = true` when `balance > limit` |
+| `3200-APPLY-TXN` | Debits increment `totalDebits`; credits increment `totalCredits` |
+| `3300-LEGACY-RISK-CHECK` | Transaction code `999` → `reviewFlag = MANUAL_REVIEW` |
+| `9000-WRITE-SUMMARY` | `/api/reports/daily-summary` returns correct totals |
