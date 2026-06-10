@@ -1,11 +1,16 @@
-# copilot-test-ktruchcz
+# Legacy Finance COBOL Monolith
 
-Simple Hello World Java project.
+This repository contains a deliberately old-styled COBOL finance application intended for future modernization exercises.
 
-## Build and test
+## Layout
 
-Requires Java 25.
+- `/src/cobol/FINMONOL.cbl` - monolithic finance application
+- `/src/copybooks/ACCOUNTREC.cpy` - shared record definition
+- `/docs/MODERNIZATION_PATH.md` - modernization directions
 
-```bash
-mvn clean test
-```
+## Characteristics
+
+- Single large procedural program
+- File-based data access and hard-coded rules
+- Tight coupling between input, business rules, and output
+- Outdated component markers (`LEDGER-ENGINE-V1`, `BATCH-RUNNER-1988`)

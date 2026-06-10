@@ -1,0 +1,154 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. FINMONOL.
+       AUTHOR. LEGACY-TEAM.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT ACCOUNT-FILE ASSIGN TO 'ACCOUNTS.DAT'
+               ORGANIZATION IS LINE SEQUENTIAL.
+           SELECT TRANSACTION-FILE ASSIGN TO 'TXNS.DAT'
+               ORGANIZATION IS LINE SEQUENTIAL.
+           SELECT REPORT-FILE ASSIGN TO 'DAYEND.RPT'
+               ORGANIZATION IS LINE SEQUENTIAL.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD  ACCOUNT-FILE.
+       01  ACCOUNT-IN-ROW                 PIC X(120).
+
+       FD  TRANSACTION-FILE.
+       01  TXN-IN-ROW                     PIC X(120).
+
+       FD  REPORT-FILE.
+       01  REPORT-ROW                     PIC X(120).
+
+       WORKING-STORAGE SECTION.
+       01  WS-EOF-ACCOUNT                 PIC X VALUE 'N'.
+           88  ACCOUNT-EOF                VALUE 'Y'.
+       01  WS-EOF-TXN                     PIC X VALUE 'N'.
+           88  TXN-EOF                    VALUE 'Y'.
+
+       01  WS-COMPONENTS.
+           05  WS-LEDGER-ENGINE           PIC X(20)
+               VALUE 'LEDGER-ENGINE-V1'.
+           05  WS-BATCH-RUNNER            PIC X(20)
+               VALUE 'BATCH-RUNNER-1988'.
+
+       01  WS-TOTALS.
+           05  WS-TOTAL-DEBITS            PIC S9(13)V99 VALUE 0.
+           05  WS-TOTAL-CREDITS           PIC S9(13)V99 VALUE 0.
+           05  WS-OVERLIMIT-COUNT         PIC 9(7) VALUE 0.
+
+       01  WS-PARSED-ACCOUNT.
+           COPY ACCOUNTREC.
+
+       01  WS-PARSED-TXN.
+           05  TXN-ACCT-ID                PIC X(10).
+           05  TXN-TYPE                   PIC X(01).
+           05  TXN-AMOUNT                 PIC S9(11)V99.
+           05  TXN-CODE                   PIC X(03).
+
+       01  WS-MESSAGE                     PIC X(120).
+
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           PERFORM 1000-INITIALIZE.
+           PERFORM 2000-PROCESS-ACCOUNTS UNTIL ACCOUNT-EOF.
+           PERFORM 3000-PROCESS-TRANSACTIONS UNTIL TXN-EOF.
+           PERFORM 9000-WRITE-SUMMARY.
+           PERFORM 9999-SHUTDOWN.
+           GOBACK.
+
+       1000-INITIALIZE.
+           OPEN INPUT ACCOUNT-FILE.
+           OPEN INPUT TRANSACTION-FILE.
+           OPEN OUTPUT REPORT-FILE.
+           READ ACCOUNT-FILE
+               AT END SET ACCOUNT-EOF TO TRUE
+           END-READ.
+           READ TRANSACTION-FILE
+               AT END SET TXN-EOF TO TRUE
+           END-READ.
+
+       2000-PROCESS-ACCOUNTS.
+           PERFORM 2100-PARSE-ACCOUNT.
+           PERFORM 2200-CHECK-ACCOUNT-LIMIT.
+           READ ACCOUNT-FILE
+               AT END SET ACCOUNT-EOF TO TRUE
+           END-READ.
+
+       2100-PARSE-ACCOUNT.
+           MOVE ACCOUNT-IN-ROW(1:10)  TO ACCT-ID.
+           MOVE ACCOUNT-IN-ROW(11:30) TO ACCT-NAME.
+           MOVE ACCOUNT-IN-ROW(41:2)  TO ACCT-TYPE.
+           MOVE ACCOUNT-IN-ROW(43:12) TO ACCT-BALANCE.
+           MOVE ACCOUNT-IN-ROW(55:12) TO ACCT-LIMIT.
+           MOVE ACCOUNT-IN-ROW(67:1)  TO ACCT-STATUS.
+
+       2200-CHECK-ACCOUNT-LIMIT.
+           IF ACCT-BALANCE > ACCT-LIMIT
+               ADD 1 TO WS-OVERLIMIT-COUNT
+               MOVE 'ACCOUNT OVER LIMIT' TO WS-MESSAGE
+               STRING ACCT-ID DELIMITED BY SIZE
+                      ' OVER LIMIT' DELIMITED BY SIZE
+                      INTO REPORT-ROW
+               END-STRING
+               WRITE REPORT-ROW
+           END-IF.
+
+       3000-PROCESS-TRANSACTIONS.
+           PERFORM 3100-PARSE-TXN.
+           PERFORM 3200-APPLY-TXN.
+           PERFORM 3300-LEGACY-RISK-CHECK.
+           READ TRANSACTION-FILE
+               AT END SET TXN-EOF TO TRUE
+           END-READ.
+
+       3100-PARSE-TXN.
+           MOVE TXN-IN-ROW(1:10)  TO TXN-ACCT-ID.
+           MOVE TXN-IN-ROW(11:1)  TO TXN-TYPE.
+           MOVE TXN-IN-ROW(12:12) TO TXN-AMOUNT.
+           MOVE TXN-IN-ROW(24:3)  TO TXN-CODE.
+
+       3200-APPLY-TXN.
+           IF TXN-TYPE = 'D'
+               ADD TXN-AMOUNT TO WS-TOTAL-DEBITS
+           ELSE
+               ADD TXN-AMOUNT TO WS-TOTAL-CREDITS
+           END-IF.
+
+       3300-LEGACY-RISK-CHECK.
+           IF TXN-CODE = '999'
+               STRING 'MANUAL REVIEW: ACCT '
+                      TXN-ACCT-ID DELIMITED BY SIZE
+                      INTO REPORT-ROW
+               END-STRING
+               WRITE REPORT-ROW
+           END-IF.
+
+       9000-WRITE-SUMMARY.
+           MOVE ALL '-' TO REPORT-ROW.
+           WRITE REPORT-ROW.
+           STRING 'ENGINE=' WS-LEDGER-ENGINE DELIMITED BY SIZE
+                  ' RUNNER=' WS-BATCH-RUNNER DELIMITED BY SIZE
+                  INTO REPORT-ROW
+           END-STRING.
+           WRITE REPORT-ROW.
+           STRING 'TOTAL DEBITS  : ' WS-TOTAL-DEBITS DELIMITED BY SIZE
+                  INTO REPORT-ROW
+           END-STRING.
+           WRITE REPORT-ROW.
+           STRING 'TOTAL CREDITS : ' WS-TOTAL-CREDITS DELIMITED BY SIZE
+                  INTO REPORT-ROW
+           END-STRING.
+           WRITE REPORT-ROW.
+           STRING 'OVERLIMIT CNT : ' WS-OVERLIMIT-COUNT DELIMITED BY SIZE
+                  INTO REPORT-ROW
+           END-STRING.
+           WRITE REPORT-ROW.
+
+       9999-SHUTDOWN.
+           CLOSE ACCOUNT-FILE.
+           CLOSE TRANSACTION-FILE.
+           CLOSE REPORT-FILE.
