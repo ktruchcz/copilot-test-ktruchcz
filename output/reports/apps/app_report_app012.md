@@ -1,65 +1,47 @@
 # Application Report - IoTSensorApp-012
-Application app012 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app012 |
+| Application ID | app012 |
 | Name | IoTSensorApp-012 |
+| Description | IoT sensor data collection and analysis platform for tracking vehicle performance and cargo conditions |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | AWS |
-| Business Criticality | High |
-| Operating System | Windows Server 2022 |
-| Programming Language | Rust 1.70 |
-| Application Server | Microsoft IIS 10.0 |
-| Database Engine | PostgreSQL 14 |
+| Criticality | High |
+| Deployment | AWS |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | Windows Server | 2022 | CURRENT_VERSION | Lifecycle rule matched for Windows Server 2022. |
-| programming_language | Rust 1.70 | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| application_server | Microsoft IIS 10.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | PostgreSQL | 14 | CURRENT_VERSION | Lifecycle rule matched for PostgreSQL 14. |
+| os | Windows Server | 2022 | CURRENT_VERSION | Windows Server 2022 is a current supported release. |
+| database | PostgreSQL | 14 | CURRENT_VERSION | PostgreSQL 14 remains a current supported release. |
+| language | Rust | 1.70 | NO_KNOWLEDGE | Programming language lifecycle support could not be mapped confidently from the recorded value. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | Microsoft IIS | 10.0 | NO_KNOWLEDGE | Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions. |
 
-Overall technology risk: **MEDIUM**.
+## Complexity score and label
+- Complexity score: **6**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **6** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'High' adjusted score by +1.
+- 0 EOL component(s) contributed +0 points (capped at +3).
+- Server count of 2 contributed +1 points.
+- Dependency count of 8 using external_interface_count proxy contributed +1 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='Yes' adjusted score by -1.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | High |
-| Criticality Adjustment | 1 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 2 |
-| Server Adjustment | 1 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 8 |
-| Dependency Adjustment | 1 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | True |
-| Containerization Adjustment | -1 |
-
-Started from base score 3, applied +1 for High criticality, +0 for 0 EOL component(s), +1 for 2 server(s), +1 using external interfaces as the dependency proxy (8), +1 for custom code indication, and -1 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to ARM-based CPU | APPLICABLE | The application is already deployed on AWS and uses a portable stack, so ARM-based hosting is a credible optimization option. | Pilot ARM on portable workloads to validate performance and cost savings before broad adoption. |
-| Application Refactoring and De-coupling | APPLICABLE | The application is custom-built and integration-heavy, so decoupling and refactoring would likely improve modernization outcomes. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Update outdated components | PARTIALLY_FULFILLED | Known components are current, but some technologies could not be dated from the available application data. | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Switch to ARM-based CPU | Medium | The application already runs in cloud and uses a portable stack, so ARM-based infrastructure is a viable optimization path. | Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings. |
+| Application Refactoring and De-coupling | High | The application is custom-built and shows legacy or integration complexity that makes decoupling valuable. | Refactor applications to decouple components for better agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to ARM-based CPU | EUR 6,000.00 | EUR 1,000.00 | -50.00% |
-| Application Refactoring and De-coupling | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 306,000.00**  
-Total annual savings: **EUR 151,000.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Application Refactoring and De-coupling | EUR 250,000.00 | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
+| Switch to ARM-based CPU | EUR 5,000.00 | EUR 6,000.00 | EUR 1,000.00 | -50.00% |

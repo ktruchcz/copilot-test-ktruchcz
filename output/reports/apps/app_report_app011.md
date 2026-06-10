@@ -1,69 +1,54 @@
 # Application Report - RouteOptApp-011
-Application app011 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app011 |
+| Application ID | app011 |
 | Name | RouteOptApp-011 |
+| Description | Advanced route optimization system using machine learning algorithms for delivery planning |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | AWS |
-| Business Criticality | Medium |
-| Operating System | CentOS 7 |
-| Programming Language | Python 3.11 |
-| Application Server | Glassfish 4.0 |
-| Database Engine | PostgreSQL 14 |
+| Criticality | Medium |
+| Deployment | AWS |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | CentOS 7 | unknown | NO_KNOWLEDGE | Operating system version is not covered by the provided lifecycle rules. |
-| programming_language | Python | 3.11 | CURRENT_VERSION | Lifecycle rule matched for Python 3.11. |
-| application_server | Glassfish 4.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | PostgreSQL | 14 | CURRENT_VERSION | Lifecycle rule matched for PostgreSQL 14. |
+| os | CentOS | 7 | EOL | CentOS 7 reached end of life in June 2024. |
+| database | PostgreSQL | 14 | CURRENT_VERSION | PostgreSQL 14 remains a current supported release. |
+| language | Python | 3.11 | CURRENT_VERSION | Python 3.11 is a current supported release. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | GlassFish | 4.0 | NO_KNOWLEDGE | GlassFish is recorded, but the inventory does not map it to an agreed lifecycle rule in this assessment baseline. |
 
-Overall technology risk: **MEDIUM**.
+## Complexity score and label
+- Complexity score: **5**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **4** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Medium' adjusted score by +0.
+- 1 EOL component(s) contributed +1 points (capped at +3).
+- Server count of 1 contributed +0 points.
+- Dependency count of 5 using external_interface_count proxy contributed +1 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='Yes' adjusted score by -1.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Medium |
-| Criticality Adjustment | 0 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 1 |
-| Server Adjustment | 0 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 5 |
-| Dependency Adjustment | 1 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | True |
-| Containerization Adjustment | -1 |
-
-Started from base score 3, applied +0 for Medium criticality, +0 for 0 EOL component(s), +0 for 1 server(s), +1 using external interfaces as the dependency proxy (5), +1 for custom code indication, and -1 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to standard Linux Operating System | PARTIALLY_FULFILLED | The workload already runs on Linux (CentOS 7), but not on the target standard Linux distributions highlighted in the rules. | Standardize the platform on supported Linux distributions where stack constraints allow. |
-| Switch to ARM-based CPU | APPLICABLE | The application is already deployed on AWS and uses a portable stack, so ARM-based hosting is a credible optimization option. | Pilot ARM on portable workloads to validate performance and cost savings before broad adoption. |
-| Applications Server replacement | APPLICABLE | The application uses Glassfish 4.0, which is a legacy-style middleware component worth evaluating for replacement. | Replace legacy middleware with a supported application platform or simplify the hosting stack. |
-| Application Refactoring and De-coupling | PARTIALLY_FULFILLED | The application is custom-built, but the current data shows only moderate integration pressure for deeper refactoring. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Update outdated components | PARTIALLY_FULFILLED | Known components are current, but some technologies could not be dated from the available application data. | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Operating System Update | High | The operating system CentOS 7 is assessed as EOL, so remediation is recommended. | Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements. |
+| Switch to standard Linux Operating System | Medium | The current operating system (CentOS 7) is not aligned with the standard Linux target baseline. | Standardize on widely supported operating systems that align with the customer's existing landscape standards to reduce the technology zoo, improve manageability, lower costs, and enhance security through simplified administration. |
+| Switch to ARM-based CPU | Medium | The application already runs in cloud and uses a portable stack, so ARM-based infrastructure is a viable optimization path. | Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings. |
+| Applications Server replacement | Medium | The application uses legacy-style middleware (Glassfish 4.0), so replacement remains relevant even though exact support status is unknown. | Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs. |
+| Application Refactoring and De-coupling | High | The application is custom-built and shows legacy or integration complexity that makes decoupling valuable. | Refactor applications to decouple components for better agility and maintainability. |
+| Update outdated components | High | The technology assessment found 1 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to standard Linux Operating System | EUR 240.00 | EUR 400.00 | 400.00% |
-| Switch to ARM-based CPU | EUR 4,000.00 | EUR 1,000.00 | -25.00% |
-| Applications Server replacement | EUR 8,000.00 | EUR 12,000.00 | 350.00% |
-| Application Refactoring and De-coupling | EUR 200,000.00 | EUR 150,000.00 | 125.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 212,240.00**  
-Total annual savings: **EUR 163,400.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Switch to standard Linux Operating System | EUR 300.00 | EUR 300.00 | EUR 400.00 | 300.00% |
+| Applications Server replacement | EUR 10,000.00 | EUR 10,000.00 | EUR 12,000.00 | 260.00% |
+| Application Refactoring and De-coupling | EUR 250,000.00 | EUR 250,000.00 | EUR 150,000.00 | 80.00% |
+| Operating System Update | EUR 1,000.00 | EUR 1,000.00 | EUR 500.00 | 50.00% |
+| Switch to ARM-based CPU | EUR 5,000.00 | EUR 5,000.00 | EUR 1,000.00 | -40.00% |

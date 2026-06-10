@@ -1,9 +1,7 @@
 {
-  "generated_at": "2026-06-10T07:50:39.931020+00:00",
-  "applications_processed": 30,
-  "in_scope_processed": 26,
-  "out_of_scope": 4,
-  "reports_generated": 27,
-  "cwd": "/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/ktruchcz/copilot-test-ktruchcz",
-  "rounded_up": 6
+  "generated_timestamp": "2026-06-10T08:02:33Z",
+  "total_applications": 30,
+  "in_scope_applications": 26,
+  "out_of_scope_applications": 4,
+  "analysis_id": "2485a04fef8182d0"
 }

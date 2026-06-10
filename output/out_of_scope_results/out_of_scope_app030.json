@@ -1,6 +1,7 @@
 {
-  "app_id": "app030",
+  "application_id": "app030",
   "app_name": "APIGatewayApp-030",
   "out_of_scope": false,
-  "reason": null
+  "reason": null,
+  "evaluation_notes": "Application is in-scope for modernization assessment."
 }

@@ -1,66 +1,87 @@
 {
-  "app_id": "app002",
+  "application_id": "app002",
   "app_name": "CRMApp-002",
-  "scenarios": [
+  "scenario_assessments": [
     {
       "scenario_id": "os_update_security_patch",
       "scenario_name": "Operating System Update",
       "status": "APPLICABLE",
-      "rationale": "The operating system (RHEL 7) is assessed as EOL, so patching or upgrading is recommended."
+      "rationale": "The operating system RHEL 7 is assessed as EOL, so remediation is recommended.",
+      "recommendation": "Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements.",
+      "priority": "High"
     },
     {
       "scenario_id": "switch_to_standard_linux_os",
       "scenario_name": "Switch to standard Linux Operating System",
       "status": "FULFILLED",
-      "rationale": "The application already runs on a standard Linux distribution (RHEL 7)."
+      "rationale": "The application already runs on a standard Linux distribution (RHEL 7).",
+      "recommendation": "Standardize on widely supported operating systems that align with the customer's existing landscape standards to reduce the technology zoo, improve manageability, lower costs, and enhance security through simplified administration.",
+      "priority": "Medium"
     },
     {
       "scenario_id": "switch_to_arm_cpu",
       "scenario_name": "Switch to ARM-based CPU",
       "status": "BLOCKED",
-      "rationale": "The current stack (RHEL 7, Java 11, Websphere 7.0) is legacy and would make an ARM migration high risk."
+      "rationale": "The current stack is legacy or packaged in a way that blocks a low-risk ARM migration.",
+      "recommendation": "Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings.",
+      "priority": "Medium"
     },
     {
       "scenario_id": "application_server_replacement",
       "scenario_name": "Applications Server replacement",
       "status": "APPLICABLE",
-      "rationale": "The application uses Websphere 7.0, which is a legacy-style middleware component worth evaluating for replacement."
+      "rationale": "The application server Websphere 7.0 is assessed as EOL.",
+      "recommendation": "Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs.",
+      "priority": "Medium"
     },
     {
       "scenario_id": "app_deployment_to_cloud",
       "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
       "status": "FULFILLED",
-      "rationale": "The application is already deployed in AWS."
+      "rationale": "The application is already hosted in cloud (AWS).",
+      "recommendation": "Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits.",
+      "priority": "High"
     },
     {
       "scenario_id": "app_containerization",
       "scenario_name": "Application Containerization",
-      "status": "BLOCKED",
-      "rationale": "The legacy stack (RHEL 7, Java 11) makes near-term containerization difficult."
+      "status": "PARTIALLY_FULFILLED",
+      "rationale": "The application already has cloud deployment characteristics, but the inventory does not show containerization yet.",
+      "recommendation": "Containerize applications to improve scalability, portability, agility and resource efficiency.",
+      "priority": "High"
     },
     {
       "scenario_id": "app_refactor_decoupling",
       "scenario_name": "Application Refactoring and De-coupling",
       "status": "NOT_APPLICABLE",
-      "rationale": "The solution type (3rd party software) suggests packaged software, which limits custom refactoring opportunities."
+      "rationale": "The application is recorded as packaged software, limiting refactoring options.",
+      "recommendation": "Refactor applications to decouple components for better agility and maintainability.",
+      "priority": "High"
     },
     {
       "scenario_id": "upgrade_legacy_databases",
       "scenario_name": "Upgrade Legacy Databases",
       "status": "LACK_OF_DATA",
-      "rationale": "The database version for Amazon RDS MySQL is not covered by the supplied lifecycle rules."
+      "rationale": "The database Amazon RDS MySQL could not be mapped to a support status.",
+      "recommendation": "Upgrade legacy databases to modern, supported versions or cloud-native alternatives.",
+      "priority": "High"
     },
     {
       "scenario_id": "switch_db_engine_open_source",
       "scenario_name": "Switch DB Engine to open-source database solution",
       "status": "FULFILLED",
-      "rationale": "The application already uses an open-source or open-source-based database engine (Amazon RDS MySQL)."
+      "rationale": "The application already uses an open-source database family (Amazon RDS MySQL).",
+      "recommendation": "Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs.",
+      "priority": "High"
     },
     {
       "scenario_id": "update_outdated_components",
       "scenario_name": "Update outdated components",
       "status": "APPLICABLE",
-      "rationale": "The technology assessment found 1 EOL and 1 outdated component(s)."
+      "rationale": "The technology assessment found 3 component(s) that are EOL or outdated.",
+      "recommendation": "Rewrite or Refactor or Replace application for better security, agility and maintainability.",
+      "priority": "High"
     }
-  ]
+  ],
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

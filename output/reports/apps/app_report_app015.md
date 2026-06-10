@@ -1,67 +1,47 @@
 # Application Report - ReportingApp-015
-Application app015 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app015 |
+| Application ID | app015 |
 | Name | ReportingApp-015 |
+| Description | Financial reporting tool for generating executive dashboards and regulatory compliance reports |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | AWS |
-| Business Criticality | Low |
-| Operating System | Windows Server 2019 |
-| Programming Language | PHP 8.1 |
-| Application Server | Microsoft IIS 10.0 |
-| Database Engine | MongoDB |
+| Criticality | Low |
+| Deployment | AWS |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | Windows Server | 2019 | CURRENT_VERSION | Lifecycle rule matched for Windows Server 2019. |
-| programming_language | PHP 8.1 | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| application_server | Microsoft IIS 10.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | MongoDB | unknown | NO_KNOWLEDGE | Database engine is not covered by the provided lifecycle rules. |
+| os | Windows Server | 2019 | CURRENT_VERSION | Windows Server 2019 remains supported in the extended support window until 2029. |
+| database | MongoDB | unknown | NO_KNOWLEDGE | The inventory lists MongoDB but does not provide a version, so lifecycle support cannot be assessed. |
+| language | PHP | 8.1 | OUTDATED | PHP 8.1 is behind the latest supported baselines and nearing or beyond support boundaries. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | Microsoft IIS | 10.0 | NO_KNOWLEDGE | Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions. |
 
-Overall technology risk: **MEDIUM**.
+## Complexity score and label
+- Complexity score: **3**
+- Complexity label: **Low**
+- Indicative migration effort: **1-2 months**
 
-## Complexity Assessment
-Complexity score: **3** (Low) — estimated effort **1-2 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Low' adjusted score by -1.
+- 0 EOL component(s) contributed +0 points (capped at +3).
+- Server count of 1 contributed +0 points.
+- Dependency count of 4 using external_interface_count proxy contributed +0 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Low |
-| Criticality Adjustment | -1 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 1 |
-| Server Adjustment | 0 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 4 |
-| Dependency Adjustment | 0 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied -1 for Low criticality, +0 for 0 EOL component(s), +0 for 1 server(s), +0 using external interfaces as the dependency proxy (4), +1 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to ARM-based CPU | APPLICABLE | The application is already deployed on AWS and uses a portable stack, so ARM-based hosting is a credible optimization option. | Pilot ARM on portable workloads to validate performance and cost savings before broad adoption. |
-| Application Containerization | PARTIALLY_FULFILLED | The application is already cloud-hosted, but the source data does not show containerization yet. | Containerize the workload to improve portability, release consistency, and scaling options. |
-| Application Refactoring and De-coupling | PARTIALLY_FULFILLED | The application is custom-built, but the current data shows only moderate integration pressure for deeper refactoring. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Update outdated components | PARTIALLY_FULFILLED | Known components are current, but some technologies could not be dated from the available application data. | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Switch to ARM-based CPU | Medium | The application already runs in cloud and uses a portable stack, so ARM-based infrastructure is a viable optimization path. | Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings. |
+| Update outdated components | High | The technology assessment found 1 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to ARM-based CPU | EUR 3,000.00 | EUR 1,000.00 | 0.00% |
-| Application Containerization | EUR 60,000.00 | EUR 100,000.00 | 400.00% |
-| Application Refactoring and De-coupling | EUR 150,000.00 | EUR 150,000.00 | 200.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 213,000.00**  
-Total annual savings: **EUR 251,000.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Switch to ARM-based CPU | EUR 5,000.00 | EUR 3,000.00 | EUR 1,000.00 | 0.00% |
+| Update outdated components | EUR 0.00 | EUR 0.00 | EUR 0.00 | n/a |

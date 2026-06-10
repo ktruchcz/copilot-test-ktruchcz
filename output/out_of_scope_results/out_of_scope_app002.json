@@ -1,6 +1,7 @@
 {
-  "app_id": "app002",
+  "application_id": "app002",
   "app_name": "CRMApp-002",
   "out_of_scope": false,
-  "reason": null
+  "reason": null,
+  "evaluation_notes": "Application is in-scope for modernization assessment."
 }

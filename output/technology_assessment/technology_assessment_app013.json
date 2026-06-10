@@ -1,39 +1,64 @@
 {
-  "app_id": "app013",
-  "app_name": "SecurityApp-013",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app013",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "Debian 7",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Operating system version is not covered by the provided lifecycle rules."
+      "component_name": "Debian",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2018-05-31",
+      "reason": "Debian 7 is end-of-life.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Java",
-      "version": "17",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for Java 17."
-    },
-    {
-      "component_type": "application_server",
-      "name": "WebSphere",
-      "version": "8.0",
-      "status": "EOL",
-      "notes": "Lifecycle rule matched for WebSphere 8.x."
-    },
-    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
       "component_type": "database",
-      "name": "SQL Server",
+      "managed_service": false,
       "version": "2022",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for SQL Server 2022."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "SQL Server 2022 is a current supported release.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-09-30",
+      "reason": "Java 17 is a current LTS release.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "WebSphere",
+      "component_family": "WebSphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "WebSphere 8.x is end-of-life.",
+      "confidence": 9
     }
   ],
-  "overall_technology_risk": "CRITICAL",
-  "eol_count": 1,
-  "outdated_count": 0,
-  "current_count": 2
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

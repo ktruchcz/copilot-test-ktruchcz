@@ -1,65 +1,49 @@
 # Application Report - CRMApp-002
-Application app002 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app002 |
+| Application ID | app002 |
 | Name | CRMApp-002 |
+| Description | Customer relationship management system for tracking leads, opportunities, and customer interactions |
 | Status | Production |
-| Solution Type | 3rd party software |
-| Deployment Type | AWS |
-| Business Criticality | Medium |
-| Operating System | RHEL 7 |
-| Programming Language | Java 11 |
-| Application Server | Websphere 7.0 |
-| Database Engine | Amazon RDS MySQL |
+| Criticality | Medium |
+| Deployment | AWS |
+| Solution type | 3rd party software |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | RHEL | 7 | EOL | Lifecycle rule matched for RHEL 7. |
-| programming_language | Java | 11 | OUTDATED | Lifecycle rule matched for Java 11. |
-| application_server | WebSphere | 7.0 | NO_KNOWLEDGE | WebSphere version is not covered by the provided lifecycle rules. |
-| database | MySQL | unknown | NO_KNOWLEDGE | MySQL is identified, but no supported version is present. |
+| os | RHEL | 7 | EOL | RHEL 7 reached end of maintenance support in June 2024. |
+| database | MySQL | unknown | NO_KNOWLEDGE | The workload uses a managed MySQL service, but the service version is not recorded in the inventory. |
+| language | Java | 11 | OUTDATED | Java 11 remains supported but is behind newer LTS releases. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | WebSphere | 7.0 | EOL | WebSphere 7 is end-of-life. |
 
-Overall technology risk: **CRITICAL**.
+## Complexity score and label
+- Complexity score: **7**
+- Complexity label: **High**
+- Indicative migration effort: **6-12 months**
 
-## Complexity Assessment
-Complexity score: **6** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Medium' adjusted score by +0.
+- 2 EOL component(s) contributed +2 points (capped at +3).
+- Server count of 2 contributed +1 points.
+- Dependency count of 8 using external_interface_count proxy contributed +1 points.
+- Solution type '3rd party software' contributed +0 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Medium |
-| Criticality Adjustment | 0 |
-| Eol Components | 1 |
-| Eol Adjustment | 1 |
-| Server Count | 2 |
-| Server Adjustment | 1 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 8 |
-| Dependency Adjustment | 1 |
-| Custom Code | False |
-| Custom Code Adjustment | 0 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied +0 for Medium criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +1 using external interfaces as the dependency proxy (8), +0 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Operating System Update | APPLICABLE | The operating system (RHEL 7) is assessed as EOL, so patching or upgrading is recommended. | Prioritize OS remediation to restore vendor support and security patch eligibility. |
-| Applications Server replacement | APPLICABLE | The application uses Websphere 7.0, which is a legacy-style middleware component worth evaluating for replacement. | Replace legacy middleware with a supported application platform or simplify the hosting stack. |
-| Update outdated components | APPLICABLE | The technology assessment found 1 EOL and 1 outdated component(s). | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Operating System Update | High | The operating system RHEL 7 is assessed as EOL, so remediation is recommended. | Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements. |
+| Applications Server replacement | Medium | The application server Websphere 7.0 is assessed as EOL. | Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs. |
+| Update outdated components | High | The technology assessment found 3 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Operating System Update | EUR 1,200.00 | EUR 500.00 | 25.00% |
-| Applications Server replacement | EUR 12,000.00 | EUR 12,000.00 | 200.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 13,200.00**  
-Total annual savings: **EUR 12,500.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Applications Server replacement | EUR 10,000.00 | EUR 14,000.00 | EUR 12,000.00 | 157.14% |
+| Operating System Update | EUR 1,000.00 | EUR 1,400.00 | EUR 500.00 | 7.14% |
+| Update outdated components | EUR 0.00 | EUR 0.00 | EUR 0.00 | n/a |

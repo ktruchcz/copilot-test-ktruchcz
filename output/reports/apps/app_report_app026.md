@@ -1,68 +1,51 @@
 # Application Report - LegacyFinApp-026
-Application app026 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app026 |
+| Application ID | app026 |
 | Name | LegacyFinApp-026 |
+| Description | Legacy financial modeling system for complex calculations and risk assessments |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | On-Premise |
-| Business Criticality | Critical |
-| Operating System | AIX 7.2 |
-| Programming Language | FORTRAN 2018 |
-| Application Server |  |
-| Database Engine | DB2 |
+| Criticality | Critical |
+| Deployment | On-Premise |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | AIX 7.2 | unknown | NO_KNOWLEDGE | Operating system version is not covered by the provided lifecycle rules. |
-| programming_language | FORTRAN 2018 | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| database | DB2 | unknown | NO_KNOWLEDGE | Database engine is not covered by the provided lifecycle rules. |
+| os | AIX | 7.2 | NO_KNOWLEDGE | AIX lifecycle data was not part of the supplied rule set, so support status cannot be assessed confidently from the inventory alone. |
+| database | DB2 | 2 | NO_KNOWLEDGE | The inventory lists DB2 without a version, so lifecycle support cannot be assessed. |
+| language | FORTRAN | 2018 | NO_KNOWLEDGE | Programming language lifecycle support could not be mapped confidently from the recorded value. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | Unknown | unknown | NO_KNOWLEDGE | No application server value was provided in the application inventory. |
 
-Overall technology risk: **MEDIUM**.
+## Complexity score and label
+- Complexity score: **6**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **6** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Critical' adjusted score by +2.
+- 0 EOL component(s) contributed +0 points (capped at +3).
+- Server count of 1 contributed +0 points.
+- Dependency count of 1 using external_interface_count proxy contributed +0 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Critical |
-| Criticality Adjustment | 2 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 1 |
-| Server Adjustment | 0 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 1 |
-| Dependency Adjustment | 0 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied +2 for Critical criticality, +0 for 0 EOL component(s), +0 for 1 server(s), +0 using external interfaces as the dependency proxy (1), +1 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to standard Linux Operating System | APPLICABLE | The application runs on AIX 7.2, so moving to standard Linux is a viable modernization path. | Standardize the platform on supported Linux distributions where stack constraints allow. |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | APPLICABLE | The application is currently deployed as On-Premise, so lift-and-shift to cloud remains a valid option. | Evaluate lift-and-shift migration to reduce infrastructure management effort. |
-| Application Refactoring and De-coupling | PARTIALLY_FULFILLED | The application is custom-built, but the current data shows only moderate integration pressure for deeper refactoring. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Switch DB Engine to open-source database solution | APPLICABLE | The application uses a proprietary database (DB2), so an open-source alternative could reduce cost and lock-in. | Assess a move to an open-source database to reduce licensing costs and lock-in. |
-| Update outdated components | PARTIALLY_FULFILLED | Known components are current, but some technologies could not be dated from the available application data. | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Switch to standard Linux Operating System | Medium | The current operating system (AIX 7.2) is not aligned with the standard Linux target baseline. | Standardize on widely supported operating systems that align with the customer's existing landscape standards to reduce the technology zoo, improve manageability, lower costs, and enhance security through simplified administration. |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | High | The application is currently on-premise, so lift-and-shift cloud migration is applicable. | Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits. |
+| Application Refactoring and De-coupling | High | The application is custom-built and shows legacy or integration complexity that makes decoupling valuable. | Refactor applications to decouple components for better agility and maintainability. |
+| Switch DB Engine to open-source database solution | High | The application uses a proprietary database (DB2), so an open-source alternative is relevant. | Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to standard Linux Operating System | EUR 360.00 | EUR 400.00 | 233.33% |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 6,000.00 | EUR 3,000.00 | 50.00% |
-| Application Refactoring and De-coupling | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
-| Switch DB Engine to open-source database solution | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 336,360.00**  
-Total annual savings: **EUR 168,400.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Switch to standard Linux Operating System | EUR 300.00 | EUR 360.00 | EUR 400.00 | 233.33% |
+| Application Refactoring and De-coupling | EUR 250,000.00 | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
+| Switch DB Engine to open-source database solution | EUR 25,000.00 | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 5,000.00 | EUR 6,000.00 | EUR 3,000.00 | 50.00% |

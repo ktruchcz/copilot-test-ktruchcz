@@ -1,39 +1,64 @@
 {
-  "app_id": "app008",
-  "app_name": "InventoryApp-008",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app008",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "AIX 6",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Operating system version is not covered by the provided lifecycle rules."
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "AIX lifecycle data was not part of the supplied rule set, so support status cannot be assessed confidently from the inventory alone.",
+      "confidence": 4
     },
     {
-      "component_type": "programming_language",
-      "name": "COBOL-2014",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Programming language or runtime version is not covered by the provided lifecycle rules."
-    },
-    {
-      "component_type": "application_server",
-      "name": "WebLogic",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "WebLogic version is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
       "component_type": "database",
-      "name": "SQL Server",
+      "managed_service": false,
       "version": "2019",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for SQL Server 2019."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "SQL Server 2019 remains supported.",
+      "confidence": 9
+    },
+    {
+      "component_name": "COBOL-2014",
+      "component_family": "COBOL-2014",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Programming language lifecycle support could not be mapped confidently from the recorded value.",
+      "confidence": 3
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "WebLogic",
+      "component_family": "WebLogic",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "WebLogic 8 is long end-of-life.",
+      "confidence": 9
     }
   ],
-  "overall_technology_risk": "MEDIUM",
-  "eol_count": 0,
-  "outdated_count": 0,
-  "current_count": 1
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

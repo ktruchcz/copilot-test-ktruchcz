@@ -1,71 +1,54 @@
 # Application Report - MobileApp-016
-Application app016 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app016 |
+| Application ID | app016 |
 | Name | MobileApp-016 |
+| Description | Mobile application for drivers and customers to track shipments and manage delivery operations |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | AWS |
-| Business Criticality | Medium |
-| Operating System | RHEL 7 |
-| Programming Language | React Native |
-| Application Server | Payara 4.0 |
-| Database Engine | SQL Server 2019 |
+| Criticality | Medium |
+| Deployment | AWS |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | RHEL | 7 | EOL | Lifecycle rule matched for RHEL 7. |
-| programming_language | React Native | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| application_server | Payara 4.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | SQL Server | 2019 | CURRENT_VERSION | Lifecycle rule matched for SQL Server 2019. |
+| os | RHEL | 7 | EOL | RHEL 7 reached end of maintenance support in June 2024. |
+| database | SQL Server | 2019 | CURRENT_VERSION | SQL Server 2019 remains supported. |
+| language | React | unknown | NO_KNOWLEDGE | The inventory entry represents a framework or runtime rather than an explicit language version, so language lifecycle support cannot be assessed directly. |
+| framework | React Native | unknown | NO_KNOWLEDGE | React Native is listed without a version, so lifecycle support cannot be assessed. |
+| application_server | Payara | 4.0 | NO_KNOWLEDGE | Payara is recorded, but the inventory does not map it to an agreed lifecycle rule in this assessment baseline. |
 
-Overall technology risk: **CRITICAL**.
+## Complexity score and label
+- Complexity score: **6**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **6** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Medium' adjusted score by +0.
+- 1 EOL component(s) contributed +1 points (capped at +3).
+- Server count of 2 contributed +1 points.
+- Dependency count of 10 using external_interface_count proxy contributed +1 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='Yes' adjusted score by -1.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Medium |
-| Criticality Adjustment | 0 |
-| Eol Components | 1 |
-| Eol Adjustment | 1 |
-| Server Count | 2 |
-| Server Adjustment | 1 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 10 |
-| Dependency Adjustment | 1 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | True |
-| Containerization Adjustment | -1 |
-
-Started from base score 3, applied +0 for Medium criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +1 using external interfaces as the dependency proxy (10), +1 for custom code indication, and -1 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Operating System Update | APPLICABLE | The operating system (RHEL 7) is assessed as EOL, so patching or upgrading is recommended. | Prioritize OS remediation to restore vendor support and security patch eligibility. |
-| Switch to ARM-based CPU | APPLICABLE | The application is already deployed on AWS and uses a portable stack, so ARM-based hosting is a credible optimization option. | Pilot ARM on portable workloads to validate performance and cost savings before broad adoption. |
-| Applications Server replacement | APPLICABLE | The application uses Payara 4.0, which is a legacy-style middleware component worth evaluating for replacement. | Replace legacy middleware with a supported application platform or simplify the hosting stack. |
-| Application Refactoring and De-coupling | APPLICABLE | The application is custom-built and integration-heavy, so decoupling and refactoring would likely improve modernization outcomes. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Switch DB Engine to open-source database solution | APPLICABLE | The application uses a proprietary database (SQL Server 2019), so an open-source alternative could reduce cost and lock-in. | Assess a move to an open-source database to reduce licensing costs and lock-in. |
-| Update outdated components | APPLICABLE | The technology assessment found 1 EOL and 0 outdated component(s). | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Operating System Update | High | The operating system RHEL 7 is assessed as EOL, so remediation is recommended. | Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements. |
+| Switch to ARM-based CPU | Medium | The application already runs in cloud and uses a portable stack, so ARM-based infrastructure is a viable optimization path. | Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings. |
+| Applications Server replacement | Medium | The application uses legacy-style middleware (Payara 4.0), so replacement remains relevant even though exact support status is unknown. | Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs. |
+| Application Refactoring and De-coupling | High | The application is custom-built and shows legacy or integration complexity that makes decoupling valuable. | Refactor applications to decouple components for better agility and maintainability. |
+| Switch DB Engine to open-source database solution | High | The application uses a proprietary database (SQL Server 2019), so an open-source alternative is relevant. | Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs. |
+| Update outdated components | High | The technology assessment found 1 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Operating System Update | EUR 1,200.00 | EUR 500.00 | 25.00% |
-| Switch to ARM-based CPU | EUR 6,000.00 | EUR 1,000.00 | -50.00% |
-| Applications Server replacement | EUR 12,000.00 | EUR 12,000.00 | 200.00% |
-| Application Refactoring and De-coupling | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
-| Switch DB Engine to open-source database solution | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 349,200.00**  
-Total annual savings: **EUR 178,500.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Applications Server replacement | EUR 10,000.00 | EUR 12,000.00 | EUR 12,000.00 | 200.00% |
+| Application Refactoring and De-coupling | EUR 250,000.00 | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
+| Switch DB Engine to open-source database solution | EUR 25,000.00 | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
+| Operating System Update | EUR 1,000.00 | EUR 1,200.00 | EUR 500.00 | 25.00% |
+| Switch to ARM-based CPU | EUR 5,000.00 | EUR 6,000.00 | EUR 1,000.00 | -50.00% |

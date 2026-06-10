@@ -1,67 +1,49 @@
 # Application Report - TrainingApp-020
-Application app020 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app020 |
+| Application ID | app020 |
 | Name | TrainingApp-020 |
+| Description | Learning management system for employee training programs and professional development tracking |
 | Status | Production |
-| Solution Type | 3rd party software |
-| Deployment Type | AWS |
-| Business Criticality | Low |
-| Operating System | Windows Server 2012 |
-| Programming Language | Angular 15 |
-| Application Server | Microsoft IIS 8.5 |
-| Database Engine | SQL Server 2016 |
+| Criticality | Low |
+| Deployment | AWS |
+| Solution type | 3rd party software |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | Windows Server | 2012 | EOL | Lifecycle rule matched for Windows Server 2012. |
-| programming_language | Angular | 15 | EOL | Lifecycle rule matched for Angular 15. |
-| application_server | Microsoft IIS 8.5 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | SQL Server | 2016 | OUTDATED | Lifecycle rule matched for SQL Server 2016. |
+| os | Windows Server | 2012 | EOL | Windows Server 2012 reached end of support in October 2023. |
+| database | SQL Server | 2016 | OUTDATED | SQL Server 2016 is still usable but well behind current supported releases. |
+| language | Angular | 15 | NO_KNOWLEDGE | The inventory entry represents a framework or runtime rather than an explicit language version, so language lifecycle support cannot be assessed directly. |
+| framework | Angular | 15 | EOL | Angular 15 is below the currently supported baseline and treated as end-of-life. |
+| application_server | Microsoft IIS | 8.5 | NO_KNOWLEDGE | Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions. |
 
-Overall technology risk: **CRITICAL**.
+## Complexity score and label
+- Complexity score: **5**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **5** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Low' adjusted score by -1.
+- 2 EOL component(s) contributed +2 points (capped at +3).
+- Server count of 1 contributed +0 points.
+- Dependency count of 7 using external_interface_count proxy contributed +1 points.
+- Solution type '3rd party software' contributed +0 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Low |
-| Criticality Adjustment | -1 |
-| Eol Components | 2 |
-| Eol Adjustment | 2 |
-| Server Count | 1 |
-| Server Adjustment | 0 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 7 |
-| Dependency Adjustment | 1 |
-| Custom Code | False |
-| Custom Code Adjustment | 0 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied -1 for Low criticality, +2 for 2 EOL component(s), +0 for 1 server(s), +1 using external interfaces as the dependency proxy (7), +0 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Operating System Update | APPLICABLE | The operating system (Windows Server 2012) is assessed as EOL, so patching or upgrading is recommended. | Prioritize OS remediation to restore vendor support and security patch eligibility. |
-| Application Containerization | PARTIALLY_FULFILLED | The application is already cloud-hosted, but the source data does not show containerization yet. | Containerize the workload to improve portability, release consistency, and scaling options. |
-| Upgrade Legacy Databases | APPLICABLE | The database (SQL Server 2016) is assessed as OUTDATED, so an upgrade is justified. | Upgrade the database platform to remove lifecycle risk and improve supportability. |
-| Update outdated components | APPLICABLE | The technology assessment found 2 EOL and 1 outdated component(s). | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Operating System Update | High | The operating system Windows Server 2012 is assessed as EOL, so remediation is recommended. | Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements. |
+| Upgrade Legacy Databases | High | The database SQL Server 2016 is assessed as OUTDATED. | Upgrade legacy databases to modern, supported versions or cloud-native alternatives. |
+| Update outdated components | High | The technology assessment found 3 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Operating System Update | EUR 1,000.00 | EUR 500.00 | 50.00% |
-| Application Containerization | EUR 100,000.00 | EUR 100,000.00 | 200.00% |
-| Upgrade Legacy Databases | EUR 10,000.00 | EUR 10,000.00 | 200.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 111,000.00**  
-Total annual savings: **EUR 110,500.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Upgrade Legacy Databases | EUR 10,000.00 | EUR 10,000.00 | EUR 10,000.00 | 200.00% |
+| Operating System Update | EUR 1,000.00 | EUR 1,000.00 | EUR 500.00 | 50.00% |
+| Update outdated components | EUR 0.00 | EUR 0.00 | EUR 0.00 | n/a |

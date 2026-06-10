@@ -1,71 +1,53 @@
 # Application Report - AuditApp-024
-Application app024 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app024 |
+| Application ID | app024 |
 | Name | AuditApp-024 |
+| Description | Legacy audit management system for tracking financial audits and compliance activities |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | On-Premise |
-| Business Criticality | High |
-| Operating System | Windows Server 2019 |
-| Programming Language | VB.NET |
-| Application Server | Microsoft IIS 10.0 |
-| Database Engine | SQL Server 2014 |
+| Criticality | High |
+| Deployment | On-Premise |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | Windows Server | 2019 | CURRENT_VERSION | Lifecycle rule matched for Windows Server 2019. |
-| programming_language | .NET | unknown | NO_KNOWLEDGE | The application uses .NET, but no supported version was provided. |
-| application_server | Microsoft IIS 10.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | SQL Server | 2014 | EOL | Lifecycle rule matched for SQL Server 2014. |
+| os | Windows Server | 2019 | CURRENT_VERSION | Windows Server 2019 remains supported in the extended support window until 2029. |
+| database | SQL Server | 2014 | EOL | SQL Server 2014 is end-of-life. |
+| language | VB.NET | unknown | NO_KNOWLEDGE | Programming language lifecycle support could not be mapped confidently from the recorded value. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | Microsoft IIS | 10.0 | NO_KNOWLEDGE | Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions. |
 
-Overall technology risk: **CRITICAL**.
+## Complexity score and label
+- Complexity score: **6**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **6** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'High' adjusted score by +1.
+- 1 EOL component(s) contributed +1 points (capped at +3).
+- Server count of 1 contributed +0 points.
+- Dependency count of 3 using external_interface_count proxy contributed +0 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | High |
-| Criticality Adjustment | 1 |
-| Eol Components | 1 |
-| Eol Adjustment | 1 |
-| Server Count | 1 |
-| Server Adjustment | 0 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 3 |
-| Dependency Adjustment | 0 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied +1 for High criticality, +1 for 1 EOL component(s), +0 for 1 server(s), +0 using external interfaces as the dependency proxy (3), +1 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | APPLICABLE | The application is currently deployed as On-Premise, so lift-and-shift to cloud remains a valid option. | Evaluate lift-and-shift migration to reduce infrastructure management effort. |
-| Application Containerization | APPLICABLE | The application is not containerized today, so containerization remains a relevant modernization option. | Containerize the workload to improve portability, release consistency, and scaling options. |
-| Application Refactoring and De-coupling | PARTIALLY_FULFILLED | The application is custom-built, but the current data shows only moderate integration pressure for deeper refactoring. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Upgrade Legacy Databases | APPLICABLE | The database (SQL Server 2014) is assessed as EOL, so an upgrade is justified. | Upgrade the database platform to remove lifecycle risk and improve supportability. |
-| Switch DB Engine to open-source database solution | APPLICABLE | The application uses a proprietary database (SQL Server 2014), so an open-source alternative could reduce cost and lock-in. | Assess a move to an open-source database to reduce licensing costs and lock-in. |
-| Update outdated components | APPLICABLE | The technology assessment found 1 EOL and 0 outdated component(s). | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | High | The application is currently on-premise, so lift-and-shift cloud migration is applicable. | Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits. |
+| Application Containerization | High | The application is not containerized and no blocking constraint is explicitly recorded in the inventory. | Containerize applications to improve scalability, portability, agility and resource efficiency. |
+| Upgrade Legacy Databases | High | The database SQL Server 2014 is assessed as EOL. | Upgrade legacy databases to modern, supported versions or cloud-native alternatives. |
+| Switch DB Engine to open-source database solution | High | The application uses a proprietary database (SQL Server 2014), so an open-source alternative is relevant. | Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs. |
+| Update outdated components | High | The technology assessment found 1 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 6,000.00 | EUR 3,000.00 | 50.00% |
-| Application Containerization | EUR 120,000.00 | EUR 100,000.00 | 150.00% |
-| Application Refactoring and De-coupling | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
-| Upgrade Legacy Databases | EUR 12,000.00 | EUR 10,000.00 | 150.00% |
-| Switch DB Engine to open-source database solution | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 468,000.00**  
-Total annual savings: **EUR 278,000.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Application Containerization | EUR 100,000.00 | EUR 120,000.00 | EUR 100,000.00 | 150.00% |
+| Upgrade Legacy Databases | EUR 10,000.00 | EUR 12,000.00 | EUR 10,000.00 | 150.00% |
+| Switch DB Engine to open-source database solution | EUR 25,000.00 | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 5,000.00 | EUR 6,000.00 | EUR 3,000.00 | 50.00% |
+| Update outdated components | EUR 0.00 | EUR 0.00 | EUR 0.00 | n/a |

@@ -1,39 +1,64 @@
 {
-  "app_id": "app006",
-  "app_name": "SupportApp-006",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app006",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "Debian 6",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Operating system version is not covered by the provided lifecycle rules."
+      "component_name": "Debian",
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2016-02-29",
+      "reason": "Debian 6 is end-of-life.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Java",
-      "version": "11",
-      "status": "OUTDATED",
-      "notes": "Lifecycle rule matched for Java 11."
-    },
-    {
-      "component_type": "application_server",
-      "name": "Glassfish 5.0",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Application server technology is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
       "component_type": "database",
-      "name": "PostgreSQL",
+      "managed_service": false,
       "version": "13",
-      "status": "NO_KNOWLEDGE",
-      "notes": "PostgreSQL version is not covered by the provided lifecycle rules."
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 is behind the current supported baselines and nearing or beyond its support boundary.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 remains supported but is behind newer LTS releases.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "GlassFish",
+      "component_family": "GlassFish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "5.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "GlassFish is recorded, but the inventory does not map it to an agreed lifecycle rule in this assessment baseline.",
+      "confidence": 4
     }
   ],
-  "overall_technology_risk": "HIGH",
-  "eol_count": 0,
-  "outdated_count": 1,
-  "current_count": 0
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

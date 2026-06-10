@@ -1,39 +1,64 @@
 {
-  "app_id": "app012",
-  "app_name": "IoTSensorApp-012",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app012",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "Windows Server",
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
       "version": "2022",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for Windows Server 2022."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Windows Server 2022 is a current supported release.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Rust 1.70",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Programming language or runtime version is not covered by the provided lifecycle rules."
-    },
-    {
-      "component_type": "application_server",
-      "name": "Microsoft IIS 10.0",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Application server technology is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
       "component_type": "database",
-      "name": "PostgreSQL",
+      "managed_service": false,
       "version": "14",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for PostgreSQL 14."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "PostgreSQL 14 remains a current supported release.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Rust 1.70",
+      "component_family": "Rust",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "1.70",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Programming language lifecycle support could not be mapped confidently from the recorded value.",
+      "confidence": 3
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "Microsoft IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions.",
+      "confidence": 4
     }
   ],
-  "overall_technology_risk": "MEDIUM",
-  "eol_count": 0,
-  "outdated_count": 0,
-  "current_count": 2
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

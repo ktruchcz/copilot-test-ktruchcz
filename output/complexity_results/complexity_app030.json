@@ -1,24 +1,18 @@
 {
-  "app_id": "app030",
+  "application_id": "app030",
   "app_name": "APIGatewayApp-030",
-  "complexity_score": 7,
+  "complexity_score": 8,
   "complexity_label": "High",
-  "estimated_effort": "6-12 months",
-  "factors": {
-    "base_score": 3,
-    "business_criticality": "High",
-    "criticality_adjustment": 1,
-    "eol_components": 1,
-    "eol_adjustment": 1,
-    "server_count": 2,
-    "server_adjustment": 1,
-    "dependency_proxy": "external_interface_count",
-    "dependency_count": 30,
-    "dependency_adjustment": 2,
-    "custom_code": false,
-    "custom_code_adjustment": 0,
-    "containerized": true,
-    "containerization_adjustment": -1
-  },
-  "reasoning": "Started from base score 3, applied +1 for High criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +2 using external interfaces as the dependency proxy (30), +0 for custom code indication, and -1 for containerization."
+  "scoring_factors": [
+    "Base score of 3 applied.",
+    "Business criticality 'High' adjusted score by +1.",
+    "2 EOL component(s) contributed +2 points (capped at +3).",
+    "Server count of 2 contributed +1 points.",
+    "Dependency count of 30 using external_interface_count proxy contributed +2 points.",
+    "Solution type 'Open Source' contributed +0 points for custom code.",
+    "Containerized='Yes' adjusted score by -1."
+  ],
+  "migration_effort_months": 6,
+  "migration_effort_range": "6-12 months",
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

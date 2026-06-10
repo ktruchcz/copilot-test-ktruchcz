@@ -1,6 +1,7 @@
 {
-  "app_id": "app009",
+  "application_id": "app009",
   "app_name": "MarketingApp-009",
   "out_of_scope": true,
-  "reason": "RETIRED"
+  "reason": "RETIRED",
+  "evaluation_notes": "Application is marked as retired in the source inventory and is out of scope."
 }

@@ -1,39 +1,64 @@
 {
-  "app_id": "app028",
-  "app_name": "NotificationApp-028",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app028",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "Windows Server",
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
       "version": "2019",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for Windows Server 2019."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 remains supported in the extended support window until 2029.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Java",
-      "version": "17",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for Java 17."
-    },
-    {
-      "component_type": "application_server",
-      "name": "Microsoft IIS 10.0",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Application server technology is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "Oracle Database",
+      "component_family": "Oracle Database",
       "component_type": "database",
-      "name": "Oracle",
+      "managed_service": false,
       "version": "19c",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for Oracle 19c."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-04-30",
+      "reason": "Oracle Database 19c is the current long-term support release until April 2027.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "17",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2026-09-30",
+      "reason": "Java 17 is a current LTS release.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "Microsoft IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions.",
+      "confidence": 4
     }
   ],
-  "overall_technology_risk": "MEDIUM",
-  "eol_count": 0,
-  "outdated_count": 0,
-  "current_count": 3
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

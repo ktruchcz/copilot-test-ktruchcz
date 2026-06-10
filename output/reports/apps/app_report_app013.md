@@ -1,71 +1,56 @@
 # Application Report - SecurityApp-013
-Application app013 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app013 |
+| Application ID | app013 |
 | Name | SecurityApp-013 |
+| Description | Enterprise security platform for monitoring threats, managing access controls, and ensuring compliance |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | On-Premise |
-| Business Criticality | Critical |
-| Operating System | Debian 7 |
-| Programming Language | Java 17 |
-| Application Server | Websphere 8.0 |
-| Database Engine | SQL Server 2022 |
+| Criticality | Critical |
+| Deployment | On-Premise |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | Debian 7 | unknown | NO_KNOWLEDGE | Operating system version is not covered by the provided lifecycle rules. |
-| programming_language | Java | 17 | CURRENT_VERSION | Lifecycle rule matched for Java 17. |
-| application_server | WebSphere | 8.0 | EOL | Lifecycle rule matched for WebSphere 8.x. |
-| database | SQL Server | 2022 | CURRENT_VERSION | Lifecycle rule matched for SQL Server 2022. |
+| os | Debian | 7 | EOL | Debian 7 is end-of-life. |
+| database | SQL Server | 2022 | CURRENT_VERSION | SQL Server 2022 is a current supported release. |
+| language | Java | 17 | CURRENT_VERSION | Java 17 is a current LTS release. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | WebSphere | 8.0 | EOL | WebSphere 8.x is end-of-life. |
 
-Overall technology risk: **CRITICAL**.
+## Complexity score and label
+- Complexity score: **10**
+- Complexity label: **Very high**
+- Indicative migration effort: **12+ months**
 
-## Complexity Assessment
-Complexity score: **10** (Very High) — estimated effort **12+ months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Critical' adjusted score by +2.
+- 2 EOL component(s) contributed +2 points (capped at +3).
+- Server count of 2 contributed +1 points.
+- Dependency count of 15 using external_interface_count proxy contributed +2 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Critical |
-| Criticality Adjustment | 2 |
-| Eol Components | 1 |
-| Eol Adjustment | 1 |
-| Server Count | 2 |
-| Server Adjustment | 1 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 15 |
-| Dependency Adjustment | 2 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied +2 for Critical criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +2 using external interfaces as the dependency proxy (15), +1 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to standard Linux Operating System | PARTIALLY_FULFILLED | The workload already runs on Linux (Debian 7), but not on the target standard Linux distributions highlighted in the rules. | Standardize the platform on supported Linux distributions where stack constraints allow. |
-| Applications Server replacement | APPLICABLE | The current application server (Websphere 8.0) is assessed as EOL, which makes replacement relevant. | Replace legacy middleware with a supported application platform or simplify the hosting stack. |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | APPLICABLE | The application is currently deployed as On-Premise, so lift-and-shift to cloud remains a valid option. | Evaluate lift-and-shift migration to reduce infrastructure management effort. |
-| Application Refactoring and De-coupling | APPLICABLE | The application is custom-built and integration-heavy, so decoupling and refactoring would likely improve modernization outcomes. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Switch DB Engine to open-source database solution | APPLICABLE | The application uses a proprietary database (SQL Server 2022), so an open-source alternative could reduce cost and lock-in. | Assess a move to an open-source database to reduce licensing costs and lock-in. |
-| Update outdated components | APPLICABLE | The technology assessment found 1 EOL and 0 outdated component(s). | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Operating System Update | High | The operating system Debian 7 is assessed as EOL, so remediation is recommended. | Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements. |
+| Switch to standard Linux Operating System | Medium | The current operating system (Debian 7) is not aligned with the standard Linux target baseline. | Standardize on widely supported operating systems that align with the customer's existing landscape standards to reduce the technology zoo, improve manageability, lower costs, and enhance security through simplified administration. |
+| Applications Server replacement | Medium | The application server Websphere 8.0 is assessed as EOL. | Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs. |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | High | The application is currently on-premise, so lift-and-shift cloud migration is applicable. | Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits. |
+| Application Containerization | High | The application is not containerized and no blocking constraint is explicitly recorded in the inventory. | Containerize applications to improve scalability, portability, agility and resource efficiency. |
+| Application Refactoring and De-coupling | High | The application is custom-built and shows legacy or integration complexity that makes decoupling valuable. | Refactor applications to decouple components for better agility and maintainability. |
+| Switch DB Engine to open-source database solution | High | The application uses a proprietary database (SQL Server 2022), so an open-source alternative is relevant. | Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs. |
+| Update outdated components | High | The technology assessment found 2 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to standard Linux Operating System | EUR 600.00 | EUR 400.00 | 100.00% |
-| Applications Server replacement | EUR 20,000.00 | EUR 12,000.00 | 80.00% |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 10,000.00 | EUR 3,000.00 | -10.00% |
-| Application Refactoring and De-coupling | EUR 500,000.00 | EUR 150,000.00 | -10.00% |
-| Switch DB Engine to open-source database solution | EUR 50,000.00 | EUR 15,000.00 | -10.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 580,600.00**  
-Total annual savings: **EUR 180,400.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Switch to standard Linux Operating System | EUR 300.00 | EUR 600.00 | EUR 400.00 | 100.00% |
+| Applications Server replacement | EUR 10,000.00 | EUR 20,000.00 | EUR 12,000.00 | 80.00% |
+| Application Containerization | EUR 100,000.00 | EUR 200,000.00 | EUR 100,000.00 | 50.00% |
+| Application Refactoring and De-coupling | EUR 250,000.00 | EUR 500,000.00 | EUR 150,000.00 | -10.00% |
+| Switch DB Engine to open-source database solution | EUR 25,000.00 | EUR 50,000.00 | EUR 15,000.00 | -10.00% |

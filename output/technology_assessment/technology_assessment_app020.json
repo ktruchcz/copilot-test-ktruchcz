@@ -1,39 +1,64 @@
 {
-  "app_id": "app020",
-  "app_name": "TrainingApp-020",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app020",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "Windows Server",
+      "component_name": "Windows Server",
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
       "version": "2012",
-      "status": "EOL",
-      "notes": "Lifecycle rule matched for Windows Server 2012."
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Windows Server 2012 reached end of support in October 2023.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Angular",
-      "version": "15",
-      "status": "EOL",
-      "notes": "Lifecycle rule matched for Angular 15."
-    },
-    {
-      "component_type": "application_server",
-      "name": "Microsoft IIS 8.5",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Application server technology is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "SQL Server",
+      "component_family": "SQL Server",
       "component_type": "database",
-      "name": "SQL Server",
+      "managed_service": false,
       "version": "2016",
-      "status": "OUTDATED",
-      "notes": "Lifecycle rule matched for SQL Server 2016."
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "SQL Server 2016 is still usable but well behind current supported releases.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Angular 15",
+      "component_family": "Angular",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "The inventory entry represents a framework or runtime rather than an explicit language version, so language lifecycle support cannot be assessed directly.",
+      "confidence": 4
+    },
+    {
+      "component_name": "Angular",
+      "component_family": "Angular",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Angular 15 is below the currently supported baseline and treated as end-of-life.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Microsoft IIS",
+      "component_family": "Microsoft IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.5",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions.",
+      "confidence": 4
     }
   ],
-  "overall_technology_risk": "CRITICAL",
-  "eol_count": 2,
-  "outdated_count": 1,
-  "current_count": 0
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

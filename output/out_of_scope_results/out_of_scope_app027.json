@@ -1,6 +1,7 @@
 {
-  "app_id": "app027",
+  "application_id": "app027",
   "app_name": "DataWarehouseApp-027",
   "out_of_scope": false,
-  "reason": null
+  "reason": null,
+  "evaluation_notes": "Application is in-scope for modernization assessment."
 }

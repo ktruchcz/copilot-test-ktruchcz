@@ -1,39 +1,64 @@
 {
-  "app_id": "app018",
-  "app_name": "VendorApp-018",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app018",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "RHEL",
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
       "version": "7",
-      "status": "EOL",
-      "notes": "Lifecycle rule matched for RHEL 7."
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached end of maintenance support in June 2024.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Java",
-      "version": "8",
-      "status": "EOL",
-      "notes": "Lifecycle rule matched for Java 8."
-    },
-    {
-      "component_type": "application_server",
-      "name": "Glassfish 4.5",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Application server technology is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
       "component_type": "database",
-      "name": "PostgreSQL",
+      "managed_service": false,
       "version": "13",
-      "status": "NO_KNOWLEDGE",
-      "notes": "PostgreSQL version is not covered by the provided lifecycle rules."
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 is behind the current supported baselines and nearing or beyond its support boundary.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "EOL",
+      "eol_date": "2022-03-31",
+      "reason": "Java 8 premier support ended in March 2022.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "GlassFish",
+      "component_family": "GlassFish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "4.5",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "GlassFish is recorded, but the inventory does not map it to an agreed lifecycle rule in this assessment baseline.",
+      "confidence": 4
     }
   ],
-  "overall_technology_risk": "CRITICAL",
-  "eol_count": 2,
-  "outdated_count": 0,
-  "current_count": 0
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

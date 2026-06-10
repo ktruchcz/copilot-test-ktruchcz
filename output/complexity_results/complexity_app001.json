@@ -1,24 +1,18 @@
 {
-  "app_id": "app001",
+  "application_id": "app001",
   "app_name": "ERPApp-001",
   "complexity_score": 7,
   "complexity_label": "High",
-  "estimated_effort": "6-12 months",
-  "factors": {
-    "base_score": 3,
-    "business_criticality": "High",
-    "criticality_adjustment": 1,
-    "eol_components": 0,
-    "eol_adjustment": 0,
-    "server_count": 2,
-    "server_adjustment": 1,
-    "dependency_proxy": "external_interface_count",
-    "dependency_count": 5,
-    "dependency_adjustment": 1,
-    "custom_code": true,
-    "custom_code_adjustment": 1,
-    "containerized": false,
-    "containerization_adjustment": 0
-  },
-  "reasoning": "Started from base score 3, applied +1 for High criticality, +0 for 0 EOL component(s), +1 for 2 server(s), +1 using external interfaces as the dependency proxy (5), +1 for custom code indication, and +0 for containerization."
+  "scoring_factors": [
+    "Base score of 3 applied.",
+    "Business criticality 'High' adjusted score by +1.",
+    "0 EOL component(s) contributed +0 points (capped at +3).",
+    "Server count of 2 contributed +1 points.",
+    "Dependency count of 5 using external_interface_count proxy contributed +1 points.",
+    "Solution type 'Custom made' contributed +1 points for custom code.",
+    "Containerized='No' adjusted score by +0."
+  ],
+  "migration_effort_months": 6,
+  "migration_effort_range": "6-12 months",
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

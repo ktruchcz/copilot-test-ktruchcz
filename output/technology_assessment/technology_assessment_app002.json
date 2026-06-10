@@ -1,39 +1,64 @@
 {
-  "app_id": "app002",
-  "app_name": "CRMApp-002",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app002",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "RHEL",
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
       "version": "7",
-      "status": "EOL",
-      "notes": "Lifecycle rule matched for RHEL 7."
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached end of maintenance support in June 2024.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Java",
-      "version": "11",
-      "status": "OUTDATED",
-      "notes": "Lifecycle rule matched for Java 11."
-    },
-    {
-      "component_type": "application_server",
-      "name": "WebSphere",
-      "version": "7.0",
-      "status": "NO_KNOWLEDGE",
-      "notes": "WebSphere version is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "MySQL",
+      "component_family": "MySQL",
       "component_type": "database",
-      "name": "MySQL",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "MySQL is identified, but no supported version is present."
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "The workload uses a managed MySQL service, but the service version is not recorded in the inventory.",
+      "confidence": 5
+    },
+    {
+      "component_name": "Java",
+      "component_family": "Java",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-09-30",
+      "reason": "Java 11 remains supported but is behind newer LTS releases.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "WebSphere",
+      "component_family": "WebSphere",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "7.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "WebSphere 7 is end-of-life.",
+      "confidence": 9
     }
   ],
-  "overall_technology_risk": "CRITICAL",
-  "eol_count": 1,
-  "outdated_count": 1,
-  "current_count": 0
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

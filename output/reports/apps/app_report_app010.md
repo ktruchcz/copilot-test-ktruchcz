@@ -1,63 +1,45 @@
 # Application Report - PayrollApp-010
-Application app010 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app010 |
+| Application ID | app010 |
 | Name | PayrollApp-010 |
+| Description | Payroll processing system handling salary calculations, tax deductions, and compensation reporting |
 | Status | Production |
-| Solution Type | 3rd party software |
-| Deployment Type | AWS |
-| Business Criticality | Medium |
-| Operating System | Windows Server 2019 |
-| Programming Language | Ruby 2.7 |
-| Application Server | Microsoft IIS 10.0 |
-| Database Engine | MySQL 8.0 |
+| Criticality | Medium |
+| Deployment | AWS |
+| Solution type | 3rd party software |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | Windows Server | 2019 | CURRENT_VERSION | Lifecycle rule matched for Windows Server 2019. |
-| programming_language | Ruby 2.7 | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| application_server | Microsoft IIS 10.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | MySQL | 8 | CURRENT_VERSION | Lifecycle rule matched for MySQL 8. |
+| os | Windows Server | 2019 | CURRENT_VERSION | Windows Server 2019 remains supported in the extended support window until 2029. |
+| database | MySQL | 8.0 | CURRENT_VERSION | MySQL 8.0 is the current supported major release. |
+| language | Ruby | 2.7 | EOL | Ruby 2.7 is end-of-life. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | Microsoft IIS | 10.0 | NO_KNOWLEDGE | Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions. |
 
-Overall technology risk: **MEDIUM**.
+## Complexity score and label
+- Complexity score: **4**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **3** (Low) — estimated effort **1-2 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Medium' adjusted score by +0.
+- 1 EOL component(s) contributed +1 points (capped at +3).
+- Server count of 1 contributed +0 points.
+- Dependency count of 4 using external_interface_count proxy contributed +0 points.
+- Solution type '3rd party software' contributed +0 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Medium |
-| Criticality Adjustment | 0 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 1 |
-| Server Adjustment | 0 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 4 |
-| Dependency Adjustment | 0 |
-| Custom Code | False |
-| Custom Code Adjustment | 0 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied +0 for Medium criticality, +0 for 0 EOL component(s), +0 for 1 server(s), +0 using external interfaces as the dependency proxy (4), +0 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Application Containerization | PARTIALLY_FULFILLED | The application is already cloud-hosted, but the source data does not show containerization yet. | Containerize the workload to improve portability, release consistency, and scaling options. |
-| Update outdated components | PARTIALLY_FULFILLED | Known components are current, but some technologies could not be dated from the available application data. | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Update outdated components | High | The technology assessment found 1 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Application Containerization | EUR 60,000.00 | EUR 100,000.00 | 400.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 60,000.00**  
-Total annual savings: **EUR 100,000.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Update outdated components | EUR 0.00 | EUR 0.00 | EUR 0.00 | n/a |

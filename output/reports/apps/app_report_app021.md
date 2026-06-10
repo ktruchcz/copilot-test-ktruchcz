@@ -1,69 +1,54 @@
 # Application Report - FleetApp-021
-Application app021 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app021 |
+| Application ID | app021 |
 | Name | FleetApp-021 |
+| Description | Fleet management system for tracking vehicle locations, maintenance schedules, and driver assignments |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | On-Premise |
-| Business Criticality | High |
-| Operating System | Windows Server 2022 |
-| Programming Language | C++ 17 |
-| Application Server | Microsoft IIS 10.0 |
-| Database Engine | Oracle 11g |
+| Criticality | High |
+| Deployment | On-Premise |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | Windows Server | 2022 | CURRENT_VERSION | Lifecycle rule matched for Windows Server 2022. |
-| programming_language | C++ 17 | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| application_server | Microsoft IIS 10.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | Oracle | unknown | NO_KNOWLEDGE | Oracle version is not covered by the provided lifecycle rules. |
+| os | Windows Server | 2022 | CURRENT_VERSION | Windows Server 2022 is a current supported release. |
+| database | Oracle Database | 11g | EOL | Oracle Database 11g is end-of-life. |
+| language | C++ | 17 | NO_KNOWLEDGE | Programming language lifecycle support could not be mapped confidently from the recorded value. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | Microsoft IIS | 10.0 | NO_KNOWLEDGE | Microsoft IIS is recorded, but the modernization rule set does not provide lifecycle guidance for IIS versions. |
 
-Overall technology risk: **MEDIUM**.
+## Complexity score and label
+- Complexity score: **7**
+- Complexity label: **High**
+- Indicative migration effort: **6-12 months**
 
-## Complexity Assessment
-Complexity score: **6** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'High' adjusted score by +1.
+- 1 EOL component(s) contributed +1 points (capped at +3).
+- Server count of 2 contributed +1 points.
+- Dependency count of 4 using external_interface_count proxy contributed +0 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | High |
-| Criticality Adjustment | 1 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 2 |
-| Server Adjustment | 1 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 4 |
-| Dependency Adjustment | 0 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied +1 for High criticality, +0 for 0 EOL component(s), +1 for 2 server(s), +0 using external interfaces as the dependency proxy (4), +1 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | APPLICABLE | The application is currently deployed as On-Premise, so lift-and-shift to cloud remains a valid option. | Evaluate lift-and-shift migration to reduce infrastructure management effort. |
-| Application Containerization | APPLICABLE | The application is not containerized today, so containerization remains a relevant modernization option. | Containerize the workload to improve portability, release consistency, and scaling options. |
-| Application Refactoring and De-coupling | PARTIALLY_FULFILLED | The application is custom-built, but the current data shows only moderate integration pressure for deeper refactoring. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Switch DB Engine to open-source database solution | APPLICABLE | The application uses a proprietary database (Oracle 11g), so an open-source alternative could reduce cost and lock-in. | Assess a move to an open-source database to reduce licensing costs and lock-in. |
-| Update outdated components | PARTIALLY_FULFILLED | Known components are current, but some technologies could not be dated from the available application data. | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | High | The application is currently on-premise, so lift-and-shift cloud migration is applicable. | Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits. |
+| Application Containerization | High | The application is not containerized and no blocking constraint is explicitly recorded in the inventory. | Containerize applications to improve scalability, portability, agility and resource efficiency. |
+| Application Refactoring and De-coupling | High | The application is custom-built and shows legacy or integration complexity that makes decoupling valuable. | Refactor applications to decouple components for better agility and maintainability. |
+| Upgrade Legacy Databases | High | The database Oracle 11g is assessed as EOL. | Upgrade legacy databases to modern, supported versions or cloud-native alternatives. |
+| Switch DB Engine to open-source database solution | High | The application uses a proprietary database (Oracle 11g), so an open-source alternative is relevant. | Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs. |
+| Update outdated components | High | The technology assessment found 1 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 6,000.00 | EUR 3,000.00 | 50.00% |
-| Application Containerization | EUR 120,000.00 | EUR 100,000.00 | 150.00% |
-| Application Refactoring and De-coupling | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
-| Switch DB Engine to open-source database solution | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 456,000.00**  
-Total annual savings: **EUR 268,000.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Application Containerization | EUR 100,000.00 | EUR 140,000.00 | EUR 100,000.00 | 114.29% |
+| Upgrade Legacy Databases | EUR 10,000.00 | EUR 14,000.00 | EUR 10,000.00 | 114.29% |
+| Application Refactoring and De-coupling | EUR 250,000.00 | EUR 350,000.00 | EUR 150,000.00 | 28.57% |
+| Switch DB Engine to open-source database solution | EUR 25,000.00 | EUR 35,000.00 | EUR 15,000.00 | 28.57% |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 5,000.00 | EUR 7,000.00 | EUR 3,000.00 | 28.57% |

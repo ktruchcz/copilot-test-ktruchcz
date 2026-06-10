@@ -1,66 +1,87 @@
 {
-  "app_id": "app022",
+  "application_id": "app022",
   "app_name": "ComplianceApp-022",
-  "scenarios": [
+  "scenario_assessments": [
     {
       "scenario_id": "os_update_security_patch",
       "scenario_name": "Operating System Update",
       "status": "APPLICABLE",
-      "rationale": "The operating system (RHEL 7) is assessed as EOL, so patching or upgrading is recommended."
+      "rationale": "The operating system RHEL 7 is assessed as EOL, so remediation is recommended.",
+      "recommendation": "Update the operating system to the latest supported version to address security vulnerabilities and compliance requirements.",
+      "priority": "High"
     },
     {
       "scenario_id": "switch_to_standard_linux_os",
       "scenario_name": "Switch to standard Linux Operating System",
       "status": "FULFILLED",
-      "rationale": "The application already runs on a standard Linux distribution (RHEL 7)."
+      "rationale": "The application already runs on a standard Linux distribution (RHEL 7).",
+      "recommendation": "Standardize on widely supported operating systems that align with the customer's existing landscape standards to reduce the technology zoo, improve manageability, lower costs, and enhance security through simplified administration.",
+      "priority": "Medium"
     },
     {
       "scenario_id": "switch_to_arm_cpu",
       "scenario_name": "Switch to ARM-based CPU",
-      "status": "APPLICABLE",
-      "rationale": "The application is already deployed on AWS, On-premise and uses a portable stack, so ARM-based hosting is a credible optimization option."
+      "status": "PARTIALLY_FULFILLED",
+      "rationale": "The application has some cloud presence and a portable stack, but the hybrid deployment means ARM adoption would be incremental.",
+      "recommendation": "Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings.",
+      "priority": "Medium"
     },
     {
       "scenario_id": "application_server_replacement",
       "scenario_name": "Applications Server replacement",
       "status": "APPLICABLE",
-      "rationale": "The application uses Payara 6.0, which is a legacy-style middleware component worth evaluating for replacement."
+      "rationale": "The application uses legacy-style middleware (Payara 6.0), so replacement remains relevant even though exact support status is unknown.",
+      "recommendation": "Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs.",
+      "priority": "Medium"
     },
     {
       "scenario_id": "app_deployment_to_cloud",
       "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
-      "status": "FULFILLED",
-      "rationale": "The application is already deployed in AWS, On-premise."
+      "status": "PARTIALLY_FULFILLED",
+      "rationale": "The application is already partly cloud-hosted, but still retains on-premise deployment dependencies.",
+      "recommendation": "Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits.",
+      "priority": "High"
     },
     {
       "scenario_id": "app_containerization",
       "scenario_name": "Application Containerization",
       "status": "FULFILLED",
-      "rationale": "The application is already marked as containerized."
+      "rationale": "The application is already marked as containerized in the inventory.",
+      "recommendation": "Containerize applications to improve scalability, portability, agility and resource efficiency.",
+      "priority": "High"
     },
     {
       "scenario_id": "app_refactor_decoupling",
       "scenario_name": "Application Refactoring and De-coupling",
       "status": "APPLICABLE",
-      "rationale": "The application is custom-built and integration-heavy, so decoupling and refactoring would likely improve modernization outcomes."
+      "rationale": "The application is custom-built and shows legacy or integration complexity that makes decoupling valuable.",
+      "recommendation": "Refactor applications to decouple components for better agility and maintainability.",
+      "priority": "High"
     },
     {
       "scenario_id": "upgrade_legacy_databases",
       "scenario_name": "Upgrade Legacy Databases",
       "status": "FULFILLED",
-      "rationale": "The database (PostgreSQL 14) is already current according to the provided lifecycle rules."
+      "rationale": "The database PostgreSQL 14 is already on a current supported baseline.",
+      "recommendation": "Upgrade legacy databases to modern, supported versions or cloud-native alternatives.",
+      "priority": "High"
     },
     {
       "scenario_id": "switch_db_engine_open_source",
       "scenario_name": "Switch DB Engine to open-source database solution",
       "status": "FULFILLED",
-      "rationale": "The application already uses an open-source or open-source-based database engine (PostgreSQL 14)."
+      "rationale": "The application already uses an open-source database family (PostgreSQL 14).",
+      "recommendation": "Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs.",
+      "priority": "High"
     },
     {
       "scenario_id": "update_outdated_components",
       "scenario_name": "Update outdated components",
       "status": "APPLICABLE",
-      "rationale": "The technology assessment found 1 EOL and 0 outdated component(s)."
+      "rationale": "The technology assessment found 1 component(s) that are EOL or outdated.",
+      "recommendation": "Rewrite or Refactor or Replace application for better security, agility and maintainability.",
+      "priority": "High"
     }
-  ]
+  ],
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

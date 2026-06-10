@@ -1,32 +1,64 @@
 {
-  "app_id": "app026",
-  "app_name": "LegacyFinApp-026",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app026",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "AIX 7.2",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Operating system version is not covered by the provided lifecycle rules."
+      "component_name": "AIX",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "AIX lifecycle data was not part of the supplied rule set, so support status cannot be assessed confidently from the inventory alone.",
+      "confidence": 4
     },
     {
-      "component_type": "programming_language",
-      "name": "FORTRAN 2018",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Programming language or runtime version is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "DB2",
+      "component_family": "DB2",
       "component_type": "database",
-      "name": "DB2",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Database engine is not covered by the provided lifecycle rules."
+      "managed_service": false,
+      "version": "2",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "The inventory lists DB2 without a version, so lifecycle support cannot be assessed.",
+      "confidence": 4
+    },
+    {
+      "component_name": "FORTRAN 2018",
+      "component_family": "FORTRAN",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2018",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "Programming language lifecycle support could not be mapped confidently from the recorded value.",
+      "confidence": 3
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "Unknown application server",
+      "component_family": "Unknown",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No application server value was provided in the application inventory.",
+      "confidence": 1
     }
   ],
-  "overall_technology_risk": "MEDIUM",
-  "eol_count": 0,
-  "outdated_count": 0,
-  "current_count": 0
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

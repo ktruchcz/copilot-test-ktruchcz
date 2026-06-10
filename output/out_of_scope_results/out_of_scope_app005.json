@@ -1,6 +1,7 @@
 {
-  "app_id": "app005",
+  "application_id": "app005",
   "app_name": "EComApp-005",
   "out_of_scope": true,
-  "reason": "RETIRED"
+  "reason": "RETIRED",
+  "evaluation_notes": "Application is marked as retired in the source inventory and is out of scope."
 }

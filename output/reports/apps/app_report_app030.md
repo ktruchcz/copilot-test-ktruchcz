@@ -1,67 +1,51 @@
 # Application Report - APIGatewayApp-030
-Application app030 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app030 |
+| Application ID | app030 |
 | Name | APIGatewayApp-030 |
+| Description | Modern API gateway for managing microservices communication and external API access |
 | Status | Production |
-| Solution Type | Open Source |
-| Deployment Type | AWS |
-| Business Criticality | High |
-| Operating System | RHEL 8 |
-| Programming Language | Go 1.19 |
-| Application Server | Glassfish 3.0 |
-| Database Engine | MySQL 5.7 |
+| Criticality | High |
+| Deployment | AWS |
+| Solution type | Open Source |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | RHEL | 8 | CURRENT_VERSION | Lifecycle rule matched for RHEL 8. |
-| programming_language | Go 1.19 | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| application_server | Glassfish 3.0 | unknown | NO_KNOWLEDGE | Application server technology is not covered by the provided lifecycle rules. |
-| database | MySQL | 5.7 | EOL | Lifecycle rule matched for MySQL 5.7. |
+| os | RHEL | 8 | CURRENT_VERSION | RHEL 8 remains in vendor support until May 2029. |
+| database | MySQL | 5.7 | EOL | MySQL 5.7 reached end of life in October 2023. |
+| language | Go | 1.19 | EOL | Go 1.19 is no longer within the two-release support window. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | GlassFish | 3.0 | NO_KNOWLEDGE | GlassFish is recorded, but the inventory does not map it to an agreed lifecycle rule in this assessment baseline. |
 
-Overall technology risk: **CRITICAL**.
+## Complexity score and label
+- Complexity score: **8**
+- Complexity label: **High**
+- Indicative migration effort: **6-12 months**
 
-## Complexity Assessment
-Complexity score: **7** (High) — estimated effort **6-12 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'High' adjusted score by +1.
+- 2 EOL component(s) contributed +2 points (capped at +3).
+- Server count of 2 contributed +1 points.
+- Dependency count of 30 using external_interface_count proxy contributed +2 points.
+- Solution type 'Open Source' contributed +0 points for custom code.
+- Containerized='Yes' adjusted score by -1.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | High |
-| Criticality Adjustment | 1 |
-| Eol Components | 1 |
-| Eol Adjustment | 1 |
-| Server Count | 2 |
-| Server Adjustment | 1 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 30 |
-| Dependency Adjustment | 2 |
-| Custom Code | False |
-| Custom Code Adjustment | 0 |
-| Containerized | True |
-| Containerization Adjustment | -1 |
-
-Started from base score 3, applied +1 for High criticality, +1 for 1 EOL component(s), +1 for 2 server(s), +2 using external interfaces as the dependency proxy (30), +0 for custom code indication, and -1 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to ARM-based CPU | APPLICABLE | The application is already deployed on AWS and uses a portable stack, so ARM-based hosting is a credible optimization option. | Pilot ARM on portable workloads to validate performance and cost savings before broad adoption. |
-| Applications Server replacement | APPLICABLE | The application uses Glassfish 3.0, which is a legacy-style middleware component worth evaluating for replacement. | Replace legacy middleware with a supported application platform or simplify the hosting stack. |
-| Upgrade Legacy Databases | APPLICABLE | The database (MySQL 5.7) is assessed as EOL, so an upgrade is justified. | Upgrade the database platform to remove lifecycle risk and improve supportability. |
-| Update outdated components | APPLICABLE | The technology assessment found 1 EOL and 0 outdated component(s). | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Switch to ARM-based CPU | Medium | The application already runs in cloud and uses a portable stack, so ARM-based infrastructure is a viable optimization path. | Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings. |
+| Applications Server replacement | Medium | The application uses legacy-style middleware (Glassfish 3.0), so replacement remains relevant even though exact support status is unknown. | Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs. |
+| Upgrade Legacy Databases | High | The database MySQL 5.7 is assessed as EOL. | Upgrade legacy databases to modern, supported versions or cloud-native alternatives. |
+| Update outdated components | High | The technology assessment found 2 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to ARM-based CPU | EUR 7,000.00 | EUR 1,000.00 | -57.14% |
-| Applications Server replacement | EUR 14,000.00 | EUR 12,000.00 | 157.14% |
-| Upgrade Legacy Databases | EUR 14,000.00 | EUR 10,000.00 | 114.29% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 35,000.00**  
-Total annual savings: **EUR 23,000.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Applications Server replacement | EUR 10,000.00 | EUR 16,000.00 | EUR 12,000.00 | 125.00% |
+| Upgrade Legacy Databases | EUR 10,000.00 | EUR 16,000.00 | EUR 10,000.00 | 87.50% |
+| Switch to ARM-based CPU | EUR 5,000.00 | EUR 8,000.00 | EUR 1,000.00 | -62.50% |
+| Update outdated components | EUR 0.00 | EUR 0.00 | EUR 0.00 | n/a |

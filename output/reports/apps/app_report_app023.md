@@ -1,65 +1,49 @@
 # Application Report - ChatbotApp-023
-Application app023 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app023 |
+| Application ID | app023 |
 | Name | ChatbotApp-023 |
+| Description | AI-powered chatbot system for handling customer inquiries and providing automated support |
 | Status | Production |
-| Solution Type | Open Source |
-| Deployment Type | AWS |
-| Business Criticality | Medium |
-| Operating System | RHEL 8 |
-| Programming Language | Node.js 18 |
-| Application Server | Apache Tomcat. 7.4 |
-| Database Engine | MongoDB |
+| Criticality | Medium |
+| Deployment | AWS |
+| Solution type | Open Source |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | RHEL | 8 | CURRENT_VERSION | Lifecycle rule matched for RHEL 8. |
-| programming_language | Node | 18 | OUTDATED | Lifecycle rule matched for Node 18. |
-| application_server | Tomcat | 7.4 | NO_KNOWLEDGE | Tomcat version is not covered by the provided lifecycle rules. |
-| database | MongoDB | unknown | NO_KNOWLEDGE | Database engine is not covered by the provided lifecycle rules. |
+| os | RHEL | 8 | CURRENT_VERSION | RHEL 8 remains in vendor support until May 2029. |
+| database | MongoDB | unknown | NO_KNOWLEDGE | The inventory lists MongoDB but does not provide a version, so lifecycle support cannot be assessed. |
+| language | Node.js | 18 | OUTDATED | Node.js 18 is behind current support baselines. |
+| framework | Node.js | 18 | OUTDATED | Node.js 18 is still recognizable but behind current long-term support releases. |
+| application_server | Tomcat | 7.4 | EOL | Tomcat 7.x is end-of-life. |
 
-Overall technology risk: **HIGH**.
+## Complexity score and label
+- Complexity score: **4**
+- Complexity label: **Medium**
+- Indicative migration effort: **3-6 months**
 
-## Complexity Assessment
-Complexity score: **3** (Low) — estimated effort **1-2 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'Medium' adjusted score by +0.
+- 1 EOL component(s) contributed +1 points (capped at +3).
+- Server count of 1 contributed +0 points.
+- Dependency count of 8 using external_interface_count proxy contributed +1 points.
+- Solution type 'Open Source' contributed +0 points for custom code.
+- Containerized='Yes' adjusted score by -1.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | Medium |
-| Criticality Adjustment | 0 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 1 |
-| Server Adjustment | 0 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 8 |
-| Dependency Adjustment | 1 |
-| Custom Code | False |
-| Custom Code Adjustment | 0 |
-| Containerized | True |
-| Containerization Adjustment | -1 |
-
-Started from base score 3, applied +0 for Medium criticality, +0 for 0 EOL component(s), +0 for 1 server(s), +1 using external interfaces as the dependency proxy (8), +0 for custom code indication, and -1 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to ARM-based CPU | APPLICABLE | The application is already deployed on AWS and uses a portable stack, so ARM-based hosting is a credible optimization option. | Pilot ARM on portable workloads to validate performance and cost savings before broad adoption. |
-| Applications Server replacement | APPLICABLE | The application uses Apache Tomcat. 7.4, which is a legacy-style middleware component worth evaluating for replacement. | Replace legacy middleware with a supported application platform or simplify the hosting stack. |
-| Update outdated components | APPLICABLE | The technology assessment found 0 EOL and 1 outdated component(s). | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Switch to ARM-based CPU | Medium | The application already runs in cloud and uses a portable stack, so ARM-based infrastructure is a viable optimization path. | Adopt ARM-based CPU infrastructure for better energy efficiency and cost savings. |
+| Applications Server replacement | Medium | The application server Apache Tomcat. 7.4 is assessed as EOL. | Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs. |
+| Update outdated components | High | The technology assessment found 3 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to ARM-based CPU | EUR 3,000.00 | EUR 1,000.00 | 0.00% |
-| Applications Server replacement | EUR 6,000.00 | EUR 12,000.00 | 500.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 9,000.00**  
-Total annual savings: **EUR 13,000.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Applications Server replacement | EUR 10,000.00 | EUR 8,000.00 | EUR 12,000.00 | 350.00% |
+| Switch to ARM-based CPU | EUR 5,000.00 | EUR 4,000.00 | EUR 1,000.00 | -25.00% |
+| Update outdated components | EUR 0.00 | EUR 0.00 | EUR 0.00 | n/a |

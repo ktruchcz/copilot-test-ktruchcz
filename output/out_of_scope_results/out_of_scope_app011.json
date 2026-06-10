@@ -1,6 +1,7 @@
 {
-  "app_id": "app011",
+  "application_id": "app011",
   "app_name": "RouteOptApp-011",
   "out_of_scope": false,
-  "reason": null
+  "reason": null,
+  "evaluation_notes": "Application is in-scope for modernization assessment."
 }

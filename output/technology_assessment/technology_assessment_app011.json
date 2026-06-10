@@ -1,39 +1,64 @@
 {
-  "app_id": "app011",
-  "app_name": "RouteOptApp-011",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app011",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "CentOS 7",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Operating system version is not covered by the provided lifecycle rules."
+      "component_name": "CentOS",
+      "component_family": "CentOS",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "CentOS 7 reached end of life in June 2024.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Python",
-      "version": "3.11",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for Python 3.11."
-    },
-    {
-      "component_type": "application_server",
-      "name": "Glassfish 4.0",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Application server technology is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "PostgreSQL",
+      "component_family": "PostgreSQL",
       "component_type": "database",
-      "name": "PostgreSQL",
+      "managed_service": false,
       "version": "14",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for PostgreSQL 14."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "PostgreSQL 14 remains a current supported release.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Python",
+      "component_family": "Python",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "3.11",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Python 3.11 is a current supported release.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Unknown framework/runtime",
+      "component_family": "Unknown",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No framework or runtime value could be inferred from the inventory record.",
+      "confidence": 1
+    },
+    {
+      "component_name": "GlassFish",
+      "component_family": "GlassFish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "4.0",
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "GlassFish is recorded, but the inventory does not map it to an agreed lifecycle rule in this assessment baseline.",
+      "confidence": 4
     }
   ],
-  "overall_technology_risk": "MEDIUM",
-  "eol_count": 0,
-  "outdated_count": 0,
-  "current_count": 2
+  "has_eol_components": true,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

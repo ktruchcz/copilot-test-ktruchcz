@@ -1,71 +1,54 @@
 # Application Report - InventoryApp-008
-Application app008 assessment generated from the extracted portfolio dataset.
 
-## App Overview
+## App overview
 | Field | Value |
 | --- | --- |
-| App ID | app008 |
+| Application ID | app008 |
 | Name | InventoryApp-008 |
+| Description | Legacy inventory management system controlling warehouse stock levels and material movements |
 | Status | Production |
-| Solution Type | Custom made |
-| Deployment Type | On-Premise |
-| Business Criticality | High |
-| Operating System | AIX 6 |
-| Programming Language | COBOL-2014 |
-| Application Server | Oracle Weblogic 8.0 |
-| Database Engine | SQL Server 2019 |
+| Criticality | High |
+| Deployment | On-Premise |
+| Solution type | Custom made |
 
-## Technology Assessment
-| Component Type | Name | Version | Status | Notes |
+## Technology assessment summary
+| Dimension | Family | Version | Status | Reason |
 | --- | --- | --- | --- | --- |
-| operating_system | AIX 6 | unknown | NO_KNOWLEDGE | Operating system version is not covered by the provided lifecycle rules. |
-| programming_language | COBOL-2014 | unknown | NO_KNOWLEDGE | Programming language or runtime version is not covered by the provided lifecycle rules. |
-| application_server | WebLogic | unknown | NO_KNOWLEDGE | WebLogic version is not covered by the provided lifecycle rules. |
-| database | SQL Server | 2019 | CURRENT_VERSION | Lifecycle rule matched for SQL Server 2019. |
+| os | AIX | 6 | NO_KNOWLEDGE | AIX lifecycle data was not part of the supplied rule set, so support status cannot be assessed confidently from the inventory alone. |
+| database | SQL Server | 2019 | CURRENT_VERSION | SQL Server 2019 remains supported. |
+| language | COBOL-2014 | 2014 | NO_KNOWLEDGE | Programming language lifecycle support could not be mapped confidently from the recorded value. |
+| framework | Unknown | unknown | NO_KNOWLEDGE | No framework or runtime value could be inferred from the inventory record. |
+| application_server | WebLogic | 8.0 | EOL | WebLogic 8 is long end-of-life. |
 
-Overall technology risk: **MEDIUM**.
+## Complexity score and label
+- Complexity score: **7**
+- Complexity label: **High**
+- Indicative migration effort: **6-12 months**
 
-## Complexity Assessment
-Complexity score: **6** (Medium) — estimated effort **3-6 months**.
+Scoring factors:
+- Base score of 3 applied.
+- Business criticality 'High' adjusted score by +1.
+- 1 EOL component(s) contributed +1 points (capped at +3).
+- Server count of 2 contributed +1 points.
+- Dependency count of 2 using external_interface_count proxy contributed +0 points.
+- Solution type 'Custom made' contributed +1 points for custom code.
+- Containerized='No' adjusted score by +0.
 
-| Factor | Value |
-| --- | --- |
-| Base Score | 3 |
-| Business Criticality | High |
-| Criticality Adjustment | 1 |
-| Eol Components | 0 |
-| Eol Adjustment | 0 |
-| Server Count | 2 |
-| Server Adjustment | 1 |
-| Dependency Proxy | external_interface_count |
-| Dependency Count | 2 |
-| Dependency Adjustment | 0 |
-| Custom Code | True |
-| Custom Code Adjustment | 1 |
-| Containerized | False |
-| Containerization Adjustment | 0 |
-
-Started from base score 3, applied +1 for High criticality, +0 for 0 EOL component(s), +1 for 2 server(s), +0 using external interfaces as the dependency proxy (2), +1 for custom code indication, and +0 for containerization.
-
-## Scenario Analysis
-| Scenario | Status | Rationale | Recommendation |
+## Applicable scenarios with recommendations
+| Scenario | Priority | Rationale | Recommendation |
 | --- | --- | --- | --- |
-| Switch to standard Linux Operating System | APPLICABLE | The application runs on AIX 6, so moving to standard Linux is a viable modernization path. | Standardize the platform on supported Linux distributions where stack constraints allow. |
-| Applications Server replacement | APPLICABLE | The application uses Oracle Weblogic 8.0, which is a legacy-style middleware component worth evaluating for replacement. | Replace legacy middleware with a supported application platform or simplify the hosting stack. |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | APPLICABLE | The application is currently deployed as On-Premise, so lift-and-shift to cloud remains a valid option. | Evaluate lift-and-shift migration to reduce infrastructure management effort. |
-| Application Refactoring and De-coupling | PARTIALLY_FULFILLED | The application is custom-built, but the current data shows only moderate integration pressure for deeper refactoring. | Refactor tightly coupled functionality to reduce change risk and improve modernization flexibility. |
-| Switch DB Engine to open-source database solution | APPLICABLE | The application uses a proprietary database (SQL Server 2019), so an open-source alternative could reduce cost and lock-in. | Assess a move to an open-source database to reduce licensing costs and lock-in. |
-| Update outdated components | PARTIALLY_FULFILLED | Known components are current, but some technologies could not be dated from the available application data. | Bundle outdated component upgrades into a coordinated remediation plan. |
+| Switch to standard Linux Operating System | Medium | The current operating system (AIX 6) is not aligned with the standard Linux target baseline. | Standardize on widely supported operating systems that align with the customer's existing landscape standards to reduce the technology zoo, improve manageability, lower costs, and enhance security through simplified administration. |
+| Applications Server replacement | Medium | The application server Oracle Weblogic 8.0 is assessed as EOL. | Modernize application server infrastructure through one of the following approaches: migrate from commercial to open-source solutions to reduce licensing costs, transition to Platform-as-a-Service (PaaS) managed services for simplified operations, or replace legacy application server technology with modern alternatives to improve performance and reduce overall costs. |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | High | The application is currently on-premise, so lift-and-shift cloud migration is applicable. | Deploy applications to public cloud infrastructure using a Lift(-tinker)-and-shift approach with modern deployment practices, maintaining existing architecture while gaining improved scalability, security, and compliance benefits. |
+| Application Refactoring and De-coupling | High | The application is custom-built and shows legacy or integration complexity that makes decoupling valuable. | Refactor applications to decouple components for better agility and maintainability. |
+| Switch DB Engine to open-source database solution | High | The application uses a proprietary database (SQL Server 2019), so an open-source alternative is relevant. | Migrate commercial databases (like Oracle) to PostgreSQL or alternatives like MySQL to reduce licensing costs. |
+| Update outdated components | High | The technology assessment found 1 component(s) that are EOL or outdated. | Rewrite or Refactor or Replace application for better security, agility and maintainability. |
 
-## Business Case
-| Scenario | Adjusted Cost | Annual Savings | 3-Year ROI |
-| --- | --- | --- | --- |
-| Switch to standard Linux Operating System | EUR 360.00 | EUR 400.00 | 233.33% |
-| Applications Server replacement | EUR 12,000.00 | EUR 12,000.00 | 200.00% |
-| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 6,000.00 | EUR 3,000.00 | 50.00% |
-| Application Refactoring and De-coupling | EUR 300,000.00 | EUR 150,000.00 | 50.00% |
-| Switch DB Engine to open-source database solution | EUR 30,000.00 | EUR 15,000.00 | 50.00% |
-| Update outdated components | EUR 0.00 | EUR 0.00 | n/a |
-
-Total investment: **EUR 348,360.00**  
-Total annual savings: **EUR 180,400.00**
+## Business case for top scenarios
+| Scenario | Base Cost | Adjusted Cost | Annual Savings | 3-Year ROI |
+| --- | --- | --- | --- | --- |
+| Switch to standard Linux Operating System | EUR 300.00 | EUR 420.00 | EUR 400.00 | 185.71% |
+| Applications Server replacement | EUR 10,000.00 | EUR 14,000.00 | EUR 12,000.00 | 157.14% |
+| Application Refactoring and De-coupling | EUR 250,000.00 | EUR 350,000.00 | EUR 150,000.00 | 28.57% |
+| Switch DB Engine to open-source database solution | EUR 25,000.00 | EUR 35,000.00 | EUR 15,000.00 | 28.57% |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | EUR 5,000.00 | EUR 7,000.00 | EUR 3,000.00 | 28.57% |

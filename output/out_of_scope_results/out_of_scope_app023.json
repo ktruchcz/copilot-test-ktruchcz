@@ -1,6 +1,7 @@
 {
-  "app_id": "app023",
+  "application_id": "app023",
   "app_name": "ChatbotApp-023",
   "out_of_scope": false,
-  "reason": null
+  "reason": null,
+  "evaluation_notes": "Application is in-scope for modernization assessment."
 }

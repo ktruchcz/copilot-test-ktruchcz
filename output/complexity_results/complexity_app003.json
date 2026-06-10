@@ -1,24 +1,18 @@
 {
-  "app_id": "app003",
+  "application_id": "app003",
   "app_name": "AnalyticsApp-003",
-  "complexity_score": 2,
+  "complexity_score": 3,
   "complexity_label": "Low",
-  "estimated_effort": "1-2 months",
-  "factors": {
-    "base_score": 3,
-    "business_criticality": "Low",
-    "criticality_adjustment": -1,
-    "eol_components": 1,
-    "eol_adjustment": 1,
-    "server_count": 1,
-    "server_adjustment": 0,
-    "dependency_proxy": "external_interface_count",
-    "dependency_count": 3,
-    "dependency_adjustment": 0,
-    "custom_code": false,
-    "custom_code_adjustment": 0,
-    "containerized": true,
-    "containerization_adjustment": -1
-  },
-  "reasoning": "Started from base score 3, applied -1 for Low criticality, +1 for 1 EOL component(s), +0 for 1 server(s), +0 using external interfaces as the dependency proxy (3), +0 for custom code indication, and -1 for containerization."
+  "scoring_factors": [
+    "Base score of 3 applied.",
+    "Business criticality 'Low' adjusted score by -1.",
+    "2 EOL component(s) contributed +2 points (capped at +3).",
+    "Server count of 1 contributed +0 points.",
+    "Dependency count of 3 using external_interface_count proxy contributed +0 points.",
+    "Solution type 'Open Source' contributed +0 points for custom code.",
+    "Containerized='Yes' adjusted score by -1."
+  ],
+  "migration_effort_months": 1,
+  "migration_effort_range": "1-2 months",
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

@@ -1,39 +1,64 @@
 {
-  "app_id": "app023",
-  "app_name": "ChatbotApp-023",
-  "assessment_date": "2025-01-01",
-  "components": [
+  "application_identifier": "app023",
+  "components_analyzed": [
     {
-      "component_type": "operating_system",
-      "name": "RHEL",
+      "component_name": "RHEL",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
       "version": "8",
-      "status": "CURRENT_VERSION",
-      "notes": "Lifecycle rule matched for RHEL 8."
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 remains in vendor support until May 2029.",
+      "confidence": 9
     },
     {
-      "component_type": "programming_language",
-      "name": "Node",
-      "version": "18",
-      "status": "OUTDATED",
-      "notes": "Lifecycle rule matched for Node 18."
-    },
-    {
-      "component_type": "application_server",
-      "name": "Tomcat",
-      "version": "7.4",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Tomcat version is not covered by the provided lifecycle rules."
-    },
-    {
+      "component_name": "MongoDB",
+      "component_family": "MongoDB",
       "component_type": "database",
-      "name": "MongoDB",
-      "version": "unknown",
-      "status": "NO_KNOWLEDGE",
-      "notes": "Database engine is not covered by the provided lifecycle rules."
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "The inventory lists MongoDB but does not provide a version, so lifecycle support cannot be assessed.",
+      "confidence": 4
+    },
+    {
+      "component_name": "Node.js",
+      "component_family": "Node.js",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "18",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-04-30",
+      "reason": "Node.js 18 is behind current support baselines.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Node.js",
+      "component_family": "Node.js",
+      "component_type": "framework",
+      "managed_service": false,
+      "version": "18",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-04-30",
+      "reason": "Node.js 18 is still recognizable but behind current long-term support releases.",
+      "confidence": 9
+    },
+    {
+      "component_name": "Tomcat",
+      "component_family": "Tomcat",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "7.4",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Tomcat 7.x is end-of-life.",
+      "confidence": 9
     }
   ],
-  "overall_technology_risk": "HIGH",
-  "eol_count": 0,
-  "outdated_count": 1,
-  "current_count": 1
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2026-06-10T08:02:33Z"
 }

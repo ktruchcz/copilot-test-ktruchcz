@@ -1,6 +1,7 @@
 {
-  "app_id": "app003",
+  "application_id": "app003",
   "app_name": "AnalyticsApp-003",
   "out_of_scope": false,
-  "reason": null
+  "reason": null,
+  "evaluation_notes": "Application is in-scope for modernization assessment."
 }
