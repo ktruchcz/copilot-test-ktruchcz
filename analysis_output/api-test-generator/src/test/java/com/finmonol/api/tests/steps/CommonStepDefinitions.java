@@ -130,6 +130,11 @@ public class CommonStepDefinitions {
         context.store(jsonPath, String.valueOf(value));
     }
 
+    @And("the response contains field {string}")
+    public void theResponseContainsFieldWithoutValue(String jsonPath) {
+        theResponseContainsField(jsonPath);
+    }
+
     @And("the response array has at least {int} items")
     public void theResponseArrayHasAtLeastItems(int minSize) {
         List<?> items = context.getLastResponse().jsonPath().getList("$");

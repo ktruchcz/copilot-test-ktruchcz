@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.finmonol.api.tests.config.CucumberRunner
+-------------------------------------------------------------------------------
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 19, Time elapsed: 0.882 s -- in com.finmonol.api.tests.config.CucumberRunner

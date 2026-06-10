@@ -1,0 +1,9 @@
+com/finmonol/api/tests/config/CucumberRunner.class
+com/finmonol/api/tests/client/ApiClient.class
+com/finmonol/api/tests/context/TestContext.class
+com/finmonol/api/tests/builders/TransactionBuilder.class
+com/finmonol/api/tests/steps/AccountStepDefinitions.class
+com/finmonol/api/tests/steps/TransactionStepDefinitions.class
+com/finmonol/api/tests/steps/DatabaseMigrationStepDefinitions.class
+com/finmonol/api/tests/builders/AccountBuilder.class
+com/finmonol/api/tests/steps/CommonStepDefinitions.class

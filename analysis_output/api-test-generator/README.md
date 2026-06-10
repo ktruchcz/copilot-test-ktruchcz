@@ -49,7 +49,7 @@ analysis_output/api-test-generator/
 
 ## Feature files & scenario coverage
 
-### `upgrade_legacy_databases.feature` (primary scenario)
+### `upgrade_legacy_databases.feature` (primary scenario: `app_refactor_decoupling`)
 
 | Scenario | Tag(s) |
 |---|---|
@@ -107,7 +107,7 @@ mvn test
 
 ```bash
 # Run only the primary migration scenario
-mvn test -Dcucumber.filter.tags="@upgrade_legacy_databases"
+mvn test -Dcucumber.filter.tags="@app_refactor_decoupling"
 
 # Run smoke tests
 mvn test -Dcucumber.filter.tags="@smoke"

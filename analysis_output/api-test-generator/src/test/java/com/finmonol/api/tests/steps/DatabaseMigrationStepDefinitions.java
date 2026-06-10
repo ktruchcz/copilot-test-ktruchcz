@@ -241,13 +241,6 @@ public class DatabaseMigrationStepDefinitions {
             response.jsonPath().getString("status"), is("INTACT"));
     }
 
-    @Then("the summary field {string} is {double}")
-    public void theSummaryFieldIsDouble(String field, double expectedValue) {
-        double actual = context.getLastResponse().jsonPath().getDouble(field);
-        assertThat("Summary field '" + field + "' mismatch",
-            actual, is(closeTo(expectedValue, 0.001)));
-    }
-
     // -----------------------------------------------------------------------
     // Helpers
     // -----------------------------------------------------------------------
