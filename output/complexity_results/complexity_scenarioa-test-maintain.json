@@ -1,0 +1,52 @@
+{
+  "app_id": "scenarioa-test-maintain",
+  "app_name": "COBOL maintain",
+  "complexity_score": 8,
+  "complexity_label": "High",
+  "complexity_multiplier": 1.8,
+  "scoring_factors": [
+    {
+      "factor": "technology_age",
+      "score": 2.0,
+      "rationale": "AIX 7.2 (proprietary Unix, legacy) and COBOL-2014 (legacy language with shrinking developer pool) represent very high modernization complexity."
+    },
+    {
+      "factor": "eol_outdated_components",
+      "score": 1.5,
+      "rationale": "All assessed components (OS, language, database) are OUTDATED, with Oracle 19c in Extended Support only."
+    },
+    {
+      "factor": "business_criticality",
+      "score": 1.5,
+      "rationale": "High business criticality (Finance ERP, 350 users, confidential data) increases risk and complexity of any modernization effort."
+    },
+    {
+      "factor": "database_complexity",
+      "score": 1.0,
+      "rationale": "Oracle 19c with 1TB storage and license dependency adds migration complexity and cost."
+    },
+    {
+      "factor": "architecture",
+      "score": 1.0,
+      "rationale": "1-Tier monolithic architecture with no CI/CD pipeline increases deployment risk and migration effort."
+    },
+    {
+      "factor": "external_interfaces",
+      "score": 1.0,
+      "rationale": "5 external interfaces require careful integration testing and potential adapter refactoring during modernization."
+    },
+    {
+      "factor": "server_count",
+      "score": 0.5,
+      "rationale": "2 server instances (sv01, sv02) represent a moderate infrastructure footprint."
+    },
+    {
+      "factor": "decommission_timeline",
+      "score": 0.5,
+      "rationale": "Planned decommission in 2027 creates timeline pressure for any modernization initiative."
+    }
+  ],
+  "total_raw_score": 9.0,
+  "normalized_score": 8,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

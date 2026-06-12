@@ -1,0 +1,7 @@
+{
+  "app_id": "scenarioa-test-transform",
+  "app_name": "COBOL transform",
+  "out_of_scope": false,
+  "reason": "Application is in Production status with a Custom made solution type. It is not a retired, decommissioned, or SAP application.",
+  "exclusion_category": null
+}

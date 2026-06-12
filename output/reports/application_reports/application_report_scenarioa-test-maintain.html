@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Report - COBOL maintain</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 40px; }
+    .card { background: #fff; border: 1px solid #dbe3ee; border-radius: 14px; padding: 22px; margin-bottom: 18px; }
+    h1, h2 { margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e5e7eb; }
+    th { background: #f8fafc; }
+    .pill { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #dbeafe; color: #1d4ed8; font-size: 12px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Application Report: COBOL maintain</h1>
+      <p>Application ID: <strong>scenarioa-test-maintain</strong> &middot; Analysis date: <strong>2025-01-01</strong></p>
+      <p><span class="pill">In Scope</span> <span class="pill">High Complexity</span></p>
+      <p>Production finance ERP workload running on AIX 7.2, COBOL-2014, and Oracle 19c.</p>
+    </div>
+    <div class="card">
+      <h2>Technology Assessment</h2>
+      <table>
+        <thead><tr><th>Component</th><th>Status</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td>AIX 7.2</td><td>OUTDATED</td><td>Past standard support; in extended support.</td></tr>
+          <tr><td>COBOL-2014</td><td>OUTDATED</td><td>Superseded language standard with shrinking ecosystem.</td></tr>
+          <tr><td>Oracle 19c</td><td>OUTDATED</td><td>Past Premier Support; in Extended Support.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Scenario Assessment</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>os_update_security_patch</td><td>APPLICABLE</td></tr>
+          <tr><td>switch_to_standard_linux_os</td><td>APPLICABLE</td></tr>
+          <tr><td>switch_to_arm_cpu</td><td>NOT_APPLICABLE</td></tr>
+          <tr><td>application_server_replacement</td><td>NOT_APPLICABLE</td></tr>
+          <tr><td>app_deployment_to_cloud</td><td>APPLICABLE</td></tr>
+          <tr><td>app_containerization</td><td>BLOCKED</td></tr>
+          <tr><td>app_refactor_decoupling</td><td>APPLICABLE</td></tr>
+          <tr><td>upgrade_legacy_databases</td><td>APPLICABLE</td></tr>
+          <tr><td>switch_db_engine_open_source</td><td>APPLICABLE</td></tr>
+          <tr><td>update_outdated_components</td><td>APPLICABLE</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Business Case</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Adjusted cost</td><td>$524,340</td></tr>
+          <tr><td>Yearly savings</td><td>$178,900</td></tr>
+          <tr><td>3-year ROI</td><td>2.4%</td></tr>
+          <tr><td>5-year ROI</td><td>70.6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
