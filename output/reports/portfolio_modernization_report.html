@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Modernization Report</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --warn: #b45309;
+      --good: #047857;
+      --bad: #b91c1c;
+      --border: #dbe3ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    .hero, .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    .hero {
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    h1 { font-size: 32px; margin-bottom: 10px; }
+    h2 { font-size: 24px; margin-bottom: 16px; }
+    h3 { font-size: 20px; margin-bottom: 12px; }
+    p.muted, .muted { color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .stat {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .stat .label { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .stat .value { font-size: 28px; font-weight: 700; margin-top: 6px; }
+    .section { margin-bottom: 24px; }
+    .card { padding: 24px; margin-bottom: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .badge.warn { background: #fef3c7; color: var(--warn); }
+    .badge.bad { background: #fee2e2; color: var(--bad); }
+    .badge.good { background: #d1fae5; color: var(--good); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    ul { padding-left: 18px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Portfolio Modernization Report</h1>
+      <p class="muted">Analysis date: 2025-01-01 &middot; Portfolio: 2 finance-critical applications</p>
+      <p>Both applications are production COBOL systems on AIX 7.2 with Oracle 19c. The portfolio is fully in scope, fully outdated across assessed technology layers, and delivers a positive long-term business case with a 70.6% 5-year ROI.</p>
+      <div class="grid">
+        <div class="stat"><div class="label">Applications</div><div class="value">2</div></div>
+        <div class="stat"><div class="label">Outdated Components</div><div class="value">6 / 6</div></div>
+        <div class="stat"><div class="label">Portfolio Cost</div><div class="value">$1.05M</div></div>
+        <div class="stat"><div class="label">5-Year ROI</div><div class="value">70.6%</div></div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Executive Summary</h2>
+      <ul>
+        <li>Both applications are in production, custom made, and in scope for modernization.</li>
+        <li>AIX 7.2, COBOL-2014, and Oracle 19c are all assessed as <strong>OUTDATED</strong>.</li>
+        <li>Each application has a <strong>High</strong> complexity score of <strong>8/10</strong>.</li>
+        <li>Containerization is currently blocked; Linux replatforming and decoupling are prerequisite steps.</li>
+        <li>Portfolio economics favor phased modernization with total yearly savings of <strong>$357,800</strong>.</li>
+      </ul>
+    </section>
+
+    <section class="card section">
+      <h2>Application Inventory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>App ID</th>
+            <th>Name</th>
+            <th>Criticality</th>
+            <th>OS</th>
+            <th>Language</th>
+            <th>Database</th>
+            <th>Architecture</th>
+            <th>Users</th>
+            <th>Complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>scenarioa-test-transform</td>
+            <td>COBOL transform</td>
+            <td>High</td>
+            <td>AIX 7.2</td>
+            <td>COBOL-2014</td>
+            <td>Oracle 19c</td>
+            <td>1-Tier</td>
+            <td>350</td>
+            <td>8/10</td>
+          </tr>
+          <tr>
+            <td>scenarioa-test-maintain</td>
+            <td>COBOL maintain</td>
+            <td>High</td>
+            <td>AIX 7.2</td>
+            <td>COBOL-2014</td>
+            <td>Oracle 19c</td>
+            <td>1-Tier</td>
+            <td>350</td>
+            <td>8/10</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card section">
+      <h2>Technology Health</h2>
+      <p>All six assessed components across the portfolio are outdated.</p>
+      <table>
+        <thead>
+          <tr><th>Status</th><th>Count</th><th>Share</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>OUTDATED</td><td>6</td><td>100%</td></tr>
+          <tr><td>CURRENT_VERSION</td><td>0</td><td>0%</td></tr>
+          <tr><td>EOL</td><td>0</td><td>0%</td></tr>
+          <tr><td>NO_KNOWLEDGE</td><td>0</td><td>0%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Per-Application Assessment</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>COBOL transform</h3>
+          <p><span class="badge">In Scope</span> <span class="badge warn">High Complexity</span> <span class="badge bad">Legacy Stack</span></p>
+          <p>Production finance ERP system with confidential data, 5 external interfaces, 1TB Oracle estate, and no CI/CD.</p>
+          <table>
+            <thead><tr><th>Component</th><th>Status</th><th>Support / EOL</th></tr></thead>
+            <tbody>
+              <tr><td>AIX 7.2</td><td>OUTDATED</td><td>Extended Support to 2028-04-30</td></tr>
+              <tr><td>COBOL-2014</td><td>OUTDATED</td><td>Superseded by COBOL 2023</td></tr>
+              <tr><td>Oracle 19c</td><td>OUTDATED</td><td>Extended Support to 2027-01-31</td></tr>
+            </tbody>
+          </table>
+          <h4>Applicable Scenarios</h4>
+          <ul>
+            <li>OS update</li>
+            <li>Switch to standard Linux OS</li>
+            <li>Cloud lift &amp; shift</li>
+            <li>Refactor &amp; decouple</li>
+            <li>Upgrade legacy databases</li>
+            <li>Switch DB engine to open source</li>
+            <li>Update outdated components</li>
+          </ul>
+          <table>
+            <thead><tr><th>Business Case</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>Adjusted cost</td><td>$524,340</td></tr>
+              <tr><td>Yearly savings</td><td>$178,900</td></tr>
+              <tr><td>3-year ROI</td><td>2.4%</td></tr>
+              <tr><td>5-year ROI</td><td>70.6%</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="card">
+          <h3>COBOL maintain</h3>
+          <p><span class="badge">In Scope</span> <span class="badge warn">High Complexity</span> <span class="badge bad">Legacy Stack</span></p>
+          <p>Production finance ERP system with confidential data, 5 external interfaces, 1TB Oracle estate, and no CI/CD.</p>
+          <table>
+            <thead><tr><th>Component</th><th>Status</th><th>Support / EOL</th></tr></thead>
+            <tbody>
+              <tr><td>AIX 7.2</td><td>OUTDATED</td><td>Extended Support to 2028-04-30</td></tr>
+              <tr><td>COBOL-2014</td><td>OUTDATED</td><td>Superseded by COBOL 2023</td></tr>
+              <tr><td>Oracle 19c</td><td>OUTDATED</td><td>Extended Support to 2027-01-31</td></tr>
+            </tbody>
+          </table>
+          <h4>Applicable Scenarios</h4>
+          <ul>
+            <li>OS update</li>
+            <li>Switch to standard Linux OS</li>
+            <li>Cloud lift &amp; shift</li>
+            <li>Refactor &amp; decouple</li>
+            <li>Upgrade legacy databases</li>
+            <li>Switch DB engine to open source</li>
+            <li>Update outdated components</li>
+          </ul>
+          <table>
+            <thead><tr><th>Business Case</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>Adjusted cost</td><td>$524,340</td></tr>
+              <tr><td>Yearly savings</td><td>$178,900</td></tr>
+              <tr><td>3-year ROI</td><td>2.4%</td></tr>
+              <tr><td>5-year ROI</td><td>70.6%</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Portfolio Business Case</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Scope</th>
+            <th>Adjusted Cost</th>
+            <th>Yearly Savings</th>
+            <th>3-Year Savings</th>
+            <th>3-Year ROI</th>
+            <th>5-Year Savings</th>
+            <th>5-Year ROI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Per application</td>
+            <td>$524,340</td>
+            <td>$178,900</td>
+            <td>$536,700</td>
+            <td>2.4%</td>
+            <td>$894,500</td>
+            <td>70.6%</td>
+          </tr>
+          <tr>
+            <td>Portfolio total (2 apps)</td>
+            <td>$1,048,680</td>
+            <td>$357,800</td>
+            <td>$1,073,400</td>
+            <td>2.4%</td>
+            <td>$1,789,000</td>
+            <td>70.6%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "app_id": "scenarioa-test-maintain",
+  "app_name": "COBOL maintain",
+  "out_of_scope": false,
+  "reason": "Application is in Production status with a Custom made solution type. It is not a retired, decommissioned, or SAP application.",
+  "exclusion_category": null
+}
