@@ -1,0 +1,62 @@
+{
+  "source_file": "discover/input/apps_db_complete_short.xlsx",
+  "extraction_date": "2026-06-25",
+  "total_applications": 2,
+  "column_mapping": {
+    "app_id": "app_id",
+    "name": "app_name",
+    "description": "app_description",
+    "Solution type": "solution_type",
+    "criticality": "business_criticality",
+    "Application status": "application_status",
+    "Decomission date": "additional:decomission_date",
+    "Deployment type": "deployment_type",
+    "data classification": "data_classification",
+    "business unit": "business_unit",
+    "business capabilities": "business_capabilities",
+    "number of users": "user_count",
+    "Operating system": "operating_system",
+    "programming language": "programming_language",
+    "Application Server type": "application_server",
+    "Application Architecture": "application_architecture",
+    "Application is containerized": "is_containerized",
+    "Number of environments": "environment_count",
+    "Physical servers instances": "server_instances",
+    "cpu_cores": "cpu_cores",
+    "memory in GB": "memory_gb",
+    "production environments": "production_environments",
+    "CI_CD present": "ci_cd_present",
+    "number of Api endpoints": "api_endpoint_count",
+    "external interfaces": "external_interface_count",
+    "Physical Database Server instance": "additional:physical_database_server_instance",
+    "db_engine": "database_engine",
+    "DB storage in GB": "database_storage_gb",
+    "DB License required": "database_license_required",
+    "logging_solution": "logging_solution",
+    "monitoring_tool": "monitoring_tool"
+  },
+  "applications": [
+    {
+      "app_id": "scenarioa-test-transform",
+      "app_name": "COBOL transform",
+      "application_status": "Production",
+      "business_criticality": "High",
+      "deployment_type": "On-Premise",
+      "operating_system": "AIX 7.2",
+      "programming_language": "COBOL-2014",
+      "database_engine": "Oracle 19c",
+      "business_unit": "Finance"
+    },
+    {
+      "app_id": "scenarioa-test-maintain",
+      "app_name": "COBOL maintain",
+      "application_status": "Production",
+      "business_criticality": "High",
+      "deployment_type": "On-Premise",
+      "operating_system": "AIX 7.2",
+      "programming_language": "COBOL-2014",
+      "database_engine": "Oracle 19c",
+      "business_unit": "Finance"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "application_identifier": "scenarioa-test-transform",
+  "components_analyzed": [
+    {
+      "component_name": "IBM AIX 7.2",
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "EOL",
+      "eol_date": "2023-04-30",
+      "reason": "IBM AIX 7.2 standard (premier) support ended April 30, 2023. Extended support contracts exist but at additional cost; without confirmation of an active extended support agreement, this is classified EOL. The system is running a proprietary UNIX platform with no community support pathway.",
+      "confidence": 8
+    },
+    {
+      "component_name": "COBOL-2014",
+      "component_family": "COBOL",
+      "component_type": "language",
+      "managed_service": false,
+      "version": "2014",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "COBOL-2014 references the ISO/IEC 1989:2014 standard, which has been superseded by COBOL 2023 (ISO/IEC 1989:2023). IBM COBOL for AIX runtime remains supported, but the language standard and typical ecosystem tooling for COBOL-2014 is outdated relative to modern development practices. Developer availability is extremely limited.",
+      "confidence": 7
+    },
+    {
+      "component_name": "Oracle 19c",
+      "component_family": "Oracle Database",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "19c",
+      "component_status": "OUTDATED",
+      "eol_date": "2027-01-31",
+      "reason": "Oracle Database 19c Premier Support ended January 31, 2024. It is currently in Extended Support (available until January 31, 2027, with additional fees). As of mid-2026, the application is in the Extended Support window — still vendor-supported but at extra cost and classified as OUTDATED.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2026-06-25T00:00:00Z"
+}

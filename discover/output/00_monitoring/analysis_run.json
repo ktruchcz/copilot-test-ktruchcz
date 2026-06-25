@@ -1,0 +1,36 @@
+{
+  "analysis_id": "DISC-2026-0625-001",
+  "run_timestamp": "2026-06-25T00:00:00Z",
+  "source_file": "discover/input/apps_db_complete_short.xlsx",
+  "total_applications_found": 2,
+  "in_scope_applications": 2,
+  "out_of_scope_applications": 0,
+  "steps_completed": [
+    "excel_ingestion",
+    "out_of_scope_assessment",
+    "technology_assessment",
+    "complexity_assessment",
+    "scenario_analysis",
+    "business_case",
+    "markdown_reports",
+    "html_reports"
+  ],
+  "output_files_generated": {
+    "internal_app_model": 2,
+    "consolidated_schema": 2,
+    "out_of_scope_results": 2,
+    "technology_assessment": 2,
+    "complexity_results": 2,
+    "scenario_applicability_results": 2,
+    "business_case_results": 1,
+    "markdown_app_reports": 2,
+    "html_app_reports": 2,
+    "portfolio_markdown": 1,
+    "portfolio_html": 1
+  },
+  "errors": [],
+  "warnings": [
+    "update_outdated_components scenario has no matching entry in finance config — business case excluded for that scenario",
+    "IBM AIX 7.2 extended support contract status unknown — classified EOL conservatively"
+  ]
+}

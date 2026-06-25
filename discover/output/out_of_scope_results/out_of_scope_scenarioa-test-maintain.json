@@ -1,0 +1,13 @@
+{
+  "app_id": "scenarioa-test-maintain",
+  "out_of_scope": false,
+  "reasons": [],
+  "evaluation": {
+    "is_retired": false,
+    "is_sap": false,
+    "is_saas": false,
+    "application_status": "Production",
+    "solution_type": "Custom made"
+  },
+  "notes": "Application is in Production status, custom-made, and not an SAP or SaaS solution. It is eligible for modernization assessment."
+}

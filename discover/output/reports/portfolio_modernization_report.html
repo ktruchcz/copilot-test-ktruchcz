@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Modernization Report - Finance Division - GenDiscover</title>
+  <style>
+    :root {
+      --primary-dark: #081722;
+      --report-background: #102737;
+      --section-background: #163244;
+      --accent: #1ec8d7;
+      --accent-rgb: 30, 200, 215;
+      --report-text-font-primary: #e9f7ff;
+      --report-text-font-secondary-rgb: 184, 216, 232;
+      --text-light-blue-rgb: 154, 198, 220;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--primary-dark); color: var(--report-text-font-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; min-height: 100vh; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+    .page-header { display: flex; justify-content: space-between; align-items: center; background: var(--report-background); border-radius: 12px; padding: 24px 32px; margin-bottom: 24px; border: 1px solid rgba(var(--accent-rgb),0.3); box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+    .header-left { flex: 1; }
+    .customer-label { font-size: 1em; color: rgba(var(--text-light-blue-rgb),1); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; font-weight: 600; }
+    .header-subtitle { font-size: 0.82em; color: rgba(var(--report-text-font-secondary-rgb),1); margin-top: 4px; }
+    .logo-wrap { width: 180px; opacity: 0.9; }
+    .logo-wrap svg { width: 100%; height: auto; fill: var(--accent); }
+    .card { background: var(--section-background); border-radius: 12px; border: 1px solid rgba(var(--accent-rgb),0.2); margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 28px; background: rgba(var(--accent-rgb),0.1); cursor: pointer; border-bottom: 1px solid rgba(var(--accent-rgb),0.15); transition: background 0.2s; }
+    .card-header:hover { background: rgba(var(--accent-rgb),0.15); }
+    .card-header h2 { font-size: 1.15em; color: var(--accent); font-weight: 700; letter-spacing: 0.3px; }
+    .card-toggle { color: var(--accent); font-size: 1.2em; transition: transform 0.2s; }
+    .card-body { padding: 28px; }
+    .card.collapsed .card-body { display: none; }
+    .card.collapsed .card-toggle { transform: rotate(-90deg); }
+    h1 { font-size: 2em; color: var(--report-text-font-primary); margin-bottom: 10px; font-weight: 700; }
+    h3 { color: var(--accent); margin: 20px 0 10px; font-size: 1.05em; font-weight: 600; }
+    p { color: rgba(var(--report-text-font-secondary-rgb),1); line-height: 1.75; margin-bottom: 14px; font-size: 0.95em; }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.9em; border-radius: 8px; overflow: hidden; }
+    th { background: rgba(var(--accent-rgb),0.18); color: var(--accent); padding: 12px 16px; text-align: left; font-weight: 700; font-size: 0.88em; text-transform: uppercase; letter-spacing: 0.5px; }
+    td { padding: 10px 16px; border-bottom: 1px solid rgba(var(--accent-rgb),0.1); color: rgba(var(--report-text-font-secondary-rgb),1); }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(var(--accent-rgb),0.06); }
+    .metric-row { display: flex; gap: 18px; flex-wrap: wrap; margin: 20px 0; }
+    .metric-card { flex: 1; min-width: 140px; background: rgba(var(--accent-rgb),0.07); border: 1px solid rgba(var(--accent-rgb),0.22); border-radius: 10px; padding: 20px; text-align: center; transition: transform 0.15s; }
+    .metric-card:hover { transform: translateY(-2px); }
+    .metric-value { font-size: 2.8em; font-weight: 800; color: var(--accent); text-shadow: 0 0 24px rgba(var(--accent-rgb),0.7); line-height: 1; }
+    .metric-label { font-size: 0.75em; color: rgba(var(--text-light-blue-rgb),1); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 5px; font-size: 0.82em; font-weight: 700; }
+    .badge-eol { background: rgba(192,57,43,0.9); color: #fff; }
+    .badge-outdated { background: rgba(230,126,34,0.9); color: #fff; }
+    .badge-current { background: rgba(39,174,96,0.9); color: #fff; }
+    .alert { background: rgba(192,57,43,0.12); border: 1px solid rgba(192,57,43,0.35); border-radius: 10px; padding: 14px 20px; margin: 14px 0; }
+    .alert-warn { background: rgba(230,126,34,0.12); border-color: rgba(230,126,34,0.35); }
+    .alert-info { background: rgba(var(--accent-rgb),0.08); border-color: rgba(var(--accent-rgb),0.25); }
+    ul { margin: 10px 0 10px 22px; color: rgba(var(--report-text-font-secondary-rgb),1); }
+    li { margin-bottom: 6px; line-height: 1.6; font-size: 0.9em; }
+    .app-link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 20px 0; }
+    .app-link-card { background: rgba(var(--accent-rgb),0.07); border: 1px solid rgba(var(--accent-rgb),0.2); border-radius: 10px; padding: 20px; transition: all 0.2s; }
+    .app-link-card:hover { background: rgba(var(--accent-rgb),0.12); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(var(--accent-rgb),0.15); }
+    .app-link-card a { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 1.05em; }
+    .app-link-card a:hover { text-decoration: underline; }
+    .app-link-meta { font-size: 0.83em; color: rgba(var(--text-light-blue-rgb),1); margin-top: 6px; }
+    .opportunity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin: 16px 0; }
+    .opportunity-card { background: rgba(var(--accent-rgb),0.05); border: 1px solid rgba(var(--accent-rgb),0.15); border-radius: 10px; padding: 18px; }
+    .opp-title { font-weight: 700; color: var(--report-text-font-primary); margin-bottom: 8px; font-size: 1em; }
+    .opp-meta { font-size: 0.82em; color: rgba(var(--text-light-blue-rgb),1); margin-bottom: 8px; }
+    .opp-body { font-size: 0.87em; color: rgba(var(--report-text-font-secondary-rgb),1); line-height: 1.6; }
+    .roadmap-phase { background: rgba(var(--accent-rgb),0.05); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; }
+    .phase-label { font-size: 0.78em; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+    .phase-items { font-size: 0.88em; color: rgba(var(--report-text-font-secondary-rgb),1); line-height: 1.7; }
+    .divider { border: none; border-top: 1px solid rgba(var(--accent-rgb),0.15); margin: 20px 0; }
+    .footer { text-align: center; padding: 36px 0 20px; border-top: 1px solid rgba(var(--accent-rgb),0.15); margin-top: 36px; }
+    .footer-logo { width: 110px; margin: 0 auto 10px; opacity: 0.7; }
+    .footer-logo svg { width: 100%; height: auto; fill: rgba(var(--accent-rgb),0.8); }
+    .footer-text { font-size: 0.82em; color: rgba(var(--text-light-blue-rgb),1); line-height: 1.8; }
+    .highlight-number { font-size: 1.4em; font-weight: 800; color: var(--accent); text-shadow: 0 0 16px rgba(var(--accent-rgb),0.5); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <div class="header-left">
+        <div class="customer-label" data-testid="customer-name">Finance Division</div>
+        <div style="font-size:1.6em;font-weight:800;color:var(--report-text-font-primary);margin:4px 0;">Portfolio Modernization Report</div>
+        <div class="header-subtitle">Application modernization with Agentic AI powered by Capgemini GenSuite</div>
+      </div>
+      <div class="logo-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.01 117.11">
+  <path d="M330.21,46.53c-1.44-4.78-4.35-8.97-8.21-12.52-4.17-3.82-9.13-6.71-14.33-8.89-.42-.18-.84-.35-1.26-.51h0c-6.4,7.67-28.57,13.4-28.57,29.47,0,6.29,3.97,12.16,9.81,14.52,3.63,1.23,7.53,1,11.01-.59,3.36-1.53,5.93-4.23,7.99-7.24,2.18-3.17,3.84-6.66,5.91-9.9,1.92-3.01,4.38-6.02,8.03-6.86,3.31-.77,7.22.09,9.64,2.51h-.02ZM330.36,49.79c-1.47-2.94-4.56-4.2-7.73-4.05-3.06.14-5.29,2.09-6.99,4.49-1.93,2.71-3.28,5.8-4.85,8.72-1.52,2.81-3.15,5.57-5.33,7.92-2.42,2.61-5.46,4.58-8.88,5.61,1.58,1.14,3.77,1.39,5.66,1.47,2.13.08,4.29-.11,6.39-.49,3.84-.69,7.98-2.03,10.81-4.83-4.42.06-7.99-2.92-8.31-7.4,2.85,3.45,7.15,4.77,11.46,3.55,3.78-1.07,6.81-4.06,8.03-7.78.78-2.36.85-4.93-.26-7.2h0ZM268.07,47.47c0-3.55-.21-5.92-2.53-5.92-1.06,0-1.57.21-2.5.52.82,11.99-1.89,22.55-5.19,22.55-4.34,0-2.17-25.7-11.36-25.7-8.47,0-9.69,20.52-10.65,20.52-.66,0-.76-5.39-.72-9.49.36-1.97.55-3.74.55-5.08,0-1.91-.77-5.22-5.11-3.56.15,14.67-2.79,23.54-6.09,23.54-4.85,0-4.91-13.3-4.91-16.97s.26-8.36-5.06-6.66c-.8,12.8-4.15,22.46-6.26,22.46-3.16,0-2.52-22.11-9.34-22.11-6.12,0-8.02,20.94-9.3,20.94-2.29,0,.71-23.57-8.14-23.57-4.64,0-6.49,7.87-8.3,16.68-.35,1.71-.72,1.76-.78-.17-.05-1.58-.06-3.33-.04-4.94,2.23-8.85-.49-12.13-4.59-9.76,1.32,16.34-6.18,24.33-11.93,24.33-2.08,0-3.71-.88-4.94-2.28,6.9-4.23,9.97-9.09,9.97-13.83,0-5.14-2.95-8.11-7.86-8.11-6.85,0-10.67,7.05-10.67,13.04,0,3.22.6,5.96,1.59,8.22-2.35,1.12-4.57,2.09-6.63,3.03-.18-6.17-.88-12.64-1.41-18.61-3.64-1-4.71.75-4.99,3.99-.65,7.4-3.39,11.99-5.81,11.99-1.83,0-2.94-2.22-3.07-4.58-.68-11.86,8.95-15.16,13.99-13.44,1.05-2.61-.1-4.5-4.64-4.5-5.51,0-9.63,3.35-12.65,7.64-2.02,2.87-4.34,4.9-7.44,7.35.08-.71.12-1.41.12-2.11,0-8.37-4.53-12.04-8.86-12.04-3.58,0-5.83,2.15-7.14,5.44-.32-3.3-.98-4.73-2.9-4.73-.83,0-1.96.23-3.19.83.56,1.85.78,5.93.78,8.62,0,10.06-2.88,14.57-5.66,14.57-3.17,0-3.67-11.93-3.94-16.57-.41-.14-.86-.29-1.55-.29-2.87,0-3.24,3.85-3.95,7.39-.78,3.92-3.05,8.86-6.39,8.86-2.02,0-3.28-1.95-3.44-5.46-.33-7.11,5.59-15.54,14.85-12.92,1.21-2.83-.69-4.99-4.53-4.99-6.77,0-12.36,5.07-14.8,11.06-2.48,5.49-6.82,13.56-15.64,13.56-6.23,0-10.99-5.43-10.99-16.83,0-9.83,6.19-19.16,12.8-19.16,4.62,0,5.7,4.55,5.29,8.81,2.39,1.93,6.32.14,6.32-4.67,0-3.31-2.69-8.92-11.36-8.92-10.74,0-20.23,10.71-20.23,24.78s6.92,21.68,16.71,21.68c6.18,0,12.01-3.52,16.03-10.03,1.01,5.69,4.89,8.09,7.8,8.09,4.71,0,7.78-3.05,9.46-7.17,1.05,4.13,3.26,7.19,6.93,7.19,2.59,0,4.6-1.31,6.12-3.41-.6,14.36-1.36,23.51,7.12,21.71-1.31-4.08-1.73-11.51-1.73-18.19,0-18.26,3.01-24.27,6.79-24.27,2.73,0,3.62,3.49,3.62,7.21,0,1.99-.19,4.28-.7,6.35-4.64,2.92-8.35,5.23-8.35,8.17,0,2.32,1.72,2.54,3.21,2.54,3.56,0,7.85-3.49,10.22-10.09,2.07-1.25,4.15-2.69,6.14-4.65-.07.67-.11,1.35-.11,2.03,0,6.55,2.87,10.5,7.44,10.5,3.58,0,6.27-2.54,8.17-6.35.12,2.19.19,4.21.23,6.08-7.27,3.36-15.32,6.78-15.32,16.26,0,4.91,3.54,8.61,8.16,8.61,10.13,0,12.44-10.69,12.53-23.11,3.3-1.43,5.75-2.53,8.59-3.93,2.42,3.03,5.72,4.55,8.74,4.55,5.72,0,10.01-3.03,13.46-9.17.61,4.68,1.82,9.17,4.31,9.17,4.53,0,5.45-23.69,8.82-23.69,2.58,0,.46,25.64,7.28,25.64,5.83,0,6.93-22.56,9.77-22.56,2.01,0,2.17,20.62,8.52,20.62,3.13,0,6.52-3.75,8.22-11.62.8,5.24,3.44,11.62,8.6,11.62,3.01,0,5.6-3.05,7.6-7.1.55,4.17,1.73,7.1,4.01,7.1,5.94,0,5.74-23.65,10.44-23.65,3.67,0,2.53,23.65,11.26,23.65,4.16,0,6.12-3.54,7.29-7.98,1.61,6.53,4.2,7.98,6.34,7.98,1.35,0,2.37-.47,3.71-2.07-6.75-2.93-6.18-13.58-6.18-20.46h-.03Z"/>
+</svg></div>
+    </div>
+
+    <div class="card" data-testid="app-report-title">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h2>Portfolio Modernization Report</h2>
+        <span class="card-toggle">▼</span>
+      </div>
+      <div class="card-body">
+        <h1>Portfolio Modernization Report</h1>
+        <p>This report presents the comprehensive modernization assessment for the <strong>Finance Division</strong> application portfolio. Two high-criticality COBOL applications running on IBM AIX 7.2 with Oracle Database 19c were analyzed. The portfolio represents a classic legacy stack with significant modernization opportunity and urgent security risk from an EOL operating system.</p>
+        <div class="metric-row">
+          <div class="metric-card"><div class="metric-value">2</div><div class="metric-label">Total Applications</div></div>
+          <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Have EOL Components</div></div>
+          <div class="metric-card"><div class="metric-value" style="color:#e67e22;">7/10</div><div class="metric-label">Avg Complexity</div></div>
+          <div class="metric-card"><div class="metric-value">6</div><div class="metric-label">Applicable Scenarios</div></div>
+          <div class="metric-card"><div class="metric-value" style="color:#1abc9c;">$258K</div><div class="metric-label">3-Yr Net Benefit</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-testid="section-summary">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h2>Executive Summary</h2>
+        <span class="card-toggle">▼</span>
+      </div>
+      <div class="card-body">
+        <div class="alert">
+          <strong>🔴 Critical Finding:</strong> Both applications run on <strong>IBM AIX 7.2</strong>, whose standard support ended April 30, 2023. The portfolio is running on an unsupported operating system with no security patch stream — this is an immediate compliance and security risk.
+        </div>
+        <div class="alert alert-warn">
+          <strong>🟡 Significant Finding:</strong> COBOL-2014 (legacy language) and Oracle 19c (Extended Support through Jan 2027) affect all portfolio applications. Oracle license costs are actively incurred.
+        </div>
+        <div class="alert alert-info">
+          <strong>💡 Opportunity:</strong> The portfolio has an estimated <span class="highlight-number">$257,760</span> net benefit over 3 years from actionable modernization scenarios, requiring a total investment of approximately <span class="highlight-number">$815,640</span>.
+        </div>
+        <h3>Key Statistics</h3>
+        <ul>
+          <li><strong>Portfolio size:</strong> 2 applications (both In-Scope, Production)</li>
+          <li><strong>Business domain:</strong> Finance (Financial Planning, Accounting, Budgeting)</li>
+          <li><strong>Technology stack:</strong> COBOL-2014 on IBM AIX 7.2 + Oracle 19c (identical for all apps)</li>
+          <li><strong>Architecture:</strong> 1-Tier monolith — no APIs, no containers, no CI/CD</li>
+          <li><strong>EOL components:</strong> IBM AIX 7.2 (standard support ended April 2023)</li>
+          <li><strong>Outdated components:</strong> COBOL-2014 and Oracle 19c (Extended Support)</li>
+          <li><strong>Applicable modernization scenarios:</strong> 6 per application (out of 10 evaluated)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" data-testid="section-modernization-opportunities">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h2>Modernization Opportunities</h2>
+        <span class="card-toggle">▼</span>
+      </div>
+      <div class="card-body">
+        <div class="opportunity-grid">
+          <div class="opportunity-card">
+            <div class="opp-title">🔧 OS Modernization</div>
+            <div class="opp-meta">Priority: <strong>High</strong> | Both Applications</div>
+            <div class="opp-body">Migrate from EOL IBM AIX 7.2 to enterprise Linux (RHEL 9 or Ubuntu 22.04 LTS). This is the foundational prerequisite for cloud migration, containerization, and all other modernization paths. Estimated savings: <strong>$400/year per app</strong> in licensing and operational costs.</div>
+          </div>
+          <div class="opportunity-card">
+            <div class="opp-title">🗄️ Database Modernization</div>
+            <div class="opp-meta">Priority: <strong>High</strong> | Both Applications</div>
+            <div class="opp-body">Oracle 19c is in Extended Support (extra fees). Two options: (1) Upgrade to Oracle 23ai for continued vendor support; (2) Migrate to PostgreSQL to eliminate the commercial license entirely. PostgreSQL migration yields <strong>~$10,000/year savings per app</strong> in license costs alone on 1TB databases.</div>
+          </div>
+          <div class="opportunity-card">
+            <div class="opp-title">☁️ Cloud Migration</div>
+            <div class="opp-meta">Priority: <strong>High (Partially Applicable)</strong> | Both Applications</div>
+            <div class="opp-body">Currently On-Premise. After Linux migration: standard lift-and-shift to AWS/Azure/GCP becomes available. Interim option: IBM Power Virtual Server for AIX-compatible cloud hosting. Cloud migration delivers <strong>$3,000/year savings per app</strong> in infrastructure run costs.</div>
+          </div>
+          <div class="opportunity-card">
+            <div class="opp-title">🏗️ Application Refactoring</div>
+            <div class="opp-meta">Priority: <strong>High</strong> | Both Applications</div>
+            <div class="opp-body">1-Tier COBOL monolith decomposition into microservices. Highest ROI scenario with <strong>$150,000/year savings per app</strong> (license + run cost + operational). Requires COBOL-to-modern-language conversion as a prerequisite. Critical given 2027 decommission targets.</div>
+          </div>
+          <div class="opportunity-card">
+            <div class="opp-title">💻 COBOL Modernization</div>
+            <div class="opp-meta">Priority: <strong>High</strong> | Both Applications</div>
+            <div class="opp-body">COBOL-2014 represents extreme talent risk. Automated COBOL-to-Java or COBOL-to-.NET conversion tools (IBM Rational, Micro Focus, TSRI) can accelerate this transition. No finance model available for this scenario — bespoke scoping required. Essential for 2027 decommission timeline.</div>
+          </div>
+          <div class="opportunity-card">
+            <div class="opp-title">📊 Observability Implementation</div>
+            <div class="opp-meta">Priority: <strong>Medium</strong> | Both Applications</div>
+            <div class="opp-body">Neither application has logging or monitoring solutions. Implementing observability (ELK Stack, Prometheus/Grafana, or Datadog) is a risk reduction measure that should accompany OS migration. Not modeled in scenarios but should be included in any modernization project budget.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-testid="section-scenario-overview">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h2>Scenario Overview</h2>
+        <span class="card-toggle">▼</span>
+      </div>
+      <div class="card-body">
+        <table>
+          <tr><th>Scenario</th><th>Status</th><th>Priority</th><th>Effort</th><th>Affects</th></tr>
+          <tr><td>Operating System Update</td><td><span class="badge badge-current" style="background:#1abc9c;">✅ APPLICABLE</span></td><td>High</td><td>Low</td><td>Both</td></tr>
+          <tr><td>Switch to Standard Linux OS</td><td><span class="badge badge-current" style="background:#1abc9c;">✅ APPLICABLE</span></td><td>Medium</td><td>Medium</td><td>Both</td></tr>
+          <tr><td>Cloud Migration (Lift &amp; Shift)</td><td><span class="badge badge-outdated">🔶 PARTIAL</span></td><td>High</td><td>Low</td><td>Both</td></tr>
+          <tr><td>Application Containerization</td><td><span class="badge badge-eol">🚫 BLOCKED</span></td><td>High</td><td>High</td><td>Both</td></tr>
+          <tr><td>App Refactoring &amp; De-coupling</td><td><span class="badge badge-current" style="background:#1abc9c;">✅ APPLICABLE</span></td><td>High</td><td>High</td><td>Both</td></tr>
+          <tr><td>Upgrade Legacy Databases</td><td><span class="badge badge-current" style="background:#1abc9c;">✅ APPLICABLE</span></td><td>High</td><td>Medium</td><td>Both</td></tr>
+          <tr><td>Switch DB to Open-Source</td><td><span class="badge badge-current" style="background:#1abc9c;">✅ APPLICABLE</span></td><td>High</td><td>Medium</td><td>Both</td></tr>
+          <tr><td>Update Outdated Components</td><td><span class="badge badge-current" style="background:#1abc9c;">✅ APPLICABLE</span></td><td>High</td><td>High</td><td>Both</td></tr>
+          <tr><td>Switch to ARM CPU</td><td><span class="badge" style="background:#7f8c8d;color:#fff;">⚪ NOT APPLICABLE</span></td><td>—</td><td>—</td><td>Both</td></tr>
+          <tr><td>Application Server Replacement</td><td><span class="badge" style="background:#7f8c8d;color:#fff;">⚪ NOT APPLICABLE</span></td><td>—</td><td>—</td><td>Both</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" data-testid="section-roadmap-proposal">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h2>Roadmap Proposal</h2>
+        <span class="card-toggle">▼</span>
+      </div>
+      <div class="card-body">
+        <div class="roadmap-phase">
+          <div class="phase-label">Phase 1 — Immediate (Q3 2026)</div>
+          <div class="phase-items">
+            ▸ Assess IBM AIX 7.2 Extended Support contract status<br>
+            ▸ Evaluate Oracle 19c Extended Support costs and upgrade path<br>
+            ▸ Initiate Linux OS migration planning (RHEL 9 / Ubuntu 22.04)<br>
+            ▸ Implement CI/CD pipeline for both applications
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="phase-label">Phase 2 — Short Term (Q4 2026 — Q2 2027)</div>
+          <div class="phase-items">
+            ▸ Execute Linux OS migration (COBOL runtime validation on Linux)<br>
+            ▸ Deploy monitoring and logging solutions (Prometheus + ELK or equivalent)<br>
+            ▸ Begin Oracle → PostgreSQL migration assessment and test environment setup<br>
+            ▸ Plan IBM Power Virtual Server or cloud migration post-Linux
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="phase-label">Phase 3 — Medium Term (Q3 2027 — Q1 2028)</div>
+          <div class="phase-items">
+            ▸ Execute PostgreSQL migration (1TB Oracle data, phased approach)<br>
+            ▸ Execute cloud migration to AWS/Azure/GCP (post-Linux)<br>
+            ▸ Begin COBOL modernization (automated conversion tooling evaluation)<br>
+            ▸ Implement managed database services (RDS/Azure DB/Cloud SQL)
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="phase-label">Phase 4 — Long Term (Q2 2028 — Q4 2028)</div>
+          <div class="phase-items">
+            ▸ Complete COBOL → Java/.NET modernization<br>
+            ▸ Application refactoring: decompose 1-Tier monolith into services<br>
+            ▸ Enable containerization (Kubernetes deployment)<br>
+            ▸ Full cloud-native target state achieved
+          </div>
+        </div>
+        <h3>Business Case Summary</h3>
+        <table>
+          <tr><th>Scenario</th><th>Portfolio Cost</th><th>Portfolio Annual Savings</th><th>3-Yr Net Benefit</th></tr>
+          <tr><td>OS Update (×2)</td><td>$2,800</td><td>$1,000</td><td>$200</td></tr>
+          <tr><td>Switch to Linux OS (×2)</td><td>$840</td><td>$800</td><td>$1,560</td></tr>
+          <tr><td>Cloud Migration (×2)</td><td>$14,000</td><td>$6,000</td><td>$4,000</td></tr>
+          <tr><td>App Refactoring (×2)</td><td>$700,000</td><td>$300,000</td><td>$200,000</td></tr>
+          <tr><td>DB Upgrade (×2)</td><td>$28,000</td><td>$20,000</td><td>$32,000</td></tr>
+          <tr><td>Switch to OSS DB (×2)</td><td>$70,000</td><td>$30,000</td><td>$20,000</td></tr>
+          <tr style="font-weight:bold;background:rgba(30,200,215,0.08);"><td>Portfolio Total</td><td>$815,640</td><td>$357,800/yr</td><td style="color:var(--accent);">$257,760</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:rgba(var(--text-light-blue-rgb),1);margin-top:8px;">All costs include 1.4× complexity multiplier. COBOL modernization excluded (bespoke scoping required).</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h2>Application Reports</h2>
+        <span class="card-toggle">▼</span>
+      </div>
+      <div class="card-body">
+        <p>Detailed per-application reports with full technology assessments, scenario analyses, and business cases:</p>
+        <div class="app-link-grid">
+          <div class="app-link-card">
+            <a href="application_reports/application_report_scenarioa-test-transform.html">COBOL transform</a>
+            <div class="app-link-meta">ID: scenarioa-test-transform &nbsp;|&nbsp; Finance &nbsp;|&nbsp; Complexity: 7/10</div>
+            <div class="app-link-meta">3-Yr Net: $128,880 &nbsp;|&nbsp; 6 applicable scenarios</div>
+          </div>
+          <div class="app-link-card">
+            <a href="application_reports/application_report_scenarioa-test-maintain.html">COBOL maintain</a>
+            <div class="app-link-meta">ID: scenarioa-test-maintain &nbsp;|&nbsp; Finance &nbsp;|&nbsp; Complexity: 7/10</div>
+            <div class="app-link-meta">3-Yr Net: $128,880 &nbsp;|&nbsp; 6 applicable scenarios</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.01 117.11">
+  <path d="M330.21,46.53c-1.44-4.78-4.35-8.97-8.21-12.52-4.17-3.82-9.13-6.71-14.33-8.89-.42-.18-.84-.35-1.26-.51h0c-6.4,7.67-28.57,13.4-28.57,29.47,0,6.29,3.97,12.16,9.81,14.52,3.63,1.23,7.53,1,11.01-.59,3.36-1.53,5.93-4.23,7.99-7.24,2.18-3.17,3.84-6.66,5.91-9.9,1.92-3.01,4.38-6.02,8.03-6.86,3.31-.77,7.22.09,9.64,2.51h-.02ZM330.36,49.79c-1.47-2.94-4.56-4.2-7.73-4.05-3.06.14-5.29,2.09-6.99,4.49-1.93,2.71-3.28,5.8-4.85,8.72-1.52,2.81-3.15,5.57-5.33,7.92-2.42,2.61-5.46,4.58-8.88,5.61,1.58,1.14,3.77,1.39,5.66,1.47,2.13.08,4.29-.11,6.39-.49,3.84-.69,7.98-2.03,10.81-4.83-4.42.06-7.99-2.92-8.31-7.4,2.85,3.45,7.15,4.77,11.46,3.55,3.78-1.07,6.81-4.06,8.03-7.78.78-2.36.85-4.93-.26-7.2h0ZM268.07,47.47c0-3.55-.21-5.92-2.53-5.92-1.06,0-1.57.21-2.5.52.82,11.99-1.89,22.55-5.19,22.55-4.34,0-2.17-25.7-11.36-25.7-8.47,0-9.69,20.52-10.65,20.52-.66,0-.76-5.39-.72-9.49.36-1.97.55-3.74.55-5.08,0-1.91-.77-5.22-5.11-3.56.15,14.67-2.79,23.54-6.09,23.54-4.85,0-4.91-13.3-4.91-16.97s.26-8.36-5.06-6.66c-.8,12.8-4.15,22.46-6.26,22.46-3.16,0-2.52-22.11-9.34-22.11-6.12,0-8.02,20.94-9.3,20.94-2.29,0,.71-23.57-8.14-23.57-4.64,0-6.49,7.87-8.3,16.68-.35,1.71-.72,1.76-.78-.17-.05-1.58-.06-3.33-.04-4.94,2.23-8.85-.49-12.13-4.59-9.76,1.32,16.34-6.18,24.33-11.93,24.33-2.08,0-3.71-.88-4.94-2.28,6.9-4.23,9.97-9.09,9.97-13.83,0-5.14-2.95-8.11-7.86-8.11-6.85,0-10.67,7.05-10.67,13.04,0,3.22.6,5.96,1.59,8.22-2.35,1.12-4.57,2.09-6.63,3.03-.18-6.17-.88-12.64-1.41-18.61-3.64-1-4.71.75-4.99,3.99-.65,7.4-3.39,11.99-5.81,11.99-1.83,0-2.94-2.22-3.07-4.58-.68-11.86,8.95-15.16,13.99-13.44,1.05-2.61-.1-4.5-4.64-4.5-5.51,0-9.63,3.35-12.65,7.64-2.02,2.87-4.34,4.9-7.44,7.35.08-.71.12-1.41.12-2.11,0-8.37-4.53-12.04-8.86-12.04-3.58,0-5.83,2.15-7.14,5.44-.32-3.3-.98-4.73-2.9-4.73-.83,0-1.96.23-3.19.83.56,1.85.78,5.93.78,8.62,0,10.06-2.88,14.57-5.66,14.57-3.17,0-3.67-11.93-3.94-16.57-.41-.14-.86-.29-1.55-.29-2.87,0-3.24,3.85-3.95,7.39-.78,3.92-3.05,8.86-6.39,8.86-2.02,0-3.28-1.95-3.44-5.46-.33-7.11,5.59-15.54,14.85-12.92,1.21-2.83-.69-4.99-4.53-4.99-6.77,0-12.36,5.07-14.8,11.06-2.48,5.49-6.82,13.56-15.64,13.56-6.23,0-10.99-5.43-10.99-16.83,0-9.83,6.19-19.16,12.8-19.16,4.62,0,5.7,4.55,5.29,8.81,2.39,1.93,6.32.14,6.32-4.67,0-3.31-2.69-8.92-11.36-8.92-10.74,0-20.23,10.71-20.23,24.78s6.92,21.68,16.71,21.68c6.18,0,12.01-3.52,16.03-10.03,1.01,5.69,4.89,8.09,7.8,8.09,4.71,0,7.78-3.05,9.46-7.17,1.05,4.13,3.26,7.19,6.93,7.19,2.59,0,4.6-1.31,6.12-3.41-.6,14.36-1.36,23.51,7.12,21.71-1.31-4.08-1.73-11.51-1.73-18.19,0-18.26,3.01-24.27,6.79-24.27,2.73,0,3.62,3.49,3.62,7.21,0,1.99-.19,4.28-.7,6.35-4.64,2.92-8.35,5.23-8.35,8.17,0,2.32,1.72,2.54,3.21,2.54,3.56,0,7.85-3.49,10.22-10.09,2.07-1.25,4.15-2.69,6.14-4.65-.07.67-.11,1.35-.11,2.03,0,6.55,2.87,10.5,7.44,10.5,3.58,0,6.27-2.54,8.17-6.35.12,2.19.19,4.21.23,6.08-7.27,3.36-15.32,6.78-15.32,16.26,0,4.91,3.54,8.61,8.16,8.61,10.13,0,12.44-10.69,12.53-23.11,3.3-1.43,5.75-2.53,8.59-3.93,2.42,3.03,5.72,4.55,8.74,4.55,5.72,0,10.01-3.03,13.46-9.17.61,4.68,1.82,9.17,4.31,9.17,4.53,0,5.45-23.69,8.82-23.69,2.58,0,.46,25.64,7.28,25.64,5.83,0,6.93-22.56,9.77-22.56,2.01,0,2.17,20.62,8.52,20.62,3.13,0,6.52-3.75,8.22-11.62.8,5.24,3.44,11.62,8.6,11.62,3.01,0,5.6-3.05,7.6-7.1.55,4.17,1.73,7.1,4.01,7.1,5.94,0,5.74-23.65,10.44-23.65,3.67,0,2.53,23.65,11.26,23.65,4.16,0,6.12-3.54,7.29-7.98,1.61,6.53,4.2,7.98,6.34,7.98,1.35,0,2.37-.47,3.71-2.07-6.75-2.93-6.18-13.58-6.18-20.46h-.03Z"/>
+</svg></div>
+      <div class="footer-text">
+        Generated by GenDiscover<br>
+        2026-06-25T00:00:00Z &nbsp;|&nbsp; Analysis ID: DISC-2026-0625-001
+      </div>
+    </div>
+  </div>
+
+  <script type="application/json" id="report-data">{
+  "report_title": "Portfolio Modernization Report - Finance Division - GenDiscover",
+  "lead": "Comprehensive modernization assessment of 2 legacy COBOL finance applications on IBM AIX with Oracle Database.",
+  "sections": [
+    "Executive Summary",
+    "Portfolio Overview",
+    "Technology Health",
+    "Complexity",
+    "Modernization Opportunities",
+    "Business Case",
+    "Roadmap Proposal",
+    "Application Reports"
+  ],
+  "app_links": [
+    {
+      "app_id": "scenarioa-test-transform",
+      "app_name": "COBOL transform",
+      "href": "application_reports/application_report_scenarioa-test-transform.html"
+    },
+    {
+      "app_id": "scenarioa-test-maintain",
+      "app_name": "COBOL maintain",
+      "href": "application_reports/application_report_scenarioa-test-maintain.html"
+    }
+  ],
+  "generated_timestamp": "2026-06-25T00:00:00Z",
+  "analysis_id": "DISC-2026-0625-001"
+}</script>
+  <script>
+    function toggleCard(header) {
+      const card = header.closest('.card');
+      card.classList.toggle('collapsed');
+    }
+  </script>
+</body>
+</html>

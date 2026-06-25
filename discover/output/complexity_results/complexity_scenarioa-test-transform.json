@@ -1,0 +1,50 @@
+{
+  "app_id": "scenarioa-test-transform",
+  "complexity_score": 7,
+  "complexity_label": "High",
+  "complexity_multiplier": 1.4,
+  "scoring_breakdown": [
+    {
+      "factor": "Legacy programming language (COBOL)",
+      "weight": 2,
+      "rationale": "COBOL is a legacy language with scarce developer talent, limited modern tooling, and significant refactoring risk. Any modernization effort involving the application code will be expensive and risky."
+    },
+    {
+      "factor": "Proprietary operating system (AIX 7.2)",
+      "weight": 1,
+      "rationale": "IBM AIX is a proprietary UNIX variant with limited cloud compatibility, no container support in standard form, and a specialized administration skillset requirement."
+    },
+    {
+      "factor": "1-Tier monolithic architecture",
+      "weight": 1,
+      "rationale": "Single-tier monolithic architecture means all components are tightly coupled, making partial modernization extremely difficult without full re-architecture."
+    },
+    {
+      "factor": "Large Oracle database (1TB)",
+      "weight": 1,
+      "rationale": "1 TB Oracle database with a required license introduces high data migration complexity and significant cost for any database modernization scenario."
+    },
+    {
+      "factor": "No CI/CD pipeline",
+      "weight": 1,
+      "rationale": "Absence of CI/CD means deployment automation must be built from scratch, adding modernization effort and risk."
+    },
+    {
+      "factor": "High business criticality in Finance domain",
+      "weight": 1,
+      "rationale": "High-criticality Finance application requires extensive testing, compliance validation, and staged rollout, all of which increase modernization cost and timeline."
+    },
+    {
+      "factor": "No logging or monitoring",
+      "weight": 0,
+      "rationale": "Absence of observability tooling increases risk but is factored into scenario applicability rather than base complexity."
+    }
+  ],
+  "server_count": 2,
+  "external_interface_count": 5,
+  "eol_component_count": 1,
+  "outdated_component_count": 2,
+  "has_ci_cd": false,
+  "is_containerized": false,
+  "analysis_timestamp": "2026-06-25T00:00:00Z"
+}

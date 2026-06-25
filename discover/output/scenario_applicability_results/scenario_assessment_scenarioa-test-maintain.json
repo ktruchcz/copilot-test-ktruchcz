@@ -1,0 +1,115 @@
+{
+  "app_id": "scenarioa-test-maintain",
+  "analysis_timestamp": "2026-06-25T00:00:00Z",
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
+      "status": "APPLICABLE",
+      "priority": "High",
+      "effort": "Low",
+      "rationale": "The application runs on IBM AIX 7.2, whose standard support ended April 2023 (EOL). The OS is no longer receiving standard security patches and is a proprietary platform. Primary triggers are fully met: OS version is unsupported and past EOL for standard support.",
+      "triggered_by": ["Operating System Version is Unsupported", "Operating System no longer receiving security patches"],
+      "blockers": []
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
+      "status": "APPLICABLE",
+      "priority": "Medium",
+      "effort": "Medium",
+      "rationale": "IBM AIX is a commercial proprietary non-Linux UNIX system. Migrating to a standard Linux distribution (e.g. RHEL, Ubuntu) would reduce licensing cost, improve cloud compatibility, and align with enterprise standards. The application itself is custom COBOL code, not tied to AIX-specific binary certifications, though COBOL runtime migration would need validation.",
+      "triggered_by": ["Operating System is a commercial or proprietary non-Linux system (e.g. AIX, HP-UX, Solaris, IRIX)", "Operating System has high maintenance overhead"],
+      "blockers": []
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
+      "status": "NOT_APPLICABLE",
+      "priority": "Medium",
+      "effort": "Medium",
+      "rationale": "No CPU architecture data is explicitly documented. The application runs COBOL on IBM AIX (POWER architecture), which has no straightforward ARM migration path without a full OS and runtime migration first. This scenario is not applicable until the OS and language modernization are completed.",
+      "triggered_by": [],
+      "blockers": ["COBOL/AIX combination is not ARM-ready; full modernization required first", "CPU architecture not documented as x86/x64"]
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
+      "status": "NOT_APPLICABLE",
+      "priority": "Medium",
+      "effort": "Medium",
+      "rationale": "The application does not use an application server (field is null/None). A 1-Tier COBOL architecture has no separate application server layer to replace.",
+      "triggered_by": [],
+      "blockers": ["No application server present"]
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
+      "status": "PARTIALLY_FULFILLED",
+      "priority": "High",
+      "effort": "Low",
+      "rationale": "The application is deployed On-Premise and would benefit from cloud migration. However, a true lift-and-shift is constrained by the AIX dependency: standard cloud providers do not offer IBM AIX instances. A modified lift-and-shift to IBM Cloud (which offers AIX LPARs) or Power Virtual Server is technically feasible, but requires specialist effort. Partial applicability acknowledged.",
+      "triggered_by": ["Environment Type is On-Premise"],
+      "blockers": ["AIX 7.2 is not supported on mainstream cloud (AWS/Azure/GCP)", "IBM Power Virtual Server would be required — partial lift-and-shift only"]
+    },
+    {
+      "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
+      "status": "BLOCKED",
+      "priority": "High",
+      "effort": "High",
+      "rationale": "Application containerization is blocked. IBM AIX does not support standard OCI/Docker containers. The 1-Tier monolithic COBOL architecture is incompatible with container-based deployment without a full re-architecture and OS migration first.",
+      "triggered_by": ["Deployment Method is Traditional"],
+      "blockers": ["IBM AIX 7.2 does not support standard container runtimes (Docker/Podman)", "Legacy monolith incompatible with containers", "COBOL 1-Tier architecture requires complete modernization before containerization is feasible"]
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
+      "status": "APPLICABLE",
+      "priority": "High",
+      "effort": "High",
+      "rationale": "The application uses a 1-Tier monolithic architecture — the primary trigger for refactoring and decoupling. The application handles financial transactions, general ledger, and regulatory reporting, which would benefit significantly from service decomposition to enable independent scalability, maintainability, and technology modernization.",
+      "triggered_by": ["Architecture is Monolithic", "Architecture is Tightly Coupled"],
+      "blockers": []
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
+      "status": "APPLICABLE",
+      "priority": "High",
+      "effort": "Medium",
+      "rationale": "Oracle 19c is in Extended Support as of 2026 (Premier Support ended January 2024). Upgrading to a current Oracle LTS version or migrating to a modern supported database is advisable. The 1TB database size and Oracle license cost make this a high-value modernization target.",
+      "triggered_by": ["Database Support is End of Life / Outdated", "Database Age is Legacy"],
+      "blockers": []
+    },
+    {
+      "scenario_id": "switch_db_engine_open_source",
+      "scenario_name": "Switch DB Engine to open-source database solution",
+      "status": "APPLICABLE",
+      "priority": "High",
+      "effort": "Medium",
+      "rationale": "The application uses Oracle Database 19c with a required commercial license (DB License required: Yes). Oracle licensing costs for a 1TB database are substantial. Migrating to an open-source alternative (e.g. PostgreSQL) would eliminate Oracle license costs and reduce vendor lock-in.",
+      "triggered_by": ["Database is an Oracle Database", "Database Engine is proprietary or requires a paid commercial license (e.g. Oracle, SQL Server, DB2)"],
+      "blockers": []
+    },
+    {
+      "scenario_id": "update_outdated_components",
+      "scenario_name": "Update outdated components",
+      "status": "APPLICABLE",
+      "priority": "High",
+      "effort": "High",
+      "rationale": "COBOL-2014 is a legacy programming language with extremely limited talent availability, no modern tooling support, and no active community development. The language and its standard are significantly behind current industry practice. Combined with an EOL operating system, the entire technology stack is outdated.",
+      "triggered_by": ["Used Programming language is legacy or outdated", "Used programming language is no longer supported by vendor or community"],
+      "blockers": []
+    }
+  ],
+  "summary": {
+    "total_scenarios": 10,
+    "applicable": 6,
+    "partially_fulfilled": 1,
+    "not_applicable": 2,
+    "blocked": 1,
+    "fulfilled": 0,
+    "lack_of_data": 0
+  }
+}
