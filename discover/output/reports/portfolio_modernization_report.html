@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Portfolio Modernization Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+    h1, h2 { color: #0f3d75; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f2f6fc; }
+    .kpi { display: inline-block; margin-right: 24px; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Portfolio Modernization Report</h1>
+
+  <h2>Portfolio Summary</h2>
+  <div class="kpi"><b>Total apps:</b> 30</div>
+  <div class="kpi"><b>In scope:</b> 26</div>
+  <div class="kpi"><b>Out of scope:</b> 4</div>
+  <div class="kpi"><b>Apps with EOL components:</b> 21</div>
+  <div class="kpi"><b>Avg complexity:</b> 8.04 / 10</div>
+
+  <h2>Out-of-scope Applications</h2>
+  <p>app005, app007, app009, app029 (Retired)</p>
+
+  <h2>3-Year Business Case (Complexity-adjusted)</h2>
+  <table>
+    <tr><th>Scenario</th><th>Eligible Apps</th><th>One-time Cost</th><th>Yearly Savings</th><th>3y ROI</th></tr>
+    <tr><td>switch_to_standard_linux_os</td><td>3</td><td>1,080</td><td>1,200</td><td>2.33</td></tr>
+    <tr><td>application_server_replacement</td><td>14</td><td>200,000</td><td>168,000</td><td>1.52</td></tr>
+    <tr><td>app_containerization</td><td>16</td><td>2,050,000</td><td>1,600,000</td><td>1.34</td></tr>
+    <tr><td>upgrade_legacy_databases</td><td>13</td><td>172,000</td><td>130,000</td><td>1.27</td></tr>
+    <tr><td>app_refactor_decoupling</td><td>26</td><td>8,825,000</td><td>3,900,000</td><td>0.33</td></tr>
+    <tr><td>app_deployment_to_cloud</td><td>12</td><td>82,500</td><td>36,000</td><td>0.31</td></tr>
+    <tr><td>switch_db_engine_open_source</td><td>12</td><td>412,500</td><td>180,000</td><td>0.31</td></tr>
+    <tr><td>os_update_security_patch</td><td>15</td><td>20,700</td><td>7,500</td><td>0.09</td></tr>
+    <tr><td>switch_to_arm_cpu</td><td>10</td><td>72,500</td><td>10,000</td><td>-0.59</td></tr>
+  </table>
+</body>
+</html>
