@@ -1,11 +1,5 @@
 {
-  "app_id": "app014",
-  "app_name": "DocumentApp-014",
+  "application_identifier": "app014",
   "out_of_scope": false,
-  "reasons": [
-    "In scope for assessment"
-  ],
-  "application_status": "Production",
-  "solution_type": "Open Source",
-  "analysis_timestamp": "2025-01-01T00:00:00Z"
+  "reason": "Application is in Production status and is not SAP"
 }

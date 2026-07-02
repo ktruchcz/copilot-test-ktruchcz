@@ -1,54 +1,53 @@
 {
-  "app_id": "app022",
-  "app_name": "ComplianceApp-022",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "HIGH_RISK",
-  "components": [
+  "application_identifier": "app022",
+  "components_analyzed": [
     {
       "component_name": "RHEL 7",
-      "component_category": "Operating System",
-      "version_identified": "RHEL 7",
-      "lifecycle_status": "EOL",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached end of maintenance support in June 2024.",
+      "confidence": 10
     },
     {
       "component_name": "Scala 2.13",
-      "component_category": "Programming Language",
-      "version_identified": "Scala 2.13",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Scala",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "2.13",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Scala 2.13 is still usable but Scala 3 is the current strategic direction.",
+      "confidence": 8
     },
     {
       "component_name": "Payara 6.0",
-      "component_category": "Application Server",
-      "version_identified": "Payara 6.0",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Payara",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "6.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "Payara 6 is the current supported major line.",
+      "confidence": 9
     },
     {
       "component_name": "PostgreSQL 14",
-      "component_category": "Database Engine",
-      "version_identified": "PostgreSQL 14",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "14",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-11-12",
+      "reason": "PostgreSQL 14 is still supported but not the preferred current version.",
+      "confidence": 8
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "RHEL 7",
-      "status": "EOL"
-    },
-    "programming_language": {
-      "name": "Scala 2.13",
-      "status": "OUTDATED"
-    },
-    "application_server": {
-      "name": "Payara 6.0",
-      "status": "CURRENT_VERSION"
-    },
-    "database_engine": {
-      "name": "PostgreSQL 14",
-      "status": "OUTDATED"
-    }
-  }
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

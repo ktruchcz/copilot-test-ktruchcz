@@ -1,81 +1,78 @@
 {
-  "app_id": "app018",
-  "app_name": "VendorApp-018",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_label": "High",
-  "cost_multiplier": 1.5,
+  "application_identifier": "app018",
   "scenarios": [
     {
       "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
       "status": "APPLICABLE",
-      "migration_cost_base": 1000,
-      "yearly_savings_base": 500
+      "reason": "Operating system RHEL 7 is EOL and should be moved to a supported baseline."
     },
     {
       "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 300,
-      "yearly_savings_base": 400
+      "reason": "RHEL 7 is already a Linux-based operating system."
     },
     {
       "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 1000
+      "reason": "The application is on-premise only and not containerized, so ARM migration is not currently a fit."
     },
     {
       "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
       "status": "APPLICABLE",
-      "migration_cost_base": 10000,
-      "yearly_savings_base": 12000
+      "reason": "Application server Glassfish 4.5 is EOL and should be replaced or upgraded."
     },
     {
       "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
       "status": "APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 3000
+      "reason": "The deployment model includes on-premise infrastructure, so additional cloud migration remains available."
     },
     {
       "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
       "status": "APPLICABLE",
-      "migration_cost_base": 100000,
-      "yearly_savings_base": 100000
+      "reason": "The application is not containerized and could gain portability and operational consistency from container adoption."
     },
     {
       "scenario_id": "app_refactor_decoupling",
+      "scenario_name": "Application Refactoring and De-coupling",
       "status": "APPLICABLE",
-      "migration_cost_base": 250000,
-      "yearly_savings_base": 150000
+      "reason": "The recorded architecture (3-Tier) suggests a layered or monolithic design suitable for decoupling."
     },
     {
       "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
       "status": "APPLICABLE",
-      "migration_cost_base": 10000,
-      "yearly_savings_base": 10000
+      "reason": "Database engine PostgreSQL 13 is OUTDATED and should be upgraded."
     },
     {
       "scenario_id": "switch_to_managed_db",
+      "scenario_name": "Switch to Managed Database",
       "status": "APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 10000
+      "reason": "PostgreSQL 13 is not a managed database service and could be moved to a managed offering."
     },
     {
       "scenario_id": "managed_arm_db",
+      "scenario_name": "Managed ARM Database",
       "status": "APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 5000
+      "reason": "A managed database move would also enable ARM-based managed database optimization."
     },
     {
       "scenario_id": "serverless_db_migration",
+      "scenario_name": "Serverless Database Migration",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 15000
+      "reason": "Serverless database migration is targeted at cloud workloads with database sizes below 100GB."
     },
     {
       "scenario_id": "switch_db_engine_postgresql",
+      "scenario_name": "Switch Database Engine to PostgreSQL",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 25000,
-      "yearly_savings_base": 15000
+      "reason": "PostgreSQL 13 is already PostgreSQL-based."
     }
-  ]
+  ],
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

@@ -1,54 +1,53 @@
 {
-  "app_id": "app025",
-  "app_name": "PortalApp-025",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "LOW_RISK",
-  "components": [
+  "application_identifier": "app025",
+  "components_analyzed": [
     {
       "component_name": "Windows Server 2019",
-      "component_category": "Operating System",
-      "version_identified": "Windows Server 2019",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 remains a supported enterprise platform.",
+      "confidence": 9
     },
     {
       "component_name": "ASP.NET Core",
-      "component_category": "Programming Language",
-      "version_identified": "ASP.NET Core",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "ASP.NET Core",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": null,
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "ASP.NET Core is treated as current on the assumption the application is aligned to a modern supported .NET release.",
+      "confidence": 6
     },
     {
       "component_name": "Microsoft IIS 10.0",
-      "component_category": "Application Server",
-      "version_identified": "Microsoft IIS 10.0",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Microsoft IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "IIS 10.0 remains current when hosted on supported Windows Server releases.",
+      "confidence": 8
     },
     {
       "component_name": "PostgreSQL 15",
-      "component_category": "Database Engine",
-      "version_identified": "PostgreSQL 15",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "15",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2027-11-11",
+      "reason": "PostgreSQL 15 is a current supported major version.",
+      "confidence": 9
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "Windows Server 2019",
-      "status": "CURRENT_VERSION"
-    },
-    "programming_language": {
-      "name": "ASP.NET Core",
-      "status": "CURRENT_VERSION"
-    },
-    "application_server": {
-      "name": "Microsoft IIS 10.0",
-      "status": "CURRENT_VERSION"
-    },
-    "database_engine": {
-      "name": "PostgreSQL 15",
-      "status": "CURRENT_VERSION"
-    }
-  }
+  "has_eol_components": false,
+  "has_outdated_components": false,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

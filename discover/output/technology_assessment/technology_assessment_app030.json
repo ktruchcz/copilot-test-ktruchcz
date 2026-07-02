@@ -1,54 +1,53 @@
 {
-  "app_id": "app030",
-  "app_name": "APIGatewayApp-030",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "HIGH_RISK",
-  "components": [
+  "application_identifier": "app030",
+  "components_analyzed": [
     {
       "component_name": "RHEL 8",
-      "component_category": "Operating System",
-      "version_identified": "RHEL 8",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "8",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-05-31",
+      "reason": "RHEL 8 is still within its active support window.",
+      "confidence": 9
     },
     {
       "component_name": "Go 1.19",
-      "component_category": "Programming Language",
-      "version_identified": "Go 1.19",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Go",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "1.19",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Go 1.19 is behind the actively supported Go release train.",
+      "confidence": 8
     },
     {
       "component_name": "Glassfish 3.0",
-      "component_category": "Application Server",
-      "version_identified": "Glassfish 3.0",
-      "lifecycle_status": "EOL",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "3.0",
+      "component_status": "EOL",
+      "eol_date": null,
+      "reason": "Glassfish 3.0 is end-of-life.",
+      "confidence": 10
     },
     {
       "component_name": "MySQL 5.7",
-      "component_category": "Database Engine",
-      "version_identified": "MySQL 5.7",
-      "lifecycle_status": "EOL",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "MySQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "5.7",
+      "component_status": "EOL",
+      "eol_date": "2023-10-31",
+      "reason": "MySQL 5.7 is end-of-life.",
+      "confidence": 10
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "RHEL 8",
-      "status": "CURRENT_VERSION"
-    },
-    "programming_language": {
-      "name": "Go 1.19",
-      "status": "OUTDATED"
-    },
-    "application_server": {
-      "name": "Glassfish 3.0",
-      "status": "EOL"
-    },
-    "database_engine": {
-      "name": "MySQL 5.7",
-      "status": "EOL"
-    }
-  }
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

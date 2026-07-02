@@ -1,47 +1,53 @@
 {
-  "app_id": "app026",
-  "app_name": "LegacyFinApp-026",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "MEDIUM_RISK",
-  "components": [
+  "application_identifier": "app026",
+  "components_analyzed": [
     {
       "component_name": "AIX 7.2",
-      "component_category": "Operating System",
-      "version_identified": "AIX 7.2",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "AIX",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7.2",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2028-04-30",
+      "reason": "AIX 7.2 remains under IBM support through approximately 2028.",
+      "confidence": 8
     },
     {
       "component_name": "FORTRAN 2018",
-      "component_category": "Programming Language",
-      "version_identified": "FORTRAN 2018",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "FORTRAN",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "2018",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "FORTRAN 2018 is technically supported but is a legacy language choice for modernization programs.",
+      "confidence": 7
+    },
+    {
+      "component_name": "None",
+      "component_family": "Unknown",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": null,
+      "component_status": "NO_KNOWLEDGE",
+      "eol_date": null,
+      "reason": "No application server is recorded for this application.",
+      "confidence": 10
     },
     {
       "component_name": "DB2",
-      "component_category": "Database Engine",
-      "version_identified": "DB2",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "DB2",
+      "component_type": "database",
+      "managed_service": false,
+      "version": null,
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "IBM DB2 is supported in general, but the specific version is unknown and treated as outdated for modernization planning.",
+      "confidence": 6
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "AIX 7.2",
-      "status": "CURRENT_VERSION"
-    },
-    "programming_language": {
-      "name": "FORTRAN 2018",
-      "status": "OUTDATED"
-    },
-    "application_server": {
-      "name": null,
-      "status": null
-    },
-    "database_engine": {
-      "name": "DB2",
-      "status": "OUTDATED"
-    }
-  }
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

@@ -1,54 +1,53 @@
 {
-  "app_id": "app006",
-  "app_name": "SupportApp-006",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "HIGH_RISK",
-  "components": [
+  "application_identifier": "app006",
+  "components_analyzed": [
     {
       "component_name": "Debian 6",
-      "component_category": "Operating System",
-      "version_identified": "Debian 6",
-      "lifecycle_status": "EOL",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Debian",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "6",
+      "component_status": "EOL",
+      "eol_date": "2014-02-15",
+      "reason": "Debian 6 is long past end-of-life.",
+      "confidence": 10
     },
     {
       "component_name": "Java 11",
-      "component_category": "Programming Language",
-      "version_identified": "Java 11",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Java",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "11",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Java 11 is still used but has been superseded by newer LTS releases such as Java 17 and 21.",
+      "confidence": 9
     },
     {
       "component_name": "Glassfish 5.0",
-      "component_category": "Application Server",
-      "version_identified": "Glassfish 5.0",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Glassfish",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "5.0",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Glassfish 5.0 is outdated and has limited community support.",
+      "confidence": 8
     },
     {
       "component_name": "PostgreSQL 13",
-      "component_category": "Database Engine",
-      "version_identified": "PostgreSQL 13",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 is nearing end-of-life and should be upgraded.",
+      "confidence": 9
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "Debian 6",
-      "status": "EOL"
-    },
-    "programming_language": {
-      "name": "Java 11",
-      "status": "OUTDATED"
-    },
-    "application_server": {
-      "name": "Glassfish 5.0",
-      "status": "OUTDATED"
-    },
-    "database_engine": {
-      "name": "PostgreSQL 13",
-      "status": "OUTDATED"
-    }
-  }
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

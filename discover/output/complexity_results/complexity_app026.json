@@ -1,48 +1,34 @@
 {
-  "app_id": "app026",
-  "app_name": "LegacyFinApp-026",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_score": 7,
-  "complexity_label": "High",
-  "cost_multiplier": 1.5,
-  "raw_score": 12,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 1,
-      "score": 1
+  "application_identifier": "app026",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Technology Debt",
+      "impact": "medium",
+      "detail": "Technology debt includes 0 EOL and 2 outdated component(s)."
     },
-    "external_interfaces": {
-      "value": 1,
-      "score": 0
+    {
+      "factor": "Deployment Model",
+      "impact": "high",
+      "detail": "Deployment includes on-premise infrastructure, increasing migration and network dependency complexity."
     },
-    "api_endpoints": {
-      "value": 0,
-      "score": 0
+    {
+      "factor": "Data Volume",
+      "impact": "high",
+      "detail": "Database size is 1500GB, increasing cutover and data migration effort."
     },
-    "business_criticality": {
-      "value": "Critical",
-      "score": 3
+    {
+      "factor": "Delivery Automation",
+      "impact": "medium",
+      "detail": "CI/CD is not present, so deployment automation and regression confidence are weaker."
     },
-    "tech_debt_components": {
-      "value": 2,
-      "score": 2
-    },
-    "deployment_type": {
-      "value": "On-Premise",
-      "score": 2
-    },
-    "database_storage_gb": {
-      "value": 1500.0,
-      "score": 2
-    },
-    "ci_cd_present": {
-      "value": "No",
-      "score": 1
-    },
-    "is_containerized": {
-      "value": "No",
-      "score": 1
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

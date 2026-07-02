@@ -1,127 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ReportingApp-015 Modernization Report</title>
-
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-         background: #f4f6f9; color: #2c3e50; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
-  h1 { font-size: 2rem; color: #1a252f; margin-bottom: 8px; }
-  h2 { font-size: 1.4rem; color: #2c3e50; margin: 24px 0 12px; border-bottom: 2px solid #3498db; padding-bottom: 6px; }
-  h3 { font-size: 1.1rem; color: #34495e; margin: 16px 0 8px; }
-  .subtitle { color: #7f8c8d; font-size: 0.95rem; margin-bottom: 24px; }
-  .cards { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0; }
-  .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.08);
-          flex: 1; min-width: 180px; }
-  .card .label { font-size: 0.8rem; color: #7f8c8d; text-transform: uppercase; letter-spacing: .5px; }
-  .card .value { font-size: 1.8rem; font-weight: 700; color: #2c3e50; margin-top: 4px; }
-  .card .sub { font-size: 0.85rem; color: #95a5a6; margin-top: 2px; }
-  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem;
-           font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
-  .badge-EOL          { background: #fde8e8; color: #c0392b; }
-  .badge-OUTDATED     { background: #fef9e7; color: #d35400; }
-  .badge-CURRENT_VERSION { background: #eafaf1; color: #1e8449; }
-  .badge-NO_KNOWLEDGE { background: #f4f6f9; color: #7f8c8d; }
-  .badge-APPLICABLE   { background: #ebf5fb; color: #1a5276; }
-  .badge-FULFILLED    { background: #eafaf1; color: #1e8449; }
-  .badge-NOT_APPLICABLE { background: #f4f6f9; color: #7f8c8d; }
-  .badge-LACK_OF_DATA { background: #fef9e7; color: #9b7e00; }
-  .badge-HIGH_RISK    { background: #fde8e8; color: #c0392b; }
-  .badge-MEDIUM_RISK  { background: #fef9e7; color: #d35400; }
-  .badge-LOW_RISK     { background: #eafaf1; color: #1e8449; }
-  .badge-High   { background: #fde8e8; color: #c0392b; }
-  .badge-Medium { background: #fef9e7; color: #d35400; }
-  .badge-Low    { background: #eafaf1; color: #1e8449; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #fff;
-          border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-  th { background: #2c3e50; color: #ecf0f1; padding: 10px 12px; text-align: left; }
-  td { padding: 9px 12px; border-bottom: 1px solid #ecf0f1; }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: #f8f9fa; }
-  .chart-bar { display: inline-block; height: 16px; background: #3498db; border-radius: 3px;
-               vertical-align: middle; min-width: 4px; }
-  .app-card { background: #fff; border-radius: 10px; padding: 16px; margin: 12px 0;
-              box-shadow: 0 2px 6px rgba(0,0,0,.07); border-left: 4px solid #3498db; }
-  .app-card.high-risk { border-left-color: #e74c3c; }
-  .app-card.medium-risk { border-left-color: #f39c12; }
-  .app-card.low-risk { border-left-color: #2ecc71; }
-  .mermaid-wrap { background: #fff; border-radius: 10px; padding: 20px;
-                  box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 16px 0; }
-  .section { background: #fff; border-radius: 10px; padding: 20px;
-             box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 16px 0; }
-  .flex2 { display: flex; gap: 16px; flex-wrap: wrap; }
-  .flex2 > * { flex: 1; min-width: 300px; }
-</style>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>ReportingApp-015 modernization report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    .card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(15,23,42,.08); }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .metric { background: #eef2ff; border-radius: 10px; padding: 12px; }
+    .badge { display: inline-block; border-radius: 999px; padding: 4px 10px; color: #fff; font-size: 12px; font-weight: 700; }
+    .green { background: #16a34a; } .orange { background: #ea580c; } .red { background: #dc2626; } .gray { background: #6b7280; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #e5e7eb; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    .gauge { background: #e5e7eb; border-radius: 999px; height: 16px; overflow: hidden; }
+    .gauge-bar { background: linear-gradient(90deg, #22c55e, #f59e0b, #dc2626); height: 16px; width: 40%; }
+    ul { margin: 0; padding-left: 20px; }
+  </style>
 </head>
 <body>
-<div class="container">
-  <h1>ReportingApp-015</h1>
-  <p class="subtitle">app015 &nbsp;|&nbsp; Finance &nbsp;|&nbsp; Financial reporting tool for generating executive dashboards and regulatory compliance reports</p>
+  <div class='container'>
+    <div class='card'>
+      <h1>ReportingApp-015 <small>(app015)</small></h1>
+      <div class='grid'>
+        <div class='metric'><strong>Status</strong><br>Production</div>
+        <div class='metric'><strong>Criticality</strong><br>Low</div>
+        <div class='metric'><strong>Deployment</strong><br>AWS</div>
+        <div class='metric'><strong>Users</strong><br>340</div>
+        <div class='metric'><strong>Architecture</strong><br>2-Tier</div>
+        <div class='metric'><strong>Containerized</strong><br>No</div>
+        <div class='metric'><strong>CI/CD</strong><br>Yes</div>
+        <div class='metric'><strong>Database Size</strong><br>400 GB</div>
+      </div>
+    </div>
 
-  <div class="cards">
-    <div class="card"><div class="label">Criticality</div><div class="value" style="font-size:1.2rem"><span class="badge badge-Low">Low</span></div></div>
-    <div class="card"><div class="label">Overall Risk</div><div class="value" style="font-size:1.2rem"><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></div></div>
-    <div class="card"><div class="label">Complexity</div><div class="value">3/10</div><div class="sub"><span class="badge badge-Low">Low</span></div></div>
-    <div class="card"><div class="label">Migration Cost</div><div class="value" style="font-size:1.4rem">$105,300</div></div>
-    <div class="card"><div class="label">Yearly Savings</div><div class="value" style="font-size:1.4rem">$101,400</div></div>
-    <div class="card"><div class="label">3-Year ROI</div><div class="value">188.9%</div></div>
-  </div>
+    <div class='card'>
+      <h2>Technology Assessment</h2>
+      <table>
+        <thead><tr><th>Type</th><th>Component</th><th>Status</th><th>Version</th><th>Support / EOL</th><th>Reason</th></tr></thead>
+        <tbody><tr><td>os</td><td>Windows Server 2019</td><td><span class='badge green'>CURRENT_VERSION</span></td><td>2019</td><td>2029-01-09</td><td>Windows Server 2019 remains a supported enterprise platform.</td></tr><tr><td>programming_language</td><td>PHP 8.1</td><td><span class='badge orange'>OUTDATED</span></td><td>8.1</td><td>2025-12-31</td><td>PHP 8.1 has moved out of mainstream support and should be upgraded.</td></tr><tr><td>application_server</td><td>Microsoft IIS 10.0</td><td><span class='badge green'>CURRENT_VERSION</span></td><td>10.0</td><td>n/a</td><td>IIS 10.0 remains current when hosted on supported Windows Server releases.</td></tr><tr><td>database</td><td>MongoDB</td><td><span class='badge green'>CURRENT_VERSION</span></td><td>n/a</td><td>n/a</td><td>MongoDB is treated as current; no version was provided, but the service is assumed to be on a supported release.</td></tr></tbody>
+      </table>
+    </div>
 
-  <div class="flex2">
-    <div class="mermaid-wrap"><div class="mermaid">pie title Component Status
-"CURRENT_VERSION" : 3 "OUTDATED" : 1
-</div></div>
-    <div class="mermaid-wrap"><div class="mermaid">
-xychart-beta
-  title "Scenario Status Distribution"
-  x-axis ["APPLICABLE" "FULFILLED" "NOT_APPLICABLE" "LACK_OF_DATA"]
-  y-axis "Count" 0 --> 9
-  bar [3 1 8 0]
-</div></div>
-  </div>
+    <div class='card'>
+      <h2>Complexity</h2>
+      <p><strong>Score:</strong> 4 / 10 (Medium)</p>
+      <div class='gauge'><div class='gauge-bar'></div></div>
+      <p><strong>Cost multiplier:</strong> 1.2x</p>
+      <ul><li><strong>Technology Debt</strong> (medium) - Technology debt includes 0 EOL and 1 outdated component(s).</li><li><strong>Runtime Portability</strong> (medium) - The workload is not containerized, reducing portability and slowing platform transitions.</li></ul>
+    </div>
 
-  <h2>Technology Assessment</h2>
-  <div class="section">
-    <table>
-      <tr><th>Category</th><th>Component</th><th>Status</th></tr>
-      <tr><td>Operating System</td><td>Windows Server 2019</td><td><span class="badge badge-CURRENT_VERSION">CURRENT_VERSION</span></td></tr>
-      <tr><td>Programming Language</td><td>PHP 8.1</td><td><span class="badge badge-OUTDATED">OUTDATED</span></td></tr>
-      <tr><td>Application Server</td><td>Microsoft IIS 10.0</td><td><span class="badge badge-CURRENT_VERSION">CURRENT_VERSION</span></td></tr>
-      <tr><td>Database Engine</td><td>MongoDB</td><td><span class="badge badge-CURRENT_VERSION">CURRENT_VERSION</span></td></tr>
-    </table>
-  </div>
+    <div class='card'>
+      <h2>Applicable Scenarios</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>Status</th><th>Migration Cost</th><th>Yearly Savings</th><th>Reason</th></tr></thead>
+        <tbody><tr><td>Operating System Update</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>Operating system Windows Server 2019 is already on a current supported release.</td></tr><tr><td>Switch to standard Linux Operating System</td><td>APPLICABLE</td><td>$360</td><td>$400</td><td>Windows Server 2019 is not a standard Linux platform and can be standardized onto enterprise Linux.</td></tr><tr><td>Switch to ARM-based CPU</td><td>APPLICABLE</td><td>$6,000</td><td>$1,000</td><td>The application has cloud or container portability characteristics that make ARM migration feasible.</td></tr><tr><td>Applications Server replacement</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>Application server Microsoft IIS 10.0 is current.</td></tr><tr><td>Application Migration to Cloud Infrastructure (Lift &amp; Shift)</td><td>FULFILLED</td><td>-</td><td>-</td><td>The application is already fully deployed in AWS.</td></tr><tr><td>Application Containerization</td><td>APPLICABLE</td><td>$120,000</td><td>$100,000</td><td>The application is not containerized and could gain portability and operational consistency from container adoption.</td></tr><tr><td>Application Refactoring and De-coupling</td><td>APPLICABLE</td><td>$300,000</td><td>$150,000</td><td>The recorded architecture (2-Tier) suggests a layered or monolithic design suitable for decoupling.</td></tr><tr><td>Upgrade Legacy Databases</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>Database engine MongoDB is current.</td></tr><tr><td>Switch to Managed Database</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>MongoDB is already treated as a managed database service.</td></tr><tr><td>Managed ARM Database</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>Managed ARM database migration depends on first moving to a managed database platform, which is already satisfied or not needed.</td></tr><tr><td>Serverless Database Migration</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>Serverless database migration is targeted at cloud workloads with database sizes below 100GB.</td></tr><tr><td>Switch Database Engine to PostgreSQL</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>MongoDB is not in the relational database set targeted by this scenario.</td></tr></tbody>
+      </table>
+    </div>
 
-  <h2>Scenario Assessment</h2>
-  <div class="section">
-    <table>
-      <tr><th>Scenario</th><th>Status</th><th>Migration Cost</th><th>Yearly Savings</th></tr>
-      <tr><td>OS Security Patch</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-      <tr><td>Switch to Linux</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$300</td><td>$400</td></tr>
-      <tr><td>ARM CPU Migration</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$5,000</td><td>$1,000</td></tr>
-      <tr><td>App Server Replacement</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-      <tr><td>Cloud Deployment</td><td><span class="badge badge-FULFILLED">FULFILLED</span></td><td>—</td><td>—</td></tr>
-      <tr><td>Containerization</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$100,000</td><td>$100,000</td></tr>
-      <tr><td>Refactor/Decouple</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-      <tr><td>DB Upgrade</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-      <tr><td>Managed DB</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-      <tr><td>Managed ARM DB</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-      <tr><td>Serverless DB</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-      <tr><td>Switch to PostgreSQL</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
-    </table>
-  </div>
-
-  <h2>Business Case</h2>
-  <div class="section">
-    <div class="cards">
-      <div class="card"><div class="label">Total Cost</div><div class="value" style="font-size:1.3rem">$105,300</div></div>
-      <div class="card"><div class="label">Yearly Savings</div><div class="value" style="font-size:1.3rem">$101,400</div></div>
-      <div class="card"><div class="label">3-Year ROI</div><div class="value">188.9%</div></div>
-      <div class="card"><div class="label">Payback</div><div class="value">1.04 yrs</div></div>
+    <div class='card'>
+      <h2>Business Case</h2>
+      <p><strong>Migration cost:</strong> $426,360</p>
+      <p><strong>Yearly savings:</strong> $251,400</p>
+      <p><strong>Three-year ROI:</strong> 76.9%</p>
+      <p><strong>Payback period:</strong> 1.70 years</p>
     </div>
   </div>
-</div></body></html>
+</body>
+</html>

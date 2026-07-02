@@ -1,48 +1,39 @@
 {
-  "app_id": "app017",
-  "app_name": "BackupApp-017",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_score": 7,
+  "application_identifier": "app017",
+  "complexity_score": 8,
   "complexity_label": "High",
-  "cost_multiplier": 1.5,
-  "raw_score": 13,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 2,
-      "score": 2
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
     },
-    "external_interfaces": {
-      "value": 8,
-      "score": 1
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 1 outdated component(s)."
     },
-    "api_endpoints": {
-      "value": 2,
-      "score": 0
+    {
+      "factor": "Integration Surface",
+      "impact": "medium",
+      "detail": "The application exposes 2 API endpoints and 8 external interfaces."
     },
-    "business_criticality": {
-      "value": "High",
-      "score": 2
+    {
+      "factor": "Deployment Model",
+      "impact": "high",
+      "detail": "Deployment includes on-premise infrastructure, increasing migration and network dependency complexity."
     },
-    "tech_debt_components": {
-      "value": 3,
-      "score": 3
+    {
+      "factor": "Delivery Automation",
+      "impact": "medium",
+      "detail": "CI/CD is not present, so deployment automation and regression confidence are weaker."
     },
-    "deployment_type": {
-      "value": "On-Premise",
-      "score": 2
-    },
-    "database_storage_gb": {
-      "value": 350.0,
-      "score": 1
-    },
-    "ci_cd_present": {
-      "value": "No",
-      "score": 1
-    },
-    "is_containerized": {
-      "value": "No",
-      "score": 1
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
     }
-  }
+  ],
+  "cost_multiplier": 1.5,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

@@ -1,48 +1,34 @@
 {
-  "app_id": "app008",
-  "app_name": "InventoryApp-008",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_score": 7,
-  "complexity_label": "High",
-  "cost_multiplier": 1.5,
-  "raw_score": 12,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 2,
-      "score": 2
+  "application_identifier": "app008",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
     },
-    "external_interfaces": {
-      "value": 2,
-      "score": 0
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 1 outdated component(s)."
     },
-    "api_endpoints": {
-      "value": 0,
-      "score": 0
+    {
+      "factor": "Deployment Model",
+      "impact": "high",
+      "detail": "Deployment includes on-premise infrastructure, increasing migration and network dependency complexity."
     },
-    "business_criticality": {
-      "value": "High",
-      "score": 2
+    {
+      "factor": "Delivery Automation",
+      "impact": "medium",
+      "detail": "CI/CD is not present, so deployment automation and regression confidence are weaker."
     },
-    "tech_debt_components": {
-      "value": 3,
-      "score": 3
-    },
-    "deployment_type": {
-      "value": "On-Premise",
-      "score": 2
-    },
-    "database_storage_gb": {
-      "value": 400.0,
-      "score": 1
-    },
-    "ci_cd_present": {
-      "value": "No",
-      "score": 1
-    },
-    "is_containerized": {
-      "value": "No",
-      "score": 1
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

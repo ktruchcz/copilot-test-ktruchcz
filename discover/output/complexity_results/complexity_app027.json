@@ -1,48 +1,39 @@
 {
-  "app_id": "app027",
-  "app_name": "DataWarehouseApp-027",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_score": 7,
+  "application_identifier": "app027",
+  "complexity_score": 8,
   "complexity_label": "High",
-  "cost_multiplier": 1.5,
-  "raw_score": 13,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 2,
-      "score": 2
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
     },
-    "external_interfaces": {
-      "value": 20,
-      "score": 2
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 1 EOL and 2 outdated component(s)."
     },
-    "api_endpoints": {
-      "value": 5,
-      "score": 0
+    {
+      "factor": "Integration Surface",
+      "impact": "high",
+      "detail": "The application exposes 5 API endpoints and 20 external interfaces."
     },
-    "business_criticality": {
-      "value": "High",
-      "score": 2
+    {
+      "factor": "Deployment Model",
+      "impact": "medium",
+      "detail": "Deployment includes on-premise infrastructure, increasing migration and network dependency complexity."
     },
-    "tech_debt_components": {
-      "value": 3,
-      "score": 3
+    {
+      "factor": "Data Volume",
+      "impact": "high",
+      "detail": "Database size is 5000GB, increasing cutover and data migration effort."
     },
-    "deployment_type": {
-      "value": "AWS, On-premise",
-      "score": 1
-    },
-    "database_storage_gb": {
-      "value": 5000.0,
-      "score": 2
-    },
-    "ci_cd_present": {
-      "value": "Yes",
-      "score": 0
-    },
-    "is_containerized": {
-      "value": "No",
-      "score": 1
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
     }
-  }
+  ],
+  "cost_multiplier": 1.5,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

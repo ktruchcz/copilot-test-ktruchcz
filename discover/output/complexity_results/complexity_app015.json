@@ -1,48 +1,19 @@
 {
-  "app_id": "app015",
-  "app_name": "ReportingApp-015",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_score": 3,
-  "complexity_label": "Low",
-  "cost_multiplier": 1.0,
-  "raw_score": 5,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 1,
-      "score": 1
+  "application_identifier": "app015",
+  "complexity_score": 4,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Technology Debt",
+      "impact": "medium",
+      "detail": "Technology debt includes 0 EOL and 1 outdated component(s)."
     },
-    "external_interfaces": {
-      "value": 4,
-      "score": 0
-    },
-    "api_endpoints": {
-      "value": 6,
-      "score": 1
-    },
-    "business_criticality": {
-      "value": "Low",
-      "score": 0
-    },
-    "tech_debt_components": {
-      "value": 1,
-      "score": 1
-    },
-    "deployment_type": {
-      "value": "AWS",
-      "score": 0
-    },
-    "database_storage_gb": {
-      "value": 400.0,
-      "score": 1
-    },
-    "ci_cd_present": {
-      "value": "Yes",
-      "score": 0
-    },
-    "is_containerized": {
-      "value": "No",
-      "score": 1
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

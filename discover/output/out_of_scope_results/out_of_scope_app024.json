@@ -1,11 +1,5 @@
 {
-  "app_id": "app024",
-  "app_name": "AuditApp-024",
+  "application_identifier": "app024",
   "out_of_scope": false,
-  "reasons": [
-    "In scope for assessment"
-  ],
-  "application_status": "Production",
-  "solution_type": "Custom made",
-  "analysis_timestamp": "2025-01-01T00:00:00Z"
+  "reason": "Application is in Production status and is not SAP"
 }

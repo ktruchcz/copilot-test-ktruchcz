@@ -1,48 +1,24 @@
 {
-  "app_id": "app006",
-  "app_name": "SupportApp-006",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "application_identifier": "app006",
   "complexity_score": 5,
   "complexity_label": "Medium",
-  "cost_multiplier": 1.2,
-  "raw_score": 8,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 1,
-      "score": 1
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "medium",
+      "detail": "Criticality is Medium and requires controlled cutover planning."
     },
-    "external_interfaces": {
-      "value": 4,
-      "score": 0
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 1 EOL and 3 outdated component(s)."
     },
-    "api_endpoints": {
-      "value": 6,
-      "score": 1
-    },
-    "business_criticality": {
-      "value": "Medium",
-      "score": 1
-    },
-    "tech_debt_components": {
-      "value": 4,
-      "score": 3
-    },
-    "deployment_type": {
-      "value": "AWS",
-      "score": 0
-    },
-    "database_storage_gb": {
-      "value": 200.0,
-      "score": 1
-    },
-    "ci_cd_present": {
-      "value": "Yes",
-      "score": 0
-    },
-    "is_containerized": {
-      "value": "No",
-      "score": 1
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

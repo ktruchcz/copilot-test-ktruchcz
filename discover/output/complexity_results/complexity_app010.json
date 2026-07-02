@@ -1,48 +1,24 @@
 {
-  "app_id": "app010",
-  "app_name": "PayrollApp-010",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_score": 3,
-  "complexity_label": "Low",
-  "cost_multiplier": 1.0,
-  "raw_score": 5,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 1,
-      "score": 1
+  "application_identifier": "app010",
+  "complexity_score": 4,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "medium",
+      "detail": "Criticality is Medium and requires controlled cutover planning."
     },
-    "external_interfaces": {
-      "value": 4,
-      "score": 0
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 1 EOL and 0 outdated component(s)."
     },
-    "api_endpoints": {
-      "value": 3,
-      "score": 0
-    },
-    "business_criticality": {
-      "value": "Medium",
-      "score": 1
-    },
-    "tech_debt_components": {
-      "value": 1,
-      "score": 1
-    },
-    "deployment_type": {
-      "value": "AWS",
-      "score": 0
-    },
-    "database_storage_gb": {
-      "value": 250.0,
-      "score": 1
-    },
-    "ci_cd_present": {
-      "value": "Yes",
-      "score": 0
-    },
-    "is_containerized": {
-      "value": "No",
-      "score": 1
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

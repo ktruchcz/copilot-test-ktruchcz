@@ -1,54 +1,53 @@
 {
-  "app_id": "app004",
-  "app_name": "HRApp-004",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "HIGH_RISK",
-  "components": [
+  "application_identifier": "app004",
+  "components_analyzed": [
     {
       "component_name": "Windows Server 2012",
-      "component_category": "Operating System",
-      "version_identified": "Windows Server 2012",
-      "lifecycle_status": "EOL",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2012",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "Windows Server 2012 reached end of support in October 2023.",
+      "confidence": 10
     },
     {
       "component_name": ".NET Core",
-      "component_category": "Programming Language",
-      "version_identified": ".NET Core",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": ".NET",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": null,
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "The generic '.NET Core' label lacks a specific version; older .NET Core trains are out of support and modernization to a current .NET LTS is recommended.",
+      "confidence": 6
     },
     {
       "component_name": "Microsoft IIS 8.0",
-      "component_category": "Application Server",
-      "version_identified": "Microsoft IIS 8.0",
-      "lifecycle_status": "EOL",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Microsoft IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "8.0",
+      "component_status": "EOL",
+      "eol_date": "2023-10-10",
+      "reason": "IIS 8.0 inherits Windows Server 2012 end-of-support constraints.",
+      "confidence": 9
     },
     {
       "component_name": "SQL Server 2019",
-      "component_category": "Database Engine",
-      "version_identified": "SQL Server 2019",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "SQL Server",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2030-01-08",
+      "reason": "SQL Server 2019 remains within support.",
+      "confidence": 9
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "Windows Server 2012",
-      "status": "EOL"
-    },
-    "programming_language": {
-      "name": ".NET Core",
-      "status": "OUTDATED"
-    },
-    "application_server": {
-      "name": "Microsoft IIS 8.0",
-      "status": "EOL"
-    },
-    "database_engine": {
-      "name": "SQL Server 2019",
-      "status": "CURRENT_VERSION"
-    }
-  }
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

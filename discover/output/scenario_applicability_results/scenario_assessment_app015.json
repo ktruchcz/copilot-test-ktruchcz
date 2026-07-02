@@ -1,81 +1,78 @@
 {
-  "app_id": "app015",
-  "app_name": "ReportingApp-015",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_label": "Low",
-  "cost_multiplier": 1.0,
+  "application_identifier": "app015",
   "scenarios": [
     {
       "scenario_id": "os_update_security_patch",
+      "scenario_name": "Operating System Update",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 1000,
-      "yearly_savings_base": 500
+      "reason": "Operating system Windows Server 2019 is already on a current supported release."
     },
     {
       "scenario_id": "switch_to_standard_linux_os",
+      "scenario_name": "Switch to standard Linux Operating System",
       "status": "APPLICABLE",
-      "migration_cost_base": 300,
-      "yearly_savings_base": 400
+      "reason": "Windows Server 2019 is not a standard Linux platform and can be standardized onto enterprise Linux."
     },
     {
       "scenario_id": "switch_to_arm_cpu",
+      "scenario_name": "Switch to ARM-based CPU",
       "status": "APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 1000
+      "reason": "The application has cloud or container portability characteristics that make ARM migration feasible."
     },
     {
       "scenario_id": "application_server_replacement",
+      "scenario_name": "Applications Server replacement",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 10000,
-      "yearly_savings_base": 12000
+      "reason": "Application server Microsoft IIS 10.0 is current."
     },
     {
       "scenario_id": "app_deployment_to_cloud",
+      "scenario_name": "Application Migration to Cloud Infrastructure (Lift & Shift)",
       "status": "FULFILLED",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 3000
+      "reason": "The application is already fully deployed in AWS."
     },
     {
       "scenario_id": "app_containerization",
+      "scenario_name": "Application Containerization",
       "status": "APPLICABLE",
-      "migration_cost_base": 100000,
-      "yearly_savings_base": 100000
+      "reason": "The application is not containerized and could gain portability and operational consistency from container adoption."
     },
     {
       "scenario_id": "app_refactor_decoupling",
-      "status": "NOT_APPLICABLE",
-      "migration_cost_base": 250000,
-      "yearly_savings_base": 150000
+      "scenario_name": "Application Refactoring and De-coupling",
+      "status": "APPLICABLE",
+      "reason": "The recorded architecture (2-Tier) suggests a layered or monolithic design suitable for decoupling."
     },
     {
       "scenario_id": "upgrade_legacy_databases",
+      "scenario_name": "Upgrade Legacy Databases",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 10000,
-      "yearly_savings_base": 10000
+      "reason": "Database engine MongoDB is current."
     },
     {
       "scenario_id": "switch_to_managed_db",
+      "scenario_name": "Switch to Managed Database",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 10000
+      "reason": "MongoDB is already treated as a managed database service."
     },
     {
       "scenario_id": "managed_arm_db",
+      "scenario_name": "Managed ARM Database",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 5000
+      "reason": "Managed ARM database migration depends on first moving to a managed database platform, which is already satisfied or not needed."
     },
     {
       "scenario_id": "serverless_db_migration",
+      "scenario_name": "Serverless Database Migration",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 5000,
-      "yearly_savings_base": 15000
+      "reason": "Serverless database migration is targeted at cloud workloads with database sizes below 100GB."
     },
     {
       "scenario_id": "switch_db_engine_postgresql",
+      "scenario_name": "Switch Database Engine to PostgreSQL",
       "status": "NOT_APPLICABLE",
-      "migration_cost_base": 25000,
-      "yearly_savings_base": 15000
+      "reason": "MongoDB is not in the relational database set targeted by this scenario."
     }
-  ]
+  ],
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

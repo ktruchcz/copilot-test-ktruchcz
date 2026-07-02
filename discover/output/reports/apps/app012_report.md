@@ -1,72 +1,52 @@
-# IoTSensorApp-012 (app012) — Modernization Report
+# IoTSensorApp-012 (app012)
 
-**Analysis Date:** 2025-01-01T00:00:00Z  
-**Business Unit:** R&D  
-**Criticality:** High  
-**Status:** Production  
-**Deployment:** AWS  
-**Architecture:** 2-Tier  
-**Containerized:** Yes  
+## Application Overview
+- Status: Production
+- Solution type: Custom made
+- Criticality: High
+- Deployment: AWS
+- Users: 85
+- Architecture: 2-Tier
+- Containerized: Yes
+- CI/CD: Yes
 
 ## Technology Assessment
-
-| Component | Version | Status |
-|-----------|---------|--------|
-| Operating System | Windows Server 2022 | ✅ CURRENT_VERSION |
-| Programming Language | Rust 1.70 | ⚠️ OUTDATED |
-| Application Server | Microsoft IIS 10.0 | ✅ CURRENT_VERSION |
-| Database Engine | PostgreSQL 14 | ⚠️ OUTDATED |
-
-**Overall Risk:** `MEDIUM_RISK`
+| Component Type | Component | Status | Support / EOL Date | Reason |
+|---|---|---|---|---|
+| os | Windows Server 2022 | CURRENT_VERSION | 2031-10-14 | Windows Server 2022 is within Microsoft's current support lifecycle. |
+| programming_language | Rust 1.70 | OUTDATED | n/a | Rust 1.70 is behind current stable releases and should be refreshed. |
+| application_server | Microsoft IIS 10.0 | CURRENT_VERSION | n/a | IIS 10.0 remains current when hosted on supported Windows Server releases. |
+| database | PostgreSQL 14 | OUTDATED | 2026-11-12 | PostgreSQL 14 is still supported but not the preferred current version. |
 
 ## Complexity Assessment
+- Complexity score: **6 / 10**
+- Complexity label: **Medium**
+- Cost multiplier: **1.2x**
 
-**Score:** 5/10 — **Medium** (Cost Multiplier: 1.2x)
+- **Business Criticality** (high): Criticality is High and raises migration risk tolerance requirements.
+- **Technology Debt** (medium): Technology debt includes 0 EOL and 2 outdated component(s).
+- **Integration Surface** (high): The application exposes 20 API endpoints and 8 external interfaces.
+- **Data Volume** (medium): Database size is 800GB, increasing cutover and data migration effort.
 
-| Factor | Value | Points |
-|--------|-------|--------|
-| Server Count | 2 | 2 |
-| External Interfaces | 8 | 1 |
-| Api Endpoints | 20 | 1 |
-| Business Criticality | High | 2 |
-| Tech Debt Components | 2 | 2 |
-| Deployment Type | AWS | 0 |
-| Database Storage Gb | 800.0 | 1 |
-| Ci Cd Present | Yes | 0 |
-| Is Containerized | Yes | 0 |
-
-## Scenario Applicability
-
-| Scenario | Status |
-|----------|--------|
-| OS Security Patch | NOT_APPLICABLE |
-| Switch to Linux | APPLICABLE |
-| ARM CPU Migration | APPLICABLE |
-| App Server Replacement | NOT_APPLICABLE |
-| Cloud Deployment | FULFILLED |
-| Containerization | FULFILLED |
-| Refactor/Decouple | NOT_APPLICABLE |
-| DB Upgrade | APPLICABLE |
-| Managed DB | APPLICABLE |
-| Managed ARM DB | APPLICABLE |
-| Serverless DB | NOT_APPLICABLE |
-| Switch to PostgreSQL | NOT_APPLICABLE |
+## Applicable Scenarios
+| Scenario | Status | Migration Cost | Yearly Savings | Reason |
+|---|---|---:|---:|---|
+| Operating System Update | NOT_APPLICABLE | - | - | Operating system Windows Server 2022 is already on a current supported release. |
+| Switch to standard Linux Operating System | APPLICABLE | $360 | $400 | Windows Server 2022 is not a standard Linux platform and can be standardized onto enterprise Linux. |
+| Switch to ARM-based CPU | APPLICABLE | $6,000 | $1,000 | The application has cloud or container portability characteristics that make ARM migration feasible. |
+| Applications Server replacement | NOT_APPLICABLE | - | - | Application server Microsoft IIS 10.0 is current. |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | FULFILLED | - | - | The application is already fully deployed in AWS. |
+| Application Containerization | FULFILLED | - | - | The application is already containerized. |
+| Application Refactoring and De-coupling | APPLICABLE | $300,000 | $150,000 | The recorded architecture (2-Tier) suggests a layered or monolithic design suitable for decoupling. |
+| Upgrade Legacy Databases | APPLICABLE | $12,000 | $10,000 | Database engine PostgreSQL 14 is OUTDATED and should be upgraded. |
+| Switch to Managed Database | APPLICABLE | $6,000 | $10,000 | PostgreSQL 14 is not a managed database service and could be moved to a managed offering. |
+| Managed ARM Database | APPLICABLE | $6,000 | $5,000 | A managed database move would also enable ARM-based managed database optimization. |
+| Serverless Database Migration | NOT_APPLICABLE | - | - | Serverless database migration is targeted at cloud workloads with database sizes below 100GB. |
+| Switch Database Engine to PostgreSQL | NOT_APPLICABLE | - | - | PostgreSQL 14 is already PostgreSQL-based. |
 
 ## Business Case
-
-| Metric | Value |
-|--------|-------|
-| Total Migration Cost | $30,360 |
-| Total Yearly Savings | $26,400 |
-| 3-Year ROI | 160.9% |
-| Payback Period | 1.15 years |
-
-### Applicable Scenarios Breakdown
-
-| Scenario | Migration Cost | Yearly Savings |
-|----------|----------------|----------------|
-| Switch to Linux | $360 | $400 |
-| ARM CPU Migration | $6,000 | $1,000 |
-| DB Upgrade | $12,000 | $10,000 |
-| Managed DB | $6,000 | $10,000 |
-| Managed ARM DB | $6,000 | $5,000 |
+- Applicable scenarios: switch_to_standard_linux_os, switch_to_arm_cpu, app_refactor_decoupling, upgrade_legacy_databases, switch_to_managed_db, managed_arm_db
+- Migration cost: $330,360
+- Yearly savings: $176,400
+- Three-year ROI: 60.2%
+- Payback period: 1.87 years

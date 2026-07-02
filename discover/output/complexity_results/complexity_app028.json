@@ -1,48 +1,24 @@
 {
-  "app_id": "app028",
-  "app_name": "NotificationApp-028",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "application_identifier": "app028",
   "complexity_score": 5,
   "complexity_label": "Medium",
-  "cost_multiplier": 1.2,
-  "raw_score": 8,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 2,
-      "score": 2
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "medium",
+      "detail": "Criticality is Medium and requires controlled cutover planning."
     },
-    "external_interfaces": {
-      "value": 25,
-      "score": 2
+    {
+      "factor": "Integration Surface",
+      "impact": "high",
+      "detail": "The application exposes 18 API endpoints and 25 external interfaces."
     },
-    "api_endpoints": {
-      "value": 18,
-      "score": 1
-    },
-    "business_criticality": {
-      "value": "Medium",
-      "score": 1
-    },
-    "tech_debt_components": {
-      "value": 0,
-      "score": 0
-    },
-    "deployment_type": {
-      "value": "AWS",
-      "score": 0
-    },
-    "database_storage_gb": {
-      "value": 3000.0,
-      "score": 2
-    },
-    "ci_cd_present": {
-      "value": "Yes",
-      "score": 0
-    },
-    "is_containerized": {
-      "value": "Yes",
-      "score": 0
+    {
+      "factor": "Data Volume",
+      "impact": "high",
+      "detail": "Database size is 3000GB, increasing cutover and data migration effort."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

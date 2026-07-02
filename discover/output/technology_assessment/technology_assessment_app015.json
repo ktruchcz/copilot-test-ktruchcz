@@ -1,54 +1,53 @@
 {
-  "app_id": "app015",
-  "app_name": "ReportingApp-015",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "MEDIUM_RISK",
-  "components": [
+  "application_identifier": "app015",
+  "components_analyzed": [
     {
       "component_name": "Windows Server 2019",
-      "component_category": "Operating System",
-      "version_identified": "Windows Server 2019",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2019",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2029-01-09",
+      "reason": "Windows Server 2019 remains a supported enterprise platform.",
+      "confidence": 9
     },
     {
       "component_name": "PHP 8.1",
-      "component_category": "Programming Language",
-      "version_identified": "PHP 8.1",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "PHP",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "8.1",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-12-31",
+      "reason": "PHP 8.1 has moved out of mainstream support and should be upgraded.",
+      "confidence": 8
     },
     {
       "component_name": "Microsoft IIS 10.0",
-      "component_category": "Application Server",
-      "version_identified": "Microsoft IIS 10.0",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Microsoft IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "IIS 10.0 remains current when hosted on supported Windows Server releases.",
+      "confidence": 8
     },
     {
       "component_name": "MongoDB",
-      "component_category": "Database Engine",
-      "version_identified": "MongoDB",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "MongoDB",
+      "component_type": "database",
+      "managed_service": true,
+      "version": null,
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "MongoDB is treated as current; no version was provided, but the service is assumed to be on a supported release.",
+      "confidence": 6
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "Windows Server 2019",
-      "status": "CURRENT_VERSION"
-    },
-    "programming_language": {
-      "name": "PHP 8.1",
-      "status": "OUTDATED"
-    },
-    "application_server": {
-      "name": "Microsoft IIS 10.0",
-      "status": "CURRENT_VERSION"
-    },
-    "database_engine": {
-      "name": "MongoDB",
-      "status": "CURRENT_VERSION"
-    }
-  }
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": true,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

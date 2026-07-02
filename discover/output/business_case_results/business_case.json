@@ -1,1368 +1,509 @@
 {
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
   "portfolio_summary": {
-    "total_in_scope_apps": 26,
-    "total_migration_cost": 7794140.0,
-    "total_yearly_savings": 4506700.0,
-    "portfolio_roi_3yr_pct": 73.5,
-    "portfolio_payback_years": 1.73
+    "total_applications": 30,
+    "in_scope_applications": 26,
+    "out_of_scope_applications": 4,
+    "total_migration_cost": 10152870.0,
+    "total_yearly_savings": 5730700,
+    "three_year_roi_percent": 69.3,
+    "payback_period_years": 1.77
   },
-  "applications": [
+  "application_business_cases": [
     {
-      "app_id": "app027",
-      "app_name": "DataWarehouseApp-027",
-      "complexity_label": "High",
-      "cost_multiplier": 1.5,
-      "total_migration_cost": 609000.0,
-      "total_yearly_savings": 296500.0,
-      "roi_3yr_pct": 46.1,
-      "payback_years": 2.05,
+      "application_identifier": "app027",
+      "application_name": "DataWarehouseApp-027",
+      "complexity_score": 8,
+      "complexity_multiplier": 1.5,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1500.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 150000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 375000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 37500.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 609000.0,
+      "yearly_savings": 296500,
+      "three_year_roi_percent": 46.1,
+      "payback_period_years": 2.05
     },
     {
-      "app_id": "app008",
-      "app_name": "InventoryApp-008",
-      "complexity_label": "High",
-      "cost_multiplier": 1.5,
-      "total_migration_cost": 601950.0,
-      "total_yearly_savings": 295900.0,
-      "roi_3yr_pct": 47.5,
-      "payback_years": 2.03,
+      "application_identifier": "app013",
+      "application_name": "SecurityApp-013",
+      "complexity_score": 7,
+      "complexity_multiplier": 1.5,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1500.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 450.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 150000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 375000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 37500.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "application_server_replacement",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 601500.0,
+      "yearly_savings": 295500,
+      "three_year_roi_percent": 47.4,
+      "payback_period_years": 2.04
     },
     {
-      "app_id": "app013",
-      "app_name": "SecurityApp-013",
-      "complexity_label": "High",
-      "cost_multiplier": 1.5,
-      "total_migration_cost": 601500.0,
-      "total_yearly_savings": 295500.0,
-      "roi_3yr_pct": 47.4,
-      "payback_years": 2.04,
+      "application_identifier": "app024",
+      "application_name": "AuditApp-024",
+      "complexity_score": 7,
+      "complexity_multiplier": 1.5,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1500.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 150000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 375000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 37500.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 600450.0,
+      "yearly_savings": 293400,
+      "three_year_roi_percent": 46.6,
+      "payback_period_years": 2.05
     },
     {
-      "app_id": "app026",
-      "app_name": "LegacyFinApp-026",
-      "complexity_label": "High",
-      "cost_multiplier": 1.5,
-      "total_migration_cost": 600450.0,
-      "total_yearly_savings": 293400.0,
-      "roi_3yr_pct": 46.6,
-      "payback_years": 2.05,
+      "application_identifier": "app018",
+      "application_name": "VendorApp-018",
+      "complexity_score": 7,
+      "complexity_multiplier": 1.5,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 450.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 150000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 375000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 37500.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "application_server_replacement",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db"
+      ],
+      "migration_cost": 579000.0,
+      "yearly_savings": 290500,
+      "three_year_roi_percent": 50.5,
+      "payback_period_years": 1.99
     },
     {
-      "app_id": "app018",
-      "app_name": "VendorApp-018",
-      "complexity_label": "High",
-      "cost_multiplier": 1.5,
-      "total_migration_cost": 579000.0,
-      "total_yearly_savings": 290500.0,
-      "roi_3yr_pct": 50.5,
-      "payback_years": 1.99,
+      "application_identifier": "app020",
+      "application_name": "TrainingApp-020",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1500.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 150000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 375000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 5000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 493560.0,
+      "yearly_savings": 303900,
+      "three_year_roi_percent": 84.7,
+      "payback_period_years": 1.62
     },
     {
-      "app_id": "app019",
-      "app_name": "QualityApp-019",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 474000.0,
-      "total_yearly_savings": 284000.0,
-      "roi_3yr_pct": 79.7,
-      "payback_years": 1.67,
+      "application_identifier": "app019",
+      "application_name": "QualityApp-019",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 300000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 486000.0,
+      "yearly_savings": 296000,
+      "three_year_roi_percent": 82.7,
+      "payback_period_years": 1.64
     },
     {
-      "app_id": "app001",
-      "app_name": "ERPApp-001",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 468360.0,
-      "total_yearly_savings": 283400.0,
-      "roi_3yr_pct": 81.5,
-      "payback_years": 1.65,
+      "application_identifier": "app008",
+      "application_name": "InventoryApp-008",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 300000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_standard_linux_os",
+        "application_server_replacement",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 481560.0,
+      "yearly_savings": 295900,
+      "three_year_roi_percent": 84.3,
+      "payback_period_years": 1.63
     },
     {
-      "app_id": "app022",
-      "app_name": "ComplianceApp-022",
-      "complexity_label": "High",
-      "cost_multiplier": 1.5,
-      "total_migration_cost": 421500.0,
-      "total_yearly_savings": 179500.0,
-      "roi_3yr_pct": 27.8,
-      "payback_years": 2.35,
+      "application_identifier": "app021",
+      "application_name": "FleetApp-021",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1500.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 375000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 5000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 480360.0,
+      "yearly_savings": 293400,
+      "three_year_roi_percent": 83.2,
+      "payback_period_years": 1.64
     },
     {
-      "app_id": "app030",
-      "app_name": "APIGatewayApp-030",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 378000.0,
-      "total_yearly_savings": 218000.0,
-      "roi_3yr_pct": 73.0,
-      "payback_years": 1.73,
+      "application_identifier": "app026",
+      "application_name": "LegacyFinApp-026",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 300000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "serverless_db_migration",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 15000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 480360.0,
+      "yearly_savings": 293400,
+      "three_year_roi_percent": 83.2,
+      "payback_period_years": 1.64
     },
     {
-      "app_id": "app016",
-      "app_name": "MobileApp-016",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 361200.0,
-      "total_yearly_savings": 193500.0,
-      "roi_3yr_pct": 60.7,
-      "payback_years": 1.87,
+      "application_identifier": "app001",
+      "application_name": "ERPApp-001",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1200.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 300000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 468360.0,
+      "yearly_savings": 283400,
+      "three_year_roi_percent": 81.5,
+      "payback_period_years": 1.65
     },
     {
-      "app_id": "app003",
-      "app_name": "AnalyticsApp-003",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 343200.0,
-      "total_yearly_savings": 188500.0,
-      "roi_3yr_pct": 64.8,
-      "payback_years": 1.82,
+      "application_identifier": "app014",
+      "application_name": "DocumentApp-014",
+      "complexity_score": 5,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1200.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 300000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "app_containerization",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 468360.0,
+      "yearly_savings": 281400,
+      "three_year_roi_percent": 80.2,
+      "payback_period_years": 1.66
     },
     {
-      "app_id": "app011",
-      "app_name": "RouteOptApp-011",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 343200.0,
-      "total_yearly_savings": 188500.0,
-      "roi_3yr_pct": 64.8,
-      "payback_years": 1.82,
+      "application_identifier": "app016",
+      "application_name": "MobileApp-016",
+      "complexity_score": 7,
+      "complexity_multiplier": 1.5,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1200.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 300000.0,
-          "yearly_savings": 150000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 451500.0,
+      "yearly_savings": 193500,
+      "three_year_roi_percent": 28.6,
+      "payback_period_years": 2.33
     },
     {
-      "app_id": "app023",
-      "app_name": "ChatbotApp-023",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 306000.0,
-      "total_yearly_savings": 151000.0,
-      "roi_3yr_pct": 48.0,
-      "payback_years": 2.03,
+      "application_identifier": "app015",
+      "application_name": "ReportingApp-015",
+      "complexity_score": 4,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "app_refactor_decoupling",
-          "status": "APPLICABLE",
-          "migration_cost": 300000.0,
-          "yearly_savings": 150000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "app_containerization",
+        "app_refactor_decoupling"
+      ],
+      "migration_cost": 426360.0,
+      "yearly_savings": 251400,
+      "three_year_roi_percent": 76.9,
+      "payback_period_years": 1.7
     },
     {
-      "app_id": "app017",
-      "app_name": "BackupApp-017",
-      "complexity_label": "High",
-      "cost_multiplier": 1.5,
-      "total_migration_cost": 241500.0,
-      "total_yearly_savings": 155500.0,
-      "roi_3yr_pct": 93.2,
-      "payback_years": 1.55,
+      "application_identifier": "app030",
+      "application_name": "APIGatewayApp-030",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1500.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 150000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 15000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 7500.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 37500.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "serverless_db_migration",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 378000.0,
+      "yearly_savings": 218000,
+      "three_year_roi_percent": 73.0,
+      "payback_period_years": 1.73
     },
     {
-      "app_id": "app020",
-      "app_name": "TrainingApp-020",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 193560.0,
-      "total_yearly_savings": 153900.0,
-      "roi_3yr_pct": 138.5,
-      "payback_years": 1.26,
+      "application_identifier": "app004",
+      "application_name": "HRApp-004",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1200.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_deployment_to_cloud",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 367560.0,
+      "yearly_savings": 196900,
+      "three_year_roi_percent": 60.7,
+      "payback_period_years": 1.87
     },
     {
-      "app_id": "app021",
-      "app_name": "FleetApp-021",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 180360.0,
-      "total_yearly_savings": 143400.0,
-      "roi_3yr_pct": 138.5,
-      "payback_years": 1.26,
+      "application_identifier": "app003",
+      "application_name": "AnalyticsApp-003",
+      "complexity_score": 4,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db"
+      ],
+      "migration_cost": 343200.0,
+      "yearly_savings": 188500,
+      "three_year_roi_percent": 64.8,
+      "payback_period_years": 1.82
     },
     {
-      "app_id": "app024",
-      "app_name": "AuditApp-024",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 180360.0,
-      "total_yearly_savings": 143400.0,
-      "roi_3yr_pct": 138.5,
-      "payback_years": 1.26,
+      "application_identifier": "app011",
+      "application_name": "RouteOptApp-011",
+      "complexity_score": 4,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db"
+      ],
+      "migration_cost": 343200.0,
+      "yearly_savings": 188500,
+      "three_year_roi_percent": 64.8,
+      "payback_period_years": 1.82
     },
     {
-      "app_id": "app002",
-      "app_name": "CRMApp-002",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 169200.0,
-      "total_yearly_savings": 128500.0,
-      "roi_3yr_pct": 127.8,
-      "payback_years": 1.32,
+      "application_identifier": "app022",
+      "application_name": "ComplianceApp-022",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1200.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_arm_cpu",
+        "app_deployment_to_cloud",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db"
+      ],
+      "migration_cost": 337200.0,
+      "yearly_savings": 179500,
+      "three_year_roi_percent": 59.7,
+      "payback_period_years": 1.88
     },
     {
-      "app_id": "app014",
-      "app_name": "DocumentApp-014",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 168360.0,
-      "total_yearly_savings": 131400.0,
-      "roi_3yr_pct": 134.1,
-      "payback_years": 1.28,
+      "application_identifier": "app012",
+      "application_name": "IoTSensorApp-012",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "app_refactor_decoupling",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db"
+      ],
+      "migration_cost": 330360.0,
+      "yearly_savings": 176400,
+      "three_year_roi_percent": 60.2,
+      "payback_period_years": 1.87
     },
     {
-      "app_id": "app006",
-      "app_name": "SupportApp-006",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 163200.0,
-      "total_yearly_savings": 138500.0,
-      "roi_3yr_pct": 154.6,
-      "payback_years": 1.18,
+      "application_identifier": "app025",
+      "application_name": "PortalApp-025",
+      "complexity_score": 5,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1200.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 120000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "app_refactor_decoupling",
+        "switch_to_managed_db",
+        "managed_arm_db"
+      ],
+      "migration_cost": 318360.0,
+      "yearly_savings": 166400,
+      "three_year_roi_percent": 56.8,
+      "payback_period_years": 1.91
     },
     {
-      "app_id": "app010",
-      "app_name": "PayrollApp-010",
-      "complexity_label": "Low",
-      "cost_multiplier": 1.0,
-      "total_migration_cost": 140300.0,
-      "total_yearly_savings": 131400.0,
-      "roi_3yr_pct": 181.0,
-      "payback_years": 1.07,
+      "application_identifier": "app023",
+      "application_name": "ChatbotApp-023",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 300.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 5000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 100000.0,
-          "yearly_savings": 100000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 5000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 5000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 25000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_refactor_decoupling"
+      ],
+      "migration_cost": 318000.0,
+      "yearly_savings": 163000,
+      "three_year_roi_percent": 53.8,
+      "payback_period_years": 1.95
     },
     {
-      "app_id": "app015",
-      "app_name": "ReportingApp-015",
-      "complexity_label": "Low",
-      "cost_multiplier": 1.0,
-      "total_migration_cost": 105300.0,
-      "total_yearly_savings": 101400.0,
-      "roi_3yr_pct": 188.9,
-      "payback_years": 1.04,
+      "application_identifier": "app017",
+      "application_name": "BackupApp-017",
+      "complexity_score": 8,
+      "complexity_multiplier": 1.5,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 300.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 5000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "app_containerization",
-          "status": "APPLICABLE",
-          "migration_cost": 100000.0,
-          "yearly_savings": 100000
-        }
-      ]
+        "os_update_security_patch",
+        "application_server_replacement",
+        "app_deployment_to_cloud",
+        "app_containerization",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 241500.0,
+      "yearly_savings": 155500,
+      "three_year_roi_percent": 93.2,
+      "payback_period_years": 1.55
     },
     {
-      "app_id": "app004",
-      "app_name": "HRApp-004",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 67560.0,
-      "total_yearly_savings": 46900.0,
-      "roi_3yr_pct": 108.3,
-      "payback_years": 1.44,
+      "application_identifier": "app002",
+      "application_name": "CRMApp-002",
+      "complexity_score": 6,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "os_update_security_patch",
-          "status": "APPLICABLE",
-          "migration_cost": 1200.0,
-          "yearly_savings": 500
-        },
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "application_server_replacement",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 12000
-        },
-        {
-          "scenario_id": "app_deployment_to_cloud",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 3000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_containerization",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 169200.0,
+      "yearly_savings": 128500,
+      "three_year_roi_percent": 127.8,
+      "payback_period_years": 1.32
     },
     {
-      "app_id": "app028",
-      "app_name": "NotificationApp-028",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 48360.0,
-      "total_yearly_savings": 31400.0,
-      "roi_3yr_pct": 94.8,
-      "payback_years": 1.54,
+      "application_identifier": "app010",
+      "application_name": "PayrollApp-010",
+      "complexity_score": 4,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        },
-        {
-          "scenario_id": "switch_db_engine_postgresql",
-          "status": "APPLICABLE",
-          "migration_cost": 30000.0,
-          "yearly_savings": 15000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "app_containerization",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 168360.0,
+      "yearly_savings": 131400,
+      "three_year_roi_percent": 134.1,
+      "payback_period_years": 1.28
     },
     {
-      "app_id": "app012",
-      "app_name": "IoTSensorApp-012",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 30360.0,
-      "total_yearly_savings": 26400.0,
-      "roi_3yr_pct": 160.9,
-      "payback_years": 1.15,
+      "application_identifier": "app006",
+      "application_name": "SupportApp-006",
+      "complexity_score": 5,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "upgrade_legacy_databases",
-          "status": "APPLICABLE",
-          "migration_cost": 12000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        }
-      ]
+        "os_update_security_patch",
+        "switch_to_arm_cpu",
+        "application_server_replacement",
+        "app_containerization",
+        "upgrade_legacy_databases",
+        "switch_to_managed_db",
+        "managed_arm_db"
+      ],
+      "migration_cost": 163200.0,
+      "yearly_savings": 138500,
+      "three_year_roi_percent": 154.6,
+      "payback_period_years": 1.18
     },
     {
-      "app_id": "app025",
-      "app_name": "PortalApp-025",
-      "complexity_label": "Medium",
-      "cost_multiplier": 1.2,
-      "total_migration_cost": 18360.0,
-      "total_yearly_savings": 16400.0,
-      "roi_3yr_pct": 168.0,
-      "payback_years": 1.12,
+      "application_identifier": "app028",
+      "application_name": "NotificationApp-028",
+      "complexity_score": 5,
+      "complexity_multiplier": 1.2,
       "applicable_scenarios": [
-        {
-          "scenario_id": "switch_to_standard_linux_os",
-          "status": "APPLICABLE",
-          "migration_cost": 360.0,
-          "yearly_savings": 400
-        },
-        {
-          "scenario_id": "switch_to_arm_cpu",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 1000
-        },
-        {
-          "scenario_id": "switch_to_managed_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 10000
-        },
-        {
-          "scenario_id": "managed_arm_db",
-          "status": "APPLICABLE",
-          "migration_cost": 6000.0,
-          "yearly_savings": 5000
-        }
-      ]
+        "switch_to_standard_linux_os",
+        "switch_to_arm_cpu",
+        "switch_to_managed_db",
+        "managed_arm_db",
+        "switch_db_engine_postgresql"
+      ],
+      "migration_cost": 48360.0,
+      "yearly_savings": 31400,
+      "three_year_roi_percent": 94.8,
+      "payback_period_years": 1.54
     }
   ]
 }

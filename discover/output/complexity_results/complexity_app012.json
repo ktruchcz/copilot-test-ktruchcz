@@ -1,48 +1,29 @@
 {
-  "app_id": "app012",
-  "app_name": "IoTSensorApp-012",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "complexity_score": 5,
+  "application_identifier": "app012",
+  "complexity_score": 6,
   "complexity_label": "Medium",
-  "cost_multiplier": 1.2,
-  "raw_score": 9,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 2,
-      "score": 2
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
     },
-    "external_interfaces": {
-      "value": 8,
-      "score": 1
+    {
+      "factor": "Technology Debt",
+      "impact": "medium",
+      "detail": "Technology debt includes 0 EOL and 2 outdated component(s)."
     },
-    "api_endpoints": {
-      "value": 20,
-      "score": 1
+    {
+      "factor": "Integration Surface",
+      "impact": "high",
+      "detail": "The application exposes 20 API endpoints and 8 external interfaces."
     },
-    "business_criticality": {
-      "value": "High",
-      "score": 2
-    },
-    "tech_debt_components": {
-      "value": 2,
-      "score": 2
-    },
-    "deployment_type": {
-      "value": "AWS",
-      "score": 0
-    },
-    "database_storage_gb": {
-      "value": 800.0,
-      "score": 1
-    },
-    "ci_cd_present": {
-      "value": "Yes",
-      "score": 0
-    },
-    "is_containerized": {
-      "value": "Yes",
-      "score": 0
+    {
+      "factor": "Data Volume",
+      "impact": "medium",
+      "detail": "Database size is 800GB, increasing cutover and data migration effort."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

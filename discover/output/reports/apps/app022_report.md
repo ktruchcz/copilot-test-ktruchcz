@@ -1,74 +1,52 @@
-# ComplianceApp-022 (app022) — Modernization Report
+# ComplianceApp-022 (app022)
 
-**Analysis Date:** 2025-01-01T00:00:00Z  
-**Business Unit:** Compliance  
-**Criticality:** Critical  
-**Status:** Production  
-**Deployment:** AWS, On-premise  
-**Architecture:** 3-Tier  
-**Containerized:** Yes  
+## Application Overview
+- Status: Production
+- Solution type: Custom made
+- Criticality: Critical
+- Deployment: AWS, On-premise
+- Users: 310
+- Architecture: 3-Tier
+- Containerized: Yes
+- CI/CD: Yes
 
 ## Technology Assessment
-
-| Component | Version | Status |
-|-----------|---------|--------|
-| Operating System | RHEL 7 | 🔴 EOL |
-| Programming Language | Scala 2.13 | ⚠️ OUTDATED |
-| Application Server | Payara 6.0 | ✅ CURRENT_VERSION |
-| Database Engine | PostgreSQL 14 | ⚠️ OUTDATED |
-
-**Overall Risk:** `HIGH_RISK`
+| Component Type | Component | Status | Support / EOL Date | Reason |
+|---|---|---|---|---|
+| os | RHEL 7 | EOL | 2024-06-30 | RHEL 7 reached end of maintenance support in June 2024. |
+| programming_language | Scala 2.13 | OUTDATED | n/a | Scala 2.13 is still usable but Scala 3 is the current strategic direction. |
+| application_server | Payara 6.0 | CURRENT_VERSION | n/a | Payara 6 is the current supported major line. |
+| database | PostgreSQL 14 | OUTDATED | 2026-11-12 | PostgreSQL 14 is still supported but not the preferred current version. |
 
 ## Complexity Assessment
+- Complexity score: **6 / 10**
+- Complexity label: **Medium**
+- Cost multiplier: **1.2x**
 
-**Score:** 7/10 — **High** (Cost Multiplier: 1.5x)
+- **Technology Debt** (high): Technology debt includes 1 EOL and 2 outdated component(s).
+- **Integration Surface** (high): The application exposes 16 API endpoints and 12 external interfaces.
+- **Deployment Model** (medium): Deployment includes on-premise infrastructure, increasing migration and network dependency complexity.
+- **Data Volume** (medium): Database size is 500GB, increasing cutover and data migration effort.
 
-| Factor | Value | Points |
-|--------|-------|--------|
-| Server Count | 2 | 2 |
-| External Interfaces | 12 | 2 |
-| Api Endpoints | 16 | 1 |
-| Business Criticality | Critical | 3 |
-| Tech Debt Components | 3 | 3 |
-| Deployment Type | AWS, On-premise | 1 |
-| Database Storage Gb | 500.0 | 1 |
-| Ci Cd Present | Yes | 0 |
-| Is Containerized | Yes | 0 |
-
-## Scenario Applicability
-
-| Scenario | Status |
-|----------|--------|
-| OS Security Patch | APPLICABLE |
-| Switch to Linux | NOT_APPLICABLE |
-| ARM CPU Migration | APPLICABLE |
-| App Server Replacement | NOT_APPLICABLE |
-| Cloud Deployment | APPLICABLE |
-| Containerization | FULFILLED |
-| Refactor/Decouple | APPLICABLE |
-| DB Upgrade | APPLICABLE |
-| Managed DB | APPLICABLE |
-| Managed ARM DB | APPLICABLE |
-| Serverless DB | NOT_APPLICABLE |
-| Switch to PostgreSQL | NOT_APPLICABLE |
+## Applicable Scenarios
+| Scenario | Status | Migration Cost | Yearly Savings | Reason |
+|---|---|---:|---:|---|
+| Operating System Update | APPLICABLE | $1,200 | $500 | Operating system RHEL 7 is EOL and should be moved to a supported baseline. |
+| Switch to standard Linux Operating System | NOT_APPLICABLE | - | - | RHEL 7 is already a Linux-based operating system. |
+| Switch to ARM-based CPU | APPLICABLE | $6,000 | $1,000 | The application has cloud or container portability characteristics that make ARM migration feasible. |
+| Applications Server replacement | NOT_APPLICABLE | - | - | Application server Payara 6.0 is current. |
+| Application Migration to Cloud Infrastructure (Lift & Shift) | APPLICABLE | $6,000 | $3,000 | The deployment model includes on-premise infrastructure, so additional cloud migration remains available. |
+| Application Containerization | FULFILLED | - | - | The application is already containerized. |
+| Application Refactoring and De-coupling | APPLICABLE | $300,000 | $150,000 | The recorded architecture (3-Tier) suggests a layered or monolithic design suitable for decoupling. |
+| Upgrade Legacy Databases | APPLICABLE | $12,000 | $10,000 | Database engine PostgreSQL 14 is OUTDATED and should be upgraded. |
+| Switch to Managed Database | APPLICABLE | $6,000 | $10,000 | PostgreSQL 14 is not a managed database service and could be moved to a managed offering. |
+| Managed ARM Database | APPLICABLE | $6,000 | $5,000 | A managed database move would also enable ARM-based managed database optimization. |
+| Serverless Database Migration | NOT_APPLICABLE | - | - | Serverless database migration is targeted at cloud workloads with database sizes below 100GB. |
+| Switch Database Engine to PostgreSQL | NOT_APPLICABLE | - | - | PostgreSQL 14 is already PostgreSQL-based. |
 
 ## Business Case
-
-| Metric | Value |
-|--------|-------|
-| Total Migration Cost | $421,500 |
-| Total Yearly Savings | $179,500 |
-| 3-Year ROI | 27.8% |
-| Payback Period | 2.35 years |
-
-### Applicable Scenarios Breakdown
-
-| Scenario | Migration Cost | Yearly Savings |
-|----------|----------------|----------------|
-| OS Security Patch | $1,500 | $500 |
-| ARM CPU Migration | $7,500 | $1,000 |
-| Cloud Deployment | $7,500 | $3,000 |
-| Refactor/Decouple | $375,000 | $150,000 |
-| DB Upgrade | $15,000 | $10,000 |
-| Managed DB | $7,500 | $10,000 |
-| Managed ARM DB | $7,500 | $5,000 |
+- Applicable scenarios: os_update_security_patch, switch_to_arm_cpu, app_deployment_to_cloud, app_refactor_decoupling, upgrade_legacy_databases, switch_to_managed_db, managed_arm_db
+- Migration cost: $337,200
+- Yearly savings: $179,500
+- Three-year ROI: 59.7%
+- Payback period: 1.88 years

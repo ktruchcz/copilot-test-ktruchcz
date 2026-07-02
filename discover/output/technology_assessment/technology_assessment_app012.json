@@ -1,54 +1,53 @@
 {
-  "app_id": "app012",
-  "app_name": "IoTSensorApp-012",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
-  "overall_risk": "MEDIUM_RISK",
-  "components": [
+  "application_identifier": "app012",
+  "components_analyzed": [
     {
       "component_name": "Windows Server 2022",
-      "component_category": "Operating System",
-      "version_identified": "Windows Server 2022",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Windows Server",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "2022",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": "2031-10-14",
+      "reason": "Windows Server 2022 is within Microsoft's current support lifecycle.",
+      "confidence": 9
     },
     {
       "component_name": "Rust 1.70",
-      "component_category": "Programming Language",
-      "version_identified": "Rust 1.70",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Rust",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "1.70",
+      "component_status": "OUTDATED",
+      "eol_date": null,
+      "reason": "Rust 1.70 is behind current stable releases and should be refreshed.",
+      "confidence": 8
     },
     {
       "component_name": "Microsoft IIS 10.0",
-      "component_category": "Application Server",
-      "version_identified": "Microsoft IIS 10.0",
-      "lifecycle_status": "CURRENT_VERSION",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "Microsoft IIS",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "10.0",
+      "component_status": "CURRENT_VERSION",
+      "eol_date": null,
+      "reason": "IIS 10.0 remains current when hosted on supported Windows Server releases.",
+      "confidence": 8
     },
     {
       "component_name": "PostgreSQL 14",
-      "component_category": "Database Engine",
-      "version_identified": "PostgreSQL 14",
-      "lifecycle_status": "OUTDATED",
-      "analysis_timestamp": "2025-01-01T00:00:00Z"
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "14",
+      "component_status": "OUTDATED",
+      "eol_date": "2026-11-12",
+      "reason": "PostgreSQL 14 is still supported but not the preferred current version.",
+      "confidence": 8
     }
   ],
-  "technology_summary": {
-    "operating_system": {
-      "name": "Windows Server 2022",
-      "status": "CURRENT_VERSION"
-    },
-    "programming_language": {
-      "name": "Rust 1.70",
-      "status": "OUTDATED"
-    },
-    "application_server": {
-      "name": "Microsoft IIS 10.0",
-      "status": "CURRENT_VERSION"
-    },
-    "database_engine": {
-      "name": "PostgreSQL 14",
-      "status": "OUTDATED"
-    }
-  }
+  "has_eol_components": false,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

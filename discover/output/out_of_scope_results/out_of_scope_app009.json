@@ -1,11 +1,5 @@
 {
-  "app_id": "app009",
-  "app_name": "MarketingApp-009",
+  "application_identifier": "app009",
   "out_of_scope": true,
-  "reasons": [
-    "Application status is Retired"
-  ],
-  "application_status": "Retired",
-  "solution_type": "Custom made",
-  "analysis_timestamp": "2025-01-01T00:00:00Z"
+  "reason": "Application is retired and therefore excluded from modernization scope"
 }

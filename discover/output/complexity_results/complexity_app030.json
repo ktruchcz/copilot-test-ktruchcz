@@ -1,48 +1,24 @@
 {
-  "app_id": "app030",
-  "app_name": "APIGatewayApp-030",
-  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "application_identifier": "app030",
   "complexity_score": 6,
   "complexity_label": "Medium",
-  "cost_multiplier": 1.2,
-  "raw_score": 11,
-  "max_raw_score": 19,
-  "factors": {
-    "server_count": {
-      "value": 2,
-      "score": 2
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
     },
-    "external_interfaces": {
-      "value": 30,
-      "score": 2
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 1 outdated component(s)."
     },
-    "api_endpoints": {
-      "value": 50,
-      "score": 2
-    },
-    "business_criticality": {
-      "value": "High",
-      "score": 2
-    },
-    "tech_debt_components": {
-      "value": 3,
-      "score": 3
-    },
-    "deployment_type": {
-      "value": "AWS",
-      "score": 0
-    },
-    "database_storage_gb": {
-      "value": 80.0,
-      "score": 0
-    },
-    "ci_cd_present": {
-      "value": "Yes",
-      "score": 0
-    },
-    "is_containerized": {
-      "value": "Yes",
-      "score": 0
+    {
+      "factor": "Integration Surface",
+      "impact": "high",
+      "detail": "The application exposes 50 API endpoints and 30 external interfaces."
     }
-  }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
 }

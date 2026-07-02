@@ -1,11 +1,5 @@
 {
-  "app_id": "app006",
-  "app_name": "SupportApp-006",
+  "application_identifier": "app006",
   "out_of_scope": false,
-  "reasons": [
-    "In scope for assessment"
-  ],
-  "application_status": "Production",
-  "solution_type": "3rd party software",
-  "analysis_timestamp": "2025-01-01T00:00:00Z"
+  "reason": "Application is in Production status and is not SAP"
 }
