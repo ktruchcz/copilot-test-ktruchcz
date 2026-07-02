@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.finmonol.api.tests.config.CucumberRunner" time="0.713" tests="29" errors="29" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/target/test-classes:/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/target/classes:/home/runner/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/home/runner/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/home/runner/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/home/runner/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/home/runner/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/home/runner/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/home/runner/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-picocontainer/7.15.0/cucumber-picocontainer-7.15.0.jar:/home/runner/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/runner/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/runner/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/runner/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/home/runner/.m2/repository/io/rest-assured/json-schema-validator/5.4.0/json-schema-validator-5.4.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.16.1/jackson-annotations-2.16.1.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar:/home/runner/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/home/runner/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/temurin-17-jdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/target/surefire/surefirebooter-20260702133854155_3.jar /home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/target/surefire 2026-07-02T13-38-53_849-jvmRun1 surefire-20260702133854155_1tmp surefire_0-20260702133854155_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/target/test-classes:/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/target/classes:/home/runner/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/home/runner/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/home/runner/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/home/runner/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/home/runner/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/home/runner/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/home/runner/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/home/runner/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-picocontainer/7.15.0/cucumber-picocontainer-7.15.0.jar:/home/runner/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/runner/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/runner/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/runner/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/home/runner/.m2/repository/io/rest-assured/json-schema-validator/5.4.0/json-schema-validator-5.4.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.16.1/jackson-annotations-2.16.1.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar:/home/runner/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/home/runner/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/runner"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="cucumber.execution.dry-run" value="true"/>
+    <property name="java.home" value="/usr/lib/jvm/temurin-17-jdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/target/surefire/surefirebooter-20260702133854155_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.19+10"/>
+    <property name="user.name" value="runner"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.17.0-1018-azure"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.19+10"/>
+    <property name="localRepository" value="/home/runner/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.19"/>
+    <property name="user.dir" value="/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.19+10"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="Retrieve all accounts returns an array" classname="Account Management" time="0.083">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Create a new checking account" classname="Account Management" time="0.01">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Retrieve an existing account by ID" classname="Account Management" time="0.008">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Retrieve a non-existent account returns 404" classname="Account Management" time="0.007">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Update account status to inactive" classname="Account Management" time="0.006">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Account with balance exceeding limit is flagged" classname="Account Management" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Create account with missing required fields returns 400" classname="Account Management" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Create duplicate account returns 409" classname="Account Management" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="List accounts supports pagination" classname="Account Management" time="0.007">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Submit a debit transaction successfully" classname="Transaction Processing" time="0.014">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Submit a credit transaction successfully" classname="Transaction Processing" time="0.004">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Transaction with risk code 999 triggers MANUAL_REVIEW flag" classname="Transaction Processing" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Transaction with unknown account returns 404" classname="Transaction Processing" time="0.006">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Transaction with invalid type returns 400" classname="Transaction Processing" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Retrieve transaction by ID" classname="Transaction Processing" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Retrieve non-existent transaction returns 404" classname="Transaction Processing" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="List all transactions for an account" classname="Transaction Processing" time="0.004">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Daily summary reports correct debit and credit totals" classname="Transaction Processing" time="0.003">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Transaction with negative amount returns 400" classname="Transaction Processing" time="0.003">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Check initial migration status before migration starts" classname="Upgrade Legacy Databases" time="0.004">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Start database migration from flat files" classname="Upgrade Legacy Databases" time="0.004">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Validate migrated account data integrity" classname="Upgrade Legacy Databases" time="0.004">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Reject migration when source data files are missing" classname="Upgrade Legacy Databases" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Dry-run migration reports expected record counts without writing data" classname="Upgrade Legacy Databases" time="0.003">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Roll back a failed migration and leave legacy data intact" classname="Upgrade Legacy Databases" time="0.003">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Over-limit accounts are correctly migrated and flagged in the database" classname="Upgrade Legacy Databases" time="0.003">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Transactions with risk code 999 are migrated with MANUAL_REVIEW flag" classname="Upgrade Legacy Databases" time="0.003">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Debit and credit totals are preserved after migration" classname="Upgrade Legacy Databases" time="0.004">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="Re-running migration on already-migrated data is idempotent" classname="Upgrade Legacy Databases" time="0.005">
+    <error message="Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)" type="io.cucumber.core.runner.DuplicateStepDefinitionException"><![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.finmonol.api.tests.steps.TransactionStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double) and com.finmonol.api.tests.steps.DatabaseMigrationStepDefinitions.theSummaryFieldIsDouble(java.lang.String,double)
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+</testsuite>

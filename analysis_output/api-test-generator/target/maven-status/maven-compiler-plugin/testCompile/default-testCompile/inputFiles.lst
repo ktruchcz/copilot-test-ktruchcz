@@ -1,0 +1,9 @@
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/builders/AccountBuilder.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/builders/TransactionBuilder.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/client/ApiClient.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/config/CucumberRunner.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/context/TestContext.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/steps/AccountStepDefinitions.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/steps/CommonStepDefinitions.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/steps/DatabaseMigrationStepDefinitions.java
+/home/runner/work/copilot-test-ktruchcz/copilot-test-ktruchcz/analysis_output/api-test-generator/src/test/java/com/finmonol/api/tests/steps/TransactionStepDefinitions.java
