@@ -1,0 +1,48 @@
+{
+  "app_id": "app013",
+  "app_name": "SecurityApp-013",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_score": 8,
+  "complexity_label": "High",
+  "cost_multiplier": 1.5,
+  "raw_score": 14,
+  "max_raw_score": 19,
+  "factors": {
+    "server_count": {
+      "value": 2,
+      "score": 2
+    },
+    "external_interfaces": {
+      "value": 15,
+      "score": 2
+    },
+    "api_endpoints": {
+      "value": 8,
+      "score": 1
+    },
+    "business_criticality": {
+      "value": "Critical",
+      "score": 3
+    },
+    "tech_debt_components": {
+      "value": 2,
+      "score": 2
+    },
+    "deployment_type": {
+      "value": "On-Premise",
+      "score": 2
+    },
+    "database_storage_gb": {
+      "value": 600.0,
+      "score": 1
+    },
+    "ci_cd_present": {
+      "value": "Yes",
+      "score": 0
+    },
+    "is_containerized": {
+      "value": "No",
+      "score": 1
+    }
+  }
+}

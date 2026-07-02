@@ -1,0 +1,11 @@
+{
+  "app_id": "app007",
+  "app_name": "FinanceApp-007",
+  "out_of_scope": true,
+  "reasons": [
+    "Application status is Retired"
+  ],
+  "application_status": "Retired",
+  "solution_type": "Custom made",
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

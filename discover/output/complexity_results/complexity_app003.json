@@ -1,0 +1,48 @@
+{
+  "app_id": "app003",
+  "app_name": "AnalyticsApp-003",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_score": 4,
+  "complexity_label": "Medium",
+  "cost_multiplier": 1.2,
+  "raw_score": 6,
+  "max_raw_score": 19,
+  "factors": {
+    "server_count": {
+      "value": 1,
+      "score": 1
+    },
+    "external_interfaces": {
+      "value": 3,
+      "score": 0
+    },
+    "api_endpoints": {
+      "value": 8,
+      "score": 1
+    },
+    "business_criticality": {
+      "value": "Low",
+      "score": 0
+    },
+    "tech_debt_components": {
+      "value": 4,
+      "score": 3
+    },
+    "deployment_type": {
+      "value": "AWS",
+      "score": 0
+    },
+    "database_storage_gb": {
+      "value": 200.0,
+      "score": 1
+    },
+    "ci_cd_present": {
+      "value": "Yes",
+      "score": 0
+    },
+    "is_containerized": {
+      "value": "Yes",
+      "score": 0
+    }
+  }
+}

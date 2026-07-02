@@ -1,0 +1,48 @@
+{
+  "app_id": "app026",
+  "app_name": "LegacyFinApp-026",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_score": 7,
+  "complexity_label": "High",
+  "cost_multiplier": 1.5,
+  "raw_score": 12,
+  "max_raw_score": 19,
+  "factors": {
+    "server_count": {
+      "value": 1,
+      "score": 1
+    },
+    "external_interfaces": {
+      "value": 1,
+      "score": 0
+    },
+    "api_endpoints": {
+      "value": 0,
+      "score": 0
+    },
+    "business_criticality": {
+      "value": "Critical",
+      "score": 3
+    },
+    "tech_debt_components": {
+      "value": 2,
+      "score": 2
+    },
+    "deployment_type": {
+      "value": "On-Premise",
+      "score": 2
+    },
+    "database_storage_gb": {
+      "value": 1500.0,
+      "score": 2
+    },
+    "ci_cd_present": {
+      "value": "No",
+      "score": 1
+    },
+    "is_containerized": {
+      "value": "No",
+      "score": 1
+    }
+  }
+}

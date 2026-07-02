@@ -1,0 +1,54 @@
+{
+  "app_id": "app030",
+  "app_name": "APIGatewayApp-030",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "HIGH_RISK",
+  "components": [
+    {
+      "component_name": "RHEL 8",
+      "component_category": "Operating System",
+      "version_identified": "RHEL 8",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Go 1.19",
+      "component_category": "Programming Language",
+      "version_identified": "Go 1.19",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Glassfish 3.0",
+      "component_category": "Application Server",
+      "version_identified": "Glassfish 3.0",
+      "lifecycle_status": "EOL",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "MySQL 5.7",
+      "component_category": "Database Engine",
+      "version_identified": "MySQL 5.7",
+      "lifecycle_status": "EOL",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "RHEL 8",
+      "status": "CURRENT_VERSION"
+    },
+    "programming_language": {
+      "name": "Go 1.19",
+      "status": "OUTDATED"
+    },
+    "application_server": {
+      "name": "Glassfish 3.0",
+      "status": "EOL"
+    },
+    "database_engine": {
+      "name": "MySQL 5.7",
+      "status": "EOL"
+    }
+  }
+}

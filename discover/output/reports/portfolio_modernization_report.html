@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio Modernization Report</title>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         background: #f4f6f9; color: #2c3e50; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  h1 { font-size: 2rem; color: #1a252f; margin-bottom: 8px; }
+  h2 { font-size: 1.4rem; color: #2c3e50; margin: 24px 0 12px; border-bottom: 2px solid #3498db; padding-bottom: 6px; }
+  h3 { font-size: 1.1rem; color: #34495e; margin: 16px 0 8px; }
+  .subtitle { color: #7f8c8d; font-size: 0.95rem; margin-bottom: 24px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0; }
+  .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+          flex: 1; min-width: 180px; }
+  .card .label { font-size: 0.8rem; color: #7f8c8d; text-transform: uppercase; letter-spacing: .5px; }
+  .card .value { font-size: 1.8rem; font-weight: 700; color: #2c3e50; margin-top: 4px; }
+  .card .sub { font-size: 0.85rem; color: #95a5a6; margin-top: 2px; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem;
+           font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+  .badge-EOL          { background: #fde8e8; color: #c0392b; }
+  .badge-OUTDATED     { background: #fef9e7; color: #d35400; }
+  .badge-CURRENT_VERSION { background: #eafaf1; color: #1e8449; }
+  .badge-NO_KNOWLEDGE { background: #f4f6f9; color: #7f8c8d; }
+  .badge-APPLICABLE   { background: #ebf5fb; color: #1a5276; }
+  .badge-FULFILLED    { background: #eafaf1; color: #1e8449; }
+  .badge-NOT_APPLICABLE { background: #f4f6f9; color: #7f8c8d; }
+  .badge-LACK_OF_DATA { background: #fef9e7; color: #9b7e00; }
+  .badge-HIGH_RISK    { background: #fde8e8; color: #c0392b; }
+  .badge-MEDIUM_RISK  { background: #fef9e7; color: #d35400; }
+  .badge-LOW_RISK     { background: #eafaf1; color: #1e8449; }
+  .badge-High   { background: #fde8e8; color: #c0392b; }
+  .badge-Medium { background: #fef9e7; color: #d35400; }
+  .badge-Low    { background: #eafaf1; color: #1e8449; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #fff;
+          border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th { background: #2c3e50; color: #ecf0f1; padding: 10px 12px; text-align: left; }
+  td { padding: 9px 12px; border-bottom: 1px solid #ecf0f1; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8f9fa; }
+  .chart-bar { display: inline-block; height: 16px; background: #3498db; border-radius: 3px;
+               vertical-align: middle; min-width: 4px; }
+  .app-card { background: #fff; border-radius: 10px; padding: 16px; margin: 12px 0;
+              box-shadow: 0 2px 6px rgba(0,0,0,.07); border-left: 4px solid #3498db; }
+  .app-card.high-risk { border-left-color: #e74c3c; }
+  .app-card.medium-risk { border-left-color: #f39c12; }
+  .app-card.low-risk { border-left-color: #2ecc71; }
+  .mermaid-wrap { background: #fff; border-radius: 10px; padding: 20px;
+                  box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 16px 0; }
+  .section { background: #fff; border-radius: 10px; padding: 20px;
+             box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 16px 0; }
+  .flex2 { display: flex; gap: 16px; flex-wrap: wrap; }
+  .flex2 > * { flex: 1; min-width: 300px; }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+</head>
+<body>
+<div class="container">
+  <h1>Portfolio Modernization Report</h1>
+  <p class="subtitle">Analysis Date: 2025-01-01T00:00:00Z &nbsp;|&nbsp; In-Scope Applications: 26</p>
+
+  <div class="cards">
+    <div class="card"><div class="label">In-Scope Apps</div><div class="value">26</div></div>
+    <div class="card"><div class="label">Total Migration Cost</div><div class="value" style="font-size:1.3rem">$7,794,140</div></div>
+    <div class="card"><div class="label">Total Yearly Savings</div><div class="value" style="font-size:1.3rem">$4,506,700</div></div>
+    <div class="card"><div class="label">3-Year Portfolio ROI</div><div class="value">73.5%</div></div>
+    <div class="card"><div class="label">Payback Period</div><div class="value">1.73 yrs</div></div>
+  </div>
+
+  <div class="flex2">
+    <div class="mermaid-wrap"><div class="mermaid">pie title Portfolio Risk
+"MEDIUM_RISK" : 7
+"HIGH_RISK" : 17
+"LOW_RISK" : 2
+</div></div>
+    <div class="mermaid-wrap"><div class="mermaid">
+xychart-beta
+  title "Top Scenario Applicability Count"
+  x-axis ["Managed DB" "Managed ARM DB" "ARM CPU Migrati" "Switch to Postg" "Containerizatio" "OS Security Pat" "Switch to Linux" "App Server Repl"]
+  y-axis "Apps" 0 --> 25
+  bar [23 23 18 17 16 13 13 13]
+</div></div>
+  </div>
+
+  <h2>Scenario Applicability Frequency</h2>
+  <div class="section">
+    <table><tr><th>Scenario</th><th>Count (out of 26 apps)</th></tr>
+    
+      <tr>
+        <td style="width:200px;white-space:nowrap">OS Security Patch</td>
+        <td><div class="chart-bar" style="width:113px"></div> 13</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Switch to Linux</td>
+        <td><div class="chart-bar" style="width:113px"></div> 13</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">ARM CPU Migration</td>
+        <td><div class="chart-bar" style="width:156px"></div> 18</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">App Server Replacement</td>
+        <td><div class="chart-bar" style="width:113px"></div> 13</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Cloud Deployment</td>
+        <td><div class="chart-bar" style="width:104px"></div> 12</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Containerization</td>
+        <td><div class="chart-bar" style="width:139px"></div> 16</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Refactor/Decouple</td>
+        <td><div class="chart-bar" style="width:113px"></div> 13</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">DB Upgrade</td>
+        <td><div class="chart-bar" style="width:104px"></div> 12</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Managed DB</td>
+        <td><div class="chart-bar" style="width:200px"></div> 23</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Managed ARM DB</td>
+        <td><div class="chart-bar" style="width:200px"></div> 23</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Serverless DB</td>
+        <td><div class="chart-bar" style="width:8px"></div> 1</td>
+      </tr>
+      <tr>
+        <td style="width:200px;white-space:nowrap">Switch to PostgreSQL</td>
+        <td><div class="chart-bar" style="width:147px"></div> 17</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>Business Case Summary</h2>
+  <div class="section">
+    <table>
+      <tr><th>App ID</th><th>Name</th><th>Risk</th><th>Complexity</th><th>Migration Cost</th><th>Yearly Savings</th><th>3yr ROI</th><th>Payback</th></tr>
+      <tr>
+        <td>app001</td><td>ERPApp-001</td>
+        <td><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$468,360</td>
+        <td>$283,400</td>
+        <td>81.5%</td>
+        <td>1.65 yrs</td>
+      </tr>
+      <tr>
+        <td>app002</td><td>CRMApp-002</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$169,200</td>
+        <td>$128,500</td>
+        <td>127.8%</td>
+        <td>1.32 yrs</td>
+      </tr>
+      <tr>
+        <td>app003</td><td>AnalyticsApp-003</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$343,200</td>
+        <td>$188,500</td>
+        <td>64.8%</td>
+        <td>1.82 yrs</td>
+      </tr>
+      <tr>
+        <td>app004</td><td>HRApp-004</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$67,560</td>
+        <td>$46,900</td>
+        <td>108.3%</td>
+        <td>1.44 yrs</td>
+      </tr>
+      <tr>
+        <td>app006</td><td>SupportApp-006</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$163,200</td>
+        <td>$138,500</td>
+        <td>154.6%</td>
+        <td>1.18 yrs</td>
+      </tr>
+      <tr>
+        <td>app008</td><td>InventoryApp-008</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-High">High</span></td>
+        <td>$601,950</td>
+        <td>$295,900</td>
+        <td>47.5%</td>
+        <td>2.03 yrs</td>
+      </tr>
+      <tr>
+        <td>app010</td><td>PayrollApp-010</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Low">Low</span></td>
+        <td>$140,300</td>
+        <td>$131,400</td>
+        <td>181.0%</td>
+        <td>1.07 yrs</td>
+      </tr>
+      <tr>
+        <td>app011</td><td>RouteOptApp-011</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$343,200</td>
+        <td>$188,500</td>
+        <td>64.8%</td>
+        <td>1.82 yrs</td>
+      </tr>
+      <tr>
+        <td>app012</td><td>IoTSensorApp-012</td>
+        <td><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$30,360</td>
+        <td>$26,400</td>
+        <td>160.9%</td>
+        <td>1.15 yrs</td>
+      </tr>
+      <tr>
+        <td>app013</td><td>SecurityApp-013</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-High">High</span></td>
+        <td>$601,500</td>
+        <td>$295,500</td>
+        <td>47.4%</td>
+        <td>2.04 yrs</td>
+      </tr>
+      <tr>
+        <td>app014</td><td>DocumentApp-014</td>
+        <td><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$168,360</td>
+        <td>$131,400</td>
+        <td>134.1%</td>
+        <td>1.28 yrs</td>
+      </tr>
+      <tr>
+        <td>app015</td><td>ReportingApp-015</td>
+        <td><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></td>
+        <td><span class="badge badge-Low">Low</span></td>
+        <td>$105,300</td>
+        <td>$101,400</td>
+        <td>188.9%</td>
+        <td>1.04 yrs</td>
+      </tr>
+      <tr>
+        <td>app016</td><td>MobileApp-016</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$361,200</td>
+        <td>$193,500</td>
+        <td>60.7%</td>
+        <td>1.87 yrs</td>
+      </tr>
+      <tr>
+        <td>app017</td><td>BackupApp-017</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-High">High</span></td>
+        <td>$241,500</td>
+        <td>$155,500</td>
+        <td>93.2%</td>
+        <td>1.55 yrs</td>
+      </tr>
+      <tr>
+        <td>app018</td><td>VendorApp-018</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-High">High</span></td>
+        <td>$579,000</td>
+        <td>$290,500</td>
+        <td>50.5%</td>
+        <td>1.99 yrs</td>
+      </tr>
+      <tr>
+        <td>app019</td><td>QualityApp-019</td>
+        <td><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$474,000</td>
+        <td>$284,000</td>
+        <td>79.7%</td>
+        <td>1.67 yrs</td>
+      </tr>
+      <tr>
+        <td>app020</td><td>TrainingApp-020</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$193,560</td>
+        <td>$153,900</td>
+        <td>138.5%</td>
+        <td>1.26 yrs</td>
+      </tr>
+      <tr>
+        <td>app021</td><td>FleetApp-021</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$180,360</td>
+        <td>$143,400</td>
+        <td>138.5%</td>
+        <td>1.26 yrs</td>
+      </tr>
+      <tr>
+        <td>app022</td><td>ComplianceApp-022</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-High">High</span></td>
+        <td>$421,500</td>
+        <td>$179,500</td>
+        <td>27.8%</td>
+        <td>2.35 yrs</td>
+      </tr>
+      <tr>
+        <td>app023</td><td>ChatbotApp-023</td>
+        <td><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$306,000</td>
+        <td>$151,000</td>
+        <td>48.0%</td>
+        <td>2.03 yrs</td>
+      </tr>
+      <tr>
+        <td>app024</td><td>AuditApp-024</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$180,360</td>
+        <td>$143,400</td>
+        <td>138.5%</td>
+        <td>1.26 yrs</td>
+      </tr>
+      <tr>
+        <td>app025</td><td>PortalApp-025</td>
+        <td><span class="badge badge-LOW_RISK">LOW_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$18,360</td>
+        <td>$16,400</td>
+        <td>168.0%</td>
+        <td>1.12 yrs</td>
+      </tr>
+      <tr>
+        <td>app026</td><td>LegacyFinApp-026</td>
+        <td><span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span></td>
+        <td><span class="badge badge-High">High</span></td>
+        <td>$600,450</td>
+        <td>$293,400</td>
+        <td>46.6%</td>
+        <td>2.05 yrs</td>
+      </tr>
+      <tr>
+        <td>app027</td><td>DataWarehouseApp-027</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-High">High</span></td>
+        <td>$609,000</td>
+        <td>$296,500</td>
+        <td>46.1%</td>
+        <td>2.05 yrs</td>
+      </tr>
+      <tr>
+        <td>app028</td><td>NotificationApp-028</td>
+        <td><span class="badge badge-LOW_RISK">LOW_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$48,360</td>
+        <td>$31,400</td>
+        <td>94.8%</td>
+        <td>1.54 yrs</td>
+      </tr>
+      <tr>
+        <td>app030</td><td>APIGatewayApp-030</td>
+        <td><span class="badge badge-HIGH_RISK">HIGH_RISK</span></td>
+        <td><span class="badge badge-Medium">Medium</span></td>
+        <td>$378,000</td>
+        <td>$218,000</td>
+        <td>73.0%</td>
+        <td>1.73 yrs</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>Per-Application Cards</h2>
+  
+    <div class="app-card high-risk">
+      <strong>DataWarehouseApp-027</strong> (app027)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-High">High</span>
+      &nbsp;&nbsp;Cost: <strong>$609,000</strong>
+      &nbsp;Savings: <strong>$296,500/yr</strong>
+      &nbsp;ROI: <strong>46.1%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>InventoryApp-008</strong> (app008)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-High">High</span>
+      &nbsp;&nbsp;Cost: <strong>$601,950</strong>
+      &nbsp;Savings: <strong>$295,900/yr</strong>
+      &nbsp;ROI: <strong>47.5%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>SecurityApp-013</strong> (app013)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-High">High</span>
+      &nbsp;&nbsp;Cost: <strong>$601,500</strong>
+      &nbsp;Savings: <strong>$295,500/yr</strong>
+      &nbsp;ROI: <strong>47.4%</strong>
+    </div>
+    <div class="app-card medium-risk">
+      <strong>LegacyFinApp-026</strong> (app026)
+      &nbsp;<span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span>&nbsp;<span class="badge badge-High">High</span>
+      &nbsp;&nbsp;Cost: <strong>$600,450</strong>
+      &nbsp;Savings: <strong>$293,400/yr</strong>
+      &nbsp;ROI: <strong>46.6%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>VendorApp-018</strong> (app018)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-High">High</span>
+      &nbsp;&nbsp;Cost: <strong>$579,000</strong>
+      &nbsp;Savings: <strong>$290,500/yr</strong>
+      &nbsp;ROI: <strong>50.5%</strong>
+    </div>
+    <div class="app-card medium-risk">
+      <strong>QualityApp-019</strong> (app019)
+      &nbsp;<span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$474,000</strong>
+      &nbsp;Savings: <strong>$284,000/yr</strong>
+      &nbsp;ROI: <strong>79.7%</strong>
+    </div>
+    <div class="app-card medium-risk">
+      <strong>ERPApp-001</strong> (app001)
+      &nbsp;<span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$468,360</strong>
+      &nbsp;Savings: <strong>$283,400/yr</strong>
+      &nbsp;ROI: <strong>81.5%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>ComplianceApp-022</strong> (app022)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-High">High</span>
+      &nbsp;&nbsp;Cost: <strong>$421,500</strong>
+      &nbsp;Savings: <strong>$179,500/yr</strong>
+      &nbsp;ROI: <strong>27.8%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>APIGatewayApp-030</strong> (app030)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$378,000</strong>
+      &nbsp;Savings: <strong>$218,000/yr</strong>
+      &nbsp;ROI: <strong>73.0%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>MobileApp-016</strong> (app016)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$361,200</strong>
+      &nbsp;Savings: <strong>$193,500/yr</strong>
+      &nbsp;ROI: <strong>60.7%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>AnalyticsApp-003</strong> (app003)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$343,200</strong>
+      &nbsp;Savings: <strong>$188,500/yr</strong>
+      &nbsp;ROI: <strong>64.8%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>RouteOptApp-011</strong> (app011)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$343,200</strong>
+      &nbsp;Savings: <strong>$188,500/yr</strong>
+      &nbsp;ROI: <strong>64.8%</strong>
+    </div>
+    <div class="app-card medium-risk">
+      <strong>ChatbotApp-023</strong> (app023)
+      &nbsp;<span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$306,000</strong>
+      &nbsp;Savings: <strong>$151,000/yr</strong>
+      &nbsp;ROI: <strong>48.0%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>BackupApp-017</strong> (app017)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-High">High</span>
+      &nbsp;&nbsp;Cost: <strong>$241,500</strong>
+      &nbsp;Savings: <strong>$155,500/yr</strong>
+      &nbsp;ROI: <strong>93.2%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>TrainingApp-020</strong> (app020)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$193,560</strong>
+      &nbsp;Savings: <strong>$153,900/yr</strong>
+      &nbsp;ROI: <strong>138.5%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>FleetApp-021</strong> (app021)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$180,360</strong>
+      &nbsp;Savings: <strong>$143,400/yr</strong>
+      &nbsp;ROI: <strong>138.5%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>AuditApp-024</strong> (app024)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$180,360</strong>
+      &nbsp;Savings: <strong>$143,400/yr</strong>
+      &nbsp;ROI: <strong>138.5%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>CRMApp-002</strong> (app002)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$169,200</strong>
+      &nbsp;Savings: <strong>$128,500/yr</strong>
+      &nbsp;ROI: <strong>127.8%</strong>
+    </div>
+    <div class="app-card medium-risk">
+      <strong>DocumentApp-014</strong> (app014)
+      &nbsp;<span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$168,360</strong>
+      &nbsp;Savings: <strong>$131,400/yr</strong>
+      &nbsp;ROI: <strong>134.1%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>SupportApp-006</strong> (app006)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$163,200</strong>
+      &nbsp;Savings: <strong>$138,500/yr</strong>
+      &nbsp;ROI: <strong>154.6%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>PayrollApp-010</strong> (app010)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Low">Low</span>
+      &nbsp;&nbsp;Cost: <strong>$140,300</strong>
+      &nbsp;Savings: <strong>$131,400/yr</strong>
+      &nbsp;ROI: <strong>181.0%</strong>
+    </div>
+    <div class="app-card medium-risk">
+      <strong>ReportingApp-015</strong> (app015)
+      &nbsp;<span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span>&nbsp;<span class="badge badge-Low">Low</span>
+      &nbsp;&nbsp;Cost: <strong>$105,300</strong>
+      &nbsp;Savings: <strong>$101,400/yr</strong>
+      &nbsp;ROI: <strong>188.9%</strong>
+    </div>
+    <div class="app-card high-risk">
+      <strong>HRApp-004</strong> (app004)
+      &nbsp;<span class="badge badge-HIGH_RISK">HIGH_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$67,560</strong>
+      &nbsp;Savings: <strong>$46,900/yr</strong>
+      &nbsp;ROI: <strong>108.3%</strong>
+    </div>
+    <div class="app-card low-risk">
+      <strong>NotificationApp-028</strong> (app028)
+      &nbsp;<span class="badge badge-LOW_RISK">LOW_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$48,360</strong>
+      &nbsp;Savings: <strong>$31,400/yr</strong>
+      &nbsp;ROI: <strong>94.8%</strong>
+    </div>
+    <div class="app-card medium-risk">
+      <strong>IoTSensorApp-012</strong> (app012)
+      &nbsp;<span class="badge badge-MEDIUM_RISK">MEDIUM_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$30,360</strong>
+      &nbsp;Savings: <strong>$26,400/yr</strong>
+      &nbsp;ROI: <strong>160.9%</strong>
+    </div>
+    <div class="app-card low-risk">
+      <strong>PortalApp-025</strong> (app025)
+      &nbsp;<span class="badge badge-LOW_RISK">LOW_RISK</span>&nbsp;<span class="badge badge-Medium">Medium</span>
+      &nbsp;&nbsp;Cost: <strong>$18,360</strong>
+      &nbsp;Savings: <strong>$16,400/yr</strong>
+      &nbsp;ROI: <strong>168.0%</strong>
+    </div>
+
+</div>
+</body></html>

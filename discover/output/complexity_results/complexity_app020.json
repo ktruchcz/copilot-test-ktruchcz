@@ -1,0 +1,48 @@
+{
+  "app_id": "app020",
+  "app_name": "TrainingApp-020",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_score": 5,
+  "complexity_label": "Medium",
+  "cost_multiplier": 1.2,
+  "raw_score": 8,
+  "max_raw_score": 19,
+  "factors": {
+    "server_count": {
+      "value": 1,
+      "score": 1
+    },
+    "external_interfaces": {
+      "value": 7,
+      "score": 1
+    },
+    "api_endpoints": {
+      "value": 14,
+      "score": 1
+    },
+    "business_criticality": {
+      "value": "Low",
+      "score": 0
+    },
+    "tech_debt_components": {
+      "value": 4,
+      "score": 3
+    },
+    "deployment_type": {
+      "value": "AWS",
+      "score": 0
+    },
+    "database_storage_gb": {
+      "value": 600.0,
+      "score": 1
+    },
+    "ci_cd_present": {
+      "value": "Yes",
+      "score": 0
+    },
+    "is_containerized": {
+      "value": "No",
+      "score": 1
+    }
+  }
+}

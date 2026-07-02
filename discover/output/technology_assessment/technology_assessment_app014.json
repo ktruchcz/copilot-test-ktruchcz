@@ -1,0 +1,54 @@
+{
+  "app_id": "app014",
+  "app_name": "DocumentApp-014",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "MEDIUM_RISK",
+  "components": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_category": "Operating System",
+      "version_identified": "Windows Server 2019",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "C# .NET 6",
+      "component_category": "Programming Language",
+      "version_identified": "C# .NET 6",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_category": "Application Server",
+      "version_identified": "Microsoft IIS 10.0",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "MySQL 8.0",
+      "component_category": "Database Engine",
+      "version_identified": "MySQL 8.0",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION"
+    },
+    "programming_language": {
+      "name": "C# .NET 6",
+      "status": "OUTDATED"
+    },
+    "application_server": {
+      "name": "Microsoft IIS 10.0",
+      "status": "CURRENT_VERSION"
+    },
+    "database_engine": {
+      "name": "MySQL 8.0",
+      "status": "CURRENT_VERSION"
+    }
+  }
+}

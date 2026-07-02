@@ -1,0 +1,81 @@
+{
+  "app_id": "app011",
+  "app_name": "RouteOptApp-011",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_label": "Medium",
+  "cost_multiplier": 1.2,
+  "scenarios": [
+    {
+      "scenario_id": "os_update_security_patch",
+      "status": "APPLICABLE",
+      "migration_cost_base": 1000,
+      "yearly_savings_base": 500
+    },
+    {
+      "scenario_id": "switch_to_standard_linux_os",
+      "status": "NOT_APPLICABLE",
+      "migration_cost_base": 300,
+      "yearly_savings_base": 400
+    },
+    {
+      "scenario_id": "switch_to_arm_cpu",
+      "status": "APPLICABLE",
+      "migration_cost_base": 5000,
+      "yearly_savings_base": 1000
+    },
+    {
+      "scenario_id": "application_server_replacement",
+      "status": "APPLICABLE",
+      "migration_cost_base": 10000,
+      "yearly_savings_base": 12000
+    },
+    {
+      "scenario_id": "app_deployment_to_cloud",
+      "status": "FULFILLED",
+      "migration_cost_base": 5000,
+      "yearly_savings_base": 3000
+    },
+    {
+      "scenario_id": "app_containerization",
+      "status": "FULFILLED",
+      "migration_cost_base": 100000,
+      "yearly_savings_base": 100000
+    },
+    {
+      "scenario_id": "app_refactor_decoupling",
+      "status": "APPLICABLE",
+      "migration_cost_base": 250000,
+      "yearly_savings_base": 150000
+    },
+    {
+      "scenario_id": "upgrade_legacy_databases",
+      "status": "APPLICABLE",
+      "migration_cost_base": 10000,
+      "yearly_savings_base": 10000
+    },
+    {
+      "scenario_id": "switch_to_managed_db",
+      "status": "APPLICABLE",
+      "migration_cost_base": 5000,
+      "yearly_savings_base": 10000
+    },
+    {
+      "scenario_id": "managed_arm_db",
+      "status": "APPLICABLE",
+      "migration_cost_base": 5000,
+      "yearly_savings_base": 5000
+    },
+    {
+      "scenario_id": "serverless_db_migration",
+      "status": "NOT_APPLICABLE",
+      "migration_cost_base": 5000,
+      "yearly_savings_base": 15000
+    },
+    {
+      "scenario_id": "switch_db_engine_postgresql",
+      "status": "NOT_APPLICABLE",
+      "migration_cost_base": 25000,
+      "yearly_savings_base": 15000
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "app_id": "app004",
+  "app_name": "HRApp-004",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "cost_multiplier": 1.2,
+  "raw_score": 11,
+  "max_raw_score": 19,
+  "factors": {
+    "server_count": {
+      "value": 2,
+      "score": 2
+    },
+    "external_interfaces": {
+      "value": 6,
+      "score": 1
+    },
+    "api_endpoints": {
+      "value": 12,
+      "score": 1
+    },
+    "business_criticality": {
+      "value": "High",
+      "score": 2
+    },
+    "tech_debt_components": {
+      "value": 3,
+      "score": 3
+    },
+    "deployment_type": {
+      "value": "AWS, On-premise",
+      "score": 1
+    },
+    "database_storage_gb": {
+      "value": 750.0,
+      "score": 1
+    },
+    "ci_cd_present": {
+      "value": "Yes",
+      "score": 0
+    },
+    "is_containerized": {
+      "value": "Yes",
+      "score": 0
+    }
+  }
+}

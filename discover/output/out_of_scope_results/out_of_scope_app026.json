@@ -1,0 +1,11 @@
+{
+  "app_id": "app026",
+  "app_name": "LegacyFinApp-026",
+  "out_of_scope": false,
+  "reasons": [
+    "In scope for assessment"
+  ],
+  "application_status": "Production",
+  "solution_type": "Custom made",
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

@@ -1,0 +1,54 @@
+{
+  "app_id": "app019",
+  "app_name": "QualityApp-019",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "MEDIUM_RISK",
+  "components": [
+    {
+      "component_name": "RHEL 8",
+      "component_category": "Operating System",
+      "version_identified": "RHEL 8",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Python 3.8",
+      "component_category": "Programming Language",
+      "version_identified": "Python 3.8",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Apache Tomcat  8.0",
+      "component_category": "Application Server",
+      "version_identified": "Apache Tomcat  8.0",
+      "lifecycle_status": "NO_KNOWLEDGE",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "MySQL 8.0",
+      "component_category": "Database Engine",
+      "version_identified": "MySQL 8.0",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "RHEL 8",
+      "status": "CURRENT_VERSION"
+    },
+    "programming_language": {
+      "name": "Python 3.8",
+      "status": "OUTDATED"
+    },
+    "application_server": {
+      "name": "Apache Tomcat  8.0",
+      "status": "NO_KNOWLEDGE"
+    },
+    "database_engine": {
+      "name": "MySQL 8.0",
+      "status": "CURRENT_VERSION"
+    }
+  }
+}

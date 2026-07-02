@@ -1,0 +1,54 @@
+{
+  "app_id": "app010",
+  "app_name": "PayrollApp-010",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "HIGH_RISK",
+  "components": [
+    {
+      "component_name": "Windows Server 2019",
+      "component_category": "Operating System",
+      "version_identified": "Windows Server 2019",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Ruby 2.7",
+      "component_category": "Programming Language",
+      "version_identified": "Ruby 2.7",
+      "lifecycle_status": "EOL",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Microsoft IIS 10.0",
+      "component_category": "Application Server",
+      "version_identified": "Microsoft IIS 10.0",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "MySQL 8.0",
+      "component_category": "Database Engine",
+      "version_identified": "MySQL 8.0",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "Windows Server 2019",
+      "status": "CURRENT_VERSION"
+    },
+    "programming_language": {
+      "name": "Ruby 2.7",
+      "status": "EOL"
+    },
+    "application_server": {
+      "name": "Microsoft IIS 10.0",
+      "status": "CURRENT_VERSION"
+    },
+    "database_engine": {
+      "name": "MySQL 8.0",
+      "status": "CURRENT_VERSION"
+    }
+  }
+}

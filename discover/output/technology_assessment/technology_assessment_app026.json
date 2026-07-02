@@ -1,0 +1,47 @@
+{
+  "app_id": "app026",
+  "app_name": "LegacyFinApp-026",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "MEDIUM_RISK",
+  "components": [
+    {
+      "component_name": "AIX 7.2",
+      "component_category": "Operating System",
+      "version_identified": "AIX 7.2",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "FORTRAN 2018",
+      "component_category": "Programming Language",
+      "version_identified": "FORTRAN 2018",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "DB2",
+      "component_category": "Database Engine",
+      "version_identified": "DB2",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "AIX 7.2",
+      "status": "CURRENT_VERSION"
+    },
+    "programming_language": {
+      "name": "FORTRAN 2018",
+      "status": "OUTDATED"
+    },
+    "application_server": {
+      "name": null,
+      "status": null
+    },
+    "database_engine": {
+      "name": "DB2",
+      "status": "OUTDATED"
+    }
+  }
+}

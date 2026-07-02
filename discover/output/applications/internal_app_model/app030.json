@@ -1,0 +1,45 @@
+{
+  "app_id": "app030",
+  "app_name": "APIGatewayApp-030",
+  "app_description": "Modern API gateway for managing microservices communication and external API access",
+  "solution_type": "Open Source",
+  "business_criticality": "High",
+  "application_status": "Production",
+  "deployment_type": "AWS",
+  "data_classification": "Internal",
+  "business_unit": "IT",
+  "business_capabilities": [
+    "API Management",
+    "Service Mesh",
+    "Security Gateway"
+  ],
+  "user_count": 1800,
+  "operating_system": "RHEL 8",
+  "programming_language": "Go 1.19",
+  "application_server": "Glassfish 3.0",
+  "application_architecture": "3-Tier",
+  "is_containerized": "Yes",
+  "environment_count": 4,
+  "server_instances": [
+    "sv44",
+    "sv45"
+  ],
+  "cpu_cores": 1,
+  "memory_gb": 4,
+  "production_environments": [
+    "prod01",
+    "prod03"
+  ],
+  "ci_cd_present": "Yes",
+  "api_endpoint_count": 50,
+  "external_interface_count": 30,
+  "database_engine": "MySQL 5.7",
+  "database_storage_gb": 80,
+  "database_license_required": "No",
+  "logging_solution": "CloudWatch",
+  "monitoring_tool": "Prometheus",
+  "additional_attributes": {
+    "decomission_date": "not planned",
+    "physical_database_server_instance": "db0034"
+  }
+}

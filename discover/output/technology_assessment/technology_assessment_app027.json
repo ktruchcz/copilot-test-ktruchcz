@@ -1,0 +1,54 @@
+{
+  "app_id": "app027",
+  "app_name": "DataWarehouseApp-027",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "HIGH_RISK",
+  "components": [
+    {
+      "component_name": "RHEL 7",
+      "component_category": "Operating System",
+      "version_identified": "RHEL 7",
+      "lifecycle_status": "EOL",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Java 11",
+      "component_category": "Programming Language",
+      "version_identified": "Java 11",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Websphere 8.5",
+      "component_category": "Application Server",
+      "version_identified": "Websphere 8.5",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "SQL Server 2022",
+      "component_category": "Database Engine",
+      "version_identified": "SQL Server 2022",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "RHEL 7",
+      "status": "EOL"
+    },
+    "programming_language": {
+      "name": "Java 11",
+      "status": "OUTDATED"
+    },
+    "application_server": {
+      "name": "Websphere 8.5",
+      "status": "OUTDATED"
+    },
+    "database_engine": {
+      "name": "SQL Server 2022",
+      "status": "CURRENT_VERSION"
+    }
+  }
+}

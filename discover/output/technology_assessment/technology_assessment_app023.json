@@ -1,0 +1,54 @@
+{
+  "app_id": "app023",
+  "app_name": "ChatbotApp-023",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "MEDIUM_RISK",
+  "components": [
+    {
+      "component_name": "RHEL 8",
+      "component_category": "Operating System",
+      "version_identified": "RHEL 8",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Node.js 18",
+      "component_category": "Programming Language",
+      "version_identified": "Node.js 18",
+      "lifecycle_status": "OUTDATED",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Apache Tomcat. 7.4",
+      "component_category": "Application Server",
+      "version_identified": "Apache Tomcat. 7.4",
+      "lifecycle_status": "NO_KNOWLEDGE",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "MongoDB",
+      "component_category": "Database Engine",
+      "version_identified": "MongoDB",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "RHEL 8",
+      "status": "CURRENT_VERSION"
+    },
+    "programming_language": {
+      "name": "Node.js 18",
+      "status": "OUTDATED"
+    },
+    "application_server": {
+      "name": "Apache Tomcat. 7.4",
+      "status": "NO_KNOWLEDGE"
+    },
+    "database_engine": {
+      "name": "MongoDB",
+      "status": "CURRENT_VERSION"
+    }
+  }
+}

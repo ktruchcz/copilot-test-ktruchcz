@@ -1,0 +1,48 @@
+{
+  "app_id": "app016",
+  "app_name": "MobileApp-016",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "cost_multiplier": 1.2,
+  "raw_score": 10,
+  "max_raw_score": 19,
+  "factors": {
+    "server_count": {
+      "value": 2,
+      "score": 2
+    },
+    "external_interfaces": {
+      "value": 10,
+      "score": 1
+    },
+    "api_endpoints": {
+      "value": 30,
+      "score": 2
+    },
+    "business_criticality": {
+      "value": "Medium",
+      "score": 1
+    },
+    "tech_debt_components": {
+      "value": 2,
+      "score": 2
+    },
+    "deployment_type": {
+      "value": "AWS",
+      "score": 0
+    },
+    "database_storage_gb": {
+      "value": 2000.0,
+      "score": 2
+    },
+    "ci_cd_present": {
+      "value": "Yes",
+      "score": 0
+    },
+    "is_containerized": {
+      "value": "Yes",
+      "score": 0
+    }
+  }
+}

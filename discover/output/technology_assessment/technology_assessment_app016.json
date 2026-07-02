@@ -1,0 +1,54 @@
+{
+  "app_id": "app016",
+  "app_name": "MobileApp-016",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "overall_risk": "HIGH_RISK",
+  "components": [
+    {
+      "component_name": "RHEL 7",
+      "component_category": "Operating System",
+      "version_identified": "RHEL 7",
+      "lifecycle_status": "EOL",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "React Native",
+      "component_category": "Programming Language",
+      "version_identified": "React Native",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "Payara 4.0",
+      "component_category": "Application Server",
+      "version_identified": "Payara 4.0",
+      "lifecycle_status": "EOL",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    },
+    {
+      "component_name": "SQL Server 2019",
+      "component_category": "Database Engine",
+      "version_identified": "SQL Server 2019",
+      "lifecycle_status": "CURRENT_VERSION",
+      "analysis_timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "technology_summary": {
+    "operating_system": {
+      "name": "RHEL 7",
+      "status": "EOL"
+    },
+    "programming_language": {
+      "name": "React Native",
+      "status": "CURRENT_VERSION"
+    },
+    "application_server": {
+      "name": "Payara 4.0",
+      "status": "EOL"
+    },
+    "database_engine": {
+      "name": "SQL Server 2019",
+      "status": "CURRENT_VERSION"
+    }
+  }
+}

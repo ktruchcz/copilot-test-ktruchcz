@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRMApp-002 Modernization Report</title>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         background: #f4f6f9; color: #2c3e50; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  h1 { font-size: 2rem; color: #1a252f; margin-bottom: 8px; }
+  h2 { font-size: 1.4rem; color: #2c3e50; margin: 24px 0 12px; border-bottom: 2px solid #3498db; padding-bottom: 6px; }
+  h3 { font-size: 1.1rem; color: #34495e; margin: 16px 0 8px; }
+  .subtitle { color: #7f8c8d; font-size: 0.95rem; margin-bottom: 24px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0; }
+  .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+          flex: 1; min-width: 180px; }
+  .card .label { font-size: 0.8rem; color: #7f8c8d; text-transform: uppercase; letter-spacing: .5px; }
+  .card .value { font-size: 1.8rem; font-weight: 700; color: #2c3e50; margin-top: 4px; }
+  .card .sub { font-size: 0.85rem; color: #95a5a6; margin-top: 2px; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem;
+           font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+  .badge-EOL          { background: #fde8e8; color: #c0392b; }
+  .badge-OUTDATED     { background: #fef9e7; color: #d35400; }
+  .badge-CURRENT_VERSION { background: #eafaf1; color: #1e8449; }
+  .badge-NO_KNOWLEDGE { background: #f4f6f9; color: #7f8c8d; }
+  .badge-APPLICABLE   { background: #ebf5fb; color: #1a5276; }
+  .badge-FULFILLED    { background: #eafaf1; color: #1e8449; }
+  .badge-NOT_APPLICABLE { background: #f4f6f9; color: #7f8c8d; }
+  .badge-LACK_OF_DATA { background: #fef9e7; color: #9b7e00; }
+  .badge-HIGH_RISK    { background: #fde8e8; color: #c0392b; }
+  .badge-MEDIUM_RISK  { background: #fef9e7; color: #d35400; }
+  .badge-LOW_RISK     { background: #eafaf1; color: #1e8449; }
+  .badge-High   { background: #fde8e8; color: #c0392b; }
+  .badge-Medium { background: #fef9e7; color: #d35400; }
+  .badge-Low    { background: #eafaf1; color: #1e8449; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #fff;
+          border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th { background: #2c3e50; color: #ecf0f1; padding: 10px 12px; text-align: left; }
+  td { padding: 9px 12px; border-bottom: 1px solid #ecf0f1; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8f9fa; }
+  .chart-bar { display: inline-block; height: 16px; background: #3498db; border-radius: 3px;
+               vertical-align: middle; min-width: 4px; }
+  .app-card { background: #fff; border-radius: 10px; padding: 16px; margin: 12px 0;
+              box-shadow: 0 2px 6px rgba(0,0,0,.07); border-left: 4px solid #3498db; }
+  .app-card.high-risk { border-left-color: #e74c3c; }
+  .app-card.medium-risk { border-left-color: #f39c12; }
+  .app-card.low-risk { border-left-color: #2ecc71; }
+  .mermaid-wrap { background: #fff; border-radius: 10px; padding: 20px;
+                  box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 16px 0; }
+  .section { background: #fff; border-radius: 10px; padding: 20px;
+             box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 16px 0; }
+  .flex2 { display: flex; gap: 16px; flex-wrap: wrap; }
+  .flex2 > * { flex: 1; min-width: 300px; }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+</head>
+<body>
+<div class="container">
+  <h1>CRMApp-002</h1>
+  <p class="subtitle">app002 &nbsp;|&nbsp; Marketing &nbsp;|&nbsp; Customer relationship management system for tracking leads, opportunities, and customer interactions</p>
+
+  <div class="cards">
+    <div class="card"><div class="label">Criticality</div><div class="value" style="font-size:1.2rem"><span class="badge badge-Medium">Medium</span></div></div>
+    <div class="card"><div class="label">Overall Risk</div><div class="value" style="font-size:1.2rem"><span class="badge badge-HIGH_RISK">HIGH_RISK</span></div></div>
+    <div class="card"><div class="label">Complexity</div><div class="value">6/10</div><div class="sub"><span class="badge badge-Medium">Medium</span></div></div>
+    <div class="card"><div class="label">Migration Cost</div><div class="value" style="font-size:1.4rem">$169,200</div></div>
+    <div class="card"><div class="label">Yearly Savings</div><div class="value" style="font-size:1.4rem">$128,500</div></div>
+    <div class="card"><div class="label">3-Year ROI</div><div class="value">127.8%</div></div>
+  </div>
+
+  <div class="flex2">
+    <div class="mermaid-wrap"><div class="mermaid">pie title Component Status
+"EOL" : 2 "OUTDATED" : 1 "CURRENT_VERSION" : 1
+</div></div>
+    <div class="mermaid-wrap"><div class="mermaid">
+xychart-beta
+  title "Scenario Status Distribution"
+  x-axis ["APPLICABLE" "FULFILLED" "NOT_APPLICABLE" "LACK_OF_DATA"]
+  y-axis "Count" 0 --> 6
+  bar [5 1 5 1]
+</div></div>
+  </div>
+
+  <h2>Technology Assessment</h2>
+  <div class="section">
+    <table>
+      <tr><th>Category</th><th>Component</th><th>Status</th></tr>
+      <tr><td>Operating System</td><td>RHEL 7</td><td><span class="badge badge-EOL">EOL</span></td></tr>
+      <tr><td>Programming Language</td><td>Java 11</td><td><span class="badge badge-OUTDATED">OUTDATED</span></td></tr>
+      <tr><td>Application Server</td><td>Websphere 7.0</td><td><span class="badge badge-EOL">EOL</span></td></tr>
+      <tr><td>Database Engine</td><td>Amazon RDS MySQL</td><td><span class="badge badge-CURRENT_VERSION">CURRENT_VERSION</span></td></tr>
+    </table>
+  </div>
+
+  <h2>Scenario Assessment</h2>
+  <div class="section">
+    <table>
+      <tr><th>Scenario</th><th>Status</th><th>Migration Cost</th><th>Yearly Savings</th></tr>
+      <tr><td>OS Security Patch</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$1,200</td><td>$500</td></tr>
+      <tr><td>Switch to Linux</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
+      <tr><td>ARM CPU Migration</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$6,000</td><td>$1,000</td></tr>
+      <tr><td>App Server Replacement</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$12,000</td><td>$12,000</td></tr>
+      <tr><td>Cloud Deployment</td><td><span class="badge badge-FULFILLED">FULFILLED</span></td><td>—</td><td>—</td></tr>
+      <tr><td>Containerization</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$120,000</td><td>$100,000</td></tr>
+      <tr><td>Refactor/Decouple</td><td><span class="badge badge-LACK_OF_DATA">LACK_OF_DATA</span></td><td>—</td><td>—</td></tr>
+      <tr><td>DB Upgrade</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
+      <tr><td>Managed DB</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
+      <tr><td>Managed ARM DB</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
+      <tr><td>Serverless DB</td><td><span class="badge badge-NOT_APPLICABLE">NOT_APPLICABLE</span></td><td>—</td><td>—</td></tr>
+      <tr><td>Switch to PostgreSQL</td><td><span class="badge badge-APPLICABLE">APPLICABLE</span></td><td>$30,000</td><td>$15,000</td></tr>
+    </table>
+  </div>
+
+  <h2>Business Case</h2>
+  <div class="section">
+    <div class="cards">
+      <div class="card"><div class="label">Total Cost</div><div class="value" style="font-size:1.3rem">$169,200</div></div>
+      <div class="card"><div class="label">Yearly Savings</div><div class="value" style="font-size:1.3rem">$128,500</div></div>
+      <div class="card"><div class="label">3-Year ROI</div><div class="value">127.8%</div></div>
+      <div class="card"><div class="label">Payback</div><div class="value">1.32 yrs</div></div>
+    </div>
+  </div>
+</div></body></html>

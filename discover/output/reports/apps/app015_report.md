@@ -1,0 +1,70 @@
+# ReportingApp-015 (app015) — Modernization Report
+
+**Analysis Date:** 2025-01-01T00:00:00Z  
+**Business Unit:** Finance  
+**Criticality:** Low  
+**Status:** Production  
+**Deployment:** AWS  
+**Architecture:** 2-Tier  
+**Containerized:** No  
+
+## Technology Assessment
+
+| Component | Version | Status |
+|-----------|---------|--------|
+| Operating System | Windows Server 2019 | ✅ CURRENT_VERSION |
+| Programming Language | PHP 8.1 | ⚠️ OUTDATED |
+| Application Server | Microsoft IIS 10.0 | ✅ CURRENT_VERSION |
+| Database Engine | MongoDB | ✅ CURRENT_VERSION |
+
+**Overall Risk:** `MEDIUM_RISK`
+
+## Complexity Assessment
+
+**Score:** 3/10 — **Low** (Cost Multiplier: 1.0x)
+
+| Factor | Value | Points |
+|--------|-------|--------|
+| Server Count | 1 | 1 |
+| External Interfaces | 4 | 0 |
+| Api Endpoints | 6 | 1 |
+| Business Criticality | Low | 0 |
+| Tech Debt Components | 1 | 1 |
+| Deployment Type | AWS | 0 |
+| Database Storage Gb | 400.0 | 1 |
+| Ci Cd Present | Yes | 0 |
+| Is Containerized | No | 1 |
+
+## Scenario Applicability
+
+| Scenario | Status |
+|----------|--------|
+| OS Security Patch | NOT_APPLICABLE |
+| Switch to Linux | APPLICABLE |
+| ARM CPU Migration | APPLICABLE |
+| App Server Replacement | NOT_APPLICABLE |
+| Cloud Deployment | FULFILLED |
+| Containerization | APPLICABLE |
+| Refactor/Decouple | NOT_APPLICABLE |
+| DB Upgrade | NOT_APPLICABLE |
+| Managed DB | NOT_APPLICABLE |
+| Managed ARM DB | NOT_APPLICABLE |
+| Serverless DB | NOT_APPLICABLE |
+| Switch to PostgreSQL | NOT_APPLICABLE |
+
+## Business Case
+
+| Metric | Value |
+|--------|-------|
+| Total Migration Cost | $105,300 |
+| Total Yearly Savings | $101,400 |
+| 3-Year ROI | 188.9% |
+| Payback Period | 1.04 years |
+
+### Applicable Scenarios Breakdown
+
+| Scenario | Migration Cost | Yearly Savings |
+|----------|----------------|----------------|
+| Switch to Linux | $300 | $400 |
+| ARM CPU Migration | $5,000 | $1,000 |
+| Containerization | $100,000 | $100,000 |

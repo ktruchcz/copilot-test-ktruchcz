@@ -1,0 +1,11 @@
+{
+  "app_id": "app005",
+  "app_name": "EComApp-005",
+  "out_of_scope": true,
+  "reasons": [
+    "Application status is Retired"
+  ],
+  "application_status": "Retired",
+  "solution_type": "3rd party software",
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

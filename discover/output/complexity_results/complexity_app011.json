@@ -1,0 +1,48 @@
+{
+  "app_id": "app011",
+  "app_name": "RouteOptApp-011",
+  "analysis_timestamp": "2025-01-01T00:00:00Z",
+  "complexity_score": 4,
+  "complexity_label": "Medium",
+  "cost_multiplier": 1.2,
+  "raw_score": 7,
+  "max_raw_score": 19,
+  "factors": {
+    "server_count": {
+      "value": 1,
+      "score": 1
+    },
+    "external_interfaces": {
+      "value": 5,
+      "score": 1
+    },
+    "api_endpoints": {
+      "value": 12,
+      "score": 1
+    },
+    "business_criticality": {
+      "value": "Medium",
+      "score": 1
+    },
+    "tech_debt_components": {
+      "value": 3,
+      "score": 3
+    },
+    "deployment_type": {
+      "value": "AWS",
+      "score": 0
+    },
+    "database_storage_gb": {
+      "value": 180.0,
+      "score": 0
+    },
+    "ci_cd_present": {
+      "value": "Yes",
+      "score": 0
+    },
+    "is_containerized": {
+      "value": "Yes",
+      "score": 0
+    }
+  }
+}

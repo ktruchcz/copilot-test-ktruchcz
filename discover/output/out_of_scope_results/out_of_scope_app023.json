@@ -1,0 +1,11 @@
+{
+  "app_id": "app023",
+  "app_name": "ChatbotApp-023",
+  "out_of_scope": false,
+  "reasons": [
+    "In scope for assessment"
+  ],
+  "application_status": "Production",
+  "solution_type": "Open Source",
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}
