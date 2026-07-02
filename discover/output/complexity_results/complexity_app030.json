@@ -1,0 +1,24 @@
+{
+  "application_identifier": "app030",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
+    },
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 1 outdated component(s)."
+    },
+    {
+      "factor": "Integration Surface",
+      "impact": "high",
+      "detail": "The application exposes 50 API endpoints and 30 external interfaces."
+    }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

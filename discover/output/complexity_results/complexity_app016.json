@@ -1,0 +1,29 @@
+{
+  "application_identifier": "app016",
+  "complexity_score": 7,
+  "complexity_label": "High",
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "medium",
+      "detail": "Criticality is Medium and requires controlled cutover planning."
+    },
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 0 outdated component(s)."
+    },
+    {
+      "factor": "Integration Surface",
+      "impact": "high",
+      "detail": "The application exposes 30 API endpoints and 10 external interfaces."
+    },
+    {
+      "factor": "Data Volume",
+      "impact": "high",
+      "detail": "Database size is 2000GB, increasing cutover and data migration effort."
+    }
+  ],
+  "cost_multiplier": 1.5,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>InventoryApp-008 modernization report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    .card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(15,23,42,.08); }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .metric { background: #eef2ff; border-radius: 10px; padding: 12px; }
+    .badge { display: inline-block; border-radius: 999px; padding: 4px 10px; color: #fff; font-size: 12px; font-weight: 700; }
+    .green { background: #16a34a; } .orange { background: #ea580c; } .red { background: #dc2626; } .gray { background: #6b7280; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #e5e7eb; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    .gauge { background: #e5e7eb; border-radius: 999px; height: 16px; overflow: hidden; }
+    .gauge-bar { background: linear-gradient(90deg, #22c55e, #f59e0b, #dc2626); height: 16px; width: 60%; }
+    ul { margin: 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <div class='card'>
+      <h1>InventoryApp-008 <small>(app008)</small></h1>
+      <div class='grid'>
+        <div class='metric'><strong>Status</strong><br>Production</div>
+        <div class='metric'><strong>Criticality</strong><br>High</div>
+        <div class='metric'><strong>Deployment</strong><br>On-Premise</div>
+        <div class='metric'><strong>Users</strong><br>875</div>
+        <div class='metric'><strong>Architecture</strong><br>1-Tier</div>
+        <div class='metric'><strong>Containerized</strong><br>No</div>
+        <div class='metric'><strong>CI/CD</strong><br>No</div>
+        <div class='metric'><strong>Database Size</strong><br>400 GB</div>
+      </div>
+    </div>
+
+    <div class='card'>
+      <h2>Technology Assessment</h2>
+      <table>
+        <thead><tr><th>Type</th><th>Component</th><th>Status</th><th>Version</th><th>Support / EOL</th><th>Reason</th></tr></thead>
+        <tbody><tr><td>os</td><td>AIX 6</td><td><span class='badge red'>EOL</span></td><td>6</td><td>2017-04-30</td><td>AIX 6 is end-of-life and no longer receives vendor support.</td></tr><tr><td>programming_language</td><td>COBOL-2014</td><td><span class='badge orange'>OUTDATED</span></td><td>2014</td><td>n/a</td><td>COBOL-2014 is an older standard with limited ecosystem modernization momentum.</td></tr><tr><td>application_server</td><td>Oracle Weblogic 8.0</td><td><span class='badge red'>EOL</span></td><td>8.0</td><td>n/a</td><td>Oracle Weblogic 8.0 is long out of support.</td></tr><tr><td>database</td><td>SQL Server 2019</td><td><span class='badge green'>CURRENT_VERSION</span></td><td>2019</td><td>2030-01-08</td><td>SQL Server 2019 remains within support.</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class='card'>
+      <h2>Complexity</h2>
+      <p><strong>Score:</strong> 6 / 10 (Medium)</p>
+      <div class='gauge'><div class='gauge-bar'></div></div>
+      <p><strong>Cost multiplier:</strong> 1.2x</p>
+      <ul><li><strong>Business Criticality</strong> (high) - Criticality is High and raises migration risk tolerance requirements.</li><li><strong>Technology Debt</strong> (high) - Technology debt includes 2 EOL and 1 outdated component(s).</li><li><strong>Deployment Model</strong> (high) - Deployment includes on-premise infrastructure, increasing migration and network dependency complexity.</li><li><strong>Delivery Automation</strong> (medium) - CI/CD is not present, so deployment automation and regression confidence are weaker.</li><li><strong>Runtime Portability</strong> (medium) - The workload is not containerized, reducing portability and slowing platform transitions.</li></ul>
+    </div>
+
+    <div class='card'>
+      <h2>Applicable Scenarios</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>Status</th><th>Migration Cost</th><th>Yearly Savings</th><th>Reason</th></tr></thead>
+        <tbody><tr><td>Operating System Update</td><td>APPLICABLE</td><td>$1,200</td><td>$500</td><td>Operating system AIX 6 is EOL and should be moved to a supported baseline.</td></tr><tr><td>Switch to standard Linux Operating System</td><td>APPLICABLE</td><td>$360</td><td>$400</td><td>AIX 6 is not a standard Linux platform and can be standardized onto enterprise Linux.</td></tr><tr><td>Switch to ARM-based CPU</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>The application is on-premise only and not containerized, so ARM migration is not currently a fit.</td></tr><tr><td>Applications Server replacement</td><td>APPLICABLE</td><td>$12,000</td><td>$12,000</td><td>Application server Oracle Weblogic 8.0 is EOL and should be replaced or upgraded.</td></tr><tr><td>Application Migration to Cloud Infrastructure (Lift &amp; Shift)</td><td>APPLICABLE</td><td>$6,000</td><td>$3,000</td><td>The deployment model includes on-premise infrastructure, so additional cloud migration remains available.</td></tr><tr><td>Application Containerization</td><td>APPLICABLE</td><td>$120,000</td><td>$100,000</td><td>The application is not containerized and could gain portability and operational consistency from container adoption.</td></tr><tr><td>Application Refactoring and De-coupling</td><td>APPLICABLE</td><td>$300,000</td><td>$150,000</td><td>The recorded architecture (1-Tier) suggests a layered or monolithic design suitable for decoupling.</td></tr><tr><td>Upgrade Legacy Databases</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>Database engine SQL Server 2019 is current.</td></tr><tr><td>Switch to Managed Database</td><td>APPLICABLE</td><td>$6,000</td><td>$10,000</td><td>SQL Server 2019 is not a managed database service and could be moved to a managed offering.</td></tr><tr><td>Managed ARM Database</td><td>APPLICABLE</td><td>$6,000</td><td>$5,000</td><td>A managed database move would also enable ARM-based managed database optimization.</td></tr><tr><td>Serverless Database Migration</td><td>NOT_APPLICABLE</td><td>-</td><td>-</td><td>Serverless database migration is targeted at cloud workloads with database sizes below 100GB.</td></tr><tr><td>Switch Database Engine to PostgreSQL</td><td>APPLICABLE</td><td>$30,000</td><td>$15,000</td><td>SQL Server 2019 is a candidate for PostgreSQL standardization to reduce license and platform cost.</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class='card'>
+      <h2>Business Case</h2>
+      <p><strong>Migration cost:</strong> $481,560</p>
+      <p><strong>Yearly savings:</strong> $295,900</p>
+      <p><strong>Three-year ROI:</strong> 84.3%</p>
+      <p><strong>Payback period:</strong> 1.63 years</p>
+    </div>
+  </div>
+</body>
+</html>

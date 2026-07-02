@@ -1,0 +1,53 @@
+{
+  "application_identifier": "app003",
+  "components_analyzed": [
+    {
+      "component_name": "RHEL 7",
+      "component_family": "RHEL",
+      "component_type": "os",
+      "managed_service": false,
+      "version": "7",
+      "component_status": "EOL",
+      "eol_date": "2024-06-30",
+      "reason": "RHEL 7 reached end of maintenance support in June 2024.",
+      "confidence": 10
+    },
+    {
+      "component_name": "Python 3.9",
+      "component_family": "Python",
+      "component_type": "programming_language",
+      "managed_service": false,
+      "version": "3.9",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-10-31",
+      "reason": "Python 3.9 is approaching end-of-life and is no longer a preferred current runtime.",
+      "confidence": 8
+    },
+    {
+      "component_name": "Apache Tomcat 6.1",
+      "component_family": "Apache Tomcat",
+      "component_type": "application_server",
+      "managed_service": false,
+      "version": "6.1",
+      "component_status": "EOL",
+      "eol_date": "2016-12-31",
+      "reason": "Apache Tomcat 6.x is end-of-life.",
+      "confidence": 10
+    },
+    {
+      "component_name": "PostgreSQL 13",
+      "component_family": "PostgreSQL",
+      "component_type": "database",
+      "managed_service": false,
+      "version": "13",
+      "component_status": "OUTDATED",
+      "eol_date": "2025-11-13",
+      "reason": "PostgreSQL 13 is nearing end-of-life and should be upgraded.",
+      "confidence": 9
+    }
+  ],
+  "has_eol_components": true,
+  "has_outdated_components": true,
+  "has_missing_version_data": false,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

@@ -1,0 +1,34 @@
+{
+  "application_identifier": "app024",
+  "complexity_score": 7,
+  "complexity_label": "High",
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
+    },
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 1 EOL and 1 outdated component(s)."
+    },
+    {
+      "factor": "Deployment Model",
+      "impact": "high",
+      "detail": "Deployment includes on-premise infrastructure, increasing migration and network dependency complexity."
+    },
+    {
+      "factor": "Delivery Automation",
+      "impact": "medium",
+      "detail": "CI/CD is not present, so deployment automation and regression confidence are weaker."
+    },
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
+    }
+  ],
+  "cost_multiplier": 1.5,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

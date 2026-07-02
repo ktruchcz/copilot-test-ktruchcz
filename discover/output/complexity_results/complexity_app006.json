@@ -1,0 +1,24 @@
+{
+  "application_identifier": "app006",
+  "complexity_score": 5,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "medium",
+      "detail": "Criticality is Medium and requires controlled cutover planning."
+    },
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 1 EOL and 3 outdated component(s)."
+    },
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
+    }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

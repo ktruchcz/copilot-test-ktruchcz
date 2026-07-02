@@ -1,0 +1,29 @@
+{
+  "application_identifier": "app020",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 2 outdated component(s)."
+    },
+    {
+      "factor": "Integration Surface",
+      "impact": "high",
+      "detail": "The application exposes 14 API endpoints and 7 external interfaces."
+    },
+    {
+      "factor": "Data Volume",
+      "impact": "medium",
+      "detail": "Database size is 600GB, increasing cutover and data migration effort."
+    },
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
+    }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

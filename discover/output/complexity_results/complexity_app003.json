@@ -1,0 +1,14 @@
+{
+  "application_identifier": "app003",
+  "complexity_score": 4,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 2 outdated component(s)."
+    }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

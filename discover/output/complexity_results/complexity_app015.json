@@ -1,0 +1,19 @@
+{
+  "application_identifier": "app015",
+  "complexity_score": 4,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Technology Debt",
+      "impact": "medium",
+      "detail": "Technology debt includes 0 EOL and 1 outdated component(s)."
+    },
+    {
+      "factor": "Runtime Portability",
+      "impact": "medium",
+      "detail": "The workload is not containerized, reducing portability and slowing platform transitions."
+    }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}

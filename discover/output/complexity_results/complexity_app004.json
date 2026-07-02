@@ -1,0 +1,34 @@
+{
+  "application_identifier": "app004",
+  "complexity_score": 6,
+  "complexity_label": "Medium",
+  "factors": [
+    {
+      "factor": "Business Criticality",
+      "impact": "high",
+      "detail": "Criticality is High and raises migration risk tolerance requirements."
+    },
+    {
+      "factor": "Technology Debt",
+      "impact": "high",
+      "detail": "Technology debt includes 2 EOL and 1 outdated component(s)."
+    },
+    {
+      "factor": "Integration Surface",
+      "impact": "medium",
+      "detail": "The application exposes 12 API endpoints and 6 external interfaces."
+    },
+    {
+      "factor": "Deployment Model",
+      "impact": "medium",
+      "detail": "Deployment includes on-premise infrastructure, increasing migration and network dependency complexity."
+    },
+    {
+      "factor": "Data Volume",
+      "impact": "medium",
+      "detail": "Database size is 750GB, increasing cutover and data migration effort."
+    }
+  ],
+  "cost_multiplier": 1.2,
+  "analysis_timestamp": "2025-01-01T00:00:00Z"
+}
