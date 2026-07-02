@@ -5,65 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Application Report - COBOL transform</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 40px; }
-    .card { background: #fff; border: 1px solid #dbe3ee; border-radius: 14px; padding: 22px; margin-bottom: 18px; }
-    h1, h2 { margin-top: 0; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e5e7eb; }
-    th { background: #f8fafc; }
-    .pill { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #dbeafe; color: #1d4ed8; font-size: 12px; font-weight: 700; }
+    :root { --bg:#f4f7fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --border:#dbe3ee; --green-bg:#dcfce7; --green:#166534; --red-bg:#fee2e2; --red:#991b1b; --gray-bg:#e5e7eb; --gray:#374151; --orange-bg:#fed7aa; --orange:#9a3412; --blue-bg:#dbeafe; --blue:#1d4ed8; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 40px; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:22px; margin-bottom:18px; box-shadow:0 8px 24px rgba(15,23,42,.05); }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; }
+    .stat { background:#f8fbff; border:1px solid var(--border); border-radius:14px; padding:16px; }
+    .label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+    .value { font-size:26px; font-weight:700; margin-top:6px; }
+    h1,h2,h3 { margin-top:0; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th, td { text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--border); }
+    th { background:#f8fafc; }
+    .pill { display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:700; margin-right:6px; }
+    .applicable { background:var(--green-bg); color:var(--green); }
+    .blocked { background:var(--red-bg); color:var(--red); }
+    .not-applicable { background:var(--gray-bg); color:var(--gray); }
+    .outdated { background:var(--orange-bg); color:var(--orange); }
+    .info { background:var(--blue-bg); color:var(--blue); }
+    .note { color:var(--muted); }
+    ul { margin:8px 0 0 18px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
+    <section class="card">
       <h1>Application Report: COBOL transform</h1>
-      <p>Application ID: <strong>scenarioa-test-transform</strong> &middot; Analysis date: <strong>2025-01-01</strong></p>
-      <p><span class="pill">In Scope</span> <span class="pill">High Complexity</span></p>
-      <p>Production finance ERP workload running on AIX 7.2, COBOL-2014, and Oracle 19c.</p>
-    </div>
-    <div class="card">
-      <h2>Technology Assessment</h2>
+      <p><strong>Application ID:</strong> scenarioa-test-transform &middot; <strong>Analysis date:</strong> 2026-07-02</p>
+      <p><span class="pill info">In Scope</span><span class="pill blocked">Refactor Blocked</span><span class="pill outdated">Legacy Stack</span></p>
+      <p>COBOL transform is a production finance ERP application with a high-complexity legacy stack. The recommended strategy is focused risk reduction and pragmatic replatforming, not deep refactoring, because the application is planned for decommission in 2027.</p>
+      <div class="grid">
+        <div class="stat"><div class="label">Complexity</div><div class="value">8 / 10</div></div>
+        <div class="stat"><div class="label">Multiplier</div><div class="value">1.8x</div></div>
+        <div class="stat"><div class="label">3-Year ROI</div><div class="value">16.6%</div></div>
+        <div class="stat"><div class="label">5-Year ROI</div><div class="value">94.4%</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Key Characteristics</h2>
       <table>
-        <thead><tr><th>Component</th><th>Status</th><th>Reason</th></tr></thead>
         <tbody>
-          <tr><td>AIX 7.2</td><td>OUTDATED</td><td>Past standard support; in extended support.</td></tr>
-          <tr><td>COBOL-2014</td><td>OUTDATED</td><td>Superseded language standard with shrinking ecosystem.</td></tr>
-          <tr><td>Oracle 19c</td><td>OUTDATED</td><td>Past Premier Support; in Extended Support.</td></tr>
+          <tr><th>Business unit</th><td>Finance</td><th>Business criticality</th><td>High</td></tr>
+          <tr><th>Deployment</th><td>On-Premise</td><th>Architecture</th><td>1-Tier</td></tr>
+          <tr><th>Users</th><td>350</td><th>External interfaces</th><td>5</td></tr>
+          <tr><th>Operating system</th><td>AIX 7.2</td><th>Programming language</th><td>COBOL-2014</td></tr>
+          <tr><th>Database</th><td>Oracle 19c</td><th>Database size</th><td>1000 GB</td></tr>
+          <tr><th>CI/CD</th><td>No</td><th>Planned decommission</th><td>2027</td></tr>
         </tbody>
       </table>
-    </div>
-    <div class="card">
-      <h2>Scenario Assessment</h2>
+    </section>
+
+    <section class="card">
+      <h2>Technology Health Summary</h2>
+      <p>All assessed components are outdated, with the most urgent issue being Oracle 19c because Extended Support ends in January 2027.</p>
       <table>
-        <thead><tr><th>Scenario</th><th>Status</th></tr></thead>
+        <thead><tr><th>Component</th><th>Status</th><th>Summary</th></tr></thead>
         <tbody>
-          <tr><td>os_update_security_patch</td><td>APPLICABLE</td></tr>
-          <tr><td>switch_to_standard_linux_os</td><td>APPLICABLE</td></tr>
-          <tr><td>switch_to_arm_cpu</td><td>NOT_APPLICABLE</td></tr>
-          <tr><td>application_server_replacement</td><td>NOT_APPLICABLE</td></tr>
-          <tr><td>app_deployment_to_cloud</td><td>APPLICABLE</td></tr>
-          <tr><td>app_containerization</td><td>BLOCKED</td></tr>
-          <tr><td>app_refactor_decoupling</td><td>APPLICABLE</td></tr>
-          <tr><td>upgrade_legacy_databases</td><td>APPLICABLE</td></tr>
-          <tr><td>switch_db_engine_open_source</td><td>APPLICABLE</td></tr>
-          <tr><td>update_outdated_components</td><td>APPLICABLE</td></tr>
+          <tr><td>AIX 7.2</td><td><span class="pill outdated">OUTDATED</span></td><td>Standard support ended in April 2023; Extended Support remains to April 2028.</td></tr>
+          <tr><td>COBOL-2014</td><td><span class="pill outdated">OUTDATED</span></td><td>Superseded standard with a shrinking delivery ecosystem.</td></tr>
+          <tr><td>Oracle 19c</td><td><span class="pill outdated">OUTDATED</span></td><td>Premier Support ended in January 2024; Extended Support ends in January 2027.</td></tr>
         </tbody>
       </table>
-    </div>
-    <div class="card">
+    </section>
+
+    <section class="card">
+      <h2>Complexity Factors</h2>
+      <table>
+        <thead><tr><th>Factor</th><th>Score</th><th>Rationale</th></tr></thead>
+        <tbody>
+          <tr><td>technology_age</td><td>2.0</td><td>Legacy AIX and COBOL stack drives high modernization effort.</td></tr>
+          <tr><td>eol_outdated_components</td><td>1.5</td><td>All assessed components are outdated.</td></tr>
+          <tr><td>business_criticality</td><td>1.5</td><td>Finance-critical workload increases risk.</td></tr>
+          <tr><td>database_complexity</td><td>1.0</td><td>1TB Oracle estate and licensing dependency complicate migration.</td></tr>
+          <tr><td>architecture</td><td>1.0</td><td>1-Tier monolith and no CI/CD increase delivery risk.</td></tr>
+          <tr><td>external_interfaces</td><td>1.0</td><td>Five integrations require coordinated testing.</td></tr>
+          <tr><td>server_count</td><td>0.5</td><td>Two server instances add moderate infrastructure scope.</td></tr>
+          <tr><td>decommission_timeline</td><td>0.5</td><td>2027 retirement reduces the viable payback window.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Scenario Applicability</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>Status</th><th>Reasoning</th></tr></thead>
+        <tbody>
+          <tr><td>Operating System Update</td><td><span class="pill applicable">APPLICABLE</span></td><td>AIX 7.2 is beyond standard support.</td></tr>
+          <tr><td>Switch to standard Linux Operating System</td><td><span class="pill applicable">APPLICABLE</span></td><td>AIX is a strong Linux replatform candidate.</td></tr>
+          <tr><td>Switch to ARM-based CPU</td><td><span class="pill not-applicable">NOT_APPLICABLE</span></td><td>Current platform is IBM POWER/AIX, not an ARM migration fit.</td></tr>
+          <tr><td>Application Server Replacement</td><td><span class="pill not-applicable">NOT_APPLICABLE</span></td><td>No application server layer exists.</td></tr>
+          <tr><td>Application Migration to Cloud Infrastructure (Lift &amp; Shift)</td><td><span class="pill applicable">APPLICABLE</span></td><td>On-premise deployment makes cloud hosting viable.</td></tr>
+          <tr><td>Application Containerization</td><td><span class="pill blocked">BLOCKED</span></td><td>Linux migration and decomposition are prerequisites.</td></tr>
+          <tr><td>Application Refactoring and De-coupling</td><td><span class="pill blocked">BLOCKED</span></td><td>Planned 2027 decommission does not justify a large refactoring investment.</td></tr>
+          <tr><td>Upgrade Legacy Databases</td><td><span class="pill applicable">APPLICABLE</span></td><td>Oracle 19c support runway is nearly exhausted.</td></tr>
+          <tr><td>Switch DB Engine to open-source database solution</td><td><span class="pill applicable">APPLICABLE</span></td><td>PostgreSQL migration can reduce long-term licensing cost.</td></tr>
+          <tr><td>Update outdated components</td><td><span class="pill applicable">APPLICABLE</span></td><td>The full application stack is outdated.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
       <h2>Business Case</h2>
       <table>
-        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <thead><tr><th>Scenario</th><th>Adjusted Cost</th><th>Yearly Savings</th><th>3-Year ROI</th><th>5-Year ROI</th></tr></thead>
         <tbody>
-          <tr><td>Adjusted cost</td><td>$524,340</td></tr>
-          <tr><td>Yearly savings</td><td>$178,900</td></tr>
-          <tr><td>3-year ROI</td><td>2.4%</td></tr>
-          <tr><td>5-year ROI</td><td>70.6%</td></tr>
+          <tr><td>Operating System Update</td><td>$1,800</td><td>$500</td><td>-16.7%</td><td>38.9%</td></tr>
+          <tr><td>Switch to standard Linux Operating System</td><td>$540</td><td>$400</td><td>122.2%</td><td>270.4%</td></tr>
+          <tr><td>Application Migration to Cloud Infrastructure (Lift &amp; Shift)</td><td>$9,000</td><td>$3,000</td><td>0.0%</td><td>66.7%</td></tr>
+          <tr><td>Upgrade Legacy Databases</td><td>$18,000</td><td>$10,000</td><td>66.7%</td><td>177.8%</td></tr>
+          <tr><td>Switch DB Engine to open-source database solution</td><td>$45,000</td><td>$15,000</td><td>0.0%</td><td>66.7%</td></tr>
         </tbody>
       </table>
-    </div>
+      <p class="note">Excluded from totals: Application Containerization, Application Refactoring and De-coupling, and Update outdated components.</p>
+      <div class="grid">
+        <div class="stat"><div class="label">Adjusted cost</div><div class="value">$74,340</div></div>
+        <div class="stat"><div class="label">Yearly savings</div><div class="value">$28,900</div></div>
+        <div class="stat"><div class="label">3-Year savings</div><div class="value">$86,700</div></div>
+        <div class="stat"><div class="label">5-Year savings</div><div class="value">$144,500</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Recommendation</h2>
+      <ul>
+        <li>Make the Oracle 19c upgrade or migration decision before January 2027.</li>
+        <li>Reduce AIX dependency and evaluate Linux replatforming.</li>
+        <li>Use cloud migration only where it fits the remaining application lifetime.</li>
+        <li>Do not fund a major refactor program because the 2027 decommission plan blocks the payback case.</li>
+      </ul>
+    </section>
   </div>
 </body>
 </html>

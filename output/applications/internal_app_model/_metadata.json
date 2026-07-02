@@ -1,6 +1,6 @@
 {
   "source_file": "apps_db_complete_short.xlsx",
-  "extraction_date": "2026-06-12",
+  "extraction_date": "2026-07-02",
   "total_applications": 2,
   "column_mapping": {
     "app_id": "app_id",
